@@ -8,8 +8,8 @@
 
 *Create a 3 page app.*
 
-- When you launch the app, you should see a list of resource categories (categories.json)
-- When you click on a category, it should open a list of resources (restaurant.json or vacation-spot.json)
+- When you launch the app, you should see a list of resource categories (`/data/categories.json`)
+- When you click on a category, it should open a list of resources (`/data/restaurant.json` or `/data/vacation-spot.json`)
 - When you click on a resource, it should open a details page (see attached mockup)
 
 # User Stories
