@@ -29,6 +29,6 @@
 
 # Mockup:
 
-Use the following mockup as a UI guide for your app (the image is at the root of the project). We do not provide you with any specs, so please use your imagination while trying to respect the mockup as much as you can.
+Use the following mockup as a UI guide for your app (the image is at the root of the project). This mockup contains more details that you actually will need in this test. Please use with intepretation. We do not provide you with any specs, so please use your imagination while trying to respect the mockup as much as you can.
 
 ![Mockup](https://github.com/quickseries/mobile-test/blob/master/resources_android.png "Mockup")
