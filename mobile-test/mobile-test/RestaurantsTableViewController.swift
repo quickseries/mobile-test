@@ -1,5 +1,5 @@
 //
-//  CategoriesTableViewController.swift
+//  RestaurantsTableViewController.swift
 //  mobile-test
 //
 //  Created by Martin Gyupchanov on 09-08-17.
@@ -8,23 +8,22 @@
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
-  
+class RestaurantsTableViewController: UITableViewController {
+
   // MARK: - Model
-  var categories = [Category?]() {
+  var restaurants = [Restaurant?]() {
     didSet {
       tableView.reloadData()
     }
   }
   
   var isSortedAscending = false
-  
   // MARK: - VC Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "Categories"
-    categories = CategoriesJSONParser.getCategories()
+    title = "Restaurants"
+    restaurants = RestaurantsJSONParser.getRestaurants()
     
     addSortButton()
   }
@@ -34,57 +33,53 @@ class CategoriesTableViewController: UITableViewController {
     
     let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(self.sort))
     self.navigationItem.setRightBarButtonItems([sortButton], animated: true)
-
+    
   }
   
   func sort() {
     if isSortedAscending {
-      categories.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedDescending }
+      restaurants.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedDescending }
       isSortedAscending = false
     } else {
-      categories.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedAscending }
+      restaurants.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedAscending }
       isSortedAscending = true
     }
   }
-  
+
   // MARK: - Table view data source
+  
   override func numberOfSections(in tableView: UITableView) -> Int {
+    // #warning Incomplete implementation, return the number of sections
     return 1
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return categories.count
+    return restaurants.count
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let restaurant = restaurants[indexPath.row]
     
-    let category = categories[indexPath.row]
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Category", for: indexPath)
-    cell.textLabel?.text = category?.title
-    cell.detailTextLabel?.text = category?.description
-    
-    return cell
+   let cell = tableView.dequeueReusableCell(withIdentifier: "Restaurant", for: indexPath)
+   
+    cell.textLabel?.text = restaurant?.title
+    cell.detailTextLabel?.text = restaurant?.description
+   return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.deselectRow(at: indexPath, animated: true)
     
-    self.performSegue(withIdentifier: "CategorySelected", sender: self)
+   // self.performSegue(withIdentifier: "!!!!!!!!!!", sender: self)
   }
 
-  
-  // MARK: - Navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "CategorySelected" {
-      //let destinationController = segue.destination as! RestaurantsTableViewController
-      
-      // Set destination's back bar button item
-      let backItem = UIBarButtonItem()
-      backItem.title = "Categories"
-      navigationItem.backBarButtonItem = backItem
-    }
-  }
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
 }

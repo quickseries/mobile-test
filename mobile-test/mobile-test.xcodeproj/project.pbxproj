@@ -15,6 +15,18 @@
 		55A7E79E1F3B751A0075C26C /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E79B1F3B751A0075C26C /* restaurants.json */; };
 		55A7E79F1F3B751A0075C26C /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E79C1F3B751A0075C26C /* vacation-spot.json */; };
 		55A7E7A21F3B75960075C26C /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7A11F3B75960075C26C /* CategoriesTableViewController.swift */; };
+		55A7E7A41F3B78180075C26C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7A31F3B78180075C26C /* Category.swift */; };
+		55A7E7A61F3B83C40075C26C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7A51F3B83C40075C26C /* Restaurant.swift */; };
+		55A7E7A81F3B83FC0075C26C /* VacationSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7A71F3B83FC0075C26C /* VacationSpot.swift */; };
+		55A7E7AA1F3B84760075C26C /* CategoriesJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7A91F3B84760075C26C /* CategoriesJSONParser.swift */; };
+		55A7E7AC1F3B85E10075C26C /* RestaurantsJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7AB1F3B85E10075C26C /* RestaurantsJSONParser.swift */; };
+		55A7E7AE1F3B85F50075C26C /* VacationSpotJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7AD1F3B85F50075C26C /* VacationSpotJSONParser.swift */; };
+		55A7E7B01F3B87A60075C26C /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7AF1F3B87A60075C26C /* RestaurantsTableViewController.swift */; };
+		55A7E7B21F3B893E0075C26C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B11F3B893E0075C26C /* Address.swift */; };
+		55A7E7B41F3B89E60075C26C /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B31F3B89E60075C26C /* ContactInfo.swift */; };
+		55A7E7B61F3B8AD80075C26C /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B51F3B8AD80075C26C /* SocialMedia.swift */; };
+		55A7E7B81F3B8B700075C26C /* BussinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B71F3B8B700075C26C /* BussinessHours.swift */; };
+		55A7E7BA1F3B8C150075C26C /* HelperJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B91F3B8C150075C26C /* HelperJSONParser.swift */; };
 		7A6DF568D65385916B994EC5 /* Pods_mobile_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71A96628D34398B3EFD1002 /* Pods_mobile_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +42,18 @@
 		55A7E79B1F3B751A0075C26C /* restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		55A7E79C1F3B751A0075C26C /* vacation-spot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "vacation-spot.json"; sourceTree = "<group>"; };
 		55A7E7A11F3B75960075C26C /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		55A7E7A31F3B78180075C26C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		55A7E7A51F3B83C40075C26C /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		55A7E7A71F3B83FC0075C26C /* VacationSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationSpot.swift; sourceTree = "<group>"; };
+		55A7E7A91F3B84760075C26C /* CategoriesJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesJSONParser.swift; sourceTree = "<group>"; };
+		55A7E7AB1F3B85E10075C26C /* RestaurantsJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsJSONParser.swift; sourceTree = "<group>"; };
+		55A7E7AD1F3B85F50075C26C /* VacationSpotJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationSpotJSONParser.swift; sourceTree = "<group>"; };
+		55A7E7AF1F3B87A60075C26C /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		55A7E7B11F3B893E0075C26C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		55A7E7B31F3B89E60075C26C /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		55A7E7B51F3B8AD80075C26C /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		55A7E7B71F3B8B700075C26C /* BussinessHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BussinessHours.swift; sourceTree = "<group>"; };
+		55A7E7B91F3B8C150075C26C /* HelperJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperJSONParser.swift; sourceTree = "<group>"; };
 		564633E429F918D82043072A /* Pods-mobile-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-mobile-test/Pods-mobile-test.release.xcconfig"; sourceTree = "<group>"; };
 		F71A96628D34398B3EFD1002 /* Pods_mobile_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobile_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +104,17 @@
 		55A7E7781F3B74640075C26C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55A7E7A31F3B78180075C26C /* Category.swift */,
+				55A7E7A51F3B83C40075C26C /* Restaurant.swift */,
+				55A7E7A71F3B83FC0075C26C /* VacationSpot.swift */,
+				55A7E7A91F3B84760075C26C /* CategoriesJSONParser.swift */,
+				55A7E7AB1F3B85E10075C26C /* RestaurantsJSONParser.swift */,
+				55A7E7AD1F3B85F50075C26C /* VacationSpotJSONParser.swift */,
+				55A7E7B11F3B893E0075C26C /* Address.swift */,
+				55A7E7B31F3B89E60075C26C /* ContactInfo.swift */,
+				55A7E7B51F3B8AD80075C26C /* SocialMedia.swift */,
+				55A7E7B71F3B8B700075C26C /* BussinessHours.swift */,
+				55A7E7B91F3B8C150075C26C /* HelperJSONParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -96,6 +131,7 @@
 			children = (
 				55A7E7661F3B73980075C26C /* AppDelegate.swift */,
 				55A7E7A11F3B75960075C26C /* CategoriesTableViewController.swift */,
+				55A7E7AF1F3B87A60075C26C /* RestaurantsTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -264,8 +300,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A7E7AC1F3B85E10075C26C /* RestaurantsJSONParser.swift in Sources */,
+				55A7E7AE1F3B85F50075C26C /* VacationSpotJSONParser.swift in Sources */,
+				55A7E7B01F3B87A60075C26C /* RestaurantsTableViewController.swift in Sources */,
+				55A7E7B61F3B8AD80075C26C /* SocialMedia.swift in Sources */,
+				55A7E7B81F3B8B700075C26C /* BussinessHours.swift in Sources */,
+				55A7E7A61F3B83C40075C26C /* Restaurant.swift in Sources */,
+				55A7E7B41F3B89E60075C26C /* ContactInfo.swift in Sources */,
+				55A7E7B21F3B893E0075C26C /* Address.swift in Sources */,
 				55A7E7671F3B73980075C26C /* AppDelegate.swift in Sources */,
+				55A7E7A81F3B83FC0075C26C /* VacationSpot.swift in Sources */,
 				55A7E7A21F3B75960075C26C /* CategoriesTableViewController.swift in Sources */,
+				55A7E7AA1F3B84760075C26C /* CategoriesJSONParser.swift in Sources */,
+				55A7E7BA1F3B8C150075C26C /* HelperJSONParser.swift in Sources */,
+				55A7E7A41F3B78180075C26C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +481,7 @@
 				55A7E7771F3B73980075C26C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
