@@ -10,10 +10,10 @@ import Foundation
 import SwiftyJSON
 
 struct RestaurantsJSONParser {
-  static func getRestaurants() -> [Restaurant?] {
+  static func getRecources(forType type: String) -> [Restaurant?] {
     var restaurants: [Restaurant] = []
     
-    guard let fileURL = Bundle.main.url(forResource:"restaurants", withExtension: "json") else { return restaurants }
+    guard let fileURL = Bundle.main.url(forResource: type, withExtension: "json") else { return restaurants }
     guard let localJSONData = try? Data(contentsOf: fileURL) else { return restaurants }
     
     let json = JSON(data: localJSONData)
@@ -26,7 +26,7 @@ struct RestaurantsJSONParser {
       let contactInfo = HelperJSONParser.getContactInfo(forJSON: entry)
       let socialMedies = HelperJSONParser.getSocialMedias(forJSON: entry)
 
-      let restaurant = Restaurant(title: title, description: description, photo: photo, address: address, contactInfo: contactInfo, bizHours: nil, socialMedia: socialMedies)
+      let restaurant = Restaurant(title: title, description: description, photo: photo, address: address, contactInfo: contactInfo, socialMedia: socialMedies)
       
       restaurants.append(restaurant)
     }

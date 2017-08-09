@@ -17,6 +17,7 @@ class CategoriesTableViewController: UITableViewController {
     }
   }
   
+  var selectedCategory = ""
   var isSortedAscending = false
   
   // MARK: - VC Lifecycle
@@ -72,6 +73,8 @@ class CategoriesTableViewController: UITableViewController {
     
     tableView.deselectRow(at: indexPath, animated: true)
     
+    selectedCategory = indexPath.row == 0 ? "Restaurant" : "Vacation"
+    
     self.performSegue(withIdentifier: "CategorySelected", sender: self)
   }
 
@@ -79,8 +82,8 @@ class CategoriesTableViewController: UITableViewController {
   // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "CategorySelected" {
-      //let destinationController = segue.destination as! RestaurantsTableViewController
-      
+      let destinationController = segue.destination as! RestaurantsTableViewController
+      destinationController.data = selectedCategory == "Restaurant" ? RestaurantsJSONParser.getRecources(forType: "restaurants") : RestaurantsJSONParser.getRecources(forType: "vacation-spot")      
       // Set destination's back bar button item
       let backItem = UIBarButtonItem()
       backItem.title = "Categories"

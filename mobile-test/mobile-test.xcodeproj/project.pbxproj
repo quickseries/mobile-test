@@ -27,6 +27,8 @@
 		55A7E7B61F3B8AD80075C26C /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B51F3B8AD80075C26C /* SocialMedia.swift */; };
 		55A7E7B81F3B8B700075C26C /* BussinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B71F3B8B700075C26C /* BussinessHours.swift */; };
 		55A7E7BA1F3B8C150075C26C /* HelperJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7B91F3B8C150075C26C /* HelperJSONParser.swift */; };
+		55A7E7BC1F3BA2780075C26C /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7BB1F3BA2780075C26C /* DetailTableViewController.swift */; };
+		55A7E7BE1F3BA44C0075C26C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E7BD1F3BA44C0075C26C /* CustomImageView.swift */; };
 		7A6DF568D65385916B994EC5 /* Pods_mobile_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71A96628D34398B3EFD1002 /* Pods_mobile_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		55A7E7B51F3B8AD80075C26C /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		55A7E7B71F3B8B700075C26C /* BussinessHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BussinessHours.swift; sourceTree = "<group>"; };
 		55A7E7B91F3B8C150075C26C /* HelperJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperJSONParser.swift; sourceTree = "<group>"; };
+		55A7E7BB1F3BA2780075C26C /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		55A7E7BD1F3BA44C0075C26C /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		564633E429F918D82043072A /* Pods-mobile-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-mobile-test/Pods-mobile-test.release.xcconfig"; sourceTree = "<group>"; };
 		F71A96628D34398B3EFD1002 /* Pods_mobile_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobile_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +126,7 @@
 		55A7E7791F3B74720075C26C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55A7E7BD1F3BA44C0075C26C /* CustomImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				55A7E7661F3B73980075C26C /* AppDelegate.swift */,
 				55A7E7A11F3B75960075C26C /* CategoriesTableViewController.swift */,
 				55A7E7AF1F3B87A60075C26C /* RestaurantsTableViewController.swift */,
+				55A7E7BB1F3BA2780075C26C /* DetailTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -306,8 +312,10 @@
 				55A7E7B61F3B8AD80075C26C /* SocialMedia.swift in Sources */,
 				55A7E7B81F3B8B700075C26C /* BussinessHours.swift in Sources */,
 				55A7E7A61F3B83C40075C26C /* Restaurant.swift in Sources */,
+				55A7E7BC1F3BA2780075C26C /* DetailTableViewController.swift in Sources */,
 				55A7E7B41F3B89E60075C26C /* ContactInfo.swift in Sources */,
 				55A7E7B21F3B893E0075C26C /* Address.swift in Sources */,
+				55A7E7BE1F3BA44C0075C26C /* CustomImageView.swift in Sources */,
 				55A7E7671F3B73980075C26C /* AppDelegate.swift in Sources */,
 				55A7E7A81F3B83FC0075C26C /* VacationSpot.swift in Sources */,
 				55A7E7A21F3B75960075C26C /* CategoriesTableViewController.swift in Sources */,

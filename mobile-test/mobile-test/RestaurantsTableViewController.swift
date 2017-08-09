@@ -11,11 +11,13 @@ import UIKit
 class RestaurantsTableViewController: UITableViewController {
 
   // MARK: - Model
-  var restaurants = [Restaurant?]() {
+  var data = [Restaurant?]() {
     didSet {
       tableView.reloadData()
     }
   }
+  
+  var selectedRestaurant: Restaurant?
   
   var isSortedAscending = false
   // MARK: - VC Lifecycle
@@ -23,7 +25,7 @@ class RestaurantsTableViewController: UITableViewController {
     super.viewDidLoad()
     
     title = "Restaurants"
-    restaurants = RestaurantsJSONParser.getRestaurants()
+    //data = RestaurantsJSONParser.getRestaurants()
     
     addSortButton()
   }
@@ -38,10 +40,10 @@ class RestaurantsTableViewController: UITableViewController {
   
   func sort() {
     if isSortedAscending {
-      restaurants.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedDescending }
+      data.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedDescending }
       isSortedAscending = false
     } else {
-      restaurants.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedAscending }
+      data.sort { $0?.title?.localizedCaseInsensitiveCompare(($1?.title)!) == ComparisonResult.orderedAscending }
       isSortedAscending = true
     }
   }
@@ -55,11 +57,11 @@ class RestaurantsTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of rows
-    return restaurants.count
+    return data.count
   }
   
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let restaurant = restaurants[indexPath.row]
+    let restaurant = data[indexPath.row]
     
    let cell = tableView.dequeueReusableCell(withIdentifier: "Restaurant", for: indexPath)
    
@@ -71,15 +73,23 @@ class RestaurantsTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.deselectRow(at: indexPath, animated: true)
+    selectedRestaurant = data[indexPath.row]
     
-   // self.performSegue(withIdentifier: "!!!!!!!!!!", sender: self)
+    self.performSegue(withIdentifier: "Detail", sender: self)
   }
 
    // MARK: - Navigation
    
    // In a storyboard-based application, you will often want to do a little preparation before navigation
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
+    if segue.identifier == "Detail" {
+      let destinationController = segue.destination as! DetailTableViewController
+      destinationController.restaurant = selectedRestaurant
+      
+      // Set destination's back bar button item
+      let backItem = UIBarButtonItem()
+      backItem.title = title
+      navigationItem.backBarButtonItem = backItem
+    }
+  }
 }

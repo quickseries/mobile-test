@@ -14,6 +14,40 @@ struct Restaurant {
   var photo: String?
   var address: [Address?]
   var contactInfo: ContactInfo?
-  var bizHours: BussinessHours?
   var socialMedia: SocialMedia?
+  var bizHours: BussinessHours?
+  
+  var sections = 1
+  
+  var allValidProperties = [[String]]()
+
+  init (title: String?, description: String?, photo: String?, address: [Address?], contactInfo: ContactInfo?, socialMedia: SocialMedia?) {
+    
+    self.title = title
+    self.description = description
+    self.photo = photo
+    self.address = address
+    self.contactInfo = contactInfo
+    self.socialMedia = socialMedia
+    
+    if let contactInfo = contactInfo, !contactInfo.allValidProperties.isEmpty {
+      sections += 1
+      allValidProperties.append(contactInfo.allValidProperties)
+    }
+    
+    if let socialMedia = socialMedia, !socialMedia.allValidProperties.isEmpty {
+      sections += 1
+      allValidProperties.append(socialMedia.allValidProperties)
+
+    }
+    
+    for address in address {
+      if let address = address, !address.allValidProperties.isEmpty {
+        sections += 1
+        allValidProperties.append(address.allValidProperties)
+
+        return
+      }
+    }
+  }
 }
