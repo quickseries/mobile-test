@@ -17,7 +17,7 @@ struct Restaurant {
   var socialMedia: SocialMedia?
   var bizHours: BussinessHours?
   
-  var sections = 1
+  var sections = 0
   
   var allValidProperties = [[String]]()
 
@@ -30,6 +30,8 @@ struct Restaurant {
     self.contactInfo = contactInfo
     self.socialMedia = socialMedia
     
+    sections += 1
+    allValidProperties.append([title!, description!])
     if let contactInfo = contactInfo, !contactInfo.allValidProperties.isEmpty {
       sections += 1
       allValidProperties.append(contactInfo.allValidProperties)

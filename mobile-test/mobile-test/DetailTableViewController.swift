@@ -17,6 +17,8 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      title = restaurant.title
+      
       if let photo = restaurant.photo, let url = URL(string: photo){
         headerImage.downloadedFrom(url: url)
       }
@@ -36,17 +38,26 @@ class DetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+      if section == 0 {
+        return 1
+      } else {
         return restaurant.allValidProperties[section].count
+      }
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath)
+      var cell: UITableViewCell
+      if indexPath.section == 0 {
+        cell = tableView.dequeueReusableCell(withIdentifier: "Subtitle", for: indexPath)
+        cell.textLabel?.text = restaurant.title
+        cell.detailTextLabel?.text = restaurant.description
 
-      let fe = restaurant.allValidProperties[indexPath.section]
-        cell.textLabel?.text = fe[indexPath.row]
-
+      } else {
+        cell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath)
+        let properties = restaurant.allValidProperties[indexPath.section]
+        cell.textLabel?.text = properties[indexPath.row]
+      }
         return cell
     }
 
