@@ -13,6 +13,7 @@
 		DB7CF6241F3C707B00DC311A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7CF6221F3C707B00DC311A /* LaunchScreen.storyboard */; };
 		DB7CF62C1F3C723900DC311A /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7CF62B1F3C723900DC311A /* CategoryTableViewController.swift */; };
 		DB7CF62E1F3C731E00DC311A /* data in Resources */ = {isa = PBXBuildFile; fileRef = DB7CF62D1F3C731E00DC311A /* data */; };
+		DB7CF6301F3C782D00DC311A /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7CF62F1F3C782D00DC311A /* ResourceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DB7CF6251F3C707B00DC311A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7CF62B1F3C723900DC311A /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		DB7CF62D1F3C731E00DC311A /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		DB7CF62F1F3C782D00DC311A /* ResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DB7CF6221F3C707B00DC311A /* LaunchScreen.storyboard */,
 				DB7CF6251F3C707B00DC311A /* Info.plist */,
 				DB7CF62B1F3C723900DC311A /* CategoryTableViewController.swift */,
+				DB7CF62F1F3C782D00DC311A /* ResourceTableViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7CF61A1F3C707B00DC311A /* AppDelegate.swift in Sources */,
+				DB7CF6301F3C782D00DC311A /* ResourceTableViewController.swift in Sources */,
 				DB7CF62C1F3C723900DC311A /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

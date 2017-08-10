@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum CategoryType: String {
+    case restaurants = "restaurants"
+    case vacationSpot = "vacation-spot"
+}
+
 class CategoryTableViewController: UITableViewController {
     
     var categorieList = [Category]()
@@ -45,15 +50,27 @@ class CategoryTableViewController: UITableViewController {
 
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     
+        // Get the new view controller
+        let resourceViewController = segue.destination as! ResourceTableViewController
+        
+        guard let selectedRow = tableView.indexPathForSelectedRow?.row else {
+            return
+        }
+        
+        // Pass the selected category to the new view controller.
+        if categorieList[selectedRow].slug == CategoryType.restaurants.rawValue {
+            resourceViewController.category = CategoryType.restaurants
+        }
+        else {
+            resourceViewController.category = CategoryType.vacationSpot
+        }
+
     }
-    */
     
     // MARK: - Private
     
