@@ -22,6 +22,7 @@ public class Category {
     private Boolean active;
     private String createdAt;
     private SocialMedia socialMedia;
+    private BizHours bizHours;
     private List<Address> addresses = null;
     private List<FreeText> freeText = null;
     private ContactInfo contactInfo;
@@ -152,5 +153,13 @@ public class Category {
 
     public void setContactInfo(ContactInfo contactInfo) {
         this.contactInfo = contactInfo;
+    }
+
+    public BizHours getBizHours() {
+        return bizHours;
+    }
+
+    public void setBizHours(BizHours bizHours) {
+        this.bizHours = bizHours;
     }
 }

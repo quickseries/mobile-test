@@ -1,5 +1,6 @@
 package com.derek.quickseriestest.mobile_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,7 +16,11 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by ddibblee on 8/14/2017.
+ */
+
+public class ResourcesActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     RecyclerView.Adapter mAdapter;
@@ -24,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_resources);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle(getResources().getString(R.string.categories));
 
         setupRecyclerView();
     }
@@ -55,19 +60,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setupRecyclerView() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.category_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.resources_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         Gson gson = new Gson();
+        Intent intent = getIntent();
+        String filename = intent.getStringExtra("filename");
         JsonReader jsonReader = new JsonReader(this);
-        String jsonString = jsonReader.loadJsonFromFile("categories.json");
+        String jsonString = jsonReader.loadJsonFromFile(filename);
         Type listType = new TypeToken<List<Category>>(){}.getType();
         List<Category> categories = gson.fromJson(jsonString, listType);
 
-        mAdapter = new CategoryListAdapter(this, categories);
+        mAdapter = new ResourcesListAdapter(this, categories);
         mRecyclerView.setAdapter(mAdapter);
     }
 }

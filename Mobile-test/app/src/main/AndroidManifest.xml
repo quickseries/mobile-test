@@ -19,6 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ResourcesActivity"
+            android:label="@string/resources"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".DetailsActivity"
+            android:label="@string/details"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
