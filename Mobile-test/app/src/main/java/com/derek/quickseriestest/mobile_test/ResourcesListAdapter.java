@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.derek.quickseriestest.mobile_test.entities.Category;
 import com.google.gson.Gson;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -75,5 +77,18 @@ public class ResourcesListAdapter extends RecyclerView.Adapter<ResourcesListAdap
             mTitle = (TextView) itemView.findViewById(R.id.category_title);
             mDescription = (TextView) itemView.findViewById(R.id.category_description);
         }
+    }
+
+    public void sort(final boolean alphabetical) {
+        Collections.sort(mCategories, new Comparator<Category>() {
+            @Override
+            public int compare(Category lhs, Category rhs) {
+                if (alphabetical)
+                    return lhs.getTitle().compareTo(rhs.getTitle());
+                else
+                    return rhs.getTitle().compareTo((lhs.getTitle()));
+            }
+        });
+        notifyDataSetChanged();
     }
 }

@@ -3,6 +3,7 @@ package com.derek.quickseriestest.mobile_test;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -23,8 +24,9 @@ import java.util.List;
 public class ResourcesActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
-    RecyclerView.Adapter mAdapter;
+    ResourcesListAdapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
+    boolean alphabetical = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class ResourcesActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_resources, menu);
         return true;
     }
 
@@ -55,6 +57,13 @@ public class ResourcesActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_sort) {
+            //Sort alpha/
+            if (mAdapter != null){
+                mAdapter.sort(!alphabetical);
+            }
+            alphabetical = !alphabetical;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -65,6 +74,10 @@ public class ResourcesActivity extends AppCompatActivity {
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(),
+                LinearLayoutManager.VERTICAL);
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         Gson gson = new Gson();
         Intent intent = getIntent();

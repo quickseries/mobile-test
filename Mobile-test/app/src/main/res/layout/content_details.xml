@@ -7,88 +7,105 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.derek.quickseriestest.mobile_test.DetailsActivity"
     tools:showIn="@layout/activity_details"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/details_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/details_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/details_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/photo_description"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/details_contactinfo_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_info"
-        android:textAllCaps="true"/>
+                <TextView
+                    android:id="@+id/details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
 
-    <LinearLayout
-        android:id="@+id/details_contactinfo_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+                <TextView
+                    android:id="@+id/details_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_below="@+id/details_title"/>
 
-    <TextView
-    android:id="@+id/details_address_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/address"
-    android:textAllCaps="true"/>
+                <ImageView
+                    android:id="@+id/details_photo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/photo_description"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerInside"/>
+            </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/details_address_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+            <TextView
+                android:id="@+id/details_contactinfo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_info"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/details_notes_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/notes"
-        android:textAllCaps="true"/>
+            <LinearLayout
+                android:id="@+id/details_contactinfo_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
 
-    <LinearLayout
-        android:id="@+id/details_notes_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+            <TextView
+                android:id="@+id/details_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/details_social_media_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/social_media"
-        android:textAllCaps="true"/>
+            <LinearLayout
+                android:id="@+id/details_address_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
 
-    <LinearLayout
-        android:id="@+id/details_social_media_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"/>
+            <TextView
+                android:id="@+id/details_social_media_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/social_media"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/details_biz_hours_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/biz_hours"
-        android:textAllCaps="true"/>
+            <LinearLayout
+                android:id="@+id/details_social_media_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
 
-    <LinearLayout
-        android:id="@+id/details_biz_hours_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+            <TextView
+                android:id="@+id/details_biz_hours_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/biz_hours"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
 
+            <LinearLayout
+                android:id="@+id/details_biz_hours_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            </LinearLayout>
+    </ScrollView>
 </LinearLayout>
