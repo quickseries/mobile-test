@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.derek.quickseriestest.mobile_test.DetailsActivity"
+    tools:showIn="@layout/activity_details"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
+
+                <TextView
+                    android:id="@+id/details_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_below="@+id/details_title"/>
+
+                <ImageView
+                    android:id="@+id/details_photo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/photo_description"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerInside"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/details_contactinfo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_info"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:id="@+id/details_contactinfo_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/details_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:id="@+id/details_address_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/details_social_media_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/social_media"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:id="@+id/details_social_media_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView
+                android:id="@+id/details_biz_hours_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/biz_hours"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:id="@+id/details_biz_hours_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            </LinearLayout>
+    </ScrollView>
+</LinearLayout>
