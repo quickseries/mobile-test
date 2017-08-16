@@ -295,7 +295,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-    private void loadSocialMedia(SocialMedia socialMedia) {
+    private void loadSocialMedia(final SocialMedia socialMedia) {
         if (socialMedia == null) {
             socialMediaTitle.setVisibility(View.GONE);
             socialMediaTitle.setVisibility(View.GONE);
@@ -305,27 +305,64 @@ public class DetailsActivity extends AppCompatActivity {
             List<String> facebook = socialMedia.getFacebook();
             List<String> youtube = socialMedia.getYoutubeChannel();
 
+
+            float scale = getResources().getDisplayMetrics().density;
+            int dbtopx = (int) (20*scale + 0.5f);
+
             if (twitter != null && twitter.size() > 0) {
-                for (String s : twitter) {
+                for (final String s : twitter) {
                     ImageView iv = new ImageView(this);
+                    iv.setPadding(0, dbtopx, dbtopx, dbtopx);
                     iv.setImageResource(R.drawable.ic_twitter_social_icon_circle_color);
                     socialMediaLayout.addView(iv);
+
+                    iv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (s != null && s.length() > 0) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+                                startActivity(intent);
+                            }
+                        }
+                    });
                 }
             }
 
             if (facebook != null && facebook.size() > 0) {
-                for (String s : facebook) {
+                for (final String s : facebook) {
                     ImageView iv = new ImageView(this);
+                    iv.setPadding(0, dbtopx, dbtopx, dbtopx);
                     iv.setImageResource(R.drawable.ic_facebook_icon);
                     socialMediaLayout.addView(iv);
+
+                    iv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (s != null && s.length() > 0) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+                                startActivity(intent);
+                            }
+                        }
+                    });
                 }
             }
 
             if (youtube != null && youtube.size() > 0) {
-                for (String s : youtube) {
+                for (final String s : youtube) {
                     ImageView iv = new ImageView(this);
+                    iv.setPadding(0, dbtopx, dbtopx, dbtopx);
                     iv.setImageResource(R.drawable.ic_youtube_24dp);
                     socialMediaLayout.addView(iv);
+
+                    iv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (s != null && s.length() > 0) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+                                startActivity(intent);
+                            }
+                        }
+                    });
                 }
             }
         }
