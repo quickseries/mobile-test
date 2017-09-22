@@ -17,7 +17,7 @@ import UIKit
 
 class ContactInfoTableViewCell: UITableViewCell {
     
-    var delegate: ContactInfoTableViewCellProtocol!
+    weak var delegate: ContactInfoTableViewCellProtocol!
     
     var titleLabel:UILabel = {
         let label = UILabel()

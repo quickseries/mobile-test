@@ -24,6 +24,7 @@ class ResourcesViewController: UIViewController{
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.CellResources)
         tableView.register(BusinessHoursTableViewCell.self, forCellReuseIdentifier: Constants.CellBusinessHours)
         tableView.register(ContactInfoTableViewCell.self, forCellReuseIdentifier: Constants.CellContactInfo)
+        tableView.register(SocialMediaTableViewCell.self, forCellReuseIdentifier: Constants.CellSocialMedia)
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 100.0
         return tableView
@@ -162,7 +163,7 @@ class ResourcesViewController: UIViewController{
     }
 }
 
-extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCellProtocol, MFMailComposeViewControllerDelegate {
+extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCellProtocol, MFMailComposeViewControllerDelegate, SocialMediaTableViewCellProtocol {
     
     //MARK: UITableViewDataSource
     
@@ -212,14 +213,13 @@ extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellResources, for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellResources, for: indexPath)
         
         let section = dataSections[indexPath.section]
         
         switch section {
         case Constants.Addresses:
             var cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellContactInfo, for: indexPath) as? ContactInfoTableViewCell
-            
             if cell == nil {
                 cell = ContactInfoTableViewCell(style: .default, reuseIdentifier: Constants.CellContactInfo)
             }
@@ -233,9 +233,8 @@ extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCe
                 }
                 cell?.setupAddress()
                 cell?.delegate = self
-                
-                return cell!
             }
+            return cell!
         case Constants.ContactInfo:
             var cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellContactInfo, for: indexPath) as? ContactInfoTableViewCell
             
@@ -267,13 +266,25 @@ extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCe
             
             return cell!
         case Constants.SocialMedia:
+            var cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellSocialMedia, for: indexPath) as? SocialMediaTableViewCell
+            
+            if cell == nil {
+                cell = SocialMediaTableViewCell(style: .default, reuseIdentifier: Constants.CellSocialMedia)
+            }
+            cell?.selectionStyle = .none
             if dataSource is Restaurant{
                 let social = (dataSource as! Restaurant).socialMedia?.allSocialMedia[indexPath.row]
-                cell.textLabel?.text = social?.details
+                cell?.mediaString = social?.details
+                cell?.setupButton(type: SocialMediaFields(rawValue: (social?.type)!)!)
+                cell?.delegate = self
+                
             } else {
                 let social = (dataSource as! VacationSpot).socialMedia?.allSocialMedia[indexPath.row]
-                cell.textLabel?.text = social?.details
+                cell?.mediaString = social?.details
+                cell?.setupButton(type: SocialMediaFields(rawValue: (social?.type)!)!)
+                cell?.delegate = self
             }
+            return cell!
         case Constants.BusinessHours:
             var cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellBusinessHours, for: indexPath) as? BusinessHoursTableViewCell
             
@@ -288,15 +299,12 @@ extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCe
                 if let from = bizHour?.from, let to = bizHour?.to{
                     cell?.timeLabel.text = "\(from) - \(to)"
                 }
-                return cell!
             }
+            return cell!
         default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellResources, for: indexPath)
             return cell
         }
-        
-        cell.selectionStyle = .none
-        
-        return cell
     }
     
     //MARK: ContactInfoTableViewCellProtocol
@@ -356,5 +364,11 @@ extension ResourcesViewController: UITableViewDataSource, ContactInfoTableViewCe
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: SocialMediaTableViewCellProtocol
+    func openSocialMedia(social: String) {
+        let svc = SFSafariViewController(url: NSURL(string: social)! as URL)
+        present(svc, animated: true, completion: nil)
     }
 }

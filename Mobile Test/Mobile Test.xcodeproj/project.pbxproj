@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01064091F7554C600D1EEC0 /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01064081F7554C600D1EEC0 /* SocialMediaTableViewCell.swift */; };
 		F04BC27A1F74A91A00AB0A66 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04BC2791F74A91A00AB0A66 /* UIView+Constraints.swift */; };
 		F04BC27C1F74AB2300AB0A66 /* UITableView+HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04BC27B1F74AB2300AB0A66 /* UITableView+HeaderView.swift */; };
 		F04BC27E1F74AF8B00AB0A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04BC27D1F74AF8B00AB0A66 /* Constants.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F01064081F7554C600D1EEC0 /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
 		F04BC2791F74A91A00AB0A66 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		F04BC27B1F74AB2300AB0A66 /* UITableView+HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderView.swift"; sourceTree = "<group>"; };
 		F04BC27D1F74AF8B00AB0A66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				F0A4AED01F747164000E2A2A /* ResourceHeaderView.swift */,
 				F04BC2801F74B87700AB0A66 /* BusinessHoursTableViewCell.swift */,
 				F04BC2841F74CE8D00AB0A66 /* ContactInfoTableViewCell.swift */,
+				F01064081F7554C600D1EEC0 /* SocialMediaTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				F0A4AEBA1F74426D000E2A2A /* Restaurant.swift in Sources */,
 				F04BC27E1F74AF8B00AB0A66 /* Constants.swift in Sources */,
 				F0A4AE821F743001000E2A2A /* AppDelegate.swift in Sources */,
+				F01064091F7554C600D1EEC0 /* SocialMediaTableViewCell.swift in Sources */,
 				F0A4AEC91F746C51000E2A2A /* RestaurantsViewController.swift in Sources */,
 				F04BC2811F74B87700AB0A66 /* BusinessHoursTableViewCell.swift in Sources */,
 				F0A4AEC41F745883000E2A2A /* FreeText.swift in Sources */,
