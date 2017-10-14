@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/</string>
+    <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/categories.json</string>-->
+    <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/restaurants.json</string>-->
+    <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/vacation-spot.json</string>-->
+</resources>
