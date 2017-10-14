@@ -1,0 +1,3 @@
+[submodule "submodules/quickseries-core"]
+	path = submodules/quickseries-core
+	url = git@github.com:quickseries/mobile-test.git

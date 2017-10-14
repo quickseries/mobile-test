@@ -1,0 +1,3 @@
+include ':app', ':quickseries-core', ':http-layer'
+project(':quickseries-core').projectDir = new File('../submodules/quickseries-core')
+project(':http-layer').projectDir = new File('../submodules/quickseries-core/submodules/http-layer')

@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply from: 'tools/j2objc.gradle'
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+evaluationDependsOn(':http-layer')
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/main/generated']
+        }
+    }
+}
+
+dependencies {
+    compile project(':http-layer')
+    testCompile project(':http-layer').sourceSets.test.runtimeClasspath
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'org.mockito:mockito-core:2.7.11'
+    testCompile 'org.json:json:20160810'
+}
+
+clean {
+    delete sourceSets.generated.java.srcDirs
+}
+
+idea {
+    module {
+        excludeDirs += file('.idea')
+        excludeDirs += file('doc')
+        excludeDirs += file('generated-objc')
+        excludeDirs += file('generated-objc-temp')
+        sourceDirs += file('src/main/generated')
+
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+jar.dependsOn test
+
