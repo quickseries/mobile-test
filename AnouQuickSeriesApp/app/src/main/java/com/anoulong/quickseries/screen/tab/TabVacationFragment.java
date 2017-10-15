@@ -86,6 +86,8 @@ public class TabVacationFragment extends MainFragment implements VacationContrac
         return TAG;
     }
 
+
+    // Implementation VacationContract.View
     @Override
     public void showVacationSpots(List<VacationContract.Vacation> vacations) {
         adapter.setData(vacations);
@@ -99,6 +101,6 @@ public class TabVacationFragment extends MainFragment implements VacationContrac
 
     @Override
     public void showComplete() {
-
+        // stop loading
     }
 }

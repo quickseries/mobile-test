@@ -18,7 +18,6 @@ public abstract class MainFragment extends BaseFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(getActivity()).inject(this);
-        setHasOptionsMenu(true);
     }
 
     @Override

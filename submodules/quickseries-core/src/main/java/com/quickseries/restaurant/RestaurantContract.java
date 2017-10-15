@@ -26,6 +26,20 @@ public interface RestaurantContract {
          * @param restaurant
          */
         void didSelectRestaurant(Restaurant restaurant);
+
+        /**
+         * Call when a restaurant sorted ascending
+         *
+         * @param restaurants
+         */
+        void sortAscending(List<RestaurantContract.Restaurant> restaurants);
+
+        /**
+         * Call when a restaurant sorted descending
+         *
+         * @param restaurants
+         */
+        void sortDescending(List<RestaurantContract.Restaurant> restaurants);
     }
 
     class Restaurant implements Serializable {

@@ -1,5 +1,7 @@
 package com.quickseries.restaurant;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import retrofit2.Retrofit;
@@ -53,6 +55,29 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
     @Override
     public void didSelectRestaurant(RestaurantContract.Restaurant restaurant) {
         router.showRestaurantDetailsScreen(restaurant);
+    }
+
+    @Override
+    public void sortAscending(List<RestaurantContract.Restaurant> restaurants) {
+        Collections.sort(restaurants, new Comparator<RestaurantContract.Restaurant>() {
+            @Override
+            public int compare(RestaurantContract.Restaurant r1, RestaurantContract.Restaurant r2) {
+                return r1.getTitle().compareTo(r2.getTitle());
+            }
+        });
+        mView.showRestaurant(restaurants);
+    }
+
+    @Override
+    public void sortDescending(List<RestaurantContract.Restaurant> restaurants) {
+        Collections.sort(restaurants, new Comparator<RestaurantContract.Restaurant>() {
+            @Override
+            public int compare(RestaurantContract.Restaurant r1, RestaurantContract.Restaurant r2) {
+                return r2.getTitle().compareTo(r1.getTitle());
+            }
+        });
+
+        mView.showRestaurant(restaurants);
     }
 
     // This could be a use case

@@ -3,12 +3,18 @@ package com.anoulong.quickseries.screen.tab;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.main.MainFragment;
@@ -16,6 +22,7 @@ import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.restaurant.RestaurantPresenter;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -26,19 +33,20 @@ import retrofit2.Retrofit;
  * Created by Anou on 2017-10-14.
  */
 
-public class TabRestaurantFragment extends MainFragment implements RestaurantContract.View{
+public class TabRestaurantFragment extends MainFragment implements RestaurantContract.View {
 
     private static final String TAG = TabRestaurantFragment.class.getSimpleName();
 
     @Inject
     Retrofit retrofit;
+    RestaurantPresenter presenter;
 
     @BindView(R.id.fragment_restaurant_recyclerview)
     RecyclerView recyclerview;
+    @BindView(R.id.fragment_restaurant_overflow)
+    ImageButton fragmentRestaurantOverflow;
 
     private TabRestaurantAdapter adapter;
-
-    RestaurantPresenter presenter;
 
     public static TabRestaurantFragment newInstance() {
         return new TabRestaurantFragment();
@@ -48,7 +56,7 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(getActivity()).inject(this);
-        presenter = new RestaurantPresenter(retrofit, this, (RestaurantContract.Router)getActivity());
+        presenter = new RestaurantPresenter(retrofit, this, (RestaurantContract.Router) getActivity());
         presenter.loadRestaurants();
     }
 
@@ -74,7 +82,12 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
                 presenter.didSelectRestaurant(restaurant);
             }
         });
-
+        fragmentRestaurantOverflow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopup(v);
+            }
+        });
     }
 
     @Override
@@ -87,7 +100,7 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
         return TAG;
     }
 
-    // RestaurantContract.View
+    // Implementation RestaurantContract.View
     @Override
     public void showRestaurant(List<RestaurantContract.Restaurant> restaurants) {
         adapter.setData(restaurants);
@@ -101,6 +114,29 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
 
     @Override
     public void showComplete() {
-
+        // stop loading
     }
+
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(getActivity(), v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.menu_restaurant, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_restaurant_sort_ascending:
+                        presenter.sortAscending(adapter.getData());
+                        return true;
+                    case R.id.menu_restaurant_sort_descending:
+                        presenter.sortDescending(adapter.getData());
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        popup.show();
+    }
+
 }
