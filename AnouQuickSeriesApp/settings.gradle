@@ -1,2 +1,2 @@
-include ':app', ':quickseries-core', ':core'
+include ':app', ':quickseries-core'
 project(':quickseries-core').projectDir = new File('../submodules/quickseries-core')

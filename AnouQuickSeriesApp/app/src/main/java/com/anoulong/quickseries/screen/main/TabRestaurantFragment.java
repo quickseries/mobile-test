@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
@@ -33,11 +34,7 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
     @Inject
     Retrofit retrofit;
 
-    @BindView(R.id.restaurant_text)
-    TextView restaurantText;
-
     RestaurantPresenter presenter;
-
 
     public static TabRestaurantFragment newInstance() {
         return new TabRestaurantFragment();
@@ -64,17 +61,15 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
 
     @Override
     public void showRestaurant(List<Restaurant> restaurants) {
-        Timber.d(restaurants.size() + "");
-        restaurantText.setText(restaurants.size() + "");
+
     }
 
     @Override
     public void showError(String message) {
-
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showComplete() {
-
     }
 }

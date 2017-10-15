@@ -27,7 +27,9 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
 
     @Override
     public void loadRestaurants() {
-        retrofit.create(GetRestaurantOperation.class).fetchRestaurants().subscribeOn(Schedulers.io())
+        retrofit.create(GetRestaurantOperation.class)
+                .fetchRestaurants()
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
                 .subscribe(new Observer<List<Restaurant>>() {
@@ -49,7 +51,7 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
     }
 
     public interface GetRestaurantOperation {
-        @GET("/restaurants.json")
+        @GET("restaurants.json")
         Observable<List<Restaurant>> fetchRestaurants();
     }
 }

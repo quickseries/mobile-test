@@ -5,4 +5,14 @@ package com.quickseries.data;
  */
 
 public class Restaurant {
+
+    private final String title;
+
+    public Restaurant(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }

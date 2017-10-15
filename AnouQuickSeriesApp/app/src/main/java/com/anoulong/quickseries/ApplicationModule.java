@@ -75,13 +75,12 @@ public class ApplicationModule {
     @Provides
     @Singleton
     Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient, EndpointManager endpointManager) {
-        Retrofit retrofit = new Retrofit.Builder()
+        return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(endpointManager.getBackendBaseUrl())
                 .client(okHttpClient)
                 .build();
-        return retrofit;
     }
 
     @Provides
