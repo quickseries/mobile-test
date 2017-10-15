@@ -1,7 +1,11 @@
 package com.anoulong.quickseries;
 
 import com.anoulong.quickseries.screen.BaseActivity;
-import com.anoulong.quickseries.screen.MainActivity;
+import com.anoulong.quickseries.screen.BaseFragment;
+import com.anoulong.quickseries.screen.main.MainActivity;
+import com.anoulong.quickseries.screen.main.MainFragment;
+import com.anoulong.quickseries.screen.main.TabRestaurantFragment;
+import com.anoulong.quickseries.screen.main.TabVacationFragment;
 
 import javax.inject.Singleton;
 
@@ -20,4 +24,10 @@ public interface ApplicationComponent {
     void inject(BaseActivity target);
 //    void inject(SplashActivity target);
     void inject(MainActivity target);
+
+    //fragment
+    void inject(BaseFragment target);
+    void inject(MainFragment target);
+    void inject(TabRestaurantFragment target);
+    void inject(TabVacationFragment target);
 }
