@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseActivity;
+import com.anoulong.quickseries.screen.restaurant.RestaurantActivity;
 import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.vacation.VacationContract;
 
@@ -30,6 +31,11 @@ public class MainActivity extends BaseActivity implements RestaurantContract.Rou
     TabLayout mTabLayout;
 
     private MainPagerAdapter mMainPagerAdapter;
+
+    public static Intent intent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +87,7 @@ public class MainActivity extends BaseActivity implements RestaurantContract.Rou
 
     @Override
     public void showRestaurantDetailsScreen(RestaurantContract.Restaurant restaurant) {
+        startActivity(RestaurantActivity.intent(this));
 
     }
 

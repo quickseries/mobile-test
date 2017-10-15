@@ -3,11 +3,18 @@ package com.anoulong.quickseries.screen;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
+import com.anoulong.quickseries.R;
+
+import java.util.Collections;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -77,6 +84,47 @@ public class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         clearObservables();
+    }
+
+    protected void replaceFragment(BaseFragment fragment, boolean addToBackStack) {
+        replaceFragment(fragment, addToBackStack, true);
+    }
+
+    protected void replaceFragment(BaseFragment fragment, boolean addToBackStack, boolean animate) {
+        if (fragment != null && !fragment.isVisible()) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            Fragment currentFragment = getVisibleFragment();
+            if (currentFragment != null) {
+                if (animate) {
+//                    transaction.setCustomAnimations(R.anim.fragment_slide_left_enter, R.anim.fragment_slide_left_exit, R.anim.fragment_slide_right_enter, R.anim.fragment_slide_right_exit);
+                }
+                transaction.hide(currentFragment);
+            }
+            transaction.add(getFragmentRoot(), fragment, fragment.getFragmentTag());
+            if (addToBackStack) {
+                transaction.addToBackStack(fragment.getFragmentTag());
+            }
+            transaction.commit();
+        }
+    }
+
+
+    protected Fragment getVisibleFragment() {
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        List<Fragment> fragments = fragmentManager.getFragments();
+        Collections.reverse(fragments);
+        if(fragments != null){
+            for(Fragment fragment : fragments){
+                if(fragment != null && fragment.isVisible()) {
+                    return fragment;
+                }
+            }
+        }
+        return null;
+    }
+
+    protected int getFragmentRoot() {
+        return R.id.container;
     }
 
 }

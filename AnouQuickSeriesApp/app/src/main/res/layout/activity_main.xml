@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fitsSystemWindows="true"
-                android:src="@drawable/common_google_signin_btn_icon_light"
+                android:src="@drawable/img_quickseries"
                 android:visibility="visible" />
 
         </android.support.v7.widget.Toolbar>

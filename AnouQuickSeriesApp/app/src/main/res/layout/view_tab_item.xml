@@ -32,7 +32,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:textAllCaps="false"
-        android:textColor="@color/bottom_tabbar_color"
-        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
         tools:text="@string/tab_bar_restaurant" />
 </LinearLayout>

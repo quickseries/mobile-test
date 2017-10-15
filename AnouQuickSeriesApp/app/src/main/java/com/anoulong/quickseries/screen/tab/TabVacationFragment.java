@@ -83,6 +83,11 @@ public class TabVacationFragment extends MainFragment implements VacationContrac
     }
 
     @Override
+    protected String getFragmentTag() {
+        return TAG;
+    }
+
+    @Override
     public void showVacationSpots(List<VacationContract.Vacation> vacations) {
         adapter.setData(vacations);
         adapter.notifyDataSetChanged();

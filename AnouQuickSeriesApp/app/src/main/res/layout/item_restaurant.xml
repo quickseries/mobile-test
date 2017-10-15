@@ -6,7 +6,7 @@
     android:id="@+id/item_restaurant_card_view"
     style="@style/CardViewStyle"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/item_height"
+    android:layout_height="@dimen/item_restaurant_height"
     android:layout_gravity="center"
     android:layout_marginBottom="@dimen/margin_extra_small"
     android:layout_marginLeft="@dimen/margin_small"
@@ -14,7 +14,7 @@
     android:layout_marginTop="@dimen/margin_extra_small"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    card_view:cardBackgroundColor="@color/colorAccent"
+    card_view:cardBackgroundColor="@color/white"
     card_view:contentPadding="@dimen/margin_extra_small">
 
     <LinearLayout
@@ -34,7 +34,7 @@
             android:duplicateParentState="true"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textColor="@color/white" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <ImageView
             android:id="@+id/item_restaurant_image"

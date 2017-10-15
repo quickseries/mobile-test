@@ -76,5 +76,6 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected abstract String getFragmentTitle();
+    protected abstract String getFragmentTag();
 
 }

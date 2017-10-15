@@ -82,6 +82,11 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
         return getString(R.string.tab_bar_restaurant);
     }
 
+    @Override
+    protected String getFragmentTag() {
+        return TAG;
+    }
+
     // RestaurantContract.View
     @Override
     public void showRestaurant(List<RestaurantContract.Restaurant> restaurants) {
