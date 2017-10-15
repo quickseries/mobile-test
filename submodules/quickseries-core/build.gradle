@@ -26,7 +26,6 @@ repositories {
     mavenCentral()
 }
 
-evaluationDependsOn(':http-layer')
 
 sourceSets {
     generated {
@@ -37,8 +36,6 @@ sourceSets {
 }
 
 dependencies {
-    compile project(':http-layer')
-    testCompile project(':http-layer').sourceSets.test.runtimeClasspath
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.mockito:mockito-core:2.7.11'

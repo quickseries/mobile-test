@@ -24,6 +24,15 @@
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+            <ImageView
+                android:id="@+id/toolbar_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/common_google_signin_btn_icon_light"
+                android:visibility="visible" />
+
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout

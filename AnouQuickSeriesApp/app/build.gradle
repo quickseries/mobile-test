@@ -95,11 +95,14 @@ android {
     }
 
 }
+evaluationDependsOn(':quickseries-core')
 
 def androidSupportVersion = "26.1.0"
 def googleServicesVersion = "11.0.4"
 
 dependencies {
+    compile project(':quickseries-core')
+
     // Android support
     compile "com.android.support:appcompat-v7:${androidSupportVersion}"
     compile "com.android.support:design:${androidSupportVersion}"

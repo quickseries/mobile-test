@@ -1,16 +1,3 @@
-/*******************************************************************************
- * Smartika inc.
- * <p>
- * Copyright (c) 2000-2015 Artika For Living Inc.
- * All rights reserved.
- * <p>
- * This software is the confidential and proprietary information of Smartika
- * ("Confidential Information"). You shall not disclose such Confidential
- * Information and shall use it only in accordance with the terms of the
- * license agreement you entered into with Smartika.
- * <p>
- * Created by Anou Chanthavong on 2016-05-26.
- ******************************************************************************/
 package com.anoulong.quickseries.manager;
 
 import android.content.SharedPreferences;

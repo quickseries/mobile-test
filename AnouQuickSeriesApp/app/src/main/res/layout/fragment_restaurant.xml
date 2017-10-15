@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/smooth_white">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/home_room_grid"
+    <TextView
+        android:id="@+id/restaurant_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_restaurant" />
+        android:text="@string/tab_bar_restaurant"
+        android:textColor="@color/black"
+        android:textSize="32sp"/>
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/home_room_grid"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="?attr/actionBarSize"-->
+        <!--android:scrollbars="vertical"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+        <!--tools:listitem="@layout/item_restaurant" />-->
 
 </android.support.design.widget.CoordinatorLayout>

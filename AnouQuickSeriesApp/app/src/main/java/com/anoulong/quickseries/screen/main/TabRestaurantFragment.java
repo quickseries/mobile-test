@@ -5,17 +5,39 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
+import com.quickseries.data.Restaurant;
+import com.quickseries.restaurant.RestaurantContract;
+import com.quickseries.restaurant.RestaurantPresenter;
+
+import java.util.List;
+import java.util.Timer;
+
+import javax.inject.Inject;
+
+import butterknife.BindView;
+import retrofit2.Retrofit;
+import timber.log.Timber;
 
 /**
  * Created by Anou on 2017-10-14.
  */
 
-public class TabRestaurantFragment extends MainFragment {
+public class TabRestaurantFragment extends MainFragment implements RestaurantContract.View{
 
     private static final String TAG = TabRestaurantFragment.class.getSimpleName();
+
+    @Inject
+    Retrofit retrofit;
+
+    @BindView(R.id.restaurant_text)
+    TextView restaurantText;
+
+    RestaurantPresenter presenter;
+
 
     public static TabRestaurantFragment newInstance() {
         return new TabRestaurantFragment();
@@ -25,17 +47,39 @@ public class TabRestaurantFragment extends MainFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(getActivity()).inject(this);
+//        presenter = new RestaurantPresenter(retrofit, this);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_vacation, container, false);
+        return inflater.inflate(R.layout.fragment_restaurant, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+//        presenter.loadRestaurants();
+    }
 
     @Override
     protected String getFragmentTitle() {
         return getString(R.string.tab_bar_restaurant);
+    }
+
+    @Override
+    public void showRestaurant(List<Restaurant> restaurants) {
+        Timber.d(restaurants.size() + "");
+        restaurantText.setText(restaurants.size() + "");
+    }
+
+    @Override
+    public void showError(String message) {
+
+    }
+
+    @Override
+    public void showComplete() {
+
     }
 }
