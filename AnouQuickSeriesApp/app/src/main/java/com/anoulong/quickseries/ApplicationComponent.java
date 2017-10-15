@@ -4,8 +4,8 @@ import com.anoulong.quickseries.screen.BaseActivity;
 import com.anoulong.quickseries.screen.BaseFragment;
 import com.anoulong.quickseries.screen.main.MainActivity;
 import com.anoulong.quickseries.screen.main.MainFragment;
-import com.anoulong.quickseries.screen.main.TabRestaurantFragment;
-import com.anoulong.quickseries.screen.main.TabVacationFragment;
+import com.anoulong.quickseries.screen.tab.TabRestaurantFragment;
+import com.anoulong.quickseries.screen.tab.TabVacationFragment;
 
 import javax.inject.Singleton;
 

@@ -18,19 +18,42 @@ public interface RestaurantContract {
 
     interface Presenter {
         void loadRestaurants();
+
+        /**
+         * Call when a restaurant is being selected
+         *
+         * @param restaurant
+         */
+        void didSelectRestaurant(Restaurant restaurant);
     }
 
-     class Restaurant {
+    class Restaurant {
 
         private final String title;
+        private final String description;
+        private final String photo;
 
-        public Restaurant(String title) {
+        public Restaurant(String title, String description, String photo) {
             this.title = title;
+            this.description = description;
+            this.photo = photo;
         }
 
         public String getTitle() {
             return title;
         }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String getPhoto() {
+            return photo;
+        }
     }
 
+
+    interface Router {
+        void showRestaurantDetailsScreen(Restaurant restaurant);
+    }
 }

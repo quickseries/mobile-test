@@ -11,11 +11,12 @@ import android.support.v4.view.ViewPager;
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseActivity;
+import com.quickseries.restaurant.RestaurantContract;
 
 import butterknife.BindView;
 import timber.log.Timber;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements RestaurantContract.Router{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String TAB_INDEX = TAG + "TAB_INDEX";
@@ -77,4 +78,8 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void showRestaurantDetailsScreen(RestaurantContract.Restaurant restaurant) {
+
+    }
 }

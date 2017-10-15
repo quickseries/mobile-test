@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anoulong.quickseries.R;
+import com.anoulong.quickseries.screen.tab.TabRestaurantFragment;
+import com.anoulong.quickseries.screen.tab.TabVacationFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
     public final int PAGE_COUNT = 2;
