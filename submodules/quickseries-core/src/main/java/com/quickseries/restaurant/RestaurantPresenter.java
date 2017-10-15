@@ -1,6 +1,5 @@
 package com.quickseries.restaurant;
 
-import com.quickseries.data.Restaurant;
 import java.util.List;
 
 import retrofit2.Retrofit;
@@ -32,7 +31,7 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
-                .subscribe(new Observer<List<Restaurant>>() {
+                .subscribe(new Observer<List<RestaurantContract.Restaurant>>() {
                     @Override
                     public void onCompleted() {
                         mView.showComplete();
@@ -44,14 +43,15 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
                     }
 
                     @Override
-                    public void onNext(List<Restaurant> restaurants) {
+                    public void onNext(List<RestaurantContract.Restaurant> restaurants) {
                         mView.showRestaurant(restaurants);
                     }
                 });
     }
 
+    // This could be a use case
     public interface GetRestaurantOperation {
         @GET("restaurants.json")
-        Observable<List<Restaurant>> fetchRestaurants();
+        Observable<List<RestaurantContract.Restaurant>> fetchRestaurants();
     }
 }

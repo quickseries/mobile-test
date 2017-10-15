@@ -1,8 +1,5 @@
 package com.quickseries.restaurant;
 
-import com.quickseries.data.Category;
-import com.quickseries.data.Restaurant;
-
 import java.util.List;
 
 /**
@@ -11,8 +8,9 @@ import java.util.List;
 
 public interface RestaurantContract {
     interface View {
-        void showRestaurant(List<Restaurant> restaurants);
+        void showRestaurant(List<RestaurantContract.Restaurant> restaurants);
 
+        // TODO: 2017-10-15 Refactor me to handle error properly
         void showError(String message);
 
         void showComplete();
@@ -21,4 +19,18 @@ public interface RestaurantContract {
     interface Presenter {
         void loadRestaurants();
     }
+
+     class Restaurant {
+
+        private final String title;
+
+        public Restaurant(String title) {
+            this.title = title;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+    }
+
 }

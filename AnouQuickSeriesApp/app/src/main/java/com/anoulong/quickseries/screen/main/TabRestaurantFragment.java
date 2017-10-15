@@ -5,23 +5,18 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
-import com.quickseries.data.Restaurant;
 import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.restaurant.RestaurantPresenter;
 
 import java.util.List;
-import java.util.Timer;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
 import retrofit2.Retrofit;
-import timber.log.Timber;
 
 /**
  * Created by Anou on 2017-10-14.
@@ -60,7 +55,7 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
     }
 
     @Override
-    public void showRestaurant(List<Restaurant> restaurants) {
+    public void showRestaurant(List<RestaurantContract.Restaurant> restaurants) {
 
     }
 
