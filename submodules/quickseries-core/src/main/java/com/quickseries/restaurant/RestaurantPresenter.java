@@ -15,11 +15,9 @@ import rx.schedulers.Schedulers;
 
 public class RestaurantPresenter implements RestaurantContract.Presenter {
 
-
     public Retrofit retrofit;
     RestaurantContract.View mView;
     private RestaurantContract.Router router;
-
 
     public RestaurantPresenter(Retrofit retrofit, RestaurantContract.View mView, RestaurantContract.Router router) {
         this.retrofit = retrofit;
@@ -54,7 +52,6 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
 
     @Override
     public void didSelectRestaurant(RestaurantContract.Restaurant restaurant) {
-
         router.showRestaurantDetailsScreen(restaurant);
     }
 

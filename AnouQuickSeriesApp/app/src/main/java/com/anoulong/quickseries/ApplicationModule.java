@@ -1,17 +1,13 @@
 package com.anoulong.quickseries;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.anoulong.quickseries.manager.EncryptionManager;
 import com.anoulong.quickseries.manager.EndpointManager;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.quickseries.restaurant.RestaurantContract;
-import com.quickseries.restaurant.RestaurantPresenter;
 
 import javax.inject.Singleton;
 
@@ -81,12 +77,6 @@ public class ApplicationModule {
                 .baseUrl(endpointManager.getBackendBaseUrl())
                 .client(okHttpClient)
                 .build();
-    }
-
-    @Provides
-    @Singleton
-    EncryptionManager provideEncryptionManager(SharedPreferences sharedPreferences) {
-        return new EncryptionManager(sharedPreferences);
     }
 
     @Provides

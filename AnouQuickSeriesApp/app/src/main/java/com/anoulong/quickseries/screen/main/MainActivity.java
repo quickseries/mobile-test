@@ -12,11 +12,12 @@ import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseActivity;
 import com.quickseries.restaurant.RestaurantContract;
+import com.quickseries.vacation.VacationContract;
 
 import butterknife.BindView;
 import timber.log.Timber;
 
-public class MainActivity extends BaseActivity implements RestaurantContract.Router{
+public class MainActivity extends BaseActivity implements RestaurantContract.Router, VacationContract.Router{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String TAB_INDEX = TAG + "TAB_INDEX";
@@ -80,6 +81,11 @@ public class MainActivity extends BaseActivity implements RestaurantContract.Rou
 
     @Override
     public void showRestaurantDetailsScreen(RestaurantContract.Restaurant restaurant) {
+
+    }
+
+    @Override
+    public void showVacationDetailsScreen(VacationContract.Vacation vacation) {
 
     }
 }
