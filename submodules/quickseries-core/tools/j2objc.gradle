@@ -1,8 +1,0 @@
-task generateObjc(type: Exec) {
-    commandLine './generate_objc.sh'
-}
-
-//noinspection GroovyAssignabilityCheck
-task generateCore(dependsOn: test) << {
-    tasks["generateObjc"].execute()
-}

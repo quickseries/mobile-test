@@ -95,7 +95,6 @@ android {
     }
 
 }
-evaluationDependsOn(':quickseries-core')
 
 def androidSupportVersion = "26.1.0"
 def googleServicesVersion = "11.0.4"
@@ -116,14 +115,6 @@ dependencies {
     compile "com.google.android.gms:play-services-gcm:${googleServicesVersion}"
     compile 'com.google.code.gson:gson:2.7'
 
-    //Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
-    //OkHttp
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-    compile 'com.squareup.okio:okio:1.7.0'
-
     //Stream API from Java 8 rewritten on iterators for Java 7 and below.
 
     //https://github.com/aNNiMON/Lightweight-Stream-API
@@ -133,8 +124,8 @@ dependencies {
      **********************************/
 
     // Dependency Injection for core
-    compile "com.google.dagger:dagger:2.11"
-    apt 'com.google.dagger:dagger-compiler:2.11'
+    compile "com.google.dagger:dagger:2.9"
+    apt 'com.google.dagger:dagger-compiler:2.9'
     provided 'javax.annotation:jsr250-api:1.0'
     // Dependency Injection for android Views and ID
     compile "com.jakewharton:butterknife:8.6.0"
@@ -142,9 +133,20 @@ dependencies {
     //Image Library
     compile "com.squareup.picasso:picasso:2.5.2"
 
-    // RxJava
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    //OkHttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.7.0'
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+
+    //RxJava
     compile "io.reactivex:rxandroid:1.2.1"
     compile "io.reactivex:rxjava:1.2.7"
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
     // RxBinding
     compile "com.jakewharton.rxbinding:rxbinding:1.0.1"
     compile "com.jakewharton.rxbinding:rxbinding-design:1.0.1"
@@ -166,4 +168,13 @@ dependencies {
     androidTestCompile "com.google.dexmaker:dexmaker:1.2"
     androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
     androidTestApt 'com.google.dagger:dagger-compiler:2.9'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "com.android.support:support-annotations:${androidSupportVersion}"
+        force "com.android.support:support-v4:${androidSupportVersion}"
+        force "com.android.support:appcompat-v7:${androidSupportVersion}"
+        force "com.android.support:design:${androidSupportVersion}"
+    }
 }

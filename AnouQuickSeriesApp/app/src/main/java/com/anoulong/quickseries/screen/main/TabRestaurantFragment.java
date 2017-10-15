@@ -47,19 +47,14 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(getActivity()).inject(this);
-//        presenter = new RestaurantPresenter(retrofit, this);
+        presenter = new RestaurantPresenter(retrofit, this);
+        presenter.loadRestaurants();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_restaurant, container, false);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-//        presenter.loadRestaurants();
     }
 
     @Override

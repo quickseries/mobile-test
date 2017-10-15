@@ -1,67 +1,48 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
-}
-
-apply plugin: 'java'
-apply plugin: 'jacoco'
-apply plugin: 'idea'
-apply plugin: 'maven'
-apply plugin: 'maven-publish'
-apply from: 'tools/j2objc.gradle'
-
-allprojects {
-    repositories {
-        jcenter()
-    }
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-
-sourceSets {
-    generated {
-        java {
-            srcDirs = ['src/main/generated']
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'org.mockito:mockito-core:2.7.11'
-    testCompile 'org.json:json:20160810'
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    //OkHttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.7.0'
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+
+    //RxJava
+    compile "io.reactivex:rxandroid:1.2.1"
+    compile "io.reactivex:rxjava:1.2.7"
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    testCompile 'junit:junit:4.12'
 }
-
-clean {
-    delete sourceSets.generated.java.srcDirs
-}
-
-idea {
-    module {
-        excludeDirs += file('.idea')
-        excludeDirs += file('doc')
-        excludeDirs += file('generated-objc')
-        excludeDirs += file('generated-objc-temp')
-        sourceDirs += file('src/main/generated')
-
-        downloadJavadoc = true
-        downloadSources = true
-    }
-}
-
-task sourceJar(type: Jar) {
-    from sourceSets.main.allJava
-}
-
-jar.dependsOn test
-
