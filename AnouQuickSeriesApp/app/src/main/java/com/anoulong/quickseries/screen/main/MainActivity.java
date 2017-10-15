@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements RestaurantContract.Rou
 
     @Override
     public void showRestaurantDetailsScreen(RestaurantContract.Restaurant restaurant) {
-        startActivity(RestaurantActivity.intent(this));
+        startActivity(RestaurantActivity.intent(this, restaurant));
 
     }
 

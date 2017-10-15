@@ -1,5 +1,6 @@
 package com.quickseries.restaurant;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public interface RestaurantContract {
         void didSelectRestaurant(Restaurant restaurant);
     }
 
-    class Restaurant {
+    class Restaurant implements Serializable {
 
         private final String title;
         private final String description;
