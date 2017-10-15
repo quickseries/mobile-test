@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/</string>
+    <string name="pref_key_env" translatable="false">env</string>
+    <string name="URL_DEV" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/</string>
+    <string name="URL_STAGING" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/</string>
+    <string name="URL_PROD" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/</string>
     <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/categories.json</string>-->
     <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/restaurants.json</string>-->
     <!--<string name="URL" translatable="false">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/vacation-spot.json</string>-->
