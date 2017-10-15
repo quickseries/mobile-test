@@ -1,24 +1,16 @@
-package com.anoulong.quickseries.screen.restaurant;
+package com.anoulong.quickseries.screen.vacation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseFragment;
-import com.anoulong.quickseries.screen.main.MainFragment;
-import com.anoulong.quickseries.screen.tab.TabRestaurantAdapter;
-import com.quickseries.restaurant.RestaurantContract;
-import com.quickseries.restaurant.RestaurantPresenter;
-
-import java.util.List;
+import com.quickseries.vacation.VacationContract;
 
 import javax.inject.Inject;
 
@@ -29,23 +21,23 @@ import retrofit2.Retrofit;
  * Created by Anou on 2017-10-14.
  */
 
-public class RestaurantFragment extends BaseFragment{
+public class VacationDetailsFragment extends BaseFragment{
 
-    private static final String TAG = RestaurantFragment.class.getSimpleName();
-    public static final String KEY_RESTAURANT = TAG + "_KEY_RESTAURANT";
+    private static final String TAG = VacationDetailsFragment.class.getSimpleName();
+    public static final String KEY_VACATION = TAG + "_KEY_VACATION";
 
     @Inject
     Retrofit retrofit;
 
-    private RestaurantContract.Restaurant restaurant;
+    private VacationContract.Vacation vacation;
 
-    @BindView(R.id.fragment_restaurant_title)
-    TextView fragmentRestaurantTitle;
+    @BindView(R.id.fragment_vacation_title)
+    TextView fragmentVacationTitle;
 
-    public static RestaurantFragment newInstance(RestaurantContract.Restaurant restaurant) {
+    public static VacationDetailsFragment newInstance(VacationContract.Vacation vacation) {
         Bundle args = new Bundle();
-        args.putSerializable(KEY_RESTAURANT, restaurant);
-        RestaurantFragment fragment = new RestaurantFragment();
+        args.putSerializable(KEY_VACATION, vacation);
+        VacationDetailsFragment fragment = new VacationDetailsFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,14 +47,14 @@ public class RestaurantFragment extends BaseFragment{
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(getActivity()).inject(this);
         if (getArguments() != null) {
-            restaurant = (RestaurantContract.Restaurant)getArguments().getSerializable(KEY_RESTAURANT);
+            vacation = (VacationContract.Vacation)getArguments().getSerializable(KEY_VACATION);
         }
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_details_restaurant, container, false);
+        return inflater.inflate(R.layout.fragment_details_vacation, container, false);
     }
 
     @Override
@@ -72,8 +64,8 @@ public class RestaurantFragment extends BaseFragment{
     }
 
     private void setupView() {
-        if(restaurant != null) {
-            fragmentRestaurantTitle.setText(restaurant.getTitle());
+        if(vacation != null) {
+            fragmentVacationTitle.setText(vacation.getTitle());
         }
 
     }

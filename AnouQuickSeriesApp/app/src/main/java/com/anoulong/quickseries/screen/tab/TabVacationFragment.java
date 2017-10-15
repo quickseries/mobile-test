@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.main.MainFragment;
-import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.vacation.VacationContract;
 import com.quickseries.vacation.VacationPresenter;
 
@@ -55,7 +54,7 @@ public class TabVacationFragment extends MainFragment implements VacationContrac
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_vacation, container, false);
+        return inflater.inflate(R.layout.fragment_tab_vacation, container, false);
     }
 
     @Override

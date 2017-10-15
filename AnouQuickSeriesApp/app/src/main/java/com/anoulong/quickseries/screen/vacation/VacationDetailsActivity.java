@@ -1,31 +1,31 @@
-package com.anoulong.quickseries.screen.restaurant;
+package com.anoulong.quickseries.screen.vacation;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseActivity;
 import com.quickseries.restaurant.RestaurantContract;
+import com.quickseries.vacation.VacationContract;
 
 /**
  * Created by Anou on 2017-10-15.
  */
 
-public class RestaurantActivity extends BaseActivity {
-    private static final String TAG = RestaurantActivity.class.getSimpleName();
+public class VacationDetailsActivity extends BaseActivity {
+    private static final String TAG = VacationDetailsActivity.class.getSimpleName();
 
-    public static final String KEY_RESTAURANT = TAG + "_KEY_RESTAURANT";
+    public static final String KEY_VACATION = TAG + "_KEY_VACATION";
 
     private static Intent intent(Context context) {
-        return new Intent(context, RestaurantActivity.class);
+        return new Intent(context, VacationDetailsActivity.class);
     }
 
-    public static Intent intent(Context context, RestaurantContract.Restaurant restaurant) {
+    public static Intent intent(Context context, VacationContract.Vacation vacation) {
         Intent intent = intent(context);
-        intent.putExtra(KEY_RESTAURANT, restaurant);
+        intent.putExtra(KEY_VACATION, vacation);
         return intent;
     }
 
@@ -33,11 +33,11 @@ public class RestaurantActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AnouQuickSeriesApplication.getApplicationComponent(this).inject(this);
-        setContentView(R.layout.activity_restaurant);
+        setContentView(R.layout.activity_details_vacation);
         if (getIntent().getExtras() != null && getIntent().getExtras().size() > 0) {
-            RestaurantContract.Restaurant restaurant = (RestaurantContract.Restaurant) getIntent().getSerializableExtra(KEY_RESTAURANT);
+            VacationContract.Vacation vacation = (VacationContract.Vacation) getIntent().getSerializableExtra(KEY_VACATION);
 
-            replaceFragment(RestaurantFragment.newInstance(restaurant), true);
+            replaceFragment(VacationDetailsFragment.newInstance(vacation), true);
         }
 
     }

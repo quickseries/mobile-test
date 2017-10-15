@@ -1,6 +1,5 @@
 package com.anoulong.quickseries.screen.main;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +10,12 @@ import android.support.v4.view.ViewPager;
 import com.anoulong.quickseries.AnouQuickSeriesApplication;
 import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.BaseActivity;
-import com.anoulong.quickseries.screen.restaurant.RestaurantActivity;
+import com.anoulong.quickseries.screen.restaurant.RestaurantDetailsActivity;
+import com.anoulong.quickseries.screen.vacation.VacationDetailsActivity;
 import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.vacation.VacationContract;
 
 import butterknife.BindView;
-import timber.log.Timber;
 
 public class MainActivity extends BaseActivity implements RestaurantContract.Router, VacationContract.Router{
 
@@ -87,12 +86,13 @@ public class MainActivity extends BaseActivity implements RestaurantContract.Rou
 
     @Override
     public void showRestaurantDetailsScreen(RestaurantContract.Restaurant restaurant) {
-        startActivity(RestaurantActivity.intent(this, restaurant));
+        startActivity(RestaurantDetailsActivity.intent(this, restaurant));
 
     }
 
     @Override
     public void showVacationDetailsScreen(VacationContract.Vacation vacation) {
+        startActivity(VacationDetailsActivity.intent(this, vacation));
 
     }
 }

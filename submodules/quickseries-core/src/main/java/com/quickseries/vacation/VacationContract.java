@@ -2,6 +2,7 @@ package com.quickseries.vacation;
 
 import com.quickseries.restaurant.RestaurantContract;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public interface VacationContract {
         void didSelectVacation(VacationContract.Vacation vacation);
     }
 
-    class Vacation {
+    class Vacation implements Serializable{
 
         private final String title;
         private final String description;
