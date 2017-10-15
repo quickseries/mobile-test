@@ -1,0 +1,4 @@
+<resources>
+    <string name="config_environment" translatable="false">staging</string>
+  
+</resources>

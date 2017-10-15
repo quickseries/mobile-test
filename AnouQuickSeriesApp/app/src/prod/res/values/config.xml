@@ -1,0 +1,3 @@
+<resources>
+    <string name="config_environment" translatable="false">prod</string>
+</resources>

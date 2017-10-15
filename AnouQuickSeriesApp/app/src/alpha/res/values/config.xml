@@ -1,0 +1,9 @@
+<resources>
+    <string name="config_environment" translatable="false">dev</string>
+    <string name="PUSHER_API_KEY" translatable="false">464ab45e51076125efa6</string>
+    <string name="FABRIC_API_KEY" translatable="false">776054b0005e03594d01bd1d2517d7c35122f456</string>
+    <string name="BUGFENDER_TOKEN" translatable="false"></string>
+    <string name="AMPLITUDE_API_KEY" translatable="false">99e58571ff929330510e9e0ae9ee8ddb</string>
+    <string name="FLURRY_API_KEY" translatable="false">3K66BTRPZY5Y7JJBCZ8D</string>
+
+</resources>
