@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:foreground="?android:selectableItemBackground"
+        android:layout_marginStart="@dimen/cell_margin_start"
+        android:layout_marginEnd="@dimen/cell_margin_end"
+        android:layout_marginTop="@dimen/cell_margin_top"
+        android:padding="@dimen/cell_padding"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/category_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:textSize="@dimen/font_size_1"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/category_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:padding="5dp"
+            android:textSize="@dimen/font_size_2"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@id/category_title"
+            tools:text="description" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

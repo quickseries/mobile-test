@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">QuickSeries</string>
+    <string name="resources_title">Resources</string>
+    <string name="categories_title">Categories</string>
+    <string name="future_item">Prochaine fonctionnalité</string>
+    <string name="drawer_open">ouvrir</string>
+    <string name="drawer_closed">fermer</string>
+    <string name="generic_error">Erreur : %s</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="phone_number">PHONE_NUMBER</string>
+    <string name="toll_free_number">toll-free number</string>
+    <string name="email">email address</string>
+</resources>
