@@ -12,6 +12,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,18 +49,18 @@ public class RestaurantDetailsFragment extends BaseFragment {
     Toolbar toolbar;
     @BindView(R.id.header_image)
     ImageView headerImage;
-    @BindView(R.id.fragment_restaurant_details_description)
-    TextView fragmentRestaurantDetailsDescription;
-    @BindView(R.id.fragment_restaurant_details_phone)
-    TextView fragmentRestaurantDetailsPhone;
-    @BindView(R.id.fragment_restaurant_details_email)
-    TextView fragmentRestaurantDetailsEmail;
-    @BindView(R.id.fragment_restaurant_details_website)
-    TextView fragmentRestaurantDetailsWebsite;
     @BindView(R.id.fragment_restaurant_details_address)
     TextView fragmentRestaurantDetailsAddress;
-    @BindView(R.id.fragment_restaurant_details_open_hours)
-    TextView fragmentRestaurantDetailsOpenHours;
+    @BindView(R.id.fragment_restaurant_details_description)
+    TextView fragmentRestaurantDetailsDescription;
+    @BindView(R.id.fragment_restaurant_details_phone_button)
+    Button fragmentRestaurantDetailsPhoneButton;
+    @BindView(R.id.fragment_restaurant_details_email_button)
+    Button fragmentRestaurantDetailsEmailButton;
+    @BindView(R.id.fragment_restaurant_details_website_button)
+    Button fragment_restaurantDetailsWebsiteButton;
+    @BindView(R.id.fragment_restaurant_details_direction_button)
+    Button fragmentRestaurantDetailsDirectionButton;
 
 
     public static RestaurantDetailsFragment newInstance(RestaurantContract.Restaurant restaurant) {
@@ -90,6 +91,7 @@ public class RestaurantDetailsFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         this.setupToolbar();
         this.setupView();
+        this.setupListener();
     }
 
     private void setupToolbar() {
@@ -111,9 +113,59 @@ public class RestaurantDetailsFragment extends BaseFragment {
             Picasso.with(getContext()).load(restaurant.getPhoto()).into(headerImage);
             collapsingToolbarLayout.setTitle(restaurant.getTitle());
             fragmentRestaurantDetailsDescription.setText(Html.fromHtml(restaurant.getDescription()));
-            fragmentRestaurantDetailsAddress.setText(restaurant.getAddresses().get(0).getAddress1());
-        }
+            if (restaurant.getAddresses() != null && !restaurant.getAddresses().isEmpty()) {
+                RestaurantContract.Restaurant.Address address = restaurant.getAddresses().get(0);
 
+                if(address != null) {
+                    fragmentRestaurantDetailsAddress.setText(address.getAddress1() + "\n" +
+                            address.getCity() + ", " +
+                            address.getState() + ", " +
+                            address.getCountry() + "\n " +
+                            address.getZipCode());
+                }
+            }
+        }
+    }
+
+    private void setupListener() {
+        fragmentRestaurantDetailsPhoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //showPhone(restaurant.getContactInfo().getPhoneNumber());
+                showPhone("15147028287");
+            }
+        });
+
+        fragmentRestaurantDetailsEmailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //showEmail(restaurant.getContactInfo().getEmail());
+                showEmail("email@domain.com");
+            }
+        });
+
+        fragment_restaurantDetailsWebsiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //showWebsite(restaurant.getContactInfo().getWebsite());
+                showWebsite("https://www.google.com");
+            }
+        });
+
+        fragmentRestaurantDetailsDirectionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (restaurant.getAddresses() != null && !restaurant.getAddresses().isEmpty()) {
+                    RestaurantContract.Restaurant.Address address = restaurant.getAddresses().get(0);
+                    if(address != null) {
+                        RestaurantContract.Restaurant.Address.Gps gps = address.getGps();
+                        if(gps != null) {
+                            showMap(gps.getLatitude(), gps.getLongitude());
+                        }
+                    }
+                }
+            }
+        });
     }
 
     @Override

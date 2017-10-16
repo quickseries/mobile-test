@@ -181,36 +181,4 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
         popup.show();
     }
 
-    public void showWebsite(String url){
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
-    }
-
-    public void showPhone(String phone) {
-        if (ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.CALL_PHONE)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.CALL_PHONE}, 1);
-        }
-
-
-        if (ContextCompat.checkSelfPermission(getActivity(),
-                Manifest.permission.CALL_PHONE)
-                == PackageManager.PERMISSION_GRANTED) {
-            Intent callIntent = new Intent(Intent.ACTION_DIAL);
-            callIntent.setData(Uri.parse("tel:+" + phone));
-
-            startActivity(callIntent);
-        }
-    }
-
-    private void showEmail(String email) {
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + email));
-//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-//        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
-//        emailIntent.putExtra(Intent.EXTRA_HTML_TEXT, body); //For HTML body text
-
-        startActivity(Intent.createChooser(emailIntent, email));
-    }
 }

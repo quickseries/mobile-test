@@ -147,7 +147,7 @@
                 android:clickable="false"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="ahahahhahadadsadsadsadada"
+                android:text="1-514-999-9999"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -165,7 +165,7 @@
                 android:clickable="false"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="ahahahhahadadsadsadsadada"
+                android:text="user@domaine.com"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -183,7 +183,7 @@
                 android:clickable="false"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="ahahahhahadadsadsadsadada"
+                android:text="www.google.com"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -200,8 +200,8 @@
                 android:layout_weight=".2"
                 android:clickable="false"
                 android:ellipsize="end"
-                android:maxLines="2"
-                android:text="ahahahhahadadsadsadsadada"
+                android:maxLines="6"
+                android:text="222 john street, city, country, zipcode"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -219,7 +219,7 @@
                 android:clickable="false"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="ahahahhahadadsadsadsadada"
+                android:text="from 9am to 5pm everyday"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 

@@ -78,7 +78,7 @@ public interface RestaurantContract {
             return contactInfo;
         }
 
-        public   class Address implements Serializable {
+        public  class Address implements Serializable {
             private final String address1;
             private final String label;
             private final String zipCode;
@@ -125,7 +125,7 @@ public interface RestaurantContract {
                 return gps;
             }
 
-            class Gps implements Serializable{
+           public class Gps implements Serializable{
                 private double latitude;
                 private double longitude;
 
