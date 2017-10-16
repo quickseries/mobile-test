@@ -1,0 +1,180 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+repositories {
+    flatDir { dirs 'libs' }
+    maven { url 'http://clojars.org/repo' }
+    maven { url "https://jitpack.io" }
+    maven {  url "https://maven.google.com" }
+}
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.anoulong.quickseries"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "0.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Begin-flavors
+    flavorDimensions "target"
+
+    productFlavors {
+        /**
+         * https://docs.fabric.io/android/beta/gradle.html#distribution-with-gradle
+         */
+        alpha {
+
+            dimension "target"
+            resValue "string", "app_name", "AnouQuickSeries Alpha"
+        }
+        beta {
+            dimension "target"
+            resValue "string", "app_name", "AnouQuickSeries Beta"
+        }
+        prod {
+            dimension "target"
+            resValue "string", "app_name", "AnouQuickSeries"
+        }
+    }
+
+    //generate apk : mergedFlavour-buildType-versionName-versionCode.apk
+    applicationVariants.all { variant ->
+
+        def flavorString = variant.getVariantData().getVariantConfiguration().getFlavorName()
+        def mergedFlavour = variant.getVariantData().getVariantConfiguration().getMergedFlavor()
+
+        //Alpha generated apk
+        if (flavorString.equalsIgnoreCase("alpha")) {
+            mergedFlavour.setApplicationId("com.anoulong.quickseries.alpha")
+        }
+
+        //Beta generated apk
+        if (flavorString.equalsIgnoreCase("beta")) {
+            mergedFlavour.setApplicationId("com.anoulong.quickseries.beta")
+        }
+
+        //Store generated apk
+        if (flavorString.equalsIgnoreCase("prod")) {
+            mergedFlavour.setApplicationId("com.anoulong.quickseries")
+        }
+
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace('.apk', "-v${defaultConfig.versionName}-"+ variant.versionCode + ".apk")
+                def finalName = fileName.replace('app-', "quickseries-")
+                output.outputFile = new File(outputFile.parent, finalName)
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    // End-flavors
+
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+}
+
+def androidSupportVersion = "26.1.0"
+def googleServicesVersion = "11.0.4"
+
+dependencies {
+    compile project(':quickseries-core')
+
+    // Android support
+    compile "com.android.support:appcompat-v7:${androidSupportVersion}"
+    compile "com.android.support:design:${androidSupportVersion}"
+    compile "com.android.support:cardview-v7:${androidSupportVersion}"
+    compile "com.android.support:recyclerview-v7:${androidSupportVersion}"
+    compile "com.android.support:support-annotations:${androidSupportVersion}"
+
+    //Google Libraries
+    compile "com.google.android.gms:play-services-maps:${googleServicesVersion}"
+    compile "com.google.android.gms:play-services-location:${googleServicesVersion}"
+    compile "com.google.android.gms:play-services-gcm:${googleServicesVersion}"
+    compile 'com.google.code.gson:gson:2.7'
+
+    //Stream API from Java 8 rewritten on iterators for Java 7 and below.
+
+    //https://github.com/aNNiMON/Lightweight-Stream-API
+    compile "com.annimon:stream:1.1.7"
+    /**********************************
+     * Dependency Injection Libraries
+     **********************************/
+
+    // Dependency Injection for core
+    compile "com.google.dagger:dagger:2.9"
+    apt 'com.google.dagger:dagger-compiler:2.9'
+    provided 'javax.annotation:jsr250-api:1.0'
+    // Dependency Injection for android Views and ID
+    compile "com.jakewharton:butterknife:8.6.0"
+    apt 'com.jakewharton:butterknife-compiler:8.6.0'
+    //Image Library
+    compile "com.squareup.picasso:picasso:2.5.2"
+
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    //OkHttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.7.0'
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+
+    //RxJava
+    compile "io.reactivex:rxandroid:1.2.1"
+    compile "io.reactivex:rxjava:1.2.7"
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    // RxBinding
+    compile "com.jakewharton.rxbinding:rxbinding:1.0.1"
+    compile "com.jakewharton.rxbinding:rxbinding-design:1.0.1"
+    //Apache utilities
+    compile "org.apache.commons:commons-lang3:3.5"
+    //Apache net utilities
+    compile "commons-net:commons-net:3.6"
+    // Lightweight libraries to write logs
+    compile "com.jakewharton.timber:timber:4.5.1"
+
+    /******************
+     * Testing Libraries
+     ******************/
+    //Unit test
+    testCompile "junit:junit:4.12"
+    testCompile "org.mockito:mockito-core:2.8.9"
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    androidTestCompile "org.mockito:mockito-core:2.8.9"
+    androidTestCompile "com.google.dexmaker:dexmaker:1.2"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
+    androidTestApt 'com.google.dagger:dagger-compiler:2.9'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "com.android.support:support-annotations:${androidSupportVersion}"
+        force "com.android.support:support-v4:${androidSupportVersion}"
+        force "com.android.support:appcompat-v7:${androidSupportVersion}"
+        force "com.android.support:design:${androidSupportVersion}"
+    }
+}

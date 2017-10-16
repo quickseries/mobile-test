@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/smooth_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/fragment_restaurant_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_extra_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/restaurant_subtitle"
+                android:textColor="@color/dark_grey"
+                android:visibility="invisible"
+                android:textSize="19sp"/>
+
+            <ImageButton
+                android:id="@+id/fragment_restaurant_overflow"
+                android:layout_width="@dimen/size_large"
+                android:layout_height="@dimen/size_large"
+                android:layout_gravity="center_vertical|end"
+                android:background="@color/transparent"
+                android:scaleType="centerCrop"
+                android:onClick="showPopup"
+                android:src="@drawable/icn_overflow"
+                android:tint="@color/black_alpha_50"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_restaurant_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_small"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_restaurant" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
