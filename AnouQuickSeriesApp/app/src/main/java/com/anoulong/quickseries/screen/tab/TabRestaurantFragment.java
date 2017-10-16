@@ -1,7 +1,13 @@
 package com.anoulong.quickseries.screen.tab;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +26,8 @@ import com.anoulong.quickseries.R;
 import com.anoulong.quickseries.screen.main.MainFragment;
 import com.quickseries.restaurant.RestaurantContract;
 import com.quickseries.restaurant.RestaurantPresenter;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Set;
@@ -81,11 +89,16 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
             public void onAdapterClicked(RestaurantContract.Restaurant restaurant) {
                 presenter.didSelectRestaurant(restaurant);
             }
+
+            @Override
+            public void onAdapterOverflowClicked(View v, RestaurantContract.Restaurant.ContactInfo contactInfo) {
+                showRestaurantPopup(v, contactInfo);
+            }
         });
         fragmentRestaurantOverflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopup(v);
+                showRestaurantListPopup(v);
             }
         });
     }
@@ -117,18 +130,18 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
         // stop loading
     }
 
-    public void showPopup(View v) {
+    public void showRestaurantListPopup(View v) {
         PopupMenu popup = new PopupMenu(getActivity(), v);
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.menu_restaurant, popup.getMenu());
+        inflater.inflate(R.menu.menu_restaurant_list, popup.getMenu());
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.menu_restaurant_sort_ascending:
+                    case R.id.menu_restaurant_list_sort_ascending:
                         presenter.sortAscending(adapter.getData());
                         return true;
-                    case R.id.menu_restaurant_sort_descending:
+                    case R.id.menu_restaurant_list_descending:
                         presenter.sortDescending(adapter.getData());
                         return true;
                     default:
@@ -139,4 +152,54 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
         popup.show();
     }
 
+    public void showRestaurantPopup(View v, final RestaurantContract.Restaurant.ContactInfo contactInfo) {
+        PopupMenu popup = new PopupMenu(getActivity(), v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.menu_restaurant, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                    if (contactInfo != null) {
+                        switch (item.getItemId()) {
+                            case R.id.menu_restaurant_website:
+
+                                return true;
+                            case R.id.menu_restaurant_email:
+//                        presenter.sortDescending(adapter.getData());
+                                return true;
+                            case R.id.menu_restaurant_phone:
+                                if (StringUtils.isNotBlank(contactInfo.getPhoneNumber().get(0))) {
+                                    showPhone(contactInfo.getPhoneNumber().get(0));
+                                }
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                return false;
+            }
+        });
+        popup.show();
+    }
+
+
+    public void showPhone(String phone) {
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.CALL_PHONE}, 1);
+        }
+
+
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.CALL_PHONE)
+                == PackageManager.PERMISSION_GRANTED) {
+            Intent callIntent = new Intent(Intent.ACTION_DIAL);
+            callIntent.setData(Uri.parse("tel:+" + phone));
+
+            startActivity(callIntent);
+        }
+    }
 }

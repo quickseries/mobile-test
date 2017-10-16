@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/smooth_white">
 
-
-        <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/fragment_restaurant_recyclerview"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_marginTop="?attr/actionBarSize"-->
-            <!--android:scrollbars="vertical"-->
-            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-            <!--tools:listitem="@layout/item_restaurant" />-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +24,8 @@
                 android:layout_marginBottom="@dimen/margin_extra_small"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/restaurant_subtitle"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/dark_grey"
+                android:visibility="invisible"
                 android:textSize="19sp"/>
 
             <ImageButton
@@ -47,7 +37,7 @@
                 android:scaleType="centerCrop"
                 android:onClick="showPopup"
                 android:src="@drawable/icn_overflow"
-                android:tint="@color/colorPrimaryDark"
+                android:tint="@color/black_alpha_50"
                 android:visibility="visible" />
         </FrameLayout>
 

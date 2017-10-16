@@ -2,13 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/menu_restaurant_sort_ascending"
-        android:title="@string/sort_ascending"
+    <item android:id="@+id/menu_restaurant_website"
+        android:title="@string/menu_website"
         app:showAsAction="always">
     </item>
 
-    <item android:id="@+id/menu_restaurant_sort_descending"
-        android:title="@string/sort_descending"
+    <item android:id="@+id/menu_restaurant_email"
+        android:title="@string/menu_email"
+        app:showAsAction="always">
+
+    </item> <item android:id="@+id/menu_restaurant_phone"
+        android:title="@string/menu_phone"
         app:showAsAction="always">
     </item>
 
