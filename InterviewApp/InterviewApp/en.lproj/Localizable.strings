@@ -1,0 +1,29 @@
+/* 
+  localizable.strings
+  InterviewApp
+
+  Created by Georgi Popov on 2017-04-10.
+  Copyright © 2017 Georgi Popov. All rights reserved.
+*/
+
+
+"phoneNumber" = "PHONE NUMBER";
+"tollFree" = "TOLL FREE";
+"faxNumber" = "FAX NUMBER";
+"email" = "EMAIL";
+"website" = "WEBSITE";
+
+"contactInfo" = "CONTACT INFO";
+"addresses" = "ADDRESSES";
+"bizHours" = "BUSINESS HOURS";
+"socialMedia" = "SOCIAL MEDIA";
+
+"monday" = "Monday";
+"tuesday" = "Tuesday";
+"wednesday" = "Wednesday";
+"thursday" = "Thursday";
+"friday" = "Friday";
+"saturday" = "Saturday";
+"sunday" = "Sunday";
+
+"Closed" = "Closed";
