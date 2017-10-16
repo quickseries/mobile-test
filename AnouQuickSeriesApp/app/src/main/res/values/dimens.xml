@@ -35,4 +35,9 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
 
+    <!-- Collapsing Toolbar -->
+    <dimen name="toolbar_expanded">240dp</dimen>
+    <dimen name="toolbar_collapsed">56dp</dimen>
+    <dimen name="toolbar_expanded_margin">100dp</dimen>
+
 </resources>

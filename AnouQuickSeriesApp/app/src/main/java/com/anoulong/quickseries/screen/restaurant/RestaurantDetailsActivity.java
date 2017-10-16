@@ -35,7 +35,6 @@ public class RestaurantDetailsActivity extends BaseActivity {
         setContentView(R.layout.activity_details_restaurant);
         if (getIntent().getExtras() != null && getIntent().getExtras().size() > 0) {
             RestaurantContract.Restaurant restaurant = (RestaurantContract.Restaurant) getIntent().getSerializableExtra(KEY_RESTAURANT);
-
             replaceFragment(RestaurantDetailsFragment.newInstance(restaurant), true);
         }
 
