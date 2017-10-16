@@ -42,7 +42,7 @@ public interface RestaurantContract {
         void sortDescending(List<RestaurantContract.Restaurant> restaurants);
     }
 
-    public   class Restaurant implements Serializable {
+    class Restaurant implements Serializable {
 
         private final String title;
         private final String description;
