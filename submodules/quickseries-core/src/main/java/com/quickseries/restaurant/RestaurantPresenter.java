@@ -66,6 +66,7 @@ public class RestaurantPresenter implements RestaurantContract.Presenter {
             }
         });
         mView.showRestaurant(restaurants);
+
     }
 
     @Override

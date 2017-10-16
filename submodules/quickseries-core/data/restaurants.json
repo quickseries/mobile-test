@@ -26,15 +26,15 @@
       }
     ],
     "contactInfo": {
-      "website": 
+      "website": [
         "https://www.google.com"
-      ,
-      "email": 
+      ],
+      "email": [
         "email@domain.com"
-      ,
-      "phoneNumber": 
+      ],
+      "phoneNumber": [
         "15147028287"
-    
+      ]
     }
   },
   {

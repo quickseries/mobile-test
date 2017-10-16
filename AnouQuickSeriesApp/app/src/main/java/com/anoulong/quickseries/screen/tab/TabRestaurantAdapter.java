@@ -73,7 +73,7 @@ public class TabRestaurantAdapter extends BaseAdapter<RestaurantContract.Restaur
                 @Override
                 public void onClick(View v) {
                     final RestaurantContract.Restaurant r = getItem(getAdapterPosition());
-//                    listener.onAdapterOverflowClicked(v, r.getContactInfo());
+                    listener.onAdapterOverflowClicked(v, r.getContactInfo());
                 }
             });
         }

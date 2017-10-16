@@ -160,29 +160,31 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
-                    if (contactInfo != null) {
-                        switch (item.getItemId()) {
-                            case R.id.menu_restaurant_website:
-
-                                return true;
-                            case R.id.menu_restaurant_email:
-//                        presenter.sortDescending(adapter.getData());
-                                return true;
-                            case R.id.menu_restaurant_phone:
-                                if (StringUtils.isNotBlank(contactInfo.getPhoneNumber().get(0))) {
-                                    showPhone(contactInfo.getPhoneNumber().get(0));
-                                }
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                return false;
+                switch (item.getItemId()) {
+                    case R.id.menu_restaurant_website:
+//                        showWebsite(contactInfo.getWebsite());
+                        showWebsite("https://www.google.com");
+                        return true;
+                    case R.id.menu_restaurant_email:
+//                        showEmail(contactInfo.getEmail());
+                        showEmail("email@domain.com");
+                        return true;
+                    case R.id.menu_restaurant_phone:
+//                            showPhone(contactInfo.getPhoneNumber());
+                            showPhone("15147028287");
+                        return true;
+                    default:
+                        return false;
+                }
             }
         });
         popup.show();
     }
 
+    public void showWebsite(String url){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
+    }
 
     public void showPhone(String phone) {
         if (ContextCompat.checkSelfPermission(getActivity(),
@@ -201,5 +203,14 @@ public class TabRestaurantFragment extends MainFragment implements RestaurantCon
 
             startActivity(callIntent);
         }
+    }
+
+    private void showEmail(String email) {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + email));
+//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+//        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+//        emailIntent.putExtra(Intent.EXTRA_HTML_TEXT, body); //For HTML body text
+
+        startActivity(Intent.createChooser(emailIntent, email));
     }
 }

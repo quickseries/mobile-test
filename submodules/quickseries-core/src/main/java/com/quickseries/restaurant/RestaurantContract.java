@@ -42,7 +42,7 @@ public interface RestaurantContract {
         void sortDescending(List<RestaurantContract.Restaurant> restaurants);
     }
 
-    class Restaurant implements Serializable {
+    public  class Restaurant implements Serializable {
 
         private final String title;
         private final String description;
@@ -78,7 +78,7 @@ public interface RestaurantContract {
             return contactInfo;
         }
 
-        public  class Address implements Serializable {
+        public   class Address implements Serializable {
             private final String address1;
             private final String label;
             private final String zipCode;
@@ -146,25 +146,25 @@ public interface RestaurantContract {
         }
 
         public  class ContactInfo implements Serializable{
-            private final List<String> website;
-            private final List<String> email;
-            private final List<String> phoneNumber;
+            private final String website;
+            private final String email;
+            private final String phoneNumber;
 
-            public ContactInfo(List<String> website, List<String> email, List<String> phoneNumber) {
+            public ContactInfo(String website, String email, String phoneNumber) {
                 this.website = website;
                 this.email = email;
                 this.phoneNumber = phoneNumber;
             }
 
-            public List<String> getWebsite() {
+            public String getWebsite() {
                 return website;
             }
 
-            public List<String> getEmail() {
+            public String getEmail() {
                 return email;
             }
 
-            public List<String> getPhoneNumber() {
+            public String getPhoneNumber() {
                 return phoneNumber;
             }
         }
