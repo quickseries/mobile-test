@@ -9,5 +9,9 @@
     <string name="menu_website">Open Website</string>
     <string name="menu_phone">Call</string>
     <string name="menu_email">Send email</string>
+    <string name="button_email">Email</string>
+    <string name="button_phone">Call</string>
+    <string name="button_website">Website</string>
+    <string name="button_direction">Direction</string>
 
 </resources>

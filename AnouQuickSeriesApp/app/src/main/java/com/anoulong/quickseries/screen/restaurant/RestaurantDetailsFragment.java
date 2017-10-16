@@ -8,6 +8,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,10 +40,6 @@ public class RestaurantDetailsFragment extends BaseFragment {
 
     private RestaurantContract.Restaurant restaurant;
 
-    //    @BindView(R.id.fragment_restaurant_title)
-//    TextView fragmentRestaurantTitle;
-//    @BindView(R.id.fragment_restaurant_image)
-//    ImageView fragmentRestaurantImage;
     @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout collapsingToolbarLayout;
     @BindView(R.id.app_bar_layout)
@@ -51,6 +48,18 @@ public class RestaurantDetailsFragment extends BaseFragment {
     Toolbar toolbar;
     @BindView(R.id.header_image)
     ImageView headerImage;
+    @BindView(R.id.fragment_restaurant_details_description)
+    TextView fragmentRestaurantDetailsDescription;
+    @BindView(R.id.fragment_restaurant_details_phone)
+    TextView fragmentRestaurantDetailsPhone;
+    @BindView(R.id.fragment_restaurant_details_email)
+    TextView fragmentRestaurantDetailsEmail;
+    @BindView(R.id.fragment_restaurant_details_website)
+    TextView fragmentRestaurantDetailsWebsite;
+    @BindView(R.id.fragment_restaurant_details_address)
+    TextView fragmentRestaurantDetailsAddress;
+    @BindView(R.id.fragment_restaurant_details_open_hours)
+    TextView fragmentRestaurantDetailsOpenHours;
 
 
     public static RestaurantDetailsFragment newInstance(RestaurantContract.Restaurant restaurant) {
@@ -87,24 +96,22 @@ public class RestaurantDetailsFragment extends BaseFragment {
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //collapsing parallax
-//        collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(getActivity(), colorResId));
-//        headerImage.setBackgroundColor(ContextCompat.getColor(getActivity(), colorResId));
-//        appBarLayout.setBackgroundColor(ContextCompat.getColor(getActivity(), colorResId));
-        if (restaurant != null) {
-            Picasso.with(getContext()).load(restaurant.getPhoto()).into(headerImage);
-            collapsingToolbarLayout.setTitle(restaurant.getTitle());
-        }
-
-
-        //prevent from overflow to be display when all room
-//        setHasOptionsMenu(roomViewData.getRoomType() == HomeContract.RoomType.normal);
+        // TODO: 2017-10-16 should be in a presenter
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
     }
 
     private void setupView() {
+        //collapsing parallax
         if (restaurant != null) {
-//            fragmentRestaurantTitle.setText(restaurant.getTitle());
-//            Picasso.with(getContext()).load(restaurant.getPhoto()).into(fragmentRestaurantImage);
+            Picasso.with(getContext()).load(restaurant.getPhoto()).into(headerImage);
+            collapsingToolbarLayout.setTitle(restaurant.getTitle());
+            fragmentRestaurantDetailsDescription.setText(Html.fromHtml(restaurant.getDescription()));
+            fragmentRestaurantDetailsAddress.setText(restaurant.getAddresses().get(0).getAddress1());
         }
 
     }

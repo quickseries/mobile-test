@@ -21,5 +21,6 @@
     <color name="smooth_grey">#E6E9EC</color>
     <color name="standard_grey">#9B9B9B</color>
     <color name="dark_grey">#646E7C</color>
+    <color name="colorDivider">#E0E0E0</color>
 
 </resources>
