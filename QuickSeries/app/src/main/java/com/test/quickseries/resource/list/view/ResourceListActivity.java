@@ -30,6 +30,7 @@ public class ResourceListActivity extends AppCompatActivity implements ResourceL
         binding = DataBindingUtil.setContentView(this, R.layout.activity_resource_list);
         presenter = new ResourceListPresenter(this);
         setupActionBar();
+        binding.sortButton.sort.setOnClickListener((v) -> presenter.sort());
         onNewIntent(getIntent());
     }
 
@@ -55,8 +56,9 @@ public class ResourceListActivity extends AppCompatActivity implements ResourceL
     }
 
     @Override
-    public void showContent(List<Resource> result) {
+    public void showContent(List<Resource> result, boolean sortAlphabetically) {
         setupAdapter();
+        binding.sortButton.sortText.setText(getString(R.string.sort, sortAlphabetically ? "Z-A" : "A-Z"));
         adapter.setItems(result);
     }
 

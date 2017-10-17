@@ -47,11 +47,32 @@
                 android:layout_marginEnd="@dimen/text_margin"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contact_info_title"
-                android:orientation="vertical">
+                android:orientation="vertical" />
 
+            <TextView
+                android:id="@+id/addresses_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:text="@string/address"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_size_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contact_info_container" />
 
-            </LinearLayout>
-
+            <LinearLayout
+                android:id="@+id/address_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addresses_title"
+                android:orientation="vertical" />
 
         </android.support.constraint.ConstraintLayout>
 

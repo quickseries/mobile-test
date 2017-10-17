@@ -15,4 +15,6 @@
     <string name="fax_number">Fax number</string>
     <string name="email">email address</string>
     <string name="website">website</string>
+    <string name="sort">Sort %s</string>
+    <string name="address">address</string>
 </resources>

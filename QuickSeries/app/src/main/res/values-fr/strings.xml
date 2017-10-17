@@ -10,4 +10,6 @@
     <string name="phone_number">PHONE_NUMBER</string>
     <string name="toll_free_number">toll-free number</string>
     <string name="email">email address</string>
+    <string name="sort">Trier %s</string>
+    <string name="address">adresse</string>
 </resources>

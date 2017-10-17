@@ -3,6 +3,7 @@
     package="com.test.quickseries">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +34,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".resource.list.view.ResourceListActivity" />
         </activity>
+        <activity android:name=".base.WebviewActivity" />
+
     </application>
 
 </manifest>

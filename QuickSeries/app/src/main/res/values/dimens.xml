@@ -11,4 +11,10 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="detail_padding">3dp</dimen>
     <dimen name="navigation_view_text_size">20sp</dimen>
+    <dimen name="sort_button_corner_radius">15dp</dimen>
+    <dimen name="sort_button_card_elevation">2dp</dimen>
+    <dimen name="sort_button_padding_sides">10dp</dimen>
+    <dimen name="sort_button_bottom">20dp</dimen>
+    <dimen name="detail_cell_padding">8dp</dimen>
+    <dimen name="automatic">0dp</dimen>
 </resources>
