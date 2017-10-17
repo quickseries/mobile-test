@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:foreground="?android:selectableItemBackground"
+        android:layout_marginStart="@dimen/cell_margin_start"
+        android:layout_marginEnd="@dimen/cell_margin_end"
+        android:layout_marginTop="@dimen/cell_margin_top"
+        android:padding="@dimen/cell_padding"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/category_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_1"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/category_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/category_title"
+            tools:text="description"
+            android:textSize="@dimen/font_size_2" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

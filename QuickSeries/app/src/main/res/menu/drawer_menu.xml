@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/groupMain"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_future_menu_items"
+            android:title="@string/future_item" />
+    </group>
+</menu>
