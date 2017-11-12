@@ -1,0 +1,6 @@
+framework module Pods_ResourceViewerTests {
+  umbrella header "Pods-ResourceViewerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
