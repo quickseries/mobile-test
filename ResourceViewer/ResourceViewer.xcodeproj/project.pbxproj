@@ -12,6 +12,8 @@
 		80FC76AC063E087AAF271D1A /* Pods_ResourceViewerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DF1F6CA6102021ADB1C4D3 /* Pods_ResourceViewerUITests.framework */; };
 		F70251EA1FB8DAD6009E5FA4 /* BizHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70251E91FB8DAD6009E5FA4 /* BizHours.swift */; };
 		F70251EC1FB8DB75009E5FA4 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70251EB1FB8DB75009E5FA4 /* Weekday.swift */; };
+		F703F35F1FB90D4B00B11A03 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703F35E1FB90D4B00B11A03 /* CategoryStore.swift */; };
+		F703F3611FB9110700B11A03 /* ResourceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703F3601FB9110700B11A03 /* ResourceStore.swift */; };
 		F7AE78C31FB8D25C00D11F5C /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE78C21FB8D25C00D11F5C /* ImageTableViewCell.swift */; };
 		F7AE78C51FB8D32900D11F5C /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE78C41FB8D32900D11F5C /* SocialMediaTableViewCell.swift */; };
 		F7B599DD1FB88BE1009982AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B599DC1FB88BE1009982AB /* AppDelegate.swift */; };
@@ -72,6 +74,8 @@
 		D1DF1F6CA6102021ADB1C4D3 /* Pods_ResourceViewerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ResourceViewerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70251E91FB8DAD6009E5FA4 /* BizHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHours.swift; sourceTree = "<group>"; };
 		F70251EB1FB8DB75009E5FA4 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		F703F35E1FB90D4B00B11A03 /* CategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
+		F703F3601FB9110700B11A03 /* ResourceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStore.swift; sourceTree = "<group>"; };
 		F7AE78C21FB8D25C00D11F5C /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		F7AE78C41FB8D32900D11F5C /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
 		F7B599D91FB88BE1009982AB /* ResourceViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResourceViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +177,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F703F35C1FB90D3600B11A03 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				F703F35E1FB90D4B00B11A03 /* CategoryStore.swift */,
+				F703F3601FB9110700B11A03 /* ResourceStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		F7B599D01FB88BE1009982AB = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 				F7B59A0F1FB88F2F009982AB /* Models */,
 				F7B59A0A1FB88E79009982AB /* ViewModel */,
 				F7B59A1A1FB88FA5009982AB /* ViewControllers */,
+				F703F35C1FB90D3600B11A03 /* Store */,
 				F7B599DC1FB88BE1009982AB /* AppDelegate.swift */,
 				F7B599E01FB88BE1009982AB /* Main.storyboard */,
 				F7B599E31FB88BE1009982AB /* Assets.xcassets */,
@@ -604,6 +618,7 @@
 				F7B59A171FB88F84009982AB /* ResourcesViewModel.swift in Sources */,
 				F7AE78C31FB8D25C00D11F5C /* ImageTableViewCell.swift in Sources */,
 				F70251EC1FB8DB75009E5FA4 /* Weekday.swift in Sources */,
+				F703F35F1FB90D4B00B11A03 /* CategoryStore.swift in Sources */,
 				F7B59A1C1FB88FD3009982AB /* ResourcesTableViewController.swift in Sources */,
 				F7B59A321FB89A2E009982AB /* Addresses.swift in Sources */,
 				F7B59A361FB89B18009982AB /* ContactInfo.swift in Sources */,
@@ -617,6 +632,7 @@
 				F7B59A3A1FB89CE8009982AB /* SocialMedia.swift in Sources */,
 				F7B59A191FB88F94009982AB /* ResourcesDetailViewModel.swift in Sources */,
 				F7B59A431FB8CC2D009982AB /* AddressCellTableViewCell.swift in Sources */,
+				F703F3611FB9110700B11A03 /* ResourceStore.swift in Sources */,
 				F7B59A341FB89ACB009982AB /* Gps.swift in Sources */,
 				F7B599DD1FB88BE1009982AB /* AppDelegate.swift in Sources */,
 			);

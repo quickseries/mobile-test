@@ -34,54 +34,15 @@ class ResourcesViewModel: ResourceVMProtocol {
         
         guard let cat = forCategory else { return }
         
-        switch cat {
-        case CategoryType.restaurants.rawValue:
-            getRestaurants()
-        case CategoryType.vacation_spots.rawValue:
-            getVacationSpots()
-        default:
-            break
-        }
-    }
-    
-    func getRestaurants() {
-        if let filepath = Bundle.main.path(forResource: "restaurants", ofType: "json") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                print(contents)
-                // Convert JSON String to Model
-                guard let result = Mapper<Resource>().mapArray(JSONString: contents) else { self.isFetchSuccessful.value = false
-                    return }
-                
-                self.resources = result
+        ResourceStore().getListOfResources(category: cat) { (result) in
+            
+            if let r = result {
+                self.resources = r
                 self.isFetchSuccessful.value = true
-                
-            } catch {
-                print("file cannot be loaded")
             }
-        } else {
-            print("json file do not exist")
-        }
-    }
-    
-    
-    func getVacationSpots() {
-        if let filepath = Bundle.main.path(forResource: "vacation-spot", ofType: "json") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                print(contents)
-                // Convert JSON String to Model
-                guard let result = Mapper<Resource>().mapArray(JSONString: contents) else { self.isFetchSuccessful.value = false
-                    return }
-                
-                self.resources = result
-                self.isFetchSuccessful.value = true
-                
-            } catch {
-                print("file cannot be loaded")
+            else {
+                self.isFetchSuccessful.value = false
             }
-        } else {
-            print("json file do not exist")
         }
     }
 }

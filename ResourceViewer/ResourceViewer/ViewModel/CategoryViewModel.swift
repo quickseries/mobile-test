@@ -31,22 +31,16 @@ class CategoryViewModel: CategoryVMProtocol {
     
     func getCateoryList() {
         
-        if let filepath = Bundle.main.path(forResource: "categories", ofType: "json") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                print(contents)
-                // Convert JSON String to Model
-                guard let result = Mapper<Category>().mapArray(JSONString: contents) else { self.isFetchSuccessful.value = false
-                        return }
-                
-                self.categories = result
+        CategoryStore().getListOfCategories { (result) in
+            
+            if let r = result {
+                self.categories = r
                 self.isFetchSuccessful.value = true
-                
-            } catch {
-                print("file cannot be loaded")
             }
-        } else {
-            print("json file do not exist")
+            else {
+                self.isFetchSuccessful.value = false
+            }
         }
+
     }
 }
