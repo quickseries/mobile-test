@@ -1,0 +1,31 @@
+
+
+
+
+
+Hello Justin and QuickSeries mobile team members,
+
+Please find below a few notes concerning the Test App:
+
+- I moved the data folder to within the project files folder
+
+- Categories view and Resources view support a basic debug mode. To test just change actual filename of any of the data files.
+
+- Asynchronous Image loading can be vastly improved for performance (faster loading and very fast scrolling).(Ex: SDWebImage from cocoapods)
+
+- For addresses that contain a gps location longitude and latitude, reverse geolocation can be used
+
+- Sort button can be hidden if resouce list has only one entry (I didn't do it in case it was required in all cases)
+
+- For phone functionality, we can add a check to see if device supports it (ex: iPod)
+
+
+
+That's all from my side.
+
+I hope you enjoy testing my app as much as I enjoyed developing it.
+
+Thank you!
+
+Best regards,
+Mike Bajakian
