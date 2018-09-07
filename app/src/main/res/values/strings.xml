@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QuickSeries</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="title">Title</string>
+    <string name="desc">Desc</string>
+    <string name="phone_sample">+ 123 3456 3456</string>
+    <string name="sort">Sort</string>
+</resources>
