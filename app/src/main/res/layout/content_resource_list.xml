@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.CategoryListActivity"
-    tools:showIn="@layout/activity_category_list">
+    tools:context=".activities.ResourceListActivity"
+    tools:showIn="@layout/activity_resource_list">
 
     <ListView
-        android:id="@+id/lvCategories"
+        android:id="@+id/lvResources"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/custom_list_item" />
+        android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>

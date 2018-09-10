@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CategoryListActivity">
+    tools:context=".activities.ResourceListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -17,10 +17,10 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            tools:title="@string/categories" />
+            tools:title="Category name"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_category_list" />
+    <include layout="@layout/content_resource_list" />
 
 </android.support.design.widget.CoordinatorLayout>

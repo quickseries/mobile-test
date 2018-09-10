@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.qbeuvelet.quickseriesapp.activities.CategoryListActivity">
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:iconTint="@color/colorAccent"
+        android:orderInCategory="100"
+        android:title="@string/sort"
+        app:showAsAction="always" />
+</menu>

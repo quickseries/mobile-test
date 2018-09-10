@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">QuickseriesApp</string>
     <string name="action_settings">Settings</string>
+    <string name="categories">Categories</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_resource">ResourceActivity</string>
+    <string name="details">Details</string>
+    <string name="sort">Sort</string>
+    <string name="contact_information">CONTACT INFORMATION</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="tollfree_number">TOLL-FREE NUMBER</string>
+    <string name="email_address">EMAIL ADDRESS</string>
+    <string name="fax_number">FAX NUMBER</string>
+    <string name="website">WEBSITE</string>
 </resources>
