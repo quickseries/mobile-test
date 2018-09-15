@@ -1,4 +1,5 @@
-[
+{
+  "restaurants": [
   {
     "_id": "5983a9e2951cf747207bed45",
     "slug": "pizza-spanos",
@@ -150,4 +151,5 @@
       ]
     }
   }
-]
+ ]
+}

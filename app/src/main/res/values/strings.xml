@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MobileTest</string>
+    <string name="text_resources">Resources</string>
+    <string name="text_restaurants">Restaurants</string>
+    <string name="text_vaction_spot">Vacation Spots</string>
+</resources>
