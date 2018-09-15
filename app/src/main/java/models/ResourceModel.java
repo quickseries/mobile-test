@@ -48,15 +48,15 @@ public class ResourceModel implements Parcelable {
         dest.writeParcelable(this.contactInfo,flags);
     }
 
-    public static final Parcelable.Creator<CategoryModel> CREATOR = new Parcelable.Creator<CategoryModel>() {
+    public static final Parcelable.Creator<ResourceModel> CREATOR = new Parcelable.Creator<ResourceModel>() {
         @Override
-        public CategoryModel createFromParcel(Parcel source) {
-            return new CategoryModel(source);
+        public ResourceModel createFromParcel(Parcel source) {
+            return new ResourceModel(source);
         }
 
         @Override
-        public CategoryModel[] newArray(int size) {
-            return new CategoryModel[size];
+        public ResourceModel[] newArray(int size) {
+            return new ResourceModel[size];
         }
     };
 

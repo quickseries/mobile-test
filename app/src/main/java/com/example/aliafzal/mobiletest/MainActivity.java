@@ -90,20 +90,23 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    final Intent resourseDetilsIntent = new Intent(MainActivity.this, ResourceListActivity.class);
+                    final Intent resourseDetailsIntent = new Intent(MainActivity.this, ResourceListActivity.class);
+
+                    Bundle bundle = new Bundle();
 
                     if (categoryList.get(position).getSlug().toLowerCase().equals("restaurants")) {
                         getData("restaurants");
                         String type = "restaurants";
-                        resourseDetilsIntent.putExtra("resourceType", type);
+                        bundle.putString("resourceType", type);
                     } else if (categoryList.get(position).getSlug().toLowerCase().equals("vacation-spots")) {
                         getData("vacation-spot");
                         String type = "vacation-spot";
-                        resourseDetilsIntent.putExtra("resourceType", type);
+                        bundle.putString("resourceType", type);
                     }
 
-                    resourseDetilsIntent.putParcelableArrayListExtra("resources", resourceList);
-                    startActivity(resourseDetilsIntent);
+                    bundle.putParcelableArrayList("resources", resourceList);
+                    resourseDetailsIntent.putExtras(bundle);
+                    startActivity(resourseDetailsIntent);
                 }
             });
             return convertView;

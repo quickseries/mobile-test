@@ -38,7 +38,6 @@ public class ResourceListActivity extends AppCompatActivity {
         } else if (type.equals("vacation-spot")) {
             getSupportActionBar().setTitle(R.string.text_vaction_spot);
         }
-
         resourceList = getIntent().getParcelableArrayListExtra("resources");
 
 
@@ -82,10 +81,6 @@ public class ResourceListActivity extends AppCompatActivity {
             TextView txtTitle = convertView.findViewById(R.id.item_title);
             TextView txtCountry = convertView.findViewById(R.id.item_country);
             txtTitle.setText(resourceList.get(position).getTitle());
-
-            if(resourceList.get(position).getAddresses() != null) {
-                txtCountry.setText(resourceList.get(position).getAddresses().get(0).getCountry());
-            }
 
             itemRow.setOnClickListener(new View.OnClickListener() {
                 @Override
