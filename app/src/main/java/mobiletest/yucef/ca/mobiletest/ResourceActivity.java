@@ -7,10 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,8 +46,87 @@ public class ResourceActivity extends AppCompatActivity {
         Resource resource = getResourceFromFile(getIntent().getStringExtra(RESOURCES_PATH_EXTRA),
                 getIntent().getStringExtra(RESOURCE_ID_EXTRA));
 
-        resource = null;
+        ImageView resourcePhoto = findViewById(R.id.resource_photo);
+        String photoUrl = resource.getPhotoUrl();
+        if (photoUrl != null) {
+            Glide.with(this).load(photoUrl).into(resourcePhoto);
+        }
 
+        TextView resourceTitle = findViewById(R.id.resource_title);
+        String title = resource.getTitle();
+        if (title != null) {
+            resourceTitle.setText(title);
+        }
+
+        TextView resourceDescription = findViewById(R.id.resource_description);
+        String description = resource.getDescription();
+        if (description != null) {
+            resourceDescription.setText(Html.fromHtml(description));
+        }
+
+        LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        LinearLayout addressesLinearLayout = findViewById(R.id.addresses_linear_layout);
+        for(Address address:resource.getAddresses()) {
+            View addressView = vi.inflate(R.layout.layout_address, null);
+            TextView addressTextView = addressView.findViewById(R.id.address);
+            addressTextView.setText(address.getAddress1() + "\n" + address.getCity() + ", " + address.getState() + " " + address.getZipCode() + "\n" + address.getCountry());
+            addressesLinearLayout.addView(addressView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        LinearLayout contactInformationLinearLayout = findViewById(R.id.contact_information_linear_layout);
+
+        if (resource.getContactInfo().getPhoneNumber() != null) {
+            View phoneNumberView = vi.inflate(R.layout.layout_phone, null);
+            TextView phoneNumberTextView = phoneNumberView.findViewById(R.id.phone_number);
+            phoneNumberTextView.setText(resource.getContactInfo().getPhoneNumber());
+            contactInformationLinearLayout.addView(phoneNumberView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        if (resource.getContactInfo().getTollFree() != null) {
+            View tollFreeView = vi.inflate(R.layout.layout_phone, null);
+            TextView tollFreeTextView = tollFreeView.findViewById(R.id.phone_number);
+            tollFreeTextView.setText(resource.getContactInfo().getTollFree());
+            contactInformationLinearLayout.addView(tollFreeView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        if (resource.getContactInfo().getFaxNumber() != null) {
+            View faxNumberView = vi.inflate(R.layout.layout_fax, null);
+            TextView faxTextView = faxNumberView.findViewById(R.id.fax_number);
+            faxTextView.setText(resource.getContactInfo().getFaxNumber());
+            contactInformationLinearLayout.addView(faxNumberView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        if (resource.getContactInfo().getEmail() != null) {
+            View emailView = vi.inflate(R.layout.layout_email, null);
+            TextView emailTextView = emailView.findViewById(R.id.email);
+            emailTextView.setText(resource.getContactInfo().getEmail());
+            contactInformationLinearLayout.addView(emailView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        if (resource.getContactInfo().getWebsite() != null) {
+            View websiteView = vi.inflate(R.layout.layout_website, null);
+            TextView websiteTextView = websiteView.findViewById(R.id.website);
+            websiteTextView.setText(resource.getContactInfo().getWebsite());
+            contactInformationLinearLayout.addView(websiteView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        LinearLayout businessHoursLinearLayout = findViewById(R.id.business_hours_linear_layout);
+        for(Map.Entry<String, BusinessHours> businessHoursEntry:resource.getBusinessHours().entrySet()) {
+            View businessHoursView = vi.inflate(R.layout.layout_business_hours, null);
+            TextView dayTextView = businessHoursView.findViewById(R.id.day);
+            dayTextView.setText(businessHoursEntry.getKey());
+            TextView timeTextView = businessHoursView.findViewById(R.id.time);
+            timeTextView.setText(businessHoursEntry.getValue().getFrom() + " - " + businessHoursEntry.getValue().getTo());
+            businessHoursLinearLayout.addView(businessHoursView,
+                    0, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
     }
 
     private Resource getResourceFromFile(String path, String id){

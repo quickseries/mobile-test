@@ -14,39 +14,31 @@
         <ImageView
             android:id="@+id/resource_photo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
 
         <TextView
             android:id="@+id/resource_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/resource_description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/contact_information_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Contact Information"
             tools:text="Contact Information" />
 
         <LinearLayout
-            android:id="@+id/phone_numbers_linear_layout"
+            android:id="@+id/contact_information_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"/>
-
-        <TextView
-            android:id="@+id/address_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:text="Address" />
 
         <LinearLayout
             android:id="@+id/addresses_linear_layout"
@@ -58,14 +50,14 @@
             android:id="@+id/notes_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Notes"
             tools:text="Notes" />
 
         <TextView
             android:id="@+id/business_hours_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Business Hours"
             tools:text="Business Hours" />
 
         <LinearLayout
