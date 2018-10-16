@@ -1,10 +1,9 @@
 package mobiletest.yucef.ca.mobiletest;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,13 +21,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    private static class Category {
+public class ResourceActivity extends AppCompatActivity {
+    public static final String RESOURCE_ID_EXTRA = "resource-id";
+    private static class Resource {
         String title;
         String description;
         String path;
 
-        Category(String title, String description, String path) {
+        Resource(String title, String description, String path) {
             this.title = title;
             this.description = description;
             this.path = path;
@@ -36,14 +36,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
-        Context context;
-        List<Category> categories;
+        List<Resource> categories;
 
         private CategoryAdapter() {
         }
 
-        public CategoryAdapter(Context context, List<Category> categories) {
-            this.context = context;
+        public CategoryAdapter(List<Resource> categories) {
             this.categories = categories;
         }
 
@@ -56,15 +54,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
+        public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
             categoryViewHolder.title.setText(categories.get(position).title);
             categoryViewHolder.description.setText(categories.get(position).description);
             categoryViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, ResourcesActivity.class);
-                    intent.putExtra(ResourcesActivity.RESOURCES_PATH_EXTRA, categories.get(position).path);
-                    context.startActivity(intent);
+
                 }
             });
         }
@@ -97,20 +93,20 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new CategoryAdapter(this, getCategoriesFromFile()));
+        recyclerView.setAdapter(new CategoryAdapter(getCategoriesFromFile()));
     }
 
-    private List<Category> getCategoriesFromFile(){
-        List<Category> categories = null;
+    private List<Resource> getCategoriesFromFile(){
+        List<Resource> categories = null;
         try {
             categories = new ArrayList<>();
             JSONArray categoriesJSONArray = new JSONArray(loadJSONFromAsset(this, "categories.json"));
 
             for (int i = 0; i < categoriesJSONArray.length(); i++) {
                 JSONObject category = categoriesJSONArray.getJSONObject(i);
-                categories.add(new Category(category.optString("title", "Title"),
+                categories.add(new Resource(category.optString("title", "Title"),
                         category.optString("description", "Description"),
-                        category.getString("slug")));
+                        category.getString("path")));
             }
         } catch (JSONException e) {
             e.printStackTrace();
