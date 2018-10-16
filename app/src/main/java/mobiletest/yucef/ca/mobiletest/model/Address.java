@@ -8,9 +8,9 @@ public class Address {
     String state;
     String country;
     Long latitude;
-    Long longtitude;
+    Long longitude;
 
-    public Address(String address1, String label, String zipCode, String city, String state, String country, Long latitude, Long longtitude) {
+    public Address(String address1, String label, String zipCode, String city, String state, String country, Long latitude, Long longitude) {
         this.address1 = address1;
         this.label = label;
         this.zipCode = zipCode;
@@ -18,7 +18,7 @@ public class Address {
         this.state = state;
         this.country = country;
         this.latitude = latitude;
-        this.longtitude = longtitude;
+        this.longitude = longitude;
     }
 
     public String getAddress1() {
@@ -49,7 +49,7 @@ public class Address {
         return latitude;
     }
 
-    public Long getLongtitude() {
-        return longtitude;
+    public Long getLongitude() {
+        return longitude;
     }
 }

@@ -4,11 +4,15 @@ public class ContactInfo {
     String website;
     String email;
     String phoneNumber;
+    String faxNumber;
+    String tollFree;
 
-    public ContactInfo(String website, String email, String phoneNumber) {
+    public ContactInfo(String website, String email, String phoneNumber, String faxNumber, String tollFree) {
         this.website = website;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.faxNumber = faxNumber;
+        this.tollFree = tollFree;
     }
 
     public String getWebsite() {
@@ -21,5 +25,13 @@ public class ContactInfo {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getFaxNumber() {
+        return faxNumber;
+    }
+
+    public String getTollFree() {
+        return tollFree;
     }
 }

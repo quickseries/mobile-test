@@ -1,8 +1,7 @@
 package mobiletest.yucef.ca.mobiletest.model;
 
 import java.util.List;
-
-import mobiletest.yucef.ca.mobiletest.ResourcesActivity;
+import java.util.Map;
 
 public class Resource {
     String id;
@@ -10,15 +9,18 @@ public class Resource {
     String description;
     String photoUrl;
     List<Address> addresses;
-    List<ContactInfo> contactInfoList;
+    ContactInfo contactInfo;
+    Map<String, BusinessHours> businessHours;
 
-    public Resource(String id, String title, String description, String photoUrl, List<Address> addresses, List<ContactInfo> contactInfoList) {
+    public Resource(String id, String title, String description, String photoUrl, List<Address> addresses, ContactInfo contactInfo,
+                    Map<String, BusinessHours> businessHours) {
         this.title = title;
         this.id = id;
         this.description = description;
         this.photoUrl = photoUrl;
         this.addresses = addresses;
-        this.contactInfoList = contactInfoList;
+        this.contactInfo = contactInfo;
+        this.businessHours = businessHours;
     }
 
     public String getId() {
@@ -41,7 +43,11 @@ public class Resource {
         return addresses;
     }
 
-    public List<ContactInfo> getContactInfoList() {
-        return contactInfoList;
+    public ContactInfo getContactInfo() {
+        return contactInfo;
+    }
+
+    public Map<String, BusinessHours> getBusinessHours() {
+        return businessHours;
     }
 }

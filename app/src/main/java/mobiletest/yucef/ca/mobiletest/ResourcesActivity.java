@@ -8,9 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -55,12 +57,11 @@ public class ResourcesActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
             categoryViewHolder.title.setText(resources.get(position).getTitle());
-            categoryViewHolder.description.setText(resources.get(position).getDescription());
+            categoryViewHolder.description.setText(Html.fromHtml(resources.get(position).getDescription()));
             categoryViewHolder.cv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Intent intent = new Intent(context, ResourcesActivity.class);
+                    Intent intent = new Intent(context, ResourceActivity.class);
                     intent.putExtra(RESOURCES_PATH_EXTRA, resourcesPath);
                     intent.putExtra(ResourceActivity.RESOURCE_ID_EXTRA, resources.get(position).getId());
                     context.startActivity(intent);
@@ -91,7 +92,7 @@ public class ResourcesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recyclerview);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -108,6 +109,11 @@ public class ResourcesActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
     private List<Resource> getResourcesFromFile(String path){
         path = path + ".json";
         List<Resource> resources = null;
@@ -119,7 +125,7 @@ public class ResourcesActivity extends AppCompatActivity {
                 JSONObject category = categoriesJSONArray.getJSONObject(i);
                 resources.add(new Resource(category.optString("_id"), category.optString("title", "Title"),
                         category.optString("description", "Description"),
-                        null, null, null));
+                        null, null, null, null));
             }
         } catch (JSONException e) {
             e.printStackTrace();
