@@ -1,4 +1,5 @@
 <resources>
-    <string name="realm_schema_version">1.0.0</string>
+    <string name="realm_schema_version">1</string>
     <string name="realm_config_name">main.quickseries.realm</string>
+    <string name="no_category_folks">OOPS!! No category Found</string>
 </resources>

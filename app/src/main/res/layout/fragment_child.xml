@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgrounColor"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context=".ui.BaseActivity">
+
+    <LinearLayout
+            android:id="@+id/contactSearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.SearchView
+                android:id="@+id/contactSearch"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_corners_white_background"
+                android:focusedByDefault="false"
+                app:defaultQueryHint="Search"
+                app:iconifiedByDefault="false"
+                android:clickable="true"/>
+
+    </LinearLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/contactSearchLayout">
+
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--style="@style/generalRecyclerViewStyle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layoutManager="android.support.v7.widget.LinearLayoutManager"-->
+        <!--tools:listitem="@layout/list_item_folks_contact" />-->
+        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:scrollbars="none"
+                style="@style/generalRecyclerViewStyle"
+                tools:listitem="@layout/list_item_category"
+                app:fastScrollPopupBgColor="@color/colorPrimary"
+                app:fastScrollAutoHide="true"
+                app:fastScrollAutoHideDelay="1500"
+                app:fastScrollPopupBackgroundSize="88dp"
+                app:fastScrollPopupPosition="adjacent"
+                app:fastScrollPopupTextColor="@color/colorPrimary"
+                app:fastScrollPopupTextSize="44sp"
+                app:fastScrollThumbColor="@color/colorPrimary"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <TextView
+            android:id="@+id/noResultFound"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            style="@style/LargeTextViewBlackBold"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="@string/no_category_folks"
+            android:visibility="gone"/>
+
+    <ProgressBar
+            android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

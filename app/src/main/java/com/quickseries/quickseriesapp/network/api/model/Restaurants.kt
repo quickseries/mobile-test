@@ -24,9 +24,9 @@ data class Restaurants(
     var updated_at: String? = "",
     @field:JsonProperty("addresses")
     var addressList: List<ResAddress> = emptyList(),
-    var contactInfo: List<ResContactInfo> = emptyList(),
+    var contactInfo: ResContactInfo? = null,
     var freeText: List<ResFreeText> = emptyList(),
-    var bizHours: List<ResBizHours> = emptyList(),
-    var socialMedia: List<ResSocialMedia> = emptyList()
+    var bizHours: ResBizHours? = null,
+    var socialMedia: ResSocialMedia? = null
 
 )

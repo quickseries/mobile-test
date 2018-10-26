@@ -35,10 +35,10 @@ class QuickSeriesApp : Application() {
         Realm.setDefaultConfiguration(realmConfiguration)
 
         Injector.init(this)
-        Injector.get()!!.inject(this)
+        Injector.get().inject(this)
 
 
-        ActivityLifecycle.init(this)
+        //  ActivityLifecycle.init(this)
 
     }
 

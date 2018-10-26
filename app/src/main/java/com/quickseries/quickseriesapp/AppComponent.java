@@ -3,6 +3,8 @@ package com.quickseries.quickseriesapp;
 import com.quickseries.quickseriesapp.network.api.ApiClient;
 import com.quickseries.quickseriesapp.network.wrapper.ApiWrapper;
 import com.quickseries.quickseriesapp.network.wrapper.RealmWrapper;
+import com.quickseries.quickseriesapp.ui.BasePresenter;
+import com.quickseries.quickseriesapp.ui.categories.categoryitem.CategoryItemPresenter;
 import dagger.Component;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,5 +25,9 @@ public interface AppComponent {
     void inject(@NotNull RealmWrapper target);
 
     void inject(@NotNull ApiWrapper target);
+
+    void inject(@NotNull CategoryItemPresenter target);
+
+    void inject(@NotNull BasePresenter target);
 
 }

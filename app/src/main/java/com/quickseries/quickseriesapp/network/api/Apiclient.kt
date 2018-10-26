@@ -79,7 +79,7 @@ class ApiClient(val context: Context, QUICKSERIES_API_BASE_URL: String = BuildCo
                 Callback<List<Restaurants>> {
                 override fun onResponse(call: Call<List<Restaurants>>, response: Response<List<Restaurants>>) {
                     if (response.isSuccessful) {
-                        realmWrapper.saveCategoriesData(result = response.body()!!)
+                        realmWrapper.saveCategoriesData(result = response.body()!!, slugParentCategory = slug)
                         subscriber.onNext(response.body()!!)
                         subscriber.onComplete()
                     } else {
