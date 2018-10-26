@@ -4,28 +4,176 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'realm-android'
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.quickseries.quickseriesapp"
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+        missingDimensionStrategy "PROD", "STAGING", "DEV"
     }
+    dexOptions {
+        preDexLibraries = false
+    }
+    flavorDimensions("environment")
+
+    productFlavors {
+        PROD {
+            resValue "string", "app_name", "QuickSeriesApp"
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", "\"https://raw.githubusercontent.com/quickseries/mobile-test/master/data/\""
+        }
+
+        STAGING {
+            resValue "string", "app_name", "QuickSeriesApp - Staging"
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", "\"https://raw.githubusercontent.com/quickseries/mobile-test/master/data/\""
+        }
+
+        DEV {
+            resValue "string", "app_name", "QuickSeriesApp - Dev"
+            dimension "environment"
+            buildConfigField "String", "BASE_URL", "\"https://raw.githubusercontent.com/quickseries/mobile-test/master/data/\""
+        }
+
+    }
+
+    applicationVariants.all { variant ->
+        def flavorString = variant.getVariantData().getVariantConfiguration().getFlavorName()
+        def mergedFlavour = variant.getVariantData().getVariantConfiguration().getMergedFlavor()
+
+        //PROD generated apk
+        if (flavorString.equalsIgnoreCase("PROD")) {
+            mergedFlavour.setApplicationId("com.quickseries.quickseriesapp")
+        }
+
+        //STAGING generated apk
+        if (flavorString.equalsIgnoreCase("STAGING")) {
+            mergedFlavour.setApplicationId("com.quickseries.quickseriesapp.staging")
+        }
+
+        //DEV generated apk
+        if (flavorString.equalsIgnoreCase("DEV")) {
+            mergedFlavour.setApplicationId("com.quickseries.quickseriesapp.dev")
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+        resolutionStrategy.force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+        resolutionStrategy.force "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+        resolutionStrategy.force "com.fasterxml.jackson.core:jackson-databind:2.8.7"
+        resolutionStrategy.force "com.fasterxml.jackson.core:jackson-annotations:2.8.7"
+
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/RXJAVA.properties'
+        exclude 'META-INF/mobile_debug.kotlin_module'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'LICENSE.txt'
+    }
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
+    }
+
+    sourceSets {
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    afterEvaluate {
+        android.sourceSets.all { sourceSet ->
+            if (!sourceSet.name.startsWith("test")) {
+                sourceSet.kotlin.setSrcDirs([])
+            }
+            if (!sourceSet.name.startsWith("androidTest")) {
+                sourceSet.kotlin.setSrcDirs([])
+            }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //Kotlin Dependecy
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v13:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintlayout"
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-jackson:$rootProject.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttp"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttp"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.retrofitRxjavaAdapter"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxJavaAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    implementation 'io.reactivex:rxjava:1.3.0'
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    //Realm
+    implementation 'io.realm:android-adapters:1.4.0'
+
+    implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.16'
+    implementation 'com.pixplicity.easyprefs:library:1.7'
+    implementation 'com.thanosfisherman.mayi:mayi:1.4'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'com.roughike:bottom-bar:2.3.1'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
