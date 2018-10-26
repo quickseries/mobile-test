@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mobile Test</string>
+    <string name="row_title">Title</string>
 </resources>

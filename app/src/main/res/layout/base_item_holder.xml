@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_item_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height"
+    android:background="@drawable/transparent_to_accent_color_selector"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/md_keylines"
+    android:paddingStart="@dimen/md_keylines"
+    android:paddingTop="@dimen/card_padding"
+    android:paddingBottom="@dimen/card_padding">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="true"
+        android:lineSpacingExtra="@dimen/list_item_row_text_multiline_spacing"
+        android:textColor="@color/md_text_color_to_text_selected_color_selector"
+        android:textSize="@dimen/list_text_size"
+        android:title="@string/row_title" />
+
+</LinearLayout>
