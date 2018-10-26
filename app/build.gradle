@@ -135,7 +135,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //Kotlin Dependecy
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
@@ -163,6 +163,10 @@ dependencies {
     // Dagger
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    //Lomboc
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+    kapt 'org.projectlombok:lombok:1.16.18'
 
     //Realm
     implementation 'io.realm:android-adapters:1.4.0'
