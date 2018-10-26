@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(R.string.activity_category_title);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         int tilePadding = getResources().getDimensionPixelSize(R.dimen.tile_padding);

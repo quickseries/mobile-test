@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Mobile Test</string>
     <string name="row_title">Title</string>
+    <string name="activity_category_title">Categories</string>
+    <string name="activity_resources_title">Resources</string>
+    <string name="sort">Sort</string>
+    <string name="activity_details_title">Resource Details</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
 </resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_item_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height"
+    android:background="@drawable/transparent_to_accent_color_selector"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/md_keylines"
+    android:paddingStart="@dimen/md_keylines"
+    android:paddingTop="@dimen/card_padding"
+    android:paddingBottom="@dimen/card_padding">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:duplicateParentState="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:lineSpacingExtra="@dimen/list_item_row_text_multiline_spacing"
+            android:textColor="@color/md_text_color_to_text_selected_color_selector"
+            android:textSize="@dimen/list_text_size"
+            android:title="@string/email_address" />
+
+        <TextView
+            android:id="@+id/description_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:lineSpacingExtra="@dimen/list_item_row_text_multiline_spacing"
+            android:textColor="@color/md_text_color_to_text_selected_color_selector"
+            android:textSize="@dimen/list_text_description_size"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        app:srcCompat="@drawable/ic_email_black_24dp"/>
+
+</LinearLayout>

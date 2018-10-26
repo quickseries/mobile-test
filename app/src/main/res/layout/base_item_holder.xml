@@ -6,7 +6,7 @@
     android:minHeight="@dimen/list_item_height"
     android:background="@drawable/transparent_to_accent_color_selector"
     android:gravity="center_vertical"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingEnd="@dimen/md_keylines"
     android:paddingStart="@dimen/md_keylines"
     android:paddingTop="@dimen/card_padding"
@@ -21,5 +21,14 @@
         android:textColor="@color/md_text_color_to_text_selected_color_selector"
         android:textSize="@dimen/list_text_size"
         android:title="@string/row_title" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="true"
+        android:lineSpacingExtra="@dimen/list_item_row_text_multiline_spacing"
+        android:textColor="@color/md_text_color_to_text_selected_color_selector"
+        android:textSize="@dimen/list_text_description_size"/>
 
 </LinearLayout>
