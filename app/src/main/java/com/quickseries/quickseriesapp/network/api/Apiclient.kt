@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
- * Created by parth.gadhiya on 2018-02-18.
+ * Created by parth.gadhiya on 2018-10-26.
  */
 
 class ApiClient(val context: Context, QUICKSERIES_API_BASE_URL: String = BuildConfig.BASE_URL) {

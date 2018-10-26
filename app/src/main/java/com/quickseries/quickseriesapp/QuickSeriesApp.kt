@@ -38,8 +38,6 @@ class QuickSeriesApp : Application() {
         Injector.get().inject(this)
 
 
-        //  ActivityLifecycle.init(this)
-
     }
 
     override fun attachBaseContext(base: Context) {

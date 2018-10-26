@@ -1,13 +1,12 @@
 package com.quickseries.quickseriesapp.network.api.model
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
 import com.jive.android.contactsv2.OpenClassOnDebug
 
 
 /**
- * This is the list of Address for particular Restaurant
- * @constructor V4AddressBook
+ * address model
+ * @constructor ResAddress
  */
 @OpenClassOnDebug
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -22,10 +21,9 @@ data class ResAddress(
 )
 
 
-
 /**
- * This is addressbook api response class
- *  @constructor V4AddressBookResponse
+ * Gps Model
+ *  @constructor Gps
  *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)

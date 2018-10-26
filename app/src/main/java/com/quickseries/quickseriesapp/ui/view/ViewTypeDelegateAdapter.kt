@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 
 /**
- * Created by parth.gadhiya on 2018-03-07.
+ * Created by parth.gadhiya on 2018-10-26.
  */
 interface ViewTypeDelegateAdapter {
     fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder

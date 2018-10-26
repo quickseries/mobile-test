@@ -8,7 +8,7 @@ import com.quickseries.quickseriesapp.R
 import kotlinx.android.synthetic.main.activity_webview.*
 
 /**
- * Created by parth.gadhiya on 2018-03-25.
+ * Created by parth.gadhiya on 2018-10-26.
  */
 
 class WebViewActivity : AppCompatActivity() {

@@ -13,7 +13,7 @@ import com.quickseries.quickseriesapp.R
 import com.quickseries.quickseriesapp.ui.categories.categoryitem.adapter.CategoryItemAdapter
 import com.quickseries.quickseriesapp.ui.categories.categoryitem.adapter.model.ICategoryItem
 import com.quickseries.quickseriesapp.ui.categorydetail.CategoryDetailActivity
-import kotlinx.android.synthetic.main.fragment_child.*
+import kotlinx.android.synthetic.main.fragment_category_items.*
 
 
 class CategoryItemFragment : Fragment(), CategoryItemContract.View {
@@ -32,7 +32,7 @@ class CategoryItemFragment : Fragment(), CategoryItemContract.View {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_child, container, false)
+        val view = inflater.inflate(R.layout.fragment_category_items, container, false)
         val bundle = arguments
         val title = bundle?.getString("data")
         slug = bundle?.getString("slug")!!

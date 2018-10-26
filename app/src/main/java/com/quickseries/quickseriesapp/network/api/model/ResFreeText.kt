@@ -5,8 +5,8 @@ import com.jive.android.contactsv2.OpenClassOnDebug
 
 
 /**
- * This is the list of Address for particular Restaurant
- * @constructor V4AddressBook
+ * ResFreeText model
+ * @constructor ResFreeText
  */
 @OpenClassOnDebug
 @JsonIgnoreProperties(ignoreUnknown = true)
