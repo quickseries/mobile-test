@@ -30,6 +30,14 @@
                 app:iconifiedByDefault="false"
                 android:clickable="true"/>
 
+        <Switch
+                android:id="@+id/sortSwitch"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_height="wrap_content"
+                android:text="A-Z"
+                android:checked="true"/>
+
     </LinearLayout>
 
 

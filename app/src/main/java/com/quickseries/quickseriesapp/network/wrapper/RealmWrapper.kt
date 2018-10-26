@@ -87,7 +87,7 @@ class RealmWrapper(val app: QuickSeriesApp) {
                             it?.phoneNumber?.map { QSPhone(name = it) }?.forEach { contact.addPhoneList(it) }
                             it?.faxNumber?.map { QSFax(name = it) }?.forEach { contact.addFaxList(it) }
                             it?.tollFree?.map { QSToll(name = it) }?.forEach { contact.addTollList(it) }
-                            categoryData.addContactList(realm1.copyToRealmOrUpdate(contact))
+                            categoryData.contactInfo = contact
                         }
 
                         it.freeText.let {
@@ -110,14 +110,14 @@ class RealmWrapper(val app: QuickSeriesApp) {
                                 friday = QSTime(it?.friday?.from ?: "", it?.friday?.to ?: ""),
                                 saturday = QSTime(it?.saturday?.from ?: "", it?.saturday?.to ?: "")
                             )
-                            categoryData.addbizHourList(realm1.copyToRealmOrUpdate(biz))
+                            categoryData.bizHours = biz
                         }
                         it.socialMedia.let {
                             val contact = QSSocialMedia()
                             it?.youtubeChannel?.map { QSYoutube(name = it) }?.forEach { contact.addYoutubeList(it) }
                             it?.twitter?.map { QSTwitter(name = it) }?.forEach { contact.addTwitterList(it) }
                             it?.facebook?.map { QSFb(name = it) }?.forEach { contact.addFbList(it) }
-                            categoryData.addSocialMediaList(realm1.copyToRealmOrUpdate(contact))
+                            categoryData.socialMedia = contact
                         }
 
                         realm1.copyToRealmOrUpdate(categoryData)
@@ -149,14 +149,36 @@ class RealmWrapper(val app: QuickSeriesApp) {
         }
     }
 
-    fun getCategoryItemBySlug(slug: String): Observable<MutableList<ICategoryItem>> {
+
+    fun getCategoryItemById(id: String): QSCategoriesData? {
+        val realm = Realm.getDefaultInstance()
+        return try {
+            val data = realm.where(QSCategoriesData::class.java).equalTo("id", id).findFirst()
+            if (data != null) {
+                realm.copyFromRealm(data)
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return null
+        } finally {
+            realm.close()
+        }
+    }
+
+    fun getCategoryItemBySlug(slug: String, ascen: Boolean): Observable<MutableList<ICategoryItem>> {
         return Observable.create<MutableList<ICategoryItem>> { e ->
             var folksCachedContacts: MutableList<ICategoryItem> = mutableListOf()
             val realm = Realm.getDefaultInstance()
             try {
                 val data =
-                    realm.where(QSCategoriesData::class.java).equalTo("parentCategorySlug", slug, Case.INSENSITIVE)
-                        .findAll()
+                    if (ascen)
+                        realm.where(QSCategoriesData::class.java).equalTo("parentCategorySlug", slug, Case.INSENSITIVE)
+                            .findAll().sortedBy { qsCategoriesData -> qsCategoriesData.title }
+                    else
+                        realm.where(QSCategoriesData::class.java).equalTo("parentCategorySlug", slug, Case.INSENSITIVE)
+                            .findAll().sortedByDescending { qsCategoriesData -> qsCategoriesData.title }
                 if (data != null && data.isNotEmpty()) {
                     folksCachedContacts.addAll(
                         transformQSCategoryDataToICategoryItem(realm.copyFromRealm(data))

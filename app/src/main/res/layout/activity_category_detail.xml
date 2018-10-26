@@ -1,0 +1,252 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/backgrounColor"
+                tools:context=".ui.categorydetail.CategoryDetailActivity">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/detailImageView"/>
+    <ScrollView
+            android:layout_below="@+id/detailImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/detailImageView"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+            <TextView
+                    style="@style/LargeTextViewBlackBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailTitle"
+                    android:text="Resource Title"/>
+
+            <TextView
+                    style="@style/MediumTextViewGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailDescription"
+                    android:paddingBottom="8dp"
+                    android:text="Lorem Ip sum "/>
+
+            <TextView
+                    style="@style/MediumTextViewBlackBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="16dp"
+                    android:textAllCaps="true"
+                    android:text="Contact Information"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                        <TextView
+                                style="@style/MediumTextViewRed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="Phone Number"/>
+
+                        <TextView
+                                style="@style/LargeTextViewGreay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/phoneNumber"
+                                android:text="Lorem Ip sum "/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.2"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical|right"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
+                        <ImageButton
+                                android:id="@+id/message"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|right"
+                                android:background="@drawable/ic_chat_orange_36dp"/>
+
+                        <ImageButton
+                                android:id="@+id/call"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:background="@drawable/ic_phone_orange_36dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                        <TextView
+                                style="@style/MediumTextViewRed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="Email Address"/>
+
+                        <TextView
+                                style="@style/LargeTextViewGreay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/emailid"
+                                android:text="Lorem Ip sum "/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.2"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical|right"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
+                        <ImageButton
+                                android:id="@+id/email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ic_mail_orange_36dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                        <TextView
+                                style="@style/MediumTextViewRed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="Website"/>
+                        <TextView
+                                style="@style/LargeTextViewGreay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/website"
+                                android:text="Lorem Ip sum "/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="0.2"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical|right"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
+                        <ImageButton
+                                android:id="@+id/websitearrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ic_right_arrow_orange_36dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                    style="@style/MediumTextViewBlackBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="16dp"
+                    android:textAllCaps="true"
+                    android:text="Address"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:weightSum="1">
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <TextView
+                            style="@style/MediumTextViewRed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:text="Address"/>
+
+                    <TextView
+                            style="@style/LargeTextViewGreay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/address"
+                            android:text="Lorem Ip sum "/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical|right"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+                    <ImageButton
+                            android:id="@+id/addicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_home_orange_36dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+</RelativeLayout>

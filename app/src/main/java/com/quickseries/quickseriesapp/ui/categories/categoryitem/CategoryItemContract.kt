@@ -14,7 +14,7 @@ interface CategoryItemContract {
     }
 
     interface Presenter {
-        fun load(status: Boolean, slug: String)
+        fun load(status: Boolean, slug: String, ascendingSort: Boolean)
         fun filter(newText: String)
 
     }

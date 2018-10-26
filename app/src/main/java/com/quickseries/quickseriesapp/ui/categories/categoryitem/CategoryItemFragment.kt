@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
+import android.support.v7.widget.SearchView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,8 +42,28 @@ class CategoryItemFragment : Fragment(), CategoryItemContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler_view?.adapter = categoryAdapter
-        presenter.load(true, slug)
-        swipeRefreshLayout.setOnRefreshListener { presenter.load(true, slug) }
+        presenter.load(true, slug, true)
+        swipeRefreshLayout.setOnRefreshListener { presenter.load(true, slug, sortSwitch.isChecked) }
+        contactSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                println("search query submit")
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                presenter.filter(newText)
+                return false
+            }
+        })
+        sortSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if (isChecked) {
+                presenter.load(false, slug, true)
+                sortSwitch.text = "A-Z"
+            } else {
+                presenter.load(false, slug, false)
+                sortSwitch.text = "Z-A"
+            }
+        }
     }
 
     override fun showProgress(show: Boolean) {

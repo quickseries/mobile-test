@@ -25,8 +25,76 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="LargeTextViewGrey" parent="TextAppearance.AppCompat.Large">
+    <style name="LargeTextViewBlack" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MediumTextViewBlackBold" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MediumTextViewBlack" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SmallTextViewBlackBold" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SmallTextViewBlack" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="LargeTextViewGreyBold" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LargeTextViewGreay" parent="TextAppearance.AppCompat.Large">
         <item name="android:textColor">@color/font_color</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <style name="MediumTextViewGreyBold" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MediumTextViewGrey" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="SmallTextViewGreyBold" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SmallTextViewGrey" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/font_color</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="MediumTextViewRedBold" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MediumTextViewRed" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="EdittextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium.Inverse</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+
 </resources>

@@ -34,10 +34,10 @@ open class QSCategoriesData(
     open var photo: String = "",
     open var _active: Boolean = true,
     open var addressList: RealmList<QSAddress> = RealmList(),
-    open var contactInfo: RealmList<QSContactInfo> = RealmList(),
+    open var contactInfo: QSContactInfo? = null,
     open var freeText: RealmList<QSFreeText> = RealmList(),
-    open var bizHours: RealmList<QSBizHours> = RealmList(),
-    open var socialMedia: RealmList<QSSocialMedia> = RealmList()
+    open var bizHours: QSBizHours? = null,
+    open var socialMedia: QSSocialMedia? = null
 
 ) : RealmObject() {
 
@@ -55,19 +55,6 @@ open class QSCategoriesData(
 
     }
 
-    fun addContactList(contact: QSContactInfo) {
-        try {
-            if (contactInfo != null) {
-                contactInfo.add(contact)
-            } else {
-                contactInfo = RealmList()
-                contactInfo.add(contact)
-            }
-        } catch (e: IllegalStateException) {
-            e.printStackTrace()
-        }
-
-    }
 
     fun addTextList(contact: QSFreeText) {
         try {
@@ -83,33 +70,6 @@ open class QSCategoriesData(
 
     }
 
-    fun addbizHourList(contact: QSBizHours) {
-        try {
-            if (bizHours != null) {
-                bizHours.add(contact)
-            } else {
-                bizHours = RealmList()
-                bizHours.add(contact)
-            }
-        } catch (e: IllegalStateException) {
-            e.printStackTrace()
-        }
-
-    }
-
-    fun addSocialMediaList(contact: QSSocialMedia) {
-        try {
-            if (socialMedia != null) {
-                socialMedia.add(contact)
-            } else {
-                socialMedia = RealmList()
-                socialMedia.add(contact)
-            }
-        } catch (e: IllegalStateException) {
-            e.printStackTrace()
-        }
-
-    }
 }
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -123,7 +83,11 @@ open class QSAddress(
     open var state: String = "",
     open var country: String = "",
     open var gps: QSGps? = null
-) : RealmObject()
+) : RealmObject() {
+    override fun toString(): String {
+        return "QSAddress(address1='$address1', label='$label', zipCode='$zipCode', city='$city', state='$state', country='$country')"
+    }
+}
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -132,7 +96,11 @@ open class QSGps(
     open var _id: String = UUID.randomUUID().toString(),
     open var latitude: String = "",
     open var longitude: String = ""
-) : RealmObject()
+) : RealmObject() {
+    fun getLatLng(): String {
+        return "$latitude,$longitude"
+    }
+}
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 open class QSContactInfo(

@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemImageView"
                 android:padding="8dp"
-                style="@style/LargeTextViewGrey"
+                style="@style/LargeTextViewGreay"
                 android:text="title"/>
     </RelativeLayout>
 
