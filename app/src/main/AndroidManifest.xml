@@ -20,9 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".resources.ui.ResourcesActivity" />
-        <activity android:name=".details.ui.DetailsActivity"
+        <activity
+            android:name=".details.ui.DetailsActivity"
             android:label="@string/activity_details_title"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".details.ui.WebActivity"></activity>
     </application>
 
 </manifest>

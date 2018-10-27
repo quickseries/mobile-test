@@ -3,7 +3,8 @@ package ca.ivasenko.mobiletest.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.PrimaryKey;
 
-//TODO: use typeconverter for the date
+import java.util.Date;
+
 public class BaseObject
 {
     @PrimaryKey(autoGenerate = true)
@@ -12,7 +13,7 @@ public class BaseObject
     @ColumnInfo(name = "jsonid")
     private String _id;
     @ColumnInfo(name = "updatedat")
-    private String updated_at;
+    private Date updated_at;
     private String slug;
     @ColumnInfo(name = "custommoduleeid")
     private String custom_module_eid;
@@ -24,7 +25,7 @@ public class BaseObject
     @ColumnInfo(name = "active")
     private boolean _active;
     @ColumnInfo(name = "createdat")
-    private String created_at;
+    private Date created_at;
 
     public BaseObject()
     {
@@ -50,12 +51,12 @@ public class BaseObject
         this._id = _id;
     }
 
-    public String getUpdated_at()
+    public Date getUpdated_at()
     {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at)
+    public void setUpdated_at(Date updated_at)
     {
         this.updated_at = updated_at;
     }
@@ -130,12 +131,12 @@ public class BaseObject
         this._active = _active;
     }
 
-    public String getCreated_at()
+    public Date getCreated_at()
     {
         return created_at;
     }
 
-    public void setCreated_at(String created_at)
+    public void setCreated_at(Date created_at)
     {
         this.created_at = created_at;
     }

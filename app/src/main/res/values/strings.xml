@@ -7,5 +7,14 @@
     <string name="activity_details_title">Resource Details</string>
     <string name="contact_information">Contact Information</string>
     <string name="phone_number">Phone Number</string>
+    <string name="fax_number">Fax Number</string>
+    <string name="toll_free_number">Toll-Free Number</string>
     <string name="email_address">Email Address</string>
+    <string name="website">Website</string>
+    <string name="socialMedia">Social Media</string>
+    <string name="businessHours">Business Hours</string>
+    <string name="businessHoursFromToTime">%1$s - %2$s</string>
+    <string name="address_icon">Address icon</string>
+    <string name="address">Address</string>
+    <string name="cityStateZip">%1$s, %2$s, %3$s</string>
 </resources>

@@ -52,8 +52,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingEnd="@dimen/md_keylines"
-            android:paddingLeft="@dimen/article_keylines"
-            android:paddingRight="@dimen/md_keylines"
             android:paddingStart="@dimen/article_keylines"
             android:paddingTop="@dimen/md_keylines">
 
@@ -62,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/md_keylines"
+                android:textAllCaps="true"
                 android:textColor="?attr/colorAccent"
                 android:textSize="@dimen/article_titles" />
 
@@ -71,20 +70,72 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/contactinfoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/md_keylines"
                 android:layout_marginTop="@dimen/md_keylines"
+                android:textAllCaps="true"
                 android:text="@string/contact_information"
                 android:textColor="?attr/colorAccent"
                 android:textSize="@dimen/article_titles" />
 
-            <include layout="@layout/contact_info_phone"
-                android:id="@+id/phone_row"/>
-            <include layout="@layout/contact_info_email"
-                android:id="@+id/email_row"/>
-            <include layout="@layout/contact_info_website"
-                android:id="@+id/website_row"/>
+            <LinearLayout
+                android:id="@+id/details_contact_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/addressTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/md_keylines"
+                android:layout_marginTop="@dimen/md_keylines"
+                android:textAllCaps="true"
+                android:text="@string/address"
+                android:textColor="?attr/colorAccent"
+                android:textSize="@dimen/article_titles" />
+
+            <LinearLayout
+                android:id="@+id/details_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/socialMediaTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/md_keylines"
+                android:layout_marginTop="@dimen/md_keylines"
+                android:textAllCaps="true"
+                android:text="@string/socialMedia"
+                android:textColor="?attr/colorAccent"
+                android:textSize="@dimen/article_titles" />
+
+            <LinearLayout
+                android:id="@+id/details_social_media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView
+                android:id="@+id/businessHoursTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/md_keylines"
+                android:layout_marginTop="@dimen/md_keylines"
+                android:textAllCaps="true"
+                android:text="@string/businessHours"
+                android:textColor="?attr/colorAccent"
+                android:textSize="@dimen/article_titles" />
+
+            <LinearLayout
+                android:id="@+id/details_business_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

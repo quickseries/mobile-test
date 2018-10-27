@@ -3,14 +3,17 @@ package ca.ivasenko.mobiletest.data;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
+import ca.ivasenko.mobiletest.Utils.Converters;
 import ca.ivasenko.mobiletest.categories.data.CategoryDao;
 import ca.ivasenko.mobiletest.categories.model.Category;
 import ca.ivasenko.mobiletest.resources.data.ResourceDao;
 import ca.ivasenko.mobiletest.resources.model.ResourceObject;
 
 @Database(entities = {Category.class, ResourceObject.class}, version = 1, exportSchema = false)
+@TypeConverters(Converters.class)
 public abstract class AppRoomDatabase extends RoomDatabase
 {
     public abstract CategoryDao categoryDao();

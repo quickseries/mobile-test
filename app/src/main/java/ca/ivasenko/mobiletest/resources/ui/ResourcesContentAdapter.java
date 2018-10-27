@@ -61,7 +61,6 @@ class ResourcesContentAdapter extends RecyclerView.Adapter<ResourcesContentAdapt
             holder.itemView.setOnClickListener(view ->
             {
                 Intent intent = new Intent(holder.itemView.getContext(), DetailsActivity.class);
-                intent.putExtra(ResourcesActivity.EID_EXTRA, resources.get(holder.getAdapterPosition()).getCategory_eid());
                 intent.putExtra(ResourcesActivity.RESOURCE_OBJECT_ID_EXTRA, resources.get(holder.getAdapterPosition()).getId());
                 holder.itemView.getContext().startActivity(intent);
             });

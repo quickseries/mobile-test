@@ -6,6 +6,7 @@
     <dimen name="card_padding">8dp</dimen>
     <dimen name="md_keylines">16dp</dimen>
     <dimen name="list_item_height">48dp</dimen>
+    <dimen name="list_icon_height_width">36dp</dimen>
     <dimen name="tile_padding">8dp</dimen>
     <dimen name="article_keylines">72dp</dimen>
     <dimen name="article_titles">20sp</dimen>
