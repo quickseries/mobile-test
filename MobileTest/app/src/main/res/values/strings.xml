@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MobileTest</string>
+    <string name="categories">CATEGORIES</string>
+    <string name="url">https://raw.githubusercontent.com/quickseries/mobile-test/master/data/%1$s.json</string>
+</resources>
