@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="50dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/buttonsLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/AppTheme.Component.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_number" />
+
+        <TextView
+            android:id="@+id/contentTextView"
+            style="@style/AppTheme.Component.Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="+11 123123123\n dauhsd \ nusah" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/button1ImageView"
+            android:layout_width="@dimen/default_icon_image_size"
+            android:layout_height="@dimen/default_icon_image_size"
+            android:clickable="true"
+            android:padding="@dimen/default_icon_padding_inner"
+            android:tint="@color/title_component_fg"
+            app:srcCompat="@drawable/ic_message" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/button2ImageView"
+            android:layout_width="@dimen/default_icon_image_size"
+            android:layout_height="@dimen/default_icon_image_size"
+            android:layout_marginLeft="@dimen/default_h_spacing"
+            android:clickable="true"
+            android:padding="@dimen/default_icon_padding_inner"
+            android:tint="@color/title_component_fg"
+            app:srcCompat="@drawable/ic_phone" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#59000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

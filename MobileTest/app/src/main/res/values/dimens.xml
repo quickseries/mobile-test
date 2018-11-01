@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="default_icon_padding_inner">5dp</dimen>
+    <dimen name="default_icon_image_size">40dp</dimen>
+    <dimen name="item_category_height">60dp</dimen>
+    <dimen name="item_resource_height">100dp</dimen>
+    <dimen name="default_v_spacing">5dp</dimen>
+    <dimen name="default_v_spacing_large">15dp</dimen>
+    <dimen name="default_h_spacing">5dp</dimen>
+    <dimen name="icon_social_media_size">60dp</dimen>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DetailRowView">
+        <attr name="drv_rowType" format="enum">
+            <enum name="phone" value="0" />
+            <enum name="fax" value="1" />
+            <enum name="email" value="2" />
+            <enum name="website" value="3" />
+            <enum name="address" value="4" />
+        </attr>
+        <attr name="drv_title" format="string" />
+        <attr name="drv_content" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BusinessHourRowView">
+        <attr name="bhr_day" format="string" />
+        <attr name="bhr_detail" format="string" />
+    </declare-styleable>
+
+</resources>

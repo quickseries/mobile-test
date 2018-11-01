@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MobileTest</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="categories">Categories</string>
+    <string name="resources">Resources</string>
+    <string name="description">Description</string>
+    <string name="created_at">Created at:</string>
+
+    <string name="contact_information">Contact Information</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="toll_free_number">Toll-Free Number</string>
+    <string name="fax_number">Fax Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="website">WebSite</string>
+    <string name="address">Address</string>
+    <string name="notes">Notes</string>
+    <string name="social_media">Social Media</string>
+    <string name="business_hours">Business Hours</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="closed">Closed</string>
+</resources>
