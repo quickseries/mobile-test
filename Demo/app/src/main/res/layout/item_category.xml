@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<data>
+
+		<variable
+			name="category"
+			type="com.example.mhamed.demo.model.Category"/>
+
+		<variable
+			name="listener"
+			type="com.example.mhamed.demo.ui.activity.CategoryListener"/>
+
+	</data>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="?attr/listPreferredItemHeight"
+		android:onClick="@{() -> listener.onCategoryClick(category)}"
+		android:paddingLeft="@dimen/activity_horizontal_margin"
+		android:paddingRight="@dimen/activity_horizontal_margin"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="start|center_vertical"
+			android:layout_marginEnd="@dimen/margin_small"
+			android:duplicateParentState="true"
+			android:text="@{category.title}"/>
+
+		<TextView
+			android:id="@+id/description"
+			android:layout_width="@dimen/margin_small"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end|center_vertical"
+			android:layout_marginStart="16dp"
+			android:duplicateParentState="true"
+			android:gravity="end"
+			android:text="@{category.description}"
+			android:textColor="@android:color/darker_gray"/>
+
+	</LinearLayout>
+
+</layout>
+
