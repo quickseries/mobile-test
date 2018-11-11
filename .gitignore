@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/*
+.DS_Store
+/build
+/captures
+*.apk
+
+
+#Private files 
+app/even-turbine-134823-firebase-crashreporting-l1cl9-5bc567b8e4.json

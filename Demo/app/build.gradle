@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.firebase-perf' // FireBase Performance Reporting plugin
+//apply plugin: 'io.fabric' // upload the mapping file automatically
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+//	signingConfigs {
+//		config {
+//			keyAlias 'demo-android'
+//			keyPassword 'keyPassword_from_afile'
+//			storeFile file('path/key_store.jks')
+//			storePassword 'storePassword_from_file'
+//		}
+//	}
+
+    compileSdkVersion 27
+	dataBinding {
+		enabled = true
+	}
+    defaultConfig {
+        applicationId "com.example.mhamed.impressivedemo"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+	buildTypes {
+		release {
+			shrinkResources true
+			minifyEnabled true
+			debuggable false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			//signingConfig signingConfigs.config
+		}
+		debug {
+			minifyEnabled false
+			debuggable true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+}
+
+ext {
+	supportV = '27.1.1'
+	googleV = '12.0.1'
+	archVersion = '1.1.0'
+}
+
+dependencies {
+	implementation fileTree(include: ['*.jar'], dir: 'libs')
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+	testImplementation 'junit:junit:4.12'
+	androidTestImplementation 'com.android.support.test:runner:1.0.2'
+	androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+	// Support libs
+	implementation "com.android.support:recyclerview-v7:${supportV}"
+	implementation "com.android.support:appcompat-v7:${supportV}"
+
+	// Lifecycle // TODO delete decided not to use it
+	implementation 'android.arch.lifecycle:runtime:1.1.1'
+	implementation 'android.arch.lifecycle:extensions:1.1.1'
+	annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+	//  Dagger (DI)
+	implementation "com.google.dagger:dagger:2.14.1"
+	implementation "com.google.dagger:dagger-android:2.14.1"
+	implementation "com.google.dagger:dagger-android-support:2.14.1"
+	kapt "com.google.dagger:dagger-compiler:2.14.1"
+	kapt "com.google.dagger:dagger-android-processor:2.14.1"
+
+	// parsing + events dispatch +
+	annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
+	implementation 'com.birbit:android-priority-jobqueue:2.0.0'
+	implementation 'org.greenrobot:eventbus:3.1.1'
+}
