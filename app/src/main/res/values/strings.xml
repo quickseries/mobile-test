@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobileTest</string>
+    <string name="categories_label">Categories</string>
 </resources>
