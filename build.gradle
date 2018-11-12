@@ -38,4 +38,7 @@ ext {
     emailBuilderVersion = '1.0.0'
     lifecycleVersion = '1.1.1'
     gsonVersion = '2.8.2'
+    circleimageviewVersion = '2.2.0'
+    coroutinVersion = '1.0.0'
+    glideVersion = '3.8.0'
 }

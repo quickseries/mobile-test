@@ -5,7 +5,7 @@ import android.content.Context
 import com.rodionov.igor.mobiletest.data.CategoryDao
 import com.rodionov.igor.mobiletest.data.DataBaseProvider
 import com.rodionov.igor.mobiletest.data.SettingsHelper
-import com.rodionov.igor.mobiletest.json.JsonHelper
+import com.rodionov.igor.mobiletest.json.JsonDataSource
 import com.rodionov.igor.mobiletest.model.Category
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,13 +25,12 @@ class CategoriesRepository(context: Context) {
         mCategoryDao = database!!.categoryDao()
         categoryListData = mCategoryDao.fetchAll()
         if (!SettingsHelper.getValue(SettingsHelper.CATEGORIES_SAVED, mContext)) {
-            uiScope.launch {
-                loadCategories() }
+            uiScope.launch { loadCategories() }
         }
     }
 
     fun loadCategories() {
-        val jsonHelper = JsonHelper(mContext)
+        val jsonHelper = JsonDataSource(mContext)
         val categoryList = jsonHelper.readCategories()
         mCategoryDao.insert(categoryList)
         SettingsHelper.setValue(SettingsHelper.CATEGORIES_SAVED, mContext)

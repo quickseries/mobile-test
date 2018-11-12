@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="restaurant" type="com.rodionov.igor.mobiletest.model.Restaurant"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_view"
+            android:layout_width="@dimen/row_icon"
+            android:layout_height="@dimen/row_icon"
+            android:layout_margin="@dimen/margin_small"/>
+
+        <TextView
+            style="@style/TitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{restaurant.title}"/>
+    </LinearLayout>
+</layout>

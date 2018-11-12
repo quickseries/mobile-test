@@ -2,6 +2,7 @@ package com.rodionov.igor.mobiletest.view.categories
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,10 @@ import android.support.v7.widget.LinearLayoutManager
 import com.rodionov.igor.mobiletest.R
 import com.rodionov.igor.mobiletest.databinding.ActivityCategoryListBinding
 import com.rodionov.igor.mobiletest.model.Category
+import com.rodionov.igor.mobiletest.model.CategoryType
 import com.rodionov.igor.mobiletest.view.general.Divider
+import com.rodionov.igor.mobiletest.view.restaurants.RestaurantListActivity
+import com.rodionov.igor.mobiletest.view.vacations.VacationListActivity
 import com.rodionov.igor.mobiletest.viewModel.CategoryListViewModel
 import com.rodionov.igor.mobiletest.viewModel.ViewModelFactory
 
@@ -20,7 +24,13 @@ class CategoryListActivity : AppCompatActivity(), OnCategorySelectionListener {
     lateinit var mViewModel: CategoryListViewModel
 
     override fun onCategorySelected(category: Category?) {
-
+        val type = CategoryType.getByValue(category?.title)
+        when (type) {
+            CategoryType.RESTAURANTS ->
+                startActivity(Intent(this, RestaurantListActivity::class.java))
+            CategoryType.VACATIONS ->
+                startActivity(Intent(this, VacationListActivity::class.java))
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
