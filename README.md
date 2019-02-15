@@ -12,6 +12,12 @@
 - When you click on a category, it should open a list of resources (`/data/restaurant.json` or `/data/vacation-spot.json`)
 - When you click on a resource, it should open a details page (see attached mockup)
 
+# Tips:
+
+- You can showcase usage of Dependency Injection and Architecture Component.
+- You can show how to handle threads.
+- Remember you can always create a side project first and prepare yourself before jumping into the test.
+
 # User Stories
 
 |    |                                                                                      | Acceptance Criteria                                                             |
