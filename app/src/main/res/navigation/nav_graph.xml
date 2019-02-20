@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/categoryListFragment">
+
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="org.johny.quickseries.view.fragments.CategoryListFragment"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_category_to_subcategory"
+            app:destination="@id/subcategoryListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subcategoryListFragment"
+        android:name="org.johny.quickseries.view.fragments.SubcategoryListFragment"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="slug"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_subcategory_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="org.johny.quickseries.view.fragments.DetailFragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="slug"
+            app:argType="string" />
+    </fragment>
+</navigation>

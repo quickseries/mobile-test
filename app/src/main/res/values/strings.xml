@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">quickeries</string>
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
+    <string name="category_title">Choose a category</string>
+    <string name="addresses">Addresses</string>
+</resources>
