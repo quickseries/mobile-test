@@ -17,6 +17,7 @@
 - You can showcase usage of Dependency Injection and Architecture Component.
 - You can show how to handle threads.
 - Remember you can always create a side project first and prepare yourself before jumping into the test.
+- For JSON, you can use the RAW file version in git hub so you can simulate a call to remote API.
 
 # User Stories
 
