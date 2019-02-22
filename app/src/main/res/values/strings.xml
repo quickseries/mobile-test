@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Kotlin</string>
+    <string name="yelp_base_url">https://api.yelp.com</string>
+    <string name="yelp_auth_id">tVQ8UzhdjUAlACyzvUsGCJP74qTHw9WFd83Wz60eGAv8p5q5IRL5NsLP5AqG32LAufipaKmMiG6WDMXyAHD89AQ6n5yKEOsHqjCj-2AgqsOkWiipuAIHsJ5vBDFsXHYx</string>
+    <string name="genericError">Oups, something went wrong</string>
+    <string name="formatError">Wrong format</string>
+    <string name="resource_ordered_layout_button">Ordered</string>
+    <string name="contact_info_web_title">Website</string>
+    <string name="detail_resource_addresses_title">Addresses</string>
+    <string name="item_address_title">Address</string>
+    <string name="contact_info_email_title">Email</string>
+</resources>
