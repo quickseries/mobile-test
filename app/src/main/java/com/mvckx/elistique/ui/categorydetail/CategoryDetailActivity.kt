@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mvckx.elistique.R
+import com.mvckx.elistique.ui.placedetail.PlaceDetailActivity
 import kotlinx.android.synthetic.main.activity_categories.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -34,10 +34,10 @@ class CategoryDetailActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         val vm = viewModel.value
-        vm.setCategoryId(intent.getStringExtra(EXTRA_CATEGORY_ID))
         vm.detailLiveData().observe(this, Observer {
             renderViewState(it)
         })
+        vm.setCategoryId(getCategoryId())
     }
 
     private fun renderViewState(vs: CategoryDetailViewState) {
@@ -46,9 +46,11 @@ class CategoryDetailActivity : AppCompatActivity() {
         categoryDetailAdapter.updatePlaces(vs.placeItems)
     }
 
-    private fun placeClicked(categoryId: String) {
-        Toast.makeText(this, "$categoryId clicked", Toast.LENGTH_LONG).show()
+    private fun placeClicked(placeId: String) {
+        startActivity(PlaceDetailActivity.intent(this, placeId, getCategoryId()))
     }
+
+    private fun getCategoryId() = intent.getStringExtra(EXTRA_CATEGORY_ID)
 
     companion object {
         private const val EXTRA_CATEGORY_ID = "CATEGORY_ID"

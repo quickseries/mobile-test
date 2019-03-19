@@ -5,6 +5,7 @@ import com.mvckx.elistique.data.NetworkService
 import com.mvckx.elistique.data.PlacesRepository
 import com.mvckx.elistique.ui.categories.CategoriesViewModel
 import com.mvckx.elistique.ui.categorydetail.CategoryDetailViewModel
+import com.mvckx.elistique.ui.placedetail.PlaceDetailViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.android.startKoin
@@ -27,6 +28,7 @@ class ElistiqueApplication: Application() {
             single { PlacesRepository() }
             viewModel { CategoriesViewModel() }
             viewModel { CategoryDetailViewModel() }
+            viewModel { PlaceDetailViewModel() }
         }
 
         startKoin(this, listOf(module))
