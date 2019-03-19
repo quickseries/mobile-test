@@ -1,6 +1,7 @@
 package com.mvckx.elistique.ui.categories
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,8 +22,14 @@ class CategoriesActivity : AppCompatActivity() {
 
     private fun setupViews() {
         viewModel.value.categoryLiveData().observe(this, Observer {
-            categoriesAdapter.updateCategories(it)
+            renderViewState(it)
         })
+    }
+
+    private fun renderViewState(vs: CategoriesViewState) {
+        progressBar.visibility = if (vs.loading) View.VISIBLE else View.GONE
+        recyclerView.visibility = if (vs.loading) View.GONE else View.VISIBLE
+        categoriesAdapter.updateCategories(vs.categoryItems)
     }
 
     private fun setupViewModel() {

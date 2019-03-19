@@ -8,7 +8,7 @@ import com.mvckx.elistique.R
 import kotlinx.android.synthetic.main.item_category.view.*
 
 class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
-    private var categoryList = emptyList<CategoryItem>()
+    private var categoryList = emptyList<CategoriesViewState.CategoryItem>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -25,7 +25,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
 
     override fun getItemCount() = categoryList.size
 
-    fun updateCategories(categoryList: List<CategoryItem>) {
+    fun updateCategories(categoryList: List<CategoriesViewState.CategoryItem>) {
         this.categoryList = categoryList
         notifyDataSetChanged()
     }

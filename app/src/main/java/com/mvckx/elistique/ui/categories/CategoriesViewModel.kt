@@ -12,20 +12,25 @@ import org.koin.standalone.inject
 
 class CategoriesViewModel : ViewModel(), KoinComponent {
     private val placesRepository: PlacesRepository by inject()
-    private val categoryLiveData = MutableLiveData<List<CategoryItem>>()
+    private val categoryLiveData = MutableLiveData<CategoriesViewState>()
     private val disposable: Disposable
 
     init {
         disposable = placesRepository.getCategories()
             .subscribe {
-                when (it) {
+                val vs = when (it) {
                     is Lce.Content -> {
-                        categoryLiveData.postValue(createCategoryItemList(it.content))
+                        CategoriesViewState(createCategoryItemList(it.content), false)
                     }
-                    else -> {
-                        // TODO: Implement ViewState
+                    is Lce.Loading -> {
+                        CategoriesViewState(emptyList(), true)
+                    }
+                    is Lce.Error -> {
+                        // TODO: Error state to user
+                        CategoriesViewState(emptyList(), false)
                     }
                 }
+                categoryLiveData.postValue(vs)
             }
     }
 
@@ -33,9 +38,9 @@ class CategoriesViewModel : ViewModel(), KoinComponent {
         disposable.dispose()
     }
 
-    fun categoryLiveData(): LiveData<List<CategoryItem>> = categoryLiveData
+    fun categoryLiveData(): LiveData<CategoriesViewState> = categoryLiveData
 
-    private fun createCategoryItemList(repCategoryList: List<RepCategory>): List<CategoryItem> {
-        return repCategoryList.map { CategoryItem(it.eid, it.title, it.description) }
+    private fun createCategoryItemList(repCategoryList: List<RepCategory>): List<CategoriesViewState.CategoryItem> {
+        return repCategoryList.map { CategoriesViewState.CategoryItem(it.eid, it.title, it.description) }
     }
 }
