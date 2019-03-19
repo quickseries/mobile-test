@@ -8,8 +8,8 @@ interface NetworkService {
     fun getCategories(): Observable<List<RepCategory>>
 
     @GET("data/restaurants.json")
-    fun getRestaurants(): Observable<List<RepRestaurant>>
+    fun getRestaurants(): Observable<List<RepPlace>>
 
     @GET("data/vacation-spot.json")
-    fun getVacationSpots(): Observable<List<RepVacationSpot>>
+    fun getVacationSpots(): Observable<List<RepPlace>>
 }

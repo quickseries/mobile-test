@@ -7,6 +7,7 @@ import com.mvckx.elistique.data.Lce
 import com.mvckx.elistique.data.PlacesRepository
 import com.mvckx.elistique.data.RepCategory
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
@@ -17,6 +18,7 @@ class CategoriesViewModel : ViewModel(), KoinComponent {
 
     init {
         disposable = placesRepository.getCategories()
+            .subscribeOn(Schedulers.io())
             .subscribe {
                 val vs = when (it) {
                     is Lce.Content -> {

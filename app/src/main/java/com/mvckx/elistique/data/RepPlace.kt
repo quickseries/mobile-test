@@ -2,7 +2,7 @@ package com.mvckx.elistique.data
 
 import com.google.gson.annotations.SerializedName
 
-data class RepVacationSpot(
+data class RepPlace(
     @field:SerializedName("eid")
     val eid: String,
 
@@ -64,9 +64,16 @@ data class RepVacationSpot(
         val any: Any? = null
     )
 
-    data class AddressesItem(
-        val any: Any? = null
+    data class Gps(
+
+        @field:SerializedName("latitude")
+        val latitude: String? = null,
+
+        @field:SerializedName("longitude")
+        val longitude: String? = null
     )
+
+
 
     data class ContactInfo(
 
@@ -84,6 +91,30 @@ data class RepVacationSpot(
 
         @field:SerializedName("email")
         val email: List<String?>? = null
+    )
+
+    data class AddressesItem(
+
+        @field:SerializedName("zipCode")
+        val zipCode: String? = null,
+
+        @field:SerializedName("country")
+        val country: String? = null,
+
+        @field:SerializedName("city")
+        val city: String? = null,
+
+        @field:SerializedName("address1")
+        val address1: String? = null,
+
+        @field:SerializedName("label")
+        val label: String? = null,
+
+        @field:SerializedName("state")
+        val state: String? = null,
+
+        @field:SerializedName("gps")
+        val gps: Gps? = null
     )
 
 

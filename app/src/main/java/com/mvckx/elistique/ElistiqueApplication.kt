@@ -4,6 +4,7 @@ import android.app.Application
 import com.mvckx.elistique.data.NetworkService
 import com.mvckx.elistique.data.PlacesRepository
 import com.mvckx.elistique.ui.categories.CategoriesViewModel
+import com.mvckx.elistique.ui.categorydetail.CategoryDetailViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.android.startKoin
@@ -25,6 +26,7 @@ class ElistiqueApplication: Application() {
             single { provideRetrofit().create(NetworkService::class.java) }
             single { PlacesRepository() }
             viewModel { CategoriesViewModel() }
+            viewModel { CategoryDetailViewModel() }
         }
 
         startKoin(this, listOf(module))

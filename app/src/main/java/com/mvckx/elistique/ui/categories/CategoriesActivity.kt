@@ -2,18 +2,20 @@ package com.mvckx.elistique.ui.categories
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mvckx.elistique.R
+import com.mvckx.elistique.ui.categorydetail.CategoryDetailActivity
 import kotlinx.android.synthetic.main.activity_categories.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class CategoriesActivity : AppCompatActivity() {
 
     private val viewModel = viewModel<CategoriesViewModel>()
-    private val categoriesAdapter = CategoriesAdapter { categoryClicked(it) } // This could actually be forwarded to the ViewModel for extra logic handling
+    private val categoriesAdapter = CategoriesAdapter { categoryClicked(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,8 @@ class CategoriesActivity : AppCompatActivity() {
     private fun setupViews() {
         recyclerView.adapter = categoriesAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
     }
 
     private fun setupViewModel() {
@@ -39,7 +43,8 @@ class CategoriesActivity : AppCompatActivity() {
         categoriesAdapter.updateCategories(vs.categoryItems)
     }
 
-    private fun categoryClicked(it: String) {
-        Toast.makeText(this, "$it clicked", Toast.LENGTH_LONG).show()
+    private fun categoryClicked(categoryId: String) {
+        // This could actually be forwarded to the ViewModel for extra logic handling
+        startActivity(CategoryDetailActivity.intent(this, categoryId))
     }
 }

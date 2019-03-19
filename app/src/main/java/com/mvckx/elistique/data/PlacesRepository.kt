@@ -1,7 +1,6 @@
 package com.mvckx.elistique.data
 
 import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
@@ -10,25 +9,29 @@ class PlacesRepository : KoinComponent {
 
     fun getCategories(): Observable<Lce<List<RepCategory>>> {
         return networkService.getCategories()
-            .subscribeOn(Schedulers.io())
             .toLce()
     }
 
-    fun getRestaurants(): Observable<Lce<List<RepRestaurant>>> {
+    fun getCategoryDetail(categoryId: String): Observable<Lce<List<RepPlace>>> {
+        val observable = if (categoryId == RESTAURANT_ID) getRestaurants() else getVacationSpots()
+        return observable.toLce()
+    }
+
+    private fun getRestaurants(): Observable<List<RepPlace>> {
         return networkService.getRestaurants()
-            .subscribeOn(Schedulers.io())
-            .toLce()
     }
 
-    fun getVacationSpots(): Observable<Lce<List<RepVacationSpot>>> {
+    private fun getVacationSpots(): Observable<List<RepPlace>> {
         return networkService.getVacationSpots()
-            .subscribeOn(Schedulers.io())
-            .toLce()
     }
 
     private fun <T> Observable<T>.toLce(): Observable<Lce<T>> {
         return this.map { Lce.Content(it) as Lce<T> }
             .startWith(Lce.Loading())
             .onErrorReturn { Lce.Error() }
+    }
+
+    companion object {
+        private const val RESTAURANT_ID = "ac5bd194-11de-48f6-94db-fd16cfccb570"
     }
 }
