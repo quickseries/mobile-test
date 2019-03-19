@@ -3,9 +3,11 @@ package com.mvckx.elistique
 import android.app.Application
 import com.mvckx.elistique.data.NetworkService
 import com.mvckx.elistique.data.PlacesRepository
+import com.mvckx.elistique.ui.categories.CategoriesViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.android.startKoin
+import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -22,6 +24,7 @@ class ElistiqueApplication: Application() {
         val module = module {
             single { provideRetrofit().create(NetworkService::class.java) }
             single { PlacesRepository() }
+            viewModel { CategoriesViewModel() }
         }
 
         startKoin(this, listOf(module))

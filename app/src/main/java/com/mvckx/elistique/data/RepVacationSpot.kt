@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class RepVacationSpot(
     @field:SerializedName("eid")
-    val eid: String? = null,
+    val eid: String,
 
     @field:SerializedName("addresses")
     val addresses: List<AddressesItem?>? = null,

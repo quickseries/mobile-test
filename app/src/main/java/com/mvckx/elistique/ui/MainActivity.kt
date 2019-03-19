@@ -1,7 +1,8 @@
-package com.mvckx.elistique
+package com.mvckx.elistique.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mvckx.elistique.R
 
 class MainActivity : AppCompatActivity() {
 
