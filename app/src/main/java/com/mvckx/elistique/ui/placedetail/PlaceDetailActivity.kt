@@ -3,12 +3,11 @@ package com.mvckx.elistique.ui.placedetail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.mvckx.elistique.R
-import kotlinx.android.synthetic.main.activity_categories.*
+import kotlinx.android.synthetic.main.activity_place_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PlaceDetailActivity : AppCompatActivity() {
@@ -31,7 +30,10 @@ class PlaceDetailActivity : AppCompatActivity() {
 
     private fun renderViewState(vs: PlaceDetailViewState) {
         progressBar.visibility = if (vs.loading) View.VISIBLE else View.GONE
-        Log.d("PlaceDetailActivity", "ViewState: $vs")
+        scrollView.visibility = if (vs.loading) View.GONE else View.VISIBLE
+        vs.placeDetailItem?.let {
+
+        }
     }
 
     companion object {

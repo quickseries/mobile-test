@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.categorydetail.CategoryDetailActivity">
+    android:background="#ddd"
+    tools:context=".ui.placedetail.PlaceDetailActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/tools_place_photo" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/frame"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/md_one_square"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivImage" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/md_one_square"
+                android:textColor="#444"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/frame"
+                tools:text="Domino's Pizza" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/md_one_square"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel ex sed dui dignissim vestibulum vel eget dolor. Cras lacus diam, aliquam eget finibus vel, feugiat vel dui" />
+
+            <TextView
+                android:id="@+id/tvContactInfoTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/md_one_square"
+                android:text="@string/contact_information"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>
