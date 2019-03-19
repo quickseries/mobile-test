@@ -21,9 +21,8 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-        viewModel.value.categoryLiveData().observe(this, Observer {
-            renderViewState(it)
-        })
+        recyclerView.adapter = categoriesAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     private fun renderViewState(vs: CategoriesViewState) {
@@ -33,7 +32,8 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        recyclerView.adapter = categoriesAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        viewModel.value.categoryLiveData().observe(this, Observer {
+            renderViewState(it)
+        })
     }
 }
