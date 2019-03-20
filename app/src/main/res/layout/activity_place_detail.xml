@@ -81,45 +81,92 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#fff"
+                android:visibility="gone"
+                app:icon1="@drawable/phone"
+                app:icon2="@drawable/message"
                 app:layout_constraintEnd_toEndOf="@id/frame"
                 app:layout_constraintStart_toStartOf="@id/frame"
-                app:layout_constraintTop_toBottomOf="@id/tvContactInfoTitle" />
+                app:layout_constraintTop_toBottomOf="@id/tvContactInfoTitle"
+                app:title="@string/phone_number"
+                tools:visibility="visible" />
 
             <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
                 android:id="@+id/infoTollFree"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#fff"
+                android:visibility="gone"
+                app:icon1="@drawable/phone"
+                app:icon2="@drawable/message"
                 app:layout_constraintEnd_toEndOf="@id/frame"
                 app:layout_constraintStart_toStartOf="@id/frame"
-                app:layout_constraintTop_toBottomOf="@id/infoPhone" />
+                app:layout_constraintTop_toBottomOf="@id/infoPhone"
+                app:title="@string/toll_free_number"
+                tools:visibility="visible" />
 
             <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
                 android:id="@+id/infoFax"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#fff"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/frame"
                 app:layout_constraintStart_toStartOf="@id/frame"
-                app:layout_constraintTop_toBottomOf="@id/infoTollFree" />
+                app:layout_constraintTop_toBottomOf="@id/infoTollFree"
+                app:title="@string/fax_number"
+                tools:visibility="visible" />
 
             <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
                 android:id="@+id/infoEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#fff"
+                android:visibility="gone"
+                app:icon1="@drawable/send"
                 app:layout_constraintEnd_toEndOf="@id/frame"
                 app:layout_constraintStart_toStartOf="@id/frame"
-                app:layout_constraintTop_toBottomOf="@id/infoFax" />
+                app:layout_constraintTop_toBottomOf="@id/infoFax"
+                app:title="@string/email_address"
+                tools:value="feedmypizza@dominos.ca"
+                tools:visibility="visible" />
 
             <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
                 android:id="@+id/infoWebsite"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#fff"
+                android:visibility="gone"
+                app:icon1="@drawable/share"
                 app:layout_constraintEnd_toEndOf="@id/frame"
                 app:layout_constraintStart_toStartOf="@id/frame"
-                app:layout_constraintTop_toBottomOf="@id/infoEmail" />
+                app:layout_constraintTop_toBottomOf="@id/infoEmail"
+                app:title="@string/website"
+                tools:value="https://google.com"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvAddressTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/md_one_square"
+                android:padding="@dimen/md_one_square"
+                android:text="@string/address"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/infoWebsite" />
+
+            <!-- Only purpose of this is to make it cleaner to display a list of N elements, it's not going to recycle anything -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddresses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/md_one_square"
+                android:layout_marginEnd="@dimen/md_one_square"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:listitem="@layout/item_place_address"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAddressTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

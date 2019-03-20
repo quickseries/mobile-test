@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background='#fff'
+        app:icon1="@drawable/map_marker"
+        app:title="@string/address"
+        tools:value="123 Streetname, Suite A\nCityname, ST 540789\nUnited States" />
+</FrameLayout>
