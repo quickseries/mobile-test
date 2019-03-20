@@ -53,17 +53,19 @@ class PlaceDetailViewModel : ViewModel(), KoinComponent {
             content.socialMedia?.let { it.youtubeChannel?.first() }
         )
 
-        val addresses = content.addresses?.map {
-            PlaceDetailViewState.Address(
-                it?.zipCode,
-                it?.country,
-                it?.city,
-                it?.address1,
-                it?.label,
-                it?.state,
-                it?.gps?.toGpsVs()
-            )
-        } ?: emptyList()
+        val addresses = content.addresses
+            ?.filter { !it?.address1.isNullOrEmpty() }
+            ?.map {
+                PlaceDetailViewState.Address(
+                    it?.zipCode,
+                    it?.country,
+                    it?.city,
+                    it?.address1,
+                    it?.label,
+                    it?.state,
+                    it?.gps?.toGpsVs()
+                )
+            } ?: emptyList()
 
         return PlaceDetailViewState.PlaceDetailItem(
             content.eid,
