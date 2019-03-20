@@ -76,6 +76,51 @@
                 app:layout_constraintStart_toStartOf="@id/frame"
                 app:layout_constraintTop_toBottomOf="@id/tvDesc" />
 
+            <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+                android:id="@+id/infoPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/tvContactInfoTitle" />
+
+            <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+                android:id="@+id/infoTollFree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/infoPhone" />
+
+            <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+                android:id="@+id/infoFax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/infoTollFree" />
+
+            <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+                android:id="@+id/infoEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/infoFax" />
+
+            <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView
+                android:id="@+id/infoWebsite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                app:layout_constraintEnd_toEndOf="@id/frame"
+                app:layout_constraintStart_toStartOf="@id/frame"
+                app:layout_constraintTop_toBottomOf="@id/infoEmail" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
