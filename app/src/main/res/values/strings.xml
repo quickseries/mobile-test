@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QuickSeries</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">QuickSeries Test</string>
+    <string name="nav_header_subtitle">raybechard@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="rightmost_button">rightmost button</string>
+    <string name="leftmost_button">leftmost button</string>
+    <string name="contact_information">Contact information</string>
+    <string name="business_hours">Business hours</string>
+    <string name="go_to_youtube">Go to Youtube</string>
+    <string name="go_to_twitter">Go to Twitter</string>
+    <string name="go_to_facebook">Go to Facebook</string>
+    <string name="local_pic">Local pic</string>
+    <string name="change_sort_order">Change sort order</string>
+    <string name="sort_direction">sort direction</string>
+</resources>
