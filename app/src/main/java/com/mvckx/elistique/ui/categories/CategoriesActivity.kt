@@ -11,7 +11,6 @@ import com.mvckx.elistique.ui.categorydetail.CategoryDetailActivity
 import kotlinx.android.synthetic.main.activity_categories.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class CategoriesActivity : AppCompatActivity() {
 
     private val viewModel = viewModel<CategoriesViewModel>()
