@@ -120,19 +120,8 @@ class PlaceDetailActivity : AppCompatActivity() {
 private fun PlaceDetailViewState.Address.toMapIntentAddress(): String {
     val latitude = gps?.latitude ?: "0"
     val longitude = gps?.longitude ?: "0"
-    val sb = StringBuilder()
-    sb.append("geo:$latitude,$longitude?q=")
-    this.address1?.let {
-        sb.append("$it, ")
-    }
-    this.city?.let {
-        sb.append("$it, ")
-    }
-    this.country?.let {
-        sb.append("$it, ")
-    }
 
-    return sb.removeSuffix(", ").toString()
+    return "geo:$latitude,$longitude?q=$address1, $city, $state, $zip, $country"
 }
 
 private fun PlaceDetailViewState.ContactInformation.isEmpty(): Boolean {

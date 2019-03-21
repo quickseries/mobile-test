@@ -45,9 +45,11 @@ class PlaceDetailAddressAdapter(private val listener: ((PlaceDetailViewState.Add
 
         fun bind(address: PlaceDetailViewState.Address) {
             this.address = address
-            address.address1?.let {
-                itemView.addressDetail.setValue(it)
-            }
+            itemView.addressDetail.setValue(address.toReadableFormat())
         }
     }
+}
+
+private fun PlaceDetailViewState.Address.toReadableFormat(): String {
+    return "$address1\n$city, $state $zip\n$country"
 }

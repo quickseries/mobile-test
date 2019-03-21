@@ -74,7 +74,6 @@ data class RepPlace(
     )
 
 
-
     data class ContactInfo(
 
         @field:SerializedName("website")
@@ -96,22 +95,22 @@ data class RepPlace(
     data class AddressesItem(
 
         @field:SerializedName("zipCode")
-        val zipCode: String? = null,
+        val zipCode: String,
 
         @field:SerializedName("country")
-        val country: String? = null,
+        val country: String,
 
         @field:SerializedName("city")
-        val city: String? = null,
+        val city: String,
 
         @field:SerializedName("address1")
-        val address1: String? = null,
+        val address1: String,
 
         @field:SerializedName("label")
         val label: String? = null,
 
         @field:SerializedName("state")
-        val state: String? = null,
+        val state: String,
 
         @field:SerializedName("gps")
         val gps: Gps? = null

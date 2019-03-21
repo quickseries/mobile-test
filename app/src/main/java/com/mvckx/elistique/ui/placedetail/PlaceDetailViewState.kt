@@ -26,12 +26,12 @@ data class PlaceDetailViewState(val placeDetailItem: PlaceDetailItem?, val loadi
     )
 
     data class Address(
-        val zip: String?,
-        val country: String?,
-        val city: String?,
-        val address1: String?,
+        val zip: String,
+        val country: String,
+        val city: String,
+        val address1: String,
         val label: String?,
-        val state: String?,
+        val state: String,
         val gps: Gps?
     )
 

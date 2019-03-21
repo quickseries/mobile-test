@@ -54,16 +54,17 @@ class PlaceDetailViewModel : ViewModel(), KoinComponent {
         )
 
         val addresses = content.addresses
-            ?.filter { !it?.address1.isNullOrEmpty() }
+            ?.filterNotNull()
+            ?.filter { !it.address1.isNullOrEmpty() }
             ?.map {
                 PlaceDetailViewState.Address(
-                    it?.zipCode,
-                    it?.country,
-                    it?.city,
-                    it?.address1,
-                    it?.label,
-                    it?.state,
-                    it?.gps?.toGpsVs()
+                    it.zipCode,
+                    it.country,
+                    it.city,
+                    it.address1,
+                    it.label,
+                    it.state,
+                    it.gps?.toGpsVs()
                 )
             } ?: emptyList()
 
