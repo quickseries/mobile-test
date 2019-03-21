@@ -2,6 +2,7 @@ package com.mvckx.elistique.ui.placedetail
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.mvckx.elistique.R
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class PlaceDetailActivity : AppCompatActivity() {
 
@@ -28,6 +30,27 @@ class PlaceDetailActivity : AppCompatActivity() {
     private fun setupViews() {
         rvAddresses.adapter = placeDetailAddressAdapter
         rvAddresses.layoutManager = LinearLayoutManager(this)
+
+        infoEmail.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", infoEmail.getValue(), null))
+            startActivity(intent)
+        }
+
+        infoPhone.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel: ${infoPhone.getValue()}"))
+            startActivity(intent)
+        }
+
+        infoTollFree.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel: ${infoTollFree.getValue()}"))
+            startActivity(intent)
+        }
+
+        infoWebsite.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(infoWebsite.getValue()))
+            startActivity(intent)
+        }
+
     }
 
     private fun setupViewModel() {
@@ -69,8 +92,9 @@ class PlaceDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun addressClicked(placeId: String) {
-
+    private fun addressClicked(address: PlaceDetailViewState.Address) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(address.toMapIntentAddress()))
+        startActivity(intent)
     }
 
     private fun PlaceDetailElementView.setAndShow(value: String?) {
@@ -91,6 +115,24 @@ class PlaceDetailActivity : AppCompatActivity() {
             return intent
         }
     }
+}
+
+private fun PlaceDetailViewState.Address.toMapIntentAddress(): String {
+    val latitude = gps?.latitude ?: "0"
+    val longitude = gps?.longitude ?: "0"
+    val sb = StringBuilder()
+    sb.append("geo:$latitude,$longitude?q=")
+    this.address1?.let {
+        sb.append("$it, ")
+    }
+    this.city?.let {
+        sb.append("$it, ")
+    }
+    this.country?.let {
+        sb.append("$it, ")
+    }
+
+    return sb.removeSuffix(", ").toString()
 }
 
 private fun PlaceDetailViewState.ContactInformation.isEmpty(): Boolean {

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mvckx.elistique.R
 import kotlinx.android.synthetic.main.item_place_address.view.*
 
-class PlaceDetailAddressAdapter(private val listener: ((String) -> (Unit))) :
+class PlaceDetailAddressAdapter(private val listener: ((PlaceDetailViewState.Address) -> (Unit))) :
     RecyclerView.Adapter<PlaceDetailAddressAdapter.ViewHolder>() {
     private var addresses: List<PlaceDetailViewState.Address> = emptyList()
 
@@ -31,8 +31,20 @@ class PlaceDetailAddressAdapter(private val listener: ((String) -> (Unit))) :
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View, private val listener: ((String) -> (Unit))) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, private val listener: ((PlaceDetailViewState.Address) -> (Unit))) :
+        RecyclerView.ViewHolder(itemView) {
+        private var address: PlaceDetailViewState.Address? = null
+
+        init {
+            itemView.setOnClickListener {
+                address?.let {
+                    listener.invoke(it)
+                }
+            }
+        }
+
         fun bind(address: PlaceDetailViewState.Address) {
+            this.address = address
             address.address1?.let {
                 itemView.addressDetail.setValue(it)
             }

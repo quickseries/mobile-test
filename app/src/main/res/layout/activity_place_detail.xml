@@ -127,7 +127,7 @@
                 app:layout_constraintStart_toStartOf="@id/frame"
                 app:layout_constraintTop_toBottomOf="@id/infoFax"
                 app:title="@string/email_address"
-                tools:value="feedmypizza@dominos.ca"
+                tools:value="feedmepizza@dominos.ca"
                 tools:visibility="visible" />
 
             <com.mvckx.elistique.ui.placedetail.PlaceDetailElementView

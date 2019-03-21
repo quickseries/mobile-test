@@ -19,7 +19,7 @@ class PlaceDetailElementView @JvmOverloads constructor(
     init {
         View.inflate(context, R.layout.view_place_detail_element, this)
 
-        val ta = getContext().obtainStyledAttributes(attrs, R.styleable.PlaceDetailElementView)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.PlaceDetailElementView)
         try {
             ta.getSafeDrawable(R.styleable.PlaceDetailElementView_icon1, context)?.let {
                 setIcon1(it)
@@ -52,6 +52,10 @@ class PlaceDetailElementView @JvmOverloads constructor(
 
     fun setIcon2(drawable: Drawable) {
         ivIcon2.setImageDrawable(drawable)
+    }
+
+    fun getValue(): String? {
+        return tvValue.text.toString()
     }
 }
 
