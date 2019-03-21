@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mvckx.elistique.R
 import kotlinx.android.synthetic.main.item_category.view.*
 
-class CategoriesAdapter(private val listener: ((String) -> (Unit))) :
+class CategoriesAdapter(private val listener: ((CategoriesViewState.CategoryItem) -> (Unit))) :
     RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
     private var categoryList = emptyList<CategoriesViewState.CategoryItem>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,12 +29,12 @@ class CategoriesAdapter(private val listener: ((String) -> (Unit))) :
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View, private val listener: ((String) -> (Unit))) : RecyclerView.ViewHolder(itemView) {
-        private var categoryId: String? = null
+    class ViewHolder(itemView: View, private val listener: ((CategoriesViewState.CategoryItem) -> (Unit))) : RecyclerView.ViewHolder(itemView) {
+        private var category: CategoriesViewState.CategoryItem? = null
 
         init {
             itemView.setOnClickListener {
-                categoryId?.let {
+                category?.let {
                     listener.invoke(it)
                 }
             }
@@ -43,7 +43,7 @@ class CategoriesAdapter(private val listener: ((String) -> (Unit))) :
         fun bind(category: CategoriesViewState.CategoryItem) {
             itemView.tvTitle.text = category.title
             itemView.tvDesc.text = category.description
-            categoryId = category.id
+            this.category = category
         }
     }
 }

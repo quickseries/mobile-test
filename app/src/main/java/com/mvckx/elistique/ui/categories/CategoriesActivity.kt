@@ -25,6 +25,7 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        setSupportActionBar(toolbar)
         recyclerView.adapter = categoriesAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
@@ -43,8 +44,8 @@ class CategoriesActivity : AppCompatActivity() {
         categoriesAdapter.updateCategories(vs.categoryItems)
     }
 
-    private fun categoryClicked(categoryId: String) {
+    private fun categoryClicked(item: CategoriesViewState.CategoryItem) {
         // This could actually be forwarded to the ViewModel for extra logic handling
-        startActivity(CategoryDetailActivity.intent(this, categoryId))
+        startActivity(CategoryDetailActivity.intent(this, item.id, item.title))
     }
 }

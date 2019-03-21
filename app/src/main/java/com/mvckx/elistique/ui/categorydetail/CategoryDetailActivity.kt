@@ -26,6 +26,12 @@ class CategoryDetailActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.title = getCategoryName()
+        }
+
         recyclerView.adapter = categoryDetailAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
@@ -51,13 +57,18 @@ class CategoryDetailActivity : AppCompatActivity() {
     }
 
     private fun getCategoryId() = intent.getStringExtra(EXTRA_CATEGORY_ID)
+    private fun getCategoryName() = intent.getStringExtra(EXTRA_TITLE_ID)
 
     companion object {
+        private const val EXTRA_TITLE_ID = "TITLE_ID"
         private const val EXTRA_CATEGORY_ID = "CATEGORY_ID"
 
-        fun intent(context: Context, categoryId: String): Intent {
+        fun intent(context: Context, categoryId: String, title: String?): Intent {
             val intent = Intent(context, CategoryDetailActivity::class.java)
             intent.putExtra(EXTRA_CATEGORY_ID, categoryId)
+            title?.let {
+                intent.putExtra(EXTRA_TITLE_ID, it)
+            }
             return intent
         }
     }

@@ -25,9 +25,11 @@
         </activity>
         <activity
             android:name=".ui.categorydetail.CategoryDetailActivity"
+            android:parentActivityName=".ui.categories.CategoriesActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.placedetail.PlaceDetailActivity"
+            android:parentActivityName=".ui.categorydetail.CategoryDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 
