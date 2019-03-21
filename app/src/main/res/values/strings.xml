@@ -7,4 +7,5 @@
     <string name="email_address">EMAIL ADDRESS</string>
     <string name="website">WEBSITE</string>
     <string name="address">ADDRESS</string>
+    <string name="action_sort">Sort</string>
 </resources>

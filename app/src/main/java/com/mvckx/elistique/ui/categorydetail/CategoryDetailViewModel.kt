@@ -15,6 +15,7 @@ class CategoryDetailViewModel : ViewModel(), KoinComponent {
     private val placesRepository: PlacesRepository by inject()
     private val detailLiveData = MutableLiveData<CategoryDetailViewState>()
     private var disposable: Disposable? = null
+    private var sorted: Boolean? = null
 
     fun setCategoryId(categoryId: String) {
         disposable = placesRepository.getCategoryDetail(categoryId)
@@ -43,5 +44,18 @@ class CategoryDetailViewModel : ViewModel(), KoinComponent {
         return content.map {
             CategoryDetailViewState.PlaceItem(it.eid, it.title, it.description)
         }
+    }
+
+    fun sort() {
+        val currentVs = detailLiveData.value?.takeIf { it.placeItems.isNotEmpty() } ?: return
+        val newVs = if (sorted == null) {
+            sorted = true
+            currentVs.copy(placeItems = currentVs.placeItems.sortedBy {
+                it.title
+            })
+        } else {
+            currentVs.copy(placeItems = currentVs.placeItems.reversed())
+        }
+        detailLiveData.postValue(newVs)
     }
 }
