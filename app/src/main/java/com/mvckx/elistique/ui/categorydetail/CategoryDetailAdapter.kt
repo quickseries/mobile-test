@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mvckx.elistique.R
-import kotlinx.android.synthetic.main.item_category.view.*
+import kotlinx.android.synthetic.main.item_place.view.*
 
 class CategoryDetailAdapter(private val listener: ((String) -> (Unit))) :
     RecyclerView.Adapter<CategoryDetailAdapter.ViewHolder>() {
@@ -13,7 +14,7 @@ class CategoryDetailAdapter(private val listener: ((String) -> (Unit))) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_category, parent, false)
+            .inflate(R.layout.item_place, parent, false)
         return ViewHolder(view, listener)
     }
 
@@ -42,7 +43,11 @@ class CategoryDetailAdapter(private val listener: ((String) -> (Unit))) :
 
         fun bind(category: CategoryDetailViewState.PlaceItem) {
             itemView.tvTitle.text = category.title
-            itemView.tvDesc.text = category.description
+            category.imageUrl?.let{
+                Glide.with(itemView)
+                    .load(it)
+                    .into(itemView.ivPhoto)
+            }
             categoryId = category.id
         }
     }

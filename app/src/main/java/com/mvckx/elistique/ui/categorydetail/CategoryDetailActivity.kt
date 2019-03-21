@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mvckx.elistique.R
 import com.mvckx.elistique.ui.placedetail.PlaceDetailActivity
@@ -49,8 +48,6 @@ class CategoryDetailActivity : AppCompatActivity() {
 
         recyclerView.adapter = categoryDetailAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
-        recyclerView.addItemDecoration(dividerItemDecoration)
     }
 
     private fun setupViewModel() {

@@ -42,7 +42,7 @@ class CategoryDetailViewModel : ViewModel(), KoinComponent {
 
     private fun createPlacesList(content: List<RepPlace>): List<CategoryDetailViewState.PlaceItem> {
         return content.map {
-            CategoryDetailViewState.PlaceItem(it.eid, it.title, it.description)
+            CategoryDetailViewState.PlaceItem(it.eid, it.title, it.photo)
         }
     }
 
