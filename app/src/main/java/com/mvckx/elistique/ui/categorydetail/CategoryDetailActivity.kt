@@ -61,7 +61,7 @@ class CategoryDetailActivity : AppCompatActivity() {
     private fun renderViewState(vs: CategoryDetailViewState) {
         progressBar.visibility = if (vs.loading) View.VISIBLE else View.GONE
         recyclerView.visibility = if (vs.loading) View.GONE else View.VISIBLE
-        categoryDetailAdapter.updatePlaces(vs.placeItems)
+        categoryDetailAdapter.submitList(vs.placeItems)
     }
 
     private fun placeClicked(placeId: String) {

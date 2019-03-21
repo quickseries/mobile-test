@@ -3,31 +3,42 @@ package com.mvckx.elistique.ui.categorydetail
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mvckx.elistique.R
 import kotlinx.android.synthetic.main.item_place.view.*
 
 class CategoryDetailAdapter(private val listener: ((String) -> (Unit))) :
-    RecyclerView.Adapter<CategoryDetailAdapter.ViewHolder>() {
-    private var placeList = emptyList<CategoryDetailViewState.PlaceItem>()
+    ListAdapter<CategoryDetailViewState.PlaceItem, CategoryDetailAdapter.ViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
             .inflate(R.layout.item_place, parent, false)
-        return ViewHolder(view, listener)
+        return CategoryDetailAdapter.ViewHolder(view, listener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val category = placeList[position]
-        holder.bind(category)
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = placeList.size
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CategoryDetailViewState.PlaceItem>() {
+            override fun areItemsTheSame(
+                oldItem: CategoryDetailViewState.PlaceItem,
+                newItem: CategoryDetailViewState.PlaceItem
+            ): Boolean {
+                return oldItem.id == newItem.id
+            }
 
-    fun updatePlaces(categoryList: List<CategoryDetailViewState.PlaceItem>) {
-        this.placeList = categoryList
-        notifyDataSetChanged()
+            override fun areContentsTheSame(
+                oldItem: CategoryDetailViewState.PlaceItem,
+                newItem: CategoryDetailViewState.PlaceItem
+            ): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 
     class ViewHolder(itemView: View, private val listener: ((String) -> (Unit))) : RecyclerView.ViewHolder(itemView) {
@@ -43,7 +54,7 @@ class CategoryDetailAdapter(private val listener: ((String) -> (Unit))) :
 
         fun bind(category: CategoryDetailViewState.PlaceItem) {
             itemView.tvTitle.text = category.title
-            category.imageUrl?.let{
+            category.imageUrl?.let {
                 Glide.with(itemView)
                     .load(it)
                     .into(itemView.ivPhoto)
