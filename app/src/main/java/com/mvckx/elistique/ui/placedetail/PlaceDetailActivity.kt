@@ -2,6 +2,7 @@ package com.mvckx.elistique.ui.placedetail
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -28,6 +29,11 @@ class PlaceDetailActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+        }
+
         rvAddresses.adapter = placeDetailAddressAdapter
         rvAddresses.layoutManager = LinearLayoutManager(this)
 
@@ -65,6 +71,9 @@ class PlaceDetailActivity : AppCompatActivity() {
         progressBar.visibility = if (vs.loading) View.VISIBLE else View.GONE
         scrollView.visibility = if (vs.loading) View.GONE else View.VISIBLE
         vs.placeDetailItem?.let { item ->
+            supportActionBar?.let {
+                it.title = item.title
+            }
             tvTitle.text = item.title
             item.description?.let {
                 tvDesc.text = HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_COMPACT)
