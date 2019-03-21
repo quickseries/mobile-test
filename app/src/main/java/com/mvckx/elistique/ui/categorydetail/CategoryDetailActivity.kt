@@ -27,19 +27,6 @@ class CategoryDetailActivity : AppCompatActivity() {
         setupViewModel()
     }
 
-    private fun setupViews() {
-        setSupportActionBar(toolbar)
-        supportActionBar?.let {
-            it.setDisplayHomeAsUpEnabled(true)
-            it.title = getCategoryName()
-        }
-
-        recyclerView.adapter = categoryDetailAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
-        recyclerView.addItemDecoration(dividerItemDecoration)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.action_sort) {
             viewModel.value.sort()
@@ -51,6 +38,19 @@ class CategoryDetailActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_category_detail, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun setupViews() {
+        setSupportActionBar(toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.title = getCategoryName()
+        }
+
+        recyclerView.adapter = categoryDetailAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
     }
 
     private fun setupViewModel() {
