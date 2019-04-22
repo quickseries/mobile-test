@@ -1,5 +1,5 @@
 //
-//  README
+//  TEST_README
 //  QuickSeriesTest
 //
 //  Created by Mathieu Massicotte on 2019-04-22.
