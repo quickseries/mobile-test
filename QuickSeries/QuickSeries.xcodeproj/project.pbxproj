@@ -14,6 +14,9 @@
 		B449A83D22705CB400EF674A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B449A83B22705CB400EF674A /* LaunchScreen.storyboard */; };
 		B449A84822705CB400EF674A /* QuickSeriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449A84722705CB400EF674A /* QuickSeriesTests.swift */; };
 		B449A85322705CB400EF674A /* QuickSeriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449A85222705CB400EF674A /* QuickSeriesUITests.swift */; };
+		B449A86522705D6E00EF674A /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B449A86222705D6E00EF674A /* categories.json */; };
+		B449A86622705D6E00EF674A /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = B449A86322705D6E00EF674A /* vacation-spot.json */; };
+		B449A86722705D6E00EF674A /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = B449A86422705D6E00EF674A /* restaurants.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		B449A84E22705CB400EF674A /* QuickSeriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickSeriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B449A85222705CB400EF674A /* QuickSeriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSeriesUITests.swift; sourceTree = "<group>"; };
 		B449A85422705CB500EF674A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B449A86222705D6E00EF674A /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		B449A86322705D6E00EF674A /* vacation-spot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "vacation-spot.json"; sourceTree = "<group>"; };
+		B449A86422705D6E00EF674A /* restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		B449A83122705CB300EF674A /* QuickSeries */ = {
 			isa = PBXGroup;
 			children = (
+				B449A86022705D6E00EF674A /* Stash */,
 				B449A83222705CB300EF674A /* AppDelegate.swift */,
 				B449A83422705CB300EF674A /* ViewController.swift */,
 				B449A83622705CB300EF674A /* Main.storyboard */,
@@ -123,6 +130,25 @@
 				B449A85422705CB500EF674A /* Info.plist */,
 			);
 			path = QuickSeriesUITests;
+			sourceTree = "<group>";
+		};
+		B449A86022705D6E00EF674A /* Stash */ = {
+			isa = PBXGroup;
+			children = (
+				B449A86122705D6E00EF674A /* data */,
+			);
+			name = Stash;
+			path = ../../Stash;
+			sourceTree = "<group>";
+		};
+		B449A86122705D6E00EF674A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				B449A86222705D6E00EF674A /* categories.json */,
+				B449A86322705D6E00EF674A /* vacation-spot.json */,
+				B449A86422705D6E00EF674A /* restaurants.json */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B449A83D22705CB400EF674A /* LaunchScreen.storyboard in Resources */,
+				B449A86522705D6E00EF674A /* categories.json in Resources */,
+				B449A86622705D6E00EF674A /* vacation-spot.json in Resources */,
 				B449A83A22705CB400EF674A /* Assets.xcassets in Resources */,
+				B449A86722705D6E00EF674A /* restaurants.json in Resources */,
 				B449A83822705CB300EF674A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
