@@ -12,8 +12,8 @@ import ObjectMapperAdditions
 
 class GPS: Object,Mappable {
 
-    @objc dynamic var latitude:Double = 0
-    @objc dynamic var longitude:Double = 0
+    @objc dynamic var latitude = ""
+    @objc dynamic var longitude = ""
 
     required convenience init?(map: Map) {
         self.init()
