@@ -31,10 +31,18 @@ class ResourceDetailViewViewModel {
         businessHourCellViewViewModel = BusinessHoursCellViewViewModel.init(bizHours: spotModel.bizHours)
     }
     
-
+    func getHeaderHeight(forSection section:Int)  -> Float {
+        if self.numberOfRows(forSection: section) <= 0{
+            return 1.0
+        }
+        return section == 0 ? 1.0 : 32
+    }
+    
     func sectionHeader(forSection section: Int) -> String {
         if ResourceDetailViewViewModel.allSectionHeadings.count > section{
-            return ResourceDetailViewViewModel.allSectionHeadings[section]
+            if self.numberOfRows(forSection: section) > 0{
+                return ResourceDetailViewViewModel.allSectionHeadings[section]
+            }
         }
         return ""
     }

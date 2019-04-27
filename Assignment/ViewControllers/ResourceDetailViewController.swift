@@ -35,7 +35,11 @@ class ResourceDetailViewController: UIViewController {
 
 extension ResourceDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 1.0 : 32
+        guard let resourceDetailViewViewModel = self.resourceDetailViewViewModel else {
+            return 1.0
+        }
+        return CGFloat(resourceDetailViewViewModel.getHeaderHeight(forSection: section))
+       
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let resourceDetailViewViewModel = self.resourceDetailViewViewModel else {
