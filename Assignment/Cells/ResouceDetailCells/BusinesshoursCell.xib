@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinesshoursCell" id="KGk-i7-Jjw" customClass="BusinesshoursCell" customModule="Assignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9t-MY-Or0">
+                        <rect key="frame" x="20" y="8" width="109" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="109" id="RBi-Ia-UdM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-p8-09U">
+                        <rect key="frame" x="98" y="7" width="202" height="28"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="T9t-MY-Or0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="CDA-Yy-2qA"/>
+                    <constraint firstAttribute="bottom" secondItem="UVk-p8-09U" secondAttribute="bottom" constant="8.5" id="RAD-tf-8kx"/>
+                    <constraint firstItem="T9t-MY-Or0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="VST-YM-7wt"/>
+                    <constraint firstAttribute="bottom" secondItem="T9t-MY-Or0" secondAttribute="bottom" constant="7.5" id="hU4-6X-tKB"/>
+                    <constraint firstAttribute="trailing" secondItem="UVk-p8-09U" secondAttribute="trailing" constant="20" id="inW-2M-Emd"/>
+                    <constraint firstItem="UVk-p8-09U" firstAttribute="leading" secondItem="T9t-MY-Or0" secondAttribute="trailing" constant="-31" id="mVW-X0-QhG"/>
+                    <constraint firstItem="UVk-p8-09U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="vwl-H2-uss"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayLabel" destination="T9t-MY-Or0" id="kZH-lq-dHp"/>
+                <outlet property="timingLabel" destination="UVk-p8-09U" id="7Hy-pZ-jDI"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactInfoCell" id="KGk-i7-Jjw" customClass="ContactInfoCell" customModule="Assignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knO-CV-Q5S">
+                        <rect key="frame" x="278" y="9" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="QpV-Pq-o28"/>
+                            <constraint firstAttribute="width" secondItem="knO-CV-Q5S" secondAttribute="height" multiplier="1:1" id="X5t-dN-DDG"/>
+                            <constraint firstAttribute="height" constant="32" id="psy-vi-RJB"/>
+                        </constraints>
+                        <state key="normal" image="call"/>
+                        <connections>
+                            <action selector="rightButton1Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ydU-b0-7wE"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKF-Y5-aY8">
+                        <rect key="frame" x="236" y="9" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="xKF-Y5-aY8" secondAttribute="height" multiplier="1:1" id="6Xh-r4-0tE"/>
+                            <constraint firstAttribute="width" constant="32" id="I8k-sO-E84"/>
+                            <constraint firstAttribute="height" constant="32" id="WuQ-RM-Nz9"/>
+                        </constraints>
+                        <state key="normal" image="chat"/>
+                        <connections>
+                            <action selector="rightButton2Action:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IOz-Iw-dJu"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiT-II-Ota">
+                        <rect key="frame" x="10" y="2" width="212" height="21.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <color key="textColor" red="1" green="0.23137254900000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcR-2x-fE2">
+                        <rect key="frame" x="10" y="24.5" width="212" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ZcR-2x-fE2" secondAttribute="bottom" constant="4.5" id="1Uc-Qm-dhd"/>
+                    <constraint firstItem="HiT-II-Ota" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="1j4-GA-3J4"/>
+                    <constraint firstItem="ZcR-2x-fE2" firstAttribute="top" secondItem="HiT-II-Ota" secondAttribute="bottom" constant="1" id="3Od-e8-VLT"/>
+                    <constraint firstItem="knO-CV-Q5S" firstAttribute="leading" secondItem="xKF-Y5-aY8" secondAttribute="trailing" constant="10" id="B67-Nq-4Oq"/>
+                    <constraint firstAttribute="trailing" secondItem="knO-CV-Q5S" secondAttribute="trailing" constant="10" id="E6W-ge-VL8"/>
+                    <constraint firstItem="xKF-Y5-aY8" firstAttribute="leading" secondItem="ZcR-2x-fE2" secondAttribute="trailing" constant="14" id="MoR-xF-76D"/>
+                    <constraint firstAttribute="bottom" secondItem="knO-CV-Q5S" secondAttribute="bottom" constant="8.5" id="NjR-uL-zCa"/>
+                    <constraint firstItem="knO-CV-Q5S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="Tla-SQ-908"/>
+                    <constraint firstItem="ZcR-2x-fE2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="db0-Ym-8pc"/>
+                    <constraint firstItem="HiT-II-Ota" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dbN-19-O6I"/>
+                    <constraint firstItem="xKF-Y5-aY8" firstAttribute="leading" secondItem="HiT-II-Ota" secondAttribute="trailing" constant="14" id="dqH-KS-R2I"/>
+                    <constraint firstItem="xKF-Y5-aY8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="jpG-Ea-kfZ"/>
+                    <constraint firstAttribute="bottom" secondItem="xKF-Y5-aY8" secondAttribute="bottom" constant="8.5" id="tBD-Jh-gzo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="detailsLabel" destination="ZcR-2x-fE2" id="Rtl-jy-Jin"/>
+                <outlet property="rightButton1" destination="knO-CV-Q5S" id="irX-cL-ipC"/>
+                <outlet property="rightButton2" destination="xKF-Y5-aY8" id="YT6-tc-ocC"/>
+                <outlet property="titleLabel" destination="HiT-II-Ota" id="Ijc-B0-fHm"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="call" width="42" height="42"/>
+        <image name="chat" width="42" height="42"/>
+    </resources>
+</document>
