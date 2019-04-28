@@ -43,11 +43,12 @@
 		B460FBE22273A1B7009B0169 /* CustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460FBE12273A1B7009B0169 /* CustomShadow.swift */; };
 		B460FBE42273A1EE009B0169 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460FBE32273A1EE009B0169 /* RoundView.swift */; };
 		B460FBE62273A4A7009B0169 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460FBE52273A4A7009B0169 /* WebViewController.swift */; };
-		B460FBE92273B22C009B0169 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460FBE82273B22C009B0169 /* Extensions.swift */; };
+		B460FBE92273B22C009B0169 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460FBE82273B22C009B0169 /* Support.swift */; };
 		B468CD8422747853001B7660 /* bizHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468CD8322747853001B7660 /* bizHours.swift */; };
 		B468CD86227478B5001B7660 /* Times.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468CD85227478B5001B7660 /* Times.swift */; };
 		B468CD88227483BF001B7660 /* BizHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468CD87227483BF001B7660 /* BizHourCell.swift */; };
-		B468CD8A22749D22001B7660 /* CallerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468CD8922749D22001B7660 /* CallerButton.swift */; };
+		B468CD902274ED5C001B7660 /* UtiltsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468CD8F2274ED5C001B7660 /* UtiltsTests.swift */; };
+		B468CD942274F785001B7660 /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = B468CD932274F785001B7660 /* dummy.json */; };
 		B4D7C05A2274441700A79E3D /* GPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7C0592274441700A79E3D /* GPS.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,11 +115,12 @@
 		B460FBE12273A1B7009B0169 /* CustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadow.swift; sourceTree = "<group>"; };
 		B460FBE32273A1EE009B0169 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		B460FBE52273A4A7009B0169 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		B460FBE82273B22C009B0169 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B460FBE82273B22C009B0169 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		B468CD8322747853001B7660 /* bizHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bizHours.swift; sourceTree = "<group>"; };
 		B468CD85227478B5001B7660 /* Times.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Times.swift; sourceTree = "<group>"; };
 		B468CD87227483BF001B7660 /* BizHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHourCell.swift; sourceTree = "<group>"; };
-		B468CD8922749D22001B7660 /* CallerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerButton.swift; sourceTree = "<group>"; };
+		B468CD8F2274ED5C001B7660 /* UtiltsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtiltsTests.swift; sourceTree = "<group>"; };
+		B468CD932274F785001B7660 /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy.json; sourceTree = "<group>"; };
 		B4D7C0592274441700A79E3D /* GPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPS.swift; sourceTree = "<group>"; };
 		EBB40AFC6C02B67FE1D1D3E6 /* Pods_QuickSeriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickSeriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE1F58E9EE84EA49504D89F /* Pods-QuickSeriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeriesTests/Pods-QuickSeriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,23 +185,14 @@
 				B460FBE02273A1AD009B0169 /* Components */,
 				B460FBC9227261B5009B0169 /* DataManager */,
 				B40753812271F88D003B91E6 /* Models */,
-				B40753622271BDEA003B91E6 /* Navigation */,
 				B40753632271BDEA003B91E6 /* Utils */,
 				B40753652271BDEA003B91E6 /* Cell */,
 				B40753682271BDEA003B91E6 /* Common */,
 				B407536A2271BDEA003B91E6 /* Controllers */,
 				B40753702271BDEA003B91E6 /* data */,
-				B40753742271BDEA003B91E6 /* Protocols */,
 			);
 			path = Stash;
 			sourceTree = SOURCE_ROOT;
-		};
-		B40753622271BDEA003B91E6 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
-			sourceTree = "<group>";
 		};
 		B40753632271BDEA003B91E6 /* Utils */ = {
 			isa = PBXGroup;
@@ -246,18 +239,12 @@
 		B40753702271BDEA003B91E6 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				B468CD932274F785001B7660 /* dummy.json */,
 				B40753712271BDEA003B91E6 /* categories.json */,
 				B40753722271BDEA003B91E6 /* vacation-spot.json */,
 				B40753732271BDEA003B91E6 /* restaurants.json */,
 			);
 			path = data;
-			sourceTree = "<group>";
-		};
-		B40753742271BDEA003B91E6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B40753812271F88D003B91E6 /* Models */ = {
@@ -315,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				B449A84722705CB400EF674A /* QuickSeriesTests.swift */,
+				B468CD8F2274ED5C001B7660 /* UtiltsTests.swift */,
 				B449A84922705CB400EF674A /* Info.plist */,
 			);
 			path = QuickSeriesTests;
@@ -344,7 +332,6 @@
 			children = (
 				B460FBE32273A1EE009B0169 /* RoundView.swift */,
 				B460FBE12273A1B7009B0169 /* CustomShadow.swift */,
-				B468CD8922749D22001B7660 /* CallerButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -352,7 +339,7 @@
 		B460FBE72273B223009B0169 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B460FBE82273B22C009B0169 /* Extensions.swift */,
+				B460FBE82273B22C009B0169 /* Support.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,6 +456,7 @@
 				B407537E2271BDEA003B91E6 /* categories.json in Resources */,
 				B407537F2271BDEA003B91E6 /* vacation-spot.json in Resources */,
 				B449A83A22705CB400EF674A /* Assets.xcassets in Resources */,
+				B468CD942274F785001B7660 /* dummy.json in Resources */,
 				B40753802271BDEA003B91E6 /* restaurants.json in Resources */,
 				B449A83822705CB300EF674A /* Main.storyboard in Resources */,
 			);
@@ -586,7 +574,6 @@
 				B460FBDD227349F6009B0169 /* ListTransform.swift in Sources */,
 				B449A83522705CB300EF674A /* CategoriesViewController.swift in Sources */,
 				B460FBD72272FB83009B0169 /* SocialMedia.swift in Sources */,
-				B468CD8A22749D22001B7660 /* CallerButton.swift in Sources */,
 				B460FBD52272722D009B0169 /* ResourceCell.swift in Sources */,
 				B468CD88227483BF001B7660 /* BizHourCell.swift in Sources */,
 				B460FBCD22726B43009B0169 /* DataManager.swift in Sources */,
@@ -602,7 +589,7 @@
 				B40753782271BDEA003B91E6 /* Common.swift in Sources */,
 				B460FBDB22733C82009B0169 /* Address.swift in Sources */,
 				B407537D2271BDEA003B91E6 /* AddressViewController.swift in Sources */,
-				B460FBE92273B22C009B0169 /* Extensions.swift in Sources */,
+				B460FBE92273B22C009B0169 /* Support.swift in Sources */,
 				B40753762271BDEA003B91E6 /* CategoryCell.swift in Sources */,
 				B407537C2271BDEA003B91E6 /* ContactViewController.swift in Sources */,
 				B460FBCF22726BB8009B0169 /* DataFetchLayer.swift in Sources */,
@@ -616,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B468CD902274ED5C001B7660 /* UtiltsTests.swift in Sources */,
 				B449A84822705CB400EF674A /* QuickSeriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,6 +814,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PSWG5QN37Z;
 				INFOPLIST_FILE = QuickSeriesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -847,6 +836,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PSWG5QN37Z;
 				INFOPLIST_FILE = QuickSeriesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -867,6 +857,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PSWG5QN37Z;
 				INFOPLIST_FILE = QuickSeriesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -887,6 +878,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PSWG5QN37Z;
 				INFOPLIST_FILE = QuickSeriesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -22,13 +22,24 @@ class ResourcesViewController: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        lblTitle.text = headerTitle
-
-        arrResources = DataFetchLayer.getResources(filterItem: eid,sorted: true)
-        tblResources.reloadData()
+        setupPage()
     }
-    
+    func setupPage()
+    {
+        let responseVacactions = DataManager.validateAndStore(filepath: "vacation-spot", fileExtension: "json")
+        let responseRestaurants = DataManager.validateAndStore(filepath: "restaurants", fileExtension: "json")
+
+        if responseVacactions || responseRestaurants
+        {
+            lblTitle.text = headerTitle
+            arrResources = DataFetchLayer.getResources(filterItem: eid,sorted: true)
+            tblResources.reloadData()
+        }
+        else
+        {
+            Common.sendAlert(title: "Error", msg: "We are unable to fetch the data, please try later", viewController: self)
+        }
+    }
 
     /*
     // MARK: - Navigation

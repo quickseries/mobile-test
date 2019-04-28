@@ -23,4 +23,16 @@ class DataManager: NSObject {
     {
         return DataFetchLayer.getCategories(filter: filter)
     }
+    class func validateAndStore(filepath:String,fileExtension:String) -> Bool
+    {
+        let dataResource = Utils.getDataForJson(filePath: filepath, extensionName: fileExtension)
+        
+        if dataResource.success
+        {
+            DataManager.storeResources(arrResources: dataResource.dataArray)
+            return true
+        }
+        
+        return false
+    }
 }
