@@ -42,3 +42,4 @@ playground.xcworkspace
 /mobileTest/.DS_Store
 /mobileTest/mobileTest.xcodeproj/xcuserdata/balrajsingh.xcuserdatad/xcschemes/xcschememanagement.plist
 /mobileTest/mobileTest.xcworkspace/xcshareddata
+.DS_Store

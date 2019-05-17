@@ -15,7 +15,9 @@ public enum FACacheError: Error {
 public final class FACache {
   private let cache = NSCache<NSString, AnyObject>()
   
-  public static let fa_feedbackDetailsResponse = "FeedbackDetailsResponse"
+  public static let categoryRespose = "categoryRespose"
+  public static let vacationSpotResponse = "vacationSpotResponse"
+  public static let resturentResponse = "resturentResponse"
   
   public init() {
   }
