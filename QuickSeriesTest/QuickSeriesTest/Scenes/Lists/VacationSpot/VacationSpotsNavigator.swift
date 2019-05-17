@@ -11,7 +11,7 @@ import Domain
 
 protocol VacationSpotsNavigatorProtocol {
   func toVacationSpot(_ vacationSpot: VacationSpotItemViewModel)
-  func setup()
+  func setup(_ vc: VacationSpotsViewController)
 }
 
 class VacationSpotsNavigator: VacationSpotsNavigatorProtocol {
@@ -26,7 +26,7 @@ class VacationSpotsNavigator: VacationSpotsNavigatorProtocol {
   func toVacationSpot(_ vacationSpot: VacationSpotItemViewModel) {
     
   }
-  func setup() {
-    
+  func setup(_ vc: VacationSpotsViewController) {
+    vc.viewModel = VacationSpotsViewModel(navigator: self, useCase: services.makeGetVacationSpotsUseCase())
   }
 }

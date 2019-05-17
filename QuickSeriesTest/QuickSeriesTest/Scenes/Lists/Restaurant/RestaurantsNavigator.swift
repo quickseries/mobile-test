@@ -11,7 +11,7 @@ import Domain
 
 protocol RestaurantsNavigatorProtocol {
   func toRestaurant(_ restaurant: RestaurantItemViewModel)
-  func setup()
+  func setup(_ vc: RestaurantsViewController)
 }
 
 class RestaurantsNavigator: RestaurantsNavigatorProtocol {
@@ -26,7 +26,7 @@ class RestaurantsNavigator: RestaurantsNavigatorProtocol {
   func toRestaurant(_ restaurant: RestaurantItemViewModel) {
     
   }
-  func setup() {
-    
+  func setup(_ vc: RestaurantsViewController) {
+    vc.viewModel = RestaurantsViewModel(navigator: self, useCase: services.makeGetRestaurantsUseCase())
   }
 }

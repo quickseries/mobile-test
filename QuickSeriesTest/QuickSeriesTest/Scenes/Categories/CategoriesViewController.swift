@@ -33,7 +33,7 @@ class CategoriesViewController: UIViewController {
     bindViewModel()
   }
   
-  // MARK: - functions
+  // MARK: - Functions
   private func setupUI() {
     navigationItem.title = NavigationTitles.categories.rawValue
   }

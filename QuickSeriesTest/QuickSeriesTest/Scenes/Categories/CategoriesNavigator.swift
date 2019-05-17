@@ -34,10 +34,16 @@ class CategoriesNavigator: CategoriesNavigatorProtocol {
     }
   }
   func toRestaurants() {
-    
+    let restaurantsVC = RestaurantsViewController(nibName: XibNames.restaurants.rawValue, bundle: nil)
+    let restaurantsNavigator = RestaurantsNavigator(services: services, navigationController: navigationController)
+    restaurantsNavigator.setup(restaurantsVC)
+    navigationController.pushViewController(restaurantsVC, animated: true)
   }
   func toVacationSpots() {
-    
+    let vacationSpotsVC = VacationSpotsViewController(nibName: XibNames.vacationSpots.rawValue, bundle: nil)
+    let vacationSpotsNavigator = VacationSpotsNavigator(services: services, navigationController: navigationController)
+    vacationSpotsNavigator.setup(vacationSpotsVC)
+    navigationController.pushViewController(vacationSpotsVC, animated: true)
   }
   func setup(_ viewController: CategoriesViewController) {
     let vm = CategoriesViewModel(navigator: self, useCase: services.makeGetCategoriesUseCase())

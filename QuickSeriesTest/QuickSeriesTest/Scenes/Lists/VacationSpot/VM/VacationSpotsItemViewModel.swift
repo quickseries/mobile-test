@@ -12,11 +12,13 @@ import Domain
 final class VacationSpotItemViewModel {
   var title: String
   var description: String
+  var backgroundImageUrl: URL?
   var response: VacationSpotNetworkModel.Response
   
   init (with response: VacationSpotNetworkModel.Response) {
     self.response = response
     self.title = response.title
     self.description = response.description ?? ""
+    self.backgroundImageUrl = URL(string: response.photo)
   }
 }

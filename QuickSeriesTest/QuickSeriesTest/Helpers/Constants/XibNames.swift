@@ -13,4 +13,11 @@ public enum XibNames: String {
   case categories = "CategoriesViewController"
   case categoryCell = "CategoryCell"
 
+  // List
+  case vacationSpots = "VacationSpotsViewController"
+  case vacationSpotCell = "VacationSpotCell"
+
+  case restaurants = "RestaurantsViewController"
+  case restaurantCell = "RestaurantCell"
+
 }

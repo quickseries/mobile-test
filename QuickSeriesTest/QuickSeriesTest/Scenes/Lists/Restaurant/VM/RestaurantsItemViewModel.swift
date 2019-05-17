@@ -12,11 +12,13 @@ import Domain
 final class RestaurantItemViewModel {
   var title: String
   var description: String
+  var backgroundImageUrl: URL?
   var response: RestaurantNetworkModel.Response
   
   init (with response: RestaurantNetworkModel.Response) {
     self.response = response
     self.title = response.title
     self.description = response.description ?? ""
+    self.backgroundImageUrl = URL(string: response.photo)
   }
 }

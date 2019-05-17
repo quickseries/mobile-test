@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import SDWebImage
 
 class VacationSpotCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var backgroundImageView: UIImageView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    setupUI()
+  }
+  private func setupUI() {
+    backgroundImageView.layer.cornerRadius = 10
+    backgroundImageView.clipsToBounds = true
+    backgroundImageView.backgroundColor = NamedColor.lightText.value
     
+    titleLabel.textColor = .white
+    titleLabel.font = Font(.installed(.MontserratBold), size: .standard(.h1)).instance
+  }
+  func bind(_ viewModel: VacationSpotItemViewModel) {
+    titleLabel.text = viewModel.title
+    if let url = viewModel.backgroundImageUrl {
+      backgroundImageView.sd_setShowActivityIndicatorView(true)
+      backgroundImageView.sd_setIndicatorStyle(.white)
+      backgroundImageView.sd_setImage(with: url)
+    }
+  }
 }
