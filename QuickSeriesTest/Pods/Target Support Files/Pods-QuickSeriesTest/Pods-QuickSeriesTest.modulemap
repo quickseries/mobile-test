@@ -1,0 +1,6 @@
+framework module Pods_QuickSeriesTest {
+  umbrella header "Pods-QuickSeriesTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
