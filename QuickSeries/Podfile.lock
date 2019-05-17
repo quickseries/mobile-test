@@ -1,0 +1,29 @@
+PODS:
+  - Eureka (4.3.1)
+  - ViewRow (0.4.0):
+    - Eureka (>= 4.0.0)
+
+DEPENDENCIES:
+  - Eureka (= 4.3.1)
+  - ViewRow (from `https://github.com/EurekaCommunity/ViewRow`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Eureka
+
+EXTERNAL SOURCES:
+  ViewRow:
+    :git: https://github.com/EurekaCommunity/ViewRow
+
+CHECKOUT OPTIONS:
+  ViewRow:
+    :commit: fdb0ad7e3ed763fc671f6d68749d3620a242d81d
+    :git: https://github.com/EurekaCommunity/ViewRow
+
+SPEC CHECKSUMS:
+  Eureka: 28ea296f06710f6745266b71f17862048941a32d
+  ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
+
+PODFILE CHECKSUM: b9405a5efac5bda4bc011dacc5dc5de227d07680
+
+COCOAPODS: 1.5.3

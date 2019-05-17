@@ -1,0 +1,6 @@
+framework module Pods_QuickSeries {
+  umbrella header "Pods-QuickSeries-umbrella.h"
+
+  export *
+  module * { export * }
+}
