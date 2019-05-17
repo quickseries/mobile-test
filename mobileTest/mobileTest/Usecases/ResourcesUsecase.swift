@@ -12,6 +12,17 @@ import PromiseKit
 public enum ResourcesType: String {
   case vacationSpot = "vacation-spot"
   case restaurants = "restaurants"
+  
+  static func getResourceType(forCategory category: String) -> ResourcesType {
+    switch category.lowercased() {
+    case "Restaurants".lowercased():
+      return ResourcesType.restaurants
+    case "Vacation Spots".lowercased():
+      return ResourcesType.vacationSpot
+    default:
+      return ResourcesType.restaurants
+    }
+  }
 }
 
 public struct ResourcesUsecase: ResourcesUsecaseProtocol {

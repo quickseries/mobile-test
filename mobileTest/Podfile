@@ -7,5 +7,6 @@ target 'mobileTest' do
 
   # Pods for mobileTest
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'PromiseKit', '6.8.2'
 end

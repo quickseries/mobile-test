@@ -9,17 +9,9 @@
 import Foundation
 
 public struct ResoucesResponse: Codable {
-  public let id: String
-  public let slug: String
-  public let eid: String
   public let title: String
   public let description: String
-  public let categoryEid: String
-  public let v: Int
   public let photo: URL
-  public let active: Bool
-  public let updatedAt: Date
-  public let createdAt: Date
   public struct Addresse: Codable {
     public let address1: String
     public let label: String
@@ -38,10 +30,8 @@ public struct ResoucesResponse: Codable {
     public let website: [URL]?
     public let email: [String]?
     public let phoneNumber: [String]
-    public let faxNumber: [String]?
-    public let tollFree: [String]?
   }
-  public let contactInfo: ContactInfo
+  public let contactInfo: ContactInfo?
   public struct BizHours: Codable {
     public struct Sunday: Codable {
       public let from: String
@@ -62,17 +52,9 @@ public struct ResoucesResponse: Codable {
   }
   public let socialMedia: SocialMedia?
   private enum CodingKeys: String, CodingKey {
-    case id = "_id"
-    case slug
-    case eid
     case title
     case description
-    case categoryEid = "category_eid"
-    case v = "__v"
     case photo
-    case active = "_active"
-    case updatedAt = "updated_at"
-    case createdAt = "created_at"
     case addresses
     case contactInfo
     case bizHours

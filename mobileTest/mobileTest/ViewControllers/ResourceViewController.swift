@@ -12,6 +12,7 @@ class ResourceViewController: UIViewController {
   
   let viewModel: ResourcesViewModel
   
+  @IBOutlet weak var tableView: UITableView!
   public init(forCategory category: String) {
     self.viewModel = ResourcesViewModel(withCategory: category, withUsecase: ResourcesUsecase(service: AppEnvironment.current.apiService))
     super.init(nibName: String.stringFromClass(ResourceViewController.self), bundle: Bundle.main)
@@ -26,17 +27,21 @@ class ResourceViewController: UIViewController {
     
     // Do any additional setup after loading the view.
     self.title = self.viewModel.selectedCategory
+    self.setUpRightNavigationBarButton()
+    self.setUpTableView()
+    Loader.show(blockingLoader: false)
+    _ = self.viewModel.loadResource()
+      .done { _ in self.tableView.reloadData() }
+      .tap { _ in Loader.hide() }
   }
   
+  func setUpRightNavigationBarButton() {
+    let saveReport = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(sortItemsTap))
+    self.navigationItem.rightBarButtonItem = saveReport
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  @objc func sortItemsTap() {
+    self.viewModel.sortResources()
+    self.tableView.reloadData()
+  }
 }
