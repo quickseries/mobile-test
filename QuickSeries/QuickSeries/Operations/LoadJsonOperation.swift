@@ -23,8 +23,7 @@ import Foundation
         
     }
     
-    
-    
+     
     override public func main() {
         
         if isCancelled {
@@ -33,7 +32,7 @@ import Foundation
         
         
         
-        guard let filePath = mainBundle.path(forResource: fileName, ofType: ".json") else {
+        guard let filePath = mainBundle.path(forResource: "data.bundle/\(fileName)", ofType: ".json") else {
             cancel()
             return
         }
@@ -43,6 +42,7 @@ import Foundation
             let data = try Data(contentsOf: URL(fileURLWithPath: filePath), options: .alwaysMapped)
             self.complete(result: data)
             self.cancel()
+            
         }catch{
             self.complete(result: Data())
             self.cancel()

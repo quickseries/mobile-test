@@ -23,8 +23,14 @@
 		483E1801228ED3C40095CA2B /* LoadJsonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1800228ED3C40095CA2B /* LoadJsonOperation.swift */; };
 		483E1803228ED8470095CA2B /* QuickOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1802228ED8470095CA2B /* QuickOperationQueue.swift */; };
 		483E1805228ED9D40095CA2B /* QuickOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1804228ED9D40095CA2B /* QuickOperationManager.swift */; };
+		483E1807228EE3F40095CA2B /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1806228EE3F40095CA2B /* CategoriesViewModel.swift */; };
+		483E180A228EEEC40095CA2B /* QuickCategoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1809228EEEC40095CA2B /* QuickCategoryTableView.swift */; };
+		483E180D228EF0300095CA2B /* QuickCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E180C228EF0300095CA2B /* QuickCategoryTableViewCell.swift */; };
+		483E1810228EF0CE0095CA2B /* QuickTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E180F228EF0CE0095CA2B /* QuickTableViewDataSource.swift */; };
+		483E1812228F01A70095CA2B /* LetterImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1811228F01A70095CA2B /* LetterImageGenerator.swift */; };
+		483E1814228F0E070095CA2B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1813228F0E070095CA2B /* Utilities.swift */; };
+		483E1816228F0E990095CA2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1815228F0E990095CA2B /* Constants.swift */; };
 		488E1700228EBD11006416B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E16FF228EBD11006416B5 /* AppDelegate.swift */; };
-		488E1702228EBD11006416B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E1701228EBD11006416B5 /* ViewController.swift */; };
 		488E1705228EBD11006416B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E1703228EBD11006416B5 /* Main.storyboard */; };
 		488E1707228EBD12006416B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488E1706228EBD12006416B5 /* Assets.xcassets */; };
 		488E170A228EBD12006416B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E1708228EBD12006416B5 /* LaunchScreen.storyboard */; };
@@ -61,9 +67,15 @@
 		483E1800228ED3C40095CA2B /* LoadJsonOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonOperation.swift; sourceTree = "<group>"; };
 		483E1802228ED8470095CA2B /* QuickOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOperationQueue.swift; sourceTree = "<group>"; };
 		483E1804228ED9D40095CA2B /* QuickOperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOperationManager.swift; sourceTree = "<group>"; };
+		483E1806228EE3F40095CA2B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		483E1809228EEEC40095CA2B /* QuickCategoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCategoryTableView.swift; sourceTree = "<group>"; };
+		483E180C228EF0300095CA2B /* QuickCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		483E180F228EF0CE0095CA2B /* QuickTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTableViewDataSource.swift; sourceTree = "<group>"; };
+		483E1811228F01A70095CA2B /* LetterImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterImageGenerator.swift; sourceTree = "<group>"; };
+		483E1813228F0E070095CA2B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		483E1815228F0E990095CA2B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		488E16FC228EBD11006416B5 /* QuickSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488E16FF228EBD11006416B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		488E1701228EBD11006416B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		488E1704228EBD11006416B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		488E1706228EBD12006416B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488E1709228EBD12006416B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,6 +134,7 @@
 		483E17D5228EC4DE0095CA2B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				483E1806228EE3F40095CA2B /* CategoriesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -161,6 +174,31 @@
 			path = Operations;
 			sourceTree = "<group>";
 		};
+		483E1808228EEE790095CA2B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				483E180B228EEEF50095CA2B /* Cells */,
+				483E1809228EEEC40095CA2B /* QuickCategoryTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		483E180B228EEEF50095CA2B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				483E180C228EF0300095CA2B /* QuickCategoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		483E180E228EF0A90095CA2B /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				483E180F228EF0CE0095CA2B /* QuickTableViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 		488E16F3228EBD11006416B5 = {
 			isa = PBXGroup;
 			children = (
@@ -184,16 +222,20 @@
 		488E16FE228EBD11006416B5 /* QuickSeries */ = {
 			isa = PBXGroup;
 			children = (
+				483E180E228EF0A90095CA2B /* DataSources */,
+				483E1808228EEE790095CA2B /* Views */,
 				483E17FD228ED23B0095CA2B /* Operations */,
 				483E17FB228ED1A00095CA2B /* data.bundle */,
 				483E17D5228EC4DE0095CA2B /* ViewModels */,
 				483E17D4228EC4D20095CA2B /* Models */,
 				488E16FF228EBD11006416B5 /* AppDelegate.swift */,
-				488E1701228EBD11006416B5 /* ViewController.swift */,
 				488E1703228EBD11006416B5 /* Main.storyboard */,
 				488E1706228EBD12006416B5 /* Assets.xcassets */,
 				488E1708228EBD12006416B5 /* LaunchScreen.storyboard */,
 				488E170B228EBD12006416B5 /* Info.plist */,
+				483E1811228F01A70095CA2B /* LetterImageGenerator.swift */,
+				483E1813228F0E070095CA2B /* Utilities.swift */,
+				483E1815228F0E990095CA2B /* Constants.swift */,
 			);
 			path = QuickSeries;
 			sourceTree = "<group>";
@@ -381,12 +423,16 @@
 			files = (
 				483E17F1228ECC010095CA2B /* VAddresses.swift in Sources */,
 				483E17DD228EC5E40095CA2B /* Addresses.swift in Sources */,
-				488E1702228EBD11006416B5 /* ViewController.swift in Sources */,
+				483E1814228F0E070095CA2B /* Utilities.swift in Sources */,
 				488E1700228EBD11006416B5 /* AppDelegate.swift in Sources */,
 				483E17DE228EC5E40095CA2B /* Gps.swift in Sources */,
 				483E17FF228ED3530095CA2B /* QuickOperation.swift in Sources */,
+				483E1816228F0E990095CA2B /* Constants.swift in Sources */,
+				483E1812228F01A70095CA2B /* LetterImageGenerator.swift in Sources */,
 				483E17F0228ECC010095CA2B /* VacationSpot.swift in Sources */,
+				483E180A228EEEC40095CA2B /* QuickCategoryTableView.swift in Sources */,
 				483E1803228ED8470095CA2B /* QuickOperationQueue.swift in Sources */,
+				483E1810228EF0CE0095CA2B /* QuickTableViewDataSource.swift in Sources */,
 				483E17DF228EC5E40095CA2B /* Restaurants.swift in Sources */,
 				483E17FA228ECCCA0095CA2B /* ContactInfo.swift in Sources */,
 				483E1801228ED3C40095CA2B /* LoadJsonOperation.swift in Sources */,
@@ -395,6 +441,8 @@
 				483E17F2228ECC010095CA2B /* FreeText.swift in Sources */,
 				483E17E1228EC63E0095CA2B /* DataResponse.swift in Sources */,
 				483E17D7228EC53B0095CA2B /* Category.swift in Sources */,
+				483E1807228EE3F40095CA2B /* CategoriesViewModel.swift in Sources */,
+				483E180D228EF0300095CA2B /* QuickCategoryTableViewCell.swift in Sources */,
 				483E17EF228ECC010095CA2B /* SocialMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
