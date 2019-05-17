@@ -12,7 +12,10 @@ import RxCocoa
 
 class RestaurantsViewController: UIViewController {
   @IBOutlet weak var restaurantsTableView: UITableView!
-
+  var seachBarButton: UIBarButtonItem?
+  var sortBarButton: UIBarButtonItem?
+  
+  var isAtoZ = BehaviorRelay<Bool>(value: true)
   var viewModel: RestaurantsViewModel!
   private let disposeBag = DisposeBag()
   
@@ -26,7 +29,12 @@ class RestaurantsViewController: UIViewController {
   
   // MARK: - Functions
   private func setupUI() {
+    let sortBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_sort_atoz"), style: .plain, target: self, action: #selector(handleSortUI))
+    self.sortBarButton = sortBarButton
+    let seachBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
+    self.seachBarButton = seachBarButton
     navigationItem.title = NavigationTitles.restaurants.rawValue
+    navigationItem.rightBarButtonItems = [sortBarButton, seachBarButton]
   }
   private func configureTableView() {
     let refreshControl = UIRefreshControl()
@@ -34,14 +42,20 @@ class RestaurantsViewController: UIViewController {
     if #available(iOS 10.0, *) {
       restaurantsTableView.refreshControl = refreshControl
     }
-    restaurantsTableView.rowHeight = 120
+    restaurantsTableView.rowHeight = 200
     let restaurantCellNib = UINib(nibName: XibNames.restaurantCell.rawValue, bundle: nil)
     restaurantsTableView.register(restaurantCellNib, forCellReuseIdentifier: CellIds.cellId.rawValue)
   }
   
   private func bindViewModel() {
     assert(viewModel != nil)
-    let input = RestaurantsViewModel.Input(selection: restaurantsTableView.rx.itemSelected.asDriver())
+    guard let sortButton = sortBarButton else { return }
+    
+    isAtoZ.subscribe(onNext: { (value) in
+      self.sortBarButton?.image = value ? #imageLiteral(resourceName: "ic_sort_atoz") : #imageLiteral(resourceName: "ic_sort_ztoa")
+    }).disposed(by: disposeBag)
+    
+    let input = RestaurantsViewModel.Input(selection: restaurantsTableView.rx.itemSelected.asDriver(), sortButtonTrigger: sortButton.rx.tap.asDriver(), isAtoZ: isAtoZ)
     let output = viewModel.transform(input: input)
     
     // Bind categories to UITableView
@@ -57,5 +71,8 @@ class RestaurantsViewController: UIViewController {
     if #available(iOS 10.0, *) {
       restaurantsTableView.refreshControl!.endRefreshing()
     }
+  }
+  @objc private func handleSortUI() {
+    isAtoZ.accept(!isAtoZ.value)
   }
 }

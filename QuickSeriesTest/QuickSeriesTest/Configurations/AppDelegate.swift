@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
    * Set the navigation bar item to large title
    * Set the font of navigation title
+   * Set back button only show icon
+   * Set tint
    
    - Author: Salar Soleimani
    */
@@ -35,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       NSAttributedString.Key.font: largTitleNavFont
     ]
     UINavigationBar.appearance().titleTextAttributes = attributes
+    UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for:UIBarMetrics.default)
+    UINavigationBar.appearance().tintColor = NamedColor.beautifulRed.value
+    UINavigationBar.appearance().isTranslucent = true
+    
+    // Add bottom border
+    UINavigationBar.appearance().shadowImage = NamedColor.beautifulRed.value.as2ptImage()
   }
   /**
    Configuring the main view (resource categories)

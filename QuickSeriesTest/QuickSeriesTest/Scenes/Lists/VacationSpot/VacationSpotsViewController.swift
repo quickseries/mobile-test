@@ -34,7 +34,7 @@ class VacationSpotsViewController: UIViewController {
     if #available(iOS 10.0, *) {
       vacationSpotsTableView.refreshControl = refreshControl
     }
-    vacationSpotsTableView.rowHeight = 120
+    vacationSpotsTableView.rowHeight = 200
     let vacationSpotCellNib = UINib(nibName: XibNames.vacationSpotCell.rawValue, bundle: nil)
     vacationSpotsTableView.register(vacationSpotCellNib, forCellReuseIdentifier: CellIds.cellId.rawValue)
   }

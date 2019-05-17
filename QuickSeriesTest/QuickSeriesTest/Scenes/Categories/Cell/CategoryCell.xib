@@ -19,20 +19,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="337" height="108.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7X-a9-7H8">
-                        <rect key="frame" x="8" y="8" width="321" height="92.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7X-a9-7H8" customClass="UIViewX" customModule="QuickSeriesTest" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="305" height="84.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NEq-cu-GFn">
-                                <rect key="frame" x="8" y="22" width="305" height="49"/>
+                                <rect key="frame" x="8" y="18" width="289" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZz-Nk-N6n">
-                                        <rect key="frame" x="0.0" y="0.0" width="305" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zj6-bV-pHc">
-                                        <rect key="frame" x="0.0" y="28.5" width="305" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="289" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,13 +47,36 @@
                             <constraint firstItem="NEq-cu-GFn" firstAttribute="centerY" secondItem="h7X-a9-7H8" secondAttribute="centerY" id="raC-Wb-x8U"/>
                             <constraint firstItem="NEq-cu-GFn" firstAttribute="leading" secondItem="h7X-a9-7H8" secondAttribute="leading" constant="8" id="xEP-ra-WWE"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.85490196078431369" green="0.15686274509803921" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.011764705882352941" green="0.35686274509803922" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="h7X-a9-7H8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Gyq-vb-RLn"/>
-                    <constraint firstAttribute="bottom" secondItem="h7X-a9-7H8" secondAttribute="bottom" constant="8" id="nUC-gC-vEh"/>
-                    <constraint firstAttribute="trailing" secondItem="h7X-a9-7H8" secondAttribute="trailing" constant="8" id="tWv-Ga-sfV"/>
-                    <constraint firstItem="h7X-a9-7H8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wmL-XA-YSt"/>
+                    <constraint firstItem="h7X-a9-7H8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="DEb-QU-XkB"/>
+                    <constraint firstAttribute="bottom" secondItem="h7X-a9-7H8" secondAttribute="bottom" constant="8" id="Ejr-2M-XVM"/>
+                    <constraint firstAttribute="trailing" secondItem="h7X-a9-7H8" secondAttribute="trailing" constant="16" id="FwM-8v-6B5"/>
+                    <constraint firstItem="h7X-a9-7H8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Jri-NI-UZu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

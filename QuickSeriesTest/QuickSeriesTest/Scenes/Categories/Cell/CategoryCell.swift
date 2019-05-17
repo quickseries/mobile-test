@@ -23,14 +23,11 @@ class CategoryCell: UITableViewCell {
     descriptionLabel.isHidden = viewModel.description.isEmpty
     descriptionLabel.text = viewModel.description
   }
-  
-  private func setupUI() {
-    let backGroundColor = UIColor.white.makeGradientColor([NamedColor.beautifulGreen.value, NamedColor.beautifulRed.value])
-    containerView.layer.insertSublayer(backGroundColor, at: 0)
-    backGroundColor.frame = containerView.bounds
-    containerView.layer.cornerRadius = 10
-    containerView.clipsToBounds = true
+
+  override func layoutSublayers(of layer: CALayer) {
     
+  }
+  private func setupUI() {
     titleLabel.textColor = .white
     titleLabel.font = Font(.installed(.MontserratBold), size: .standard(.h1)).instance
     descriptionLabel.textColor = .white

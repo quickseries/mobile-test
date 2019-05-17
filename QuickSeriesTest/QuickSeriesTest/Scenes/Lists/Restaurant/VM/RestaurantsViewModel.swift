@@ -26,11 +26,17 @@ final class RestaurantsViewModel: ViewModelType {
     let fetching = activityIndicator.asDriver()
     let errors = errorTracker.asDriver()
     
-    let restaurants = getRestaurants(activityIndicator: activityIndicator, error: errorTracker)
+    var restaurants = getRestaurants(activityIndicator: activityIndicator, error: errorTracker)
     
+    let sortedRestaurants = input.sortButtonTrigger
+      .withLatestFrom(restaurants) { (isAtoZ, restaurants) -> [RestaurantItemViewModel] in
+        return restaurants.sorted { $0.title < $1.title }
+    }.do(onNext: { (sortedRestaurants) in
+      restaurants = Driver.of(sortedRestaurants)
+    })
     let selectedRestaurant = input.selection
-      .withLatestFrom(restaurants) { (indexPath, categories) -> RestaurantItemViewModel in
-        return categories[indexPath.row]
+      .withLatestFrom(restaurants) { (indexPath, restaurants) -> RestaurantItemViewModel in
+        return restaurants[indexPath.row]
       }.do(onNext: { [unowned self] (restaurant) in
         self.navigator.toRestaurant(restaurant)
       })
@@ -50,6 +56,8 @@ final class RestaurantsViewModel: ViewModelType {
 extension RestaurantsViewModel {
   struct Input {
     let selection: Driver<IndexPath>
+    let sortButtonTrigger: Driver<Void>
+    let isAtoZ: BehaviorRelay<Bool>
   }
   
   struct Output {

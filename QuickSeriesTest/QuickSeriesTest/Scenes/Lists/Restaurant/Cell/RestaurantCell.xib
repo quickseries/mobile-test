@@ -19,8 +19,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="359" height="194.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U4F-NX-1cx">
-                        <rect key="frame" x="8" y="8" width="343" height="178.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U4F-NX-1cx" customClass="UIImageViewX" customModule="QuickSeriesTest" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="327" height="170.5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="popIn" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j80-l6-gMO">
                         <rect key="frame" x="28" y="87" width="303" height="20.5"/>
@@ -36,13 +54,13 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="U4F-NX-1cx" secondAttribute="bottom" constant="8" id="03A-i7-bq9"/>
+                    <constraint firstAttribute="trailing" secondItem="U4F-NX-1cx" secondAttribute="trailing" constant="16" id="5Yl-Bn-WDU"/>
                     <constraint firstItem="j80-l6-gMO" firstAttribute="centerY" secondItem="8KA-Vy-lVo" secondAttribute="centerY" id="6SC-3X-Xsh"/>
+                    <constraint firstItem="U4F-NX-1cx" firstAttribute="leading" secondItem="8KA-Vy-lVo" secondAttribute="leading" constant="16" id="Ao6-uB-5vM"/>
                     <constraint firstItem="j80-l6-gMO" firstAttribute="centerX" secondItem="8KA-Vy-lVo" secondAttribute="centerX" id="QrH-tz-HpG"/>
-                    <constraint firstItem="U4F-NX-1cx" firstAttribute="leading" secondItem="8KA-Vy-lVo" secondAttribute="leading" constant="8" id="jL8-Fj-WUh"/>
+                    <constraint firstItem="U4F-NX-1cx" firstAttribute="top" secondItem="8KA-Vy-lVo" secondAttribute="top" constant="16" id="UgS-Ht-qlX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="j80-l6-gMO" secondAttribute="trailing" constant="8" id="jW0-D0-u2L"/>
-                    <constraint firstItem="U4F-NX-1cx" firstAttribute="top" secondItem="8KA-Vy-lVo" secondAttribute="top" constant="8" id="mvG-HQ-WaY"/>
-                    <constraint firstAttribute="trailing" secondItem="U4F-NX-1cx" secondAttribute="trailing" constant="8" id="qPm-kN-fxF"/>
+                    <constraint firstAttribute="bottom" secondItem="U4F-NX-1cx" secondAttribute="bottom" constant="8" id="m63-dc-BYB"/>
                     <constraint firstItem="j80-l6-gMO" firstAttribute="leading" secondItem="8KA-Vy-lVo" secondAttribute="leadingMargin" constant="8" id="xyg-aC-GCW"/>
                 </constraints>
             </tableViewCellContentView>

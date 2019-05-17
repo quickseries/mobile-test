@@ -18,12 +18,10 @@ class VacationSpotCell: UITableViewCell {
     setupUI()
   }
   private func setupUI() {
-    backgroundImageView.layer.cornerRadius = 10
-    backgroundImageView.clipsToBounds = true
     backgroundImageView.backgroundColor = NamedColor.lightText.value
     
     titleLabel.textColor = .white
-    titleLabel.font = Font(.installed(.MontserratBold), size: .standard(.h1)).instance
+    titleLabel.font = Font(.installed(.MontserratBold), size: .custom(30)).instance
   }
   func bind(_ viewModel: VacationSpotItemViewModel) {
     titleLabel.text = viewModel.title
