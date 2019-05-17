@@ -10,6 +10,9 @@ import UIKit
 
 enum NamedColor {
   case darkText
+  case lightText
+  case beautifulRed
+  case beautifulGreen
 
   case custom(hexString: String, alpha: Double)
   
@@ -24,7 +27,14 @@ extension NamedColor {
     
     switch self {
     case .darkText:
-      instanceColor = UIColor(hexString: "#ffffff")
+      instanceColor = UIColor(hexString: "#262626")
+    case .lightText:
+      instanceColor = UIColor(hexString: "#434343")
+    case .beautifulRed:
+      instanceColor = UIColor(hexString: "#DA2864")
+    case .beautifulGreen:
+      instanceColor = UIColor(hexString: "#035B5C")
+    
     case .custom(let hexValue, let opacity):
       instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
     }

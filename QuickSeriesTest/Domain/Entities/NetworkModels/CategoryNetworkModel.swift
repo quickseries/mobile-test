@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ResourceCategoryNetworkModel: InteractiveModelType {
+public enum CategoryNetworkModel: InteractiveModelType {
   public struct Request: Codable {
     public let languageId: Int
     
@@ -27,7 +27,7 @@ public enum ResourceCategoryNetworkModel: InteractiveModelType {
     public let description: String?
     public let version: Int
     public let isActive: Bool
-    public let createdAt: Int
+    public let createdAt: String
 
     private enum CodingKeys : String, CodingKey {
       case id = "_id", updatedAt = "updated_at", slug , customModuleId = "custom_module_eid", eid, title, description, version = "__v", isActive = "_active", createdAt = "created_at"

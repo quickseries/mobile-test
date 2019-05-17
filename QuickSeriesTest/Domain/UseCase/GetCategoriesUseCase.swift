@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-public protocol GetResourceCategoriesUseCase {
-  func getCategories() -> Observable<[ResourceCategoryNetworkModel.Response]>
+public protocol GetCategoriesUseCase {
+  func getCategories(requestParameter: CategoryNetworkModel.Request) -> Observable<[CategoryNetworkModel.Response]>
 }

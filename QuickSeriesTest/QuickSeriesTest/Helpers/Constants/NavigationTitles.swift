@@ -12,4 +12,8 @@ public enum NavigationTitles: String {
   // Categories
   case categories = "Select Category"
   
+  // Lists
+  case restaurants = "Restaurants"
+  case vacationSpots = "Vacation Spots"
+
 }

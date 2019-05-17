@@ -52,3 +52,20 @@ extension UIColor {
     self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
   }
 }
+
+extension UIColor {
+  func makeGradientColor(_ colors: [UIColor]) -> CAGradientLayer {
+    let gradientLayer = CAGradientLayer()
+    var colors = Array(colors.compactMap({ (color) -> CGColor in
+      return color.cgColor
+    }))
+    if colors.count == 1 {
+      colors.append(colors.first!)
+    }
+    gradientLayer.colors = colors
+    gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+    gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+    
+    return gradientLayer
+  }
+}

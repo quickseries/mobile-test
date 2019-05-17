@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NetworkPlatform
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,17 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    - Author: Salar Soleimani
    */
   private func setupNavigationUI() {
-    if #available(iOS 11, *) {
-      UINavigationBar.appearance().prefersLargeTitles = true
-      let largTitleNavFont = Font(.installed(.MontserratBold), size: .custom(30)).instance
-      let attributes = [
-        NSAttributedString.Key.foregroundColor: NamedColor.darkText.value,
-        NSAttributedString.Key.font: largTitleNavFont
-      ]
-      UINavigationBar.appearance().largeTitleTextAttributes = attributes
-      
-    }
-    
+    let largTitleNavFont = Font(.installed(.MontserratBold), size: .standard(.h3)).instance
+    let attributes = [
+      NSAttributedString.Key.foregroundColor: NamedColor.darkText.value,
+      NSAttributedString.Key.font: largTitleNavFont
+    ]
+    UINavigationBar.appearance().titleTextAttributes = attributes
   }
   /**
    Configuring the main view (resource categories)
@@ -49,10 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    - Author: Salar Soleimani
    */
   private func setupMainView() {
-    let resourceCategoriesNavVC = UINavigationController(rootViewController: ResourceCategoriesViewController())
+    let vc = CategoriesViewController()
+    let categoriesNavVC = UINavigationController(rootViewController: vc)
+    let networkUseCaseProvider = NetworkPlatform.UseCaseProvider()
+    let categoriesNavigator = CategoriesNavigator(services: networkUseCaseProvider, navigationController: categoriesNavVC)
+    categoriesNavigator.setup(vc)
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = .white
-    window.rootViewController = resourceCategoriesNavVC
+    window.rootViewController = categoriesNavVC
     window.makeKeyAndVisible()
     self.window = window
   }

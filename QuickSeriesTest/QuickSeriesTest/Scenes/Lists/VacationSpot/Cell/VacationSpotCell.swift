@@ -1,5 +1,5 @@
 //
-//  CategoryCell.swift
+//  VacationSpotCell.swift
 //  QuickSeriesTest
 //
 //  Created by Salar Soleimani on 2019-05-17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class VacationSpotCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

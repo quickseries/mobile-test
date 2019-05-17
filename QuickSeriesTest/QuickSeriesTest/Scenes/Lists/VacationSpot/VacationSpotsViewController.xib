@@ -10,8 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController" customModule="QuickSeriesTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VacationSpotsViewController" customModule="QuickSeriesTest" customModuleProvider="target">
             <connections>
+                <outlet property="vacationSpotsTableView" destination="lqx-8v-jys" id="Wnt-YB-zZr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ms7-F3-5zu">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lqx-8v-jys">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ms7-F3-5zu" secondAttribute="trailing" id="BGL-e0-b26"/>
-                <constraint firstItem="ms7-F3-5zu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="j9q-ty-nnB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ms7-F3-5zu" secondAttribute="bottom" id="kie-m1-SXH"/>
-                <constraint firstItem="ms7-F3-5zu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="npI-HT-5Kt"/>
+                <constraint firstItem="lqx-8v-jys" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LgE-dl-m9P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lqx-8v-jys" secondAttribute="bottom" id="Nil-Ae-5ow"/>
+                <constraint firstItem="lqx-8v-jys" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="htd-XL-OlF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lqx-8v-jys" secondAttribute="trailing" id="z1F-yd-AJy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
