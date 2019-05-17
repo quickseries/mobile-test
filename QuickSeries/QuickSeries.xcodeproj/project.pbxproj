@@ -18,6 +18,11 @@
 		483E17F1228ECC010095CA2B /* VAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E17EC228ECC010095CA2B /* VAddresses.swift */; };
 		483E17F2228ECC010095CA2B /* FreeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E17ED228ECC010095CA2B /* FreeText.swift */; };
 		483E17FA228ECCCA0095CA2B /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E17F9228ECCCA0095CA2B /* ContactInfo.swift */; };
+		483E17FC228ED1A00095CA2B /* data.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 483E17FB228ED1A00095CA2B /* data.bundle */; };
+		483E17FF228ED3530095CA2B /* QuickOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E17FE228ED3530095CA2B /* QuickOperation.swift */; };
+		483E1801228ED3C40095CA2B /* LoadJsonOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1800228ED3C40095CA2B /* LoadJsonOperation.swift */; };
+		483E1803228ED8470095CA2B /* QuickOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1802228ED8470095CA2B /* QuickOperationQueue.swift */; };
+		483E1805228ED9D40095CA2B /* QuickOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E1804228ED9D40095CA2B /* QuickOperationManager.swift */; };
 		488E1700228EBD11006416B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E16FF228EBD11006416B5 /* AppDelegate.swift */; };
 		488E1702228EBD11006416B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488E1701228EBD11006416B5 /* ViewController.swift */; };
 		488E1705228EBD11006416B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488E1703228EBD11006416B5 /* Main.storyboard */; };
@@ -51,6 +56,11 @@
 		483E17EC228ECC010095CA2B /* VAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAddresses.swift; sourceTree = "<group>"; };
 		483E17ED228ECC010095CA2B /* FreeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeText.swift; sourceTree = "<group>"; };
 		483E17F9228ECCCA0095CA2B /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		483E17FB228ED1A00095CA2B /* data.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = data.bundle; sourceTree = "<group>"; };
+		483E17FE228ED3530095CA2B /* QuickOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOperation.swift; sourceTree = "<group>"; };
+		483E1800228ED3C40095CA2B /* LoadJsonOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonOperation.swift; sourceTree = "<group>"; };
+		483E1802228ED8470095CA2B /* QuickOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOperationQueue.swift; sourceTree = "<group>"; };
+		483E1804228ED9D40095CA2B /* QuickOperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOperationManager.swift; sourceTree = "<group>"; };
 		488E16FC228EBD11006416B5 /* QuickSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488E16FF228EBD11006416B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488E1701228EBD11006416B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +150,17 @@
 			path = Restaurantmodel;
 			sourceTree = "<group>";
 		};
+		483E17FD228ED23B0095CA2B /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				483E17FE228ED3530095CA2B /* QuickOperation.swift */,
+				483E1800228ED3C40095CA2B /* LoadJsonOperation.swift */,
+				483E1802228ED8470095CA2B /* QuickOperationQueue.swift */,
+				483E1804228ED9D40095CA2B /* QuickOperationManager.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		488E16F3228EBD11006416B5 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +184,8 @@
 		488E16FE228EBD11006416B5 /* QuickSeries */ = {
 			isa = PBXGroup;
 			children = (
+				483E17FD228ED23B0095CA2B /* Operations */,
+				483E17FB228ED1A00095CA2B /* data.bundle */,
 				483E17D5228EC4DE0095CA2B /* ViewModels */,
 				483E17D4228EC4D20095CA2B /* Models */,
 				488E16FF228EBD11006416B5 /* AppDelegate.swift */,
@@ -277,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488E170A228EBD12006416B5 /* LaunchScreen.storyboard in Resources */,
+				483E17FC228ED1A00095CA2B /* data.bundle in Resources */,
 				488E1707228EBD12006416B5 /* Assets.xcassets in Resources */,
 				488E1705228EBD11006416B5 /* Main.storyboard in Resources */,
 			);
@@ -360,10 +384,14 @@
 				488E1702228EBD11006416B5 /* ViewController.swift in Sources */,
 				488E1700228EBD11006416B5 /* AppDelegate.swift in Sources */,
 				483E17DE228EC5E40095CA2B /* Gps.swift in Sources */,
+				483E17FF228ED3530095CA2B /* QuickOperation.swift in Sources */,
 				483E17F0228ECC010095CA2B /* VacationSpot.swift in Sources */,
+				483E1803228ED8470095CA2B /* QuickOperationQueue.swift in Sources */,
 				483E17DF228EC5E40095CA2B /* Restaurants.swift in Sources */,
 				483E17FA228ECCCA0095CA2B /* ContactInfo.swift in Sources */,
+				483E1801228ED3C40095CA2B /* LoadJsonOperation.swift in Sources */,
 				483E17EE228ECC010095CA2B /* VContactInfo.swift in Sources */,
+				483E1805228ED9D40095CA2B /* QuickOperationManager.swift in Sources */,
 				483E17F2228ECC010095CA2B /* FreeText.swift in Sources */,
 				483E17E1228EC63E0095CA2B /* DataResponse.swift in Sources */,
 				483E17D7228EC53B0095CA2B /* Category.swift in Sources */,
