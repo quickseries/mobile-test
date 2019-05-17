@@ -6,5 +6,6 @@ target 'mobileTest' do
   use_frameworks!
 
   # Pods for mobileTest
-
+  pod 'Alamofire'
+  pod 'PromiseKit', '6.8.2'
 end

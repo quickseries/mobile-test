@@ -39,3 +39,6 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+/mobileTest/.DS_Store
+/mobileTest/mobileTest.xcodeproj/xcuserdata/balrajsingh.xcuserdatad/xcschemes/xcschememanagement.plist
+/mobileTest/mobileTest.xcworkspace/xcshareddata
