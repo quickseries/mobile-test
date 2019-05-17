@@ -9,22 +9,20 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
+  let categoryViewModel = CategoryViewModel(usecase: CategoryUsecase(service: AppEnvironment.current.apiService))
+  
+  @IBOutlet weak var tableView: UITableView!
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.title = "Select a category"
+    
+    self.setupTableView()
+    // Do any additional setup after loading the view.
+    Loader.show(blockingLoader: false)
+    _ = self.categoryViewModel.loadCategories()
+      .done { _ in self.tableView.reloadData() }
+      .tap { _ in Loader.hide() }
+  }
 }

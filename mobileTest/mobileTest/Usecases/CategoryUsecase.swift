@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-public struct CategoryUsecase {
+public struct CategoryUsecase: CategoryUsecaseProtocol {
   let categoryService: ServiceType
   
   init(service: ServiceType) {
@@ -19,4 +19,8 @@ public struct CategoryUsecase {
   public func getCategory() -> Promise<[CategoryResponse]> {
     return self.categoryService.fetchCatehoryDetails()
   }
+}
+
+public protocol CategoryUsecaseProtocol {
+  func getCategory() -> Promise<[CategoryResponse]>
 }

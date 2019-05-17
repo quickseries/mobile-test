@@ -14,7 +14,7 @@ public enum ResourcesType: String {
   case restaurants = "restaurants"
 }
 
-public struct ResourcesUsecase {
+public struct ResourcesUsecase: ResourcesUsecaseProtocol {
   let resourceService: ServiceType
   
   init(service: ServiceType) {
@@ -25,4 +25,8 @@ public struct ResourcesUsecase {
     return type.rawValue
            |> self.resourceService.fetchResourceDetails(forCategory:)
   }
+}
+
+public protocol ResourcesUsecaseProtocol {
+  func getResources(ofType type: ResourcesType) -> Promise<[ResoucesResponse]>
 }
