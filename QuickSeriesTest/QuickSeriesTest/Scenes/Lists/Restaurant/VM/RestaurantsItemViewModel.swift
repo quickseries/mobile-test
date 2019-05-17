@@ -9,7 +9,7 @@
 import Foundation
 import Domain
 
-final class RestaurantsItemViewModel {
+final class RestaurantItemViewModel {
   var title: String
   var description: String
   var response: RestaurantNetworkModel.Response

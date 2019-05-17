@@ -9,12 +9,12 @@
 import Foundation
 import Domain
 
-final class VacationSpotsItemViewModel {
+final class VacationSpotItemViewModel {
   var title: String
   var description: String
-  var response: VacationSpotsItemViewModel.Response
+  var response: VacationSpotNetworkModel.Response
   
-  init (with response: RestaurantNetworkModel.Response) {
+  init (with response: VacationSpotNetworkModel.Response) {
     self.response = response
     self.title = response.title
     self.description = response.description ?? ""

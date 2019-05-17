@@ -9,5 +9,10 @@
 import Foundation
 
 public protocol UseCaseProvider {
-  func makeGetResourceCategoriesUseCase() -> GetCategoriesUseCase
+  // Category
+  func makeGetCategoriesUseCase() -> GetCategoriesUseCase
+  
+  // List
+  func makeGetRestaurantsUseCase() -> GetRestaurantsUseCase
+  func makeGetVacationSpotsUseCase() -> GetVacationSpotsUseCase
 }

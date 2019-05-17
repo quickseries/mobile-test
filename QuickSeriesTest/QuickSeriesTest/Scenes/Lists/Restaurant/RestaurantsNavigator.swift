@@ -10,7 +10,7 @@ import UIKit
 import Domain
 
 protocol RestaurantsNavigatorProtocol {
-  func toRestaurant(_ restaurant: RestaurantsItemViewModel)
+  func toRestaurant(_ restaurant: RestaurantItemViewModel)
   func setup()
 }
 
@@ -23,7 +23,7 @@ class RestaurantsNavigator: RestaurantsNavigatorProtocol {
     self.navigationController = navigationController
   }
   
-  func toRestaurant(_ restaurant: RestaurantsItemViewModel) {
+  func toRestaurant(_ restaurant: RestaurantItemViewModel) {
     
   }
   func setup() {

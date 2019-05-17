@@ -12,15 +12,38 @@ import RxCocoa
 import Domain
 
 final class RestaurantsViewModel: ViewModelType {
-  
   private let navigator: RestaurantsNavigator
-  private let useCase: Domain.GetCategoriesUseCase
+  private let useCase: Domain.GetRestaurantsUseCase
   private let activityIndicator = ActivityIndicator()
   private let errorTracker = ErrorTracker()
   
-  init(navigator: CategoriesNavigator, useCase: Domain.GetCategoriesUseCase) {
+  init(navigator: RestaurantsNavigator, useCase: Domain.GetRestaurantsUseCase) {
     self.useCase = useCase
     self.navigator = navigator
+  }
+  
+  func transform(input: RestaurantsViewModel.Input) -> RestaurantsViewModel.Output {
+    let fetching = activityIndicator.asDriver()
+    let errors = errorTracker.asDriver()
+    
+    let restaurants = getRestaurants(activityIndicator: activityIndicator, error: errorTracker)
+    
+    let selectedRestaurant = input.selection
+      .withLatestFrom(restaurants) { (indexPath, categories) -> RestaurantItemViewModel in
+        return categories[indexPath.row]
+      }.do(onNext: { [unowned self] (restaurant) in
+        self.navigator.toRestaurant(restaurant)
+      })
+    return Output(restaurants: restaurants, isFetching: fetching, selectedRestaurant: selectedRestaurant, error: errors)
+  }
+  
+  func getRestaurants(activityIndicator: ActivityIndicator, error: ErrorTracker) -> Driver<[RestaurantItemViewModel]> {
+    let reqParam = RestaurantNetworkModel.Request(languageId: 0)
+    return self.useCase.getRestaurants(requestParameter: reqParam)
+      .trackActivity(activityIndicator)
+      .trackError(errorTracker)
+      .asDriverOnErrorJustComplete()
+      .map { $0.map { RestaurantItemViewModel(with: $0) } }
   }
 }
 
@@ -30,9 +53,9 @@ extension RestaurantsViewModel {
   }
   
   struct Output {
-    let restaurants: Driver<[RestaurantsItemViewModel]>
+    let restaurants: Driver<[RestaurantItemViewModel]>
     let isFetching: Driver<Bool>
-    let selectedCategory: Driver<RestaurantsItemViewModel>
+    let selectedRestaurant: Driver<RestaurantItemViewModel>
     let error: Driver<Error>
   }
 }

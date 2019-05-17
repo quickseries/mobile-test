@@ -19,4 +19,12 @@ final class NetworkProvider {
     let network = Network<CategoryNetworkModel.Response>(Constants.EndPoints.baseApiUrl.rawValue)
     return GetCategoriesNetwork(network: network)
   }
+  public func makeGetRestaurantsNetwork() -> GetRestaurantsNetwork {
+    let network = Network<RestaurantNetworkModel.Response>(Constants.EndPoints.baseApiUrl.rawValue)
+    return GetRestaurantsNetwork(network: network)
+  }
+  public func makeGetVacationSpotsNetwork() -> GetVacationSpotsNetwork {
+    let network = Network<VacationSpotNetworkModel.Response>(Constants.EndPoints.baseApiUrl.rawValue)
+    return GetVacationSpotsNetwork(network: network)
+  }
 }

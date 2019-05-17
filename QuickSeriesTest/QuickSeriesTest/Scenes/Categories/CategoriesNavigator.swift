@@ -40,7 +40,7 @@ class CategoriesNavigator: CategoriesNavigatorProtocol {
     
   }
   func setup(_ viewController: CategoriesViewController) {
-    let vm = CategoriesViewModel(navigator: self, useCase: services.makeGetResourceCategoriesUseCase())
+    let vm = CategoriesViewModel(navigator: self, useCase: services.makeGetCategoriesUseCase())
     viewController.viewModel = vm
   }
 }

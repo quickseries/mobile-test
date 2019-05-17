@@ -16,8 +16,13 @@ public final class UseCaseProvider: Domain.UseCaseProvider {
     networkProvider = NetworkProvider()
   }
   
-  public func makeGetResourceCategoriesUseCase() -> Domain.GetCategoriesUseCase {
+  public func makeGetCategoriesUseCase() -> Domain.GetCategoriesUseCase {
     return GetResourceCategoriesUseCase(network: networkProvider.makeGetCategoriesNetwork())
   }
-  
+  public func makeGetRestaurantsUseCase() -> Domain.GetRestaurantsUseCase {
+    return GetRestaurantsUseCase(network: networkProvider.makeGetRestaurantsNetwork())
+  }
+  public func makeGetVacationSpotsUseCase() -> Domain.GetVacationSpotsUseCase {
+    return GetVacationSpotsUseCase(network: networkProvider.makeGetVacationSpotsNetwork())
+  }
 }
