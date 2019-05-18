@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Restaurant: CategoryResource, Codable  {
+public struct Restaurant: CategoryResource, Codable  {
     
-    let id: Int
-    let title: String
-    let photo: String
-    let addresses: [Address]
-    let contactInfo: ContactInfo
-    let socialMedia: SocialMedia
-    let description: String
-    let businessHours: BusinessHours?
+    public let id: Int
+    public let title: String
+    public let photo: String
+    public let addresses: [Address]
+    public let contactInfo: ContactInfo
+    public let socialMedia: SocialMedia
+    public let description: String
+    public let businessHours: BusinessHours?
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title = "title"
         case photo = "photo"

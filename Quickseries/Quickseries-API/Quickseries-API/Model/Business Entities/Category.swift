@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Category: Resource, Codable {
+public struct Category: Resource, Codable {
     
-    let id: Int
-    let title: String
+    public let id: Int
+    public let title: String
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title = "title"
     }

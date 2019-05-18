@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Coordinates: Codable {
+public struct Coordinates: Codable {
     
-    let latitude: Double
-    let longitude: Double
+    public let latitude: Double
+    public let longitude: Double
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case latitude = "latitude"
         case longitude = "longitude"
     }

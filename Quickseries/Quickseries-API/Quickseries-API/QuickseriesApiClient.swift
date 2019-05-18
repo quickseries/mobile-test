@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+public class QuickseriesApiClient : QuickseriesApi {
+    
+    public static let shared = QuickseriesApiClient()
+    
+    public func getCategories(callback: ((Outcome<[Category]>) -> ())?) {
+    
+    }
+    
+    public func getRestaurants(callback: ((Outcome<[Restaurant]>) -> ())?) {
+        
+    }
+    
+    public func getVacationSpots(callback: ((Outcome<[VacationSpot]>) -> ())?) {
+        
+    }
+}

@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct Address: Codable  {
+public struct Address: Codable  {
     
-    let address: String
-    let label: String
-    let zipCode: String
-    let city: String
-    let state: String
-    let country: String
-    let coordinates: Coordinates?
+    public let address: String
+    public let label: String
+    public let zipCode: String
+    public let city: String
+    public let state: String
+    public let country: String
+    public let coordinates: Coordinates?
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case address = "address1"
         case label = "label"
         case zipCode = "zipCode"

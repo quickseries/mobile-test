@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CategoryResource: Resource {
+public protocol CategoryResource: Resource {
     var photo: String { get }
     var addresses: [Address] { get }
     var contactInfo: ContactInfo { get }

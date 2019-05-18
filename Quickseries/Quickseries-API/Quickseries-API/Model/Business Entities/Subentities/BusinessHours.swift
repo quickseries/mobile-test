@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct BusinessHours: Codable {
+public struct BusinessHours: Codable {
     
-    let sunday: DayOfWeekHours?
-    let monday: DayOfWeekHours?
-    let tuesday: DayOfWeekHours?
-    let wednesday: DayOfWeekHours?
-    let thursday: DayOfWeekHours?
-    let friday: DayOfWeekHours?
-    let saturday: DayOfWeekHours?
+    public let sunday: DayOfWeekHours?
+    public let monday: DayOfWeekHours?
+    public let tuesday: DayOfWeekHours?
+    public let wednesday: DayOfWeekHours?
+    public let thursday: DayOfWeekHours?
+    public let friday: DayOfWeekHours?
+    public let saturday: DayOfWeekHours?
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case sunday = "sunday"
         case monday = "monday"
         case tuesday = "tuesday"

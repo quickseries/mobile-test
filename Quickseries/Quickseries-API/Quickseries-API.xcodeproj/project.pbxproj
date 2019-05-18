@@ -22,6 +22,9 @@
 		AFA44D2E228F724700249BCC /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D2D228F724700249BCC /* ContactInfo.swift */; };
 		AFA44D31228F73AF00249BCC /* BusinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D30228F73AF00249BCC /* BusinessHours.swift */; };
 		AFA44D35228F742D00249BCC /* DayOfWeekHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D34228F742D00249BCC /* DayOfWeekHours.swift */; };
+		AFA44D38228F7F5C00249BCC /* String+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D37228F7F5C00249BCC /* String+NilIfEmpty.swift */; };
+		AFA44D3A228F80F800249BCC /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D39228F80F800249BCC /* Outcome.swift */; };
+		AFA44D3C228F820800249BCC /* QuickSeriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D3B228F820800249BCC /* QuickSeriesApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		AFA44D2D228F724700249BCC /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		AFA44D30228F73AF00249BCC /* BusinessHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHours.swift; sourceTree = "<group>"; };
 		AFA44D34228F742D00249BCC /* DayOfWeekHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekHours.swift; sourceTree = "<group>"; };
+		AFA44D37228F7F5C00249BCC /* String+NilIfEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NilIfEmpty.swift"; sourceTree = "<group>"; };
+		AFA44D39228F80F800249BCC /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		AFA44D3B228F820800249BCC /* QuickSeriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSeriesApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +101,11 @@
 		AFA44CFF228F67AA00249BCC /* Quickseries-API */ = {
 			isa = PBXGroup;
 			children = (
+				AFA44D3B228F820800249BCC /* QuickSeriesApi.swift */,
 				AFA44D19228F684C00249BCC /* QuickseriesApiClient.swift */,
 				AFA44D00228F67AA00249BCC /* Quickseries_API.h */,
-				AFA44D1B228F685C00249BCC /* Entities */,
+				AFA44D1B228F685C00249BCC /* Model */,
+				AFA44D36228F7F5100249BCC /* Extensions */,
 				AFA44D17228F67F800249BCC /* Providers */,
 				AFA44D18228F680C00249BCC /* Supporting Files */,
 			);
@@ -128,16 +136,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AFA44D1B228F685C00249BCC /* Entities */ = {
+		AFA44D1B228F685C00249BCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFA44D1C228F687F00249BCC /* Category.swift */,
-				AFA44D20228F689D00249BCC /* Restaurant.swift */,
-				AFA44D22228F68B800249BCC /* VacationSpot.swift */,
-				AFA44D24228F6F5800249BCC /* Protocols */,
-				AFA44D2F228F72D800249BCC /* Subentities */,
+				AFA44D3E228F827F00249BCC /* API Entities */,
+				AFA44D3D228F826F00249BCC /* Business Entities */,
 			);
-			path = Entities;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AFA44D24228F6F5800249BCC /* Protocols */ = {
@@ -160,6 +165,34 @@
 				AFA44D34228F742D00249BCC /* DayOfWeekHours.swift */,
 			);
 			path = Subentities;
+			sourceTree = "<group>";
+		};
+		AFA44D36228F7F5100249BCC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AFA44D37228F7F5C00249BCC /* String+NilIfEmpty.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AFA44D3D228F826F00249BCC /* Business Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AFA44D1C228F687F00249BCC /* Category.swift */,
+				AFA44D20228F689D00249BCC /* Restaurant.swift */,
+				AFA44D22228F68B800249BCC /* VacationSpot.swift */,
+				AFA44D24228F6F5800249BCC /* Protocols */,
+				AFA44D2F228F72D800249BCC /* Subentities */,
+			);
+			path = "Business Entities";
+			sourceTree = "<group>";
+		};
+		AFA44D3E228F827F00249BCC /* API Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AFA44D39228F80F800249BCC /* Outcome.swift */,
+			);
+			path = "API Entities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,17 +304,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA44D3C228F820800249BCC /* QuickSeriesApi.swift in Sources */,
 				AFA44D21228F689D00249BCC /* Restaurant.swift in Sources */,
 				AFA44D1F228F688F00249BCC /* Resource.swift in Sources */,
 				AFA44D31228F73AF00249BCC /* BusinessHours.swift in Sources */,
 				AFA44D23228F68B800249BCC /* VacationSpot.swift in Sources */,
 				AFA44D2C228F720B00249BCC /* SocialMedia.swift in Sources */,
+				AFA44D38228F7F5C00249BCC /* String+NilIfEmpty.swift in Sources */,
 				AFA44D2A228F717200249BCC /* Coordinates.swift in Sources */,
 				AFA44D28228F6FF100249BCC /* Address.swift in Sources */,
 				AFA44D35228F742D00249BCC /* DayOfWeekHours.swift in Sources */,
 				AFA44D2E228F724700249BCC /* ContactInfo.swift in Sources */,
 				AFA44D1A228F684C00249BCC /* QuickseriesApiClient.swift in Sources */,
 				AFA44D1D228F687F00249BCC /* Category.swift in Sources */,
+				AFA44D3A228F80F800249BCC /* Outcome.swift in Sources */,
 				AFA44D26228F6F6C00249BCC /* CategoryResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

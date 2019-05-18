@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Resource {
+public protocol Resource {
     var id: Int { get }
     var title: String { get }
 }

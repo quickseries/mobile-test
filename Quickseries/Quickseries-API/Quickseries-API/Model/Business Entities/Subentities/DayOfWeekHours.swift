@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct DayOfWeekHours: Codable {
+public struct DayOfWeekHours: Codable {
     
-    let from: String
-    let to: String
+    public let from: String
+    public let to: String
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case from = "from"
         case to = "to"
     }
