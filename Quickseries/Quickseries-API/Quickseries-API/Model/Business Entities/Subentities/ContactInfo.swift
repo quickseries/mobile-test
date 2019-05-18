@@ -26,10 +26,10 @@ public struct ContactInfo: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        website = try container.decode([String].self, forKey: CodingKeys.website).first?.nilIfEmpty
-        email = try container.decode([String].self, forKey: CodingKeys.email).first?.nilIfEmpty
-        faxNumber = try container.decode([String].self, forKey: CodingKeys.faxNumber).first?.nilIfEmpty
-        tollFree = try container.decode([String].self, forKey: CodingKeys.tollFree).first?.nilIfEmpty
-        phoneNumber = try container.decode([String].self, forKey: CodingKeys.phoneNumber).first?.nilIfEmpty
+        website = try container.decodeIfPresent([String].self, forKey: CodingKeys.website)?.first?.nilIfEmpty
+        email = try container.decodeIfPresent([String].self, forKey: CodingKeys.email)?.first?.nilIfEmpty
+        faxNumber = try container.decodeIfPresent([String].self, forKey: CodingKeys.faxNumber)?.first?.nilIfEmpty
+        tollFree = try container.decodeIfPresent([String].self, forKey: CodingKeys.tollFree)?.first?.nilIfEmpty
+        phoneNumber = try container.decodeIfPresent([String].self, forKey: CodingKeys.phoneNumber)?.first?.nilIfEmpty
     }
 }

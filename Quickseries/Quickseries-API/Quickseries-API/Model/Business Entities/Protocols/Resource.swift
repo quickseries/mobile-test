@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol Resource {
-    var id: Int { get }
+    var id: String { get }
     var title: String { get }
 }

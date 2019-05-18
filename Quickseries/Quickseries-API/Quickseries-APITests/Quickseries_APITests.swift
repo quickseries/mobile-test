@@ -21,7 +21,7 @@ class Quickseries_APITests: XCTestCase {
         api = nil
     }
 
-    func testExample() {
+    func testIntegrationGetCategories() {
         let expectation = self.expectation(description: "Request Finished")
         var response: Outcome<[Quickseries_API.Category]>?
         api.getCategories() { outcome in
@@ -33,8 +33,41 @@ class Quickseries_APITests: XCTestCase {
         switch response! {
         case .success(let results):
             XCTAssert(results.count == 2)
-        case .failure:
-            XCTAssert(false)
+        case .failure(let error, _):
+            XCTAssert(false, error.localizedDescription)
+        }
+    }
+    
+    func testIntegrationGetRestaurants() {
+        let expectation = self.expectation(description: "Request Finished")
+        var response: Outcome<[Quickseries_API.Restaurant]>?
+        api.getRestaurants() { outcome in
+            response = outcome
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+        XCTAssertNotNil(response)
+        switch response! {
+        case .success(let results):
+            XCTAssert(results.count == 4)
+        case .failure(let error, _):
+            XCTAssert(false, error.localizedDescription)
+        }
+    }
+    func testIntegrationGetVacationSpots() {
+        let expectation = self.expectation(description: "Request Finished")
+        var response: Outcome<[Quickseries_API.VacationSpot]>?
+        api.getVacationSpots() { outcome in
+            response = outcome
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 3.0, handler: nil)
+        XCTAssertNotNil(response)
+        switch response! {
+        case .success(let results):
+            XCTAssert(results.count == 1)
+        case .failure(let error, _):
+            XCTAssert(false, error.localizedDescription)
         }
     }
 }

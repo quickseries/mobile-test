@@ -8,23 +8,6 @@
 
 import Foundation
 
-public struct VacationSpot: CategoryResource, Codable  {
+public class VacationSpot: CategoryResource {
     
-    public let id: Int
-    public let title: String
-    public let photo: String
-    public let addresses: [Address]
-    public let contactInfo: ContactInfo
-    public let socialMedia: SocialMedia
-    public let description: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case title = "title"
-        case photo = "photo"
-        case addresses = "addresses"
-        case contactInfo = "contactInfo"
-        case socialMedia = "socialMedia"
-        case description = "description"
-    }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 public struct Category: Resource, Codable {
     
-    public let id: Int
+    public let id: String
     public let title: String
     
     private enum CodingKeys: String, CodingKey {

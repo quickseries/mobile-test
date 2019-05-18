@@ -17,4 +17,10 @@ public struct Coordinates: Codable {
         case latitude = "latitude"
         case longitude = "longitude"
     }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        latitude = Double(try container.decode(String.self, forKey: CodingKeys.latitude))!
+        longitude = Double(try container.decode(String.self, forKey: CodingKeys.longitude))!
+    }
 }

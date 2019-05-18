@@ -8,25 +8,17 @@
 
 import Foundation
 
-public struct Restaurant: CategoryResource, Codable  {
+public class Restaurant: CategoryResource  {
     
-    public let id: Int
-    public let title: String
-    public let photo: String
-    public let addresses: [Address]
-    public let contactInfo: ContactInfo
-    public let socialMedia: SocialMedia
-    public let description: String
     public let businessHours: BusinessHours?
     
     private enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case title = "title"
-        case photo = "photo"
-        case addresses = "addresses"
-        case contactInfo = "contactInfo"
-        case socialMedia = "socialMedia"
-        case description = "description"
         case businessHours = "businessHours"
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        businessHours = try container.decodeIfPresent(BusinessHours.self, forKey: CodingKeys.businessHours)
+        try super.init(from: decoder)
     }
 }

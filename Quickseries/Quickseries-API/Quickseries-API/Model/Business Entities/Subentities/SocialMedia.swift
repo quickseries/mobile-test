@@ -22,8 +22,8 @@ public struct SocialMedia: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        youtubeChannel = try container.decode([String].self, forKey: CodingKeys.youtubeChannel).first?.nilIfEmpty
-        twitter = try container.decode([String].self, forKey: CodingKeys.twitter).first?.nilIfEmpty
-        facebook = try container.decode([String].self, forKey: CodingKeys.facebook).first?.nilIfEmpty
+        youtubeChannel = try container.decodeIfPresent([String].self, forKey: CodingKeys.youtubeChannel)?.first?.nilIfEmpty
+        twitter = try container.decodeIfPresent([String].self, forKey: CodingKeys.twitter)?.first?.nilIfEmpty
+        facebook = try container.decodeIfPresent([String].self, forKey: CodingKeys.facebook)?.first?.nilIfEmpty
     }
 }
