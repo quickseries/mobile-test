@@ -73,4 +73,3 @@ class QuickCategoryTableView: UITableViewController {
 }
 
 
-//Cannot assign value of type '[CategoryViewModel]' to type '[CategoryItemViewModel]?'

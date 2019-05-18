@@ -160,14 +160,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		483E17D5228EC4DE0095CA2B /* ViewModels */ = {
+		483E17D5228EC4DE0095CA2B /* ModelViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				483E17D4228EC4D20095CA2B /* Models */,
 				483E1806228EE3F40095CA2B /* CategoriesViewModel.swift */,
 				483E181B228F285D0095CA2B /* CategoryItemViewModels.swift */,
 			);
-			path = ViewModels;
+			path = ModelViewModels;
 			sourceTree = "<group>";
 		};
 		483E17FD228ED23B0095CA2B /* NSOperations */ = {
@@ -249,7 +249,7 @@
 				483E1808228EEE790095CA2B /* Views */,
 				483E17FD228ED23B0095CA2B /* NSOperations */,
 				483E17FB228ED1A00095CA2B /* data.bundle */,
-				483E17D5228EC4DE0095CA2B /* ViewModels */,
+				483E17D5228EC4DE0095CA2B /* ModelViewModels */,
 				488E1706228EBD12006416B5 /* Assets.xcassets */,
 				488E170B228EBD12006416B5 /* Info.plist */,
 			);
