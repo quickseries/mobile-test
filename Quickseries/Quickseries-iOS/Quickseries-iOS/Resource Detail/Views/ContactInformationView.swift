@@ -14,7 +14,7 @@ class ContactInformationView: InformationView {
 
     weak var delegate: ContactInformationViewDelegate?
     
-    var bag = DisposeBag()
+    let bag = DisposeBag()
     
     var model: ContactInformationViewModel? {
         didSet {

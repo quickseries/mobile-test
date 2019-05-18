@@ -34,7 +34,7 @@ class AddressesView: InformationView {
                 button.rx.tap.asDriver().drive(onNext: { [weak delegate] _ in
                     delegate?.onAddressClicked(model: address)
                 }).disposed(by: bag)
-                 button.setImage(UIImage(named: "baseline_location_black_24pt"), for: .normal)
+                 button.setImage(UIImage(named: "baseline_location_on_black_24pt"), for: .normal)
                 let view = AddressFieldView(buttons: [button])
                 view.fieldValue.text = address.address
                 return view

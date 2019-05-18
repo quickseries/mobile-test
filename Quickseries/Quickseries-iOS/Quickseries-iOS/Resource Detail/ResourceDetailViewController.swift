@@ -43,7 +43,7 @@ class ResourceDetailViewController: UIViewController {
         setupViewHierarchy()
         setupConstraints()
         setupBindings()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.init(named: "OffWhite")
     }
     
     private func setupViewHierarchy() {
@@ -82,32 +82,32 @@ class ResourceDetailViewController: UIViewController {
         
         viewModel.selectedEmail
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: composeEmail(email:))
+            .subscribe(onNext: { [weak self] email in self?.composeEmail(email: email) })
             .disposed(by: bag)
         
         viewModel.selectedAddress
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: showMap(query:))
+            .subscribe(onNext: { [weak self] address in self?.showMap(query: address) })
             .disposed(by: bag)
         
         viewModel.selectedCoordinates
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: showMap(coordinates:))
+            .subscribe(onNext: { [weak self] coordinates in self?.showMap(coordinates: coordinates) })
             .disposed(by: bag)
         
         viewModel.selectedCallPhoneNumber
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: callNumber(number:))
+            .subscribe(onNext: { [weak self] number in self?.callNumber(number: number) })
             .disposed(by: bag)
         
         viewModel.selectedSmsPhoneNumber
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: smsNumber(number:))
+            .subscribe(onNext: { [weak self] number in self?.smsNumber(number: number) })
             .disposed(by: bag)
         
         viewModel.selectedWebsite
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: showWebsite(url:))
+            .subscribe(onNext: { [weak self] url in self?.showWebsite(url: url) })
             .disposed(by: bag)
     }
     
