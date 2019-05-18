@@ -1,23 +1,40 @@
-# Instructions:
+# Demo Quick Series Application using Clean architecture, MVVM and RxSwift
+# Upcoming Features!
 
-- Fork this git repo to your computer
-- Create a branch
-- When you are done, push your work and create a pull request to the original repo.
+if I hade time:
+- i would rather to fix some bugs on address tableview in detail view controller
+- open mapps in address tableview
+- open sent message in contact info tableview
+- fix dismissing mail presented controller
+- try to learn some unit test and use it in the project :) 
 
-# Requirements
+### Installing and build
 
-*Create a 3 page app.*
+Dependencies in this project are provided via Cocoapods. Please install all dependecies with
 
-- When you launch the app, you should see a list of resource categories (`/data/categories.json`)
-- When you click on a category, it should open a list of resources (`/data/restaurant.json` or `/data/vacation-spot.json`)
-- When you click on a resource, it should open a details page (see attached mockup)
+`
+pod install
+`
 
-# Tips:
+#### Build sequence:
 
-- You can showcase usage of Dependency Injection and Architecture Component.
-- You can show how to handle threads.
-- Remember you can always create a side project first and prepare yourself before jumping into the test.
-- For JSON, you can use the RAW file version in git hub so you can simulate a call to remote API.
+`
+Domain > NetworkPlatform > Application 
+`
+
+## High level overview
+![](https://raw.githubusercontent.com/sergdort/CleanArchitectureRxSwift/master/Architecture/Modules.png)
+
+#### Domain 
+
+The `Domain` is basically what is the App about and what it can do (Entities, UseCase etc.) **It does not depend on UIKit or any persistence framework**, and it doesn't have implementations apart from entities
+
+#### Platform
+
+The `Platform` is a concrete implementation of the `Domain` in a specific platform like iOS. It does hide all implementation details.
+
+#### Application
+`Application` is responsible for delivering information to the user and handling user input. It can be implemented with any delivery pattern e.g (in quiz app is MVVM). This is the place for `UIView`s and `UIViewController`s. As you will see from the quiz app, `ViewControllers` are completely independent of the `Platform`.  The only responsibility of a view controller is to "bind" the UI to the Domain to make things happen.
 
 # User Stories
 
@@ -39,3 +56,20 @@
 Use the following mockup as a UI guide for your app (the image is at the root of the project). This mockup contains more details that you actually will need in this test. Please use with intepretation. We do not provide you with any specs, so please use your imagination while trying to respect the mockup as much as you can.
 
 ![Mockup](https://github.com/quickseries/mobile-test/blob/master/resources_android.png "Mockup")
+
+
+
+
+
+### Refrences
+* [RxSwift](https://github.com/ReactiveX/RxSwift)
+* [RxSwift Book](https://store.raywenderlich.com/products/rxswift)
+* [Robert C Martin - Clean Architecture and Design](https://www.youtube.com/watch?v=Nsjsiz2A9mg)
+* [Cycle.js](https://cycle.js.org)
+* [ViewModel](https://medium.com/@SergDort/viewmodel-in-rxswift-world-13d39faa2cf5#.qse37r6jw) in Rx world
+
+### Contact me
+
+* feel free to contact by [Email](mailto://salar.soleimani@icloud.com)
+* or send me message on [Telegram](https://t.me/salarsoleimani)
+
