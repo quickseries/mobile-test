@@ -44,6 +44,9 @@
 		489E2BDE228FA4400085B982 /* ContactViewCellFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */; };
 		48A2F07B22901765002EBCBF /* AddressLongRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A2F07A22901765002EBCBF /* AddressLongRow.xib */; };
 		48A2F07D22901877002EBCBF /* LongAddressViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */; };
+		48A2F07F22902299002EBCBF /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A2F07E22902299002EBCBF /* SocialMediaView.xib */; };
+		48A2F081229022AF002EBCBF /* SocialMediaViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */; };
+		48A2F083229034CD002EBCBF /* BizHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F082229034CD002EBCBF /* BizHours.swift */; };
 		539BD1B0BCD73380CB50AE05 /* Pods_QuickSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */; };
 		C80A4DF9D656D6B39FFB6279 /* Pods_QuickSeries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32777FCFB7FACA3BFA08E8B7 /* Pods_QuickSeries.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +104,9 @@
 		489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCellFile.swift; sourceTree = "<group>"; };
 		48A2F07A22901765002EBCBF /* AddressLongRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressLongRow.xib; sourceTree = "<group>"; };
 		48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongAddressViewFile.swift; sourceTree = "<group>"; };
+		48A2F07E22902299002EBCBF /* SocialMediaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaView.xib; sourceTree = "<group>"; };
+		48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewFile.swift; sourceTree = "<group>"; };
+		48A2F082229034CD002EBCBF /* BizHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHours.swift; sourceTree = "<group>"; };
 		501C4FC6BC36F87464743454 /* Pods-QuickSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeries/Pods-QuickSeries.debug.xcconfig"; sourceTree = "<group>"; };
 		8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickSeriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97272FDF040120C96CDBF04B /* Pods-QuickSeriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeriesTests/Pods-QuickSeriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				483E17DB228EC5E30095CA2B /* CategoryItem.swift */,
 				483E17D6228EC53B0095CA2B /* Category.swift */,
 				483E17E0228EC63E0095CA2B /* DataResponse.swift */,
+				48A2F082229034CD002EBCBF /* BizHours.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +309,7 @@
 				489E2BD5228F98630085B982 /* HeaderView.xib */,
 				489E2BDB228FA35A0085B982 /* ContactViewCell.xib */,
 				48A2F07A22901765002EBCBF /* AddressLongRow.xib */,
+				48A2F07E22902299002EBCBF /* SocialMediaView.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 				489E2BD9228F99030085B982 /* HeaderViewFile.swift */,
 				489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */,
 				48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */,
+				48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */,
 			);
 			path = xibsFiles;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 			files = (
 				488E170A228EBD12006416B5 /* LaunchScreen.storyboard in Resources */,
 				48A2F07B22901765002EBCBF /* AddressLongRow.xib in Resources */,
+				48A2F07F22902299002EBCBF /* SocialMediaView.xib in Resources */,
 				489E2BD6228F98630085B982 /* HeaderView.xib in Resources */,
 				483E17FC228ED1A00095CA2B /* data.bundle in Resources */,
 				488E1707228EBD12006416B5 /* Assets.xcassets in Resources */,
@@ -491,10 +501,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A2F083229034CD002EBCBF /* BizHours.swift in Sources */,
 				483E1823228F2CF60095CA2B /* QuickCache.swift in Sources */,
 				48A2F07D22901877002EBCBF /* LongAddressViewFile.swift in Sources */,
 				483E17DD228EC5E40095CA2B /* Addresses.swift in Sources */,
 				483E1814228F0E070095CA2B /* Utilities.swift in Sources */,
+				48A2F081229022AF002EBCBF /* SocialMediaViewFile.swift in Sources */,
 				489E2BDA228F99030085B982 /* HeaderViewFile.swift in Sources */,
 				488E1700228EBD11006416B5 /* AppDelegate.swift in Sources */,
 				483E17DE228EC5E40095CA2B /* Gps.swift in Sources */,

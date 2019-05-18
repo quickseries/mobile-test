@@ -87,10 +87,52 @@ class CategoryItemViewModel: NSObject {
     var type: String!
     var categoryItem: CategoryItem!
     var descriptionTxt : String!
+    var shouldShowAddress: Bool = false
+    var workingDays: [(String,String)] = []
     init(object: CategoryItem) {
     
-      self.categoryItem = object
-        self.descriptionTxt = object.description
+        
+      
+        workingDays.append(("Monday", (object.bizHours?.monday.from ?? "") + " - " + (object.bizHours?.monday.to ?? "")))
+        workingDays.append(("Tuesday", (object.bizHours?.tueday.from ?? "") + " - " + (object.bizHours?.tueday.to ?? "")))
+        workingDays.append(("Wednesday", (object.bizHours?.wednesday.from ?? "") + " - " + (object.bizHours?.wednesday.to ?? "")))
+        workingDays.append(("Thursday", (object.bizHours?.thursday.from ?? "") + " - " + (object.bizHours?.thursday.to ?? "")))
+        workingDays.append(("Friday", (object.bizHours?.friday.from ?? "") + " - " + (object.bizHours?.friday.to ?? "")))
+        workingDays.append(("Saturday", (object.bizHours?.saturday.from ?? "") + " - " + (object.bizHours?.saturday.to ?? "")))
+        workingDays.append(("Sunday", (object.bizHours?.sunday.from ?? "") + " - " + (object.bizHours?.sunday.to ?? "")))
+       
+        
+        
+     self.categoryItem = object
+     self.descriptionTxt = object.description
+        
+        if ((object.addresses ?? []).count > 0) {
+            shouldShowAddress = true
+        }
+        
+        for item in (object.addresses ?? []) {
+            
+            if (item.address1 ?? "").isEmpty {
+                shouldShowAddress = false
+            }
+            
+            if (item.country ?? "").isEmpty {
+                shouldShowAddress = false
+            }
+            
+            if (item.zipCode ?? "").isEmpty {
+                shouldShowAddress = false
+            }
+            
+            
+            if (item.city ?? "").isEmpty {
+                shouldShowAddress = false
+            }
+        }
+        
+        
+        
+        
     
 }
     

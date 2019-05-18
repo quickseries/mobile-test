@@ -17,7 +17,7 @@ struct CategoryItem : Codable {
 	let addresses : [Addresses]?
 	let contactInfo : ContactInfo?
     let socialMedia : SocialMedia?
-
+     let bizHours: BizHours?
 	enum CodingKeys: String, CodingKey {
 
 		case _id = "_id"
@@ -34,6 +34,7 @@ struct CategoryItem : Codable {
 		case addresses = "addresses"
 		case contactInfo = "contactInfo"
         case socialMedia = "socialMedia"
+         case bizHours = "bizHours"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -52,6 +53,8 @@ struct CategoryItem : Codable {
 		addresses = try values.decodeIfPresent([Addresses].self, forKey: .addresses)
 		contactInfo = try values.decodeIfPresent(ContactInfo.self, forKey: .contactInfo)
         socialMedia = try values.decodeIfPresent(SocialMedia.self, forKey: .socialMedia)
+        bizHours = try values.decodeIfPresent(BizHours.self, forKey: .bizHours)
 	}
 
 }
+
