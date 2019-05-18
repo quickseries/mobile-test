@@ -18,7 +18,7 @@ final class ListVacationSpotsViewModel: ListResourcesViewModel, CanSortResources
     var sortState = ResourceSortState.unsorted
     var resourceEntities = [VacationSpot]()
     let resources = BehaviorRelay<[CategoryResourceCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<CategoryResourceCellViewModel?>(value: nil)
+    let selectedResource = BehaviorRelay<VacationSpot?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
     func requestToApi(callback: ((Outcome<[VacationSpot]>) -> ())?) {

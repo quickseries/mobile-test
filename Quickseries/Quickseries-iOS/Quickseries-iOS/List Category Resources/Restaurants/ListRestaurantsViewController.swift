@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Quickseries_API
 
 final class ListRestaurantsViewController: UIViewController, ListResourcesViewController, CanSortTableView {
     
@@ -50,8 +51,10 @@ final class ListRestaurantsViewController: UIViewController, ListResourcesViewCo
     
     // MARK: Actions
     
-    func onResourceSelection(resource: CategoryResourceCellViewModel) {
-        //TODO: Implement
+    func onResourceSelection(resource: Restaurant) {
+        let destination = ResourceDetailViewController()
+        destination.viewModel = ResourceDetailViewModel(resource: resource)
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     // MARK: Private Methods

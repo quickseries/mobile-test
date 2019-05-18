@@ -21,7 +21,7 @@ protocol ListResourcesViewController : UIViewController {
     var loadingView: LoadingView { get }
     var errorView: ErrorView { get }
     
-    func onResourceSelection(resource: ViewModel.EntityCellViewModel)
+    func onResourceSelection(resource: ViewModel.Entity)
 }
 
 extension ListResourcesViewController {
@@ -50,7 +50,7 @@ extension ListResourcesViewController {
     
     fileprivate func subscribeToModelSelection() {
         viewModel.selectedResource
-            .flatMap({ model -> Observable<Self.ViewModel.EntityCellViewModel> in
+            .flatMap({ model -> Observable<Self.ViewModel.Entity> in
                 if let model = model {
                     return Observable.just(model)
                 } else {

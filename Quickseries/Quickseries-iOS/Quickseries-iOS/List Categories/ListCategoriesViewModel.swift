@@ -17,7 +17,7 @@ final class ListCategoriesViewModel : ListResourcesViewModel {
     
     var resourceEntities = [Quickseries_API.Category]()
     let resources = BehaviorRelay<[CategoryCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<CategoryCellViewModel?>(value: nil)
+    let selectedResource = BehaviorRelay<Quickseries_API.Category?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
     func parseEntityToViewModel(_ entity: Quickseries_API.Category) -> CategoryCellViewModel {

@@ -15,7 +15,14 @@
 		AF16FA25229074AD00B34CAD /* EmailFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA24229074AD00B34CAD /* EmailFieldView.swift */; };
 		AF16FA27229075B200B34CAD /* TollFreeFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA26229075B200B34CAD /* TollFreeFieldView.swift */; };
 		AF16FA29229076B700B34CAD /* WebsiteFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA28229076B700B34CAD /* WebsiteFieldView.swift */; };
-		AF16FA2B22907DE400B34CAD /* AdressFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2A22907DE400B34CAD /* AdressFieldView.swift */; };
+		AF16FA2B22907DE400B34CAD /* AddressFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2A22907DE400B34CAD /* AddressFieldView.swift */; };
+		AF16FA2E2290803700B34CAD /* ContactInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2D2290803700B34CAD /* ContactInformationView.swift */; };
+		AF16FA302290822B00B34CAD /* ContactInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */; };
+		AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA31229084E500B34CAD /* AddressViewModel.swift */; };
+		AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA332290851B00B34CAD /* AddressesView.swift */; };
+		AF16FA362290855D00B34CAD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA352290855D00B34CAD /* InformationView.swift */; };
+		AF16FA3922908A5B00B34CAD /* ResourceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */; };
+		AF16FA3B22908AFE00B34CAD /* ResourceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */; };
 		AF34748C228F9AEF004D957E /* ListCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748B228F9AEF004D957E /* ListCategoriesViewController.swift */; };
 		AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748D228F9CE2004D957E /* ListCategoriesViewModel.swift */; };
 		AF347490228FAFE7004D957E /* ListRestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748F228FAFE7004D957E /* ListRestaurantsViewModel.swift */; };
@@ -70,7 +77,14 @@
 		AF16FA24229074AD00B34CAD /* EmailFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldView.swift; sourceTree = "<group>"; };
 		AF16FA26229075B200B34CAD /* TollFreeFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TollFreeFieldView.swift; sourceTree = "<group>"; };
 		AF16FA28229076B700B34CAD /* WebsiteFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteFieldView.swift; sourceTree = "<group>"; };
-		AF16FA2A22907DE400B34CAD /* AdressFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressFieldView.swift; sourceTree = "<group>"; };
+		AF16FA2A22907DE400B34CAD /* AddressFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFieldView.swift; sourceTree = "<group>"; };
+		AF16FA2D2290803700B34CAD /* ContactInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationView.swift; sourceTree = "<group>"; };
+		AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationViewModel.swift; sourceTree = "<group>"; };
+		AF16FA31229084E500B34CAD /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		AF16FA332290851B00B34CAD /* AddressesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesView.swift; sourceTree = "<group>"; };
+		AF16FA352290855D00B34CAD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailViewController.swift; sourceTree = "<group>"; };
+		AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailViewModel.swift; sourceTree = "<group>"; };
 		AF34748B228F9AEF004D957E /* ListCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesViewController.swift; sourceTree = "<group>"; };
 		AF34748D228F9CE2004D957E /* ListCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesViewModel.swift; sourceTree = "<group>"; };
 		AF34748F228FAFE7004D957E /* ListRestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRestaurantsViewModel.swift; sourceTree = "<group>"; };
@@ -158,15 +172,38 @@
 		AF16FA1D22906E7B00B34CAD /* Resource Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AF16FA3722908A4500B34CAD /* Views */,
+				AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */,
+				AF16FA31229084E500B34CAD /* AddressViewModel.swift */,
+				AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */,
+				AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */,
+			);
+			path = "Resource Detail";
+			sourceTree = "<group>";
+		};
+		AF16FA2C2290802500B34CAD /* Fields */ = {
+			isa = PBXGroup;
+			children = (
 				AF16FA1E22906F7C00B34CAD /* FieldView.swift */,
 				AF16FA202290730D00B34CAD /* TelephoneFieldView.swift */,
 				AF16FA26229075B200B34CAD /* TollFreeFieldView.swift */,
 				AF16FA222290744B00B34CAD /* FaxFieldView.swift */,
 				AF16FA24229074AD00B34CAD /* EmailFieldView.swift */,
 				AF16FA28229076B700B34CAD /* WebsiteFieldView.swift */,
-				AF16FA2A22907DE400B34CAD /* AdressFieldView.swift */,
+				AF16FA2A22907DE400B34CAD /* AddressFieldView.swift */,
 			);
-			path = "Resource Detail";
+			path = Fields;
+			sourceTree = "<group>";
+		};
+		AF16FA3722908A4500B34CAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF16FA2C2290802500B34CAD /* Fields */,
+				AF16FA2D2290803700B34CAD /* ContactInformationView.swift */,
+				AF16FA332290851B00B34CAD /* AddressesView.swift */,
+				AF16FA352290855D00B34CAD /* InformationView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AF347480228F9741004D957E /* Supporting Files */ = {
@@ -204,13 +241,6 @@
 				AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */,
 			);
 			path = "Vacation Spots";
-			sourceTree = "<group>";
-		};
-		AF347484228F9795004D957E /* Show Resource Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Show Resource Detail";
 			sourceTree = "<group>";
 		};
 		AF34749B228FBCD9004D957E /* Common */ = {
@@ -299,7 +329,6 @@
 				AF34749B228FBCD9004D957E /* Common */,
 				AF347481228F975C004D957E /* List Categories */,
 				AF34749C228FBCE4004D957E /* List Category Resources */,
-				AF347484228F9795004D957E /* Show Resource Detail */,
 				AF16FA1D22906E7B00B34CAD /* Resource Detail */,
 				AFA44CCC228F677B00249BCC /* Assets.xcassets */,
 				AF347480228F9741004D957E /* Supporting Files */,
@@ -566,25 +595,32 @@
 			files = (
 				AF16FA27229075B200B34CAD /* TollFreeFieldView.swift in Sources */,
 				AF16FA212290730D00B34CAD /* TelephoneFieldView.swift in Sources */,
+				AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */,
+				AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */,
 				AF3474B3228FD5F5004D957E /* CategoryCellViewModel.swift in Sources */,
 				AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */,
 				AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */,
 				AF347492228FB0F0004D957E /* ResourceCellViewModel.swift in Sources */,
 				AF347498228FB630004D957E /* ListResourcesViewModel.swift in Sources */,
+				AF16FA362290855D00B34CAD /* InformationView.swift in Sources */,
 				AF16FA1F22906F7C00B34CAD /* FieldView.swift in Sources */,
+				AF16FA3B22908AFE00B34CAD /* ResourceDetailViewModel.swift in Sources */,
 				AF16FA29229076B700B34CAD /* WebsiteFieldView.swift in Sources */,
 				AF3474B5228FD680004D957E /* CategoryResourceCellViewModel.swift in Sources */,
 				AF3474AF228FCE18004D957E /* CanSortResources.swift in Sources */,
 				AF3474A2228FBDEB004D957E /* ListResourcesViewController.swift in Sources */,
 				AF3474A8228FC372004D957E /* LoadingView.swift in Sources */,
 				AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */,
+				AF16FA3922908A5B00B34CAD /* ResourceDetailViewController.swift in Sources */,
 				AF347490228FAFE7004D957E /* ListRestaurantsViewModel.swift in Sources */,
 				AF3474AD228FC97D004D957E /* ListVacationSpotsViewController.swift in Sources */,
 				AF3474A0228FBD9D004D957E /* ListRestaurantsViewController.swift in Sources */,
-				AF16FA2B22907DE400B34CAD /* AdressFieldView.swift in Sources */,
+				AF16FA2B22907DE400B34CAD /* AddressFieldView.swift in Sources */,
 				AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */,
+				AF16FA2E2290803700B34CAD /* ContactInformationView.swift in Sources */,
 				AF3474A4228FC025004D957E /* ResourceTableViewCell.swift in Sources */,
 				AF7A4958229068F500C157F8 /* CanSortTableView.swift in Sources */,
+				AF16FA302290822B00B34CAD /* ContactInformationViewModel.swift in Sources */,
 				AF16FA25229074AD00B34CAD /* EmailFieldView.swift in Sources */,
 				AF34748C228F9AEF004D957E /* ListCategoriesViewController.swift in Sources */,
 				AF16FA232290744B00B34CAD /* FaxFieldView.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Quickseries_API
 
 final class ListVacationSpotsViewController: UIViewController, ListResourcesViewController, CanSortTableView  {    
     
@@ -50,7 +51,7 @@ final class ListVacationSpotsViewController: UIViewController, ListResourcesView
     
     // MARK: Actions
     
-    func onResourceSelection(resource: CategoryResourceCellViewModel) {
+    func onResourceSelection(resource: VacationSpot) {
         //TODO: Implement
     }
     

@@ -17,7 +17,7 @@ protocol ListResourcesViewModel : AnyObject {
 
     var resourceEntities: [Entity] { get set }
     var resources: BehaviorRelay<[EntityCellViewModel]> { get }
-    var selectedResource: BehaviorRelay<EntityCellViewModel?> { get }
+    var selectedResource: BehaviorRelay<Entity?> { get }
     var state: BehaviorRelay<ListViewState> { get }
     
     func requestToApi(callback: ((Outcome<[Entity]>) -> ())?)
@@ -45,7 +45,9 @@ extension ListResourcesViewModel {
     }
     
     func onResourceSelected(resource: EntityCellViewModel) {
-        selectedResource.accept(resource)
+        if let entity = resourceEntities.first(where: {$0.id == resource.id}) {
+            selectedResource.accept(entity)
+        }
     }
 }
 

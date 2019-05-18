@@ -18,7 +18,7 @@ final class ListRestaurantsViewModel : ListResourcesViewModel, CanSortResources 
     var sortState = ResourceSortState.unsorted
     var resourceEntities = [Restaurant]()
     let resources = BehaviorRelay<[CategoryResourceCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<CategoryResourceCellViewModel?>(value: nil)
+    let selectedResource = BehaviorRelay<Restaurant?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
     func requestToApi(callback: ((Outcome<[Restaurant]>) -> ())?) {

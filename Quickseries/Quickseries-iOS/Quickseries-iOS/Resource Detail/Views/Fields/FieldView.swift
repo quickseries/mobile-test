@@ -22,18 +22,24 @@ class FieldView : UIView {
     var fieldLabelValue = ""
     
     lazy var mainStack: UIStackView = {
-        return UIStackView(arrangedSubviews: [innerLeadingStack, innerTrailingStack])
+        let stack = UIStackView(arrangedSubviews: [innerLeadingStack, innerTrailingStack])
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+        return stack
     }()
     
     lazy var innerLeadingStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [fieldLabel, fieldValue])
         stack.axis = .vertical
+        stack.alignment = .leading
+        stack.spacing = 8
         return stack
     }()
     
     lazy var innerTrailingStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: actionButtons)
         stack.axis = .horizontal
+        stack.distribution = UIStackView.Distribution.fillEqually
         return stack
     }()
     
@@ -72,22 +78,10 @@ class FieldView : UIView {
     
     private func setupConstraints() {
         mainStack.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(safeAreaInsets)
-            make.trailing.equalToSuperview().inset(safeAreaInsets)
-            make.top.equalToSuperview().inset(safeAreaInsets)
-            make.bottom.equalToSuperview().inset(safeAreaInsets)
+            make.leading.equalToSuperview().inset(layoutMargins)
+            make.trailing.equalToSuperview().inset(layoutMargins)
+            make.top.equalToSuperview().inset(layoutMargins)
+            make.bottom.equalToSuperview().inset(layoutMargins)
         }
-    }
-    
-    private func buildInnerLeadingStack() -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: [fieldLabel, fieldValue])
-        stack.axis = .vertical
-        return stack
-    }
-    
-    private func buildInnerTrailingStack() -> UIStackView {
-        let stack = UIStackView(arrangedSubviews: actionButtons)
-        stack.axis = .horizontal
-        return stack
     }
 }
