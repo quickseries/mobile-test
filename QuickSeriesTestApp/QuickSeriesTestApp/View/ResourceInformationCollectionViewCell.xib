@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResourceInformationCollectionViewCellID" id="gTV-IL-0wX" customClass="ResourceInformationCollectionViewCell" customModule="QuickSeriesTestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="88"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byi-f7-6sm" customClass="RoundableView" customModule="QuickSeriesTestApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="88"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgw-Im-ftm">
+                                <rect key="frame" x="8" y="8" width="220" height="72"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" name="QSDarkGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvH-d2-0IJ">
+                                <rect key="frame" x="236" y="26" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="CJn-QG-8wE"/>
+                                    <constraint firstAttribute="width" constant="36" id="DuL-k8-BqM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonDidTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Uqh-u6-qZR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="QSLightGray"/>
+                        <constraints>
+                            <constraint firstItem="Kgw-Im-ftm" firstAttribute="leading" secondItem="byi-f7-6sm" secondAttribute="leading" constant="8" id="Sb9-yx-bqh"/>
+                            <constraint firstAttribute="trailing" secondItem="BvH-d2-0IJ" secondAttribute="trailing" constant="8" id="daL-kr-Zo9"/>
+                            <constraint firstItem="Kgw-Im-ftm" firstAttribute="top" secondItem="byi-f7-6sm" secondAttribute="top" constant="8" id="fcu-Vl-wSD"/>
+                            <constraint firstItem="BvH-d2-0IJ" firstAttribute="leading" secondItem="Kgw-Im-ftm" secondAttribute="trailing" constant="8" id="hlb-h1-fnY"/>
+                            <constraint firstItem="BvH-d2-0IJ" firstAttribute="centerY" secondItem="byi-f7-6sm" secondAttribute="centerY" id="l91-iW-ID4"/>
+                            <constraint firstAttribute="bottom" secondItem="Kgw-Im-ftm" secondAttribute="bottom" constant="8" id="qEx-fc-ibA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="byi-f7-6sm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FaM-Wx-yoU"/>
+                <constraint firstAttribute="trailing" secondItem="byi-f7-6sm" secondAttribute="trailing" id="I6D-qW-Qfs"/>
+                <constraint firstAttribute="bottom" secondItem="byi-f7-6sm" secondAttribute="bottom" id="RU1-N7-Pgo"/>
+                <constraint firstItem="byi-f7-6sm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wct-GB-od9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="button" destination="BvH-d2-0IJ" id="c3t-C8-HcT"/>
+                <outlet property="label" destination="Kgw-Im-ftm" id="uQV-Yt-LmV"/>
+            </connections>
+            <point key="canvasLocation" x="-35.200000000000003" y="114.24287856071965"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="QSDarkGray">
+            <color red="0.25882352941176473" green="0.27450980392156865" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="QSLightGray">
+            <color red="0.95686274509803926" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
