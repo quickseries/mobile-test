@@ -11,20 +11,19 @@
 
 import UIKit
 
-protocol CategoriesDisplayLogic: class
-{
-  func displaySomething(viewModel: Categories.Something.ViewModel)
+protocol CategoriesDisplayLogic: class{
+    func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel)
 }
 
-class CategoriesViewController: UIViewController, CategoriesDisplayLogic
-{
-  var interactor: CategoriesBusinessLogic?
-  var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
+
+class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
+    
+    var interactor: FetchCategoriesBusinessLogic?
+    var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
   // MARK: Object lifecycle
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
@@ -37,8 +36,7 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic
   
   // MARK: Setup
   
-  private func setup()
-  {
+  private func setup(){
     let viewController = self
     let interactor = CategoriesInteractor()
     let presenter = CategoriesPresenter()
@@ -53,8 +51,7 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?){
     if let scene = segue.identifier {
       let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
       if let router = router, router.responds(to: selector) {
@@ -65,24 +62,18 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad(){
     super.viewDidLoad()
-    doSomething()
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = Categories.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Categories.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // MARK: Setup Functions
+    
+    func fetchCategories(){
+        let request = Category.FetchCategories.Request(id: "")
+        interactor?.fetchCategories(request: request)
+    }
+    
+    func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel){
+
+    }
 }

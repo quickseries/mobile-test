@@ -17,12 +17,12 @@ import UIKit
 }
 
 protocol CategoriesDataPassing{
-  var dataStore: CategoriesDataStore? { get }
+  var dataStore: CategoryDataStore? { get }
 }
 
 class CategoriesRouter: NSObject, CategoriesRoutingLogic, CategoriesDataPassing{
   weak var viewController: CategoriesViewController?
-  var dataStore: CategoriesDataStore?
+  var dataStore: CategoryDataStore?
   
   // MARK: Routing
   

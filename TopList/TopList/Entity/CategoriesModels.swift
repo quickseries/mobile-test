@@ -11,20 +11,28 @@
 
 import UIKit
 
-enum Categories
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum Category{
+    // MARK: Use cases
+    
+    enum FetchCategories{
+        struct Request{
+            var id:String
+        }
+        
+        struct Response{
+            var categories: [Any]
+        }
+        
+        struct ViewModel{
+            //TODO: Make use of VM to convert from API to required format
+            struct DisplayedCategories{
+                var id: String
+                var date: String
+                var email: String
+                var name: String
+                var total: String
+            }
+            var displayedCategories: [Any] //FIXME: Displayed
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }
