@@ -488,7 +488,7 @@ extension QuickItemDetailVC {
                 
                 cell.view?.valueLabel.adjustsFontSizeToFitWidth = true
                 cell.frame.insetBy(dx: 10.0, dy: 10.0)
-                cell.selectionStyle = .none
+                
                 
             }.onCellSelection() {_,_ in
                 
