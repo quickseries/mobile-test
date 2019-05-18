@@ -18,7 +18,7 @@ class QuickItemDetailVC: FormViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+         //TODO ADD KVO's
         buildViews()
     }
     
@@ -44,7 +44,7 @@ class QuickItemDetailVC: FormViewController {
         for item in itemDetails.categoryItem.contactInfo?.phoneNumber ?? [] {
             
             if (!item.isEmpty){
-                self.form.last?.append(ShortContactViewRow(cluster: ("PHONE NUMBER",item.internationaLizedString() )))
+                self.form.last?.append(ShortContactViewRow(value: ("PHONE NUMBER",item.internationaLizedString() ), type: RowTpe.phone))
             }
             
             
@@ -53,28 +53,28 @@ class QuickItemDetailVC: FormViewController {
         
         for item in itemDetails.categoryItem.contactInfo?.tollFree ?? [] {
             if (!item.isEmpty){
-            self.form.last?.append(ShortContactViewRow(cluster: ("TOLL-FREE NUMBER",item.internationaLizedString() )))
+                self.form.last?.append(ShortContactViewRow(value: ("TOLL-FREE NUMBER",item.internationaLizedString() ), type: RowTpe.phone))
             }
         }
         
         
         for item in itemDetails.categoryItem.contactInfo?.faxNumber ?? [] {
             if (!item.isEmpty){
-            self.form.last?.append(ShortContactViewRow(cluster: ("FAX NUMBER",item.internationaLizedString() )))
+                self.form.last?.append(ShortContactViewRow(value: ("FAX NUMBER",item.internationaLizedString() ), type: RowTpe.fax))
             }
         }
         
         
         for item in itemDetails.categoryItem.contactInfo?.email ?? [] {
             if (!item.isEmpty){
-            self.form.last?.append(ShortContactViewRow(cluster: ("EMAIL ADDRESS",item )))
+                self.form.last?.append(ShortContactViewRow(value: ("EMAIL ADDRESS",item ), type: RowTpe.email))
             }
         }
         
         
         for item in itemDetails.categoryItem.contactInfo?.website ?? [] {
             if (!item.isEmpty){
-            self.form.last?.append(ShortContactViewRow(cluster: ("WEBSITE",item )))
+                self.form.last?.append(ShortContactViewRow(value: ("WEBSITE",item ), type: RowTpe.website))
             }
         }
         
@@ -119,6 +119,9 @@ class QuickItemDetailVC: FormViewController {
        
         
     }
+    
+    
+    
    @IBAction func dismissMe(_ sender: Any) {
     
     presentingViewController?.dismiss(animated: true, completion: nil)
@@ -201,9 +204,9 @@ extension QuickItemDetailVC {
         return section
         
     }
-    func ShortContactViewRow(cluster: (String,String))-> ViewRow<ContactViewCellFile> {
+    func ShortContactViewRow(value: (String,String),type: RowTpe)-> ViewRow<ContactViewCellFile> {
         
-        let viewRow = ViewRow<ContactViewCellFile>(cluster.0) { (row) in
+        let viewRow = ViewRow<ContactViewCellFile>(value.0) { (row) in
             
             
             }
@@ -215,8 +218,27 @@ extension QuickItemDetailVC {
                 cell.view = nib.instantiate(withOwner: self, options: nil)[0] as? ContactViewCellFile
                 cell.view?.backgroundColor = cell.backgroundColor
                 cell.height =  { 50 }
-                cell.view?.titleLabel.text = cluster.0
-                cell.view?.valueLabel.text = cluster.1
+                cell.view?.titleLabel.text = value.0
+                cell.view?.valueLabel.text = value.1
+                
+                switch(type){
+                    
+                case .email:
+                    
+                    cell.view?.accessoryOne.isHidden = true
+                    cell.view?.accessoryTwo.image =  UIImage(named: "email")
+                
+                case .phone:
+                    cell.view?.accessoryOne.image = UIImage(named: "sms")
+                    cell.view?.accessoryTwo.image =  UIImage(named: "phone")
+                case .fax:
+                     cell.view?.accessoryOne.image = nil
+                     cell.view?.accessoryTwo.image = nil
+                case .website:
+                    cell.view?.accessoryOne.image = nil
+                    cell.view?.accessoryTwo.image = UIImage(named: "website")
+                }
+                
                 cell.view?.valueLabel.adjustsFontSizeToFitWidth = true
                 cell.frame.insetBy(dx: 10.0, dy: 10.0)
                 cell.selectionStyle = .none
@@ -254,19 +276,7 @@ extension QuickItemDetailVC {
                 cell.selectionStyle = .none
                 
             }.onCellSelection() {_,_ in
-                /**
-                 
-                 {
-                 "label": "Quesada",
-                 "address1": "3343 Boul des Sources",
-                 "city": "Montreal",
-                 "zipCode": "H9B1Z8",
-                 "state": "QC",
-                 "country": "Canada"
-                 }
-                 */
-                
-                
+               
                 
         }
         

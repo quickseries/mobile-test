@@ -12,6 +12,14 @@ struct Cells {
 }
 
 
+enum RowTpe {
+    case email
+   case phone
+   case  fax
+    case website
+}
+
+
 struct Segues {
     static let categoryItems = "categoryItems"
    

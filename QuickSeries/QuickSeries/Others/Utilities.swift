@@ -3,9 +3,14 @@
 //  QuickSeries
 //
 //  Created by Engineer 144 on 17/05/2019.
-// SOME CODE  REFERENCES :
-//https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
-//https://stackoverflow.com/questions/4217820/convert-html-to-nsattributedstring-in-ios
+
+
+// CODE I DIDNOT CREATE  REFERENCES :
+
+// Method Names
+// format phoneNumber = https://stackoverflow.com/questions/32364055/formattting-phone-number-in-swift
+// htmlToAttributedString , htmlToString =   https://stackoverflow.com/questions/4217820/convert-html-to-nsattributedstring-in-ios
+// ANY OTHER CODE NOT LISTED IN THE REFERENCES , I CREATED
 
 import UIKit
 import Foundation
@@ -22,6 +27,9 @@ import Foundation
         work()
     }
 }
+
+
+
 private let dataLoader = QuickOperationManager()
 
 extension UIImageView {
@@ -118,10 +126,8 @@ extension String {
         return String(self[substringStartIndex ..< substringEndIndex])
     }
     
-    
-    
     func internationaLizedString()-> String {
-        
-        return format(phoneNumber: self) ?? ""
-    }
+    
+    return format(phoneNumber: self) ?? ""
+}
 }
