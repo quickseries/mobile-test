@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2980C7B3FBE6DEFCB724219F /* Pods_Quickseries_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A6938615076B787FE14CD5 /* Pods_Quickseries_API.framework */; };
 		4B2C0FEFA35427D3ADCF0C1E /* Pods_Quickseries_APITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B2547DCCB6E7EE7871C0C /* Pods_Quickseries_APITests.framework */; };
+		AF347494228FB1A5004D957E /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347493228FB1A5004D957E /* CategoryType.swift */; };
 		AFA44D07228F67AB00249BCC /* Quickseries_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA44CFD228F67AA00249BCC /* Quickseries_API.framework */; };
 		AFA44D0C228F67AB00249BCC /* Quickseries_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D0B228F67AB00249BCC /* Quickseries_APITests.swift */; };
 		AFA44D0E228F67AB00249BCC /* Quickseries_API.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA44D00228F67AA00249BCC /* Quickseries_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +46,7 @@
 		38A6938615076B787FE14CD5 /* Pods_Quickseries_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D16FDBB82FB9A9053C6018 /* Pods-Quickseries-API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.release.xcconfig"; sourceTree = "<group>"; };
 		73B9D4B23F420F53ED95BEA7 /* Pods-Quickseries-API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.debug.xcconfig"; sourceTree = "<group>"; };
+		AF347493228FB1A5004D957E /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		AFA44CFD228F67AA00249BCC /* Quickseries_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quickseries_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44D00228F67AA00249BCC /* Quickseries_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quickseries_API.h; sourceTree = "<group>"; };
 		AFA44D01228F67AA00249BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				AFA44D1E228F688F00249BCC /* Resource.swift */,
-				AFA44D25228F6F6C00249BCC /* CategoryResource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -214,7 +215,9 @@
 		AFA44D3D228F826F00249BCC /* Business Entities */ = {
 			isa = PBXGroup;
 			children = (
+				AF347493228FB1A5004D957E /* CategoryType.swift */,
 				AFA44D1C228F687F00249BCC /* Category.swift */,
+				AFA44D25228F6F6C00249BCC /* CategoryResource.swift */,
 				AFA44D20228F689D00249BCC /* Restaurant.swift */,
 				AFA44D22228F68B800249BCC /* VacationSpot.swift */,
 				AFA44D24228F6F5800249BCC /* Protocols */,
@@ -420,6 +423,7 @@
 				AFA44D21228F689D00249BCC /* Restaurant.swift in Sources */,
 				AFA44D1F228F688F00249BCC /* Resource.swift in Sources */,
 				AFA44D31228F73AF00249BCC /* BusinessHours.swift in Sources */,
+				AF347494228FB1A5004D957E /* CategoryType.swift in Sources */,
 				AFA44D40228F84BA00249BCC /* Quickseries.swift in Sources */,
 				AFA44D23228F68B800249BCC /* VacationSpot.swift in Sources */,
 				AFA44D2C228F720B00249BCC /* SocialMedia.swift in Sources */,

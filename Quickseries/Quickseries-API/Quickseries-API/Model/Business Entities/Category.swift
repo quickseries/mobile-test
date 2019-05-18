@@ -12,9 +12,19 @@ public struct Category: Resource, Codable {
     
     public let id: String
     public let title: String
+    public let slug: String
+    
+    public var type: CategoryType {
+        if slug == "restaurants" {
+            return .restaurant
+        } else {
+            return .vacationSpot
+        }
+    }
     
     private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title = "title"
+        case slug = "slug"
     }
 }
