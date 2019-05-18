@@ -15,7 +15,7 @@ extension String {
         "html *" +
         "{" +
         "font-size: \(size)pt !important;" +
-        "direction: rtl!important;" +
+        "direction: ltr!important;" +
         "" +
         "font-family: \(family ?? "Helvetica"), Helvetica !important;" +
       "}</style> \(self)"

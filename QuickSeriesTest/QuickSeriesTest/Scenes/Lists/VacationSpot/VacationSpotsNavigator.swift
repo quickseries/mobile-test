@@ -24,7 +24,9 @@ class VacationSpotsNavigator: VacationSpotsNavigatorProtocol {
   }
   
   func toVacationSpot(_ vacationSpot: VacationSpotItemViewModel) {
-    
+    let detailVC = DetailViewController(nibName: XibNames.detail.rawValue, bundle: nil)
+    detailVC.vacationSpotViewModel = VacationSpotDetailViewModel(vacationItem: vacationSpot)
+    navigationController.pushViewController(detailVC, animated: true)
   }
   func setup(_ vc: VacationSpotsViewController) {
     vc.viewModel = VacationSpotsViewModel(navigator: self, useCase: services.makeGetVacationSpotsUseCase())

@@ -40,14 +40,18 @@ public class ActivityIndicator: SharedSequenceConvertibleType {
   private func subscribed() {
     _lock.lock()
     _variable.value = true
-    NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
+    DispatchQueue.main.async {
+      NVActivityIndicatorPresenter.sharedInstance.startAnimating(self.activityData, nil)
+    }
     _lock.unlock()
   }
   
   private func sendStopLoading() {
     _lock.lock()
     _variable.value = false
-    NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+    DispatchQueue.main.async {
+      NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+    }
     _lock.unlock()
   }
   

@@ -24,7 +24,9 @@ class RestaurantsNavigator: RestaurantsNavigatorProtocol {
   }
   
   func toRestaurant(_ restaurant: RestaurantItemViewModel) {
-    
+    let detailVC = DetailViewController(nibName: XibNames.detail.rawValue, bundle: nil)
+    detailVC.restaurantViewModel = RestaurantDetailViewModel(restaurantItem: restaurant)
+    navigationController.pushViewController(detailVC, animated: true)
   }
   func setup(_ vc: RestaurantsViewController) {
     vc.viewModel = RestaurantsViewModel(navigator: self, useCase: services.makeGetRestaurantsUseCase())

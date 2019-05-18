@@ -11,7 +11,10 @@ import Foundation
 public struct ContactInfo: Codable {
   public let website: [String]?
   public let email: [String]?
-  public let phoneNumber: [String]
+  public let phoneNumber: [String]?
   public let faxNumber: [String]?
   public let tollFree: [String]?
 }
+
+
+

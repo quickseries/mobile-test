@@ -16,7 +16,7 @@ final class RestaurantsViewModel: ViewModelType {
   private let useCase: Domain.GetRestaurantsUseCase
   private let activityIndicator = ActivityIndicator()
   private let errorTracker = ErrorTracker()
-  
+  private var defaultAtoZ = false
   init(navigator: RestaurantsNavigator, useCase: Domain.GetRestaurantsUseCase) {
     self.useCase = useCase
     self.navigator = navigator
@@ -26,21 +26,29 @@ final class RestaurantsViewModel: ViewModelType {
     let fetching = activityIndicator.asDriver()
     let errors = errorTracker.asDriver()
     
-    var restaurants = getRestaurants(activityIndicator: activityIndicator, error: errorTracker)
+    let response = getRestaurants(activityIndicator: activityIndicator, error: errorTracker)
     
-    let sortedRestaurants = input.sortButtonTrigger
-      .withLatestFrom(restaurants) { (isAtoZ, restaurants) -> [RestaurantItemViewModel] in
-        return restaurants.sorted { $0.title < $1.title }
-    }.do(onNext: { (sortedRestaurants) in
-      restaurants = Driver.of(sortedRestaurants)
-    })
+    let temp = input.sortButtonTrigger.withLatestFrom(response).map { [unowned self] (items) -> [RestaurantItemViewModel] in
+      self.defaultAtoZ = !self.defaultAtoZ
+      if self.defaultAtoZ {
+        return items.sorted { $0.title < $1.title }
+      }
+      
+      return items.sorted { $0.title > $1.title }
+    }
+    let sortedRestaurants = Driver.merge(response, temp)
+    
+    let isAtoZ = input.sortButtonTrigger.map{[unowned self] in
+      return self.defaultAtoZ
+    }
+
     let selectedRestaurant = input.selection
-      .withLatestFrom(restaurants) { (indexPath, restaurants) -> RestaurantItemViewModel in
+      .withLatestFrom(response) { (indexPath, restaurants) -> RestaurantItemViewModel in
         return restaurants[indexPath.row]
       }.do(onNext: { [unowned self] (restaurant) in
         self.navigator.toRestaurant(restaurant)
       })
-    return Output(restaurants: restaurants, isFetching: fetching, selectedRestaurant: selectedRestaurant, error: errors)
+    return Output(restaurants: sortedRestaurants, response: response.mapToVoid(), isFetching: fetching, selectedRestaurant: selectedRestaurant, error: errors, isAtoZ: isAtoZ)
   }
   
   func getRestaurants(activityIndicator: ActivityIndicator, error: ErrorTracker) -> Driver<[RestaurantItemViewModel]> {
@@ -57,13 +65,14 @@ extension RestaurantsViewModel {
   struct Input {
     let selection: Driver<IndexPath>
     let sortButtonTrigger: Driver<Void>
-    let isAtoZ: BehaviorRelay<Bool>
   }
   
   struct Output {
     let restaurants: Driver<[RestaurantItemViewModel]>
+    let response: Driver<Void>
     let isFetching: Driver<Bool>
     let selectedRestaurant: Driver<RestaurantItemViewModel>
     let error: Driver<Error>
+    let isAtoZ: Driver<Bool>
   }
 }

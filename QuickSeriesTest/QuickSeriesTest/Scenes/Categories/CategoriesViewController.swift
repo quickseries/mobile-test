@@ -32,7 +32,10 @@ class CategoriesViewController: UIViewController {
     configureTableView()
     bindViewModel()
   }
-  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    view.layoutIfNeeded()
+  }
   // MARK: - Functions
   private func setupUI() {
     navigationItem.title = NavigationTitles.categories.rawValue

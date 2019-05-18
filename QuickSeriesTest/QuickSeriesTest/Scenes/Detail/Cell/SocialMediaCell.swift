@@ -9,10 +9,19 @@
 import UIKit
 
 class SocialMediaCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+  
+  @IBOutlet weak var socialMediImageView: UIImageView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    setupUI()
+  }
+  private func setupUI() {
+    socialMediImageView.layer.cornerRadius = 30
+    socialMediImageView.clipsToBounds = true
+  }
+  
+  func bind(_ viewmodel: SocialMediaItem) {
+    socialMediImageView.image = UIImage(named: viewmodel.type.rawValue)
+  }
 }

@@ -96,6 +96,11 @@
 		250E8CF6228F68EA002C7146 /* BusinessHourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250E8CF4228F68EA002C7146 /* BusinessHourCell.xib */; };
 		250E8CF9228F68FE002C7146 /* SocialMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8CF7228F68FE002C7146 /* SocialMediaCell.swift */; };
 		250E8CFA228F68FE002C7146 /* SocialMediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250E8CF8228F68FE002C7146 /* SocialMediaCell.xib */; };
+		250E8CFC22905510002C7146 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8CFB22905510002C7146 /* RestaurantDetailViewModel.swift */; };
+		250E8D0022907E90002C7146 /* RestaurantDetailItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8CFF22907E90002C7146 /* RestaurantDetailItemViewModel.swift */; };
+		250E8D032290A53E002C7146 /* VacationSpotDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D022290A53E002C7146 /* VacationSpotDetailViewModel.swift */; };
+		250E8D052290A582002C7146 /* VacationSpotDetailItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D042290A581002C7146 /* VacationSpotDetailItemViewModel.swift */; };
+		250E8D072290AF56002C7146 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E8D062290AF56002C7146 /* WKWebViewController.swift */; };
 		3292AEE9EE3389D5C08DC67A /* Pods_QuickSeriesTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93061BEC7F812226FF021600 /* Pods_QuickSeriesTestUITests.framework */; };
 		7CABD7BE6D35D0B33596CC16 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1185AFDF74F5C8B09C5F44D5 /* Pods_Domain.framework */; };
 		BFD879E50857B148D374B302 /* Pods_QuickSeriesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C3F86A6376467B75575B3E7 /* Pods_QuickSeriesTestTests.framework */; };
@@ -282,6 +287,11 @@
 		250E8CF4228F68EA002C7146 /* BusinessHourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessHourCell.xib; sourceTree = "<group>"; };
 		250E8CF7228F68FE002C7146 /* SocialMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCell.swift; sourceTree = "<group>"; };
 		250E8CF8228F68FE002C7146 /* SocialMediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaCell.xib; sourceTree = "<group>"; };
+		250E8CFB22905510002C7146 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
+		250E8CFF22907E90002C7146 /* RestaurantDetailItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailItemViewModel.swift; sourceTree = "<group>"; };
+		250E8D022290A53E002C7146 /* VacationSpotDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationSpotDetailViewModel.swift; sourceTree = "<group>"; };
+		250E8D042290A581002C7146 /* VacationSpotDetailItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationSpotDetailItemViewModel.swift; sourceTree = "<group>"; };
+		250E8D062290AF56002C7146 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		32FABB0E22147A8D6C0137E9 /* Pods-NetworkPlatformTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkPlatformTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkPlatformTests/Pods-NetworkPlatformTests.release.xcconfig"; sourceTree = "<group>"; };
 		34F1EBE7C466AB9AA8EC400D /* Pods-NetworkPlatformTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkPlatformTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkPlatformTests/Pods-NetworkPlatformTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45E80A8465A10E2BE41D955F /* Pods-QuickSeriesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeriesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-QuickSeriesTestTests/Pods-QuickSeriesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -688,6 +698,7 @@
 				250E8CA1228F0E34002C7146 /* ErrorTracker.swift */,
 				250E8CE0228F568D002C7146 /* UIViewX.swift */,
 				250E8CE8228F59F3002C7146 /* UIImageViewX.swift */,
+				250E8D062290AF56002C7146 /* WKWebViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -764,6 +775,7 @@
 		250E8CE2228F57DA002C7146 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				250E8D012290962C002C7146 /* VM */,
 				250E8CEA228F6885002C7146 /* Cell */,
 				250E8CE4228F57FE002C7146 /* DetailViewController.swift */,
 				250E8CE5228F57FE002C7146 /* DetailViewController.xib */,
@@ -784,6 +796,17 @@
 				250E8CF8228F68FE002C7146 /* SocialMediaCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		250E8D012290962C002C7146 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				250E8CFB22905510002C7146 /* RestaurantDetailViewModel.swift */,
+				250E8CFF22907E90002C7146 /* RestaurantDetailItemViewModel.swift */,
+				250E8D022290A53E002C7146 /* VacationSpotDetailViewModel.swift */,
+				250E8D042290A581002C7146 /* VacationSpotDetailItemViewModel.swift */,
+			);
+			path = VM;
 			sourceTree = "<group>";
 		};
 		3563E59DB016433504984A8C /* Pods */ = {
@@ -1311,10 +1334,13 @@
 				250E8C75228EF4A9002C7146 /* UIColorExtension.swift in Sources */,
 				250E8CE1228F568D002C7146 /* UIViewX.swift in Sources */,
 				250E8CE9228F59F3002C7146 /* UIImageViewX.swift in Sources */,
+				250E8D032290A53E002C7146 /* VacationSpotDetailViewModel.swift in Sources */,
 				250E8BD2228EC2A6002C7146 /* AppDelegate.swift in Sources */,
+				250E8D0022907E90002C7146 /* RestaurantDetailItemViewModel.swift in Sources */,
 				250E8CA4228F0EC8002C7146 /* CategoryItemViewModel.swift in Sources */,
 				250E8C78228EF53A002C7146 /* NamedColors.swift in Sources */,
 				250E8C9F228F0D5B002C7146 /* ActivityIndicator.swift in Sources */,
+				250E8CFC22905510002C7146 /* RestaurantDetailViewModel.swift in Sources */,
 				250E8CCF228F2CCE002C7146 /* VacationSpotsItemViewModel.swift in Sources */,
 				250E8CC4228F2C60002C7146 /* RestaurantCell.swift in Sources */,
 				250E8CA2228F0E34002C7146 /* ErrorTracker.swift in Sources */,
@@ -1328,6 +1354,8 @@
 				250E8C0D228ECA94002C7146 /* UIApplicationExtensions.swift in Sources */,
 				250E8C56228ECBAC002C7146 /* CategoriesViewModel.swift in Sources */,
 				250E8C0A228EC9C2002C7146 /* ViewModelType.swift in Sources */,
+				250E8D052290A582002C7146 /* VacationSpotDetailItemViewModel.swift in Sources */,
+				250E8D072290AF56002C7146 /* WKWebViewController.swift in Sources */,
 				250E8CDF228F4074002C7146 /* StringExtensions.swift in Sources */,
 				250E8CB7228F2B02002C7146 /* RestaurantsViewModel.swift in Sources */,
 				250E8CB4228F2A62002C7146 /* VacationSpotsViewController.swift in Sources */,

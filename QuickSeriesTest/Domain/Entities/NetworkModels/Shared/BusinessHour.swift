@@ -16,6 +16,17 @@ public struct BusinessWeek: Codable {
   public let wednesday: BusinessHour?
   public let thursday: BusinessHour?
   public let friday: BusinessHour?
+  
+  public init() {
+    let closed = "CLOSED"
+    self.saturday = BusinessHour(from: closed, to: closed)
+    self.sunday = BusinessHour(from: closed, to: closed)
+    self.monday = BusinessHour(from: closed, to: closed)
+    self.tuesday = BusinessHour(from: closed, to: closed)
+    self.wednesday = BusinessHour(from: closed, to: closed)
+    self.thursday = BusinessHour(from: closed, to: closed)
+    self.friday = BusinessHour(from: closed, to: closed)
+  }
 }
 public struct BusinessHour: Codable {
   public let from: String

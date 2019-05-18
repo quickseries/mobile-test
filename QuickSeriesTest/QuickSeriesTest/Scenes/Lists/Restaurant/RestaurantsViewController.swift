@@ -12,10 +12,9 @@ import RxCocoa
 
 class RestaurantsViewController: UIViewController {
   @IBOutlet weak var restaurantsTableView: UITableView!
-  var seachBarButton: UIBarButtonItem?
-  var sortBarButton: UIBarButtonItem?
+  var sortBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_sort_atoz"), style: .plain, target: nil, action: nil)
+  var seachBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: nil, action: nil)
   
-  var isAtoZ = BehaviorRelay<Bool>(value: true)
   var viewModel: RestaurantsViewModel!
   private let disposeBag = DisposeBag()
   
@@ -29,10 +28,6 @@ class RestaurantsViewController: UIViewController {
   
   // MARK: - Functions
   private func setupUI() {
-    let sortBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_sort_atoz"), style: .plain, target: self, action: #selector(handleSortUI))
-    self.sortBarButton = sortBarButton
-    let seachBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_search"), style: .plain, target: self, action: nil)
-    self.seachBarButton = seachBarButton
     navigationItem.title = NavigationTitles.restaurants.rawValue
     navigationItem.rightBarButtonItems = [sortBarButton, seachBarButton]
   }
@@ -49,21 +44,25 @@ class RestaurantsViewController: UIViewController {
   
   private func bindViewModel() {
     assert(viewModel != nil)
-    guard let sortButton = sortBarButton else { return }
     
-    isAtoZ.subscribe(onNext: { (value) in
-      self.sortBarButton?.image = value ? #imageLiteral(resourceName: "ic_sort_atoz") : #imageLiteral(resourceName: "ic_sort_ztoa")
-    }).disposed(by: disposeBag)
-    
-    let input = RestaurantsViewModel.Input(selection: restaurantsTableView.rx.itemSelected.asDriver(), sortButtonTrigger: sortButton.rx.tap.asDriver(), isAtoZ: isAtoZ)
+    let input = RestaurantsViewModel.Input(selection: restaurantsTableView.rx.itemSelected.asDriver(), sortButtonTrigger: sortBarButton.rx.tap.asDriver())
     let output = viewModel.transform(input: input)
     
     // Bind categories to UITableView
-    output.restaurants.drive(restaurantsTableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: RestaurantCell.self)) { tv, viewModel, cell in
-      cell.bind(viewModel)
-    }.disposed(by: disposeBag)
+    output.restaurants
+      .drive(restaurantsTableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: RestaurantCell.self)) { tv, viewModel, cell in
+        cell.bind(viewModel)
+      }
+      .disposed(by: disposeBag)
     
     output.selectedRestaurant
+      .drive()
+      .disposed(by: disposeBag)
+    output.response.drive().disposed(by: disposeBag)
+    output.isAtoZ
+      .do(onNext: { [unowned self] (value) in
+        self.sortBarButton.image = value ? #imageLiteral(resourceName: "ic_sort_atoz") : #imageLiteral(resourceName: "ic_sort_ztoa")
+      })
       .drive()
       .disposed(by: disposeBag)
   }
@@ -71,8 +70,5 @@ class RestaurantsViewController: UIViewController {
     if #available(iOS 10.0, *) {
       restaurantsTableView.refreshControl!.endRefreshing()
     }
-  }
-  @objc private func handleSortUI() {
-    isAtoZ.accept(!isAtoZ.value)
   }
 }

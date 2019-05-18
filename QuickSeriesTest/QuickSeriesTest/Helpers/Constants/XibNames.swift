@@ -20,4 +20,10 @@ public enum XibNames: String {
   case restaurants = "RestaurantsViewController"
   case restaurantCell = "RestaurantCell"
 
+  case detail = "DetailViewController"
+  case addressCell = "AddressCell"
+  case contactInfoCell = "ContactInfoCell"
+  case socialMediaCell = "SocialMediaCell"
+  case businessHourCell = "BusinessHourCell"
+
 }
