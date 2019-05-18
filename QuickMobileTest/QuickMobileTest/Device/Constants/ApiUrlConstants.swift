@@ -16,4 +16,18 @@ struct ApiUrlConstants {
         static let url = baseUrl + categoryListEndPoint
     }
     
+    struct ResourceList {
+        private static let restaurantListEndPoint = "/restaurants.json"
+        private static let vacationSpotListEndPoint = "/vacation-spot.json"
+        
+        static func url(for type: CategoryType) -> String {
+            switch type {
+            case .restaurant:
+                return baseUrl + ApiUrlConstants.ResourceList.restaurantListEndPoint
+            case .vacationSports:
+                return baseUrl + ApiUrlConstants.ResourceList.vacationSpotListEndPoint
+            }
+        }
+    }
+    
 }

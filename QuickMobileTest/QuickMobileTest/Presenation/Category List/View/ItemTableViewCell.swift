@@ -26,4 +26,7 @@ class ItemTableViewCell: UITableViewCell {
         labelTitle.text = model.title
     }
     
+    func configureCell(with model: ResourceItem) {
+        labelTitle.text = model.title
+    }
 }

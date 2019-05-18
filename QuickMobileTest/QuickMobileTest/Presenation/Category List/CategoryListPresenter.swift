@@ -37,7 +37,7 @@ extension CategoryListPresenterImpl: CategoryListPresenter {
                 self?.categoryItems = items
                 self?.view?.reloadData()
             case .failure(let error):
-                Logger.log(message: "\(error.localizedDescription)", messageType: .debug)
+                Logger.log(message: "\(error.localizedDescription)", messageType: .error)
             }
         }
     }

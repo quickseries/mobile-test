@@ -22,7 +22,7 @@ class FetchCategoryListUseCaseImpl: FetchCategoryListUseCase {
     }
     
     func fetchCategoryList(completion: @escaping CompletionCategoryList) {
-        repository.fetchCategoryList { (result) in
+        repository.fetchCategoryList { result in
             switch result {
             case .success(let categories):
                 let items = CategoryListApiToUIMapper.convert(from: categories)

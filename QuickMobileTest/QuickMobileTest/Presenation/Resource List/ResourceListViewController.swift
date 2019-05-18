@@ -1,5 +1,5 @@
 //
-//  CategoryListViewController.swift
+//  ResourceListViewController.swift
 //  QuickMobileTest
 //
 //  Created by Balaji Galave on 5/18/19.
@@ -7,30 +7,30 @@
 
 import UIKit
 
-protocol CategoryListView: class {
+protocol ResourceListView: class {
     func reloadData()
 }
 
-class CategoryListViewController: UIViewController {
-    
+class ResourceListViewController: UIViewController {
+
     struct Constant {
-        static let title = "Category List"
+        static let title = "Resource List"
         static let cellId = "cellId"
     }
     
-    @IBOutlet private weak var categoryListTabbleView: UITableView! {
+    @IBOutlet weak var resourceListTableView: UITableView! {
         didSet {
-            categoryListTabbleView.delegate = self
-            categoryListTabbleView.dataSource = self
-            categoryListTabbleView.estimatedRowHeight = 77
-            categoryListTabbleView.rowHeight = UITableView.automaticDimension
-            categoryListTabbleView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.cellId)
+            resourceListTableView.delegate = self
+            resourceListTableView.dataSource = self
+            resourceListTableView.estimatedRowHeight = 77
+            resourceListTableView.rowHeight = UITableView.automaticDimension
+            resourceListTableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.cellId)
         }
     }
     
-    private let configurator = CategoryListConfigurator()
-    var router: CategoryListRouter?
-    var presenter: CategoryListPresenter!
+    var configurator: ResourceListConfigurator!
+    var router: ResourceListRouter?
+    var presenter: ResourceListPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,14 +47,14 @@ class CategoryListViewController: UIViewController {
     
 }
 
-extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource {
+extension ResourceListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.countOfCategories ?? 0
+        return presenter.countOfResources
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let item = presenter.category(at: indexPath.row),
+        guard let item = presenter.resource(at: indexPath.row),
             let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellId, for: indexPath) as? ItemTableViewCell else { return UITableViewCell() }
         cell.accessoryType = .disclosureIndicator
         cell.configureCell(with: item)
@@ -62,19 +62,20 @@ extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let item = presenter.category(at: indexPath.row) {
-            router?.pushResourceListScreen(with: item)
+        if let item = presenter.resource(at: indexPath.row){
+            router?.pushResourceDetailScreen(with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
 
-extension CategoryListViewController: CategoryListView {
+extension ResourceListViewController: ResourceListView {
     
     func reloadData() {
         DispatchQueue.main.async {
-            self.categoryListTabbleView.reloadData()
+            self.resourceListTableView.reloadData()
         }
     }
+    
 }

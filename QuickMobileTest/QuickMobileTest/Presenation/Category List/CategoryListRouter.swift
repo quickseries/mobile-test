@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CategoryListRouter {
     func pushResourceListScreen(with item: CategoryItem)
@@ -20,7 +21,10 @@ class CategoryListRouterImpl: CategoryListRouter {
     }
     
     func pushResourceListScreen(with item: CategoryItem) {
-        
+        if let resourceListViewController = ViewUtility.getResourceListViewController() {
+            resourceListViewController.configurator = ResourceListConfigurator(categoryItem: item)
+            viewController?.navigationController?.pushViewController(resourceListViewController, animated: true)
+        }
     }
     
 }

@@ -41,6 +41,36 @@
             </objects>
             <point key="canvasLocation" x="815" y="-738"/>
         </scene>
+        <!--Resource List View Controller-->
+        <scene sceneID="Zka-kF-dBl">
+            <objects>
+                <viewController storyboardIdentifier="ResourceListViewController" id="YnI-Yu-VH4" customClass="ResourceListViewController" customModule="QuickMobileTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sVd-D8-prX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iHg-HT-RNl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iHg-HT-RNl" firstAttribute="top" secondItem="YSX-uC-NMc" secondAttribute="top" id="7G0-GC-rhH"/>
+                            <constraint firstItem="YSX-uC-NMc" firstAttribute="bottom" secondItem="iHg-HT-RNl" secondAttribute="bottom" id="kjm-2Z-H5c"/>
+                            <constraint firstItem="YSX-uC-NMc" firstAttribute="trailing" secondItem="iHg-HT-RNl" secondAttribute="trailing" id="nzD-6o-zUQ"/>
+                            <constraint firstItem="iHg-HT-RNl" firstAttribute="leading" secondItem="YSX-uC-NMc" secondAttribute="leading" id="yHx-4I-vJk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YSX-uC-NMc"/>
+                    </view>
+                    <connections>
+                        <outlet property="resourceListTableView" destination="iHg-HT-RNl" id="d1L-Ah-2kK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfV-Mb-bKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="-738"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="v6q-sI-sq6">
             <objects>
