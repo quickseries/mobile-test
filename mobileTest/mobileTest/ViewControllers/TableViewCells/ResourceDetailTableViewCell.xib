@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9g-7g-gzQ" userLabel="phoneNumberBtn">
-                                <rect key="frame" x="0.0" y="554" width="301" height="79"/>
+                                <rect key="frame" x="0.0" y="554" width="301" height="30"/>
                                 <color key="tintColor" red="0.32549019610000002" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="NA"/>
                                 <connections>
@@ -58,20 +58,20 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSy-2Q-fpo">
-                                <rect key="frame" x="0.0" y="638" width="301" height="1"/>
+                                <rect key="frame" x="0.0" y="589" width="301" height="1"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3Rk-bH-U47"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO0-KM-LEW" userLabel="EmailLabel">
-                                <rect key="frame" x="0.0" y="644" width="301" height="17"/>
+                                <rect key="frame" x="0.0" y="595" width="301" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.0" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kum-co-Pdt">
-                                <rect key="frame" x="0.0" y="666" width="301" height="30"/>
+                                <rect key="frame" x="0.0" y="617" width="301" height="30"/>
                                 <state key="normal" title="NA">
                                     <color key="titleColor" red="0.32549019610000002" green="0.33725490200000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -80,10 +80,32 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsq-rw-N01">
-                                <rect key="frame" x="0.0" y="701" width="301" height="1"/>
+                                <rect key="frame" x="0.0" y="652" width="301" height="1"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="iTl-Po-FQ4"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoV-d0-wHn" userLabel="Web link">
+                                <rect key="frame" x="0.0" y="658" width="301" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.0" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgD-SZ-khl">
+                                <rect key="frame" x="0.0" y="680" width="301" height="16"/>
+                                <state key="normal" title="NA">
+                                    <color key="titleColor" red="0.32549019610000002" green="0.33725490200000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="WeblinkBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0vU-U3-YVs"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-9Y-D2J">
+                                <rect key="frame" x="0.0" y="701" width="301" height="1"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="RAg-vZ-qwb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -103,6 +125,7 @@
                 <outlet property="imgView" destination="Rhc-i3-pdo" id="goa-BZ-Yaf"/>
                 <outlet property="phoneNumber" destination="L9g-7g-gzQ" id="zQf-sm-Y3p"/>
                 <outlet property="titleLabel" destination="urf-w4-slY" id="IGv-IA-Juu"/>
+                <outlet property="webLink" destination="hgD-SZ-khl" id="yL1-np-VPC"/>
             </connections>
             <point key="canvasLocation" x="26.399999999999999" y="372.41379310344831"/>
         </tableViewCell>

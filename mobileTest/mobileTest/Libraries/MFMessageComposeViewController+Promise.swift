@@ -29,6 +29,7 @@ extension UIViewController {
     let proxy = PMKMessageComposeViewControllerDelegate()
     proxy.retainCycle = proxy
     vc.messageComposeDelegate = proxy
+    
     present(vc, animated: animated, completion: completion)
     _ = proxy.promise.ensure {
       vc.dismiss(animated: animated, completion: nil)

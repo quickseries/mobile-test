@@ -9,14 +9,17 @@
 import UIKit
 import AlamofireImage
 import MessageUI.MFMailComposeViewController
+import WebBrowser
 
 protocol ResourceDetailTableViewCellDelegate {
   func didTapOnEmail(mailer: MFMailComposeViewController)
+  func didTapOnWebLink(web: WebBrowserViewController)
 }
 
 class ResourceDetailTableViewCell: UITableViewCell {
   var resource: ResourceModel?
   
+  @IBOutlet weak var webLink: UIButton!
   @IBOutlet weak var imgView: UIImageView!
   @IBOutlet weak var phoneNumber: UIButton!
   @IBOutlet weak var descriptionLabel: UILabel!
@@ -42,6 +45,7 @@ class ResourceDetailTableViewCell: UITableViewCell {
     self.descriptionLabel.attributedText = data.description?.htmlToAttributedString
     self.phoneNumber.setTitle(data.contactInfo?.phoneNumbers?.first ?? "NA", for: UIControl.State.normal)
     self.emailAddress.setTitle(data.contactInfo?.emailIds?.first ?? "NA", for: .normal)
+    self.webLink.setTitle(data.contactInfo?.websites?.first?.absoluteString ?? "NA", for: .normal)
     self.resource = data
   }
   
@@ -58,5 +62,13 @@ class ResourceDetailTableViewCell: UITableViewCell {
     mailer.setToRecipients([emailId])
     
     self.delegate?.didTapOnEmail(mailer: mailer)
+  }
+  
+  @IBAction func WeblinkBtnClicked(_ sender: Any) {
+    guard let url = resource?.contactInfo?.websites?.first else { return }
+    
+    let webBrowserViewController = WebBrowserViewController()
+    webBrowserViewController.loadURL(url)
+    self.delegate?.didTapOnWebLink(web: webBrowserViewController)
   }
 }
