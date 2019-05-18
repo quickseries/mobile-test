@@ -1,0 +1,36 @@
+workspace 'Quickseries'
+platform :ios, '12.2'
+use_frameworks!
+
+def networking_pods
+  pod 'Moya', '~> 13.0'
+end
+
+target 'Quickseries-iOS' do
+  project 'Quickseries-iOS/Quickseries-iOS.xcodeproj'
+  
+  pod 'Kingfisher', '~> 5.0'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod 'RxRelay', '~> 5'
+  networking_pods
+  
+  target 'Quickseries-iOSTests' do
+    inherit! :search_paths
+  end
+  target 'Quickseries-iOSUITests' do
+    inherit! :search_paths
+  end
+end
+
+target 'Quickseries-API' do
+  project 'Quickseries-API/Quickseries-API.xcodeproj'
+
+  networking_pods
+
+  target 'Quickseries-APITests' do
+    inherit! :search_paths
+  end
+end
+
+
