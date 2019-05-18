@@ -25,6 +25,10 @@
 		F1F0E5BE2290000400E4B677 /* FetchCategoryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5BD2290000400E4B677 /* FetchCategoryListRepository.swift */; };
 		F1F0E5C12290003400E4B677 /* FetchCategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5C02290003400E4B677 /* FetchCategoryListService.swift */; };
 		F1F0E5C4229000ED00E4B677 /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */; };
+		F1F0E5C8229005F100E4B677 /* CategoryListApiToUIMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5C7229005F100E4B677 /* CategoryListApiToUIMapper.swift */; };
+		F1F0E5CB2290070500E4B677 /* ApiUrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5CA2290070500E4B677 /* ApiUrlConstants.swift */; };
+		F1F0E5CF2290198D00E4B677 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5CD2290198D00E4B677 /* ItemTableViewCell.swift */; };
+		F1F0E5D02290198D00E4B677 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E5CE2290198D00E4B677 /* ItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		F1F0E5BD2290000400E4B677 /* FetchCategoryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListRepository.swift; sourceTree = "<group>"; };
 		F1F0E5C02290003400E4B677 /* FetchCategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListService.swift; sourceTree = "<group>"; };
 		F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
+		F1F0E5C7229005F100E4B677 /* CategoryListApiToUIMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListApiToUIMapper.swift; sourceTree = "<group>"; };
+		F1F0E5CA2290070500E4B677 /* ApiUrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlConstants.swift; sourceTree = "<group>"; };
+		F1F0E5CD2290198D00E4B677 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		F1F0E5CE2290198D00E4B677 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,9 +171,7 @@
 		F1F0E5A4228FF8B600E4B677 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				F1F0E5BF2290001700E4B677 /* Mapper */,
-				F1F0E5B7228FFDE800E4B677 /* Model */,
-				F1F0E5B6228FFDDF00E4B677 /* Usecase */,
+				F1F0E5C52290036700E4B677 /* Category List */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -181,6 +187,7 @@
 		F1F0E5A6228FF8C400E4B677 /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				F1F0E5C9229006EC00E4B677 /* Constants */,
 				F1F0E5B3228FFD9800E4B677 /* Utility */,
 			);
 			path = Device;
@@ -189,6 +196,7 @@
 		F1F0E5A7228FFA7500E4B677 /* Category List */ = {
 			isa = PBXGroup;
 			children = (
+				F1F0E5CC2290186500E4B677 /* View */,
 				F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */,
 				F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */,
 				F1F0E5AC228FFB5700E4B677 /* CategoryListRouter.swift */,
@@ -239,19 +247,47 @@
 			path = "Category List";
 			sourceTree = "<group>";
 		};
-		F1F0E5BF2290001700E4B677 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
 		F1F0E5C2229000DA00E4B677 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		F1F0E5C52290036700E4B677 /* Category List */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5C62290037B00E4B677 /* Mapper */,
+				F1F0E5B7228FFDE800E4B677 /* Model */,
+				F1F0E5B6228FFDDF00E4B677 /* Usecase */,
+			);
+			path = "Category List";
+			sourceTree = "<group>";
+		};
+		F1F0E5C62290037B00E4B677 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5C7229005F100E4B677 /* CategoryListApiToUIMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		F1F0E5C9229006EC00E4B677 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5CA2290070500E4B677 /* ApiUrlConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F1F0E5CC2290186500E4B677 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5CD2290198D00E4B677 /* ItemTableViewCell.swift */,
+				F1F0E5CE2290198D00E4B677 /* ItemTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F0E5D02290198D00E4B677 /* ItemTableViewCell.xib in Resources */,
 				F1F0E58E228FF58C00E4B677 /* LaunchScreen.storyboard in Resources */,
 				F1F0E58B228FF58C00E4B677 /* Assets.xcassets in Resources */,
 				F1F0E586228FF58B00E4B677 /* Main.storyboard in Resources */,
@@ -433,10 +470,13 @@
 				F1F0E5B2228FFCF900E4B677 /* BaseService.swift in Sources */,
 				F1F0E581228FF58B00E4B677 /* AppDelegate.swift in Sources */,
 				F1F0E5C12290003400E4B677 /* FetchCategoryListService.swift in Sources */,
+				F1F0E5CF2290198D00E4B677 /* ItemTableViewCell.swift in Sources */,
 				F1F0E5BC228FFF3400E4B677 /* CategoryItem.swift in Sources */,
 				F1F0E5B5228FFDAA00E4B677 /* Logger.swift in Sources */,
+				F1F0E5C8229005F100E4B677 /* CategoryListApiToUIMapper.swift in Sources */,
 				F1F0E5AD228FFB5700E4B677 /* CategoryListRouter.swift in Sources */,
 				F1F0E5BA228FFE4200E4B677 /* FetchCategoryListUseCase.swift in Sources */,
+				F1F0E5CB2290070500E4B677 /* ApiUrlConstants.swift in Sources */,
 				F1F0E5AB228FFB3400E4B677 /* CategoryListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

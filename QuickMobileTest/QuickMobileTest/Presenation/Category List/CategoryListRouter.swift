@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol CategoryListRouter {
+    func pushResourceListScreen(with item: CategoryItem)
+}
+
+class CategoryListRouterImpl: CategoryListRouter {
+    
+    private weak var viewController: CategoryListViewController?
+    
+    init(viewController: CategoryListViewController) {
+        self.viewController = viewController
+    }
+    
+    func pushResourceListScreen(with item: CategoryItem) {
+        
+    }
+    
+}
