@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069E3A741CB3FBA22C3B6910 /* Pods_QuickMobileTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A1E052BF40B2ADA02EAC9F /* Pods_QuickMobileTestTests.framework */; };
+		65E1DE56467260E694DDF6EC /* Pods_QuickMobileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D243400C3E89A926EAB73AC7 /* Pods_QuickMobileTest.framework */; };
 		F1F0E581228FF58B00E4B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E580228FF58B00E4B677 /* AppDelegate.swift */; };
-		F1F0E583228FF58B00E4B677 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E582228FF58B00E4B677 /* ViewController.swift */; };
 		F1F0E586228FF58B00E4B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E584228FF58B00E4B677 /* Main.storyboard */; };
-		F1F0E589228FF58B00E4B677 /* QuickMobileTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E587228FF58B00E4B677 /* QuickMobileTest.xcdatamodeld */; };
 		F1F0E58B228FF58C00E4B677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E58A228FF58C00E4B677 /* Assets.xcassets */; };
 		F1F0E58E228FF58C00E4B677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E58C228FF58C00E4B677 /* LaunchScreen.storyboard */; };
 		F1F0E599228FF58C00E4B677 /* QuickMobileTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E598228FF58C00E4B677 /* QuickMobileTestTests.swift */; };
+		F1F0E5A9228FFAAD00E4B677 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */; };
+		F1F0E5AB228FFB3400E4B677 /* CategoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */; };
+		F1F0E5AD228FFB5700E4B677 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5AC228FFB5700E4B677 /* CategoryListRouter.swift */; };
+		F1F0E5AF228FFB6900E4B677 /* CategoryListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5AE228FFB6900E4B677 /* CategoryListConfigurator.swift */; };
+		F1F0E5B2228FFCF900E4B677 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5B1228FFCF900E4B677 /* BaseService.swift */; };
+		F1F0E5B5228FFDAA00E4B677 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5B4228FFDAA00E4B677 /* Logger.swift */; };
+		F1F0E5BA228FFE4200E4B677 /* FetchCategoryListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5B9228FFE4200E4B677 /* FetchCategoryListUseCase.swift */; };
+		F1F0E5BC228FFF3400E4B677 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5BB228FFF3400E4B677 /* CategoryItem.swift */; };
+		F1F0E5BE2290000400E4B677 /* FetchCategoryListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5BD2290000400E4B677 /* FetchCategoryListRepository.swift */; };
+		F1F0E5C12290003400E4B677 /* FetchCategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5C02290003400E4B677 /* FetchCategoryListService.swift */; };
+		F1F0E5C4229000ED00E4B677 /* CategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +38,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AA247D0E2A47E20996AE488 /* Pods-QuickMobileTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickMobileTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickMobileTestTests/Pods-QuickMobileTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		6EACF0650026DA4E80F16743 /* Pods-QuickMobileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickMobileTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickMobileTest/Pods-QuickMobileTest.debug.xcconfig"; sourceTree = "<group>"; };
+		9E30F1DFC0954D706BCA938E /* Pods-QuickMobileTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickMobileTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickMobileTestTests/Pods-QuickMobileTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7A1E052BF40B2ADA02EAC9F /* Pods_QuickMobileTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickMobileTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D243400C3E89A926EAB73AC7 /* Pods_QuickMobileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickMobileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63B90ED7B2502F360E2F613 /* Pods-QuickMobileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickMobileTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickMobileTest/Pods-QuickMobileTest.release.xcconfig"; sourceTree = "<group>"; };
 		F1F0E57D228FF58B00E4B677 /* QuickMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F0E580228FF58B00E4B677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1F0E582228FF58B00E4B677 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1F0E585228FF58B00E4B677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F1F0E588228FF58B00E4B677 /* QuickMobileTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuickMobileTest.xcdatamodel; sourceTree = "<group>"; };
 		F1F0E58A228FF58C00E4B677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1F0E58D228FF58C00E4B677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1F0E58F228FF58C00E4B677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1F0E594228FF58C00E4B677 /* QuickMobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickMobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F0E598228FF58C00E4B677 /* QuickMobileTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMobileTestTests.swift; sourceTree = "<group>"; };
 		F1F0E59A228FF58C00E4B677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListPresenter.swift; sourceTree = "<group>"; };
+		F1F0E5AC228FFB5700E4B677 /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
+		F1F0E5AE228FFB6900E4B677 /* CategoryListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListConfigurator.swift; sourceTree = "<group>"; };
+		F1F0E5B1228FFCF900E4B677 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		F1F0E5B4228FFDAA00E4B677 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F1F0E5B9228FFE4200E4B677 /* FetchCategoryListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListUseCase.swift; sourceTree = "<group>"; };
+		F1F0E5BB228FFF3400E4B677 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		F1F0E5BD2290000400E4B677 /* FetchCategoryListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListRepository.swift; sourceTree = "<group>"; };
+		F1F0E5C02290003400E4B677 /* FetchCategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListService.swift; sourceTree = "<group>"; };
+		F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E1DE56467260E694DDF6EC /* Pods_QuickMobileTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +79,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069E3A741CB3FBA22C3B6910 /* Pods_QuickMobileTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		637E627D75259D9885FADDEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D243400C3E89A926EAB73AC7 /* Pods_QuickMobileTest.framework */,
+				A7A1E052BF40B2ADA02EAC9F /* Pods_QuickMobileTestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76B51FD7743A737F4D4B4C19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EACF0650026DA4E80F16743 /* Pods-QuickMobileTest.debug.xcconfig */,
+				E63B90ED7B2502F360E2F613 /* Pods-QuickMobileTest.release.xcconfig */,
+				9E30F1DFC0954D706BCA938E /* Pods-QuickMobileTestTests.debug.xcconfig */,
+				0AA247D0E2A47E20996AE488 /* Pods-QuickMobileTestTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F1F0E574228FF58B00E4B677 = {
 			isa = PBXGroup;
 			children = (
 				F1F0E57F228FF58B00E4B677 /* QuickMobileTest */,
 				F1F0E597228FF58C00E4B677 /* QuickMobileTestTests */,
 				F1F0E57E228FF58B00E4B677 /* Products */,
+				76B51FD7743A737F4D4B4C19 /* Pods */,
+				637E627D75259D9885FADDEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +129,15 @@
 		F1F0E57F228FF58B00E4B677 /* QuickMobileTest */ = {
 			isa = PBXGroup;
 			children = (
+				F1F0E5A5228FF8BC00E4B677 /* Presenation */,
+				F1F0E5A4228FF8B600E4B677 /* Domain */,
+				F1F0E5A3228FF8AF00E4B677 /* Data */,
+				F1F0E5A6228FF8C400E4B677 /* Device */,
 				F1F0E580228FF58B00E4B677 /* AppDelegate.swift */,
-				F1F0E582228FF58B00E4B677 /* ViewController.swift */,
 				F1F0E584228FF58B00E4B677 /* Main.storyboard */,
 				F1F0E58A228FF58C00E4B677 /* Assets.xcassets */,
 				F1F0E58C228FF58C00E4B677 /* LaunchScreen.storyboard */,
 				F1F0E58F228FF58C00E4B677 /* Info.plist */,
-				F1F0E587228FF58B00E4B677 /* QuickMobileTest.xcdatamodeld */,
 			);
 			path = QuickMobileTest;
 			sourceTree = "<group>";
@@ -99,6 +151,109 @@
 			path = QuickMobileTestTests;
 			sourceTree = "<group>";
 		};
+		F1F0E5A3228FF8AF00E4B677 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5B8228FFDFD00E4B677 /* Category List */,
+				F1F0E5B0228FFBD700E4B677 /* Common */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F1F0E5A4228FF8B600E4B677 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5BF2290001700E4B677 /* Mapper */,
+				F1F0E5B7228FFDE800E4B677 /* Model */,
+				F1F0E5B6228FFDDF00E4B677 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F1F0E5A5228FF8BC00E4B677 /* Presenation */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5A7228FFA7500E4B677 /* Category List */,
+			);
+			path = Presenation;
+			sourceTree = "<group>";
+		};
+		F1F0E5A6228FF8C400E4B677 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5B3228FFD9800E4B677 /* Utility */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		F1F0E5A7228FFA7500E4B677 /* Category List */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */,
+				F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */,
+				F1F0E5AC228FFB5700E4B677 /* CategoryListRouter.swift */,
+				F1F0E5AE228FFB6900E4B677 /* CategoryListConfigurator.swift */,
+			);
+			path = "Category List";
+			sourceTree = "<group>";
+		};
+		F1F0E5B0228FFBD700E4B677 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5B1228FFCF900E4B677 /* BaseService.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F1F0E5B3228FFD9800E4B677 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5B4228FFDAA00E4B677 /* Logger.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F1F0E5B6228FFDDF00E4B677 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5B9228FFE4200E4B677 /* FetchCategoryListUseCase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		F1F0E5B7228FFDE800E4B677 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5BB228FFF3400E4B677 /* CategoryItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1F0E5B8228FFDFD00E4B677 /* Category List */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5C2229000DA00E4B677 /* Entity */,
+				F1F0E5BD2290000400E4B677 /* FetchCategoryListRepository.swift */,
+				F1F0E5C02290003400E4B677 /* FetchCategoryListService.swift */,
+			);
+			path = "Category List";
+			sourceTree = "<group>";
+		};
+		F1F0E5BF2290001700E4B677 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		F1F0E5C2229000DA00E4B677 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E5C3229000ED00E4B677 /* CategoryResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1F0E59D228FF58C00E4B677 /* Build configuration list for PBXNativeTarget "QuickMobileTest" */;
 			buildPhases = (
+				A65CB6E01F2815EEFC4356F8 /* [CP] Check Pods Manifest.lock */,
 				F1F0E579228FF58B00E4B677 /* Sources */,
 				F1F0E57A228FF58B00E4B677 /* Frameworks */,
 				F1F0E57B228FF58B00E4B677 /* Resources */,
+				B3C48677D7E28CF1E0057279 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1F0E5A0228FF58C00E4B677 /* Build configuration list for PBXNativeTarget "QuickMobileTestTests" */;
 			buildPhases = (
+				2DBF6325206C3FF896B87B22 /* [CP] Check Pods Manifest.lock */,
 				F1F0E590228FF58C00E4B677 /* Sources */,
 				F1F0E591228FF58C00E4B677 /* Frameworks */,
 				F1F0E592228FF58C00E4B677 /* Resources */,
@@ -194,14 +352,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2DBF6325206C3FF896B87B22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickMobileTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65CB6E01F2815EEFC4356F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickMobileTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3C48677D7E28CF1E0057279 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuickMobileTest/Pods-QuickMobileTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickMobileTest/Pods-QuickMobileTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1F0E579228FF58B00E4B677 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F0E583228FF58B00E4B677 /* ViewController.swift in Sources */,
+				F1F0E5A9228FFAAD00E4B677 /* CategoryListViewController.swift in Sources */,
+				F1F0E5AF228FFB6900E4B677 /* CategoryListConfigurator.swift in Sources */,
+				F1F0E5C4229000ED00E4B677 /* CategoryResponse.swift in Sources */,
+				F1F0E5BE2290000400E4B677 /* FetchCategoryListRepository.swift in Sources */,
+				F1F0E5B2228FFCF900E4B677 /* BaseService.swift in Sources */,
 				F1F0E581228FF58B00E4B677 /* AppDelegate.swift in Sources */,
-				F1F0E589228FF58B00E4B677 /* QuickMobileTest.xcdatamodeld in Sources */,
+				F1F0E5C12290003400E4B677 /* FetchCategoryListService.swift in Sources */,
+				F1F0E5BC228FFF3400E4B677 /* CategoryItem.swift in Sources */,
+				F1F0E5B5228FFDAA00E4B677 /* Logger.swift in Sources */,
+				F1F0E5AD228FFB5700E4B677 /* CategoryListRouter.swift in Sources */,
+				F1F0E5BA228FFE4200E4B677 /* FetchCategoryListUseCase.swift in Sources */,
+				F1F0E5AB228FFB3400E4B677 /* CategoryListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +597,7 @@
 		};
 		F1F0E59E228FF58C00E4B677 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EACF0650026DA4E80F16743 /* Pods-QuickMobileTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +616,7 @@
 		};
 		F1F0E59F228FF58C00E4B677 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63B90ED7B2502F360E2F613 /* Pods-QuickMobileTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +635,7 @@
 		};
 		F1F0E5A1228FF58C00E4B677 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E30F1DFC0954D706BCA938E /* Pods-QuickMobileTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +657,7 @@
 		};
 		F1F0E5A2228FF58C00E4B677 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AA247D0E2A47E20996AE488 /* Pods-QuickMobileTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,19 +708,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F1F0E587228FF58B00E4B677 /* QuickMobileTest.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F1F0E588228FF58B00E4B677 /* QuickMobileTest.xcdatamodel */,
-			);
-			currentVersion = F1F0E588228FF58B00E4B677 /* QuickMobileTest.xcdatamodel */;
-			path = QuickMobileTest.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F1F0E575228FF58B00E4B677 /* Project object */;
 }
