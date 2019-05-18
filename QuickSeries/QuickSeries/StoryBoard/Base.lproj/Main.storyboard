@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quick.S-->
+        <!--Categories-->
         <scene sceneID="7vi-kB-cwF">
             <objects>
                 <tableViewController id="pna-Z5-eJI" customClass="QuickCategoryTableView" customModule="QuickSeries" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="pna-Z5-eJI" id="DQg-xz-AJC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Quick.S" id="NUa-lq-9mS">
+                    <navigationItem key="navigationItem" title="Categories" id="NUa-lq-9mS">
                         <barButtonItem key="backBarButtonItem" title="  " id="eUF-53-b6a"/>
                     </navigationItem>
                 </tableViewController>
@@ -201,6 +201,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                             <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">

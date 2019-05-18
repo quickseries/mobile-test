@@ -31,7 +31,7 @@ class QuickCategoryItemsCVController: UICollectionViewController {
         
         
         
-        self.title = categoryViewModel.category.title ?? ""
+        self.title = "Help me "
         
         self.categoryItemsviewModel = CategoryItemViewModels(queryParams: categoryViewModel.category.eid ?? "")
         

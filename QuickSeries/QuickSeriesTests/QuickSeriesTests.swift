@@ -9,6 +9,7 @@ import XCTest
 @testable import QuickSeries
 
 class QuickSeriesTests: XCTestCase {
+    private var categoriesviewModel : CategoriesViewModel!
 private let dataLoader = QuickOperationManager()
      let jsonDecoder = JSONDecoder()
       var totalCount = 0
@@ -30,17 +31,8 @@ private let dataLoader = QuickOperationManager()
     
     func testCategoriesViewModel()  {
         
-        dataLoader.loadData(fileName: JsonFiles.category) { [unowned self] data in
-            
-            
-            mainThread {
-                
-                
-            }
-            
-            
-            
-        }
+      self.categoriesviewModel = CategoriesViewModel(key: "")
+       
     }
     func testHasworkingDays(){
         
