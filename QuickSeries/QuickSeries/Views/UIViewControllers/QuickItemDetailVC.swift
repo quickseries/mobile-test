@@ -370,6 +370,7 @@ extension QuickItemDetailVC {
       let view = LabelRow () {
             $0.title = key
             $0.value = value
+            $0.tag = UUID.init().uuidString
             }
             .onCellSelection { cell, row in
                 //  row.title = (row.title ?? "") + " 🇺🇾 "
@@ -382,7 +383,7 @@ extension QuickItemDetailVC {
     
     let viewRow = ViewRow<SocialMediaViewFile>() { (row) in
         
-        
+        row.tag = UUID.init().uuidString
         }
         .cellSetup { (cell, row) in
             //  Construct the view
@@ -441,7 +442,7 @@ extension QuickItemDetailVC {
         
         let viewRow = ViewRow<ContactViewCellFile>(value.0) { (row) in
             
-            
+            row.tag = UUID.init().uuidString
             }
             .cellSetup { (cell, row) in
                 //  Construct the view
@@ -517,8 +518,8 @@ extension QuickItemDetailVC {
     }
     func LongContactViewRow(address: Addresses)-> ViewRow<LongAddressViewFile> {
         
-        let viewRow = ViewRow<LongAddressViewFile>("") { (row) in
-            
+        let viewRow = ViewRow<LongAddressViewFile>() { (row) in
+             row.tag = UUID.init().uuidString
             
             }
             .cellSetup { (cell, row) in
@@ -553,6 +554,7 @@ extension QuickItemDetailVC {
         
         let viewRow = TextAreaRow() {
             $0.value = value
+            $0.tag = UUID.init().uuidString
             //$0.disabled = true
             $0.textAreaMode = .readOnly
             $0.cellUpdate { cell, row in
