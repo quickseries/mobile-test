@@ -1,21 +1,21 @@
 //
-//  ListRestaurantsViewController.swift
+//  CategoriesTableViewController.swift
 //  Quickseries-iOS
 //
-//  Created by Thiago Magalhaes on 2019-05-18.
+//  Created by Thiago Magalhaes on 2019-05-17.
 //  Copyright © 2019 Thiago Magalhaes. All rights reserved.
 //
 
 import UIKit
 import RxSwift
 
-class ListRestaurantsViewController: UIViewController, ListResourcesViewController {
-    
-    typealias ViewModel = ListRestaurantsViewModel
+class ListCategoriesViewController: UIViewController, ListResourcesViewController {
+
+    typealias ViewModel = ListCategoriesViewModel
     
     // MARK: Fields
     
-    let viewModel = ListRestaurantsViewModel()
+    let viewModel = ListCategoriesViewModel()
     let bag = DisposeBag()
     
     // MARK: Views

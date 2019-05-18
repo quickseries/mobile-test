@@ -10,28 +10,31 @@ import Foundation
 import RxRelay
 import Quickseries_API
 
-final class ListCategoriesViewModel {
-
-    let categories = BehaviorRelay<[CategoryCellViewModel]>(value: [])
-    let selectedCategory = BehaviorRelay<CategoryType?>(value: nil)
-    let state = BehaviorRelay<ListViewState>(value: .loading)
+final class ListCategoriesViewModel : ListResourcesViewModel {
     
-    func requestCategories() {
-        state.accept(.loading)
+    typealias Entity = Quickseries_API.Category
+    typealias EntityViewModel = ResourceCellViewModel
+    
+    var resourceEntities = [Quickseries_API.Category]()
+    let resources = BehaviorRelay<[ResourceCellViewModel]>(value: [])
+    let selectedResource = BehaviorRelay<ResourceCellViewModel?>(value: nil)
+    let state = BehaviorRelay<ListViewState>(value: .loading)
+}
+
+extension ListResourcesViewModel where Self : AnyObject, Entity == Quickseries_API.Category, EntityCellViewModel == ResourceCellViewModel {
+    func requestResources() {
         QuickseriesApiClient.shared.getCategories { [weak self] outcome in
             switch outcome {
             case .success(let result):
-                self?.categories.accept(result.map({CategoryCellViewModel(title: $0.title, type: $0.type)}))
+                self?.resourceEntities = result
+                self?.resources.accept(result.map({ResourceCellViewModel(id: $0.id, title: $0.title, type: $0.type)}))
                 self?.state.accept(.displayingData)
             case .failure(let error, let reason):
                 print(error)
-                self?.categories.accept([])
+                self?.resourceEntities = []
+                self?.resources.accept([])
                 self?.state.accept(.error(errorMessage: reason))
             }
         }
-    }
-    
-    func onCategorySelected(category: CategoryCellViewModel) {
-        selectedCategory.accept(category.type)
     }
 }

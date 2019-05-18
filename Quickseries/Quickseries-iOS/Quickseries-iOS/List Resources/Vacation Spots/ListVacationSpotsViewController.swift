@@ -15,8 +15,8 @@ class ListVacationSpotsViewController: UIViewController, ListResourcesViewContro
     
     // MARK: Fields
     
-    var viewModel = ListVacationSpotsViewModel()
-    var bag = DisposeBag()
+    let viewModel = ListVacationSpotsViewModel()
+    let bag = DisposeBag()
     
     // MARK: Views
     

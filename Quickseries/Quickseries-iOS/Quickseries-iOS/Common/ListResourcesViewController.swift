@@ -8,8 +8,9 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-protocol ListResourcesViewController: UIViewController {
+protocol ListResourcesViewController : UIViewController {
     
     associatedtype ViewModel : ListResourcesViewModel
     
