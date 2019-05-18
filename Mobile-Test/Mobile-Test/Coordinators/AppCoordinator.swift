@@ -18,6 +18,12 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        
+        let viewModel = CategoriesViewModel(coordinatorOutputs: self)
+        self.navigationController?.pushViewController(CategoriesViewController.instantiate(viewModel: viewModel), animated: false)
     }
+}
+
+// MARK: - CategoriesViewModelCoordinatorOutputs
+extension AppCoordinator: CategoriesViewModelCoordinatorOutputs {
+    
 }

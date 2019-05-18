@@ -29,6 +29,9 @@
 		7B68F0322290481100C7C566 /* VacationSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68F0312290481100C7C566 /* VacationSpot.swift */; };
 		7B68F03422904A0300C7C566 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68F03322904A0300C7C566 /* Datasource.swift */; };
 		7B68F03622904A6900C7C566 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68F03522904A6900C7C566 /* Restaurant.swift */; };
+		7B68F03822904CA400C7C566 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68F03722904CA400C7C566 /* CategoriesViewController.swift */; };
+		7B68F03A22904CD400C7C566 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B68F03922904CD400C7C566 /* Categories.storyboard */; };
+		7B68F03C22904EC000C7C566 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68F03B22904EC000C7C566 /* CategoriesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		7B68F0312290481100C7C566 /* VacationSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationSpot.swift; sourceTree = "<group>"; };
 		7B68F03322904A0300C7C566 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		7B68F03522904A6900C7C566 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		7B68F03722904CA400C7C566 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		7B68F03922904CD400C7C566 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
+		7B68F03B22904EC000C7C566 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 		7B68F0122290428800C7C566 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7B68F03B22904EC000C7C566 /* CategoriesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -156,6 +163,8 @@
 		7B68F0132290428F00C7C566 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B68F03722904CA400C7C566 /* CategoriesViewController.swift */,
+				7B68F03922904CD400C7C566 /* Categories.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 				7B68F0262290468A00C7C566 /* categories.json in Resources */,
 				7B68F0272290468A00C7C566 /* vacation-spot.json in Resources */,
 				7B68EFF92290418E00C7C566 /* Assets.xcassets in Resources */,
+				7B68F03A22904CD400C7C566 /* Categories.storyboard in Resources */,
 				7B68F0282290468A00C7C566 /* restaurants.json in Resources */,
 				7B68EFF42290418D00C7C566 /* Main.storyboard in Resources */,
 			);
@@ -323,10 +333,12 @@
 				7B68F03422904A0300C7C566 /* Datasource.swift in Sources */,
 				7B68F01A2290430F00C7C566 /* NibLoadable.swift in Sources */,
 				7B68F02A229046A000C7C566 /* CategoriesDatasource.swift in Sources */,
+				7B68F03C22904EC000C7C566 /* CategoriesViewModel.swift in Sources */,
 				7B68F0202290443F00C7C566 /* AppCoordinator.swift in Sources */,
 				7B68F01C2290432800C7C566 /* StoryboardBased.swift in Sources */,
 				7B68EFF72290418D00C7C566 /* Mobile_Test.xcdatamodeld in Sources */,
 				7B68F01E229043B000C7C566 /* Coordinator.swift in Sources */,
+				7B68F03822904CA400C7C566 /* CategoriesViewController.swift in Sources */,
 				7B68F030229047FA00C7C566 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
