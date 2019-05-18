@@ -39,6 +39,10 @@ class ResourceDetailTableViewCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
+  override func prepareForReuse() {
+    self.imgView.image = UIImage(named: "imagePlaceholder")
+  }
+  
   func setUp(data: ResourceModel) {
     data.image.map { self.imgView.af_setImage(withURL: $0) }
     self.titleLabel.text = data.title
