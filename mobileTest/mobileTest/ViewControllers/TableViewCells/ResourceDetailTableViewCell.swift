@@ -93,7 +93,7 @@ class ResourceDetailTableViewCell: UITableViewCell {
     if canOpen {
       UIApplication.shared.open(googleMapUrl)
     } else {
-      ErrorHandler.showErrorAlert(withMessage: "Cannot open google map")
+      ErrorHandler.showErrorAlert(withMessage: "Install google maps")
     }
   }
 }
