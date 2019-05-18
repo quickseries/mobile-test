@@ -43,6 +43,7 @@ final class ListCategoriesViewController: UIViewController, ListResourcesViewCon
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: Actions

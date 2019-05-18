@@ -45,6 +45,7 @@ class FieldView : UIView {
     
     lazy var fieldLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.textColor = UIApplication.shared.keyWindow?.tintColor
         label.text = fieldLabelValue
         return label
     }()

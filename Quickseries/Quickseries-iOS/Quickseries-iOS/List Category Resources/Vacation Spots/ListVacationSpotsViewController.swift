@@ -47,6 +47,7 @@ final class ListVacationSpotsViewController: UIViewController, ListResourcesView
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: Actions

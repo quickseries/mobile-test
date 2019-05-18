@@ -15,8 +15,11 @@ class ResourceDetailViewModel {
     private let contactInfo: ContactInfo?
     private let addresses: [Address]
     
-    let addressViewModels: BehaviorRelay<[AddressViewModel]>
-    let contactInfoViewModel: BehaviorRelay<ContactInformationViewModel?>
+    let addressViewModels: [AddressViewModel]
+    let contactInfoViewModel: ContactInformationViewModel?
+    let image: String
+    let title: String
+    let categoryDescription: String
     
     let selectedEmail = BehaviorRelay<String?>(value: nil)
     let selectedWebsite = BehaviorRelay<String?>(value: nil)
@@ -29,19 +32,27 @@ class ResourceDetailViewModel {
         if let addresses = resource.addresses {
             self.addresses = addresses
             let viewModels = addresses.map { a -> AddressViewModel in
-                return AddressViewModel(address: a.address, latitude: a.coordinates?.latitude, longitude: a.coordinates?.longitude)
+                let addressString = """
+                \(a.address)
+                \(a.city), \(a.state) \(a.zipCode)
+                \(a.country)
+                """
+                return AddressViewModel(address: addressString, latitude: a.coordinates?.latitude, longitude: a.coordinates?.longitude)
             }
-            addressViewModels = BehaviorRelay(value: viewModels)
+            addressViewModels = viewModels
         } else {
             addresses = []
-            addressViewModels = BehaviorRelay(value: [])
+            addressViewModels = []
         }
         self.contactInfo = resource.contactInfo
         let contactInfo = resource.contactInfo.map { c -> ContactInformationViewModel in
             return ContactInformationViewModel(website: c.website, email: c.email,
                                                faxNumber: c.faxNumber, tollFree: c.tollFree, phoneNumber: c.phoneNumber)
         }
-        contactInfoViewModel = BehaviorRelay(value: contactInfo)
+        self.contactInfoViewModel = contactInfo
+        self.image = resource.photo
+        self.title = resource.title
+        self.categoryDescription = resource.description
     }
 }
 
@@ -83,7 +94,6 @@ extension ResourceDetailViewModel : ContactInformationViewDelegate {
         }
     }
 }
-
 
 extension ResourceDetailViewModel : AddressesViewDelegate {
     

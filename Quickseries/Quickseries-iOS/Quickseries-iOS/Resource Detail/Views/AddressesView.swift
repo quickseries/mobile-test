@@ -37,6 +37,7 @@ class AddressesView: InformationView {
                  button.setImage(UIImage(named: "baseline_location_on_black_24pt"), for: .normal)
                 let view = AddressFieldView(buttons: [button])
                 view.fieldValue.text = address.address
+                view.fieldValue.numberOfLines = 3
                 return view
         }
         views.forEach({ containerStackView.addArrangedSubview($0) })

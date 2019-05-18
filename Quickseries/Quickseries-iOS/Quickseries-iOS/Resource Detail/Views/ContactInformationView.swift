@@ -55,7 +55,7 @@ class ContactInformationView: InformationView {
                 containerStackView.addArrangedSubview(view)
             }
             if let faxNumber = model.faxNumber {
-                let view = TelephoneFieldView(buttons: [])
+                let view = FaxFieldView(buttons: [])
                 view.fieldValue.text = faxNumber
                 containerStackView.addArrangedSubview(view)
             }

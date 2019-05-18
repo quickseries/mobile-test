@@ -47,6 +47,7 @@ final class ListRestaurantsViewController: UIViewController, ListResourcesViewCo
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: Actions
