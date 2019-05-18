@@ -11,30 +11,25 @@
 
 import UIKit
 
-protocol CategoriesBusinessLogic
-{
-  func doSomething(request: Categories.Something.Request)
+protocol FetchCategoriesBusinessLogic{
+    func fetchCategories(request: Category.FetchCategories.Request)
 }
 
-protocol CategoriesDataStore
-{
-  //var name: String { get set }
+protocol CategoryDataStore{
+    var categories: [Any]? { get }
 }
 
-class CategoriesInteractor: CategoriesBusinessLogic, CategoriesDataStore
-{
-  var presenter: CategoriesPresentationLogic?
-  var worker: CategoriesWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Categories.Something.Request)
-  {
-    worker = CategoriesWorker()
-    worker?.doSomeWork()
+class CategoriesInteractor: FetchCategoriesBusinessLogic, CategoryDataStore{
+    var categories: [Any]?
+    var presenter: CategoriesPresentationLogic?
+    var worker: CategoriesWorker?
     
-    let response = Categories.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    func fetchCategories(request: Category.FetchCategories.Request) {
+        worker = CategoriesWorker()
+        worker?.fetchCategories(id: request.id){ (categories) -> Void in
+            self.categories = categories
+            let response = Category.FetchCategories.Response(categories: categories)
+            self.presenter?.presentCategories(response: response)
+        }
+    }
 }
