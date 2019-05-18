@@ -11,20 +11,23 @@
 
 import UIKit
 
-protocol CategoriesPresentationLogic
-{
-  func presentSomething(response: Categories.Something.Response)
+protocol CategoriesPresentationLogic{
+    func presentCategories(response: Category.FetchCategories.Response)
 }
 
-class CategoriesPresenter: CategoriesPresentationLogic
-{
-  weak var viewController: CategoriesDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Categories.Something.Response)
-  {
-    let viewModel = Categories.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+class CategoriesPresenter: CategoriesPresentationLogic{
+    weak var viewController: CategoriesDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentCategories(response: Category.FetchCategories.Response){
+        var displayedCategories: [Any] = []
+        
+        for category in response.categories {
+            displayedCategories.append(category)
+        }
+        
+        let viewModel = Category.FetchCategories.ViewModel(displayedCategories: displayedCategories)
+        viewController?.displayFetchedCategories(viewModel: viewModel)
+    }
 }
