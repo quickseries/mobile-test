@@ -10,7 +10,7 @@ import UIKit
 class QuickCategoryItemsCVController: UICollectionViewController {
     
     
-     var selectedCell = QuickCategoryItemCVCell()
+    var selectedCell = QuickCategoryItemCVCell()
     let transition = TransitionAnimator()
     var categoryViewModel : CategoryViewModel!
     private var categoryItemsviewModel :CategoryItemViewModels!
@@ -93,6 +93,36 @@ class QuickCategoryItemsCVController: UICollectionViewController {
     
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///EXTENSIONS
+
 extension QuickCategoryItemsCVController : UICollectionViewDelegateFlowLayout {
     
     
@@ -118,10 +148,15 @@ extension QuickCategoryItemsCVController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          selectedCell = collectionView.cellForItem(at: indexPath) as! QuickCategoryItemCVCell
         let detailView = self.storyboard?.instantiateViewController(withIdentifier: "QuickItemDetailVC") as! QuickItemDetailVC
-       
-        detailView.transitioningDelegate = self
+        let navigationController = UINavigationController(rootViewController: detailView)
+        navigationController.transitioningDelegate = self
         
-        self.present(detailView, animated: true, completion: nil)
+        let itemDetails = self.categoryItemsviewModel.source(at: indexPath.row)
+        
+        detailView.itemDetails = itemDetails
+        
+        
+        self.present(navigationController, animated: true, completion: nil)
         
     }
 }
