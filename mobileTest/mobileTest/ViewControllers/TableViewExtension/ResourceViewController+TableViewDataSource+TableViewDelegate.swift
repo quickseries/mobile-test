@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI.MFMailComposeViewController
 
 extension ResourceViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,5 +31,11 @@ extension ResourceViewController: UITableViewDelegate, UITableViewDataSource {
     self.tableView.delegate = self
     self.tableView.register(ResourceDetailTableViewCell.self, bundle: Bundle.main)
     self.tableView.rowHeight = UITableView.automaticDimension;
+  }
+}
+
+extension ResourceViewController: ResourceDetailTableViewCellDelegate {
+  func didTapOnEmail(mailer: MFMailComposeViewController) {
+    self.promise(mailer, animated: true, completion: nil)
   }
 }

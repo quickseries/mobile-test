@@ -8,6 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import MessageUI.MFMailComposeViewController
+
+protocol ResourceDetailTableViewCellDelegate {
+  func didTapOnEmail(mailer: MFMailComposeViewController)
+}
 
 class ResourceDetailTableViewCell: UITableViewCell {
   var resource: ResourceModel?
@@ -16,6 +21,9 @@ class ResourceDetailTableViewCell: UITableViewCell {
   @IBOutlet weak var phoneNumber: UIButton!
   @IBOutlet weak var descriptionLabel: UILabel!
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var emailAddress: UIButton!
+  
+  var delegate: ResourceDetailTableViewCellDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -33,8 +41,22 @@ class ResourceDetailTableViewCell: UITableViewCell {
     self.titleLabel.text = data.title
     self.descriptionLabel.attributedText = data.description?.htmlToAttributedString
     self.phoneNumber.setTitle(data.contactInfo?.phoneNumbers?.first ?? "NA", for: UIControl.State.normal)
+    self.emailAddress.setTitle(data.contactInfo?.emailIds?.first ?? "NA", for: .normal)
+    self.resource = data
   }
   
   @IBAction func phoneNumberClicked(_ sender: Any) {
+    guard let number = resource?.contactInfo?.phoneNumbers?.first,
+      let numberUrl = URL(string: "tel://" + number) else { return }
+    UIApplication.shared.open(numberUrl)
+  }
+  
+  @IBAction func emailBtnClicked(_ sender: Any) {
+    guard let emailId = resource?.contactInfo?.emailIds?.first else { return }
+    
+    let mailer = MFMailComposeViewController()
+    mailer.setToRecipients([emailId])
+    
+    self.delegate?.didTapOnEmail(mailer: mailer)
   }
 }
