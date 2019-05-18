@@ -37,24 +37,16 @@ class CategoriesViewModel: NSObject {
         dataLoader.loadData(fileName: JsonFiles.category) { [unowned self] data in
             
             
-            main {
+            mainThread {
                 do {
-                    let response = try self.jsonDecoder.decode(CategoryResponse.self, from: data)
+                    let response = try self.jsonDecoder.decode(CategoryResponse.self, from: data as! Data)
                     
                self.categoryViewModels = response.compactMap({ (element) in
                         CategoryViewModel(object: element)
                     })
+                    }catch{
                     
-              /** for items in response {
-                     
-                     self.categoryListViewModel.append(CategoryViewModel(object: items))
-                     }
-                 **/
-                    
-                    
-                }catch{
-                    
-                    // self.categoryViewModels = []
+                   
                 }
             }
             
@@ -62,16 +54,15 @@ class CategoriesViewModel: NSObject {
             
         }
     }
-    
     func destroyObservers() {
-        self.token?.invalidate()
+    self.token?.invalidate()
     }
-    
     
     func source(at index:Int) -> CategoryViewModel {
-        return self.categoryViewModels[index]
+    return self.categoryViewModels[index]
     }
 
+    
 
 }
 
@@ -90,34 +81,3 @@ class CategoryViewModel:NSObject {
     
 }
 
-/*
- 
- class Source {
- 
- var id :String!
- var name :String!
- var description :String!
- 
- init?(dictionary :JSONDictionary) {
- 
- guard let id = dictionary["id"] as? String,
- let name = dictionary["name"] as? String,
- let description = dictionary["description"] as? String else {
- return nil
- }
- 
- self.id = id
- self.name = name
- self.description = description
- }
- 
- init(viewModel :SourceViewModel) {
- 
- self.id = viewModel.id
- self.name = viewModel.name
- self.description = viewModel.body
- }
- 
- }
-
- **/

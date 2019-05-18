@@ -22,9 +22,9 @@ public init() {
     
     // MARK Load AnyData
     
-    public  func loadData(fileName: String, completionHandler: @escaping (_ result: Data) ->Void) {
+    public  func loadData(fileName: String, completionHandler: @escaping (_ result: AnyObject) ->Void) {
         
-        let operation = LoadJsonOperation(fileName: fileName)
+        let operation = LoadDataOperation(fileName: fileName)
         operation.qualityOfService = .background
         operation.queuePriority = .veryHigh
         operation.completionHandler = completionHandler
@@ -33,5 +33,16 @@ public init() {
         
     }
     
+    
+    public  func loadImage(urlString: String, completionHandler: @escaping (_ result: AnyObject) ->Void) {
+        
+        let operation = LoadDataOperation(url: urlString, opType: true)
+        operation.qualityOfService = .background
+        operation.queuePriority = .veryHigh
+        operation.completionHandler = completionHandler
+        operation.name = urlString
+        queueManager.enqueue(operation)
+        
+    }
 
 }

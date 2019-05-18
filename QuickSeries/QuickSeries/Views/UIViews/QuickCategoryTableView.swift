@@ -16,13 +16,13 @@ class QuickCategoryTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateUI()
+        initUIValues()
 
     }
     
     
     
-    private func updateUI() {
+    private func initUIValues() {
         
       
         self.categoriesviewModel = CategoriesViewModel(key: "")
@@ -31,7 +31,7 @@ class QuickCategoryTableView: UITableViewController {
             self.updateDataSource()
         }
        
-        // setting up the bindings
+       
         
         
     }
@@ -51,5 +51,26 @@ class QuickCategoryTableView: UITableViewController {
         self.tableView.reloadData()
     }
 
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Segues.categoryItems {
+            performSegueForShowSourceDetails(segue: segue)
+            
+        }
+    }
+    
+    
+    private func performSegueForShowSourceDetails(segue :UIStoryboardSegue) {
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+            fatalError("indexPath not found")
+        }
+        
+        let categoryViewModel = self.categoriesviewModel.source(at: indexPath.row)
+        let detailView = segue.destination as! QuickCategoryItemsCVController
+        detailView.categoryViewModel = categoryViewModel
+    }
 }
+
+
+//Cannot assign value of type '[CategoryViewModel]' to type '[CategoryItemViewModel]?'

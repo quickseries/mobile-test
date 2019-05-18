@@ -8,5 +8,5 @@
 import Foundation
 
 typealias CategoryResponse = [Category]
-typealias RestaurantsResponse = [Restaurants]
-typealias VacationSpots = [VacationSpot]
+typealias CategoryItems = [CategoryItem]
+

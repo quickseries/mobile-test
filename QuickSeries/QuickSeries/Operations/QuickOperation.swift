@@ -14,7 +14,7 @@ class QuickOperation<T>: Operation {
     
     
     
-    typealias OnCompletionHandler = (_ result: Data) -> Void
+    typealias OnCompletionHandler = (_ result: AnyObject) -> Void
     var completionHandler: (OnCompletionHandler)?
     // MARK: - State
     private enum State: String {
@@ -72,7 +72,7 @@ class QuickOperation<T>: Operation {
         }
     }
     
-    func complete(result: Data) {
+    func complete(result: AnyObject) {
         finish()
         
         if !isCancelled {

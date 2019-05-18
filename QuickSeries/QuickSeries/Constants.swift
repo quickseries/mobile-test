@@ -8,9 +8,19 @@
 import Foundation
 struct Cells {
     static let categoryCell = "QuickCategoryTableViewCellID"
-    static let source = "SourceTableViewCell"
+    static let categoryItemsCell = "QuickCategoryItemCVCellID"
 }
 
+
+struct Segues {
+    static let categoryItems = "categoryItems"
+   
+}
+
+
+struct viewControllerIDS{
+    static let QuickItemDetailVC = "QuickItemDetailVC"
+}
 
 struct JsonFiles {
     static let category = "categories"
