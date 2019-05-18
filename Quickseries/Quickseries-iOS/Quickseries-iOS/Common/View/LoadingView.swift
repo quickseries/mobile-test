@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingView: UIView {
+final class LoadingView: UIView {
 
     override var isHidden: Bool {
         didSet {

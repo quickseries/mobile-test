@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ErrorView: UIView {
+final class ErrorView: UIView {
 
     override var isHidden: Bool {
         didSet {

@@ -10,7 +10,7 @@ import Foundation
 import RxRelay
 import Quickseries_API
 
-class ListVacationSpotsViewModel: ListResourcesViewModel, CanSortResources {
+final class ListVacationSpotsViewModel: ListResourcesViewModel, CanSortResources {
     
     typealias Entity = VacationSpot
     typealias EntityViewModel = CategoryResourceCellViewModel

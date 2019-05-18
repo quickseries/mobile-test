@@ -37,3 +37,9 @@ extension CanSortResources where Self : ListResourcesViewModel {
         resourceEntities = sortResources(resourceEntities)
     }
 }
+
+enum ResourceSortState {
+    case alphabetically
+    case reverseAlphabetically
+    case unsorted
+}

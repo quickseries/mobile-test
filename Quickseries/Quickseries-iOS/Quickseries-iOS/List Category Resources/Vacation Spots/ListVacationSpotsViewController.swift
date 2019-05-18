@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ListVacationSpotsViewController: UIViewController, ListResourcesViewController  {
+final class ListVacationSpotsViewController: UIViewController, ListResourcesViewController  {
     
     typealias ViewModel = ListVacationSpotsViewModel
     

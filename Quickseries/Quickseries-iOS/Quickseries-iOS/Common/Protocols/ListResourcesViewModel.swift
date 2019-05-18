@@ -28,3 +28,9 @@ extension ListResourcesViewModel {
         selectedResource.accept(resource)
     }
 }
+
+enum ListViewState {
+    case error(errorMessage: String)
+    case loading
+    case displayingData
+}

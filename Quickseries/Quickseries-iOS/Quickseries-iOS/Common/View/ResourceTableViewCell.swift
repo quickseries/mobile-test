@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResourceTableViewCell: UITableViewCell {
+final class ResourceTableViewCell: UITableViewCell {
     
     static let identifier = "ResourceTableViewCell"
     
