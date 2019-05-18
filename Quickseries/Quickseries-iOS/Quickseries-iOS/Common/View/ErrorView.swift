@@ -19,13 +19,4 @@ class ErrorView: UIView {
     lazy var messageLabel: UILabel = {
         return UILabel(frame: .zero)
     }()
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

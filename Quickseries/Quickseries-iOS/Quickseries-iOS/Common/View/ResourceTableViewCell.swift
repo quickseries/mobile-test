@@ -10,7 +10,7 @@ import UIKit
 
 class ResourceTableViewCell: UITableViewCell {
     
-    static let identifier = "cell"
+    static let identifier = "ResourceTableViewCell"
     
     var model: ResourceCellViewModel? {
         didSet {

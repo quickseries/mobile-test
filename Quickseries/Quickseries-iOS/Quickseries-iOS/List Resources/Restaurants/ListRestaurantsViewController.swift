@@ -13,8 +13,12 @@ class ListRestaurantsViewController: UIViewController, ListResourcesViewControll
     
     typealias ViewModel = ListRestaurantsViewModel
     
+    // MARK: Fields
+    
     var viewModel = ListRestaurantsViewModel()
     var bag = DisposeBag()
+    
+    // MARK: Views
     
     lazy var tableView: UITableView = {
         return UITableView()
@@ -28,14 +32,20 @@ class ListRestaurantsViewController: UIViewController, ListResourcesViewControll
         return ErrorView()
     }()
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBindings()
     }
     
+    // MARK: Actions
+    
     func onResourceSelection(resource: ResourceCellViewModel) {
         //TODO: Implement
     }
+    
+    // MARK: Private Methods
     
     private func setupConstraints() {
         //TODO: Implement

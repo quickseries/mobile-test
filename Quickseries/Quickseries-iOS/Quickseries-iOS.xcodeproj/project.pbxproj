@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		0BD4E51EE20F77D2A0A558E0 /* Pods_Quickseries_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597A07F1FFD156FF939602BD /* Pods_Quickseries_iOSTests.framework */; };
 		832E6E1FE3FA90F802F1B604 /* Pods_Quickseries_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42F8357725039BDCF21296F /* Pods_Quickseries_iOSUITests.framework */; };
-		AF347486228F981E004D957E /* ListCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF347485228F981E004D957E /* ListCategories.storyboard */; };
 		AF347488228F9A1B004D957E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347487228F9A1B004D957E /* CategoryTableViewCell.swift */; };
 		AF34748A228F9A73004D957E /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347489228F9A73004D957E /* CategoryCellViewModel.swift */; };
 		AF34748C228F9AEF004D957E /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748B228F9AEF004D957E /* CategoriesTableViewController.swift */; };
 		AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748D228F9CE2004D957E /* ListCategoriesViewModel.swift */; };
 		AF347490228FAFE7004D957E /* ListRestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34748F228FAFE7004D957E /* ListRestaurantsViewModel.swift */; };
-		AF347492228FB0F0004D957E /* RestaurantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347491228FB0F0004D957E /* RestaurantCellViewModel.swift */; };
-		AF347496228FB51B004D957E /* ListRestaurants.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF347495228FB51B004D957E /* ListRestaurants.storyboard */; };
+		AF347492228FB0F0004D957E /* ResourceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347491228FB0F0004D957E /* ResourceCellViewModel.swift */; };
 		AF347498228FB630004D957E /* ListResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347497228FB630004D957E /* ListResourcesViewModel.swift */; };
 		AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF347499228FB8FD004D957E /* ListVacationSpotsViewModel.swift */; };
 		AF3474A0228FBD9D004D957E /* ListRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34749F228FBD9D004D957E /* ListRestaurantsViewController.swift */; };
@@ -25,6 +23,7 @@
 		AF3474A6228FC2FE004D957E /* ListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474A5228FC2FE004D957E /* ListViewState.swift */; };
 		AF3474A8228FC372004D957E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474A7228FC372004D957E /* LoadingView.swift */; };
 		AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474A9228FC37A004D957E /* ErrorView.swift */; };
+		AF3474AD228FC97D004D957E /* ListVacationSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */; };
 		AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CC5228F677A00249BCC /* AppDelegate.swift */; };
 		AFA44CCD228F677B00249BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCC228F677B00249BCC /* Assets.xcassets */; };
 		AFA44CD0228F677B00249BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCE228F677B00249BCC /* LaunchScreen.storyboard */; };
@@ -57,14 +56,12 @@
 		6A38D89F782744898EEE0A95 /* Pods-Quickseries-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOS/Pods-Quickseries-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		73781488E9F7A6E4A93E48A8 /* Pods-Quickseries-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOS.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOS/Pods-Quickseries-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8D907C1AF28B7DAE5A0D7C76 /* Pods-Quickseries-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSUITests/Pods-Quickseries-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF347485228F981E004D957E /* ListCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCategories.storyboard; sourceTree = "<group>"; };
 		AF347487228F9A1B004D957E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		AF347489228F9A73004D957E /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		AF34748B228F9AEF004D957E /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		AF34748D228F9CE2004D957E /* ListCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesViewModel.swift; sourceTree = "<group>"; };
 		AF34748F228FAFE7004D957E /* ListRestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRestaurantsViewModel.swift; sourceTree = "<group>"; };
-		AF347491228FB0F0004D957E /* RestaurantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellViewModel.swift; sourceTree = "<group>"; };
-		AF347495228FB51B004D957E /* ListRestaurants.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListRestaurants.storyboard; sourceTree = "<group>"; };
+		AF347491228FB0F0004D957E /* ResourceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCellViewModel.swift; sourceTree = "<group>"; };
 		AF347497228FB630004D957E /* ListResourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResourcesViewModel.swift; sourceTree = "<group>"; };
 		AF347499228FB8FD004D957E /* ListVacationSpotsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVacationSpotsViewModel.swift; sourceTree = "<group>"; };
 		AF34749F228FBD9D004D957E /* ListRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRestaurantsViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +70,7 @@
 		AF3474A5228FC2FE004D957E /* ListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewState.swift; sourceTree = "<group>"; };
 		AF3474A7228FC372004D957E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AF3474A9228FC37A004D957E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVacationSpotsViewController.swift; sourceTree = "<group>"; };
 		AFA44CC2228F677A00249BCC /* Quickseries-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quickseries-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44CC5228F677A00249BCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA44CCC228F677B00249BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		AF347481228F975C004D957E /* List Categories */ = {
 			isa = PBXGroup;
 			children = (
-				AF347485228F981E004D957E /* ListCategories.storyboard */,
 				AF347487228F9A1B004D957E /* CategoryTableViewCell.swift */,
 				AF347489228F9A73004D957E /* CategoryCellViewModel.swift */,
 				AF34748B228F9AEF004D957E /* CategoriesTableViewController.swift */,
@@ -162,22 +159,22 @@
 			path = "List Categories";
 			sourceTree = "<group>";
 		};
-		AF347482228F9778004D957E /* List Restaurants */ = {
+		AF347482228F9778004D957E /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
-				AF347495228FB51B004D957E /* ListRestaurants.storyboard */,
 				AF34748F228FAFE7004D957E /* ListRestaurantsViewModel.swift */,
 				AF34749F228FBD9D004D957E /* ListRestaurantsViewController.swift */,
 			);
-			path = "List Restaurants";
+			path = Restaurants;
 			sourceTree = "<group>";
 		};
-		AF347483228F9785004D957E /* List Vacation Spots */ = {
+		AF347483228F9785004D957E /* Vacation Spots */ = {
 			isa = PBXGroup;
 			children = (
 				AF347499228FB8FD004D957E /* ListVacationSpotsViewModel.swift */,
+				AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */,
 			);
-			path = "List Vacation Spots";
+			path = "Vacation Spots";
 			sourceTree = "<group>";
 		};
 		AF347484228F9795004D957E /* Show Resource Detail */ = {
@@ -190,8 +187,10 @@
 		AF34749B228FBCD9004D957E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AF347497228FB630004D957E /* ListResourcesViewModel.swift */,
 				AF3474A1228FBDEB004D957E /* ListResourcesViewController.swift */,
 				AF3474A5228FC2FE004D957E /* ListViewState.swift */,
+				AF347491228FB0F0004D957E /* ResourceCellViewModel.swift */,
 				AF3474AB228FC387004D957E /* View */,
 			);
 			path = Common;
@@ -200,11 +199,8 @@
 		AF34749C228FBCE4004D957E /* List Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF347497228FB630004D957E /* ListResourcesViewModel.swift */,
-				AF347491228FB0F0004D957E /* RestaurantCellViewModel.swift */,
-				AF347482228F9778004D957E /* List Restaurants */,
-				AF347483228F9785004D957E /* List Vacation Spots */,
-				AF3474A3228FC025004D957E /* ResourceTableViewCell.swift */,
+				AF347482228F9778004D957E /* Restaurants */,
+				AF347483228F9785004D957E /* Vacation Spots */,
 			);
 			path = "List Resources";
 			sourceTree = "<group>";
@@ -212,6 +208,7 @@
 		AF3474AB228FC387004D957E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF3474A3228FC025004D957E /* ResourceTableViewCell.swift */,
 				AF3474A7228FC372004D957E /* LoadingView.swift */,
 				AF3474A9228FC37A004D957E /* ErrorView.swift */,
 			);
@@ -381,9 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA44CD0228F677B00249BCC /* LaunchScreen.storyboard in Resources */,
-				AF347496228FB51B004D957E /* ListRestaurants.storyboard in Resources */,
 				AFA44CCD228F677B00249BCC /* Assets.xcassets in Resources */,
-				AF347486228F981E004D957E /* ListCategories.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,13 +508,14 @@
 			files = (
 				AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */,
 				AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */,
-				AF347492228FB0F0004D957E /* RestaurantCellViewModel.swift in Sources */,
+				AF347492228FB0F0004D957E /* ResourceCellViewModel.swift in Sources */,
 				AF347498228FB630004D957E /* ListResourcesViewModel.swift in Sources */,
 				AF3474A2228FBDEB004D957E /* ListResourcesViewController.swift in Sources */,
 				AF3474A8228FC372004D957E /* LoadingView.swift in Sources */,
 				AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */,
 				AF347488228F9A1B004D957E /* CategoryTableViewCell.swift in Sources */,
 				AF347490228FAFE7004D957E /* ListRestaurantsViewModel.swift in Sources */,
+				AF3474AD228FC97D004D957E /* ListVacationSpotsViewController.swift in Sources */,
 				AF3474A0228FBD9D004D957E /* ListRestaurantsViewController.swift in Sources */,
 				AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */,
 				AF3474A4228FC025004D957E /* ResourceTableViewCell.swift in Sources */,
