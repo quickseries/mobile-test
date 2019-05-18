@@ -42,6 +42,8 @@
 		489E2BDA228F99030085B982 /* HeaderViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E2BD9228F99030085B982 /* HeaderViewFile.swift */; };
 		489E2BDC228FA35A0085B982 /* ContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489E2BDB228FA35A0085B982 /* ContactViewCell.xib */; };
 		489E2BDE228FA4400085B982 /* ContactViewCellFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */; };
+		48A2F07B22901765002EBCBF /* AddressLongRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A2F07A22901765002EBCBF /* AddressLongRow.xib */; };
+		48A2F07D22901877002EBCBF /* LongAddressViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */; };
 		539BD1B0BCD73380CB50AE05 /* Pods_QuickSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */; };
 		C80A4DF9D656D6B39FFB6279 /* Pods_QuickSeries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32777FCFB7FACA3BFA08E8B7 /* Pods_QuickSeries.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,8 @@
 		489E2BD9228F99030085B982 /* HeaderViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewFile.swift; sourceTree = "<group>"; };
 		489E2BDB228FA35A0085B982 /* ContactViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewCell.xib; sourceTree = "<group>"; };
 		489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCellFile.swift; sourceTree = "<group>"; };
+		48A2F07A22901765002EBCBF /* AddressLongRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressLongRow.xib; sourceTree = "<group>"; };
+		48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongAddressViewFile.swift; sourceTree = "<group>"; };
 		501C4FC6BC36F87464743454 /* Pods-QuickSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeries/Pods-QuickSeries.debug.xcconfig"; sourceTree = "<group>"; };
 		8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickSeriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97272FDF040120C96CDBF04B /* Pods-QuickSeriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeriesTests/Pods-QuickSeriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 			children = (
 				489E2BD5228F98630085B982 /* HeaderView.xib */,
 				489E2BDB228FA35A0085B982 /* ContactViewCell.xib */,
+				48A2F07A22901765002EBCBF /* AddressLongRow.xib */,
 			);
 			path = xibs;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			children = (
 				489E2BD9228F99030085B982 /* HeaderViewFile.swift */,
 				489E2BDD228FA4400085B982 /* ContactViewCellFile.swift */,
+				48A2F07C22901877002EBCBF /* LongAddressViewFile.swift */,
 			);
 			path = xibsFiles;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488E170A228EBD12006416B5 /* LaunchScreen.storyboard in Resources */,
+				48A2F07B22901765002EBCBF /* AddressLongRow.xib in Resources */,
 				489E2BD6228F98630085B982 /* HeaderView.xib in Resources */,
 				483E17FC228ED1A00095CA2B /* data.bundle in Resources */,
 				488E1707228EBD12006416B5 /* Assets.xcassets in Resources */,
@@ -485,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				483E1823228F2CF60095CA2B /* QuickCache.swift in Sources */,
+				48A2F07D22901877002EBCBF /* LongAddressViewFile.swift in Sources */,
 				483E17DD228EC5E40095CA2B /* Addresses.swift in Sources */,
 				483E1814228F0E070095CA2B /* Utilities.swift in Sources */,
 				489E2BDA228F99030085B982 /* HeaderViewFile.swift in Sources */,
