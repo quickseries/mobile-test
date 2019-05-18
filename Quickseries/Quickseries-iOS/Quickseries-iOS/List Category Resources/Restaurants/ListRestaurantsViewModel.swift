@@ -11,7 +11,7 @@ import RxRelay
 import Quickseries_API
 
 final class ListRestaurantsViewModel : ListResourcesViewModel, CanSortResources {
-    
+  
     typealias Entity = Restaurant
     typealias EntityViewModel = CategoryResourceCellViewModel
     
@@ -20,26 +20,12 @@ final class ListRestaurantsViewModel : ListResourcesViewModel, CanSortResources 
     let resources = BehaviorRelay<[CategoryResourceCellViewModel]>(value: [])
     let selectedResource = BehaviorRelay<CategoryResourceCellViewModel?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
-}
-
-extension ListResourcesViewModel where Self : AnyObject, Self : CanSortResources, Entity == Restaurant, EntityCellViewModel == CategoryResourceCellViewModel {
     
-    func requestResources() {
-        QuickseriesApiClient.shared.getRestaurants { [weak self] outcome in
-            switch outcome {
-            case .success(let result):
-                if let sorted = self?.sortResources(result) {
-                    self?.resourceEntities = sorted
-                    let viewModels = sorted.map({CategoryResourceCellViewModel(id: $0.id, title: $0.title, type: .restaurant)})
-                    self?.resources.accept(viewModels)
-                }
-                self?.state.accept(.displayingData)
-            case .failure(let error, let reason):
-                print(error)
-                self?.resourceEntities = []
-                self?.resources.accept([])
-                self?.state.accept(.error(errorMessage: reason))
-            }
-        }
+    func requestToApi(callback: ((Outcome<[Restaurant]>) -> ())?) {
+        return QuickseriesApiClient.shared.getRestaurants(callback: callback)
+    }
+    
+    func parseEntityToViewModel(_ entity: Restaurant) -> CategoryResourceCellViewModel {
+        return CategoryResourceCellViewModel(id: entity.id, title: entity.title, type: .vacationSpot)
     }
 }

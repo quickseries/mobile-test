@@ -20,25 +20,12 @@ final class ListVacationSpotsViewModel: ListResourcesViewModel, CanSortResources
     let resources = BehaviorRelay<[CategoryResourceCellViewModel]>(value: [])
     let selectedResource = BehaviorRelay<CategoryResourceCellViewModel?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
-}
-
-extension ListResourcesViewModel where Self : AnyObject, Self : CanSortResources, Entity == VacationSpot, EntityCellViewModel == CategoryResourceCellViewModel {
     
-    func requestResources() {
-        QuickseriesApiClient.shared.getVacationSpots { [weak self] outcome in
-            switch outcome {
-            case .success(let result):
-                if let sorted = self?.sortResources(result) {
-                    self?.resourceEntities = sorted
-                    let viewModels = sorted.map({CategoryResourceCellViewModel(id: $0.id, title: $0.title, type: .restaurant)})
-                    self?.resources.accept(viewModels)
-                }
-            case .failure(let error, let reason):
-                print(error)
-                self?.resourceEntities = []
-                self?.resources.accept([])
-                self?.state.accept(.error(errorMessage: reason))
-            }
-        }
+    func requestToApi(callback: ((Outcome<[VacationSpot]>) -> ())?) {
+        return QuickseriesApiClient.shared.getVacationSpots(callback: callback)
+    }
+    
+    func parseEntityToViewModel(_ entity: VacationSpot) -> CategoryResourceCellViewModel {
+        return CategoryResourceCellViewModel(id: entity.id, title: entity.title, type: .vacationSpot)
     }
 }
