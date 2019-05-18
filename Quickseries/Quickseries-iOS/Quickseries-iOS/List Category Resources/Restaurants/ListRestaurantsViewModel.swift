@@ -1,5 +1,5 @@
 //
-//  ListVacationSpotsViewModel.swift
+//  ListRestaurantsViewModel.swift
 //  Quickseries-iOS
 //
 //  Created by Thiago Magalhaes on 2019-05-17.
@@ -10,29 +10,30 @@ import Foundation
 import RxRelay
 import Quickseries_API
 
-class ListVacationSpotsViewModel: ListResourcesViewModel, CanSortResources {
+final class ListRestaurantsViewModel : ListResourcesViewModel, CanSortResources {
     
-    typealias Entity = VacationSpot
-    typealias EntityViewModel = ResourceCellViewModel
+    typealias Entity = Restaurant
+    typealias EntityViewModel = CategoryResourceCellViewModel
     
     var sortState = ResourceSortState.unsorted
-    var resourceEntities = [VacationSpot]()
-    let resources = BehaviorRelay<[ResourceCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<ResourceCellViewModel?>(value: nil)
+    var resourceEntities = [Restaurant]()
+    let resources = BehaviorRelay<[CategoryResourceCellViewModel]>(value: [])
+    let selectedResource = BehaviorRelay<CategoryResourceCellViewModel?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
 }
 
-extension ListResourcesViewModel where Self : AnyObject, Self : CanSortResources, Entity == VacationSpot, EntityCellViewModel == ResourceCellViewModel {
+extension ListResourcesViewModel where Self : AnyObject, Self : CanSortResources, Entity == Restaurant, EntityCellViewModel == CategoryResourceCellViewModel {
     
     func requestResources() {
-        QuickseriesApiClient.shared.getVacationSpots { [weak self] outcome in
+        QuickseriesApiClient.shared.getRestaurants { [weak self] outcome in
             switch outcome {
             case .success(let result):
                 if let sorted = self?.sortResources(result) {
                     self?.resourceEntities = sorted
-                    let viewModels = sorted.map({ResourceCellViewModel(id: $0.id, title: $0.title, type: .restaurant)})
+                    let viewModels = sorted.map({CategoryResourceCellViewModel(id: $0.id, title: $0.title, type: .restaurant)})
                     self?.resources.accept(viewModels)
                 }
+                self?.state.accept(.displayingData)
             case .failure(let error, let reason):
                 print(error)
                 self?.resourceEntities = []

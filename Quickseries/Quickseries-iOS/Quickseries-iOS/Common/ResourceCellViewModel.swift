@@ -9,8 +9,8 @@
 import Foundation
 import Quickseries_API
 
-struct ResourceCellViewModel {
-    let id: String
-    let title: String
-    let type: CategoryType
+protocol ResourceCellViewModel {
+    var id: String { get }
+    var title: String { get }
+    var type: CategoryType { get }
 }

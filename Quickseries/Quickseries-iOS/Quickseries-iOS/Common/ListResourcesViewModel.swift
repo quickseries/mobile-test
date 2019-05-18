@@ -13,7 +13,7 @@ import Quickseries_API
 protocol ListResourcesViewModel {
     
     associatedtype Entity : Resource
-    associatedtype EntityCellViewModel
+    associatedtype EntityCellViewModel : ResourceCellViewModel
 
     var resourceEntities: [Entity] { get set }
     var resources: BehaviorRelay<[EntityCellViewModel]> { get }

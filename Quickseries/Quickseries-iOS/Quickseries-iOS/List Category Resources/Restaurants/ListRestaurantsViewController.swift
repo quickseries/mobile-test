@@ -21,14 +21,17 @@ class ListRestaurantsViewController: UIViewController, ListResourcesViewControll
     // MARK: Views
     
     lazy var tableView: UITableView = {
+        //TODO: Implement
         return UITableView()
     }()
     
     lazy var loadingview: LoadingView = {
+        //TODO: Implement
         return LoadingView()
     }()
     
     lazy var errorView: ErrorView = {
+        //TODO: Implement
         return ErrorView()
     }()
     
@@ -41,7 +44,7 @@ class ListRestaurantsViewController: UIViewController, ListResourcesViewControll
     
     // MARK: Actions
     
-    func onResourceSelection(resource: ResourceCellViewModel) {
+    func onResourceSelection(resource: CategoryResourceCellViewModel) {
         //TODO: Implement
     }
     

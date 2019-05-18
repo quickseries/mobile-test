@@ -36,7 +36,7 @@ extension ListResourcesViewController {
         viewModel.resources
             .asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: ResourceTableViewCell.identifier, cellType: ResourceTableViewCell.self)) { (index, model, cell) in
-               
+               cell.model = model
             }
             .disposed(by: bag)
     }

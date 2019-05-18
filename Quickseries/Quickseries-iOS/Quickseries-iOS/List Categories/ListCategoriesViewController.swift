@@ -21,14 +21,17 @@ class ListCategoriesViewController: UIViewController, ListResourcesViewControlle
     // MARK: Views
     
     lazy var tableView: UITableView = {
+        //TODO: Implement
         return UITableView()
     }()
     
     lazy var loadingview: LoadingView = {
+        //TODO: Implement
         return LoadingView()
     }()
     
     lazy var errorView: ErrorView = {
+        //TODO: Implement
         return ErrorView()
     }()
     
@@ -41,7 +44,7 @@ class ListCategoriesViewController: UIViewController, ListResourcesViewControlle
     
     // MARK: Actions
     
-    func onResourceSelection(resource: ResourceCellViewModel) {
+    func onResourceSelection(resource: CategoryCellViewModel) {
         //TODO: Implement
     }
     
