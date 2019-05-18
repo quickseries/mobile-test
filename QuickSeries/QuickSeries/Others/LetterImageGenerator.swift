@@ -13,7 +13,7 @@ class LetterImageGenerator: NSObject {
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         let nameLabel = UILabel(frame: frame)
         nameLabel.textAlignment = .center
-        nameLabel.backgroundColor = .red
+        nameLabel.backgroundColor = UIColor(hue: 0.0139, saturation: 0.74, brightness: 0.9, alpha: 1.0)
         nameLabel.textColor = .white
        
         nameLabel.font = UIFont.boldSystemFont(ofSize: 40)

@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/ViewModels/CategoriesViewModel.swift"
-            timestampString = "579882538.186442"
+            timestampString = "579883501.082363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/ViewModels/CategoriesViewModel.swift"
-            timestampString = "579882538.186517"
+            timestampString = "579883501.0824291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Others/Utilities.swift"
-            timestampString = "579882538.1869071"
+            timestampString = "579892768.305313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Others/Utilities.swift"
-            timestampString = "579882538.186968"
+            timestampString = "579892768.305476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -358,31 +358,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuickSeries/Views/UIViewControllers/QuickItemDetailVC.swift"
-            timestampString = "579882538.187026"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "ShortContactViewRow(value:type:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Views/UIViewControllers/QuickItemDetailVC.swift"
-            timestampString = "579882538.187438"
+            timestampString = "579892768.305617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "openPhone()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Views/UIViewControllers/QuickItemDetailVC.swift"
-            timestampString = "579882538.187727"
+            timestampString = "579892768.305771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "openPhone()"
             landmarkType = "7">
          </BreakpointContent>

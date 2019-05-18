@@ -8,18 +8,27 @@
 import UIKit
 import Eureka
 import ViewRow
+import SafariServices
+import MessageUI
+import MapKit
+import CoreLocation
 
-class QuickItemDetailVC: FormViewController {
+class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMailComposeViewControllerDelegate {
+    
+    lazy var activeLat = 0.0
+    lazy var activeLog = 0.0
+    lazy var activePhoneNumber = ""
+    lazy var activeEmail = ""
+    lazy  var activeURL = ""
+    
+     var activeSocialLink : SocialMedia?
+     var activeAddress : Addresses?
+     var itemDetails : CategoryItemViewModel!
+    
+   
     
     
-     var activePhoneNumber = ""
     
-    var itemDetails : CategoryItemViewModel!
-    
-    let phoneCallTouchGuesture = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openPhone))
-    let emailTouchGuesture = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openMail))
-    let webPageTouchGuesture = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openURL))
-    let mapTouchGuesture = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openMap))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +36,14 @@ class QuickItemDetailVC: FormViewController {
         // Do any additional setup after loading the view.
          //TODO ADD KVO's
         buildViews()
+        
+        
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+     //   reQuestLocationMapAuth()
+    }
     
     
 
@@ -145,31 +160,203 @@ class QuickItemDetailVC: FormViewController {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//FOR MAP AND LOCATION USE
+extension QuickItemDetailVC : CLLocationManagerDelegate{
+   
+    
+    func reQuestLocationMapAuth(){
+        let locationManager = CLLocationManager()
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        
+        self.activeLat = locValue.latitude
+        self.activeLat = locValue.longitude
+       
+    }
+
+}
+
+
+
+extension QuickItemDetailVC {
+    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
+        switch result {
+        case .cancelled:
+           alert(title: "Failed", body: "Canceled")
+            controller.dismiss(animated: true, completion: nil)
+        case .failed:
+            alert(title: "Failed", body: "failed")
+            controller.dismiss(animated: true, completion: nil)
+        case .sent:
+             alert(title: "Success", body: "Sent")
+            controller.dismiss(animated: true, completion: nil)
+        case .saved:
+           alert(title: "Success", body: "Saved")
+            controller.dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+        
+    }
+    
+
+}
+
+
+
+
+
+
 ///OBJC ACTION METHODS FOR UIVIEWS
 
 extension QuickItemDetailVC {
+    
+    
+    @objc func openYouYub(){
+        
+        let urlString = self.activeSocialLink?.youtubeChannel?[0] ?? ""
+        
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+            
+            present(vc, animated: true)
+        }else{
+            
+            alert(title: "Error", body: "Cannot open URL")
+        }
+        print("i was called \(activeURL)")
+    }
+    
+    @objc func openTwit()
+    {
+         let urlString = self.activeSocialLink?.twitter?[0] ?? ""
+        
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+            
+            present(vc, animated: true)
+        }else{
+            
+            alert(title: "Error", body: "Cannot open URL")
+        }
+        print("i was called \(activeURL)")
+    }
+    
+    @objc func openFace()
+    {
+         let urlString = self.activeSocialLink?.facebook?[0] ?? ""
+        
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+            
+            present(vc, animated: true)
+        }else{
+            
+            alert(title: "Error", body: "Cannot open URL")
+        }
+        print("i was called \(activeURL)")
+    }
+    
+    
     @objc func openPhone()
     {
+        
+        
         self.activePhoneNumber.makeACall()
         print("i was called \(self.activePhoneNumber) to make a callc")
     }
     
     @objc func openURL()
     {
+        let urlString = activeURL
         
-        print("i was called ")
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.delegate = self
+            
+            present(vc, animated: true)
+        }else{
+            
+            alert(title: "Error", body: "Cannot open URL")
+        }
+        print("i was called \(activeURL)")
     }
     
     @objc func openMail()
     {
-        
-        print("i was called ")
+        if MFMailComposeViewController.canSendMail()
+        {
+        let title = ""
+        let body = ""
+        let toRecipents = [activeEmail]
+        let mailView: MFMailComposeViewController = MFMailComposeViewController()
+        mailView.mailComposeDelegate = self
+        mailView.setSubject(title)
+        mailView.setMessageBody(body, isHTML: false)
+        mailView.setToRecipients(toRecipents)
+      
+        self.navigationController?.present(mailView, animated: true, completion: nil)
+
+      
+        }else{
+            
+            alert(title: "Error", body: "Cannot send email from this device")
+            
+        }
     }
     
     @objc func openMap()
     {
+        print("map was called")
+        //Get user current location to enable destination and navigation
+        let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: self.activeLat, longitude: self.activeLog)))
+        source.name = "My Current Location"
         
-        print("i was called ")
+        let destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double( activeAddress?.gps?.latitude ?? "0.00" ) ?? 0.0,
+                                                                                              longitude: Double(activeAddress?.gps?.longitude ?? "0.00") ?? 0.0)))
+        destination.name = activeAddress?.address1 ?? ""
+        
+        MKMapItem.openMaps(with: [source, destination], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
 }
 
@@ -206,6 +393,19 @@ extension QuickItemDetailVC {
             cell.view?.backgroundColor = cell.backgroundColor
             cell.height =  { 50 }
             print("LINK \(address.facebook?[0] ?? "")")
+            
+            
+            
+            self.activeSocialLink = address
+            
+            let openFace = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openFace))
+            let openT = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openTwit))
+            let you = UITapGestureRecognizer(target: self, action: #selector(QuickItemDetailVC.openYouYub))
+            
+             cell.view?.iconOne.addGestureRecognizer(openFace)
+            
+             cell.view?.iconTwo.addGestureRecognizer(openT)
+             cell.view?.iconThree.addGestureRecognizer(you)
             
             
             
@@ -253,6 +453,7 @@ extension QuickItemDetailVC {
                 cell.height =  { 50 }
                 cell.view?.titleLabel.text = value.0
                 cell.view?.valueLabel.text = value.1
+                cell.selectionStyle = .default
                 
                 switch(type){
                     
@@ -260,15 +461,14 @@ extension QuickItemDetailVC {
                     
                     cell.view?.accessoryOne.isHidden = true
                     cell.view?.accessoryTwo.image =  UIImage(named: "email")
-                    cell.view?.accessoryTwo.addGestureRecognizer(self.emailTouchGuesture)
+                 
                     
                     
                 
                 case .phone:
-                    cell.view?.accessoryOne.image = UIImage(named: "sms")
+                    cell.view?.accessoryOne.isHidden  = true
                     cell.view?.accessoryTwo.image =  UIImage(named: "phone")
-                    self.activePhoneNumber = value.1
-                    cell.view?.accessoryTwo.addGestureRecognizer(self.phoneCallTouchGuesture)
+                 
                     
                   
                   
@@ -278,9 +478,11 @@ extension QuickItemDetailVC {
                      cell.view?.accessoryTwo.isHidden = true
                     
                 case .website:
+                    
+                    self.activeURL = value.1
                     cell.view?.accessoryOne.isHidden = true
                     cell.view?.accessoryTwo.image = UIImage(named: "website")
-                    cell.view?.accessoryTwo.addGestureRecognizer(self.webPageTouchGuesture)
+                   
                 }
                 
                 cell.view?.valueLabel.adjustsFontSizeToFitWidth = true
@@ -290,6 +492,21 @@ extension QuickItemDetailVC {
             }.onCellSelection() {_,_ in
                 
                 
+                
+                switch(type){
+                    
+                case .email:
+                     self.activeEmail = value.1
+                    self.openMail()
+                case .phone:
+                    self.activePhoneNumber = value.1
+                    self.openPhone()
+                case .fax:
+                    print("")
+                case .website:
+                    self.activeURL = value.1
+                    self.openURL()
+                }
                 
                 
         }
@@ -316,12 +533,15 @@ extension QuickItemDetailVC {
                 cell.view?.rowOne.text = address.address1 ?? ""
                 cell.view?.rowTwo.text = "\(address.city ?? ""), \(address.state ?? "") \(address.zipCode ?? "")"
                 cell.view?.rowThree.text = address.country ?? ""
-                cell.view?.iconImage.addGestureRecognizer(self.mapTouchGuesture)
+                self.activeAddress = address
+         
                 cell.frame.insetBy(dx: 5.0, dy: 5.0)
-                cell.selectionStyle = .none
+                cell.selectionStyle = .default
                 
             }.onCellSelection() {_,_ in
                
+                self.activeAddress = address
+                self.openMap()
                 
         }
         
@@ -352,6 +572,14 @@ extension QuickItemDetailVC {
         
     }
     
+    
+    func alert(title: String,body: String) {
+        
+        let alertController = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
 }
