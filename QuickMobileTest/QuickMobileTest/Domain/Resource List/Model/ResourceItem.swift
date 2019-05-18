@@ -15,8 +15,8 @@ struct ResourceItem {
 }
 
 enum SectionItemType {
-    case photo(url: String),
-    resourceDetail([String]),
+    case photo(String),
+    resourceDetail(String?, String?),
     contact([ContactInfo]),
     address([ResourceAddress]),
     socialMedia([SocailMedia]),

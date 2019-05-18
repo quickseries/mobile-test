@@ -20,6 +20,9 @@ class ResourceListRouterImpl: ResourceListRouter {
     }
     
     func pushResourceDetailScreen(with item: ResourceItem) {
-        
+        if let resourceDetailsViewController = ViewUtility.getResourceDetailsViewController() {
+            resourceDetailsViewController.configurator = ResourceDetailsConfigurator(resourceItem: item)
+            viewController?.navigationController?.pushViewController(resourceDetailsViewController, animated: true)
+        }
     }
 }

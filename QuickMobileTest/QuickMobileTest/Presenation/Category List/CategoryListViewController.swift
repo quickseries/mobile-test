@@ -13,7 +13,7 @@ protocol CategoryListView: class {
 
 class CategoryListViewController: UIViewController {
     
-    struct Constant {
+    private struct Constant {
         static let title = "Category List"
         static let cellId = "cellId"
     }

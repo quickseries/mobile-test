@@ -13,12 +13,12 @@ protocol ResourceListView: class {
 
 class ResourceListViewController: UIViewController {
 
-    struct Constant {
+    private struct Constant {
         static let title = "Resource List"
         static let cellId = "cellId"
     }
     
-    @IBOutlet weak var resourceListTableView: UITableView! {
+    @IBOutlet private weak var resourceListTableView: UITableView! {
         didSet {
             resourceListTableView.delegate = self
             resourceListTableView.dataSource = self

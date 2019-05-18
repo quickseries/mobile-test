@@ -19,13 +19,13 @@ struct ResourceListApiToUIMapper {
         
         // Extract photo url
         if let photoUrl = resource.photo {
-            sectionTypes.append(SectionItemType.photo(url: photoUrl))
+            sectionTypes.append(SectionItemType.photo(photoUrl))
         }
         
         // Add title and description
         let details = [resource.title, resource.description].compactMap{ $0 }
         if !details.isEmpty {
-            sectionTypes.append(SectionItemType.resourceDetail(details))
+            sectionTypes.append(SectionItemType.resourceDetail(resource.title, resource.description?.withoutHtml))
         }
         
         // Add contacts
@@ -62,7 +62,12 @@ struct ResourceListApiToUIMapper {
         let contacts = zip(allContacts, allContactTypes).compactMap { (args) -> [ContactInfo]? in
             let (arrStrings, type) = args
             guard let strings = arrStrings else { return nil }
-            return strings.map { ContactInfo(contact: $0, type: type) }
+            return strings.compactMap({ (str) -> ContactInfo? in
+                if !str.isEmpty {
+                    return ContactInfo(contact: str, type: type)
+                }
+                return nil
+            })
             }.flatMap{ $0 }
         return contacts
     }
@@ -88,7 +93,12 @@ struct ResourceListApiToUIMapper {
         let medias = zip(allSocialMedias, allContactTypes).compactMap { (args) -> [SocailMedia]? in
             let (arrStrings, type) = args
             guard let strings = arrStrings else { return nil }
-            return strings.map { SocailMedia(link: $0, type: type) }
+            return strings.compactMap({ (str) -> SocailMedia? in
+                if !str.isEmpty {
+                    return SocailMedia(link: str, type: type)
+                }
+                return nil
+            })
             }.flatMap{ $0 }
         return medias
     }

@@ -28,4 +28,9 @@ struct ViewUtility {
         return storyBoard.instantiateViewController(withIdentifier: id) as? ResourceListViewController
     }
     
+    static func getResourceDetailsViewController() -> ResourceDetailsViewController? {
+        let storyBoard = getMainStoryBaord()
+        let id = "ResourceDetailsViewController"
+        return storyBoard.instantiateViewController(withIdentifier: id) as? ResourceDetailsViewController
+    }    
 }
