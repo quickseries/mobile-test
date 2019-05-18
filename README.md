@@ -1,9 +1,11 @@
-# Simple 3 page App with VIP (Clean Swift) Design Pattern
+#  3 Page App with VIP (Clean Swift) Design Pattern
 
 ## Mission 
+
 __Maintable project with requirements as specified @https://github.com/quickseries/mobile-test__
 
 ## Supported features
+
 __This repo can be used as an example for__
 
 | Feature                        | Supported | Note                                            |
@@ -14,12 +16,12 @@ __This repo can be used as an example for__
 
 ```
 Refer : https://clean-swift.com
-
 ```
 
 ## My Tasklist
 - [x] Finish my changes
-- [ ] Push my commits to GitHub
+- [ ] Rebase to master
+- [ ] Test Case Covergae 
 - [ ] Open a pull request
 
 
