@@ -22,6 +22,8 @@
 		AF3474A8228FC372004D957E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474A7228FC372004D957E /* LoadingView.swift */; };
 		AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474A9228FC37A004D957E /* ErrorView.swift */; };
 		AF3474AD228FC97D004D957E /* ListVacationSpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */; };
+		AF3474AF228FCE18004D957E /* CanSortResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474AE228FCE18004D957E /* CanSortResources.swift */; };
+		AF3474B1228FCE60004D957E /* ResourceSortState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474B0228FCE60004D957E /* ResourceSortState.swift */; };
 		AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CC5228F677A00249BCC /* AppDelegate.swift */; };
 		AFA44CCD228F677B00249BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCC228F677B00249BCC /* Assets.xcassets */; };
 		AFA44CD0228F677B00249BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCE228F677B00249BCC /* LaunchScreen.storyboard */; };
@@ -67,6 +69,8 @@
 		AF3474A7228FC372004D957E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AF3474A9228FC37A004D957E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AF3474AC228FC97D004D957E /* ListVacationSpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVacationSpotsViewController.swift; sourceTree = "<group>"; };
+		AF3474AE228FCE18004D957E /* CanSortResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanSortResources.swift; sourceTree = "<group>"; };
+		AF3474B0228FCE60004D957E /* ResourceSortState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSortState.swift; sourceTree = "<group>"; };
 		AFA44CC2228F677A00249BCC /* Quickseries-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quickseries-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44CC5228F677A00249BCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA44CCC228F677B00249BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		AF34749C228FBCE4004D957E /* List Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF3474AE228FCE18004D957E /* CanSortResources.swift */,
+				AF3474B0228FCE60004D957E /* ResourceSortState.swift */,
 				AF347482228F9778004D957E /* Restaurants */,
 				AF347483228F9785004D957E /* Vacation Spots */,
 			);
@@ -503,7 +509,9 @@
 				AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */,
 				AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */,
 				AF347492228FB0F0004D957E /* ResourceCellViewModel.swift in Sources */,
+				AF3474B1228FCE60004D957E /* ResourceSortState.swift in Sources */,
 				AF347498228FB630004D957E /* ListResourcesViewModel.swift in Sources */,
+				AF3474AF228FCE18004D957E /* CanSortResources.swift in Sources */,
 				AF3474A2228FBDEB004D957E /* ListResourcesViewController.swift in Sources */,
 				AF3474A8228FC372004D957E /* LoadingView.swift in Sources */,
 				AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */,
