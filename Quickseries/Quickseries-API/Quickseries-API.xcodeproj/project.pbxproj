@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DE27A81BA58BDEE157476F3 /* Pods_Quickseries_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B1A0EA2CFAC08E37E0662 /* Pods_Quickseries_API.framework */; };
-		9E0887A2E8095818E107AC78 /* Pods_Quickseries_APITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2084187FEA751F76AA0DFA1 /* Pods_Quickseries_APITests.framework */; };
+		2980C7B3FBE6DEFCB724219F /* Pods_Quickseries_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A6938615076B787FE14CD5 /* Pods_Quickseries_API.framework */; };
+		4B2C0FEFA35427D3ADCF0C1E /* Pods_Quickseries_APITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274B2547DCCB6E7EE7871C0C /* Pods_Quickseries_APITests.framework */; };
 		AFA44D07228F67AB00249BCC /* Quickseries_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA44CFD228F67AA00249BCC /* Quickseries_API.framework */; };
 		AFA44D0C228F67AB00249BCC /* Quickseries_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44D0B228F67AB00249BCC /* Quickseries_APITests.swift */; };
 		AFA44D0E228F67AB00249BCC /* Quickseries_API.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA44D00228F67AA00249BCC /* Quickseries_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		22A9B45E8E78EDEBF42AA1F7 /* Pods-Quickseries-API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.debug.xcconfig"; sourceTree = "<group>"; };
-		4EAFD0ED05472882D15BA07C /* Pods-Quickseries-API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.release.xcconfig"; sourceTree = "<group>"; };
-		82C0CFA721270BDD494A9A25 /* Pods-Quickseries-APITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-APITests.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8F7DA6C16A17F0AF981775F0 /* Pods-Quickseries-APITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-APITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests.release.xcconfig"; sourceTree = "<group>"; };
+		274B2547DCCB6E7EE7871C0C /* Pods_Quickseries_APITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_APITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38A6938615076B787FE14CD5 /* Pods_Quickseries_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D16FDBB82FB9A9053C6018 /* Pods-Quickseries-API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.release.xcconfig"; sourceTree = "<group>"; };
+		73B9D4B23F420F53ED95BEA7 /* Pods-Quickseries-API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-API.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-API/Pods-Quickseries-API.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA44CFD228F67AA00249BCC /* Quickseries_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quickseries_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44D00228F67AA00249BCC /* Quickseries_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quickseries_API.h; sourceTree = "<group>"; };
 		AFA44D01228F67AA00249BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 		AFA44D39228F80F800249BCC /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
 		AFA44D3B228F820800249BCC /* QuickSeriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSeriesApi.swift; sourceTree = "<group>"; };
 		AFA44D3F228F84BA00249BCC /* Quickseries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quickseries.swift; sourceTree = "<group>"; };
-		D2084187FEA751F76AA0DFA1 /* Pods_Quickseries_APITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_APITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D86B1A0EA2CFAC08E37E0662 /* Pods_Quickseries_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE213521376A076C543EF7C3 /* Pods-Quickseries-APITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-APITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF819EFC4202D406254FCCCB /* Pods-Quickseries-APITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-APITests.debug.xcconfig"; path = "Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DE27A81BA58BDEE157476F3 /* Pods_Quickseries_API.framework in Frameworks */,
+				2980C7B3FBE6DEFCB724219F /* Pods_Quickseries_API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,29 +85,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA44D07228F67AB00249BCC /* Quickseries_API.framework in Frameworks */,
-				9E0887A2E8095818E107AC78 /* Pods_Quickseries_APITests.framework in Frameworks */,
+				4B2C0FEFA35427D3ADCF0C1E /* Pods_Quickseries_APITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		033AC6E7379924B9F678A088 /* Frameworks */ = {
+		2D9CC33B9F94D7252C175D79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D86B1A0EA2CFAC08E37E0662 /* Pods_Quickseries_API.framework */,
-				D2084187FEA751F76AA0DFA1 /* Pods_Quickseries_APITests.framework */,
+				38A6938615076B787FE14CD5 /* Pods_Quickseries_API.framework */,
+				274B2547DCCB6E7EE7871C0C /* Pods_Quickseries_APITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0FA421874E2B4711E9C8A3D5 /* Pods */ = {
+		906E9D7676953A10360F5777 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				22A9B45E8E78EDEBF42AA1F7 /* Pods-Quickseries-API.debug.xcconfig */,
-				4EAFD0ED05472882D15BA07C /* Pods-Quickseries-API.release.xcconfig */,
-				82C0CFA721270BDD494A9A25 /* Pods-Quickseries-APITests.debug.xcconfig */,
-				8F7DA6C16A17F0AF981775F0 /* Pods-Quickseries-APITests.release.xcconfig */,
+				73B9D4B23F420F53ED95BEA7 /* Pods-Quickseries-API.debug.xcconfig */,
+				41D16FDBB82FB9A9053C6018 /* Pods-Quickseries-API.release.xcconfig */,
+				EF819EFC4202D406254FCCCB /* Pods-Quickseries-APITests.debug.xcconfig */,
+				BE213521376A076C543EF7C3 /* Pods-Quickseries-APITests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -119,8 +119,8 @@
 				AFA44CFF228F67AA00249BCC /* Quickseries-API */,
 				AFA44D0A228F67AB00249BCC /* Quickseries-APITests */,
 				AFA44CFE228F67AA00249BCC /* Products */,
-				0FA421874E2B4711E9C8A3D5 /* Pods */,
-				033AC6E7379924B9F678A088 /* Frameworks */,
+				906E9D7676953A10360F5777 /* Pods */,
+				2D9CC33B9F94D7252C175D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,7 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFA44D11228F67AB00249BCC /* Build configuration list for PBXNativeTarget "Quickseries-API" */;
 			buildPhases = (
-				26CAABC9FC11488335747A2C /* [CP] Check Pods Manifest.lock */,
+				AF77EA00CE303EF5CA5AF4C3 /* [CP] Check Pods Manifest.lock */,
 				AFA44CF8228F67AA00249BCC /* Headers */,
 				AFA44CF9228F67AA00249BCC /* Sources */,
 				AFA44CFA228F67AA00249BCC /* Frameworks */,
@@ -268,10 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFA44D14228F67AB00249BCC /* Build configuration list for PBXNativeTarget "Quickseries-APITests" */;
 			buildPhases = (
-				B3A0CF530773181BC4ECBD52 /* [CP] Check Pods Manifest.lock */,
+				8144580326763014D81D2B32 /* [CP] Check Pods Manifest.lock */,
 				AFA44D02228F67AA00249BCC /* Sources */,
 				AFA44D03228F67AA00249BCC /* Frameworks */,
 				AFA44D04228F67AA00249BCC /* Resources */,
+				F1AE2DDDD98A65F3B5D41446 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,7 +339,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26CAABC9FC11488335747A2C /* [CP] Check Pods Manifest.lock */ = {
+		8144580326763014D81D2B32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quickseries-APITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF77EA00CE303EF5CA5AF4C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,7 +383,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3A0CF530773181BC4ECBD52 /* [CP] Check Pods Manifest.lock */ = {
+		F1AE2DDDD98A65F3B5D41446 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,18 +391,22 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Quickseries-APITests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quickseries-APITests/Pods-Quickseries-APITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -551,7 +578,7 @@
 		};
 		AFA44D12228F67AB00249BCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22A9B45E8E78EDEBF42AA1F7 /* Pods-Quickseries-API.debug.xcconfig */;
+			baseConfigurationReference = 73B9D4B23F420F53ED95BEA7 /* Pods-Quickseries-API.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -578,7 +605,7 @@
 		};
 		AFA44D13228F67AB00249BCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EAFD0ED05472882D15BA07C /* Pods-Quickseries-API.release.xcconfig */;
+			baseConfigurationReference = 41D16FDBB82FB9A9053C6018 /* Pods-Quickseries-API.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -604,7 +631,7 @@
 		};
 		AFA44D15228F67AB00249BCC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82C0CFA721270BDD494A9A25 /* Pods-Quickseries-APITests.debug.xcconfig */;
+			baseConfigurationReference = EF819EFC4202D406254FCCCB /* Pods-Quickseries-APITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -623,7 +650,7 @@
 		};
 		AFA44D16228F67AB00249BCC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F7DA6C16A17F0AF981775F0 /* Pods-Quickseries-APITests.release.xcconfig */;
+			baseConfigurationReference = BE213521376A076C543EF7C3 /* Pods-Quickseries-APITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

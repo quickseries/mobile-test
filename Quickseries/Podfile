@@ -25,12 +25,11 @@ end
 
 target 'Quickseries-API' do
   project 'Quickseries-API/Quickseries-API.xcodeproj'
-
   networking_pods
-
-  target 'Quickseries-APITests' do
-    inherit! :search_paths
-  end
 end
 
 
+target 'Quickseries-APITests' do
+  project 'Quickseries-API/Quickseries-API.xcodeproj'
+  networking_pods
+end
