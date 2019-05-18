@@ -2,7 +2,7 @@
 
 
 import Foundation
-struct Category : Codable {
+struct  Category : Codable {
 	let _id : String?
 	let updated_at : String?
 	let slug : String?
@@ -13,7 +13,11 @@ struct Category : Codable {
 	let __v : Int?
 	let _active : Bool?
 	let created_at : String?
+    
+    
 
+  
+    
 	enum CodingKeys: String, CodingKey {
 
 		case _id = "_id"

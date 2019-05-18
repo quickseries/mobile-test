@@ -28,59 +28,27 @@ private let dataLoader = QuickOperationManager()
     }
     
     
-    func testResourceCount(){
+    func testCategoriesViewModel()  {
         
-      
-        loadCategoriesItem(_fileName: "restaurants")
-        loadCategoriesItem(_fileName: "vacation-spot")
-        
-        
-        
-        
-         XCTAssert(self.totalCount == 5)
-         XCTAssert(self.totalCount < 5)
-    }
-
-    
-    func testHasworkingDays(){
-        
-        
-    }
-    
-    
-    func loadCategoriesItem(_fileName: String){
-        
-        
-        dataLoader.loadData(fileName: _fileName) { [unowned self] data in
+        dataLoader.loadData(fileName: JsonFiles.category) { [unowned self] data in
             
             
             mainThread {
-                do {
-                    let response = try self.jsonDecoder.decode(CategoryItems.self, from: data as! Data)
-                    let list = response.compactMap({ (element) in
-                        
-                        CategoryItemViewModel(object: element)
-                        
-                    })
-                    
-                    
-                    self.categoryItemViewModels.append(contentsOf: list)
-                    
-                    
-                    self.totalCount += self.categoryItemViewModels.count
-                    
-                    
-                    
-                }catch{
-                    
-                    
-                }
+                
+                
             }
             
             
             
         }
     }
+    func testHasworkingDays(){
+        
+        
+    }
+    
+    
+   
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

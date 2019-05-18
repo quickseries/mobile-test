@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/ViewModels/CategoriesViewModel.swift"
-            timestampString = "579897646.186406"
+            timestampString = "579899829.182601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/ViewModels/CategoriesViewModel.swift"
-            timestampString = "579897646.186502"
+            timestampString = "579899829.182688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -330,7 +330,7 @@
                   moduleName = "QuickSeries"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/engineer144/IOSProjects/mobile-test/QuickSeries/QuickSeries/Others/Utilities.swift"
-                  timestampString = "579882538.25114"
+                  timestampString = "579899205.183996"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "176"
@@ -345,7 +345,7 @@
                   moduleName = "QuickSeries"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/engineer144/IOSProjects/mobile-test/QuickSeries/QuickSeries/Others/Utilities.swift"
-                  timestampString = "579882538.253652"
+                  timestampString = "579899205.187646"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "176"
@@ -385,6 +385,22 @@
             endingLineNumber = "306"
             landmarkName = "openPhone()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuickSeries/Models/Category.swift"
+            timestampString = "579899829.182934"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "Category"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

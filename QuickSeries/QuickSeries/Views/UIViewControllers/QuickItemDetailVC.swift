@@ -19,7 +19,7 @@ class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMai
     lazy var activeLog = 0.0
     lazy var activePhoneNumber = ""
     lazy var activeEmail = ""
-    lazy  var activeURL = ""
+    lazy var activeURL = ""
     
      var activeSocialLink : SocialMedia?
      var activeAddress : Addresses?
@@ -573,15 +573,13 @@ extension QuickItemDetailVC {
         return viewRow
         
     }
-    
-    
     func alert(title: String,body: String) {
-        
-        let alertController = UIAlertController(title: title, message: body, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
+    
+    let alertController = UIAlertController(title: title, message: body, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(okAction)
+    self.present(alertController, animated: true, completion: nil)
+}
     
     
 }

@@ -27,6 +27,7 @@ class QuickCache {
         observer = NotificationCenter.default.addObserver(forName: UIApplication.didReceiveMemoryWarningNotification, object: nil, queue: nil) { [weak self] _ in
             self?.cache.removeAllObjects()
         }
+        
     }
     
     deinit {
