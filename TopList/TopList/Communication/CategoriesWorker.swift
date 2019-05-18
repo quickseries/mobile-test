@@ -19,6 +19,10 @@ class CategoriesWorker{
     var onCompletion:((_ results: [Any]) -> Void)?
     
     func fetchCategories(id:String, completionHandler: @escaping ([Any]) -> Void){
+        let messagesFromDisk = Storage.retrieve("categories", of: .json, as: [Categories].self)
+        
+        print(messagesFromDisk)
+
     }
 }
 

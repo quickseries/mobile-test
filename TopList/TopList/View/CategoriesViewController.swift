@@ -64,12 +64,13 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
   
   override func viewDidLoad(){
     super.viewDidLoad()
+    fetchCategories()
   }
   
     // MARK: Setup Functions
     
     func fetchCategories(){
-        let request = Category.FetchCategories.Request(id: "")
+        let request = Category.FetchCategories.Request(id: "categories")
         interactor?.fetchCategories(request: request)
     }
     
