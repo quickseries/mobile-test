@@ -15,23 +15,21 @@ final class ListCategoriesViewController: UIViewController, ListResourcesViewCon
     
     // MARK: Fields
     
-    let viewModel = ListCategoriesViewModel()
+    var viewModel = ListCategoriesViewModel()
     let bag = DisposeBag()
     
     // MARK: Views
     
     lazy var tableView: UITableView = {
-        //TODO: Implement
-        return UITableView()
+        let table = UITableView(frame: .zero, style: .plain)
+        return table
     }()
     
-    lazy var loadingview: LoadingView = {
-        //TODO: Implement
+    lazy var loadingView: LoadingView = {
         return LoadingView()
     }()
     
     lazy var errorView: ErrorView = {
-        //TODO: Implement
         return ErrorView()
     }()
     
@@ -39,18 +37,53 @@ final class ListCategoriesViewController: UIViewController, ListResourcesViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Categories"
         setupBindings()
+        setupViewHierarchy()
+        setupConstraints()
+        viewModel.requestResources()
     }
     
     // MARK: Actions
     
     func onResourceSelection(resource: CategoryCellViewModel) {
-        //TODO: Implement
+        let destination: UIViewController
+        switch resource.type {
+        case .restaurant:
+            destination = ListRestaurantsViewController()
+        case .vacationSpot:
+            destination = ListVacationSpotsViewController()
+        }
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     // MARK: Private Methods
     
+    private func setupViewHierarchy() {
+        view.addSubview(errorView)
+        view.addSubview(loadingView)
+        view.addSubview(tableView)
+        tableView.register(ResourceTableViewCell.self, forCellReuseIdentifier: ResourceTableViewCell.identifier)
+    }
+    
     private func setupConstraints() {
-        //TODO: Implement
+        errorView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.trailing.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.top.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
+        }
+        loadingView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.trailing.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.top.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
+        }
+        tableView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.trailing.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.top.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
+        }
     }
 }

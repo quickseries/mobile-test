@@ -14,11 +14,11 @@ protocol ListResourcesViewController : UIViewController {
     
     associatedtype ViewModel : ListResourcesViewModel
     
-    var viewModel: ViewModel { get }
+    var viewModel: ViewModel { get set }
     var bag: DisposeBag { get }
     
     var tableView: UITableView { get }
-    var loadingview: LoadingView { get }
+    var loadingView: LoadingView { get }
     var errorView: ErrorView { get }
     
     func onResourceSelection(resource: ViewModel.EntityCellViewModel)
@@ -30,9 +30,10 @@ extension ListResourcesViewController {
         bindTableViewData()
         bindTableViewSelection()
         subscribeToModelSelection()
+        subscribeToViewModelState()
     }
     
-   private func bindTableViewData() {
+   fileprivate func bindTableViewData() {
         viewModel.resources
             .asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: ResourceTableViewCell.identifier, cellType: ResourceTableViewCell.self)) { (index, model, cell) in
@@ -41,13 +42,13 @@ extension ListResourcesViewController {
             .disposed(by: bag)
     }
     
-   private func bindTableViewSelection() {
+   fileprivate func bindTableViewSelection() {
         tableView.rx.modelSelected(Self.ViewModel.EntityCellViewModel.self)
             .subscribe(onNext: viewModel.onResourceSelected(resource:))
             .disposed(by: bag)
     }
     
-    private func subscribeToModelSelection() {
+    fileprivate func subscribeToModelSelection() {
         viewModel.selectedResource
             .flatMap({ model -> Observable<Self.ViewModel.EntityCellViewModel> in
                 if let model = model {
@@ -64,25 +65,36 @@ extension ListResourcesViewController {
             }).disposed(by: bag)
     }
     
-    private func subscribeToViewModelState() {
+    fileprivate func subscribeToViewModelState() {
         viewModel.state.subscribe(onNext: { [weak self] state in
             UIView.animate(withDuration: 0.5, animations: {
                 switch state {
                 case .loading:
-                    self?.loadingview.isHidden = false
+                    self?.loadingView.isHidden = false
                     self?.errorView.isHidden = true
                     self?.tableView.isHidden = true
                 case .error(let message):
-                    self?.loadingview.isHidden = true
+                    self?.loadingView.isHidden = true
                     self?.errorView.isHidden = false
                     self?.errorView.messageLabel.text = message
                     self?.tableView.isHidden = true
                 case .displayingData:
-                    self?.loadingview.isHidden = true
+                    self?.loadingView.isHidden = true
                     self?.errorView.isHidden = true
                     self?.tableView.isHidden = false
                 }
             })
         }).disposed(by: bag)
+    }
+}
+
+extension ListResourcesViewController where Self : CanSortTableView, Self.ViewModel : CanSortResources {
+    
+    func setupBindings() {
+        bindTableViewData()
+        bindTableViewSelection()
+        subscribeToModelSelection()
+        subscribeToViewModelState()
+        setupSortButton()
     }
 }

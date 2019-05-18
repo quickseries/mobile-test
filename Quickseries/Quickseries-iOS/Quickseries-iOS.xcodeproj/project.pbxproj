@@ -24,6 +24,7 @@
 		AF3474AF228FCE18004D957E /* CanSortResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474AE228FCE18004D957E /* CanSortResources.swift */; };
 		AF3474B3228FD5F5004D957E /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474B2228FD5F5004D957E /* CategoryCellViewModel.swift */; };
 		AF3474B5228FD680004D957E /* CategoryResourceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3474B4228FD680004D957E /* CategoryResourceCellViewModel.swift */; };
+		AF7A4958229068F500C157F8 /* CanSortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7A4957229068F500C157F8 /* CanSortTableView.swift */; };
 		AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CC5228F677A00249BCC /* AppDelegate.swift */; };
 		AFA44CCD228F677B00249BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCC228F677B00249BCC /* Assets.xcassets */; };
 		AFA44CD0228F677B00249BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCE228F677B00249BCC /* LaunchScreen.storyboard */; };
@@ -71,6 +72,7 @@
 		AF3474AE228FCE18004D957E /* CanSortResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanSortResources.swift; sourceTree = "<group>"; };
 		AF3474B2228FD5F5004D957E /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
 		AF3474B4228FD680004D957E /* CategoryResourceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryResourceCellViewModel.swift; sourceTree = "<group>"; };
+		AF7A4957229068F500C157F8 /* CanSortTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanSortTableView.swift; sourceTree = "<group>"; };
 		AFA44CC2228F677A00249BCC /* Quickseries-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quickseries-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44CC5228F677A00249BCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA44CCC228F677B00249BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3474AE228FCE18004D957E /* CanSortResources.swift */,
+				AF7A4957229068F500C157F8 /* CanSortTableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -473,6 +477,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -545,6 +550,7 @@
 				AF3474A0228FBD9D004D957E /* ListRestaurantsViewController.swift in Sources */,
 				AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */,
 				AF3474A4228FC025004D957E /* ResourceTableViewCell.swift in Sources */,
+				AF7A4958229068F500C157F8 /* CanSortTableView.swift in Sources */,
 				AF34748C228F9AEF004D957E /* ListCategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

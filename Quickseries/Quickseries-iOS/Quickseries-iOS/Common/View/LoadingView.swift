@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class LoadingView: UIView {
 
@@ -19,4 +20,26 @@ final class LoadingView: UIView {
     lazy var activityIndicator: UIActivityIndicatorView = {
         return UIActivityIndicatorView(style: .gray)
     }()
+    
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.white
+        setupViewHierarchy()
+        setupConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupViewHierarchy() {
+        addSubview(activityIndicator)
+    }
+    
+    private func setupConstraints() {
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
 }

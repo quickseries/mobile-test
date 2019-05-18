@@ -17,6 +17,31 @@ final class ErrorView: UIView {
     }
     
     lazy var messageLabel: UILabel = {
-        return UILabel(frame: .zero)
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
     }()
+    
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.white
+        setupViewHierarchy()
+        setupConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupViewHierarchy() {
+        addSubview(messageLabel)
+    }
+    
+    private func setupConstraints() {
+        messageLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
 }

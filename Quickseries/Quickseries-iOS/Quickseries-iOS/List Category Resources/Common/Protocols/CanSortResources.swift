@@ -35,6 +35,7 @@ extension CanSortResources where Self : ListResourcesViewModel {
             sortState = .alphabetically
         }
         resourceEntities = sortResources(resourceEntities)
+        resources.accept(resourceEntities.map({ parseEntityToViewModel($0) }))
     }
 }
 

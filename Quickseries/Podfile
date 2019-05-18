@@ -13,6 +13,7 @@ target 'Quickseries-iOS' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RxRelay', '~> 5'
+  pod 'SnapKit', '~> 5.0.0'
   networking_pods
   
   target 'Quickseries-iOSTests' do
