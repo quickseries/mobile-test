@@ -185,7 +185,7 @@
 			children = (
 				489E2BD8228F98D90085B982 /* xibsFiles */,
 				489E2BD4228F98520085B982 /* xibs */,
-				489E2BD1228F948F0085B982 /* UIViews */,
+				489E2BD1228F948F0085B982 /* UIViewControllers */,
 				489E2BCD228F91360085B982 /* Animations */,
 				483E180B228EEEF50095CA2B /* Cells */,
 			);
@@ -273,14 +273,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		489E2BD1228F948F0085B982 /* UIViews */ = {
+		489E2BD1228F948F0085B982 /* UIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				483E1809228EEEC40095CA2B /* QuickCategoryTableView.swift */,
 				483E1817228F22060095CA2B /* QuickCategoryItemsCVController.swift */,
 				489E2BCB228F90670085B982 /* QuickItemDetailVC.swift */,
 			);
-			path = UIViews;
+			path = UIViewControllers;
 			sourceTree = "<group>";
 		};
 		489E2BD2228F95F20085B982 /* Others */ = {

@@ -34,17 +34,41 @@ private let dataLoader = QuickOperationManager()
 
 extension UIImageView {
     
+    func transition(anImage image: UIImage?) {
+        UIView.transition(with: self, duration: 0.3,
+                          options: [.transitionFlipFromBottom],
+                          animations: {
+                            self.image = image},
+                          completion: nil)
+    }
+    
    func setImage(url: String) {
     
     
     dataLoader.loadImage(urlString: url) { [unowned self] data in
         
         mainThread {
+            
+           
             self.image = UIImage(data: data as! Data)
         }
         
     }
     
+    }
+    
+    
+    func setImageWithTransaction(url: String) {
+        
+        
+        dataLoader.loadImage(urlString: url) { [unowned self] data in
+            
+            mainThread {
+                self.transition(anImage: UIImage(data: data as! Data))
+            }
+            
+        }
+        
     }
 }
 
@@ -130,4 +154,38 @@ extension String {
     
     return format(phoneNumber: self) ?? ""
 }
+}
+
+
+extension String {
+    
+    enum RegularExpressions: String {
+        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
+    }
+    
+    func isValid(regex: RegularExpressions) -> Bool {
+        return isValid(regex: regex.rawValue)
+    }
+    
+    func isValid(regex: String) -> Bool {
+        let matches = range(of: regex, options: .regularExpression)
+        return matches != nil
+    }
+    
+    func onlyDigits() -> String {
+        let filtredUnicodeScalars = unicodeScalars.filter{CharacterSet.decimalDigits.contains($0)}
+        return String(String.UnicodeScalarView(filtredUnicodeScalars))
+    }
+    
+    func makeACall() {
+        if isValid(regex: .phone) {
+            if let url = URL(string: "tel://\(self.onlyDigits())"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
 }
