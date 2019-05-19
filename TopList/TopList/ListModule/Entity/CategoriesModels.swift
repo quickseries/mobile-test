@@ -23,6 +23,28 @@ protocol ListViewModelItem {
     var rowCount: Int { get }
 }
 
+struct NoResultsItem: ListViewModelItem {
+    var type: ListViewModelItemType {
+        return .noResult
+    }
+    
+    var sectionTitle: String {
+        return self.name
+    }
+    
+    var rowCount: Int {
+        return 0
+    }
+    
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+
+
 enum Category{
     // MARK: Use cases    
     enum FetchCategories{
@@ -63,3 +85,4 @@ enum Category{
 
     }
 }
+
