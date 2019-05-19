@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="100" id="T1A-Qy-aSg" customClass="PhotoTableViewCell" customModule="Hobbies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T1A-Qy-aSg" id="duB-4R-eGe">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-0f-mTV">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="EGx-0f-mTV" secondAttribute="height" multiplier="1:1" id="9pK-6r-aGi"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EGx-0f-mTV" firstAttribute="leading" secondItem="duB-4R-eGe" secondAttribute="leading" id="6jC-JQ-rib"/>
+                    <constraint firstItem="EGx-0f-mTV" firstAttribute="centerX" secondItem="duB-4R-eGe" secondAttribute="centerX" id="DRV-M5-p4b"/>
+                    <constraint firstItem="EGx-0f-mTV" firstAttribute="top" secondItem="duB-4R-eGe" secondAttribute="top" id="Gwd-vQ-97s"/>
+                    <constraint firstItem="EGx-0f-mTV" firstAttribute="centerY" secondItem="duB-4R-eGe" secondAttribute="centerY" id="YYz-al-Vex"/>
+                    <constraint firstAttribute="trailing" secondItem="EGx-0f-mTV" secondAttribute="trailing" id="niM-ig-mdm"/>
+                    <constraint firstAttribute="bottom" secondItem="EGx-0f-mTV" secondAttribute="bottom" id="vaV-Iy-hPA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailImageView" destination="EGx-0f-mTV" id="3QW-2t-Obs"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="89.0625"/>
+        </tableViewCell>
+    </objects>
+</document>

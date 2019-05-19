@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressTableViewCell" rowHeight="131" id="Rmq-J3-Yub" customClass="AddressTableViewCell" customModule="Hobbies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rmq-J3-Yub" id="04H-Mi-Ecz">
+                <rect key="frame" x="0.0" y="0.0" width="434" height="130.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-ik-fIN">
+                        <rect key="frame" x="8" y="8" width="418" height="114.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UNw-ik-fIN" firstAttribute="leading" secondItem="04H-Mi-Ecz" secondAttribute="leading" constant="8" id="7Fc-cg-CpY"/>
+                    <constraint firstAttribute="bottom" secondItem="UNw-ik-fIN" secondAttribute="bottom" constant="8" id="KKo-gc-7gF"/>
+                    <constraint firstItem="UNw-ik-fIN" firstAttribute="top" secondItem="04H-Mi-Ecz" secondAttribute="top" constant="8" id="Ze1-ws-bk1"/>
+                    <constraint firstAttribute="trailing" secondItem="UNw-ik-fIN" secondAttribute="trailing" constant="8" id="z7w-Vr-zes"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="qUt-cp-tHk"/>
+            <connections>
+                <outlet property="addressLabel" destination="UNw-ik-fIN" id="dmo-4t-QBl"/>
+            </connections>
+            <point key="canvasLocation" x="220.28985507246378" y="131.58482142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
