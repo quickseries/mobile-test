@@ -433,10 +433,10 @@
 				AFDB21E12290E6B500602675 /* CategoryType.swift */,
 				AFDB21E22290E6B500602675 /* Subentities */,
 				AFDB21E92290E6B500602675 /* VacationSpot.swift */,
+				AFDB21EE2290E6B500602675 /* Restaurant.swift */,
 				AFDB21EA2290E6B500602675 /* CategoryResource.swift */,
 				AFDB21EB2290E6B500602675 /* Category.swift */,
 				AFDB21EC2290E6B500602675 /* Protocols */,
-				AFDB21EE2290E6B500602675 /* Restaurant.swift */,
 			);
 			path = "Business Entities";
 			sourceTree = "<group>";

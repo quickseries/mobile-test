@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.tintColor = UIColor(named: "RedTint")
-        DispatchQueue.main.async {
-            _ = TelephoneParser.shared // Expensive component so we launch it in a background thread.
-        }
+        _ = TelephoneParser.shared
         return true
     }
 }
