@@ -32,7 +32,7 @@ enum SortType {
  */
 class ResourceListViewController: UIViewController {
     
-    private struct Constant {
+    struct Constant {
         static let restaurants = "Restaurants"
         static let vacationSpots = "Vacation-Spots"
         static let cellId = "cellId"
@@ -79,7 +79,7 @@ class ResourceListViewController: UIViewController {
         }
     }
     
-    @objc private func buttonFilterTapped() {
+    @objc func buttonFilterTapped() {
         type.toggle()
         presenter.sortList(by: type)
         setRightBarImage()
@@ -119,7 +119,7 @@ extension ResourceListViewController: ResourceListView {
     func setTitle(with type: CategoryType) {
         switch type {
         case .restaurant: navigationItem.title = Constant.restaurants
-        case .vacationSports: navigationItem.title = Constant.vacationSpots
+        case .vacationSpots: navigationItem.title = Constant.vacationSpots
         }
         
     }

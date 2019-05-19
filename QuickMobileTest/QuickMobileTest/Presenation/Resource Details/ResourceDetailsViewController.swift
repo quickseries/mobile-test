@@ -161,9 +161,7 @@ extension ResourceDetailsViewController: UITableViewDelegate, UITableViewDataSou
 extension ResourceDetailsViewController: ResourceDetailsView {
     
     func reloadData() {
-        DispatchQueue.main.async {
             self.resourceDetailsTableView.reloadData()
-        }
     }
     
     func setTitle(with name: String) {

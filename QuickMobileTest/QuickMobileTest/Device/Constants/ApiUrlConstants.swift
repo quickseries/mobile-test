@@ -24,7 +24,7 @@ struct ApiUrlConstants {
             switch type {
             case .restaurant:
                 return baseUrl + ApiUrlConstants.ResourceList.restaurantListEndPoint
-            case .vacationSports:
+            case .vacationSpots:
                 return baseUrl + ApiUrlConstants.ResourceList.vacationSpotListEndPoint
             }
         }

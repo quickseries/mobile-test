@@ -22,7 +22,7 @@ struct CategoryListApiToUIMapper {
         case "restaurants":
             return .restaurant
         case "vacation-spots":
-            return .vacationSports
+            return .vacationSpots
         default:
             return nil
         }

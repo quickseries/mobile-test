@@ -66,6 +66,10 @@
 		F1F0E63022913AD600E4B677 /* FetchCategoryListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E62F22913AD600E4B677 /* FetchCategoryListUseCaseTests.swift */; };
 		F1F0E63222913AFF00E4B677 /* MockFetchCategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63122913AFF00E4B677 /* MockFetchCategoryListService.swift */; };
 		F1F0E63422913F6800E4B677 /* CategoryListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */; };
+		F1F0E63722914B3A00E4B677 /* FetchResourceListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63622914B3A00E4B677 /* FetchResourceListUseCaseTests.swift */; };
+		F1F0E63922914B7300E4B677 /* MockFetchResourceListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63822914B7300E4B677 /* MockFetchResourceListService.swift */; };
+		F1F0E63B22914FA500E4B677 /* ResourceListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63A22914FA500E4B677 /* ResourceListViewControllerTests.swift */; };
+		F1F0E63E229155F700E4B677 /* ResourceDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63D229155F700E4B677 /* ResourceDetailsViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +150,10 @@
 		F1F0E62F22913AD600E4B677 /* FetchCategoryListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListUseCaseTests.swift; sourceTree = "<group>"; };
 		F1F0E63122913AFF00E4B677 /* MockFetchCategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchCategoryListService.swift; sourceTree = "<group>"; };
 		F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewControllerTests.swift; sourceTree = "<group>"; };
+		F1F0E63622914B3A00E4B677 /* FetchResourceListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResourceListUseCaseTests.swift; sourceTree = "<group>"; };
+		F1F0E63822914B7300E4B677 /* MockFetchResourceListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchResourceListService.swift; sourceTree = "<group>"; };
+		F1F0E63A22914FA500E4B677 /* ResourceListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewControllerTests.swift; sourceTree = "<group>"; };
+		F1F0E63D229155F700E4B677 /* ResourceDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				F1F0E62E22913A8800E4B677 /* Category List */,
+				F1F0E63522914A7100E4B677 /* Resource List */,
+				F1F0E63C229155BC00E4B677 /* Resource Details */,
 			);
 			path = QuickMobileTests;
 			sourceTree = "<group>";
@@ -519,6 +529,24 @@
 				F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */,
 			);
 			path = "Category List";
+			sourceTree = "<group>";
+		};
+		F1F0E63522914A7100E4B677 /* Resource List */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E63622914B3A00E4B677 /* FetchResourceListUseCaseTests.swift */,
+				F1F0E63822914B7300E4B677 /* MockFetchResourceListService.swift */,
+				F1F0E63A22914FA500E4B677 /* ResourceListViewControllerTests.swift */,
+			);
+			path = "Resource List";
+			sourceTree = "<group>";
+		};
+		F1F0E63C229155BC00E4B677 /* Resource Details */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E63D229155F700E4B677 /* ResourceDetailsViewControllerTests.swift */,
+			);
+			path = "Resource Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -750,10 +778,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F0E63722914B3A00E4B677 /* FetchResourceListUseCaseTests.swift in Sources */,
 				F1F0E63222913AFF00E4B677 /* MockFetchCategoryListService.swift in Sources */,
 				F1F0E63022913AD600E4B677 /* FetchCategoryListUseCaseTests.swift in Sources */,
 				F1F0E620229138CE00E4B677 /* BaseTestCase.swift in Sources */,
+				F1F0E63922914B7300E4B677 /* MockFetchResourceListService.swift in Sources */,
 				F1F0E623229138EC00E4B677 /* StubGenerator.swift in Sources */,
+				F1F0E63E229155F700E4B677 /* ResourceDetailsViewControllerTests.swift in Sources */,
+				F1F0E63B22914FA500E4B677 /* ResourceListViewControllerTests.swift in Sources */,
 				F1F0E63422913F6800E4B677 /* CategoryListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

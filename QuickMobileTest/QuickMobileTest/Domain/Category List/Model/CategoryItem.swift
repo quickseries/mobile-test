@@ -14,5 +14,5 @@ struct CategoryItem {
 }
 
 enum CategoryType {
-    case restaurant, vacationSports
+    case restaurant, vacationSpots
 }

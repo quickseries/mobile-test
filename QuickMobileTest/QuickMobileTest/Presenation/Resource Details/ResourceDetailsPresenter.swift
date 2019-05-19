@@ -32,7 +32,9 @@ class ResourceDetailsPresenterImpl {
     init(categoryItem: ResourceItem,view: ResourceDetailsView) {
         self.categoryItem =  categoryItem
         self.view = view
-        view.reloadData()
+        DispatchQueue.main.async {
+            view.reloadData()
+        }
         view.setTitle(with: categoryItem.title)
     }
     
