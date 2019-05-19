@@ -11,25 +11,25 @@
 
 import UIKit
 
-protocol CategoriesPresentationLogic{
-    func presentCategories(response: Category.FetchCategories.Response)
+protocol DetailsPresentationLogic{
+    func presentDetails(response: Details.FetchDetails.Response)
 }
 
-class CategoriesPresenter: CategoriesPresentationLogic{
-    weak var viewController: CategoriesDisplayLogic?
+class DetailsPresenter: DetailsPresentationLogic{
+    weak var viewController: DetailsDisplayLogic?
     
-    // MARK: Do something
+    // MARK: Present to View
     
-    func presentCategories(response: Category.FetchCategories.Response){
-        var displayedCategories: [Category.FetchCategories.ViewModel.ListItem] = []
+    func presentDetails(response: Details.FetchDetails.Response){
+        var details: [Details.FetchDetails.ViewModel.DetailsItem] = []
         
-        for category in response.categories {
-                let listVM = Category.FetchCategories.ViewModel.ListItem.init(headLine: category.title ?? "", overView: category.description ?? "" , date: category.created_at ?? "")
-                displayedCategories.append(listVM)
+        for detail in response.details {
+            let listVM = Details.FetchDetails.ViewModel.DetailsItem.init(name: detail.title ?? "", pictureUrl: detail.photo ?? "", overView: detail.description ?? "" , date: detail.created_at ?? "")
+                details.append(listVM)
         }
         
-        let viewModel = Category.FetchCategories.ViewModel(categories: displayedCategories)
-        viewController?.displayFetchedCategories(viewModel: viewModel)
+        let viewModel = Details.FetchDetails.ViewModel(details: details)
+        viewController?.displayDetails(viewModel: viewModel)
 
     }
 }

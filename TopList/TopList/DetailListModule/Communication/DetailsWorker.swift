@@ -11,17 +11,17 @@
 
 import UIKit
 
-class CategoriesWorker{
-    var categories = Array<Categories>()
-    var onCompletion:((_ results: [Categories]) -> Void)?
+class DetailsWorker{
+    var details = Array<DetailLists>()
+    var onCompletion:((_ results: [DetailLists]) -> Void)?
     
-    func fetchCategories(id:String, completionHandler: @escaping ([Categories]) -> Void){
-        let messagesFromDisk = Storage.retrieve("categories", of: .json, as: [Categories].self)
-        print(messagesFromDisk)
+    func fetchDetails(id:String, completionHandler: @escaping ([DetailLists]) -> Void){
+        let resources = Storage.retrieve("restaurants", of: .json, as: [DetailLists].self)
+        print(resources)
         onCompletion = completionHandler
-        categories = messagesFromDisk
+        details = resources
         if let selectionComplete = onCompletion {
-            selectionComplete(categories)
+            selectionComplete(details)
         }
     }
 }

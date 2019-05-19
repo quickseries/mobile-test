@@ -11,25 +11,25 @@
 
 import UIKit
 
-protocol FetchCategoriesBusinessLogic{
-    func fetchCategories(request: Category.FetchCategories.Request)
+protocol FetchDetailsBusinessLogic{
+    func fetchDetails(request: Details.FetchDetails.Request)
 }
 
-protocol CategoryDataStore{
-    var categories: [Categories]? { get }
+protocol DetailDataStore{
+    var details: [DetailLists]? { get }
 }
 
-class CategoriesInteractor: FetchCategoriesBusinessLogic, CategoryDataStore{
-    var categories: [Categories]?
-    var presenter: CategoriesPresentationLogic?
-    var worker: CategoriesWorker?
+class DetailsInteractor: FetchDetailsBusinessLogic, DetailDataStore{
+    var details: [DetailLists]?
+    var presenter: DetailsPresentationLogic?
+    var worker: DetailsWorker?
     
-    func fetchCategories(request: Category.FetchCategories.Request) {
-        worker = CategoriesWorker()
-        worker?.fetchCategories(id: request.id){ (categories) -> Void in
-            self.categories = categories 
-            let response = Category.FetchCategories.Response(categories: categories)
-            self.presenter?.presentCategories(response: response)
+    func fetchDetails(request: Details.FetchDetails.Request) {
+        worker = DetailsWorker()
+        worker?.fetchDetails(id: request.id){ (details) -> Void in
+            self.details = details
+            let response = Details.FetchDetails.Response(details: details)
+            self.presenter?.presentDetails(response: response)
         }
     }
 }

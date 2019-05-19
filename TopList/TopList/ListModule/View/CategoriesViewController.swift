@@ -15,11 +15,31 @@ protocol CategoriesDisplayLogic: class{
     func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel)
 }
 
+protocol DetailsDisplayLogic: class{
+    func displayDetails(viewModel: Details.FetchDetails.ViewModel)
+}
+
+
 class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
 
     var interactor: FetchCategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
+    /// Mode of View
+    ///
+    /// - list: Intial screen with list of resources
+    /// - detail: detail of selected resource
+    enum Mode {
+        case list,detail
+    }
+    
+    var mode:Mode = .list{
+        didSet {
+            setUp()
+        }
+    }
+
+    
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Object lifecycle
@@ -38,16 +58,21 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
   // MARK: Setup
 
   private func setUp(){
-    let viewController        = self
-    let interactor            = CategoriesInteractor()
-    let presenter             = CategoriesPresenter()
-    let router                = CategoriesRouter()
-    viewController.interactor = interactor
-    viewController.router     = router
-    interactor.presenter      = presenter
-    presenter.viewController  = viewController
-    router.viewController     = viewController
-    router.dataStore          = interactor
+    if mode == .list {
+        let viewController        = self
+        let interactor            = CategoriesInteractor()
+        let presenter             = CategoriesPresenter()
+        let router                = CategoriesRouter()
+        viewController.interactor = interactor
+        viewController.router     = router
+        interactor.presenter      = presenter
+        presenter.viewController  = viewController
+        router.viewController     = viewController
+        router.dataStore          = interactor
+    }else{
+        
+    }
+    
   }
 
   // MARK: View lifecycle

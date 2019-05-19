@@ -18,8 +18,8 @@ protocol CategoriesPresentationLogic{
 class CategoriesPresenter: CategoriesPresentationLogic{
     weak var viewController: CategoriesDisplayLogic?
     
-    // MARK: Do something
-    
+    // MARK: Present to View
+
     func presentCategories(response: Category.FetchCategories.Response){
         var displayedCategories: [Category.FetchCategories.ViewModel.ListItem] = []
         

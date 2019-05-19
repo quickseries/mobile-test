@@ -11,33 +11,21 @@
 
 import UIKit
 
-enum ListViewModelItemType {
-    case list
-    case details
-    case noResult
-}
-
-protocol ListViewModelItem {
-    var type: ListViewModelItemType { get }
-    var sectionTitle: String { get }
-    var rowCount: Int { get }
-}
-
-enum Category{
+enum Details{
     // MARK: Use cases    
-    enum FetchCategories{
+    enum FetchDetails{
         struct Request{
             var id:String
         }
         
         struct Response{
-            var categories: [Categories]
+            var details: [DetailLists]
         }
         
         struct ViewModel {
-            struct ListItem: ListViewModelItem {
+            struct DetailsItem: ListViewModelItem {
                 var type: ListViewModelItemType {
-                    return .list
+                    return .details
                 }
                 
                 var sectionTitle: String {
@@ -48,17 +36,19 @@ enum Category{
                     return 1
                 }
                 
-                var headLine: String
+                var name: String
+                var pictureUrl: String
                 var overView: String
                 var date: String
                 
-                init(headLine: String, overView: String, date: String) {
-                    self.headLine = headLine
+                init(name: String, pictureUrl: String, overView: String, date: String) {
+                    self.name = name
+                    self.pictureUrl = pictureUrl
                     self.overView = overView
                     self.date = date
                 }
             }
-            var categories: [ListItem]
+            var details: [DetailsItem]
         }
 
     }

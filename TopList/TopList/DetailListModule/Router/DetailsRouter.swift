@@ -12,15 +12,15 @@
 
 import UIKit
 
-@objc protocol CategoriesRoutingLogic{
+@objc protocol DetailsRoutingLogic{
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol CategoriesDataPassing{
+protocol DetailsDataPassing{
   var dataStore: CategoryDataStore? { get }
 }
 
-class CategoriesRouter: NSObject, CategoriesRoutingLogic, CategoriesDataPassing{
+class DetailsRouter: NSObject, CategoriesRoutingLogic, CategoriesDataPassing{
   weak var viewController: CategoriesViewController?
   var dataStore: CategoryDataStore?
   
