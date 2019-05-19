@@ -23,5 +23,7 @@ class CategoriesViewController: UIViewController, StoryboardBased {
 
 // MARK: - CategoriesViewModelOutputs
 extension CategoriesViewController: CategoriesViewModelOutputs {
-    
+    func displayCategories(categories: [Category]) {
+        // TODO:
+    }
 }

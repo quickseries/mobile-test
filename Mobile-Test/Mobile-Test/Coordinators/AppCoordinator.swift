@@ -18,7 +18,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = CategoriesViewModel(coordinatorOutputs: self)
+        let categoriesDataSource = CategoriesDatasource()
+        let viewModel = CategoriesViewModel(coordinatorOutputs: self, categoriesDatasource: categoriesDataSource)
         self.navigationController?.pushViewController(CategoriesViewController.instantiate(viewModel: viewModel), animated: false)
     }
 }
