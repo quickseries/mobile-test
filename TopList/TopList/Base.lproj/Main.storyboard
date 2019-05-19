@@ -18,14 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-0C-lTL">
-                                <rect key="frame" x="0.0" y="8" width="414" height="888"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-0C-lTL">
+                                <rect key="frame" x="0.0" y="-1" width="414" height="897"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.94117647058823528" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Yow-ak-4Hx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0cT-jl-0WH"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="sbd-0C-lTL" secondAttribute="top" constant="36" id="1wI-th-sLE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="sbd-0C-lTL" secondAttribute="top" constant="45" id="1wI-th-sLE"/>
                             <constraint firstItem="sbd-0C-lTL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="J9N-QC-vGU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sbd-0C-lTL" secondAttribute="trailing" id="Yvw-QM-iio"/>
                             <constraint firstItem="sbd-0C-lTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kSK-Fn-2fq"/>
