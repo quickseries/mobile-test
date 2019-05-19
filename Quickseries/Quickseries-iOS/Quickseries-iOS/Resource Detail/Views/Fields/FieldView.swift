@@ -39,7 +39,9 @@ class FieldView : UIView {
     lazy var innerTrailingStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: actionButtons)
         stack.axis = .horizontal
-        stack.distribution = UIStackView.Distribution.fillEqually
+        stack.alignment = .center
+        stack.distribution = .fillEqually
+        stack.spacing = 8
         return stack
     }()
     
@@ -61,7 +63,12 @@ class FieldView : UIView {
     
     var actionButtons: [UIButton] = [] {
         didSet {
-            actionButtons.forEach({ innerTrailingStack.addArrangedSubview($0) })
+            actionButtons.forEach({
+                $0.snp.remakeConstraints({ make in
+                    make.size.equalTo(24)
+                })
+                innerTrailingStack.addArrangedSubview($0)
+            })
         }
     }
     
@@ -81,9 +88,6 @@ class FieldView : UIView {
     }
     
     private func setupConstraints() {
-        fieldLabel.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-        }
         mainStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(layoutMargins)
             make.trailing.equalToSuperview().inset(layoutMargins)

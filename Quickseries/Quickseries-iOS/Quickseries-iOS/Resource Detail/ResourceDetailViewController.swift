@@ -13,6 +13,7 @@ import SnapKit
 import Kingfisher
 import MessageUI
 import MapKit
+import SafariServices
 
 class ResourceDetailViewController: UIViewController {
 
@@ -196,7 +197,10 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func showWebsite(url: String) {
-        //TODO: Implement
+        guard let url = URL(string: url) else { return }
+        let config = SFSafariViewController.Configuration()
+        let safariViewController = SFSafariViewController(url: url, configuration: config)
+        present(safariViewController, animated: true)
     }
     
     private func showMap(coordinates: (Double, Double)) {
