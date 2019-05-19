@@ -16,18 +16,18 @@ protocol FetchCategoriesBusinessLogic{
 }
 
 protocol CategoryDataStore{
-    var categories: [Any]? { get }
+    var categories: [Categories]? { get }
 }
 
 class CategoriesInteractor: FetchCategoriesBusinessLogic, CategoryDataStore{
-    var categories: [Any]?
+    var categories: [Categories]?
     var presenter: CategoriesPresentationLogic?
     var worker: CategoriesWorker?
     
     func fetchCategories(request: Category.FetchCategories.Request) {
         worker = CategoriesWorker()
         worker?.fetchCategories(id: request.id){ (categories) -> Void in
-            self.categories = categories
+            self.categories = categories 
             let response = Category.FetchCategories.Response(categories: categories)
             self.presenter?.presentCategories(response: response)
         }
