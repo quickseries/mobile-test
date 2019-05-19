@@ -33,6 +33,7 @@ class ResourceDetailsPresenterImpl {
         self.categoryItem =  categoryItem
         self.view = view
         view.reloadData()
+        view.setTitle(with: categoryItem.title)
     }
     
 }
@@ -51,14 +52,17 @@ extension ResourceDetailsPresenterImpl: ResourceDetailsPresenter {
         switch categoryItem.sectionTypes[section] {
         case .photo(_):
             return 1
-        case .resourceDetail(let details):
+        case .resourceDetail(_):
             return 1
         case .contact(let contacts):
             return contacts.count
         case .address(let addresses):
             return addresses.count
         case .socialMedia(let medias):
-            return medias.count
+            if medias.count > 0 {
+                return 1
+            }
+            return 0
         case .bizHours(let hours):
             return hours.count
         }

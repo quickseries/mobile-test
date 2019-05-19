@@ -16,6 +16,7 @@ class ResourceDetailsConfigurator {
     }
     
     func configure(controller: ResourceDetailsViewController) {
+        controller.router = ResourceDetailsRouterImpl(viewController: controller)
         controller.presenter = ResourceDetailsPresenterImpl(categoryItem: resourceItem, view: controller)
     }
 }

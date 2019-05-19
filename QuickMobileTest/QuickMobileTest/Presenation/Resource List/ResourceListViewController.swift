@@ -9,12 +9,14 @@ import UIKit
 
 protocol ResourceListView: class {
     func reloadData()
+    func setTitle(with type: CategoryType)
 }
 
 class ResourceListViewController: UIViewController {
 
     private struct Constant {
-        static let title = "Resource List"
+        static let restaurants = "Restaurants"
+        static let vacationSpots = "Vacation-Spots"
         static let cellId = "cellId"
     }
     
@@ -40,7 +42,6 @@ class ResourceListViewController: UIViewController {
     }
     
     private func setupUI() {
-        navigationItem.title = Constant.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
     }
@@ -78,4 +79,11 @@ extension ResourceListViewController: ResourceListView {
         }
     }
     
+    func setTitle(with type: CategoryType) {
+        switch type {
+        case .restaurant: navigationItem.title = Constant.restaurants
+        case .vacationSports: navigationItem.title = Constant.vacationSpots
+        }
+        
+    }
 }

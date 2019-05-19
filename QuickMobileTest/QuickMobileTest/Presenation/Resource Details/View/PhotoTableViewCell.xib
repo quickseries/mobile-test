@@ -20,16 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TPb-2S-UzS">
-                        <rect key="frame" x="8" y="0.0" width="304" height="178.5"/>
+                        <rect key="frame" x="12" y="0.0" width="296" height="178.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="TPb-2S-UzS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8kV-ZD-HTf"/>
                     <constraint firstAttribute="bottom" secondItem="TPb-2S-UzS" secondAttribute="bottom" id="Cz2-PQ-8D4"/>
-                    <constraint firstAttribute="trailing" secondItem="TPb-2S-UzS" secondAttribute="trailing" constant="8" id="d7W-kG-J3n"/>
-                    <constraint firstItem="TPb-2S-UzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="rn8-8J-6PP"/>
+                    <constraint firstAttribute="trailing" secondItem="TPb-2S-UzS" secondAttribute="trailing" constant="12" id="d7W-kG-J3n"/>
+                    <constraint firstItem="TPb-2S-UzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="rn8-8J-6PP"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="photoImageView" destination="TPb-2S-UzS" id="W0Z-xb-sO3"/>

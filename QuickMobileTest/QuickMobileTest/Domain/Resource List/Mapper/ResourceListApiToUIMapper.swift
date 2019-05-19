@@ -79,23 +79,23 @@ struct ResourceListApiToUIMapper {
             if let lat = add.gps?.latitude?.toDouble, let lng = add.gps?.longitude?.toDouble {
                 latLng = LatLng(latitude: lat, longitude: lng)
             }
-            return ResourceAddress(completeAddress: combinedAddress, gps: latLng)
+            return ResourceAddress(completeAddress: combinedAddress, latLng: latLng)
         }
         return resourceAddresses
     }
     
-    private static func getSocialMedias(from response: SocialMediaResponse) -> [SocailMedia] {
+    private static func getSocialMedias(from response: SocialMediaResponse) -> [SocialMedia] {
         let allSocialMedias = [response.facebook,
                                response.twitter,
                                response.youtubeChannel]
         let allContactTypes: [SocailMediaType] = [.facebook, .twitter, .youtube]
         
-        let medias = zip(allSocialMedias, allContactTypes).compactMap { (args) -> [SocailMedia]? in
+        let medias = zip(allSocialMedias, allContactTypes).compactMap { (args) -> [SocialMedia]? in
             let (arrStrings, type) = args
             guard let strings = arrStrings else { return nil }
-            return strings.compactMap({ (str) -> SocailMedia? in
+            return strings.compactMap({ (str) -> SocialMedia? in
                 if !str.isEmpty {
-                    return SocailMedia(link: str, type: type)
+                    return SocialMedia(link: str, type: type)
                 }
                 return nil
             })

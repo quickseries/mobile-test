@@ -19,7 +19,7 @@ enum SectionItemType {
     resourceDetail(String?, String?),
     contact([ContactInfo]),
     address([ResourceAddress]),
-    socialMedia([SocailMedia]),
+    socialMedia([SocialMedia]),
     bizHours([BizHour])
 }
 
@@ -34,7 +34,7 @@ enum ContactType {
 
 struct ResourceAddress {
     let completeAddress: String
-    let gps : LatLng?
+    let latLng : LatLng?
 }
 
 struct LatLng {
@@ -42,7 +42,7 @@ struct LatLng {
     let longitude: Double
 }
 
-struct SocailMedia {
+struct SocialMedia {
     let link: String
     let type: SocailMediaType
 }
@@ -56,6 +56,6 @@ struct BizHour {
     let duration: String
 }
 
-enum BizHourDay {
+enum BizHourDay: String {
     case sunday, monday, tuesday, wednesday, thursday, friday, saturday
 }

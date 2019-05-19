@@ -53,6 +53,12 @@
 		F1F0E60D22908AF000E4B677 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E60C22908AF000E4B677 /* ImageDownloadManager.swift */; };
 		F1F0E6102290972000E4B677 /* ContactInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E60E2290972000E4B677 /* ContactInfoTableViewCell.swift */; };
 		F1F0E6112290972000E4B677 /* ContactInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E60F2290972000E4B677 /* ContactInfoTableViewCell.xib */; };
+		F1F0E6132291045400E4B677 /* ResourceDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E6122291045400E4B677 /* ResourceDetailsRouter.swift */; };
+		F1F0E61522910A3600E4B677 /* NavigationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E61422910A3600E4B677 /* NavigationUtility.swift */; };
+		F1F0E618229110E300E4B677 /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E616229110E300E4B677 /* SocialMediaTableViewCell.swift */; };
+		F1F0E619229110E300E4B677 /* SocialMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E617229110E300E4B677 /* SocialMediaTableViewCell.xib */; };
+		F1F0E61C22911F3C00E4B677 /* BizHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E61A22911F3C00E4B677 /* BizHourTableViewCell.swift */; };
+		F1F0E61D22911F3C00E4B677 /* BizHourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E61B22911F3C00E4B677 /* BizHourTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +126,12 @@
 		F1F0E60C22908AF000E4B677 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
 		F1F0E60E2290972000E4B677 /* ContactInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F1F0E60F2290972000E4B677 /* ContactInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F1F0E6122291045400E4B677 /* ResourceDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailsRouter.swift; sourceTree = "<group>"; };
+		F1F0E61422910A3600E4B677 /* NavigationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtility.swift; sourceTree = "<group>"; };
+		F1F0E616229110E300E4B677 /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
+		F1F0E617229110E300E4B677 /* SocialMediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaTableViewCell.xib; sourceTree = "<group>"; };
+		F1F0E61A22911F3C00E4B677 /* BizHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHourTableViewCell.swift; sourceTree = "<group>"; };
+		F1F0E61B22911F3C00E4B677 /* BizHourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BizHourTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +285,7 @@
 				F1F0E5B4228FFDAA00E4B677 /* Logger.swift */,
 				F1F0E5F12290563700E4B677 /* ViewUtility.swift */,
 				F1F0E6052290832900E4B677 /* Color.swift */,
+				F1F0E61422910A3600E4B677 /* NavigationUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -425,6 +438,7 @@
 				F1F0E5F42290644400E4B677 /* ResourceDetailsViewController.swift */,
 				F1F0E5F8229064B200E4B677 /* ResourceDetailsPresenter.swift */,
 				F1F0E5FA229064C400E4B677 /* ResourceDetailsConfigurator.swift */,
+				F1F0E6122291045400E4B677 /* ResourceDetailsRouter.swift */,
 			);
 			path = "Resource Details";
 			sourceTree = "<group>";
@@ -438,6 +452,10 @@
 				F1F0E6082290865A00E4B677 /* HeaderTableViewCell.xib */,
 				F1F0E60E2290972000E4B677 /* ContactInfoTableViewCell.swift */,
 				F1F0E60F2290972000E4B677 /* ContactInfoTableViewCell.xib */,
+				F1F0E616229110E300E4B677 /* SocialMediaTableViewCell.swift */,
+				F1F0E617229110E300E4B677 /* SocialMediaTableViewCell.xib */,
+				F1F0E61A22911F3C00E4B677 /* BizHourTableViewCell.swift */,
+				F1F0E61B22911F3C00E4B677 /* BizHourTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,10 +554,12 @@
 				F1F0E5D02290198D00E4B677 /* ItemTableViewCell.xib in Resources */,
 				F1F0E58E228FF58C00E4B677 /* LaunchScreen.storyboard in Resources */,
 				F1F0E600229076A100E4B677 /* PhotoTableViewCell.xib in Resources */,
+				F1F0E619229110E300E4B677 /* SocialMediaTableViewCell.xib in Resources */,
 				F1F0E58B228FF58C00E4B677 /* Assets.xcassets in Resources */,
 				F1F0E60A2290865A00E4B677 /* HeaderTableViewCell.xib in Resources */,
 				F1F0E6112290972000E4B677 /* ContactInfoTableViewCell.xib in Resources */,
 				F1F0E586228FF58B00E4B677 /* Main.storyboard in Resources */,
+				F1F0E61D22911F3C00E4B677 /* BizHourTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +657,7 @@
 				F1F0E6102290972000E4B677 /* ContactInfoTableViewCell.swift in Sources */,
 				F1F0E5C4229000ED00E4B677 /* CategoryResponse.swift in Sources */,
 				F1F0E5BE2290000400E4B677 /* FetchCategoryListRepository.swift in Sources */,
+				F1F0E61C22911F3C00E4B677 /* BizHourTableViewCell.swift in Sources */,
 				F1F0E5B2228FFCF900E4B677 /* BaseService.swift in Sources */,
 				F1F0E581228FF58B00E4B677 /* AppDelegate.swift in Sources */,
 				F1F0E5C12290003400E4B677 /* FetchCategoryListService.swift in Sources */,
@@ -650,8 +671,10 @@
 				F1F0E5F22290563700E4B677 /* ViewUtility.swift in Sources */,
 				F1F0E5FB229064C400E4B677 /* ResourceDetailsConfigurator.swift in Sources */,
 				F1F0E5AD228FFB5700E4B677 /* CategoryListRouter.swift in Sources */,
+				F1F0E61522910A3600E4B677 /* NavigationUtility.swift in Sources */,
 				F1F0E5E9229023A100E4B677 /* FetchResourceListService.swift in Sources */,
 				F1F0E5F62290644400E4B677 /* ResourceDetailsViewController.swift in Sources */,
+				F1F0E618229110E300E4B677 /* SocialMediaTableViewCell.swift in Sources */,
 				F1F0E5EB2290240600E4B677 /* ResourceResponse.swift in Sources */,
 				F1F0E5D42290213500E4B677 /* ResourceListViewController.swift in Sources */,
 				F1F0E5F02290440100E4B677 /* String+Extension.swift in Sources */,
@@ -659,6 +682,7 @@
 				F1F0E5BA228FFE4200E4B677 /* FetchCategoryListUseCase.swift in Sources */,
 				F1F0E5CB2290070500E4B677 /* ApiUrlConstants.swift in Sources */,
 				F1F0E5DF2290230300E4B677 /* ResourceListApiToUIMapper.swift in Sources */,
+				F1F0E6132291045400E4B677 /* ResourceDetailsRouter.swift in Sources */,
 				F1F0E5E12290231B00E4B677 /* ResourceItem.swift in Sources */,
 				F1F0E5ED2290245400E4B677 /* AddressResponse.swift in Sources */,
 				F1F0E5AB228FFB3400E4B677 /* CategoryListPresenter.swift in Sources */,

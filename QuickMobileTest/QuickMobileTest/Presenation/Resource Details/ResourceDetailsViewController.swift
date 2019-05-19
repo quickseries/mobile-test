@@ -9,6 +9,7 @@ import UIKit
 
 protocol ResourceDetailsView: class {
     func reloadData()
+    func setTitle(with name:String)
 }
 
 class ResourceDetailsViewController: UIViewController {
@@ -19,31 +20,43 @@ class ResourceDetailsViewController: UIViewController {
         static let photoCellId = "photoCellId"
         static let tableViewCellId = "tableViewCellId"
         static let contactInfoCellId = "contactInfoCellId"
-        
+        static let socialMediaCellId = "socialMediaCellId"
+        static let bizHourCellId = "bizHourCellId"
     }
     
     @IBOutlet private weak var resourceDetailsTableView: UITableView! {
         didSet {
-            resourceDetailsTableView.delegate = self
-            resourceDetailsTableView.dataSource = self
-            resourceDetailsTableView.estimatedRowHeight = 77
-            resourceDetailsTableView.rowHeight = UITableView.automaticDimension
-            resourceDetailsTableView.estimatedSectionHeaderHeight = 44
-            resourceDetailsTableView.sectionHeaderHeight = UITableView.automaticDimension
-            resourceDetailsTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.headerCellId)
-            resourceDetailsTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.photoCellId)
-            resourceDetailsTableView.register(UINib(nibName: "ContactInfoTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.contactInfoCellId)
-            
+            congureTableView()
         }
     }
     
     var configurator: ResourceDetailsConfigurator!
     var presenter: ResourceDetailsPresenter!
+    var router:ResourceDetailsRouter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(controller: self)
         // Do any additional setup after loading the view.
+    }
+    
+    private func setupUI() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+    }
+    
+    private func congureTableView() {
+        resourceDetailsTableView.delegate = self
+        resourceDetailsTableView.dataSource = self
+        resourceDetailsTableView.estimatedRowHeight = 77
+        resourceDetailsTableView.rowHeight = UITableView.automaticDimension
+        resourceDetailsTableView.estimatedSectionHeaderHeight = 44
+        resourceDetailsTableView.sectionHeaderHeight = UITableView.automaticDimension
+        resourceDetailsTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.headerCellId)
+        resourceDetailsTableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.photoCellId)
+        resourceDetailsTableView.register(UINib(nibName: "ContactInfoTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.contactInfoCellId)
+        resourceDetailsTableView.register(UINib(nibName: "SocialMediaTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.socialMediaCellId)
+        resourceDetailsTableView.register(UINib(nibName: "BizHourTableViewCell", bundle: nil), forCellReuseIdentifier: Constant.bizHourCellId)
     }
     
 }
@@ -93,17 +106,35 @@ extension ResourceDetailsViewController: UITableViewDelegate, UITableViewDataSou
             
         case .resourceDetail(let title, let description):
             return resourceDetailCell(title: title, description: description)
+            
         case .contact(let contacts):
             if row < contacts.count, let contactInfoCell = tableView.dequeueReusableCell(withIdentifier: Constant.contactInfoCellId, for: indexPath) as? ContactInfoTableViewCell {
                 contactInfoCell.configureCell(with: contacts[row])
+                contactInfoCell.delegate = router as? ContactInfoTableViewCellDelegate
                 return contactInfoCell
             }
-        case .address(let addresses): break
-        //return addresses.count
-        case .socialMedia(let medias): break
-        //return medias.count
-        case .bizHours(let hours): break
-            //return hours.count
+            
+        case .address(let addresses):
+            if row < addresses.count,
+                let addressCell = tableView.dequeueReusableCell(withIdentifier: Constant.contactInfoCellId, for: indexPath) as? ContactInfoTableViewCell {
+                addressCell.configureCell(with: addresses[row])
+                addressCell.delegate = router as? ContactInfoTableViewCellDelegate
+                return addressCell
+            }
+            
+        case .socialMedia(let medias):
+            if let socialMediaCell = tableView.dequeueReusableCell(withIdentifier: Constant.socialMediaCellId, for: indexPath) as? SocialMediaTableViewCell {
+                socialMediaCell.configureCell(with: medias)
+                socialMediaCell.delegate = router as? ContactInfoTableViewCellDelegate
+                return socialMediaCell
+            }
+            
+        case .bizHours(let hours):
+            if row < hours.count,
+                let bizHourCell = tableView.dequeueReusableCell(withIdentifier: Constant.bizHourCellId, for: indexPath) as? BizHourTableViewCell {
+                bizHourCell.configureCell(with: hours[row])
+                return bizHourCell
+            }
         }
         return UITableViewCell()
     }
@@ -117,6 +148,7 @@ extension ResourceDetailsViewController: UITableViewDelegate, UITableViewDataSou
         cell.detailTextLabel?.text = description
         cell.detailTextLabel?.numberOfLines = 0
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        cell.backgroundColor = UIColor.getHeaderViewBackgroundColor()
         return cell
     }
     
@@ -128,5 +160,9 @@ extension ResourceDetailsViewController: ResourceDetailsView {
         DispatchQueue.main.async {
             self.resourceDetailsTableView.reloadData()
         }
+    }
+    
+    func setTitle(with name: String) {
+        navigationItem.title = name
     }
 }

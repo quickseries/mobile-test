@@ -25,6 +25,7 @@ class ResourceListPresenterImpl {
         self.view = view
         self.categoryItem = categoryItem
         fetchResourceList(with: categoryItem.type)
+        view.setTitle(with: categoryItem.type)
     }
     
 }

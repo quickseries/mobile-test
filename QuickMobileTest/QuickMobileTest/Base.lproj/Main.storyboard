@@ -80,8 +80,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HIn-6a-WbM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="639"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="HIn-6a-WbM" firstAttribute="leading" secondItem="rX3-Nl-zYB" secondAttribute="leading" id="agK-g9-8yU"/>
                             <constraint firstItem="rX3-Nl-zYB" firstAttribute="trailing" secondItem="HIn-6a-WbM" secondAttribute="trailing" id="mh9-TP-fAt"/>
                             <constraint firstItem="HIn-6a-WbM" firstAttribute="top" secondItem="rX3-Nl-zYB" secondAttribute="top" id="sPr-BE-l2d"/>
-                            <constraint firstItem="rX3-Nl-zYB" firstAttribute="bottom" secondItem="HIn-6a-WbM" secondAttribute="bottom" id="y9c-B1-Oca"/>
+                            <constraint firstItem="rX3-Nl-zYB" firstAttribute="bottom" secondItem="HIn-6a-WbM" secondAttribute="bottom" constant="8" id="y9c-B1-Oca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rX3-Nl-zYB"/>
                     </view>
