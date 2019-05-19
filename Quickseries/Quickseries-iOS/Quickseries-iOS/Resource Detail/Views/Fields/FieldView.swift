@@ -46,19 +46,21 @@ class FieldView : UIView {
     lazy var fieldLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = UIApplication.shared.keyWindow?.tintColor
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         label.text = fieldLabelValue
+        label.numberOfLines = 1
         return label
     }()
     
     lazy var fieldValue: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = UIColor(named: "DarkGray")
+        label.numberOfLines = 1
         return label
     }()
     
     var actionButtons: [UIButton] = [] {
         didSet {
-            innerTrailingStack.arrangedSubviews.forEach({ $0.removeFromSuperview() })
             actionButtons.forEach({ innerTrailingStack.addArrangedSubview($0) })
         }
     }
@@ -79,6 +81,9 @@ class FieldView : UIView {
     }
     
     private func setupConstraints() {
+        fieldLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+        }
         mainStack.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(layoutMargins)
             make.trailing.equalToSuperview().inset(layoutMargins)

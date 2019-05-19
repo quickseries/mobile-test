@@ -84,6 +84,8 @@ class ContactInformationView: InformationView {
                 view.fieldValue.text = website
                 containerStackView.addArrangedSubview(view)
             }
+        } else {
+            fieldsContainer.removeFromSuperview()
         }
     }
 }

@@ -45,6 +45,7 @@
 		AFA44CDB228F677B00249BCC /* Quickseries_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CDA228F677B00249BCC /* Quickseries_iOSTests.swift */; };
 		AFA44CE6228F677B00249BCC /* Quickseries_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CE5228F677B00249BCC /* Quickseries_iOSUITests.swift */; };
 		AFDB21CD2290D28A00602675 /* String+StripHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21CC2290D28A00602675 /* String+StripHTML.swift */; };
+		AFDB21CF2290E05F00602675 /* TelephoneParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21CE2290E05F00602675 /* TelephoneParser.swift */; };
 		DDF96563D47D058D7F4480B9 /* Pods_Quickseries_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E638971B2F73600BF8F98F /* Pods_Quickseries_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		AFA44CE5228F677B00249BCC /* Quickseries_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quickseries_iOSUITests.swift; sourceTree = "<group>"; };
 		AFA44CE7228F677B00249BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFDB21CC2290D28A00602675 /* String+StripHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+StripHTML.swift"; sourceTree = "<group>"; };
+		AFDB21CE2290E05F00602675 /* TelephoneParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneParser.swift; sourceTree = "<group>"; };
 		BD3F47217C656D97FCBC49AD /* Pods-Quickseries-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSUITests/Pods-Quickseries-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42F8357725039BDCF21296F /* Pods_Quickseries_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD8AA47E722652152793F6 /* Pods-Quickseries-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSTests/Pods-Quickseries-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,10 +176,10 @@
 		AF16FA1D22906E7B00B34CAD /* Resource Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */,
 				AF16FA3722908A4500B34CAD /* Views */,
 				AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */,
 				AF16FA31229084E500B34CAD /* AddressViewModel.swift */,
-				AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */,
 				AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */,
 			);
 			path = "Resource Detail";
@@ -251,6 +253,7 @@
 				AF3474B8228FD776004D957E /* Protocols */,
 				AF3474AB228FC387004D957E /* View */,
 				AFDB21CC2290D28A00602675 /* String+StripHTML.swift */,
+				AFDB21CE2290E05F00602675 /* TelephoneParser.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
@@ -534,6 +538,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
@@ -600,6 +605,7 @@
 				AF16FA212290730D00B34CAD /* TelephoneFieldView.swift in Sources */,
 				AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */,
 				AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */,
+				AFDB21CF2290E05F00602675 /* TelephoneParser.swift in Sources */,
 				AF3474B3228FD5F5004D957E /* CategoryCellViewModel.swift in Sources */,
 				AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */,
 				AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */,

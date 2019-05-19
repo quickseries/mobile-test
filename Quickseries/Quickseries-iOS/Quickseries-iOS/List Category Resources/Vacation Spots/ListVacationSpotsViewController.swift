@@ -53,7 +53,9 @@ final class ListVacationSpotsViewController: UIViewController, ListResourcesView
     // MARK: Actions
     
     func onResourceSelection(resource: VacationSpot) {
-        //TODO: Implement
+        let destination = ResourceDetailViewController()
+        destination.viewModel = ResourceDetailViewModel(resource: resource)
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     // MARK: Private Methods

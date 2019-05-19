@@ -9,6 +9,7 @@
 import Foundation
 import RxRelay
 import Quickseries_API
+import PhoneNumberKit
 
 class ResourceDetailViewModel {
     
@@ -45,11 +46,13 @@ class ResourceDetailViewModel {
             addressViewModels = []
         }
         self.contactInfo = resource.contactInfo
-        let contactInfo = resource.contactInfo.map { c -> ContactInformationViewModel in
-            return ContactInformationViewModel(website: c.website, email: c.email,
-                                               faxNumber: c.faxNumber, tollFree: c.tollFree, phoneNumber: c.phoneNumber)
-        }
-        self.contactInfoViewModel = contactInfo
+        
+        let infoViewModel = ContactInformationViewModel(website: resource.contactInfo?.website,
+                                                       email: resource.contactInfo?.email,
+                                                       faxNumber: TelephoneParser.shared.parse(number: resource.contactInfo?.faxNumber),
+                                                       tollFree: TelephoneParser.shared.parse(number: resource.contactInfo?.tollFree),
+                                                       phoneNumber: TelephoneParser.shared.parse(number: resource.contactInfo?.phoneNumber))
+        self.contactInfoViewModel = infoViewModel
         self.image = resource.photo
         self.title = resource.title
         self.categoryDescription =  "\"\(resource.description.stripHTML())\""
