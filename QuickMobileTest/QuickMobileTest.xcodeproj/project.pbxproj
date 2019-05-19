@@ -13,7 +13,6 @@
 		F1F0E586228FF58B00E4B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E584228FF58B00E4B677 /* Main.storyboard */; };
 		F1F0E58B228FF58C00E4B677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E58A228FF58C00E4B677 /* Assets.xcassets */; };
 		F1F0E58E228FF58C00E4B677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E58C228FF58C00E4B677 /* LaunchScreen.storyboard */; };
-		F1F0E599228FF58C00E4B677 /* QuickMobileTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E598228FF58C00E4B677 /* QuickMobileTestTests.swift */; };
 		F1F0E5A9228FFAAD00E4B677 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */; };
 		F1F0E5AB228FFB3400E4B677 /* CategoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */; };
 		F1F0E5AD228FFB5700E4B677 /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E5AC228FFB5700E4B677 /* CategoryListRouter.swift */; };
@@ -59,6 +58,14 @@
 		F1F0E619229110E300E4B677 /* SocialMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E617229110E300E4B677 /* SocialMediaTableViewCell.xib */; };
 		F1F0E61C22911F3C00E4B677 /* BizHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E61A22911F3C00E4B677 /* BizHourTableViewCell.swift */; };
 		F1F0E61D22911F3C00E4B677 /* BizHourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E61B22911F3C00E4B677 /* BizHourTableViewCell.xib */; };
+		F1F0E620229138CE00E4B677 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E61F229138CE00E4B677 /* BaseTestCase.swift */; };
+		F1F0E623229138EC00E4B677 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E622229138EC00E4B677 /* StubGenerator.swift */; };
+		F1F0E628229139C100E4B677 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E627229139C100E4B677 /* restaurants.json */; };
+		F1F0E62A229139DE00E4B677 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E629229139DE00E4B677 /* categories.json */; };
+		F1F0E62C22913A1300E4B677 /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F0E62B22913A1300E4B677 /* vacation-spot.json */; };
+		F1F0E63022913AD600E4B677 /* FetchCategoryListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E62F22913AD600E4B677 /* FetchCategoryListUseCaseTests.swift */; };
+		F1F0E63222913AFF00E4B677 /* MockFetchCategoryListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63122913AFF00E4B677 /* MockFetchCategoryListService.swift */; };
+		F1F0E63422913F6800E4B677 /* CategoryListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +92,6 @@
 		F1F0E58D228FF58C00E4B677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1F0E58F228FF58C00E4B677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1F0E594228FF58C00E4B677 /* QuickMobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickMobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1F0E598228FF58C00E4B677 /* QuickMobileTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMobileTestTests.swift; sourceTree = "<group>"; };
 		F1F0E59A228FF58C00E4B677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1F0E5A8228FFAAD00E4B677 /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		F1F0E5AA228FFB3400E4B677 /* CategoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListPresenter.swift; sourceTree = "<group>"; };
@@ -132,6 +138,14 @@
 		F1F0E617229110E300E4B677 /* SocialMediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaTableViewCell.xib; sourceTree = "<group>"; };
 		F1F0E61A22911F3C00E4B677 /* BizHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHourTableViewCell.swift; sourceTree = "<group>"; };
 		F1F0E61B22911F3C00E4B677 /* BizHourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BizHourTableViewCell.xib; sourceTree = "<group>"; };
+		F1F0E61F229138CE00E4B677 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		F1F0E622229138EC00E4B677 /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		F1F0E627229139C100E4B677 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		F1F0E629229139DE00E4B677 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		F1F0E62B22913A1300E4B677 /* vacation-spot.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vacation-spot.json"; sourceTree = "<group>"; };
+		F1F0E62F22913AD600E4B677 /* FetchCategoryListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoryListUseCaseTests.swift; sourceTree = "<group>"; };
+		F1F0E63122913AFF00E4B677 /* MockFetchCategoryListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchCategoryListService.swift; sourceTree = "<group>"; };
+		F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +227,9 @@
 		F1F0E597228FF58C00E4B677 /* QuickMobileTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1F0E598228FF58C00E4B677 /* QuickMobileTestTests.swift */,
+				F1F0E62D22913A7400E4B677 /* QuickMobileTests */,
+				F1F0E6242291397F00E4B677 /* Mock */,
+				F1F0E61E229138A200E4B677 /* TestUtils */,
 				F1F0E59A228FF58C00E4B677 /* Info.plist */,
 			);
 			path = QuickMobileTestTests;
@@ -468,6 +484,43 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		F1F0E61E229138A200E4B677 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E61F229138CE00E4B677 /* BaseTestCase.swift */,
+				F1F0E622229138EC00E4B677 /* StubGenerator.swift */,
+			);
+			path = TestUtils;
+			sourceTree = "<group>";
+		};
+		F1F0E6242291397F00E4B677 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E629229139DE00E4B677 /* categories.json */,
+				F1F0E627229139C100E4B677 /* restaurants.json */,
+				F1F0E62B22913A1300E4B677 /* vacation-spot.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		F1F0E62D22913A7400E4B677 /* QuickMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E62E22913A8800E4B677 /* Category List */,
+			);
+			path = QuickMobileTests;
+			sourceTree = "<group>";
+		};
+		F1F0E62E22913A8800E4B677 /* Category List */ = {
+			isa = PBXGroup;
+			children = (
+				F1F0E62F22913AD600E4B677 /* FetchCategoryListUseCaseTests.swift */,
+				F1F0E63122913AFF00E4B677 /* MockFetchCategoryListService.swift */,
+				F1F0E63322913F6800E4B677 /* CategoryListViewControllerTests.swift */,
+			);
+			path = "Category List";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,6 +576,7 @@
 					};
 					F1F0E593228FF58C00E4B677 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = F1F0E57C228FF58B00E4B677;
 					};
 				};
@@ -567,6 +621,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F0E62C22913A1300E4B677 /* vacation-spot.json in Resources */,
+				F1F0E628229139C100E4B677 /* restaurants.json in Resources */,
+				F1F0E62A229139DE00E4B677 /* categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,7 +750,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F0E599228FF58C00E4B677 /* QuickMobileTestTests.swift in Sources */,
+				F1F0E63222913AFF00E4B677 /* MockFetchCategoryListService.swift in Sources */,
+				F1F0E63022913AD600E4B677 /* FetchCategoryListUseCaseTests.swift in Sources */,
+				F1F0E620229138CE00E4B677 /* BaseTestCase.swift in Sources */,
+				F1F0E623229138EC00E4B677 /* StubGenerator.swift in Sources */,
+				F1F0E63422913F6800E4B677 /* CategoryListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,6 +948,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8WFB9U9CW;
 				INFOPLIST_FILE = QuickMobileTestTests/Info.plist;
@@ -897,6 +959,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quickseries.QuickMobileTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickMobileTest.app/QuickMobileTest";
@@ -909,6 +972,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8WFB9U9CW;
 				INFOPLIST_FILE = QuickMobileTestTests/Info.plist;

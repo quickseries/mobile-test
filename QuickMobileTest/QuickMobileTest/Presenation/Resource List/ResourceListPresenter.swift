@@ -39,7 +39,9 @@ extension ResourceListPresenterImpl: ResourceListPresenter {
             switch result {
             case .success(let items):
                 self?.resourceItems = items
-                self?.view?.reloadData()
+                DispatchQueue.main.async {
+                    self?.view?.reloadData()
+                }
             case .failure(let error):
                 Logger.log(message: "\(error.localizedDescription)", messageType: .error)
             }

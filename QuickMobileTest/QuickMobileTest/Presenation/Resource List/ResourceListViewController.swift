@@ -113,9 +113,7 @@ extension ResourceListViewController: UITableViewDelegate, UITableViewDataSource
 extension ResourceListViewController: ResourceListView {
     
     func reloadData() {
-        DispatchQueue.main.async {
             self.resourceListTableView.reloadData()
-        }
     }
     
     func setTitle(with type: CategoryType) {

@@ -20,7 +20,7 @@ protocol CategoryListView: class {
  */
 class CategoryListViewController: UIViewController {
     
-    private struct Constant {
+    struct Constant {
         static let title = "Category List"
         static let cellId = "cellId"
     }
@@ -35,7 +35,7 @@ class CategoryListViewController: UIViewController {
         }
     }
     
-    private let configurator = CategoryListConfigurator()
+    let configurator = CategoryListConfigurator()
     var router: CategoryListRouter?
     var presenter: CategoryListPresenter!
     
@@ -80,8 +80,6 @@ extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource
 extension CategoryListViewController: CategoryListView {
     
     func reloadData() {
-        DispatchQueue.main.async {
-            self.categoryListTabbleView.reloadData()
-        }
+        self.categoryListTabbleView.reloadData()
     }
 }
