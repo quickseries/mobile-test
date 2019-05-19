@@ -7,10 +7,17 @@
 
 import UIKit
 
+/**
+ This protocol used for by Presenter to communicate with ViewController
+ */
 protocol CategoryListView: class {
     func reloadData()
 }
 
+/**
+ Note:- this Controller uses a MVP-Clean Architectural Pattern
+ This shows List of Category receieved from Backend
+ */
 class CategoryListViewController: UIViewController {
     
     private struct Constant {

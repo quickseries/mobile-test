@@ -12,6 +12,10 @@ protocol ResourceDetailsView: class {
     func setTitle(with name:String)
 }
 
+/**
+ Note:- This Flow uses a MVP-Clean Architectural Pattern
+ This shows Details of Resource with all the details
+ */
 class ResourceDetailsViewController: UIViewController {
     
     private struct Constant {

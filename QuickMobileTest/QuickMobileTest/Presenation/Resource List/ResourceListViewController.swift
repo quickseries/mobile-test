@@ -12,6 +12,7 @@ protocol ResourceListView: class {
     func setTitle(with type: CategoryType)
 }
 
+
 enum SortType {
     case aToz, zToa, none
     
@@ -25,6 +26,10 @@ enum SortType {
     }
 }
 
+/**
+ Note:- This Flow uses a MVP-Clean Architectural Pattern
+ This shows List of Resources for particular category
+ */
 class ResourceListViewController: UIViewController {
     
     private struct Constant {
