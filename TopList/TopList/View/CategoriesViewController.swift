@@ -20,6 +20,8 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
     var interactor: FetchCategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
+    var items: [ListViewModelItem] = []
+
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Object lifecycle
@@ -81,6 +83,44 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
     }
 
     func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel){
+        let vm =  viewModel.categories
+        items = vm
+        if items.count == 0 {
+            let noResult = NoResultsItem(name:"No Results found, please try again.")
+            items.append(noResult)
+        }
+        
+        tableView.reloadData()
+    }
+}
 
+//MARK: - UITableViewDataSource
+extension CategoriesViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  items.filter { $0.type == .list }.count > 0 ? items.filter { $0.type == .list }.first?.rowCount ?? 0 : items.filter { $0.type == .noResult }.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.filter { $0.type == .list }.count > 0 ? items.count : items.filter { $0.type == .noResult }[section].rowCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items.filter { $0.type == .list }[indexPath.row]
+        switch item.type {
+        case .list:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier, for: indexPath) as? ListCell {
+                cell.item = item
+                return cell
+            }
+        case .noResult:
+            return UITableViewCell()
+        case .details:
+            return UITableViewCell()
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section].type == .list ? "" : items[section].sectionTitle
     }
 }
