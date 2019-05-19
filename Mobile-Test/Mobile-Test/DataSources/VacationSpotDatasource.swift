@@ -9,7 +9,7 @@
 import Foundation
 
 class VacationSpotDatasource: Datasource {
-    typealias T = VacationSpot
+    typealias T = Ressource
     
     func load() -> [T] {
         fatalError() // TODO:

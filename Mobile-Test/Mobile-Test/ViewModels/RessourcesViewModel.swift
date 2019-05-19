@@ -25,16 +25,13 @@ class RessourcesViewModel {
     private weak var outputs: RessourcesViewModelOutputs!
     private weak var coordinatorOutputs: RessourcesViewModelCoordinatorOutputs!
     
-    private var vacationSpotDatasource: VacationSpotDatasource
-    private var restaurantsDatasource: RestaurantsDatasource
+    private var ressourceDatasource: VacationSpotDatasource
     
     init(coordinatorOutputs: RessourcesViewModelCoordinatorOutputs,
-         vacationSpotDatasource: VacationSpotDatasource,
-         restaurantsDatasource: RestaurantsDatasource) {
+         ressourceDatasource: VacationSpotDatasource) {
         
         self.coordinatorOutputs = coordinatorOutputs
-        self.vacationSpotDatasource = vacationSpotDatasource
-        self.restaurantsDatasource = restaurantsDatasource
+        self.ressourceDatasource = ressourceDatasource
     }
 }
 
@@ -45,9 +42,7 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
     }
     
     func viewWillAppear() {
-        let vacationSpots: [Ressource] = self.vacationSpotDatasource.load()
-        let restaurants: [Ressource] = self.restaurantsDatasource.load()
-        let ressources: [Ressource] = vacationSpots + restaurants
+        let ressources: [Ressource] = ressourceDatasource.load()
         self.outputs.displayRessources(ressources: ressources)
     }
 }

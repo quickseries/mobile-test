@@ -19,6 +19,12 @@ class RessourcesViewController: UIViewController, StoryboardBased {
         viewModel.bind(outputs: ressourcesVC)
         return ressourcesVC
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.viewModel.inputs.viewWillAppear()
+    }
 }
 
 // MARK: - CategoriesViewModelOutputs

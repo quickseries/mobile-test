@@ -26,5 +26,7 @@ class AppCoordinator: Coordinator {
 
 // MARK: - CategoriesViewModelCoordinatorOutputs
 extension AppCoordinator: CategoriesViewModelCoordinatorOutputs {
-    
+    func didAskToSeeCategory(category: Category) {
+        
+    }
 }
