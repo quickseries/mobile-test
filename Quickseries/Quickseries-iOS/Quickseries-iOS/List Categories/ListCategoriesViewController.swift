@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Quickseries_API
 
 final class ListCategoriesViewController: UIViewController, ListResourcesViewController {
 
@@ -48,7 +47,7 @@ final class ListCategoriesViewController: UIViewController, ListResourcesViewCon
     
     // MARK: Actions
     
-    func onResourceSelection(resource: Quickseries_API.Category) {
+    func onResourceSelection(resource: Category) {
         let destination: UIViewController
         switch resource.type {
         case .restaurant:

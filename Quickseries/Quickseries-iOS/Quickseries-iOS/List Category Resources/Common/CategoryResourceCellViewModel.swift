@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Quickseries_API
 
 struct CategoryResourceCellViewModel : ResourceCellViewModel {
     let id: String

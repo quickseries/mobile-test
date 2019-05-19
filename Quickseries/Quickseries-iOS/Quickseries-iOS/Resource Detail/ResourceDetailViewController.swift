@@ -14,7 +14,11 @@ import Kingfisher
 
 class ResourceDetailViewController: UIViewController {
 
-    var viewModel: ResourceDetailViewModel!
+    var viewModel: ResourceDetailViewModel! {
+        didSet {
+            setupDelegates()
+        }
+    }
     let bag = DisposeBag()
     
     private lazy var scrollView: UIScrollView = {
@@ -160,7 +164,8 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func callNumber(number: String) {
-        //TODO: Implement
+        guard let number = URL(string: "tel://" + number) else { return }
+        UIApplication.shared.open(number)
     }
     
     private func smsNumber(number: String) {

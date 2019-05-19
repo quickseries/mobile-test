@@ -2,9 +2,6 @@ workspace 'Quickseries'
 platform :ios, '12.2'
 use_frameworks!
 
-def networking_pods
-  pod 'Moya', '~> 13.0'
-end
 
 target 'Quickseries-iOS' do
   project 'Quickseries-iOS/Quickseries-iOS.xcodeproj'
@@ -15,23 +12,12 @@ target 'Quickseries-iOS' do
   pod 'RxRelay', '~> 5'
   pod 'SnapKit', '~> 5.0.0'
   pod 'PhoneNumberKit', '~> 2.6'
-  networking_pods
-  
+  pod 'Moya', '~> 13.0'
+
   target 'Quickseries-iOSTests' do
     inherit! :search_paths
   end
   target 'Quickseries-iOSUITests' do
     inherit! :search_paths
   end
-end
-
-target 'Quickseries-API' do
-  project 'Quickseries-API/Quickseries-API.xcodeproj'
-  networking_pods
-end
-
-
-target 'Quickseries-APITests' do
-  project 'Quickseries-API/Quickseries-API.xcodeproj'
-  networking_pods
 end

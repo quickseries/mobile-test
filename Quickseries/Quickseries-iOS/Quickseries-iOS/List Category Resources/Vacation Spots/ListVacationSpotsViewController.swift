@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Quickseries_API
 
 final class ListVacationSpotsViewController: UIViewController, ListResourcesViewController, CanSortTableView  {    
     

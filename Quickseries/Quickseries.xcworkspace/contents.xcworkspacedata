@@ -5,9 +5,6 @@
       location = "group:Quickseries-iOS/Quickseries-iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Quickseries-API/Quickseries-API.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

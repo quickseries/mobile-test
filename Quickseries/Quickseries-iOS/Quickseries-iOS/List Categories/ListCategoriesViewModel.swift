@@ -8,23 +8,22 @@
 
 import Foundation
 import RxRelay
-import Quickseries_API
 
 final class ListCategoriesViewModel : ListResourcesViewModel {
  
-    typealias Entity = Quickseries_API.Category
+    typealias Entity = Category
     typealias EntityViewModel = CategoryCellViewModel
     
-    var resourceEntities = [Quickseries_API.Category]()
+    var resourceEntities = [Category]()
     let resources = BehaviorRelay<[CategoryCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<Quickseries_API.Category?>(value: nil)
+    let selectedResource = BehaviorRelay<Category?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
-    func parseEntityToViewModel(_ entity: Quickseries_API.Category) -> CategoryCellViewModel {
+    func parseEntityToViewModel(_ entity: Category) -> CategoryCellViewModel {
         return CategoryCellViewModel(id: entity.id, title: entity.title, type: entity.type)
     }
     
-    func requestToApi(callback: ((Outcome<[Quickseries_API.Category]>) -> ())?) {
+    func requestToApi(callback: ((Outcome<[Category]>) -> ())?) {
         return QuickseriesApiClient.shared.getCategories(callback: callback)
     }
 }

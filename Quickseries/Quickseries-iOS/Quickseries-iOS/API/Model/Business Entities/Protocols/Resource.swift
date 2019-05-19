@@ -1,6 +1,6 @@
 //
-//  RestaurantCellViewModel.swift
-//  Quickseries-iOS
+//  Resource.swift
+//  Quickseries-API
 //
 //  Created by Thiago Magalhaes on 2019-05-17.
 //  Copyright © 2019 Thiago Magalhaes. All rights reserved.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol ResourceCellViewModel {
+public protocol Resource {
     var id: String { get }
     var title: String { get }
-    var type: CategoryType { get }
 }

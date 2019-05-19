@@ -46,6 +46,23 @@
 		AFA44CE6228F677B00249BCC /* Quickseries_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CE5228F677B00249BCC /* Quickseries_iOSUITests.swift */; };
 		AFDB21CD2290D28A00602675 /* String+StripHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21CC2290D28A00602675 /* String+StripHTML.swift */; };
 		AFDB21CF2290E05F00602675 /* TelephoneParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21CE2290E05F00602675 /* TelephoneParser.swift */; };
+		AFDB21F32290E6B500602675 /* String+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21DC2290E6B500602675 /* String+NilIfEmpty.swift */; };
+		AFDB21F42290E6B500602675 /* QuickSeriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21DD2290E6B500602675 /* QuickSeriesApi.swift */; };
+		AFDB21F52290E6B500602675 /* QuickseriesApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21DE2290E6B500602675 /* QuickseriesApiClient.swift */; };
+		AFDB21F62290E6B500602675 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E12290E6B500602675 /* CategoryType.swift */; };
+		AFDB21F72290E6B500602675 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E32290E6B500602675 /* SocialMedia.swift */; };
+		AFDB21F82290E6B500602675 /* BusinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E42290E6B500602675 /* BusinessHours.swift */; };
+		AFDB21F92290E6B500602675 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E52290E6B500602675 /* Address.swift */; };
+		AFDB21FA2290E6B500602675 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E62290E6B500602675 /* ContactInfo.swift */; };
+		AFDB21FB2290E6B500602675 /* DayOfWeekHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E72290E6B500602675 /* DayOfWeekHours.swift */; };
+		AFDB21FC2290E6B500602675 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E82290E6B500602675 /* Coordinates.swift */; };
+		AFDB21FD2290E6B500602675 /* VacationSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21E92290E6B500602675 /* VacationSpot.swift */; };
+		AFDB21FE2290E6B500602675 /* CategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21EA2290E6B500602675 /* CategoryResource.swift */; };
+		AFDB21FF2290E6B500602675 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21EB2290E6B500602675 /* Category.swift */; };
+		AFDB22002290E6B500602675 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21ED2290E6B500602675 /* Resource.swift */; };
+		AFDB22012290E6B500602675 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21EE2290E6B500602675 /* Restaurant.swift */; };
+		AFDB22022290E6B500602675 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21F02290E6B500602675 /* Outcome.swift */; };
+		AFDB22032290E6B500602675 /* Quickseries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21F22290E6B500602675 /* Quickseries.swift */; };
 		DDF96563D47D058D7F4480B9 /* Pods_Quickseries_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E638971B2F73600BF8F98F /* Pods_Quickseries_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +133,23 @@
 		AFA44CE7228F677B00249BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFDB21CC2290D28A00602675 /* String+StripHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+StripHTML.swift"; sourceTree = "<group>"; };
 		AFDB21CE2290E05F00602675 /* TelephoneParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneParser.swift; sourceTree = "<group>"; };
+		AFDB21DC2290E6B500602675 /* String+NilIfEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NilIfEmpty.swift"; sourceTree = "<group>"; };
+		AFDB21DD2290E6B500602675 /* QuickSeriesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSeriesApi.swift; sourceTree = "<group>"; };
+		AFDB21DE2290E6B500602675 /* QuickseriesApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickseriesApiClient.swift; sourceTree = "<group>"; };
+		AFDB21E12290E6B500602675 /* CategoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		AFDB21E32290E6B500602675 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		AFDB21E42290E6B500602675 /* BusinessHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHours.swift; sourceTree = "<group>"; };
+		AFDB21E52290E6B500602675 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		AFDB21E62290E6B500602675 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		AFDB21E72290E6B500602675 /* DayOfWeekHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOfWeekHours.swift; sourceTree = "<group>"; };
+		AFDB21E82290E6B500602675 /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		AFDB21E92290E6B500602675 /* VacationSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationSpot.swift; sourceTree = "<group>"; };
+		AFDB21EA2290E6B500602675 /* CategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryResource.swift; sourceTree = "<group>"; };
+		AFDB21EB2290E6B500602675 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		AFDB21ED2290E6B500602675 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		AFDB21EE2290E6B500602675 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		AFDB21F02290E6B500602675 /* Outcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		AFDB21F22290E6B500602675 /* Quickseries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quickseries.swift; sourceTree = "<group>"; };
 		BD3F47217C656D97FCBC49AD /* Pods-Quickseries-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSUITests/Pods-Quickseries-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42F8357725039BDCF21296F /* Pods_Quickseries_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD8AA47E722652152793F6 /* Pods-Quickseries-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSTests/Pods-Quickseries-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				AFA44CC5228F677A00249BCC /* AppDelegate.swift */,
+				AFDB21D02290E66600602675 /* API */,
 				AF34749B228FBCD9004D957E /* Common */,
 				AF347481228F975C004D957E /* List Categories */,
 				AF34749C228FBCE4004D957E /* List Category Resources */,
@@ -358,6 +393,86 @@
 				AFA44CE7228F677B00249BCC /* Info.plist */,
 			);
 			path = "Quickseries-iOSUITests";
+			sourceTree = "<group>";
+		};
+		AFDB21D02290E66600602675 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21DD2290E6B500602675 /* QuickSeriesApi.swift */,
+				AFDB21DE2290E6B500602675 /* QuickseriesApiClient.swift */,
+				AFDB21DB2290E6B500602675 /* Extensions */,
+				AFDB21DF2290E6B500602675 /* Model */,
+				AFDB21F12290E6B500602675 /* Providers */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AFDB21DB2290E6B500602675 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21DC2290E6B500602675 /* String+NilIfEmpty.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AFDB21DF2290E6B500602675 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21E02290E6B500602675 /* Business Entities */,
+				AFDB21EF2290E6B500602675 /* API Entities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFDB21E02290E6B500602675 /* Business Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21E12290E6B500602675 /* CategoryType.swift */,
+				AFDB21E22290E6B500602675 /* Subentities */,
+				AFDB21E92290E6B500602675 /* VacationSpot.swift */,
+				AFDB21EA2290E6B500602675 /* CategoryResource.swift */,
+				AFDB21EB2290E6B500602675 /* Category.swift */,
+				AFDB21EC2290E6B500602675 /* Protocols */,
+				AFDB21EE2290E6B500602675 /* Restaurant.swift */,
+			);
+			path = "Business Entities";
+			sourceTree = "<group>";
+		};
+		AFDB21E22290E6B500602675 /* Subentities */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21E32290E6B500602675 /* SocialMedia.swift */,
+				AFDB21E42290E6B500602675 /* BusinessHours.swift */,
+				AFDB21E52290E6B500602675 /* Address.swift */,
+				AFDB21E62290E6B500602675 /* ContactInfo.swift */,
+				AFDB21E72290E6B500602675 /* DayOfWeekHours.swift */,
+				AFDB21E82290E6B500602675 /* Coordinates.swift */,
+			);
+			path = Subentities;
+			sourceTree = "<group>";
+		};
+		AFDB21EC2290E6B500602675 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21ED2290E6B500602675 /* Resource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AFDB21EF2290E6B500602675 /* API Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21F02290E6B500602675 /* Outcome.swift */,
+			);
+			path = "API Entities";
+			sourceTree = "<group>";
+		};
+		AFDB21F12290E6B500602675 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB21F22290E6B500602675 /* Quickseries.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,19 +717,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF16FA27229075B200B34CAD /* TollFreeFieldView.swift in Sources */,
+				AFDB21F82290E6B500602675 /* BusinessHours.swift in Sources */,
 				AF16FA212290730D00B34CAD /* TelephoneFieldView.swift in Sources */,
 				AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */,
 				AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */,
 				AFDB21CF2290E05F00602675 /* TelephoneParser.swift in Sources */,
 				AF3474B3228FD5F5004D957E /* CategoryCellViewModel.swift in Sources */,
 				AFA44CC6228F677A00249BCC /* AppDelegate.swift in Sources */,
+				AFDB22032290E6B500602675 /* Quickseries.swift in Sources */,
+				AFDB21F62290E6B500602675 /* CategoryType.swift in Sources */,
 				AF34749A228FB8FD004D957E /* ListVacationSpotsViewModel.swift in Sources */,
+				AFDB21FA2290E6B500602675 /* ContactInfo.swift in Sources */,
 				AF347492228FB0F0004D957E /* ResourceCellViewModel.swift in Sources */,
+				AFDB22022290E6B500602675 /* Outcome.swift in Sources */,
+				AFDB21FD2290E6B500602675 /* VacationSpot.swift in Sources */,
 				AF347498228FB630004D957E /* ListResourcesViewModel.swift in Sources */,
 				AF16FA362290855D00B34CAD /* InformationView.swift in Sources */,
 				AF16FA1F22906F7C00B34CAD /* FieldView.swift in Sources */,
+				AFDB21F92290E6B500602675 /* Address.swift in Sources */,
 				AF16FA3B22908AFE00B34CAD /* ResourceDetailViewModel.swift in Sources */,
+				AFDB21F32290E6B500602675 /* String+NilIfEmpty.swift in Sources */,
+				AFDB22002290E6B500602675 /* Resource.swift in Sources */,
+				AFDB22012290E6B500602675 /* Restaurant.swift in Sources */,
 				AF16FA29229076B700B34CAD /* WebsiteFieldView.swift in Sources */,
+				AFDB21FB2290E6B500602675 /* DayOfWeekHours.swift in Sources */,
 				AF3474B5228FD680004D957E /* CategoryResourceCellViewModel.swift in Sources */,
 				AF3474AF228FCE18004D957E /* CanSortResources.swift in Sources */,
 				AF3474A2228FBDEB004D957E /* ListResourcesViewController.swift in Sources */,
@@ -622,14 +748,20 @@
 				AF34748E228F9CE2004D957E /* ListCategoriesViewModel.swift in Sources */,
 				AF16FA3922908A5B00B34CAD /* ResourceDetailViewController.swift in Sources */,
 				AF347490228FAFE7004D957E /* ListRestaurantsViewModel.swift in Sources */,
+				AFDB21F52290E6B500602675 /* QuickseriesApiClient.swift in Sources */,
 				AF3474AD228FC97D004D957E /* ListVacationSpotsViewController.swift in Sources */,
+				AFDB21F72290E6B500602675 /* SocialMedia.swift in Sources */,
+				AFDB21FC2290E6B500602675 /* Coordinates.swift in Sources */,
+				AFDB21FE2290E6B500602675 /* CategoryResource.swift in Sources */,
 				AF3474A0228FBD9D004D957E /* ListRestaurantsViewController.swift in Sources */,
 				AF16FA2B22907DE400B34CAD /* AddressFieldView.swift in Sources */,
 				AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */,
 				AF16FA2E2290803700B34CAD /* ContactInformationView.swift in Sources */,
+				AFDB21FF2290E6B500602675 /* Category.swift in Sources */,
 				AF3474A4228FC025004D957E /* ResourceTableViewCell.swift in Sources */,
 				AFDB21CD2290D28A00602675 /* String+StripHTML.swift in Sources */,
 				AF7A4958229068F500C157F8 /* CanSortTableView.swift in Sources */,
+				AFDB21F42290E6B500602675 /* QuickSeriesApi.swift in Sources */,
 				AF16FA302290822B00B34CAD /* ContactInformationViewModel.swift in Sources */,
 				AF16FA25229074AD00B34CAD /* EmailFieldView.swift in Sources */,
 				AF34748C228F9AEF004D957E /* ListCategoriesViewController.swift in Sources */,
@@ -802,6 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PXE48XQ79T;
 				INFOPLIST_FILE = "$(SRCROOT)/Quickseries-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -820,6 +953,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PXE48XQ79T;
 				INFOPLIST_FILE = "$(SRCROOT)/Quickseries-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

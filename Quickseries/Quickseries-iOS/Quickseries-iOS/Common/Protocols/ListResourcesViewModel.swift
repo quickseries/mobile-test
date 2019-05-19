@@ -8,7 +8,6 @@
 
 import Foundation
 import RxRelay
-import Quickseries_API
 
 protocol ListResourcesViewModel : AnyObject {
     

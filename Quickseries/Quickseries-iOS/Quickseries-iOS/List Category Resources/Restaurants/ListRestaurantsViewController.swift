@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import Quickseries_API
 
 final class ListRestaurantsViewController: UIViewController, ListResourcesViewController, CanSortTableView {
     

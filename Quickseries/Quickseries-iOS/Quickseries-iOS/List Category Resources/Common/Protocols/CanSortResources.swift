@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Quickseries_API
 
 protocol CanSortResources {
     
