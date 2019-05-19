@@ -32,9 +32,13 @@ private let dataLoader = QuickOperationManager()
     func testCategoriesViewModel()  {
         
       self.categoriesviewModel = CategoriesViewModel(key: "")
+        
+       
+       
+         XCTAssertNotNil(self.categoriesviewModel)
        
     }
-    func testHasworkingDays(){
+    func testCategoryItems(){
         
         
     }
