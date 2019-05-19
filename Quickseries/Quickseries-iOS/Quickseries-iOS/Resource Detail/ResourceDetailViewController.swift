@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import Kingfisher
+import MessageUI
 
 class ResourceDetailViewController: UIViewController {
 
@@ -160,7 +161,18 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func composeEmail(email: String) {
-        //TODO: Implement
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setMessageBody("", isHTML: true)
+            present(mail, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Failure", message: "Your device does not support this feature", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Discard", style: .cancel, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     private func callNumber(number: String) {
@@ -185,3 +197,9 @@ class ResourceDetailViewController: UIViewController {
     }
 }
 
+extension ResourceDetailViewController : MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+}
