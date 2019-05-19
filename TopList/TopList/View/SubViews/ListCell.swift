@@ -15,7 +15,7 @@ class ListCell: UITableViewCell {
     
     var item: ListViewModelItem? {
         didSet {
-            guard let item = item as? ListItem else {
+            guard let item = item as? Category.FetchCategories.ViewModel.ListItem else {
                 return
             }            
             headLines?.text = item.headLine
