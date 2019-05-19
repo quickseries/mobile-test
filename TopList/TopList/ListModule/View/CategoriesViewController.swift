@@ -25,6 +25,9 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
     var interactor: FetchCategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
+    var detailsInteractor: FetchDetailsBusinessLogic?
+    var detailsRouter: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
+
     /// Mode of View
     ///
     /// - list: Intial screen with list of resources
@@ -72,7 +75,17 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
         router.viewController     = viewController
         router.dataStore          = interactor
     }else{
-        
+        let viewController        = self
+        let interactor            = DetailsInteractor()
+        let presenter             = DetailsPresenter()
+        let router                = DetailsRouter()
+        viewController.detailsInteractor = interactor
+        viewController.detailsRouter     = router
+        interactor.presenter      = presenter
+        presenter.viewController  = viewController
+        router.viewController     = viewController
+        router.dataStore          = interactor
+
     }
     
   }
@@ -148,4 +161,29 @@ extension CategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].type == .list ? "" : items[section].sectionTitle
     }
+}
+
+extension CategoriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        mode = .detail
+        fetchDetails(for: items[indexPath.row])
+    }
+}
+
+
+extension CategoriesViewController: DetailsDisplayLogic {
+    func fetchDetails(for selection: ListViewModelItem){
+        guard let item = selection as? Category.FetchCategories.ViewModel.ListItem else {
+            return
+        }
+        
+        let request = Details.FetchDetails.Request(id: item.id)
+        detailsInteractor?.fetchDetails(request: request)
+    }
+
+    func displayDetails(viewModel: Details.FetchDetails.ViewModel) {
+        
+        
+    }
+    
 }

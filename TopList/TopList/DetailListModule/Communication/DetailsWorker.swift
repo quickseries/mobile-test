@@ -16,7 +16,7 @@ class DetailsWorker{
     var onCompletion:((_ results: [DetailLists]) -> Void)?
     
     func fetchDetails(id:String, completionHandler: @escaping ([DetailLists]) -> Void){
-        let resources = Storage.retrieve("restaurants", of: .json, as: [DetailLists].self)
+        let resources = Storage.retrieve(id, of: .json, as: [DetailLists].self)
         print(resources)
         onCompletion = completionHandler
         details = resources

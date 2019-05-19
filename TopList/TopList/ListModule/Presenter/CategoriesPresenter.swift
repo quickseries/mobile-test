@@ -24,7 +24,7 @@ class CategoriesPresenter: CategoriesPresentationLogic{
         var displayedCategories: [Category.FetchCategories.ViewModel.ListItem] = []
         
         for category in response.categories {
-                let listVM = Category.FetchCategories.ViewModel.ListItem.init(headLine: category.title ?? "", overView: category.description ?? "" , date: category.created_at ?? "")
+                let listVM = Category.FetchCategories.ViewModel.ListItem.init(headLine: category.title ?? "", overView: category.description ?? "" , id: category.slug ?? "")
                 displayedCategories.append(listVM)
         }
         

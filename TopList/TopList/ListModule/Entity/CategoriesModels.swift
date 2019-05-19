@@ -63,7 +63,7 @@ enum Category{
                 }
                 
                 var sectionTitle: String {
-                    return self.date
+                    return self.id
                 }
                 
                 var rowCount: Int {
@@ -72,12 +72,12 @@ enum Category{
                 
                 var headLine: String
                 var overView: String
-                var date: String
+                var id: String
                 
-                init(headLine: String, overView: String, date: String) {
+                init(headLine: String, overView: String, id: String) {
                     self.headLine = headLine
                     self.overView = overView
-                    self.date = date
+                    self.id = id
                 }
             }
             var categories: [ListItem]
