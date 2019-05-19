@@ -22,6 +22,8 @@ class InformationView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = fieldLabelValue
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.textColor = UIColor(named: "DarkGray")
         return label
     }()
     

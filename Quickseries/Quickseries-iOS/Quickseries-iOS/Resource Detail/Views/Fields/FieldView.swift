@@ -52,6 +52,7 @@ class FieldView : UIView {
     
     lazy var fieldValue: UILabel = {
         let label = UILabel(frame: .zero)
+        label.textColor = UIColor(named: "DarkGray")
         return label
     }()
     

@@ -44,6 +44,7 @@
 		AFA44CD0228F677B00249BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA44CCE228F677B00249BCC /* LaunchScreen.storyboard */; };
 		AFA44CDB228F677B00249BCC /* Quickseries_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CDA228F677B00249BCC /* Quickseries_iOSTests.swift */; };
 		AFA44CE6228F677B00249BCC /* Quickseries_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA44CE5228F677B00249BCC /* Quickseries_iOSUITests.swift */; };
+		AFDB21CD2290D28A00602675 /* String+StripHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21CC2290D28A00602675 /* String+StripHTML.swift */; };
 		DDF96563D47D058D7F4480B9 /* Pods_Quickseries_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E638971B2F73600BF8F98F /* Pods_Quickseries_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		AFA44CE1228F677B00249BCC /* Quickseries-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quickseries-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA44CE5228F677B00249BCC /* Quickseries_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quickseries_iOSUITests.swift; sourceTree = "<group>"; };
 		AFA44CE7228F677B00249BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFDB21CC2290D28A00602675 /* String+StripHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+StripHTML.swift"; sourceTree = "<group>"; };
 		BD3F47217C656D97FCBC49AD /* Pods-Quickseries-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSUITests/Pods-Quickseries-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42F8357725039BDCF21296F /* Pods_Quickseries_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD8AA47E722652152793F6 /* Pods-Quickseries-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSTests/Pods-Quickseries-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				AF3474B8228FD776004D957E /* Protocols */,
 				AF3474AB228FC387004D957E /* View */,
+				AFDB21CC2290D28A00602675 /* String+StripHTML.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				AF3474AA228FC37A004D957E /* ErrorView.swift in Sources */,
 				AF16FA2E2290803700B34CAD /* ContactInformationView.swift in Sources */,
 				AF3474A4228FC025004D957E /* ResourceTableViewCell.swift in Sources */,
+				AFDB21CD2290D28A00602675 /* String+StripHTML.swift in Sources */,
 				AF7A4958229068F500C157F8 /* CanSortTableView.swift in Sources */,
 				AF16FA302290822B00B34CAD /* ContactInformationViewModel.swift in Sources */,
 				AF16FA25229074AD00B34CAD /* EmailFieldView.swift in Sources */,

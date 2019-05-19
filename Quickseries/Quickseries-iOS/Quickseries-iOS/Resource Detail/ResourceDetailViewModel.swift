@@ -52,7 +52,7 @@ class ResourceDetailViewModel {
         self.contactInfoViewModel = contactInfo
         self.image = resource.photo
         self.title = resource.title
-        self.categoryDescription = resource.description
+        self.categoryDescription =  "\"\(resource.description.stripHTML())\""
     }
 }
 

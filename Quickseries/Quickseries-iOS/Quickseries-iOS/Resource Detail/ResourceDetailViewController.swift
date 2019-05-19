@@ -20,11 +20,19 @@ class ResourceDetailViewController: UIViewController {
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView(frame: .zero)
         scroll.contentInset.top = view.layoutMargins.top
+        scroll.alwaysBounceVertical = true
         return scroll
+    }()
+    
+    private lazy var descriptionContainer: UIView = {
+       return UIView(frame: .zero)
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.font = UIFont.italicSystemFont(ofSize: 24)
+        label.textColor = UIColor.lightGray
+        label.numberOfLines = 0
         return label
     }()
     
@@ -36,9 +44,11 @@ class ResourceDetailViewController: UIViewController {
     }()
     
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imageView, contactInfoView, addressesView])
+        let stack = UIStackView(arrangedSubviews: [imageView, descriptionContainer, contactInfoView, addressesView])
         stack.axis = .vertical
         stack.spacing = 16
+        stack.setCustomSpacing(stack.spacing * 2, after: imageView)
+        stack.setCustomSpacing(stack.spacing * 2, after: descriptionContainer)
         return stack
     }()
     
@@ -64,7 +74,7 @@ class ResourceDetailViewController: UIViewController {
     private func setupViewHierarchy() {
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
-        
+        descriptionContainer.addSubview(descriptionLabel)
     }
     
     private func setupConstraints() {
@@ -73,6 +83,12 @@ class ResourceDetailViewController: UIViewController {
         }
         imageView.snp.makeConstraints { make in
             make.width.equalTo(imageView.snp.height).multipliedBy(1.8) // 16:9 aspect ratio
+        }
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(descriptionContainer.layoutMargins)
+            make.centerX.equalToSuperview()
+            make.leading.greaterThanOrEqualTo(descriptionContainer).inset(descriptionContainer.layoutMargins)
+            make.trailing.lessThanOrEqualTo(descriptionContainer).inset(descriptionContainer.layoutMargins)
         }
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalTo(scrollView).inset(view.safeAreaInsets)
