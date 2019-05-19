@@ -12,6 +12,7 @@ import RxCocoa
 import SnapKit
 import Kingfisher
 import MessageUI
+import MapKit
 
 class ResourceDetailViewController: UIViewController {
 
@@ -199,11 +200,18 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func showMap(coordinates: (Double, Double)) {
-        //TODO: Implement
+        let coords = CLLocationCoordinate2D(latitude: coordinates.0, longitude: coordinates.1)
+        let placemark = MKPlacemark(coordinate: coords)
+        let item = MKMapItem(placemark: placemark)
+        item.name = title
+        item.openInMaps()
     }
     
     private func showMap(query: String) {
-        //TODO: Implement
+        if let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: "http://maps.apple.com/?q=" + encodedQuery) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 
