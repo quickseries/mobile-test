@@ -29,18 +29,18 @@ struct ResourceListApiToUIMapper {
         }
         
         // Add contacts
-        if let contactInfoResponse = resource.contactInfo {
-            sectionTypes.append(SectionItemType.contact(getContactsInfo(from: contactInfoResponse)))
+        if let contactInfoResponse = resource.contactInfo, let contacts = getContactsInfo(from: contactInfoResponse) {
+            sectionTypes.append(SectionItemType.contact(contacts))
         }
         
         // Add Address Section
-        if let addresses = resource.addresses {
-            sectionTypes.append(SectionItemType.address(getResourceAddresses(from: addresses)))
+        if let addressesResponse = resource.addresses, let addresses = getResourceAddresses(from: addressesResponse) {
+            sectionTypes.append(SectionItemType.address(addresses))
         }
         
         // Add Social Media Section
-        if let socialMediaResponse = resource.socialMedia {
-            sectionTypes.append(SectionItemType.socialMedia(getSocialMedias(from: socialMediaResponse)))
+        if let socialMediaResponse = resource.socialMedia, let medias = getSocialMedias(from: socialMediaResponse) {
+            sectionTypes.append(SectionItemType.socialMedia(medias))
         }
         
         if let bizHoursResponse =  resource.bizHours {
@@ -50,7 +50,7 @@ struct ResourceListApiToUIMapper {
         return ResourceItem(title: resource.title ?? "", description: resource.description ?? "", isActive: resource._active, sectionTypes: sectionTypes)
     }
     
-    private static func getContactsInfo(from contactInfoResponse: ContactInfoResponse) -> [ContactInfo] {
+    private static func getContactsInfo(from contactInfoResponse: ContactInfoResponse) -> [ContactInfo]? {
         
         let allContacts = [contactInfoResponse.phoneNumber,
                            contactInfoResponse.tollFree,
@@ -69,11 +69,11 @@ struct ResourceListApiToUIMapper {
                 return nil
             })
             }.flatMap{ $0 }
-        return contacts
+        return contacts.count > 0 ? contacts : nil
     }
     
-    private static func getResourceAddresses(from addresses: [AddressResponse]) -> [ResourceAddress] {
-        let resourceAddresses = addresses.map { (add) -> ResourceAddress in
+    private static func getResourceAddresses(from addresses: [AddressResponse]) -> [ResourceAddress]? {
+        let resourceAddresses = addresses.compactMap { (add) -> ResourceAddress? in
             let combinedAddress = [add.address1, add.label, add.city, add.state, add.zipCode, add.country].compactMap({ (str) -> String? in
                 if !(str?.isEmpty ?? true) {
                     return str
@@ -84,12 +84,13 @@ struct ResourceListApiToUIMapper {
             if let lat = add.gps?.latitude?.toDouble, let lng = add.gps?.longitude?.toDouble {
                 latLng = LatLng(latitude: lat, longitude: lng)
             }
-            return ResourceAddress(completeAddress: combinedAddress, latLng: latLng)
+            
+            return !combinedAddress.isEmpty ? ResourceAddress(completeAddress: combinedAddress, latLng: latLng) : nil
         }
-        return resourceAddresses
+        return resourceAddresses.count > 0 ? resourceAddresses : nil
     }
     
-    private static func getSocialMedias(from response: SocialMediaResponse) -> [SocialMedia] {
+    private static func getSocialMedias(from response: SocialMediaResponse) -> [SocialMedia]? {
         let allSocialMedias = [response.facebook,
                                response.twitter,
                                response.youtubeChannel]
@@ -105,7 +106,7 @@ struct ResourceListApiToUIMapper {
                 return nil
             })
             }.flatMap{ $0 }
-        return medias
+        return medias.count > 0 ? medias : nil
     }
     
     private static func getBizHours(from response: BizHourResponse) -> [BizHour] {
