@@ -12,38 +12,17 @@
 import UIKit
 
 class CategoriesWorker{
+    var categories = Array<Categories>()
+    var onCompletion:((_ results: [Categories]) -> Void)?
     
-    let kPageSize  = 8
-    var categories = Array<Any>()
-    
-    var onCompletion:((_ results: [Any]) -> Void)?
-    
-    func fetchCategories(id:String, completionHandler: @escaping ([Any]) -> Void){
+    func fetchCategories(id:String, completionHandler: @escaping ([Categories]) -> Void){
         let messagesFromDisk = Storage.retrieve("categories", of: .json, as: [Categories].self)
-        
         print(messagesFromDisk)
-
+        onCompletion = completionHandler
+        categories = messagesFromDisk
+        if let selectionComplete = onCompletion {
+            selectionComplete(categories)
+        }
     }
 }
 
-extension CategoriesWorker  {
-    func successfullyFecthedCategories(data: Array<Any>, tag: NSInteger) {
-        print(data)
-        self.categories.append(contentsOf: data)
-        
-        if let selectionComplete = onCompletion {
-            selectionComplete(self.categories)
-        }
-        print("✔️ Success")
-        
-    }
-    
-    func spineFailedCategoryFetch(_ error: String) {
-        
-        if let selectionComplete = onCompletion {
-            selectionComplete([])
-        }
-        print("😡 Failure")
-    }
-    
-}

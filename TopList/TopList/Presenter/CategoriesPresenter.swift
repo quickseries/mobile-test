@@ -21,13 +21,15 @@ class CategoriesPresenter: CategoriesPresentationLogic{
     // MARK: Do something
     
     func presentCategories(response: Category.FetchCategories.Response){
-        var displayedCategories: [Any] = []
+        var displayedCategories: [Category.FetchCategories.ViewModel.ListItem] = []
         
         for category in response.categories {
-            displayedCategories.append(category)
+                let listVM = Category.FetchCategories.ViewModel.ListItem.init(headLine: category.title ?? "", overView: category.description ?? "" , date: category.created_at ?? "")
+                displayedCategories.append(listVM)
         }
         
-        let viewModel = Category.FetchCategories.ViewModel(displayedCategories: displayedCategories)
+        let viewModel = Category.FetchCategories.ViewModel(categories: displayedCategories)
         viewController?.displayFetchedCategories(viewModel: viewModel)
+
     }
 }

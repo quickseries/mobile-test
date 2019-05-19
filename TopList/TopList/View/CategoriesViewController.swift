@@ -15,66 +15,112 @@ protocol CategoriesDisplayLogic: class{
     func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel)
 }
 
-
 class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
-    
+
     var interactor: FetchCategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
-  // MARK: Object lifecycle
-  
+    var items: [ListViewModelItem] = []
+
+    @IBOutlet weak var tableView: UITableView!
+
+    // MARK: Object lifecycle
+
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
+    setUp()
   }
-  
+
   required init?(coder aDecoder: NSCoder)
   {
     super.init(coder: aDecoder)
-    setup()
+    setUp()
   }
-  
+
   // MARK: Setup
-  
-  private func setup(){
-    let viewController = self
-    let interactor = CategoriesInteractor()
-    let presenter = CategoriesPresenter()
-    let router = CategoriesRouter()
+
+  private func setUp(){
+    let viewController        = self
+    let interactor            = CategoriesInteractor()
+    let presenter             = CategoriesPresenter()
+    let router                = CategoriesRouter()
     viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
+    viewController.router     = router
+    interactor.presenter      = presenter
+    presenter.viewController  = viewController
+    router.viewController     = viewController
+    router.dataStore          = interactor
   }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
+
   // MARK: View lifecycle
-  
-  override func viewDidLoad(){
-    super.viewDidLoad()
-    fetchCategories()
-  }
-  
-    // MARK: Setup Functions
+
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        fetchCategories()
+        setUpTableView()
+    }
+
+    private func setUpTableView(){
+        tableView?.register(ListCell.nib, forCellReuseIdentifier: ListCell.identifier)
+    }
     
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if let scene              = segue.identifier {
+            let selector              = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router             = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+
+    // MARK: Setup Functions
+
     func fetchCategories(){
-        let request = Category.FetchCategories.Request(id: "categories")
+        let request               = Category.FetchCategories.Request(id: "categories")
         interactor?.fetchCategories(request: request)
     }
-    
-    func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel){
 
+    func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel){
+        let vm =  viewModel.categories
+        items = vm
+        if items.count == 0 {
+            let noResult = NoResultsItem(name:"No Results found, please try again.")
+            items.append(noResult)
+        }
+        
+        tableView.reloadData()
+    }
+}
+
+//MARK: - UITableViewDataSource
+extension CategoriesViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return  items.filter { $0.type == .list }.count > 0 ? items.filter { $0.type == .list }.first?.rowCount ?? 0 : items.filter { $0.type == .noResult }.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.filter { $0.type == .list }.count > 0 ? items.count : items.filter { $0.type == .noResult }[section].rowCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items.filter { $0.type == .list }[indexPath.row]
+        switch item.type {
+        case .list:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier, for: indexPath) as? ListCell {
+                cell.item = item
+                return cell
+            }
+        case .noResult:
+            return UITableViewCell()
+        case .details:
+            return UITableViewCell()
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section].type == .list ? "" : items[section].sectionTitle
     }
 }

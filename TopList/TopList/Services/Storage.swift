@@ -3,6 +3,7 @@
 //  Description      :   Directory manager that resolves data from URL path
 //                   :   1. UI    - https://github.com/ratzr15/mobile-test/blob/master/resources_android.png
 //                       2. Architecture    - TDD + Clean Swift (http://clean-swift.com)
+//                       3. TODO - delegation on failure cases
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  18th May 2019
