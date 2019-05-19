@@ -163,43 +163,44 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func composeEmail(email: String) {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients([email])
-            mail.setMessageBody("", isHTML: true)
-            present(mail, animated: true)
-        } else {
-            let alert = UIAlertController(title: "Failure", message: "Your device does not support this feature", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Discard", style: .cancel, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+        guard MFMailComposeViewController.canSendMail() else {
+            showFeatureNotSupportedAlert()
+            return
         }
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setToRecipients([email])
+        mail.setMessageBody("", isHTML: true)
+        present(mail, animated: true)
     }
     
     private func callNumber(number: String) {
-        guard let number = URL(string: "tel://" + number) else { return }
+        guard let number = URL(string: "tel://" + number), UIApplication.shared.canOpenURL(number) else {
+            showFeatureNotSupportedAlert()
+            return
+        }
         UIApplication.shared.open(number)
     }
     
     private func smsNumber(number: String) {
-        if MFMessageComposeViewController.canSendText() {
-            let sms = MFMessageComposeViewController()
-            sms.messageComposeDelegate = self
-            sms.recipients = [number]
-            present(sms, animated: true)
-        } else {
-            let alert = UIAlertController(title: "Failure", message: "Your device does not support this feature", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Discard", style: .cancel, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+        guard MFMessageComposeViewController.canSendText() else {
+            showFeatureNotSupportedAlert()
+            return
         }
+        let sms = MFMessageComposeViewController()
+        sms.messageComposeDelegate = self
+        sms.recipients = [number]
+        present(sms, animated: true)
     }
     
     private func showWebsite(url: String) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else {
+            showFeatureNotSupportedAlert(message: "Invalid URL")
+            return
+        }
         let config = SFSafariViewController.Configuration()
         let safariViewController = SFSafariViewController(url: url, configuration: config)
+        safariViewController.preferredControlTintColor = UIApplication.shared.keyWindow?.tintColor
         present(safariViewController, animated: true)
     }
     
@@ -212,10 +213,20 @@ class ResourceDetailViewController: UIViewController {
     }
     
     private func showMap(query: String) {
-        if let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let url = URL(string: "http://maps.apple.com/?q=" + encodedQuery) {
-            UIApplication.shared.open(url)
+        guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: "http://maps.apple.com/?q=" + encodedQuery),
+            UIApplication.shared.canOpenURL(url) else {
+                showFeatureNotSupportedAlert(message: "Invalid URL")
+                return
         }
+         UIApplication.shared.open(url)
+    }
+    
+    private func showFeatureNotSupportedAlert(message: String = "Your device does not support this feature") {
+        let alert = UIAlertController(title: "Failure", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Discard", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
