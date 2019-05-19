@@ -38,8 +38,17 @@ private let dataLoader = QuickOperationManager()
          XCTAssertNotNil(self.categoriesviewModel)
        
     }
-    func testCategoryItems(){
+    func testOperations(){
         
+       _ =  dataLoader.loadData(fileName: JsonFiles.category) { (data) in
+        
+        
+        XCTAssert((data as! Data).base64EncodedData().count  == 0)
+        XCTAssertNotNil(data)
+        
+        }
+        
+    
         
     }
     
