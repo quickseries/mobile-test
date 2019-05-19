@@ -10,7 +10,7 @@ import Foundation
 import RxRelay
 import PhoneNumberKit
 
-class ResourceDetailViewModel {
+final class ResourceDetailViewModel {
     
     private let contactInfo: ContactInfo?
     private let addresses: [Address]

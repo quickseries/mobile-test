@@ -9,7 +9,7 @@
 import Foundation
 import PhoneNumberKit
 
-class TelephoneParser {
+final class TelephoneParser {
     
     private let phoneKit = PhoneNumberKit()
     

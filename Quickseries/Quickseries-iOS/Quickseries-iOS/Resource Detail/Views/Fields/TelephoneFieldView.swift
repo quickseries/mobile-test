@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TelephoneFieldView: FieldView {
+final class TelephoneFieldView: FieldView {
 
     override var fieldLabelValue: String {
         get { return "TELEPHONE NUMBER" }

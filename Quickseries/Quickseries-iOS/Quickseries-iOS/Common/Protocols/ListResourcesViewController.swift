@@ -43,8 +43,9 @@ extension ListResourcesViewController {
     }
     
    fileprivate func bindTableViewSelection() {
-        tableView.rx.modelSelected(Self.ViewModel.EntityCellViewModel.self)
-            .subscribe(onNext: viewModel.onResourceSelected(resource:))
+        tableView.rx
+            .modelSelected(Self.ViewModel.EntityCellViewModel.self)
+            .subscribe(onNext: { [weak self] in self?.viewModel.onResourceSelected(resource: $0) })
             .disposed(by: bag)
     }
     

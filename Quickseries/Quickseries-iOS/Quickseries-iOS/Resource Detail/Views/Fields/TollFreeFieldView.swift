@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TollFreeFieldView: FieldView {
+final class TollFreeFieldView: FieldView {
 
     override var fieldLabelValue: String {
         get { return "TOLL-FREE NUMBER" }

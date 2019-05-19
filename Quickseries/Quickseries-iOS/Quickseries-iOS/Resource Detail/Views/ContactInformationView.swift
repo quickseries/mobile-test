@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ContactInformationView: InformationView {
+final class ContactInformationView: InformationView {
     
     weak var delegate: ContactInformationViewDelegate?
     

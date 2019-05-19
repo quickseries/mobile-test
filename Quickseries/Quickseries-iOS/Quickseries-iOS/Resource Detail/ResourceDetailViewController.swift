@@ -15,7 +15,7 @@ import MessageUI
 import MapKit
 import SafariServices
 
-class ResourceDetailViewController: UIViewController {
+final class ResourceDetailViewController: UIViewController {
 
     var viewModel: ResourceDetailViewModel! {
         didSet {

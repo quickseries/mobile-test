@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FaxFieldView: FieldView {
+final class FaxFieldView: FieldView {
     
     override var fieldLabelValue: String {
         get { return "FAX NUMBER" }

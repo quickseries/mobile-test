@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import SnapKit
 
-protocol FieldViewDelegate : AnyObject {
-    
-    func onActionButtonClick(sender: UIButton)
-}
-
 class FieldView : UIView {
 
     var delegate: FieldViewDelegate?
@@ -95,4 +90,9 @@ class FieldView : UIView {
             make.bottom.equalToSuperview().inset(layoutMargins)
         }
     }
+}
+
+
+protocol FieldViewDelegate : AnyObject {
+    func onActionButtonClick(sender: UIButton)
 }

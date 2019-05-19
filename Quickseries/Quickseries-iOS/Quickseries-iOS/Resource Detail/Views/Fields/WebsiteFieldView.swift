@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebsiteFieldView : FieldView {
+final class WebsiteFieldView : FieldView {
     
     override var fieldLabelValue: String {
         get { return "WEBSITE" }

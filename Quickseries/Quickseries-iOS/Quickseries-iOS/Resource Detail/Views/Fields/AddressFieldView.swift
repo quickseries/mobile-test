@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressFieldView: FieldView {
+final class AddressFieldView: FieldView {
 
     override var fieldLabelValue: String {
         get { return "ADDRESS" }

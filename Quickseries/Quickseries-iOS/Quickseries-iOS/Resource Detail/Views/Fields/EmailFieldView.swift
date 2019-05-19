@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmailFieldView: FieldView {
+final class EmailFieldView: FieldView {
     
     override var fieldLabelValue: String {
         get { return "EMAIL ADDRESS" }

@@ -215,7 +215,6 @@
 				AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */,
 				AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */,
 				AF16FA3722908A4500B34CAD /* Views */,
-				AFDB22062290F74500602675 /* View Models */,
 			);
 			path = "Resource Detail";
 			sourceTree = "<group>";
@@ -477,13 +476,6 @@
 				AFDB21F22290E6B500602675 /* Quickseries.swift */,
 			);
 			path = Providers;
-			sourceTree = "<group>";
-		};
-		AFDB22062290F74500602675 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Models";
 			sourceTree = "<group>";
 		};
 		AFDB22072290F79D00602675 /* Base */ = {
