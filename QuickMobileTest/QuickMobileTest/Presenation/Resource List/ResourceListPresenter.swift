@@ -11,6 +11,7 @@ protocol ResourceListPresenter {
     func fetchResourceList(with categoryType: CategoryType)
     func resource(at index: Int) -> ResourceItem?
     var countOfResources: Int { get }
+    func sortList(by type: SortType)
 }
 
 class ResourceListPresenterImpl {
@@ -56,4 +57,19 @@ extension ResourceListPresenterImpl: ResourceListPresenter {
         return resourceItems.count
     }
     
+    func sortList(by type: SortType) {
+        
+        switch type {
+        case .aToz:
+            resourceItems = resourceItems.sorted(by: { (item1, item2) -> Bool in
+                item1.title < item2.title
+            })
+        case .zToa:
+            resourceItems = resourceItems.sorted(by: { (item1, item2) -> Bool in
+                item1.title > item2.title
+            })
+        case .none: break
+        }
+        view?.reloadData()
+    }
 }

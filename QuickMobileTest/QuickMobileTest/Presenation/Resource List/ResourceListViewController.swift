@@ -12,12 +12,27 @@ protocol ResourceListView: class {
     func setTitle(with type: CategoryType)
 }
 
-class ResourceListViewController: UIViewController {
+enum SortType {
+    case aToz, zToa, none
+    
+    mutating func toggle()
+    {
+        switch self {
+        case .none: self = SortType.aToz
+        case .aToz: self = SortType.zToa
+        case .zToa: self = SortType.aToz
+        }
+    }
+}
 
+class ResourceListViewController: UIViewController {
+    
     private struct Constant {
         static let restaurants = "Restaurants"
         static let vacationSpots = "Vacation-Spots"
         static let cellId = "cellId"
+        static let imageAtoZ = "atoz"
+        static let imageZtoA = "ztoa"
     }
     
     @IBOutlet private weak var resourceListTableView: UITableView! {
@@ -34,6 +49,8 @@ class ResourceListViewController: UIViewController {
     var router: ResourceListRouter?
     var presenter: ResourceListPresenter!
     
+    private var type: SortType = .zToa
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -44,6 +61,23 @@ class ResourceListViewController: UIViewController {
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: Constant.imageAtoZ), style: .plain, target: self, action: #selector(buttonFilterTapped))
+    }
+    
+    private func setRightBarImage() {
+        switch type {
+        case .aToz:
+            navigationItem.rightBarButtonItem?.image = UIImage(named: Constant.imageZtoA)
+        case .zToa:
+            navigationItem.rightBarButtonItem?.image = UIImage(named: Constant.imageAtoZ)
+        case .none: break
+        }
+    }
+    
+    @objc private func buttonFilterTapped() {
+        type.toggle()
+        presenter.sortList(by: type)
+        setRightBarImage()
     }
     
 }

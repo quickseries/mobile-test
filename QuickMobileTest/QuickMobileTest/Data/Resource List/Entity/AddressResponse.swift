@@ -8,16 +8,16 @@
 import Foundation
 
 struct AddressResponse : Codable {
-    let address1 : String?
-    let label : String?
-    let zipCode : String?
-    let city : String?
-    let state : String = ""
-    let country : String = ""
-    let gps : Gps?
+    let address1: String?
+    let label: String?
+    let zipCode: String?
+    let city: String?
+    let state: String?
+    let country: String?
+    let gps: Gps?
 }
 
-struct Gps : Codable {
-    let latitude : String?
-    let longitude : String?
+struct Gps: Codable {
+    let latitude: String?
+    let longitude: String?
 }

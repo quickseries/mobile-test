@@ -97,7 +97,11 @@ class ContactInfoTableViewCell: UITableViewCell {
         labelSubtitle.text = address.completeAddress
         labelTitle.text = "ADDRESS"
         buttonLeft.isHidden = true
-        buttonRight.setImage(UIImage(named: Constant.imageLocation), for: .normal)
+        buttonRight.isHidden = true
+        if let _ = address.latLng {
+            buttonRight.isHidden = false
+            buttonRight.setImage(UIImage(named: Constant.imageLocation), for: .normal)
+        }
     }
     
     // MARK: Button Actions

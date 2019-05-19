@@ -74,7 +74,12 @@ struct ResourceListApiToUIMapper {
     
     private static func getResourceAddresses(from addresses: [AddressResponse]) -> [ResourceAddress] {
         let resourceAddresses = addresses.map { (add) -> ResourceAddress in
-            let combinedAddress = [add.address1, add.label, add.city, add.state, add.zipCode, add.country].compactMap{ $0 }.joined(separator: ", ")
+            let combinedAddress = [add.address1, add.label, add.city, add.state, add.zipCode, add.country].compactMap({ (str) -> String? in
+                if !(str?.isEmpty ?? true) {
+                    return str
+                }
+                return nil
+            }).joined(separator: ", ")
             var latLng: LatLng?
             if let lat = add.gps?.latitude?.toDouble, let lng = add.gps?.longitude?.toDouble {
                 latLng = LatLng(latitude: lat, longitude: lng)
