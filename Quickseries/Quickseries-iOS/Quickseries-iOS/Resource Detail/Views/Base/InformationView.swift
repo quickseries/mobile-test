@@ -10,22 +10,9 @@ import UIKit
 
 class InformationView: UIView {
     
-    lazy var mainStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleLabel, fieldsContainer])
-        stack.axis = .vertical
-        stack.spacing = 16
-        return stack
-    }()
+    var fieldLabelText: String = ""
     
-    var fieldLabelValue: String = ""
-    
-    lazy var titleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = fieldLabelValue
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = UIColor(named: "DarkGray")
-        return label
-    }()
+    //MARK: Views
     
     lazy var fieldsContainer: UIView = {
         let view = UIView(frame: .zero)
@@ -40,6 +27,23 @@ class InformationView: UIView {
         return stack
     }()
     
+    private lazy var mainStackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [titleLabel, fieldsContainer])
+        stack.axis = .vertical
+        stack.spacing = 16
+        return stack
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = fieldLabelText
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.textColor = UIColor(named: "DarkGray")
+        return label
+    }()
+    
+    //MAKR: Lifecycle
+    
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupViewHierarchy()
@@ -49,6 +53,8 @@ class InformationView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: Private Functions
     
     private func setupViewHierarchy() {
         fieldsContainer.addSubview(containerStackView)

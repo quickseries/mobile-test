@@ -15,7 +15,7 @@ class ResourceDetailViewModel {
     private let contactInfo: ContactInfo?
     private let addresses: [Address]
     
-    let addressViewModels: [AddressViewModel]
+    let addressViewModels: [AddressFieldViewModel]
     let contactInfoViewModel: ContactInformationViewModel?
     let image: String
     let title: String
@@ -27,34 +27,26 @@ class ResourceDetailViewModel {
     let selectedSmsPhoneNumber = BehaviorRelay<String?>(value: nil)
     let selectedCoordinates = BehaviorRelay<(Double, Double)?>(value: nil)
     let selectedAddress = BehaviorRelay<String?>(value: nil)
-
+    
     init(resource: CategoryResource) {
-        if let addresses = resource.addresses {
-            self.addresses = addresses
-            let viewModels = addresses.map { a -> AddressViewModel in
-                let addressString = """
-                \(a.address)
-                \(a.city), \(a.state) \(a.zipCode)
-                \(a.country)
-                """
-                return AddressViewModel(address: addressString, latitude: a.coordinates?.latitude, longitude: a.coordinates?.longitude)
-            }
-            addressViewModels = viewModels
-        } else {
-            addresses = []
-            addressViewModels = []
-        }
         self.contactInfo = resource.contactInfo
-        
-        let infoViewModel = ContactInformationViewModel(website: resource.contactInfo?.website,
-                                                       email: resource.contactInfo?.email,
-                                                       faxNumber: TelephoneParser.shared.parse(number: resource.contactInfo?.faxNumber),
-                                                       tollFree: TelephoneParser.shared.parse(number: resource.contactInfo?.tollFree),
-                                                       phoneNumber: TelephoneParser.shared.parse(number: resource.contactInfo?.phoneNumber))
-        self.contactInfoViewModel = infoViewModel
+        let fax = TelephoneParser.shared.parse(number: contactInfo?.faxNumber)
+        let tollFree = TelephoneParser.shared.parse(number: contactInfo?.tollFree)
+        let phone = TelephoneParser.shared.parse(number: contactInfo?.phoneNumber)
+        self.contactInfoViewModel = ContactInformationViewModel(website: contactInfo?.website, email: contactInfo?.email,
+                                                                faxNumber: fax, tollFree: tollFree, phoneNumber: phone)
         self.image = resource.photo
         self.title = resource.title
         self.categoryDescription =  "\"\(resource.description.stripHTML())\""
+        self.addresses = resource.addresses ?? []
+        self.addressViewModels = self.addresses.map { a -> AddressFieldViewModel in
+            let addressString = """
+            \(a.address)
+            \(a.city), \(a.state) \(a.zipCode)
+            \(a.country)
+            """
+            return AddressFieldViewModel(address: addressString, latitude: a.coordinates?.latitude, longitude: a.coordinates?.longitude)
+        }
     }
 }
 
@@ -99,7 +91,7 @@ extension ResourceDetailViewModel : ContactInformationViewDelegate {
 
 extension ResourceDetailViewModel : AddressesViewDelegate {
     
-    func onAddressClicked(model: AddressViewModel) {
+    func onAddressClicked(model: AddressFieldViewModel) {
         if let lat = model.latitude, let lon = model.longitude {
             selectedCoordinates.accept((lat, lon))
         } else {

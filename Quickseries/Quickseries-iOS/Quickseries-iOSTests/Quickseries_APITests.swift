@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Quickseries_API
+@testable import Quickseries_iOS
 
 class Quickseries_APITests: XCTestCase {
 
@@ -23,7 +23,7 @@ class Quickseries_APITests: XCTestCase {
 
     func testIntegrationGetCategories() {
         let expectation = self.expectation(description: "Request Finished")
-        var response: Outcome<[Quickseries_API.Category]>?
+        var response: Outcome<[Quickseries_iOS.Category]>?
         api.getCategories() { outcome in
             response = outcome
             expectation.fulfill()
@@ -40,7 +40,7 @@ class Quickseries_APITests: XCTestCase {
     
     func testIntegrationGetRestaurants() {
         let expectation = self.expectation(description: "Request Finished")
-        var response: Outcome<[Quickseries_API.Restaurant]>?
+        var response: Outcome<[Restaurant]>?
         api.getRestaurants() { outcome in
             response = outcome
             expectation.fulfill()
@@ -56,7 +56,7 @@ class Quickseries_APITests: XCTestCase {
     }
     func testIntegrationGetVacationSpots() {
         let expectation = self.expectation(description: "Request Finished")
-        var response: Outcome<[Quickseries_API.VacationSpot]>?
+        var response: Outcome<[VacationSpot]>?
         api.getVacationSpots() { outcome in
             response = outcome
             expectation.fulfill()

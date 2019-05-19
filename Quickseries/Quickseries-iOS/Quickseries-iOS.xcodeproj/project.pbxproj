@@ -18,7 +18,7 @@
 		AF16FA2B22907DE400B34CAD /* AddressFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2A22907DE400B34CAD /* AddressFieldView.swift */; };
 		AF16FA2E2290803700B34CAD /* ContactInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2D2290803700B34CAD /* ContactInformationView.swift */; };
 		AF16FA302290822B00B34CAD /* ContactInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */; };
-		AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA31229084E500B34CAD /* AddressViewModel.swift */; };
+		AF16FA32229084E500B34CAD /* AddressFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA31229084E500B34CAD /* AddressFieldViewModel.swift */; };
 		AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA332290851B00B34CAD /* AddressesView.swift */; };
 		AF16FA362290855D00B34CAD /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA352290855D00B34CAD /* InformationView.swift */; };
 		AF16FA3922908A5B00B34CAD /* ResourceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */; };
@@ -63,6 +63,7 @@
 		AFDB22012290E6B500602675 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21EE2290E6B500602675 /* Restaurant.swift */; };
 		AFDB22022290E6B500602675 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21F02290E6B500602675 /* Outcome.swift */; };
 		AFDB22032290E6B500602675 /* Quickseries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB21F22290E6B500602675 /* Quickseries.swift */; };
+		AFDB22092290FD8E00602675 /* Quickseries_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB22082290FD8E00602675 /* Quickseries_APITests.swift */; };
 		DDF96563D47D058D7F4480B9 /* Pods_Quickseries_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E638971B2F73600BF8F98F /* Pods_Quickseries_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +100,7 @@
 		AF16FA2A22907DE400B34CAD /* AddressFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFieldView.swift; sourceTree = "<group>"; };
 		AF16FA2D2290803700B34CAD /* ContactInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationView.swift; sourceTree = "<group>"; };
 		AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationViewModel.swift; sourceTree = "<group>"; };
-		AF16FA31229084E500B34CAD /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		AF16FA31229084E500B34CAD /* AddressFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFieldViewModel.swift; sourceTree = "<group>"; };
 		AF16FA332290851B00B34CAD /* AddressesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesView.swift; sourceTree = "<group>"; };
 		AF16FA352290855D00B34CAD /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 		AFDB21EE2290E6B500602675 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		AFDB21F02290E6B500602675 /* Outcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
 		AFDB21F22290E6B500602675 /* Quickseries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quickseries.swift; sourceTree = "<group>"; };
+		AFDB22082290FD8E00602675 /* Quickseries_APITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quickseries_APITests.swift; sourceTree = "<group>"; };
 		BD3F47217C656D97FCBC49AD /* Pods-Quickseries-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSUITests/Pods-Quickseries-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D42F8357725039BDCF21296F /* Pods_Quickseries_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quickseries_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FD8AA47E722652152793F6 /* Pods-Quickseries-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickseries-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Quickseries-iOSTests/Pods-Quickseries-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,10 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				AF16FA3822908A5B00B34CAD /* ResourceDetailViewController.swift */,
-				AF16FA3722908A4500B34CAD /* Views */,
-				AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */,
-				AF16FA31229084E500B34CAD /* AddressViewModel.swift */,
 				AF16FA3A22908AFE00B34CAD /* ResourceDetailViewModel.swift */,
+				AF16FA3722908A4500B34CAD /* Views */,
+				AFDB22062290F74500602675 /* View Models */,
 			);
 			path = "Resource Detail";
 			sourceTree = "<group>";
@@ -236,10 +237,12 @@
 		AF16FA3722908A4500B34CAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF16FA2C2290802500B34CAD /* Fields */,
 				AF16FA2D2290803700B34CAD /* ContactInformationView.swift */,
+				AF16FA2F2290822B00B34CAD /* ContactInformationViewModel.swift */,
 				AF16FA332290851B00B34CAD /* AddressesView.swift */,
-				AF16FA352290855D00B34CAD /* InformationView.swift */,
+				AF16FA31229084E500B34CAD /* AddressFieldViewModel.swift */,
+				AFDB22072290F79D00602675 /* Base */,
+				AF16FA2C2290802500B34CAD /* Fields */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 		AFA44CD9228F677B00249BCC /* Quickseries-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFDB22082290FD8E00602675 /* Quickseries_APITests.swift */,
 				AFA44CDA228F677B00249BCC /* Quickseries_iOSTests.swift */,
 				AFA44CDC228F677B00249BCC /* Info.plist */,
 			);
@@ -473,6 +477,21 @@
 				AFDB21F22290E6B500602675 /* Quickseries.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		AFDB22062290F74500602675 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		AFDB22072290F79D00602675 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AF16FA352290855D00B34CAD /* InformationView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,7 +738,7 @@
 				AF16FA27229075B200B34CAD /* TollFreeFieldView.swift in Sources */,
 				AFDB21F82290E6B500602675 /* BusinessHours.swift in Sources */,
 				AF16FA212290730D00B34CAD /* TelephoneFieldView.swift in Sources */,
-				AF16FA32229084E500B34CAD /* AddressViewModel.swift in Sources */,
+				AF16FA32229084E500B34CAD /* AddressFieldViewModel.swift in Sources */,
 				AF16FA342290851B00B34CAD /* AddressesView.swift in Sources */,
 				AFDB21CF2290E05F00602675 /* TelephoneParser.swift in Sources */,
 				AF3474B3228FD5F5004D957E /* CategoryCellViewModel.swift in Sources */,
@@ -774,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA44CDB228F677B00249BCC /* Quickseries_iOSTests.swift in Sources */,
+				AFDB22092290FD8E00602675 /* Quickseries_APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

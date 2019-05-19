@@ -21,14 +21,21 @@ class FieldView : UIView {
     
     var fieldLabelValue = ""
     
-    lazy var mainStack: UIStackView = {
+    lazy var fieldValue: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = UIColor(named: "DarkGray")
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    private lazy var mainStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [innerLeadingStack, innerTrailingStack])
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         return stack
     }()
     
-    lazy var innerLeadingStack: UIStackView = {
+    private lazy var innerLeadingStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [fieldLabel, fieldValue])
         stack.axis = .vertical
         stack.alignment = .leading
@@ -36,7 +43,7 @@ class FieldView : UIView {
         return stack
     }()
     
-    lazy var innerTrailingStack: UIStackView = {
+    private lazy var innerTrailingStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: actionButtons)
         stack.axis = .horizontal
         stack.alignment = .center
@@ -45,7 +52,7 @@ class FieldView : UIView {
         return stack
     }()
     
-    lazy var fieldLabel: UILabel = {
+    private lazy var fieldLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = UIApplication.shared.keyWindow?.tintColor
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
@@ -54,21 +61,14 @@ class FieldView : UIView {
         return label
     }()
     
-    lazy var fieldValue: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.textColor = UIColor(named: "DarkGray")
-        label.numberOfLines = 1
-        return label
-    }()
-    
     var actionButtons: [UIButton] = [] {
         didSet {
-            actionButtons.forEach({
-                $0.snp.remakeConstraints({ make in
+            actionButtons.forEach{
+                $0.snp.remakeConstraints { make in
                     make.size.equalTo(24)
-                })
+                }
                 innerTrailingStack.addArrangedSubview($0)
-            })
+            }
         }
     }
     

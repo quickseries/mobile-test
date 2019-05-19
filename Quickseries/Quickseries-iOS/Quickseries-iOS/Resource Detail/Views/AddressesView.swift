@@ -14,18 +14,18 @@ class AddressesView: InformationView {
     
     weak var delegate: AddressesViewDelegate?
     
-    private let bag = DisposeBag()
-    
-    var models: [AddressViewModel] = [] {
+    var models: [AddressFieldViewModel] = [] {
         didSet {
             addFields()
         }
     }
     
-    override var fieldLabelValue: String {
+    override var fieldLabelText: String {
         get { return "ADDRESSES" }
         set { }
     }
+    
+    private let bag = DisposeBag()
     
     private func addFields() {
         let views = models
@@ -34,7 +34,7 @@ class AddressesView: InformationView {
                 button.rx.tap.asDriver().drive(onNext: { [weak delegate] _ in
                     delegate?.onAddressClicked(model: address)
                 }).disposed(by: bag)
-                 button.setImage(UIImage(named: "baseline_location_on_black_24pt"), for: .normal)
+                button.setImage(UIImage(named: "baseline_location_on_black_24pt"), for: .normal)
                 let view = AddressFieldView(buttons: [button])
                 view.fieldValue.text = address.address
                 view.fieldValue.numberOfLines = 3
@@ -45,6 +45,5 @@ class AddressesView: InformationView {
 }
 
 protocol AddressesViewDelegate : AnyObject {
-    
-    func onAddressClicked(model: AddressViewModel)
+    func onAddressClicked(model: AddressFieldViewModel)
 }

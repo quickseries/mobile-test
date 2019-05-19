@@ -9,7 +9,6 @@
 import Foundation
 
 struct ContactInformationViewModel {
-    
     let website: String?
     let email: String?
     let faxNumber: String?

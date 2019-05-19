@@ -11,10 +11,13 @@ import RxSwift
 import RxCocoa
 
 class ContactInformationView: InformationView {
-
+    
     weak var delegate: ContactInformationViewDelegate?
     
-    let bag = DisposeBag()
+    override var fieldLabelText: String {
+        get { return "CONTACT INFORMATION" }
+        set { }
+    }
     
     var model: ContactInformationViewModel? {
         didSet {
@@ -22,37 +25,34 @@ class ContactInformationView: InformationView {
         }
     }
     
-    override var fieldLabelValue: String {
-        get { return "CONTACT INFORMATION" }
-        set { }
-    }
+    private let bag = DisposeBag()
     
     //MARK: View Hierarchy Assembly
     
     private func addFields() {
-        if let model = model {
-            if let phoneNumber = model.phoneNumber {
-                let view = buildPhoneNumberFieldView(number: phoneNumber)
-                containerStackView.addArrangedSubview(view)
-            }
-            if let faxNumber = model.faxNumber {
-                let view  = buildFaxNumberFieldView(number: faxNumber)
-                containerStackView.addArrangedSubview(view)
-            }
-            if let tollFree = model.tollFree {
-                let view = buildTollFreeFieldView(number: tollFree)
-                containerStackView.addArrangedSubview(view)
-            }
-            if let email = model.email {
-                let view = buildEmailFieldView(email: email)
-                containerStackView.addArrangedSubview(view)
-            }
-            if let website = model.website {
-                let view = buildWebsiteFieldView(website: website)
-                containerStackView.addArrangedSubview(view)
-            }
-        } else {
+        guard let model = model else {
             fieldsContainer.removeFromSuperview()
+            return
+        }
+        if let phoneNumber = model.phoneNumber {
+            let view = buildPhoneNumberFieldView(number: phoneNumber)
+            containerStackView.addArrangedSubview(view)
+        }
+        if let faxNumber = model.faxNumber {
+            let view  = buildFaxNumberFieldView(number: faxNumber)
+            containerStackView.addArrangedSubview(view)
+        }
+        if let tollFree = model.tollFree {
+            let view = buildTollFreeFieldView(number: tollFree)
+            containerStackView.addArrangedSubview(view)
+        }
+        if let email = model.email {
+            let view = buildEmailFieldView(email: email)
+            containerStackView.addArrangedSubview(view)
+        }
+        if let website = model.website {
+            let view = buildWebsiteFieldView(website: website)
+            containerStackView.addArrangedSubview(view)
         }
     }
     
@@ -64,8 +64,10 @@ class ContactInformationView: InformationView {
             delegate?.onWebsiteClicked()
         }).disposed(by: bag)
         button.setImage(UIImage(named: "baseline_open_in_browser_black_24pt"), for: .normal)
+        
         let view = WebsiteFieldView(buttons: [button])
         view.fieldValue.text = website
+        
         return view
     }
     
@@ -75,13 +77,16 @@ class ContactInformationView: InformationView {
             delegate?.onCallTollFreeClicked()
         }).disposed(by: bag)
         callButton.setImage(UIImage(named: "baseline_call_black_24pt"), for: .normal)
+        
         let smsButton = UIButton(type: .system)
         smsButton.rx.tap.asDriver().drive(onNext: { [weak delegate] _ in
             delegate?.onSmsTollFreeClicked()
         }).disposed(by: bag)
         smsButton.setImage(UIImage(named: "baseline_textsms_black_24pt"), for: .normal)
+        
         let view = TollFreeFieldView(buttons: [smsButton, callButton])
         view.fieldValue.text = number
+        
         return view
     }
     
@@ -97,13 +102,16 @@ class ContactInformationView: InformationView {
             delegate?.onCallPhoneNumberClicked()
         }).disposed(by: bag)
         callButton.setImage(UIImage(named: "baseline_call_black_24pt"), for: .normal)
+        
         let smsButton = UIButton(type: .system)
         smsButton.rx.tap.asDriver().drive(onNext: { [weak delegate] _ in
             delegate?.onSmsPhoneNumberClicked()
         }).disposed(by: bag)
         smsButton.setImage(UIImage(named: "baseline_textsms_black_24pt"), for: .normal)
+        
         let view = TelephoneFieldView(buttons: [smsButton, callButton])
         view.fieldValue.text = number
+        
         return view
     }
     
@@ -113,8 +121,10 @@ class ContactInformationView: InformationView {
             delegate?.onEmailClicked()
         }).disposed(by: bag)
         button.setImage(UIImage(named: "baseline_email_black_24pt"), for: .normal)
+        
         let view = EmailFieldView(buttons: [button])
         view.fieldValue.text = email
+        
         return view
     }
     

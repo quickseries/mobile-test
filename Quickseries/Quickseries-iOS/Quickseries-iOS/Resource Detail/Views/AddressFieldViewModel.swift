@@ -1,5 +1,5 @@
 //
-//  AddressViewModel.swift
+//  AddressFieldViewModel.swift
 //  Quickseries-iOS
 //
 //  Created by Thiago Magalhaes on 2019-05-18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AddressViewModel {
+struct AddressFieldViewModel {
     let address: String
     let latitude: Double?
     let longitude: Double?
