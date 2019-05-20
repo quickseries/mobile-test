@@ -7,7 +7,8 @@
 //
 
 protocol Ressource where Self: Codable {
-    
+    var title: String {get}
+    var description: String? {get}
 }
 
 extension VacationSpot: Ressource {

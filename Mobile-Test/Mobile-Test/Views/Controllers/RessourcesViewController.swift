@@ -12,6 +12,8 @@ class RessourcesViewController: UIViewController, StoryboardBased {
     
     static var storyboardName: String = "Categories"
     
+    @IBOutlet private weak var ressourcesTableView: UITableView!
+    
     private var viewModel: RessourcesViewModel!
     
     static func instantiate(viewModel: RessourcesViewModel) -> RessourcesViewController {
@@ -19,6 +21,14 @@ class RessourcesViewController: UIViewController, StoryboardBased {
         viewModel.bind(outputs: ressourcesVC)
         ressourcesVC.viewModel = viewModel
         return ressourcesVC
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.ressourcesTableView.register(cellType: CategoryTableViewCell.self)
+        self.ressourcesTableView.delegate = self
+        self.ressourcesTableView.dataSource = self.viewModel
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +40,14 @@ class RessourcesViewController: UIViewController, StoryboardBased {
 
 // MARK: - CategoriesViewModelOutputs
 extension RessourcesViewController: RessourcesViewModelOutputs {
-    func displayRessources(ressources: [Ressource]) {
-        // TODO:
+    func reloadData() {
+        self.ressourcesTableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension RessourcesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.inputs.didSelectRow(row: indexPath.row)
     }
 }

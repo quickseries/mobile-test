@@ -13,7 +13,7 @@ protocol RessourceDetailsViewModelInputs {
 }
 
 protocol RessourceDetailsViewModelOutputs: class {
-//    func displayCategories(categories: [Category])
+    
 }
 
 protocol RessourceDetailsViewModelCoordinatorOutputs: class {
@@ -25,8 +25,11 @@ class RessourceDetailsViewModel {
     private weak var outputs: RessourceDetailsViewModelOutputs!
     private weak var coordinatorOutputs: RessourceDetailsViewModelCoordinatorOutputs!
     
-    init(coordinatorOutputs: RessourceDetailsViewModelCoordinatorOutputs) {
+    private var ressource: Ressource
+    
+    init(coordinatorOutputs: RessourceDetailsViewModelCoordinatorOutputs, ressource: Ressource) {
         self.coordinatorOutputs = coordinatorOutputs
+        self.ressource = ressource
     }
 }
 

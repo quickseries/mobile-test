@@ -9,8 +9,8 @@
 struct Restaurant: Codable {
     var id: String
     var title: String
-    var description: String
-    var addresses: [Address]
+    var description: String?
+    var addresses: [Address]?
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -22,7 +22,7 @@ struct Address: Codable {
     var address1: String
     var city: String
     var state: String
-//    var gps: GpsCoordinate
+    var gps: GpsCoordinate?
 }
 
 struct GpsCoordinate: Codable {

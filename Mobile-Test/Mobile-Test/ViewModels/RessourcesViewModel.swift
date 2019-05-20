@@ -12,17 +12,18 @@ protocol RessourcesViewModelInputs {
     func bind(outputs: RessourcesViewModelOutputs) // Definitly not real binding since I am not using RX to do it...
     
     func viewWillAppear()
+    func didSelectRow(row: Int)
 }
 
 protocol RessourcesViewModelOutputs: class {
-    func displayRessources(ressources: [Ressource])
+    func reloadData()
 }
 
 protocol RessourcesViewModelCoordinatorOutputs: class {
-    
+    func didAskToSeeRessource(ressource: Ressource)
 }
 
-class RessourcesViewModel {
+class RessourcesViewModel: NSObject {
     var inputs: RessourcesViewModelInputs {return self}
     private weak var outputs: RessourcesViewModelOutputs!
     private weak var coordinatorOutputs: RessourcesViewModelCoordinatorOutputs!
@@ -54,6 +55,7 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
                 switch result {
                 case .success(let ressources):
                     self?.ressources = ressources
+                    self?.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
                 }
@@ -63,10 +65,39 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
                 switch result {
                 case .success(let ressources):
                     self?.ressources = ressources
+                    self?.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
                 }
             }
         }
+    }
+    
+    func didSelectRow(row: Int) {
+        guard let ressources = self.ressources else {
+            return
+        }
+        let ressourceSelected = ressources[row]
+        
+        self.coordinatorOutputs.didAskToSeeRessource(ressource: ressourceSelected)
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension RessourcesViewModel: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.ressources?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let ressources = self.ressources else {
+            fatalError()
+        }
+        let ressourceForRow = ressources[indexPath.row]
+        
+        let cell: CategoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.config(withTitle: ressourceForRow.title, description: ressourceForRow.description ?? "")
+        
+        return cell
     }
 }

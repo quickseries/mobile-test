@@ -11,10 +11,12 @@ struct VacationSpot: Codable {
     var photo: String? // https://s3.amazonaws.com/qsapi-files/files/49851e71-5114-4d94-9d9a-7f3cacb1764e/0f625c2f-7e01-4dd9-b569-f96c1c7b35f6.jpeg
     var socialMedia: [SocialMedia]
     var contactInfo: [ContactInfo]
+    var title: String
+    var description: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case photo, socialMedia, contactInfo
+        case description, photo, socialMedia, contactInfo, title
     }
 }
 

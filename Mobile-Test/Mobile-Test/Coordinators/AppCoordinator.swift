@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     func start() {
 //        let categoriesDataProvider = DecodableDataProvider<CategoryApi>()
         let mockDataProvider = DecodableDataProvider<CategoryApi>(requestClosure: DecodableDataProvider<CategoryApi>.decodableDefaultRequestMapping, stubClosure: MoyaProvider.delayedStub(1))
-        // For the sake of time / this project, I am not doing a factory to get the right dataprovider based on the environment...
+        // For the sake of time / this project, I am not doing a factory to get the right dataprovider based on the environment... just using mocks for now
         let viewModel = CategoriesViewModel(coordinatorOutputs: self, categoriesDataProvider: mockDataProvider)
         self.navigationController?.pushViewController(CategoriesViewController.instantiate(viewModel: viewModel), animated: false)
     }
@@ -30,6 +30,8 @@ class AppCoordinator: Coordinator {
 // MARK: - CategoriesViewModelCoordinatorOutputs
 extension AppCoordinator: CategoriesViewModelCoordinatorOutputs {
     func didAskToSeeCategory(category: Category) {
+        // Could split in multiple coordinators, but for this simple app it does not seem necessary... yet.
+        
         let mockDataProvider = DecodableDataProvider<RessourceApi>(requestClosure: DecodableDataProvider<CategoryApi>.decodableDefaultRequestMapping, stubClosure: MoyaProvider.delayedStub(1))
         let viewModel: RessourcesViewModel
         switch category.categoryType { // TODO: like I said at another place could definitly be refactored
@@ -44,5 +46,14 @@ extension AppCoordinator: CategoriesViewModelCoordinatorOutputs {
 
 // MARK: - CategoriesViewModelCoordinatorOutputs
 extension AppCoordinator: RessourcesViewModelCoordinatorOutputs {
+    func didAskToSeeRessource(ressource: Ressource) {
+        let viewModel = RessourceDetailsViewModel(coordinatorOutputs: self)
+        let ressourceDetailsViewController = RessourceDetailsViewController.instantiate(viewModel: viewModel)
+        self.navigationController?.pushViewController(ressourceDetailsViewController, animated: true)
+    }
+}
+
+// MARK: - RessourceDetailsViewModelCoordinatorOutputs
+extension AppCoordinator: RessourceDetailsViewModelCoordinatorOutputs {
     
 }
