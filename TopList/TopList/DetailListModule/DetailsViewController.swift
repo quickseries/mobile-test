@@ -151,7 +151,7 @@ extension DetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return items[section].type == .list ? "" : items[section].sectionTitle
+        return items[section].type == .details ? "" : items[section].sectionTitle
         
     }
 }
