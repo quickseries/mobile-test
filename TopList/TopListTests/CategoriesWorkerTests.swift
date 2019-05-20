@@ -66,8 +66,8 @@ class CategoriesWorkerTests: XCTestCase {
         waitForExpectations(timeout: 1.1)
         
         // Then
-        XCTAssert(categoryMemStoreSpy.fetchCategoriessCalled, "Calling fetchCategorie() should ask the data store for a list of orders")
-        XCTAssertEqual(fetchedCategories.count, CategoriesWorkerTests.sut.categories.count , "fetchCategorie() should return a list of orders")
+        XCTAssert(categoryMemStoreSpy.fetchCategoriessCalled, "Calling fetchCategorie() should ask the data store for a list of detailss")
+        XCTAssertEqual(fetchedCategories.count, CategoriesWorkerTests.sut.categories.count , "fetchCategorie() should return a list of detailss")
         for category in fetchedCategories {
             XCTAssert(CategoriesWorkerTests.sut.categories.contains(category), "Fetched cats should match the cat in the data store")
         }

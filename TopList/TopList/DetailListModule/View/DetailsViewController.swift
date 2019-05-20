@@ -10,7 +10,8 @@
 //----------------------------------------------------------------------------------------------------------------------------------------
 
 import UIKit
-
+import Contacts
+import ContactsUI
 
 protocol DetailsDisplayLogic: class{
     func displayDetails(viewModel: Details.FetchDetails.ViewModel)
@@ -74,6 +75,15 @@ class DetailsViewController: UIViewController, DetailsDisplayLogic {
     override func viewDidLoad(){
         super.viewDidLoad()
         setUpTableView()
+        clearNavigation()
+    }
+
+    private func clearNavigation(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     private func setUpTableView(){
@@ -158,7 +168,30 @@ extension DetailsViewController: UITableViewDataSource {
 
 extension DetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = router?.dataStore?.details?[indexPath.row]
+        let contact = CNMutableContact.init()
+        contact.givenName = item?.title ?? ""
+       
+        for phone in item?.contactInfo?.phoneNumber ?? [] {
+            contact.phoneNumbers.append(CNLabeledValue(
+                label:CNLabelPhoneNumberiPhone,
+                value:CNPhoneNumber(stringValue:phone)))
+        }
+        
+        for address in item?.addresses ?? [] {
+            let cnAddr = CNMutablePostalAddress()
+            cnAddr.street = address.address1 ?? ""
+            cnAddr.city = address.city ?? ""
+            cnAddr.state = address.state ?? ""
+            cnAddr.postalCode = address.zipCode ?? ""
+            cnAddr.country = address.country ?? ""
 
+            let labeledAddress = CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: cnAddr)
+            contact.postalAddresses.append(labeledAddress)
+        }
+        
+        let contactVC = CNContactViewController.init(for: contact)
+        self.navigationController?.pushViewController(contactVC, animated: true)
     }
 }
 

@@ -83,6 +83,7 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func setUpTableView(){
@@ -173,8 +174,8 @@ extension CategoriesViewController: UITableViewDelegate {
         }
         
         let  viewController = controller as! DetailsViewController
-        viewController.title = "Details"
         viewController.mode = .detail
+        viewController.title = items[indexPath.row].sectionTitle == "restaurants" ? "Restaurants 🍔" : "Holiday 🎄"
         viewController.fetchDetails(for: items[indexPath.row])
         self.navigationController?.pushViewController(viewController, animated: true)
     }

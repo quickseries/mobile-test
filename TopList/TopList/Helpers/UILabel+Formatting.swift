@@ -11,7 +11,7 @@ extension UILabel {
     func formattedText(html: String, font: UIFont, color: UIColor? = .black) {
         let paragraphStyle = NSMutableParagraphStyle.init()
         let oldPriceAttributes = [
-            NSAttributedString.Key.foregroundColor: colorFromHex(hexString: "#4a4a4a"),
+            NSAttributedString.Key.foregroundColor: UILabel.colorFromHex(hexString: "#4a4a4a"),
             NSAttributedString.DocumentAttributeKey.documentType: NSAttributedString.DocumentType.html,
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: font
@@ -50,7 +50,7 @@ extension UILabel {
         return nil
     }
 
-    func colorFromHex(hexString:String) -> UIColor{
+    class func colorFromHex(hexString:String) -> UIColor{
         var rgb: UInt32                         = 0
         let scanner                             = Scanner(string: hexString)
         scanner.scanLocation                    = 1;

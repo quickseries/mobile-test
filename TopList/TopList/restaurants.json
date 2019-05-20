@@ -23,6 +23,14 @@
           "latitude": "45.490834",
           "longitude": "-73.777091"
         }
+      },
+      {
+          "label": "Taj Mahal 2",
+          "address1": "Qudub Binar",
+          "city": "Delhi",
+          "zipCode": "62001",
+          "state": "UP",
+          "country": "India"
       }
     ],
     "contactInfo": {
@@ -77,7 +85,9 @@
         "email@domain.com"
       ],
       "phoneNumber": [
-        "15147028287"
+        "15147028287",
+        "+971-562173020"
+
       ]
     }
   },
@@ -142,6 +152,14 @@
         "zipCode": "H9B1Z8",
         "state": "QC",
         "country": "Canada"
+      },
+      {
+          "label": "Taj Mahal 2",
+          "address1": "Qudub Binar",
+          "city": "Delhi",
+          "zipCode": "62001",
+          "state": "UP",
+          "country": "India"
       }
     ],
     "contactInfo": {
