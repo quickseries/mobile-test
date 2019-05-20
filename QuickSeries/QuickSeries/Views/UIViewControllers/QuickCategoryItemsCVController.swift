@@ -20,6 +20,7 @@ class QuickCategoryItemsCVController: UICollectionViewController {
         super.viewDidLoad()
         
         initUIValues()
+        self.navigationController?.title = "help me "
         
     }
     
@@ -31,7 +32,7 @@ class QuickCategoryItemsCVController: UICollectionViewController {
         
         
         
-        self.title = "Help me "
+     //   self.title = "Help me "
         
         self.categoryItemsviewModel = CategoryItemViewModels(queryParams: categoryViewModel.category.eid ?? "")
         
@@ -48,7 +49,7 @@ class QuickCategoryItemsCVController: UICollectionViewController {
     func decorateUI(){
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
-            
+          
         } else {
             // Fallback on earlier versions
         }

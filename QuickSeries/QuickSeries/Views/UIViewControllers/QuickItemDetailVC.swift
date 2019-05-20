@@ -15,6 +15,9 @@ import CoreLocation
 
 class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMailComposeViewControllerDelegate {
     
+    
+    
+    //TODO REFACTOR TO CategoryItemViewModel
     lazy var activeLat = 0.0
     lazy var activeLog = 0.0
     lazy var activePhoneNumber = ""
@@ -53,17 +56,12 @@ class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMai
         form +++
             FormCells().TitleHeader(title: self.itemDetails.categoryItem.title ?? "", logoUrl: self.itemDetails.categoryItem.photo ?? "")
         
-        self.form +++
-            
-            
-            
-            ///DESCRIPTION
-            TestAreaRow(value: self.itemDetails.categoryItem.description?.htmlToString ?? "")
-        
+            +++ Section("WHAT WE DO")
+           self.form.last?.append(TestAreaRow(value:  (itemDetails.categoryItem.description ?? "").htmlToString ))
         
             //CONTACT INFORMATION SECTION
         
-        +++ Section("CONTACT INFORMATION")
+        self.form +++ Section("CONTACT INFORMATION")
         for item in itemDetails.categoryItem.contactInfo?.phoneNumber ?? [] {
             
             if (!item.isEmpty){
@@ -361,7 +359,7 @@ extension QuickItemDetailVC {
 }
 
 ////Eureka Cells extension for class
-//TODO REFECTOR TO 'EUREKA FORM CELL
+//TODO REFECTOR TO 'EUREKA FORM CELL CLASS
 
 extension QuickItemDetailVC {
     

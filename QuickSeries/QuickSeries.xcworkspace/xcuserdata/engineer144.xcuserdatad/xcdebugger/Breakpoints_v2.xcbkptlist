@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Views/UIViewControllers/QuickItemDetailVC.swift"
-            timestampString = "580003223.373366"
+            timestampString = "580005305.3136981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "openPhone()"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuickSeries/Views/UIViewControllers/QuickItemDetailVC.swift"
-            timestampString = "580003223.373922"
+            timestampString = "580005305.314885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "openPhone()"
             landmarkType = "7">
          </BreakpointContent>

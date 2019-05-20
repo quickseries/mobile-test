@@ -99,6 +99,7 @@ class CategoryItemViewModel: NSObject {
      var activeSocialLink : SocialMedia!
      var activeAddress : Addresses!
      var itemDetails : CategoryItemViewModel!
+   // var description: String!
     
     init(object: CategoryItem) {
     
