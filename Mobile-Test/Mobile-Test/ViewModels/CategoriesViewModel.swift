@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import Moya
+import Result
 
 protocol CategoriesViewModelInputs {
     func bind(outputs: CategoriesViewModelOutputs) // Definitly not real binding since I am not using RX to do it...
     
     func viewWillAppear()
-    func didAskToSeeCategory(withId id: String)
+    func didSelectRow(row: Int)
 }
 
 protocol CategoriesViewModelOutputs: class {
-    func displayCategories(categories: [Category])
+    func reloadData()
 }
 
 protocol CategoriesViewModelCoordinatorOutputs: class {
@@ -28,34 +30,40 @@ class CategoriesViewModel: NSObject {
     private weak var outputs: CategoriesViewModelOutputs!
     private weak var coordinatorOutputs: CategoriesViewModelCoordinatorOutputs!
     
-    private var categoriesDatasource: CategoriesDatasource
+    private var categoriesDataProvider: DecodableDataProvider<CategoryApi>
     
     private var categories: [Category]?
     
-    init(coordinatorOutputs: CategoriesViewModelCoordinatorOutputs, categoriesDatasource: CategoriesDatasource) {
+    init(coordinatorOutputs: CategoriesViewModelCoordinatorOutputs, categoriesDataProvider: DecodableDataProvider<CategoryApi>) {
         self.coordinatorOutputs = coordinatorOutputs
-        self.categoriesDatasource = categoriesDatasource
+        self.categoriesDataProvider = categoriesDataProvider
     }
 }
 
 // MARK: - CategoriesViewModelInputs
 extension CategoriesViewModel: CategoriesViewModelInputs {
+    
     func bind(outputs: CategoriesViewModelOutputs) {
         self.outputs = outputs
     }
     
     func viewWillAppear() {
-        let loadedCategories = self.categoriesDatasource.load()
-        self.outputs.displayCategories(categories: loadedCategories)
-        
-        self.categories = self.categoriesDatasource.load()
+        self.categoriesDataProvider.decodableRequest(.category) { [weak self] (result: Result<[Category], Error>) in
+            switch result {
+            case .success(let categories):
+                self?.categories = categories
+                self?.outputs.reloadData()
+            case .failure(_):
+                fatalError("Not implemented")
+            }
+        }
     }
     
-    func didAskToSeeCategory(withId id: String) {
-        let categorySelectedOptional = self.categoriesDatasource.load().first {
-            return $0.id == id
+    func didSelectRow(row: Int) {
+        guard let categories = self.categories else {
+            return
         }
-        guard let categorySelected = categorySelectedOptional else {return}
+        let categorySelected = categories[row]
         
         self.coordinatorOutputs.didAskToSeeCategory(category: categorySelected)
     }
@@ -75,7 +83,7 @@ extension CategoriesViewModel: UITableViewDataSource {
         let categoryForRow = categories[indexPath.row]
         
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.config(withTitle: categoryForRow.title, description: categoryForRow.description)
+        cell.config(withTitle: categoryForRow.title, description: categoryForRow.description ?? "")
         
         return cell
     }

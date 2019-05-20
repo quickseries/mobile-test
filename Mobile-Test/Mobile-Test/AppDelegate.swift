@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var appCoordinator: Coordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        #if DEBUG
+        // Only used in tests
+        guard ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil else {
+            self.window?.rootViewController = UIViewController()
+            return true
+        }
+        #endif
         
         guard let window = self.window else {
             return true

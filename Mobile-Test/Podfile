@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+use_frameworks!
+
+def mainPods
+  pod 'Moya'
+#  pod 'Cuckoo'
+end
+
+target 'Mobile-Test' do
+  mainPods
+end
+
+#target 'Mobile-TestTests' do
+#
+#  mainPods
+#end

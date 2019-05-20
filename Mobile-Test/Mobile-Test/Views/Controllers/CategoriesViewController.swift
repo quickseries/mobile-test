@@ -19,6 +19,7 @@ class CategoriesViewController: UIViewController, StoryboardBased {
     static func instantiate(viewModel: CategoriesViewModel) -> CategoriesViewController {
         let categoriesVC = CategoriesViewController.instantiate()
         viewModel.bind(outputs: categoriesVC)
+        categoriesVC.viewModel = viewModel
         return categoriesVC
     }
     
@@ -39,11 +40,14 @@ class CategoriesViewController: UIViewController, StoryboardBased {
 
 // MARK: - CategoriesViewModelOutputs
 extension CategoriesViewController: CategoriesViewModelOutputs {
-    func displayCategories(categories: [Category]) {
-        // TODO:
+    func reloadData() {
+        self.categoriesTableView.reloadData()
     }
 }
 
+// MARK: - UITableViewDelegate
 extension CategoriesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.inputs.didSelectRow(row: indexPath.row)
+    }
 }

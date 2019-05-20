@@ -9,14 +9,20 @@
 import Foundation
 
 struct Category: Codable {
+
     var id: String
-    var updatedAt: String
     var title: String
-    var description: String
+    var description: String?
+    var categoryType: CategoryType
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case updatedAt = "updated_at"
+        case categoryType = "slug"
         case title, description
+    }
+    
+    enum CategoryType: String, Codable {
+        case restaurants
+        case vacationSpots = "vacation-spots"
     }
 }

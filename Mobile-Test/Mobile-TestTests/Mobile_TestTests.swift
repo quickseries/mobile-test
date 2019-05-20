@@ -2,12 +2,11 @@
 //  Mobile_TestTests.swift
 //  Mobile-TestTests
 //
-//  Created by Leopold Roitel on 2019-05-18.
+//  Created by Leopold Roitel on 2019-05-20.
 //  Copyright © 2019 Leopold. All rights reserved.
 //
 
 import XCTest
-@testable import Mobile_Test
 
 class Mobile_TestTests: XCTestCase {
 

@@ -17,6 +17,7 @@ class RessourcesViewController: UIViewController, StoryboardBased {
     static func instantiate(viewModel: RessourcesViewModel) -> RessourcesViewController {
         let ressourcesVC = RessourcesViewController.instantiate()
         viewModel.bind(outputs: ressourcesVC)
+        ressourcesVC.viewModel = viewModel
         return ressourcesVC
     }
     
