@@ -14,15 +14,25 @@ __This repo can be used as an example for__
 | VIP Design Pattern             | Yes       |                                                 |
 | Unit Test case                 | Yes       |      Coverage %                                 |
 
+
+
+__This project consists of 3 modules__
+
+- [1] List   - lists all the resource categories (VIP - Clean Swift)
+- [2] Detail - show collections based on the category (VIP - Clean Swift)
+- [3] Info   - contact info of the resource
+
+__This project includes TestCases - Unit__
+
 ```
 Refer : https://clean-swift.com
 ```
 
 ## My Tasklist
 - [x] Finish my changes
-- [ ] Rebase to master
-- [ ] Test Case Covergae 
-- [ ] Open a pull request
+- [x ] Rebase to master
+- [x] Test Case Covergae 
+- [x] Open a pull request
 
 
 ## Author
