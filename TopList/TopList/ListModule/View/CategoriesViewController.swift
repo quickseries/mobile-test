@@ -15,18 +15,11 @@ protocol CategoriesDisplayLogic: class{
     func displayFetchedCategories(viewModel: Category.FetchCategories.ViewModel)
 }
 
-protocol DetailsDisplayLogic: class{
-    func displayDetails(viewModel: Details.FetchDetails.ViewModel)
-}
-
-
 class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
 
     var interactor: FetchCategoriesBusinessLogic?
     var router: (NSObjectProtocol & CategoriesRoutingLogic & CategoriesDataPassing)?
 
-    var detailsInteractor: FetchDetailsBusinessLogic?
-    var detailsRouter: (NSObjectProtocol & DetailsRoutingLogic & DetailsDataPassing)?
 
     /// Mode of View
     ///
@@ -63,7 +56,6 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
   // MARK: Setup
 
   private func setUp(){
-    if mode == .list {
         let viewController        = self
         let interactor            = CategoriesInteractor()
         let presenter             = CategoriesPresenter()
@@ -73,33 +65,29 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
         interactor.presenter      = presenter
         presenter.viewController  = viewController
         router.viewController     = viewController
-        router.dataStore          = interactor
-    }else{
-        let viewController        = self
-        let interactor            = DetailsInteractor()
-        let presenter             = DetailsPresenter()
-        let router                = DetailsRouter()
-        viewController.detailsInteractor = interactor
-        viewController.detailsRouter     = router
-        interactor.presenter      = presenter
-        presenter.viewController  = viewController
-        router.viewController     = viewController
-        router.dataStore          = interactor
-
-    }
-    
+        router.dataStore          = interactor    
   }
 
   // MARK: View lifecycle
 
     override func viewDidLoad(){
         super.viewDidLoad()
+        clearNavigation()
         fetchCategories()
         setUpTableView()
+    }
+    
+    private func clearNavigation(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     private func setUpTableView(){
         tableView?.register(ListCell.nib, forCellReuseIdentifier: ListCell.identifier)
+        tableView?.register(NamePictureCell.nib, forCellReuseIdentifier: NamePictureCell.identifier)
     }
     
     // MARK: Routing
@@ -112,7 +100,7 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
             }
         }
     }
-
+    
     // MARK: Setup Functions
 
     func fetchCategories(){
@@ -135,15 +123,23 @@ class CategoriesViewController: UIViewController, CategoriesDisplayLogic {
 //MARK: - UITableViewDataSource
 extension CategoriesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return  items.filter { $0.type == .list }.count > 0 ? items.filter { $0.type == .list }.first?.rowCount ?? 0 : items.filter { $0.type == .noResult }.count
+        if mode == .detail {
+            return  items.filter { $0.type == .details }.count > 0 ? items.filter { $0.type == .details }.first?.rowCount ?? 0 : items.filter { $0.type == .noResult }.count
+        }else{
+            return  items.filter { $0.type == .list }.count > 0 ? items.filter { $0.type == .list }.first?.rowCount ?? 0 : items.filter { $0.type == .noResult }.count
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.filter { $0.type == .list }.count > 0 ? items.count : items.filter { $0.type == .noResult }[section].rowCount
+        if mode == .detail {
+            return items.filter { $0.type == .details }.count > 0 ? items.count : items.filter { $0.type == .noResult }[section].rowCount
+        }else{
+            return items.filter { $0.type == .list }.count > 0 ? items.count : items.filter { $0.type == .noResult }[section].rowCount
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items.filter { $0.type == .list }[indexPath.row]
+        let item = items.filter { mode == .list ? $0.type == .list : $0.type == .details }[indexPath.row]
         switch item.type {
         case .list:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier, for: indexPath) as? ListCell {
@@ -153,6 +149,10 @@ extension CategoriesViewController: UITableViewDataSource {
         case .noResult:
             return UITableViewCell()
         case .details:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: NamePictureCell.identifier, for: indexPath) as? NamePictureCell {
+                cell.item = item
+                return cell
+            }
             return UITableViewCell()
         }
         return UITableViewCell()
@@ -160,30 +160,24 @@ extension CategoriesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].type == .list ? "" : items[section].sectionTitle
+        
     }
 }
 
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mode = .detail
-        fetchDetails(for: items[indexPath.row])
-    }
-}
+        var controller: UIViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: String(describing: DetailsViewController.self)) as! DetailsViewController
 
-
-extension CategoriesViewController: DetailsDisplayLogic {
-    func fetchDetails(for selection: ListViewModelItem){
-        guard let item = selection as? Category.FetchCategories.ViewModel.ListItem else {
-            return
         }
         
-        let request = Details.FetchDetails.Request(id: item.id)
-        detailsInteractor?.fetchDetails(request: request)
+        let  viewController = controller as! DetailsViewController
+        viewController.title = "Details"
+        viewController.mode = .detail
+        viewController.fetchDetails(for: items[indexPath.row])
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-
-    func displayDetails(viewModel: Details.FetchDetails.ViewModel) {
-        
-        
-    }
-    
 }
+
+

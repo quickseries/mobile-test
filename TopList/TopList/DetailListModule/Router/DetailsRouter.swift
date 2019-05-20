@@ -22,7 +22,7 @@ protocol DetailsDataPassing{
 
 class DetailsRouter: NSObject, DetailsRoutingLogic, DetailsDataPassing{
   var dataStore: DetailDataStore?
-  weak var viewController: CategoriesViewController?
+  weak var viewController: DetailsViewController?
   
   // MARK: Routing
   
