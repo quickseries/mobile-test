@@ -12,15 +12,15 @@ import XCTest
 
 class CategoriesWorkerTests: XCTestCase {
 
-    var sut: CategoriesWorker!
-    static var testCategories: [Categories]?
+    static var sut: CategoriesWorker!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        setUpCategoryWorker()
     }
     
     func setUpCategoryWorker(){
-        sut = CategoriesWorker.init()
+        CategoriesWorkerTests.sut = CategoriesWorker.init()
     }
     
     
@@ -44,6 +44,7 @@ class CategoriesWorkerTests: XCTestCase {
                 if let selectionComplete = self.onComplete {
                     selectionComplete(resources)
                 }
+                CategoriesWorkerTests.sut.categories = resources
             }
         }
         
@@ -65,10 +66,10 @@ class CategoriesWorkerTests: XCTestCase {
         waitForExpectations(timeout: 1.1)
         
         // Then
-        XCTAssert(categoryMemStoreSpy.fetchCategoriessCalled, "Calling fetchOrders() should ask the data store for a list of orders")
-        XCTAssertEqual(fetchedCategories.count, CategoriesWorkerTests.testCategories!.count, "fetchOrders() should return a list of orders")
+        XCTAssert(categoryMemStoreSpy.fetchCategoriessCalled, "Calling fetchCategorie() should ask the data store for a list of orders")
+        XCTAssertEqual(fetchedCategories.count, CategoriesWorkerTests.sut.categories.count , "fetchCategorie() should return a list of orders")
         for category in fetchedCategories {
-            XCTAssert(CategoriesWorkerTests.testCategories?.contains(category) ?? false, "Fetched orders should match the orders in the data store")
+            XCTAssert(CategoriesWorkerTests.sut.categories.contains(category), "Fetched cats should match the cat in the data store")
         }
     }
 
