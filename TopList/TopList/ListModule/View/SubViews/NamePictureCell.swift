@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NamePictureCell: UITableViewCell {
 
@@ -18,8 +19,8 @@ class NamePictureCell: UITableViewCell {
             guard let item = item as? Details.FetchDetails.ViewModel.DetailsItem   else {
                 return
             }            
-           // pictureImageView?.image = UIImage(url: URL(string: item.sectionTitle))
-            overView?.text = item.overView
+            pictureImageView?.kf.setImage(with: URL.init(string: item.pictureUrl))
+            overView?.formattedText(html: item.overView, font: UIFont.init(name: "Chalkduster", size: 18) ?? UIFont.init())
         }
     }
     
