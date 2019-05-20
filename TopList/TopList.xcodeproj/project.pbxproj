@@ -34,6 +34,7 @@
 		AE56B21122901AB8001CE85B /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56B20B22901AB8001CE85B /* CategoriesViewController.swift */; };
 		AE56B21222901AB8001CE85B /* CategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56B20C22901AB8001CE85B /* CategoriesInteractor.swift */; };
 		AE7A762922932936007C6E98 /* UILabel+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A762822932936007C6E98 /* UILabel+Formatting.swift */; };
+		AE7A762E22933CA9007C6E98 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A762D22933CA9007C6E98 /* InfoViewController.swift */; };
 		AE9580872292890C00A127F7 /* CategoriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9580862292890C00A127F7 /* CategoriesWorkerTests.swift */; };
 		AE95808A2292AA6F00A127F7 /* NamePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9580882292AA6F00A127F7 /* NamePictureCell.swift */; };
 		AE95808B2292AA6F00A127F7 /* NamePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9580892292AA6F00A127F7 /* NamePictureCell.xib */; };
@@ -111,6 +112,7 @@
 		AE56B20B22901AB8001CE85B /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		AE56B20C22901AB8001CE85B /* CategoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesInteractor.swift; sourceTree = "<group>"; };
 		AE7A762822932936007C6E98 /* UILabel+Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Formatting.swift"; sourceTree = "<group>"; };
+		AE7A762D22933CA9007C6E98 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AE9580862292890C00A127F7 /* CategoriesWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesWorkerTests.swift; sourceTree = "<group>"; };
 		AE9580882292AA6F00A127F7 /* NamePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePictureCell.swift; sourceTree = "<group>"; };
 		AE9580892292AA6F00A127F7 /* NamePictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NamePictureCell.xib; sourceTree = "<group>"; };
@@ -219,7 +221,7 @@
 		AE295DD22291E29700D85F3C /* DetailListModule */ = {
 			isa = PBXGroup;
 			children = (
-				AEAD9E432292B6DE00EC9BDB /* DetailsViewController.swift */,
+				AE7A762A22933C70007C6E98 /* View */,
 				AE295DDF2291E6F400D85F3C /* Communication */,
 				AE295DDC2291E6D400D85F3C /* Router */,
 				AE295DD92291E6A600D85F3C /* Entity */,
@@ -298,6 +300,7 @@
 				AE56B1D92290195D001CE85B /* AppDelegate.swift */,
 				AE295DD12291E24E00D85F3C /* ListModule */,
 				AE295DD22291E29700D85F3C /* DetailListModule */,
+				AE7A762B22933C7F007C6E98 /* InfoModule */,
 				AE7A762722932919007C6E98 /* Helpers */,
 				AE1C645C2290837900E302CA /* Services */,
 				AE1C645D2290839200E302CA /* Models */,
@@ -391,6 +394,30 @@
 				AE7A762822932936007C6E98 /* UILabel+Formatting.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AE7A762A22933C70007C6E98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AEAD9E432292B6DE00EC9BDB /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AE7A762B22933C7F007C6E98 /* InfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				AE7A762C22933C9C007C6E98 /* View */,
+			);
+			path = InfoModule;
+			sourceTree = "<group>";
+		};
+		AE7A762C22933C9C007C6E98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE7A762D22933CA9007C6E98 /* InfoViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AEC207A02291469100E54984 /* SubViews */ = {
@@ -664,6 +691,7 @@
 				AE295DD82291E69300D85F3C /* DetailsPresenter.swift in Sources */,
 				AE295DE62291E7B900D85F3C /* Gps.swift in Sources */,
 				AE295DDE2291E6EE00D85F3C /* DetailsRouter.swift in Sources */,
+				AE7A762E22933CA9007C6E98 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,7 +798,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -825,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -843,7 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645Q6R45F7;
 				INFOPLIST_FILE = TopList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 645Q6R45F7;
 				INFOPLIST_FILE = TopList/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
