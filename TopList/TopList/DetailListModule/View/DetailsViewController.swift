@@ -12,7 +12,6 @@
 import UIKit
 import Contacts
 import ContactsUI
-import Kingfisher
 
 protocol DetailsDisplayLogic: class{
     func displayDetails(viewModel: Details.FetchDetails.ViewModel)
@@ -174,9 +173,9 @@ extension DetailsViewController: UITableViewDelegate {
         contact.givenName = item?.title ?? ""
        
         for phone in item?.contactInfo?.phoneNumber ?? [] {
-            contact.phoneNumbers = [CNLabeledValue(
-                label:CNLabelPhoneNumberMain,
-                value:CNPhoneNumber(stringValue:phone))]
+            contact.phoneNumbers.append(CNLabeledValue(
+                label:CNLabelPhoneNumberiPhone,
+                value:CNPhoneNumber(stringValue:phone)))
         }
         
         for address in item?.addresses ?? [] {
@@ -188,7 +187,7 @@ extension DetailsViewController: UITableViewDelegate {
             cnAddr.country = address.country ?? ""
 
             let labeledAddress = CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: cnAddr)
-            contact.postalAddresses = [labeledAddress]
+            contact.postalAddresses.append(labeledAddress)
         }
         
         let contactVC = CNContactViewController.init(for: contact)
