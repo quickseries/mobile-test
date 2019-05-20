@@ -12,49 +12,35 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Categories : Codable, Equatable {
-	let _id : String?
-	let updated_at : String?
-	let slug : String?
-	let custom_module_eid : String?
-	let eid : String?
-	let title : String?
-	let description : String?
-	let __v : Int?
-	let _active : Bool?
-	let created_at : String?
+struct Addresses : Codable {
+	let address1 : String?
+	let label : String?
+	let zipCode : String?
+	let city : String?
+	let state : String?
+	let country : String?
+	let gps : Gps?
 
 	enum CodingKeys: String, CodingKey {
 
-		case _id = "_id"
-		case updated_at = "updated_at"
-		case slug = "slug"
-		case custom_module_eid = "custom_module_eid"
-		case eid = "eid"
-		case title = "title"
-		case description = "description"
-		case __v = "__v"
-		case _active = "_active"
-		case created_at = "created_at"
+		case address1 = "address1"
+		case label = "label"
+		case zipCode = "zipCode"
+		case city = "city"
+		case state = "state"
+		case country = "country"
+		case gps = "gps"
 	}
-    
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		_id = try values.decodeIfPresent(String.self, forKey: ._id)
-		updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
-		slug = try values.decodeIfPresent(String.self, forKey: .slug)
-		custom_module_eid = try values.decodeIfPresent(String.self, forKey: .custom_module_eid)
-		eid = try values.decodeIfPresent(String.self, forKey: .eid)
-		title = try values.decodeIfPresent(String.self, forKey: .title)
-		description = try values.decodeIfPresent(String.self, forKey: .description)
-		__v = try values.decodeIfPresent(Int.self, forKey: .__v)
-		_active = try values.decodeIfPresent(Bool.self, forKey: ._active)
-		created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+		address1 = try values.decodeIfPresent(String.self, forKey: .address1)
+		label = try values.decodeIfPresent(String.self, forKey: .label)
+		zipCode = try values.decodeIfPresent(String.self, forKey: .zipCode)
+		city = try values.decodeIfPresent(String.self, forKey: .city)
+		state = try values.decodeIfPresent(String.self, forKey: .state)
+		country = try values.decodeIfPresent(String.self, forKey: .country)
+		gps = try values.decodeIfPresent(Gps.self, forKey: .gps)
 	}
-    
-    static func ==(lhs: Categories, rhs: Categories) -> Bool{
-        return lhs._id ?? "" == rhs._id ?? ""
-    }
 
 }
