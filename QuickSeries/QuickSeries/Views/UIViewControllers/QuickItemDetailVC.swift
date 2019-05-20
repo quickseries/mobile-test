@@ -51,7 +51,7 @@ class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMai
       
         //TITLE HEADER
         form +++
-            TitleHeader()
+            FormCells().TitleHeader(title: self.itemDetails.categoryItem.title ?? "", logoUrl: self.itemDetails.categoryItem.photo ?? "")
         
         self.form +++
             
@@ -135,7 +135,7 @@ class QuickItemDetailVC: FormViewController,SFSafariViewControllerDelegate,MFMai
                 value = item.1
             }
             
-              self.form.last?.append(CustomLabelRow(key: item.0, value: value) )
+            self.form.last?.append(FormCells().CustomLabelRow(key: item.0, value: value) )
             
         }
         
@@ -361,24 +361,12 @@ extension QuickItemDetailVC {
 }
 
 ////Eureka Cells extension for class
+//TODO REFECTOR TO 'EUREKA FORM CELL
+
 extension QuickItemDetailVC {
     
     
     
-    func CustomLabelRow (key: String,value: String)->LabelRow{
-        
-      let view = LabelRow () {
-            $0.title = key
-            $0.value = value
-            $0.tag = UUID.init().uuidString
-            }
-            .onCellSelection { cell, row in
-                //  row.title = (row.title ?? "") + " 🇺🇾 "
-                // row.reload() // or row.updateCell()
-        }
-        
-        return view
-    }
     func SocialViewRow(address: SocialMedia)-> ViewRow<SocialMediaViewFile> {
     
     let viewRow = ViewRow<SocialMediaViewFile>() { (row) in
@@ -423,21 +411,7 @@ extension QuickItemDetailVC {
     return viewRow
     
 }
-    func TitleHeader() ->Section {
-    let section  =  Section() { section in
-        var header = HeaderFooterView<HeaderViewFile>(.nibFile(name: "HeaderView", bundle: nil))
-        header.onSetupView = { view, _ in
-            
-            view.logo.setImageWithTransaction(url: self.itemDetails.categoryItem.photo ?? "")
-            view.titleLabel.text = self.itemDetails.categoryItem.title ?? ""
-        }
-        section.header = header
-    }
-    
-    
-    return section
-    
-}
+   
     func ShortContactViewRow(value: (String,String),type: RowTpe)-> ViewRow<ContactViewCellFile> {
         
         let viewRow = ViewRow<ContactViewCellFile>(value.0) { (row) in

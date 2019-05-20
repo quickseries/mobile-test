@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class CategoryItemViewModels: NSObject {
-     private var sorted: Bool = false
+    private var sorted: Bool = false
     @objc dynamic private(set) var categoryItemViewModels : [CategoryItemViewModel] = [CategoryItemViewModel]()
     private var token :NSKeyValueObservation?
     var bindSourceToModels :(() -> ()) = {  }
@@ -28,8 +28,8 @@ class CategoryItemViewModels: NSObject {
             self.bindSourceToModels()
         }
         
-        loadCategoriesItem(_fileName: "restaurants")
-        loadCategoriesItem(_fileName: "vacation-spot")
+        loadCategoriesItem(_fileName: JsonFiles.restuarant)
+        loadCategoriesItem(_fileName: JsonFiles.vacations)
         
     }
     
@@ -89,6 +89,17 @@ class CategoryItemViewModel: NSObject {
     var descriptionTxt : String!
     var shouldShowAddress: Bool = false
     var workingDays: [(String,String)] = []
+    
+    var activeLat : Double!
+     var activeLog : Double!
+     var activePhoneNumber : String!
+     var activeEmail : String!
+     var activeURL : String!
+    
+     var activeSocialLink : SocialMedia!
+     var activeAddress : Addresses!
+     var itemDetails : CategoryItemViewModel!
+    
     init(object: CategoryItem) {
     
         

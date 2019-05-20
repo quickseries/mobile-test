@@ -47,6 +47,7 @@
 		48A2F07F22902299002EBCBF /* SocialMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A2F07E22902299002EBCBF /* SocialMediaView.xib */; };
 		48A2F081229022AF002EBCBF /* SocialMediaViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */; };
 		48A2F083229034CD002EBCBF /* BizHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A2F082229034CD002EBCBF /* BizHours.swift */; };
+		48EA81F42292203300E8D885 /* FormCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA81F32292203300E8D885 /* FormCells.swift */; };
 		539BD1B0BCD73380CB50AE05 /* Pods_QuickSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */; };
 		C80A4DF9D656D6B39FFB6279 /* Pods_QuickSeries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32777FCFB7FACA3BFA08E8B7 /* Pods_QuickSeries.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		48A2F07E22902299002EBCBF /* SocialMediaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMediaView.xib; sourceTree = "<group>"; };
 		48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewFile.swift; sourceTree = "<group>"; };
 		48A2F082229034CD002EBCBF /* BizHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizHours.swift; sourceTree = "<group>"; };
+		48EA81F32292203300E8D885 /* FormCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCells.swift; sourceTree = "<group>"; };
 		501C4FC6BC36F87464743454 /* Pods-QuickSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeries/Pods-QuickSeries.debug.xcconfig"; sourceTree = "<group>"; };
 		8B88011168AE79DB20F98454 /* Pods_QuickSeriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickSeriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97272FDF040120C96CDBF04B /* Pods-QuickSeriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickSeriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickSeriesTests/Pods-QuickSeriesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		483E1808228EEE790095CA2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48EA81F222921F2900E8D885 /* EurekaCells */,
 				489E2BD8228F98D90085B982 /* xibsFiles */,
 				489E2BD4228F98520085B982 /* xibs */,
 				489E2BD1228F948F0085B982 /* UIViewControllers */,
@@ -323,6 +326,14 @@
 				48A2F080229022AF002EBCBF /* SocialMediaViewFile.swift */,
 			);
 			path = xibsFiles;
+			sourceTree = "<group>";
+		};
+		48EA81F222921F2900E8D885 /* EurekaCells */ = {
+			isa = PBXGroup;
+			children = (
+				48EA81F32292203300E8D885 /* FormCells.swift */,
+			);
+			name = EurekaCells;
 			sourceTree = "<group>";
 		};
 		9AC54E2D68A100D154C2B70A /* Frameworks */ = {
@@ -518,6 +529,7 @@
 				483E180A228EEEC40095CA2B /* QuickCategoryTableView.swift in Sources */,
 				483E1803228ED8470095CA2B /* QuickOperationQueue.swift in Sources */,
 				483E1818228F22060095CA2B /* QuickCategoryItemsCVController.swift in Sources */,
+				48EA81F42292203300E8D885 /* FormCells.swift in Sources */,
 				483E1810228EF0CE0095CA2B /* QuickTableViewDataSource.swift in Sources */,
 				483E17DF228EC5E40095CA2B /* CategoryItem.swift in Sources */,
 				483E17FA228ECCCA0095CA2B /* ContactInfo.swift in Sources */,
