@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Categories : Codable {
+struct Categories : Codable, Equatable {
 	let _id : String?
 	let updated_at : String?
 	let slug : String?
@@ -37,6 +37,7 @@ struct Categories : Codable {
 		case _active = "_active"
 		case created_at = "created_at"
 	}
+    
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -51,5 +52,9 @@ struct Categories : Codable {
 		_active = try values.decodeIfPresent(Bool.self, forKey: ._active)
 		created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
 	}
+    
+    static func ==(lhs: Categories, rhs: Categories) -> Bool{
+        return lhs._id ?? "" == rhs._id ?? ""
+    }
 
 }
