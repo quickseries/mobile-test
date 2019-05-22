@@ -25,4 +25,13 @@ struct Category: Codable {
         case restaurants
         case vacationSpots = "vacation-spots"
     }
+    
+//    public init(from decoder: Decoder) throws {
+//        let allValues = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        self.id = try allValues.decode(String.self, forKey: .id)
+//        self.title = try allValues.decode(String.self, forKey: .title)
+//        self.description = try allValues.decodeIfPresent(String.self, forKey: .description)?.html2String
+//        self.categoryType = try allValues.decode(CategoryType.self, forKey: .categoryType)
+//    }
 }

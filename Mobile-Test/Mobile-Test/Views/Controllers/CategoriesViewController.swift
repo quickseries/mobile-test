@@ -48,6 +48,7 @@ extension CategoriesViewController: CategoriesViewModelOutputs {
 // MARK: - UITableViewDelegate
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         self.viewModel.inputs.didSelectRow(row: indexPath.row)
     }
 }

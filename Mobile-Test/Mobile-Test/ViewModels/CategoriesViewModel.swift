@@ -83,7 +83,7 @@ extension CategoriesViewModel: UITableViewDataSource {
         let categoryForRow = categories[indexPath.row]
         
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.config(withTitle: categoryForRow.title, description: categoryForRow.description ?? "")
+        cell.config(withTitle: categoryForRow.title, description: categoryForRow.description)
         
         return cell
     }

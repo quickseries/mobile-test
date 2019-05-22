@@ -47,7 +47,7 @@ extension AppCoordinator: CategoriesViewModelCoordinatorOutputs {
 // MARK: - CategoriesViewModelCoordinatorOutputs
 extension AppCoordinator: RessourcesViewModelCoordinatorOutputs {
     func didAskToSeeRessource(ressource: Ressource) {
-        let viewModel = RessourceDetailsViewModel(coordinatorOutputs: self)
+        let viewModel = RessourceDetailsViewModel(coordinatorOutputs: self, ressource: ressource)
         let ressourceDetailsViewController = RessourceDetailsViewController.instantiate(viewModel: viewModel)
         self.navigationController?.pushViewController(ressourceDetailsViewController, animated: true)
     }

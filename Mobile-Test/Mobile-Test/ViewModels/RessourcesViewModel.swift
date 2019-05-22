@@ -96,7 +96,7 @@ extension RessourcesViewModel: UITableViewDataSource {
         let ressourceForRow = ressources[indexPath.row]
         
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.config(withTitle: ressourceForRow.title, description: ressourceForRow.description ?? "")
+        cell.config(withTitle: ressourceForRow.title, description: ressourceForRow.description)
         
         return cell
     }

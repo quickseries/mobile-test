@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B50722D2295FFE7001AF991 /* HTMLToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50722C2295FFE7001AF991 /* HTMLToString.swift */; };
 		7B68EFEF2290418D00C7C566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68EFEE2290418D00C7C566 /* AppDelegate.swift */; };
 		7B68EFF12290418D00C7C566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68EFF02290418D00C7C566 /* ViewController.swift */; };
 		7B68EFF42290418D00C7C566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B68EFF22290418D00C7C566 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		0E0D07D9FE92D1A18A4E45D3 /* Pods_Mobile_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B50722C2295FFE7001AF991 /* HTMLToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLToString.swift; sourceTree = "<group>"; };
 		7B68EFEB2290418D00C7C566 /* Mobile-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B68EFEE2290418D00C7C566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B68EFF02290418D00C7C566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				7B68F04B2291CA3500C7C566 /* UITableView+Reusable.swift */,
+				7B50722C2295FFE7001AF991 /* HTMLToString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			files = (
 				7B68F02E229046B900C7C566 /* RestaurantsDatasource.swift in Sources */,
 				7B68F018229042EF00C7C566 /* Reusable.swift in Sources */,
+				7B50722D2295FFE7001AF991 /* HTMLToString.swift in Sources */,
 				7B68F02C229046B000C7C566 /* RessourcesDataProvider.swift in Sources */,
 				7B68EFF12290418D00C7C566 /* ViewController.swift in Sources */,
 				7B68F03E2291960800C7C566 /* RessourcesViewController.swift in Sources */,

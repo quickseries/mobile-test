@@ -8,13 +8,17 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell, NibReusable {
+final class CategoryTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     
-    func config(withTitle title: String, description: String) {
+    func config(withTitle title: String, description: String?) {
         self.titleLabel.text = title
-        self.descriptionLabel.text = description
+        if let description = description {
+            self.descriptionLabel.text = description
+        } else {
+            self.descriptionLabel.isHidden = true
+        }
     }
 }

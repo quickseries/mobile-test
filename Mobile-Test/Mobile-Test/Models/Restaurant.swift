@@ -16,6 +16,15 @@ struct Restaurant: Codable {
         case id = "_id"
         case title, description, addresses
     }
+    
+    public init(from decoder: Decoder) throws {
+        let allValues = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try allValues.decode(String.self, forKey: .id)
+        self.title = try allValues.decode(String.self, forKey: .title)
+        self.description = try allValues.decodeIfPresent(String.self, forKey: .description)?.html2String
+        self.addresses = try allValues.decodeIfPresent([Address].self, forKey: .addresses)
+    }
 }
 
 struct Address: Codable {
