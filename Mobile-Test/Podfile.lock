@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -8,19 +10,22 @@ PODS:
   - Result (4.1.0)
 
 DEPENDENCIES:
+  - AlamofireImage
   - Moya
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - Moya
     - Result
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 53deff06745df001d9a1968e0a834c77b94a9abf
+PODFILE CHECKSUM: 96f124c809a7fa97468165e8a8c9a870d6a9057b
 
 COCOAPODS: 1.6.1

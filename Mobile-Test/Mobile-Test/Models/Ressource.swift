@@ -6,9 +6,12 @@
 //  Copyright © 2019 Leopold. All rights reserved.
 //
 
+import Foundation
+
 protocol Ressource where Self: Codable {
     var title: String {get}
     var description: String? {get}
+    var photo: URL? {get}
 }
 
 extension VacationSpot: Ressource {

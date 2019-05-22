@@ -5,6 +5,7 @@ use_frameworks!
 
 def mainPods
   pod 'Moya'
+  pod 'AlamofireImage'
 #  pod 'Cuckoo'
 end
 
