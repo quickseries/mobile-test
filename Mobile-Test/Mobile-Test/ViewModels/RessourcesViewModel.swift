@@ -13,6 +13,7 @@ protocol RessourcesViewModelInputs {
     
     func viewWillAppear()
     func didSelectRow(row: Int)
+    func didPressFilter()
 }
 
 protocol RessourcesViewModelOutputs: class {
@@ -30,6 +31,8 @@ class RessourcesViewModel: NSObject {
     
     private var ressourceDataProvider: DecodableDataProvider<RessourceApi>
     private var ressourceType: RessourceApi
+    
+    private var filterAscending: Bool = true
     private var ressources: [Ressource]?
     
     init(coordinatorOutputs: RessourcesViewModelCoordinatorOutputs,
@@ -54,7 +57,7 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
             self.ressourceDataProvider.decodableRequest(self.ressourceType) { [weak self] (result: Result<[Restaurant], Error>) in
                 switch result {
                 case .success(let ressources):
-                    self?.ressources = ressources
+                    self?.ressources = ressources.sorted(by: {$0.title < $1.title})
                     self?.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
@@ -64,7 +67,7 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
             self.ressourceDataProvider.decodableRequest(self.ressourceType) { [weak self] (result: Result<[VacationSpot], Error>) in
                 switch result {
                 case .success(let ressources):
-                    self?.ressources = ressources
+                    self?.ressources = ressources.sorted(by: {$0.title < $1.title})
                     self?.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
@@ -80,6 +83,17 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
         let ressourceSelected = ressources[row]
         
         self.coordinatorOutputs.didAskToSeeRessource(ressource: ressourceSelected)
+    }
+    
+    func didPressFilter() {
+        self.filterAscending = !self.filterAscending
+        switch self.filterAscending {
+        case true:
+            self.ressources = self.ressources?.sorted(by: {$0.title < $1.title})
+        case false:
+            self.ressources = self.ressources?.sorted(by: {$0.title > $1.title})
+        }
+        self.outputs.reloadData()
     }
 }
 

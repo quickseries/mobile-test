@@ -36,6 +36,11 @@ class RessourcesViewController: UIViewController, StoryboardBased {
         
         self.viewModel.inputs.viewWillAppear()
     }
+    
+    @IBAction private func filterBtnClicked(_ sender: Any) {
+        self.viewModel.inputs.didPressFilter()
+        // Optionally we would set an image in the outputs of the viewmodel...
+    }
 }
 
 // MARK: - CategoriesViewModelOutputs
