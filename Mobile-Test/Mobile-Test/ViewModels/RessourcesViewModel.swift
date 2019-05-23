@@ -55,20 +55,22 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
         switch self.ressourceType { // TODO: there is definitly something to be done here to make this prettier.
         case .restaurants:
             self.ressourceDataProvider.decodableRequest(self.ressourceType) { [weak self] (result: Result<[Restaurant], Error>) in
+                guard let strongSelf = self else {return}
                 switch result {
                 case .success(let ressources):
-                    self?.ressources = ressources.sorted(by: {$0.title < $1.title})
-                    self?.outputs.reloadData()
+                    strongSelf.ressources = RessourcesViewModel.filterRessource(ressources: ressources, filterAscending: strongSelf.filterAscending)
+                    strongSelf.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
                 }
             }
         case .vacationSpots:
             self.ressourceDataProvider.decodableRequest(self.ressourceType) { [weak self] (result: Result<[VacationSpot], Error>) in
+                guard let strongSelf = self else {return}
                 switch result {
                 case .success(let ressources):
-                    self?.ressources = ressources.sorted(by: {$0.title < $1.title})
-                    self?.outputs.reloadData()
+                    strongSelf.ressources = RessourcesViewModel.filterRessource(ressources: ressources, filterAscending: strongSelf.filterAscending)
+                    strongSelf.outputs.reloadData()
                 case .failure(_):
                     fatalError("Not implemented")
                 }
@@ -86,14 +88,21 @@ extension RessourcesViewModel: RessourcesViewModelInputs {
     }
     
     func didPressFilter() {
-        self.filterAscending = !self.filterAscending
-        switch self.filterAscending {
-        case true:
-            self.ressources = self.ressources?.sorted(by: {$0.title < $1.title})
-        case false:
-            self.ressources = self.ressources?.sorted(by: {$0.title > $1.title})
+        guard let ressources = self.ressources else {
+            return
         }
+        self.filterAscending = !self.filterAscending
+        self.ressources = RessourcesViewModel.filterRessource(ressources: ressources, filterAscending: self.filterAscending)
         self.outputs.reloadData()
+    }
+    
+    private static func filterRessource(ressources: [Ressource], filterAscending: Bool) -> [Ressource] {
+        switch filterAscending {
+        case true:
+            return ressources.sorted(by: {$0.title < $1.title})
+        case false:
+            return ressources.sorted(by: {$0.title > $1.title})
+        }
     }
 }
 
