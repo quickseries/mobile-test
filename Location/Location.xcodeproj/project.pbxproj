@@ -15,6 +15,19 @@
 		3846C595229905630014FD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3846C593229905630014FD81 /* LaunchScreen.storyboard */; };
 		3846C5A0229905630014FD81 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C59F229905630014FD81 /* LocationTests.swift */; };
 		3846C5AB229905630014FD81 /* LocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5AA229905630014FD81 /* LocationUITests.swift */; };
+		3846C5BA229908A40014FD81 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5B9229908A40014FD81 /* DataManager.swift */; };
+		3846C5BD229908E50014FD81 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5BC229908E50014FD81 /* APIService.swift */; };
+		3846C5C0229909370014FD81 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5BF229909370014FD81 /* Constant.swift */; };
+		3846C5C62299098E0014FD81 /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = 3846C5C32299098E0014FD81 /* vacation-spot.json */; };
+		3846C5C72299098E0014FD81 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 3846C5C42299098E0014FD81 /* restaurants.json */; };
+		3846C5C82299098E0014FD81 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 3846C5C52299098E0014FD81 /* categories.json */; };
+		3846C5CC229909E90014FD81 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5CB229909E90014FD81 /* Categories.swift */; };
+		3846C5D422990A860014FD81 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5CE22990A860014FD81 /* Location.swift */; };
+		3846C5D522990A860014FD81 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5CF22990A860014FD81 /* SocialMedia.swift */; };
+		3846C5D622990A860014FD81 /* Gps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5D022990A860014FD81 /* Gps.swift */; };
+		3846C5D722990A860014FD81 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5D122990A860014FD81 /* ContactInfo.swift */; };
+		3846C5D822990A860014FD81 /* Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5D222990A860014FD81 /* Addresses.swift */; };
+		3846C5D922990A860014FD81 /* FreeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3846C5D322990A860014FD81 /* FreeText.swift */; };
 		394D6726DAADEFDED3377FC4 /* Pods_LocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDD1AD82C4E5ADFED24B738 /* Pods_LocationTests.framework */; };
 		4ED5267E47B599F9CB2F1E63 /* Pods_LocationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED9862F06CC4B7B61B75057 /* Pods_LocationUITests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +64,19 @@
 		3846C5A6229905630014FD81 /* LocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3846C5AA229905630014FD81 /* LocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUITests.swift; sourceTree = "<group>"; };
 		3846C5AC229905630014FD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3846C5B9229908A40014FD81 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3846C5BC229908E50014FD81 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		3846C5BF229909370014FD81 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3846C5C32299098E0014FD81 /* vacation-spot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "vacation-spot.json"; sourceTree = "<group>"; };
+		3846C5C42299098E0014FD81 /* restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		3846C5C52299098E0014FD81 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		3846C5CB229909E90014FD81 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		3846C5CE22990A860014FD81 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3846C5CF22990A860014FD81 /* SocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		3846C5D022990A860014FD81 /* Gps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gps.swift; sourceTree = "<group>"; };
+		3846C5D122990A860014FD81 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		3846C5D222990A860014FD81 /* Addresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addresses.swift; sourceTree = "<group>"; };
+		3846C5D322990A860014FD81 /* FreeText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeText.swift; sourceTree = "<group>"; };
 		5967F422105054FBC7325F5E /* Pods_Location.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Location.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDD1AD82C4E5ADFED24B738 /* Pods_LocationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CBA0EE2B1BDF24AF7FCB92 /* Pods-LocationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationUITests/Pods-LocationUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +140,11 @@
 		3846C589229905610014FD81 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				3846C5C9229909B00014FD81 /* Parser */,
+				3846C5C1229909630014FD81 /* Resource */,
+				3846C5BE229909210014FD81 /* Constant */,
+				3846C5BB229908CA0014FD81 /* APIService */,
+				3846C5B8229908850014FD81 /* DataManager */,
 				3846C58A229905610014FD81 /* AppDelegate.swift */,
 				3846C58C229905610014FD81 /* ViewController.swift */,
 				3846C58E229905610014FD81 /* Main.storyboard */,
@@ -140,6 +171,78 @@
 				3846C5AC229905630014FD81 /* Info.plist */,
 			);
 			path = LocationUITests;
+			sourceTree = "<group>";
+		};
+		3846C5B8229908850014FD81 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5B9229908A40014FD81 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		3846C5BB229908CA0014FD81 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5BC229908E50014FD81 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		3846C5BE229909210014FD81 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5BF229909370014FD81 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3846C5C1229909630014FD81 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5C22299097E0014FD81 /* JSON */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3846C5C22299097E0014FD81 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5C52299098E0014FD81 /* categories.json */,
+				3846C5C42299098E0014FD81 /* restaurants.json */,
+				3846C5C32299098E0014FD81 /* vacation-spot.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		3846C5C9229909B00014FD81 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5CD22990A860014FD81 /* Locations */,
+				3846C5CA229909E90014FD81 /* Categories */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		3846C5CA229909E90014FD81 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5CB229909E90014FD81 /* Categories.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		3846C5CD22990A860014FD81 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				3846C5CE22990A860014FD81 /* Location.swift */,
+				3846C5CF22990A860014FD81 /* SocialMedia.swift */,
+				3846C5D022990A860014FD81 /* Gps.swift */,
+				3846C5D122990A860014FD81 /* ContactInfo.swift */,
+				3846C5D222990A860014FD81 /* Addresses.swift */,
+				3846C5D322990A860014FD81 /* FreeText.swift */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 		79D0851165EEBC65D2CC7277 /* Frameworks */ = {
@@ -274,7 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3846C595229905630014FD81 /* LaunchScreen.storyboard in Resources */,
+				3846C5C82299098E0014FD81 /* categories.json in Resources */,
+				3846C5C72299098E0014FD81 /* restaurants.json in Resources */,
 				3846C592229905630014FD81 /* Assets.xcassets in Resources */,
+				3846C5C62299098E0014FD81 /* vacation-spot.json in Resources */,
 				3846C590229905610014FD81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +486,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3846C58D229905610014FD81 /* ViewController.swift in Sources */,
+				3846C5D822990A860014FD81 /* Addresses.swift in Sources */,
+				3846C5D622990A860014FD81 /* Gps.swift in Sources */,
+				3846C5BA229908A40014FD81 /* DataManager.swift in Sources */,
+				3846C5C0229909370014FD81 /* Constant.swift in Sources */,
+				3846C5BD229908E50014FD81 /* APIService.swift in Sources */,
 				3846C58B229905610014FD81 /* AppDelegate.swift in Sources */,
+				3846C5D722990A860014FD81 /* ContactInfo.swift in Sources */,
+				3846C5D922990A860014FD81 /* FreeText.swift in Sources */,
+				3846C5CC229909E90014FD81 /* Categories.swift in Sources */,
+				3846C5D422990A860014FD81 /* Location.swift in Sources */,
+				3846C5D522990A860014FD81 /* SocialMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
