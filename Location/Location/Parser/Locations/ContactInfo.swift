@@ -70,27 +70,27 @@ struct ContactInfo : Codable {
         
         var contact = [Contact]()
         
-        for data in website ?? [] {
+        for data in website ?? ["NA"] {
             let webisit =  Contact(contactType: .website, contact: data)
             contact.append(webisit)
         }
         
-        for data in email  ?? []{
+        for data in email  ?? ["NA"]{
             let email =  Contact(contactType: .email, contact: data)
             contact.append(email)
         }
         
-        for data in phoneNumber ?? [] {
+        for data in phoneNumber ?? ["NA"] {
             let phoneNumber =  Contact(contactType: .phoneNumber, contact: data)
             contact.append(phoneNumber)
         }
         
-        for data in faxNumber ?? [] {
+        for data in faxNumber ?? ["NA"] {
             let faxNumber =  Contact(contactType: .faxNumber, contact: data)
             contact.append(faxNumber)
         }
         
-        for data in tollFree ?? [] {
+        for data in tollFree ?? ["NA"] {
             let tollFree =  Contact(contactType: .tollFree, contact: data)
             contact.append(tollFree)
         }

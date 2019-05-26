@@ -39,4 +39,33 @@ struct Addresses : Codable {
         gps = try values.decodeIfPresent(Gps.self, forKey: .gps)
     }
     
+    func getCompleteAddress() -> String {
+        var completeAddress = ""
+        
+        if let address1 = address1 {
+            completeAddress += address1
+        }
+        
+        if let label = label {
+            completeAddress += " , \(label)"
+        }
+        
+        if let zipCode = zipCode {
+            completeAddress += ", \(zipCode)"
+        }
+        
+        if let city = city {
+            completeAddress += ", \(city)"
+        }
+        
+        if let state = state {
+            completeAddress += ", \(state)"
+        }
+        
+        if let country = country {
+            completeAddress += ", \(country)."
+        }
+        return completeAddress
+    }
+    
 }

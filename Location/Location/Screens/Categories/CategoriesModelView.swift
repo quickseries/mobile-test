@@ -1,25 +1,25 @@
 //
-//  ViewController.swift
+//  CategoriesModelView.swift
 //  Location
 //
 //  Created by Nagesh on 25/05/19.
 //  Copyright © 2019 Nagesh. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Moya
 
-
-class ViewController: UIViewController {
-
+class CategoriesModelView: NSObject {
+    
     var categoriesList:[Categories]?
     var locations = [Location]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        locations.removeAll()
+    
+    
+    override init() {
+        super.init()
         
+        locations.removeAll()
         DataManager().getCategories(completionHandler: { [weak self] (categories, error) in
             print(categories)
             self?.categoriesList = categories
@@ -34,10 +34,30 @@ class ViewController: UIViewController {
                 
             })
         })
-        
-        print(locations)
     }
-
-
+    
 }
 
+
+extension CategoriesModelView: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return categoriesList?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategorieCell", for: indexPath)
+    
+        guard let data = categoriesList?[indexPath.row] else {
+            return cell
+        }
+
+        cell.textLabel?.text = data.title
+        return cell
+
+    }
+    
+    
+}
