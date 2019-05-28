@@ -1,5 +1,4 @@
 /.DS_Store
-/mobileTest/mobileTest.xcodeproj/project.pbxproj
 /mobileTest/Podfile.lock
 /mobileTest/Pods
 
@@ -41,5 +40,4 @@ playground.xcworkspace
 .build/
 /mobileTest/.DS_Store
 /mobileTest/mobileTest.xcodeproj/xcuserdata/balrajsingh.xcuserdatad/xcschemes/xcschememanagement.plist
-/mobileTest/mobileTest.xcworkspace/xcshareddata
 .DS_Store
