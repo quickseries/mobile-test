@@ -8,7 +8,7 @@ project.ext{
     middleman= "1.0.2"
 
     paging = "1.0.1"
-    mohamadkPaging = "0.1.6"
+    mohamadkPaging = "0.1.7"
     koin_version = '2.0.0'
 
     retrofit = "2.4.0"

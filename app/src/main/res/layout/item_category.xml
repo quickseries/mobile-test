@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mohamadk.quickseries.pages.gride.items.category.ItemCategoryView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        app:cardUseCompatPadding="true"
+        android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@color/colorPrimary"
+                android:id="@+id/iv_background"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        <TextView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_background"
+                android:id="@+id/tv_title"
+                tools:text="Restaurants"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                />
+
+        <TextView
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/tv_description"
+                tools:text="descriptions"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.mohamadk.quickseries.pages.gride.items.category.ItemCategoryView>

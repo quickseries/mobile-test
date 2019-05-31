@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.mohamadk.pagingfragment.base.factories.DialogPageFactory
 import com.mohamadk.pagingfragment.base.factories.PageFactory
 import com.mohamadk.pagingfragment.intractors.FragmentOpener
-import com.mohamadk.quickseries.pages.categories.CategoriesFragment
+import com.mohamadk.quickseries.pages.gride.GridFragment
 
 class MainActivity : AppCompatActivity(),
     FragmentOpener {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(),
         setContentView(R.layout.activity_main)
 
 
-        open(CategoriesFragment.CategoriesPage())
+        open(GridFragment.GridPage("categories",getString(R.string.categories),false))
 
     }
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">QuickSeries</string>
+
+    <string name="server_is_not_responding_right_now_please_try_again_later">Server is not responding right now Please try
+        again later
+    </string>
+    <string name="cannot_connect_to_the_server_please_check_you_internet_connection">Can not connect to server Please
+        check you internet connection
+    </string>
+    <string name="categories">Categories</string>
+    <string name="detail">Detail</string>
 </resources>
