@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dimen_15"
+    android:paddingTop="@dimen/dimen_15"
+    android:paddingBottom="@dimen/dimen_15">
+
+
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/category_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_name"
+        tools:text="TextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

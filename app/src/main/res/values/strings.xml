@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">mobile-test</string>
+    <string name="contact_information">CONTACT INFORMATION</string>
+    <string name="address">ADDRESS</string>
+    <string name="notes">NOTES</string>
+    <string name="business">BUSINESS HOURS</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="website">Website</string>
+    <string name="fax_number">Fax Number</string>
+    <string name="toll_free">Toll-Free Number</string>
+    <string name="error_occurred">Error Occured</string>
+</resources>
