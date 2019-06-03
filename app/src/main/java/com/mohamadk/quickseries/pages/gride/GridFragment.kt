@@ -10,25 +10,32 @@ import com.mohamadk.middleman.model.BaseModel
 import com.mohamadk.pagingfragment.base.factories.PageFactory
 import com.mohamadk.pagingfragment.base.list.BaseListFragment
 import com.mohamadk.quickseries.R
+import com.mohamadk.quickseries.core.Sortable
+import com.mohamadk.quickseries.core.intractors.ToolbarIntractor
 import org.koin.android.viewmodel.ext.android.viewModel
 
 const val ARG_SLUG = "argSlug"
 const val ARG_TITLE = "argTitle"
 
-class GridFragment : BaseListFragment<List<BaseModel>, GridFragmentViewModel>() {
-
+class GridFragment : BaseListFragment<List<BaseModel>, GridFragmentViewModel>()
+    , Sortable {
 
     lateinit var slug: String
     override val viewModel: GridFragmentViewModel by viewModel()
 
+    override fun onResume() {
+        super.onResume()
+        (listener as ToolbarIntractor).showSort()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments!!.apply {
             slug = getString(ARG_SLUG)!!
             titlePage = getString(ARG_TITLE)
         }
 
-        loadItems(slug)
     }
 
     override fun provideAdapter(): AdapterProvider<List<BaseModel>> {
@@ -43,9 +50,17 @@ class GridFragment : BaseListFragment<List<BaseModel>, GridFragmentViewModel>() 
         super.onViewCreated(view, savedInstanceState)
 
         getRecycler(view).apply {
-            layoutManager = GridLayoutManager(context,resources.getInteger(R.integer.gridSpanCount))
+            layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.gridSpanCount))
         }
 
+        loadItems(slug)
+
+    }
+
+    override fun sort(sortASC: Boolean) {
+        if (userVisibleHint) {
+            viewModel.sort(sortASC)
+        }
     }
 
 

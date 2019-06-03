@@ -7,6 +7,6 @@ import retrofit2.http.Path
 
 interface CategoriesApi {
     @GET("/data/{slug}.json")
-    fun loadCategories(@Path("slug")slug: String): Observable<List<BaseModel>>
+    fun loadCategories(@Path("slug") slug: String): Observable<List<BaseModel>>
 
 }

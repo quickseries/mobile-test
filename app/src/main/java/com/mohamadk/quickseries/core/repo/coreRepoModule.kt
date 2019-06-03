@@ -3,6 +3,10 @@ package com.mohamadk.quickseries.core.repo
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.mohamadk.quickseries.core.repo.api.ArrayItemContactTypeAdapter
+import com.mohamadk.quickseries.core.repo.api.ArrayItemSocialTypeAdapter
+import com.mohamadk.quickseries.pages.detail.items.contact.ItemContact
+import com.mohamadk.quickseries.pages.detail.items.social.ItemSocial
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -43,6 +47,11 @@ val coreRepoModule= module {
 
     single<Gson> {
         GsonBuilder()
+            .registerTypeAdapter(Array<ItemContact>::class.java, ArrayItemContactTypeAdapter())
+            .registerTypeAdapter(
+                ItemSocial::class.java,
+                ArrayItemSocialTypeAdapter()
+            )
             .create()
     }
 

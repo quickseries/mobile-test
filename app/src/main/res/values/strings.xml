@@ -9,4 +9,6 @@
     </string>
     <string name="categories">Categories</string>
     <string name="detail">Detail</string>
+    <string name="address">Address</string>
+    <string name="sort">Sort</string>
 </resources>

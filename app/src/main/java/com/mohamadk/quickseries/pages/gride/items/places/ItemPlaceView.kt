@@ -6,7 +6,7 @@ import androidx.cardview.widget.CardView
 import com.mohamadk.middleman.Binder
 import com.mohamadk.middleman.intractors.RequireInteractor
 import com.mohamadk.pagingfragment.intractors.FragmentOpener
-import com.mohamadk.quickseries.core.GlideApp
+import com.mohamadk.quickseries.core.imageloader.GlideApp
 import com.mohamadk.quickseries.pages.detail.DetailFragment
 import kotlinx.android.synthetic.main.item_place.view.*
 
@@ -23,7 +23,7 @@ class ItemPlaceView @JvmOverloads constructor(
 
     override fun bind(item: ItemPlace?) {
 
-        tv_title.text=item!!.title
+        tv_title.text = item!!.title
 
         GlideApp.with(this).load(item.photo).into(iv_background)
 

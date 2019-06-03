@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mohamadk.quickseries.pages.detail.items.description.ItemDescriptionView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+
+    <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_title"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            tools:text="Title"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_description"
+            tools:text="@tools:sample/lorem/random"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+</com.mohamadk.quickseries.pages.detail.items.description.ItemDescriptionView>

@@ -9,6 +9,7 @@ import com.mohamadk.pagingfragment.Listing
 import com.mohamadk.quickseries.core.repo.BaseResponse
 import com.mohamadk.quickseries.core.utils.handleConnectionErrors
 import com.mohamadk.quickseries.core.utils.toLiveData
+import com.mohamadk.quickseries.pages.gride.sortItemBy
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
@@ -16,7 +17,7 @@ import io.reactivex.subjects.BehaviorSubject
 
 class CategoriesRepositoryImpl(
     private val categoriesApi: CategoriesApi
-    ,scheduler: Scheduler =Schedulers.io()
+    , scheduler: Scheduler = Schedulers.io()
 ) : CategoriesRepository {
 
     private val publishCategories = BehaviorSubject.create<String>()
@@ -25,7 +26,7 @@ class CategoriesRepositoryImpl(
         publishCategories.flatMap { slug ->
             categoriesApi.loadCategories(slug)
                 .map {
-                    BaseResponse(NetworkState.LOADED, it)
+                    BaseResponse(NetworkState.LOADED, it.sortedBy { sortItemBy(it) })
                 }
                 .onErrorReturn(handleConnectionErrors(BaseResponse()))
                 .startWith(BaseResponse(NetworkState.LOADING))
@@ -33,7 +34,6 @@ class CategoriesRepositoryImpl(
 
         }
             .toLiveData()
-
 
     private val items: LiveData<List<BaseModel>> = Transformations.switchMap(resultLive) {
         val itemsLive = MutableLiveData<List<BaseModel>>()

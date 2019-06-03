@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class Gps(
     @SerializedName("latitude")
-    val latitude:String
-    ,@SerializedName("longitude")
-    val longitude:String
-) :Parcelable
+    val latitude: String
+    , @SerializedName("longitude")
+    val longitude: String
+) : Parcelable

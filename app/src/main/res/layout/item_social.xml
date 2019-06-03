@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mohamadk.quickseries.pages.detail.items.social.ItemSocialView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/ib_facebook"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/ic_facebook"
+                android:scaleType="fitXY"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/ib_twitter"
+                app:layout_constraintTop_toTopOf="@+id/ib_facebook"
+                app:layout_constraintBottom_toBottomOf="@id/ib_facebook"
+                app:layout_constraintLeft_toRightOf="@+id/ib_facebook"
+                android:src="@drawable/ic_twitter"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/ib_youtube"
+                app:layout_constraintTop_toTopOf="@+id/ib_facebook"
+                app:layout_constraintBottom_toBottomOf="@id/ib_facebook"
+                app:layout_constraintLeft_toRightOf="@+id/ib_twitter"
+                android:src="@drawable/ic_youtube"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.mohamadk.quickseries.pages.detail.items.social.ItemSocialView>

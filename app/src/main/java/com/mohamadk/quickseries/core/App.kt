@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import com.mohamadk.quickseries.core.repo.coreRepoModule
+import com.mohamadk.quickseries.pages.detail.detailModule
 import com.mohamadk.quickseries.pages.gride.categoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -16,7 +17,7 @@ class App:Application() {
         context=this
 
         startKoin {
-            modules(coreRepoModule, categoryModule)
+            modules(coreRepoModule, categoryModule, detailModule)
             androidContext(this@App)
         }
 

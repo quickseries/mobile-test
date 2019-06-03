@@ -4,6 +4,9 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import com.mohamadk.middleman.model.BaseModel
 import com.mohamadk.quickseries.R
+import com.mohamadk.quickseries.pages.detail.items.address.ItemAddress
+import com.mohamadk.quickseries.pages.detail.items.contact.ItemContact
+import com.mohamadk.quickseries.pages.detail.items.social.ItemSocial
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -17,15 +20,14 @@ class ItemPlace(
     , @SerializedName("photo")
     val photo: String
     , @SerializedName("addresses")
-    val addresses: List<Address>
+    val addresses: List<ItemAddress>?
     , @SerializedName("contactInfo")
-    val contactInfo: ContactInfo
+    val contactInfo: Array<ItemContact>
     , @SerializedName("socialMedia")
-    val socialMedia: SocialMedia
+    val socialMedia: ItemSocial?
 
 ) : BaseModel
-,Parcelable
-{
+    , Parcelable {
     override fun defaultResLayout(position: Int): Int? {
         return R.layout.item_place
     }
