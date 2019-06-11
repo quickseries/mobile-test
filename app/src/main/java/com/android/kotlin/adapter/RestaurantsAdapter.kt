@@ -6,25 +6,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.android.kotlin.model.RestaurantItem
 import com.android.kotlindemo.R
 
-class RestaurantsAdapter(val items : ArrayList<String>, val context: Context) : RecyclerView.Adapter<RestaurantsAdapter.CategoriesViewHolder>() {
+class RestaurantsAdapter(val items : List<RestaurantItem>, val restaurantClickListener: RestaurantsAdapter.RestaurantClickListener) : RecyclerView.Adapter<RestaurantsAdapter.RestaurantsViewHolder>() {
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): CategoriesViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RestaurantsViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.row_layout_categories_item, viewGroup, false)
-        return CategoriesViewHolder(view)
+        return RestaurantsViewHolder(view)
     }
 
-    override fun onBindViewHolder(cancelReasonViewHolder: CategoriesViewHolder, i: Int) {
-
+    override fun onBindViewHolder(restaurantsViewHolder: RestaurantsViewHolder, i: Int) {
+        restaurantsViewHolder.mRestaurantsTextView.setText(items.get(i).title)
+        restaurantsViewHolder.itemView.setOnClickListener {
+            restaurantClickListener.onRestaurantClick(i)
+        }
     }
 
     override fun getItemCount(): Int {
-        return 0
+        return items.size
     }
 
-    inner class CategoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val mReasonTextView: TextView = itemView.findViewById(R.id.row_layout_category_text_view)
+    inner class RestaurantsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+         val mRestaurantsTextView: TextView = itemView.findViewById(R.id.row_layout_category_text_view)
 
+    }
+
+    interface RestaurantClickListener{
+        fun onRestaurantClick(i:Int)
     }
 }
