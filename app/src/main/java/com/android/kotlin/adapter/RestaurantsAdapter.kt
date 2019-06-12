@@ -19,7 +19,7 @@ class RestaurantsAdapter(val items : List<RestaurantItem>, val restaurantClickLi
     override fun onBindViewHolder(restaurantsViewHolder: RestaurantsViewHolder, i: Int) {
         restaurantsViewHolder.mRestaurantsTextView.setText(items.get(i).title)
         restaurantsViewHolder.itemView.setOnClickListener {
-            restaurantClickListener.onRestaurantClick(i)
+            restaurantClickListener.onRestaurantClick(items.get(i))
         }
     }
 
@@ -33,6 +33,6 @@ class RestaurantsAdapter(val items : List<RestaurantItem>, val restaurantClickLi
     }
 
     interface RestaurantClickListener{
-        fun onRestaurantClick(i:Int)
+        fun onRestaurantClick(restaurantItem: RestaurantItem)
     }
 }

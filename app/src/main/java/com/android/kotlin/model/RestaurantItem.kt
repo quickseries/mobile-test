@@ -16,16 +16,16 @@ data class RestaurantItem(
         @SerializedName("_active") var active: Boolean = false,
         @SerializedName("updated_at") var updatedAt: String = "",
         @SerializedName("created_at") var createdAt: String = "",
-        @SerializedName("addresses") var addresses: List<Address> = ArrayList<Address>(),
+        @SerializedName("addresses") var addresses: List<Address>?,
         @SerializedName("contactInfo") var contactInfo: ContactInfo,
-        @SerializedName("bizHours") val bizHours: BizHours,
-        @SerializedName("socialMedia") var socialMedia: SocialMedia
+        @SerializedName("bizHours") val bizHours: BizHours?,
+        @SerializedName("socialMedia") var socialMedia: SocialMedia?
 )
 
 data class SocialMedia(
-        @SerializedName("youtubeChannel") var youtubeChannel: List<String> = ArrayList(),
-        @SerializedName("twitter") var twitter: List<String> = ArrayList(),
-        @SerializedName("facebook") var facebook: List<String> = ArrayList()
+        @SerializedName("youtubeChannel") var youtubeChannel: List<String>?,
+        @SerializedName("twitter") var twitter: List<String> ?,
+        @SerializedName("facebook") var facebook: List<String>?
 )
 
 data class BizHours(
@@ -34,11 +34,11 @@ data class BizHours(
 )
 
 data class ContactInfo(
-        @SerializedName("website") var website: List<String> = ArrayList(),
-        @SerializedName("email") var email: List<String> = ArrayList(),
-        @SerializedName("phoneNumber") var phoneNumber: List<String> = ArrayList(),
-        @SerializedName("faxNumber") var faxNumber: List<String> = ArrayList(),
-        @SerializedName("tollFree") var tollFree: List<String> = ArrayList()
+        @SerializedName("website") var website: List<String>?,
+        @SerializedName("email") var email: List<String>?,
+        @SerializedName("phoneNumber") var phoneNumber: List<String>?,
+        @SerializedName("faxNumber") var faxNumber: List<String>?,
+        @SerializedName("tollFree") var tollFree: List<String>?
 )
 
 data class Monday(

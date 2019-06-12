@@ -3,6 +3,7 @@ package com.android.kotlin
 import android.app.Application
 import android.content.Context
 import com.android.kotlin.di.components.AppComponent
+import com.android.kotlin.di.components.DaggerAppComponent
 import com.android.kotlin.di.modules.AppModule
 import com.android.kotlin.di.modules.NetworkModule
 
@@ -16,7 +17,7 @@ internal class MobileTestApplication : Application() {
 
     fun component(): AppComponent {
         return DaggerAppComponent.builder().appModule(AppModule(this))
-                .netModule(NetworkModule())
+                .networkModule(NetworkModule())
                 .build()
     }
 }
