@@ -1,5 +1,6 @@
 package com.android.kotlin.utils
 
+import com.android.kotlin.model.BitcoinPriceItem
 import com.android.kotlin.model.CategoryItem
 import com.android.kotlin.model.RestaurantItem
 import io.reactivex.Observable
@@ -14,4 +15,7 @@ interface ApiInterface {
     @GET("restaurants.json")
     fun getRestaurants(): Observable<List<RestaurantItem>>
 
+    @GET("market-price")
+    fun getMarketPrice(@Query("timespan") timeSpan: String,
+                       @Query("rollingAverage") rollingAverage: String): Observable<BitcoinPriceItem>
 }

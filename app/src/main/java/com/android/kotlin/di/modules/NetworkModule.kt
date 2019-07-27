@@ -14,7 +14,7 @@ class NetworkModule {
     @Singleton
     fun providesRetrofit(): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/madroid24/mobile-test/master/data/")
+                .baseUrl("https://api.blockchain.info/charts/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()

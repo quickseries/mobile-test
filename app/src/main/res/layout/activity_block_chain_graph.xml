@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.kotlin.ui.BlockChainGraphActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Bitcoin Price"
+            app:popupTheme="@style/AppTheme"
+            android:minHeight="?attr/actionBarSize"
+            app:theme="@style/ToolbarColoredBackArrow"
+            app:titleTextColor="@android:color/white"
+            android:background="@color/colorPrimary">
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="Market Price (USD)"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Average USD market price across major bitcoin exchanges."
+            android:textSize="17sp"
+            android:layout_marginTop="20dp"/>
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/activity_block_chain_graph" />
+
+    </LinearLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/activity_block_chain_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+</FrameLayout>
