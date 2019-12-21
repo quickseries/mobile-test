@@ -26,15 +26,15 @@
       }
     ],
     "contactInfo": [{
-      "website": [
+      "website": 
         "https://www.google.com"
-      ],
-      "email": [
+      ,
+      "email": 
         "email@domain.com"
-      ],
-      "phoneNumber": [
+      ,
+      "phoneNumber": 
         "15147028287"
-      ]
+      
     }]
   },
   {
@@ -70,15 +70,15 @@
       }
     ],
     "contactInfo": [{
-      "website": [
+      "website": 
         "https://www.google.com"
-      ],
-      "email": [
+      ,
+      "email": 
         "email@domain.com"
-      ],
-      "phoneNumber": [
+      ,
+      "phoneNumber": 
         "15147028287"
-      ]
+      
     }]
   },
   {
@@ -94,21 +94,21 @@
     "updated_at": "2017-08-04T14:39:45.585Z",
     "created_at": "2017-08-03T23:02:29.705Z",
     "contactInfo": [{
-      "website": [
+      "website": 
         "http://www.quickseries.com"
-      ],
-      "email": [
+      ,
+      "email": 
         "justin.ledoux@quickseries.com"
-      ],
-      "faxNumber": [
+      ,
+      "faxNumber": 
         "8773293291"
-      ],
-      "tollFree": [
+      ,
+      "tollFree": 
         "19003614653"
-      ],
-      "phoneNumber": [
+      ,
+      "phoneNumber": 
         "9545841606"
-      ]
+      
     }]
   },
   {
@@ -124,15 +124,15 @@
     "updated_at": "2017-08-04T14:36:10.207Z",
     "created_at": "2017-08-03T22:19:50.918Z",
     "socialMedia": [{
-      "youtubeChannel": [
+      "youtubeChannel": 
         "https://www.youtube.com/channel/UCT0hbLDa-unWsnZ6Rjzkfug"
-      ],
-      "twitter": [
+      ,
+      "twitter": 
         "https://twitter.com/quickseriespub"
-      ],
-      "facebook": [
+      ,
+      "facebook": 
         "https://www.facebook.com/pages/Quickseries-Publishing-Inc/946403368763231"
-      ]
+      
     }],
     "addresses": [
       {
@@ -145,9 +145,9 @@
       }
     ],
     "contactInfo": [{
-      "phoneNumber": [
+      "phoneNumber": 
         "15145424545"
-      ]
+      
     }]
   }
 ]
