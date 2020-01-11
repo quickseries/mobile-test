@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]
