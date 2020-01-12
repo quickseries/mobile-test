@@ -32,7 +32,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideGson(): Gson {return GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()}
+    fun provideGson(): Gson {return GsonBuilder().create()}
 
 
     @Provides

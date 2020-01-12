@@ -1,11 +1,10 @@
 package com.ztd.interview_test.infrustructure
 
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.ztd.interview_test.infrustructure.data.AssetHelper
 import com.ztd.interview_test.infrustructure.data.models.category.CategoryModel
-import com.ztd.interview_test.infrustructure.data.models.restaurant.Restaurant
-import com.ztd.interview_test.infrustructure.data.models.vacationspot.VacationSpot
+import com.ztd.interview_test.infrustructure.data.models.restaurant.RestaurantModel
+import com.ztd.interview_test.infrustructure.data.models.vacationspot.VacationSpotModel
 import javax.inject.Inject
 
 /**
@@ -16,17 +15,16 @@ class AppDataManager @Inject constructor(private val assetHelper: AssetHelper,pr
 
     override fun getAllCategories():MutableList<CategoryModel> {
         val catJson = assetHelper.loadCategoriesJson()
-        var a = gson.fromJson(catJson,Array<CategoryModel>::class.java)
-        return mutableListOf()
+        return gson.fromJson(catJson,Array<CategoryModel>::class.java).toMutableList()
     }
 
-    override fun getAllRestaurants():MutableList<Restaurant> {
+    override fun getAllRestaurants():MutableList<RestaurantModel> {
         val restJson = assetHelper.loadCategoriesJson()
-        return gson.fromJson(restJson,Array<Restaurant>::class.java).toMutableList()
+        return gson.fromJson(restJson,Array<RestaurantModel>::class.java).toMutableList()
     }
 
-    override fun getAllVacationSpots():MutableList<VacationSpot> {
+    override fun getAllVacationSpots():MutableList<VacationSpotModel> {
         val vacJson = assetHelper.loadCategoriesJson()
-        return gson.fromJson(vacJson,Array<VacationSpot>::class.java).toMutableList()
+        return gson.fromJson(vacJson,Array<VacationSpotModel>::class.java).toMutableList()
     }
 }

@@ -1,8 +1,8 @@
 package com.ztd.interview_test.infrustructure
 
 import com.ztd.interview_test.infrustructure.data.models.category.CategoryModel
-import com.ztd.interview_test.infrustructure.data.models.restaurant.Restaurant
-import com.ztd.interview_test.infrustructure.data.models.vacationspot.VacationSpot
+import com.ztd.interview_test.infrustructure.data.models.restaurant.RestaurantModel
+import com.ztd.interview_test.infrustructure.data.models.vacationspot.VacationSpotModel
 
 /**
  * Created by Mahdi_ZareTahghighDoost(ZTD)
@@ -12,7 +12,7 @@ interface DataManager {
 
     fun getAllCategories():MutableList<CategoryModel>
 
-    fun getAllRestaurants():MutableList<Restaurant>
+    fun getAllRestaurants():MutableList<RestaurantModel>
 
-    fun getAllVacationSpots():MutableList<VacationSpot>
+    fun getAllVacationSpots():MutableList<VacationSpotModel>
 }

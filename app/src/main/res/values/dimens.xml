@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="side_padding">8dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="item_spacing">2dp</dimen>
+
+    <dimen name="text_title_size">18sp</dimen>
+    <dimen name="text_desc_size">14sp</dimen>
+</resources>

@@ -2,6 +2,7 @@ package com.ztd.interview_test.mvvm.homefragment
 
 import com.ztd.interview_test.infrustructure.AppDataManager
 import com.ztd.interview_test.infrustructure.DataManager
+import com.ztd.interview_test.mvvm.homefragment.adapter.CategoryAdapter
 import dagger.Module
 import dagger.Provides
 
@@ -16,4 +17,7 @@ class HomeModule {
 
     @Provides
     fun provideDataManager(appDataManager: AppDataManager):DataManager = appDataManager
+
+    @Provides
+    fun provideCategoryAdapter():CategoryAdapter = CategoryAdapter(mutableListOf())
 }

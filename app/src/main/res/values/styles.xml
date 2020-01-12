@@ -13,4 +13,18 @@
         <item name="spinBars">true</item>
         <item name="color">@color/colorAccent</item>
     </style>
+
+
+    <style name="TextStyleTitle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+    <style name="TextStyleDesc" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_desc_size</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+    </style>
+
 </resources>

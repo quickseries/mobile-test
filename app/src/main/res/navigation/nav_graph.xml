@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/nav_graph"
-            app:startDestination="@id/home_fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
 
-    <fragment android:id="@+id/home_fragment"
-              android:name="com.ztd.interview_test.mvvm.homefragment.HomeFragment"
-              android:label="HomeFragment"
-              tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.ztd.interview_test.mvvm.homefragment.HomeFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_fragment_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryDetailFragment"
+        android:name="com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailFragment"
+        android:label="{pageTitle}"
+        tools:layout="@layout/fragment_category_detail">
+
+        <argument
+            android:name="pageTitle"
+            app:argType="string"/>
+
+        <argument
+            android:name="catType"
+            app:argType="string"/>
+
+    </fragment>
 </navigation>
