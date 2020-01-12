@@ -3,14 +3,22 @@ package com.ztd.interview_test.infrustructure.di;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.google.gson.Gson;
+import com.ztd.interview_test.infrustructure.AppDataManager;
+import com.ztd.interview_test.infrustructure.DataManager;
+import com.ztd.interview_test.infrustructure.data.AssetHelper;
+import com.ztd.interview_test.infrustructure.data.AssetHelperImp_Factory;
 import com.ztd.interview_test.mvvm.InterviewApplication;
 import com.ztd.interview_test.mvvm.InterviewApplication_MembersInjector;
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment;
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment_MembersInjector;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule;
+import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideDataManagerFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideViewModelFactory;
+import com.ztd.interview_test.mvvm.homefragment.HomeViewModel;
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity;
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity_MembersInjector;
 import com.ztd.interview_test.mvvm.mainactivity.MainModule;
@@ -19,6 +27,8 @@ import com.ztd.interview_test.mvvm.mainactivity.MainModule_ProvideViewModelFacto
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.DispatchingAndroidInjector_Factory;
+import dagger.internal.DoubleCheck;
+import dagger.internal.InstanceFactory;
 import dagger.internal.Preconditions;
 import java.util.Collections;
 import java.util.Map;
@@ -30,6 +40,16 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<ActivityBuilder_ProvideHomeFragmentFactory.HomeFragmentSubcomponent.Builder>
       homeFragmentSubcomponentBuilderProvider;
+
+  private Provider<Application> applicationProvider;
+
+  private Provider<Context> provideContextProvider;
+
+  private AssetHelperImp_Factory assetHelperImpProvider;
+
+  private Provider<AssetHelper> provideAssetHelperProvider;
+
+  private Provider<Gson> provideGsonProvider;
 
   private DaggerAppComponent(Builder builder) {
     initialize(builder);
@@ -68,6 +88,16 @@ public final class DaggerAppComponent implements AppComponent {
             return new HomeFragmentSubcomponentBuilder();
           }
         };
+    this.applicationProvider = InstanceFactory.create(builder.application);
+    this.provideContextProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideContextFactory.create(builder.appModule, applicationProvider));
+    this.assetHelperImpProvider = AssetHelperImp_Factory.create(provideContextProvider);
+    this.provideAssetHelperProvider =
+        DoubleCheck.provider(
+            AppModule_ProvideAssetHelperFactory.create(builder.appModule, assetHelperImpProvider));
+    this.provideGsonProvider =
+        DoubleCheck.provider(AppModule_ProvideGsonFactory.create(builder.appModule));
   }
 
   @Override
@@ -82,10 +112,15 @@ public final class DaggerAppComponent implements AppComponent {
   }
 
   private static final class Builder implements AppComponent.Builder {
+    private AppModule appModule;
+
     private Application application;
 
     @Override
     public AppComponent build() {
+      if (appModule == null) {
+        this.appModule = new AppModule();
+      }
       if (application == null) {
         throw new IllegalStateException(Application.class.getCanonicalName() + " must be set");
       }
@@ -198,6 +233,21 @@ public final class DaggerAppComponent implements AppComponent {
       initialize(builder);
     }
 
+    private AppDataManager getAppDataManager() {
+      return new AppDataManager(
+          DaggerAppComponent.this.provideAssetHelperProvider.get(),
+          DaggerAppComponent.this.provideGsonProvider.get());
+    }
+
+    private DataManager getDataManager() {
+      return HomeModule_ProvideDataManagerFactory.proxyProvideDataManager(
+          homeModule, getAppDataManager());
+    }
+
+    private HomeViewModel getHomeViewModel() {
+      return HomeModule_ProvideViewModelFactory.proxyProvideViewModel(homeModule, getDataManager());
+    }
+
     @SuppressWarnings("unchecked")
     private void initialize(final HomeFragmentSubcomponentBuilder builder) {
       this.homeModule = builder.homeModule;
@@ -209,8 +259,7 @@ public final class DaggerAppComponent implements AppComponent {
     }
 
     private HomeFragment injectHomeFragment(HomeFragment instance) {
-      HomeFragment_MembersInjector.injectHomeViewModel(
-          instance, HomeModule_ProvideViewModelFactory.proxyProvideViewModel(homeModule));
+      HomeFragment_MembersInjector.injectHomeViewModel(instance, getHomeViewModel());
       return instance;
     }
   }

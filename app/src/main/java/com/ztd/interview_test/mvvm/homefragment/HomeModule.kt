@@ -1,5 +1,7 @@
 package com.ztd.interview_test.mvvm.homefragment
 
+import com.ztd.interview_test.infrustructure.AppDataManager
+import com.ztd.interview_test.infrustructure.DataManager
 import dagger.Module
 import dagger.Provides
 
@@ -10,5 +12,8 @@ import dagger.Provides
 @Module
 class HomeModule {
     @Provides
-    fun provideViewModel():HomeViewModel = HomeViewModel()
+    fun provideViewModel(dataManager: DataManager):HomeViewModel = HomeViewModel(dataManager)
+
+    @Provides
+    fun provideDataManager(appDataManager: AppDataManager):DataManager = appDataManager
 }

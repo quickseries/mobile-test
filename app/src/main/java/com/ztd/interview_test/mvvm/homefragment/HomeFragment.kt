@@ -1,5 +1,7 @@
 package com.ztd.interview_test.mvvm.homefragment
 
+import android.os.Bundle
+import android.view.View
 import androidx.databinding.library.baseAdapters.BR
 import com.ztd.interview_test.R
 import com.ztd.interview_test.mvvm.base.BaseFragment
@@ -23,5 +25,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeNav
         get() = homeViewModel
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.setNavigator(this)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.retrieveCategories()
+    }
 
 }

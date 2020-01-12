@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.ztd.interview_test.infrustructure.data.AssetHelper
+import com.ztd.interview_test.infrustructure.data.AssetHelperImp
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -31,6 +33,11 @@ class AppModule {
     @Provides
     @Singleton
     fun provideGson(): Gson {return GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()}
+
+
+    @Provides
+    @Singleton
+    fun provideAssetHelper(assetHelperImp: AssetHelperImp):AssetHelper = assetHelperImp
 
 
 }

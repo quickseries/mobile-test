@@ -1,4 +1,0 @@
-#Sat Jan 11 21:12:09 IRST 2020
-base.0=C\:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex
