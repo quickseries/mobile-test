@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
@@ -23,8 +25,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
         }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -35,10 +46,26 @@ dependencies {
 
     // AndroidX
     implementation deps.androidx.appcompat
+    implementation deps.androidx.recyclerview
     implementation deps.androidx.kotlin.core
     implementation deps.androidx.constraintLayout
     implementation deps.androidx.lifecycle.extensions
     implementation deps.androidx.lifecycle.viewmodel
+
+    // Material
+    implementation deps.material.cardview
+
+    // Square
+    implementation deps.square.retrofit
+    implementation deps.square.okhttp
+    implementation deps.square.moshi
+    implementation deps.square.retrofitMoshi
+    kapt deps.square.moshiCodeGen
+    implementation deps.square.moshiAdapters
+
+    // Coroutines
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
 
     // Tests
     testImplementation deps.junit
