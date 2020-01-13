@@ -1,24 +1,25 @@
-package com.quickseries.mobiletest.ui.categories
+package com.quickseries.mobiletest.ui.resources.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.quickseries.mobiletest.databinding.ViewCategoryItemBinding
+import com.quickseries.mobiletest.databinding.ViewResourceInfoItemBinding
+import com.quickseries.mobiletest.ui.resources.model.ResourceItem
 
 
-class CategoriesAdapter(private val listener: Listener, private val data: List<CategoryItem>) :
-    RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
+class ResourcesAdapter(private val listener: Listener, private val data: List<ResourceItem>) :
+    RecyclerView.Adapter<ResourcesAdapter.ViewHolder>() {
 
-    class ViewHolder(private val binding: ViewCategoryItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(category: CategoryItem, listener: Listener) {
-            binding.category = category
+    class ViewHolder(private val binding: ViewResourceInfoItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(resource: ResourceItem, listener: Listener) {
+            binding.resource = resource
             binding.listener = listener
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val itemBinding = ViewCategoryItemBinding.inflate(layoutInflater, parent, false)
+        val itemBinding = ViewResourceInfoItemBinding.inflate(layoutInflater, parent, false)
 
         return ViewHolder(itemBinding)
     }
@@ -30,6 +31,6 @@ class CategoriesAdapter(private val listener: Listener, private val data: List<C
     }
 
     interface Listener {
-        fun onCategoryItemClick(category: CategoryItem)
+        fun onResourceItemClick(resource: ResourceItem)
     }
 }
