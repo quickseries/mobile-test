@@ -9,6 +9,8 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="28" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.ztd.interview_test.mvvm.InterviewApplication"
         android:allowBackup="true"

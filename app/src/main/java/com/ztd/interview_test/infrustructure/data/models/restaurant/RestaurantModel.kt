@@ -3,6 +3,8 @@ package com.ztd.interview_test.infrustructure.data.models.restaurant
 import com.google.gson.annotations.SerializedName
 import com.ztd.interview_test.infrustructure.data.models.AddressesItem
 import com.ztd.interview_test.infrustructure.data.models.ContactInfo
+import com.ztd.interview_test.infrustructure.data.models.SocialMedia
+import com.ztd.interview_test.infrustructure.data.models.vacationspot.FreeTextItem
 
 data class RestaurantModel(
 
@@ -43,5 +45,17 @@ data class RestaurantModel(
 	val id: String? = null,
 
 	@SerializedName("slug")
-	val slug: String? = null
-)
+	val slug: String? = null,
+
+	@SerializedName("bizHours")
+	val bizHours: HashMap<String,BizHour>? = null,
+
+	@SerializedName("socialMedia")
+	val socialMedia: SocialMedia? = null,
+
+
+	@SerializedName("freeText")
+	val freeText: List<FreeTextItem?>? = null
+
+
+	)

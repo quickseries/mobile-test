@@ -13,9 +13,24 @@ import com.ztd.interview_test.infrustructure.data.AssetHelper;
 import com.ztd.interview_test.infrustructure.data.AssetHelperImp_Factory;
 import com.ztd.interview_test.mvvm.InterviewApplication;
 import com.ztd.interview_test.mvvm.InterviewApplication_MembersInjector;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailFragment;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailFragment_MembersInjector;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailModule;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailModule_ProvideCategoryAdapterFactory;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailModule_ProvideDataManagerFactory;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailModule_ProvideViewModelFactory;
+import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailViewModel;
+import com.ztd.interview_test.mvvm.detailfragment.DetailFragment;
+import com.ztd.interview_test.mvvm.detailfragment.DetailFragment_MembersInjector;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideContactAdapterFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideDataManagerFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideViewModelFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailViewModel;
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment;
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment_MembersInjector;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule;
+import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideCategoryAdapterFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideDataManagerFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideViewModelFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeViewModel;
@@ -29,6 +44,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.DispatchingAndroidInjector_Factory;
 import dagger.internal.DoubleCheck;
 import dagger.internal.InstanceFactory;
+import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
 import java.util.Collections;
 import java.util.Map;
@@ -40,6 +56,13 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<ActivityBuilder_ProvideHomeFragmentFactory.HomeFragmentSubcomponent.Builder>
       homeFragmentSubcomponentBuilderProvider;
+
+  private Provider<
+          ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent.Builder>
+      categoryDetailFragmentSubcomponentBuilderProvider;
+
+  private Provider<ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder>
+      detailFragmentSubcomponentBuilderProvider;
 
   private Provider<Application> applicationProvider;
 
@@ -86,6 +109,24 @@ public final class DaggerAppComponent implements AppComponent {
           @Override
           public ActivityBuilder_ProvideHomeFragmentFactory.HomeFragmentSubcomponent.Builder get() {
             return new HomeFragmentSubcomponentBuilder();
+          }
+        };
+    this.categoryDetailFragmentSubcomponentBuilderProvider =
+        new Provider<
+            ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent
+                .Builder>() {
+          @Override
+          public ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent
+                  .Builder
+              get() {
+            return new CategoryDetailFragmentSubcomponentBuilder();
+          }
+        };
+    this.detailFragmentSubcomponentBuilderProvider =
+        new Provider<ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder>() {
+          @Override
+          public ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder get() {
+            return new DetailFragmentSubcomponentBuilder();
           }
         };
     this.applicationProvider = InstanceFactory.create(builder.application);
@@ -172,11 +213,19 @@ public final class DaggerAppComponent implements AppComponent {
 
     private Map<Class<? extends Fragment>, Provider<AndroidInjector.Factory<? extends Fragment>>>
         getMapOfClassOfAndProviderOfFactoryOf() {
-      return Collections
+      return MapBuilder
           .<Class<? extends Fragment>, Provider<AndroidInjector.Factory<? extends Fragment>>>
-              singletonMap(
-                  HomeFragment.class,
-                  (Provider) DaggerAppComponent.this.homeFragmentSubcomponentBuilderProvider);
+              newMapBuilder(3)
+          .put(
+              HomeFragment.class,
+              (Provider) DaggerAppComponent.this.homeFragmentSubcomponentBuilderProvider)
+          .put(
+              CategoryDetailFragment.class,
+              (Provider) DaggerAppComponent.this.categoryDetailFragmentSubcomponentBuilderProvider)
+          .put(
+              DetailFragment.class,
+              (Provider) DaggerAppComponent.this.detailFragmentSubcomponentBuilderProvider)
+          .build();
     }
 
     private DispatchingAndroidInjector<Fragment> getDispatchingAndroidInjectorOfFragment() {
@@ -260,6 +309,146 @@ public final class DaggerAppComponent implements AppComponent {
 
     private HomeFragment injectHomeFragment(HomeFragment instance) {
       HomeFragment_MembersInjector.injectHomeViewModel(instance, getHomeViewModel());
+      HomeFragment_MembersInjector.injectCategoryAdapter(
+          instance,
+          HomeModule_ProvideCategoryAdapterFactory.proxyProvideCategoryAdapter(homeModule));
+      return instance;
+    }
+  }
+
+  private final class CategoryDetailFragmentSubcomponentBuilder
+      extends ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent
+          .Builder {
+    private CategoryDetailModule categoryDetailModule;
+
+    private CategoryDetailFragment seedInstance;
+
+    @Override
+    public ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent build() {
+      if (categoryDetailModule == null) {
+        this.categoryDetailModule = new CategoryDetailModule();
+      }
+      if (seedInstance == null) {
+        throw new IllegalStateException(
+            CategoryDetailFragment.class.getCanonicalName() + " must be set");
+      }
+      return new CategoryDetailFragmentSubcomponentImpl(this);
+    }
+
+    @Override
+    public void seedInstance(CategoryDetailFragment arg0) {
+      this.seedInstance = Preconditions.checkNotNull(arg0);
+    }
+  }
+
+  private final class CategoryDetailFragmentSubcomponentImpl
+      implements ActivityBuilder_ProvideCategoryDetailFactory.CategoryDetailFragmentSubcomponent {
+    private CategoryDetailModule categoryDetailModule;
+
+    private CategoryDetailFragmentSubcomponentImpl(
+        CategoryDetailFragmentSubcomponentBuilder builder) {
+      initialize(builder);
+    }
+
+    private AppDataManager getAppDataManager() {
+      return new AppDataManager(
+          DaggerAppComponent.this.provideAssetHelperProvider.get(),
+          DaggerAppComponent.this.provideGsonProvider.get());
+    }
+
+    private DataManager getDataManager() {
+      return CategoryDetailModule_ProvideDataManagerFactory.proxyProvideDataManager(
+          categoryDetailModule, getAppDataManager());
+    }
+
+    private CategoryDetailViewModel getCategoryDetailViewModel() {
+      return CategoryDetailModule_ProvideViewModelFactory.proxyProvideViewModel(
+          categoryDetailModule, getDataManager());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final CategoryDetailFragmentSubcomponentBuilder builder) {
+      this.categoryDetailModule = builder.categoryDetailModule;
+    }
+
+    @Override
+    public void inject(CategoryDetailFragment arg0) {
+      injectCategoryDetailFragment(arg0);
+    }
+
+    private CategoryDetailFragment injectCategoryDetailFragment(CategoryDetailFragment instance) {
+      CategoryDetailFragment_MembersInjector.injectCategoryDetailViewModel(
+          instance, getCategoryDetailViewModel());
+      CategoryDetailFragment_MembersInjector.injectCategoryDetailAdapter(
+          instance,
+          CategoryDetailModule_ProvideCategoryAdapterFactory.proxyProvideCategoryAdapter(
+              categoryDetailModule));
+      return instance;
+    }
+  }
+
+  private final class DetailFragmentSubcomponentBuilder
+      extends ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder {
+    private DetailModule detailModule;
+
+    private DetailFragment seedInstance;
+
+    @Override
+    public ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent build() {
+      if (detailModule == null) {
+        this.detailModule = new DetailModule();
+      }
+      if (seedInstance == null) {
+        throw new IllegalStateException(DetailFragment.class.getCanonicalName() + " must be set");
+      }
+      return new DetailFragmentSubcomponentImpl(this);
+    }
+
+    @Override
+    public void seedInstance(DetailFragment arg0) {
+      this.seedInstance = Preconditions.checkNotNull(arg0);
+    }
+  }
+
+  private final class DetailFragmentSubcomponentImpl
+      implements ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent {
+    private DetailModule detailModule;
+
+    private DetailFragmentSubcomponentImpl(DetailFragmentSubcomponentBuilder builder) {
+      initialize(builder);
+    }
+
+    private AppDataManager getAppDataManager() {
+      return new AppDataManager(
+          DaggerAppComponent.this.provideAssetHelperProvider.get(),
+          DaggerAppComponent.this.provideGsonProvider.get());
+    }
+
+    private DataManager getDataManager() {
+      return DetailModule_ProvideDataManagerFactory.proxyProvideDataManager(
+          detailModule, getAppDataManager());
+    }
+
+    private DetailViewModel getDetailViewModel() {
+      return DetailModule_ProvideViewModelFactory.proxyProvideViewModel(
+          detailModule, getDataManager());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final DetailFragmentSubcomponentBuilder builder) {
+      this.detailModule = builder.detailModule;
+    }
+
+    @Override
+    public void inject(DetailFragment arg0) {
+      injectDetailFragment(arg0);
+    }
+
+    private DetailFragment injectDetailFragment(DetailFragment instance) {
+      DetailFragment_MembersInjector.injectDetailViewModel(instance, getDetailViewModel());
+      DetailFragment_MembersInjector.injectContactAdapter(
+          instance,
+          DetailModule_ProvideContactAdapterFactory.proxyProvideContactAdapter(detailModule));
       return instance;
     }
   }

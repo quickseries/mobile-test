@@ -13,26 +13,57 @@ import com.ztd.interview_test.mvvm.base.BaseViewHolder
 
 /**
  * Created by Mahdi zarre Tahghigh doost on 1/12/2020.
- * snappQ
  * mahdiZTD@gmail.com
  */
 class CategoryDetailAdapter(private val categoryDetails: MutableList<Any>) :
     RecyclerView.Adapter<CategoryDetailAdapter.CategoryDetailViewHolder>() {
 
-    val VIEW_TYPE_RESTAURANT        = 1
-    val VIEW_TYPE_VACATION_SPOT     = 2
+
+    var clickListener: CategoryDetailAdapter.OnItemClickListener? = null
+    val VIEW_TYPE_RESTAURANT = 1
+    val VIEW_TYPE_VACATION_SPOT = 2
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryDetailViewHolder {
-        return when(viewType){
+        return when (viewType) {
             VIEW_TYPE_RESTAURANT ->
-                CategoryDetailViewHolder(LayoutItemRestaurantBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+                CategoryDetailViewHolder(
+                    LayoutItemRestaurantBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
             VIEW_TYPE_VACATION_SPOT ->
-                CategoryDetailViewHolder(LayoutItemVacationSpotBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+                CategoryDetailViewHolder(
+                    LayoutItemVacationSpotBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
             else ->
-                CategoryDetailViewHolder(LayoutItemRestaurantBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+                CategoryDetailViewHolder(
+                    LayoutItemRestaurantBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
         }
     }
+
+
+    fun addItems(categories: MutableList<Any>) {
+        this.categoryDetails.clear()
+        this.categoryDetails.addAll(categories)
+        notifyDataSetChanged()
+    }
+
+    fun clearItems() {
+        this.categoryDetails.clear()
+    }
+
 
     override fun getItemCount(): Int {
         return categoryDetails.size
@@ -43,7 +74,7 @@ class CategoryDetailAdapter(private val categoryDetails: MutableList<Any>) :
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(categoryDetails[position]){
+        return when (categoryDetails[position]) {
             is RestaurantModel -> VIEW_TYPE_RESTAURANT
             is VacationSpotModel -> VIEW_TYPE_VACATION_SPOT
             else -> -1
@@ -54,15 +85,15 @@ class CategoryDetailAdapter(private val categoryDetails: MutableList<Any>) :
         BaseViewHolder(mBinding.root) {
 
         override fun onBind(position: Int) {
-            when(categoryDetails[position]){
+            when (categoryDetails[position]) {
                 is RestaurantModel -> {
                     val restaurantModel = categoryDetails[position] as RestaurantModel
-                    val restaurantViewModel = RestaurantItemViewModel(restaurantModel)
+                    val restaurantViewModel = RestaurantItemViewModel(restaurantModel,clickListener)
                     (mBinding as LayoutItemRestaurantBinding).vm = restaurantViewModel
                 }
                 is VacationSpotModel -> {
                     val vacationSpotModel = categoryDetails[position] as VacationSpotModel
-                    val vacationSpotItemViewModel = VacationSpotItemViewModel(vacationSpotModel)
+                    val vacationSpotItemViewModel = VacationSpotItemViewModel(vacationSpotModel,clickListener)
                     (mBinding as LayoutItemVacationSpotBinding).vm = vacationSpotItemViewModel
                 }
             }
@@ -70,5 +101,10 @@ class CategoryDetailAdapter(private val categoryDetails: MutableList<Any>) :
             mBinding.executePendingBindings()
 
         }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClicked(restaurantModel: RestaurantModel)
+        fun onItemClicked(vacationSpotModel: VacationSpotModel)
     }
 }

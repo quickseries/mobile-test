@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jan 11 23:58:17 IRST 2020
+#Mon Jan 13 15:08:56 IRST 2020
 1.base=C\:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\merged_assets\\debug\\out
 2.path=data/restaurants.json
 0.baseType=DIRECTORY

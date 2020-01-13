@@ -23,11 +23,33 @@
 
         <argument
             android:name="pageTitle"
-            app:argType="string"/>
+            app:argType="string" />
 
         <argument
             android:name="catType"
-            app:argType="string"/>
+            app:argType="string" />
+        <action
+            android:id="@+id/action_categoryDetailFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ztd.interview_test.mvvm.detailfragment.DetailFragment"
+        android:label="{pageTitle}"
+        tools:layout="@layout/fragment_detail">
+
+
+        <argument
+            android:name="pageTitle"
+            app:argType="string" />
+
+        <argument
+            android:name="catType"
+            app:argType="string" />
+
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
 </navigation>

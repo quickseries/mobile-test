@@ -19,12 +19,12 @@ class AppDataManager @Inject constructor(private val assetHelper: AssetHelper,pr
     }
 
     override fun getAllRestaurants():MutableList<RestaurantModel> {
-        val restJson = assetHelper.loadCategoriesJson()
+        val restJson = assetHelper.loadRestaurantsJson()
         return gson.fromJson(restJson,Array<RestaurantModel>::class.java).toMutableList()
     }
 
     override fun getAllVacationSpots():MutableList<VacationSpotModel> {
-        val vacJson = assetHelper.loadCategoriesJson()
+        val vacJson = assetHelper.loadVacationSpotsJson()
         return gson.fromJson(vacJson,Array<VacationSpotModel>::class.java).toMutableList()
     }
 }

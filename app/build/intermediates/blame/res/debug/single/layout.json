@@ -1,10 +1,34 @@
 [
     {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_item_vacation_spot.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\layout_item_vacation_spot.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_item_category.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\layout_item_category.xml"
+    },
+    {
         "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
         "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
         "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_item_contact.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\layout_item_contact.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_item_restaurant.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\layout_item_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_category_detail.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\fragment_category_detail.xml"
+    },
+    {
+        "merged": "C:\\Android\\Project\\mobileTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_detail.xml",
+        "source": "C:\\Android\\Project\\mobileTest\\app\\src\\main\\res\\layout\\fragment_detail.xml"
     }
 ]

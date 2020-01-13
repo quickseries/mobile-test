@@ -2,4 +2,9 @@
     <string name="app_name">interview-test</string>
 
     <string name="home_title">Home</string>
+    <string name="contact_information">contact information</string>
+    <string name="addresses">ADDRESSES</string>
+    <string name="notes">NOTES</string>
+    <string name="socials">SOCIAL MEDIA</string>
+    <string name="business_hours">BUSINESS HOURS</string>
 </resources>

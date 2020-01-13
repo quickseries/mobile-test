@@ -7,7 +7,13 @@ import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.ztd.interview_test.databinding.ActivityMainBindingImpl;
+import com.ztd.interview_test.databinding.FragmentCategoryDetailBindingImpl;
+import com.ztd.interview_test.databinding.FragmentDetailBindingImpl;
 import com.ztd.interview_test.databinding.FragmentHomeBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemCategoryBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemContactBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemRestaurantBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemVacationSpotBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -21,13 +27,31 @@ import java.util.List;
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYMAIN = 1;
 
-  private static final int LAYOUT_FRAGMENTHOME = 2;
+  private static final int LAYOUT_FRAGMENTCATEGORYDETAIL = 2;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
+  private static final int LAYOUT_FRAGMENTDETAIL = 3;
+
+  private static final int LAYOUT_FRAGMENTHOME = 4;
+
+  private static final int LAYOUT_LAYOUTITEMCATEGORY = 5;
+
+  private static final int LAYOUT_LAYOUTITEMCONTACT = 6;
+
+  private static final int LAYOUT_LAYOUTITEMRESTAURANT = 7;
+
+  private static final int LAYOUT_LAYOUTITEMVACATIONSPOT = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_category_detail, LAYOUT_FRAGMENTCATEGORYDETAIL);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_detail, LAYOUT_FRAGMENTDETAIL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_category, LAYOUT_LAYOUTITEMCATEGORY);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_contact, LAYOUT_LAYOUTITEMCONTACT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_restaurant, LAYOUT_LAYOUTITEMRESTAURANT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_vacation_spot, LAYOUT_LAYOUTITEMVACATIONSPOT);
   }
 
   @Override
@@ -45,11 +69,47 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for activity_main is invalid. Received: " + tag);
         }
+        case  LAYOUT_FRAGMENTCATEGORYDETAIL: {
+          if ("layout/fragment_category_detail_0".equals(tag)) {
+            return new FragmentCategoryDetailBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_category_detail is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTDETAIL: {
+          if ("layout/fragment_detail_0".equals(tag)) {
+            return new FragmentDetailBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_detail is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGMENTHOME: {
           if ("layout/fragment_home_0".equals(tag)) {
             return new FragmentHomeBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_home is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMCATEGORY: {
+          if ("layout/layout_item_category_0".equals(tag)) {
+            return new LayoutItemCategoryBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_category is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMCONTACT: {
+          if ("layout/layout_item_contact_0".equals(tag)) {
+            return new LayoutItemContactBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_contact is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMRESTAURANT: {
+          if ("layout/layout_item_restaurant_0".equals(tag)) {
+            return new LayoutItemRestaurantBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_restaurant is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMVACATIONSPOT: {
+          if ("layout/layout_item_vacation_spot_0".equals(tag)) {
+            return new LayoutItemVacationSpotBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_vacation_spot is invalid. Received: " + tag);
         }
       }
     }
@@ -105,11 +165,17 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
       sKeys.put("layout/activity_main_0", com.ztd.interview_test.R.layout.activity_main);
+      sKeys.put("layout/fragment_category_detail_0", com.ztd.interview_test.R.layout.fragment_category_detail);
+      sKeys.put("layout/fragment_detail_0", com.ztd.interview_test.R.layout.fragment_detail);
       sKeys.put("layout/fragment_home_0", com.ztd.interview_test.R.layout.fragment_home);
+      sKeys.put("layout/layout_item_category_0", com.ztd.interview_test.R.layout.layout_item_category);
+      sKeys.put("layout/layout_item_contact_0", com.ztd.interview_test.R.layout.layout_item_contact);
+      sKeys.put("layout/layout_item_restaurant_0", com.ztd.interview_test.R.layout.layout_item_restaurant);
+      sKeys.put("layout/layout_item_vacation_spot_0", com.ztd.interview_test.R.layout.layout_item_vacation_spot);
     }
   }
 }

@@ -8,16 +8,22 @@ import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
 import com.ztd.interview_test.mvvm.homefragment.HomeViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentHomeBinding extends ViewDataBinding {
+  @NonNull
+  public final RecyclerView rvCategories;
+
   @Bindable
   protected HomeViewModel mVm;
 
-  protected FragmentHomeBinding(Object _bindingComponent, View _root, int _localFieldCount) {
+  protected FragmentHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
+      RecyclerView rvCategories) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.rvCategories = rvCategories;
   }
 
   public abstract void setVm(@Nullable HomeViewModel vm);

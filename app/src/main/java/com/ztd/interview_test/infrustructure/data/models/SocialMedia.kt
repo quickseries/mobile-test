@@ -1,4 +1,4 @@
-package com.ztd.interview_test.infrustructure.data.models.vacationspot
+package com.ztd.interview_test.infrustructure.data.models
 
 import com.google.gson.annotations.SerializedName
 

@@ -2,6 +2,8 @@ package com.ztd.interview_test.infrustructure.di
 
 import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailFragment
 import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailModule
+import com.ztd.interview_test.mvvm.detailfragment.DetailFragment
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment
 import com.ztd.interview_test.mvvm.homefragment.HomeModule
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity
@@ -24,4 +26,7 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = arrayOf(CategoryDetailModule::class))
     abstract fun provideCategoryDetailFactory(): CategoryDetailFragment
+
+    @ContributesAndroidInjector(modules = arrayOf(DetailModule::class))
+    abstract fun provideDetailFactory(): DetailFragment
 }

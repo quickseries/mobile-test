@@ -3,6 +3,7 @@ package com.ztd.interview_test.infrustructure.data.models.vacationspot
 import com.google.gson.annotations.SerializedName
 import com.ztd.interview_test.infrustructure.data.models.AddressesItem
 import com.ztd.interview_test.infrustructure.data.models.ContactInfo
+import com.ztd.interview_test.infrustructure.data.models.SocialMedia
 
 data class VacationSpotModel(
 

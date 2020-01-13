@@ -22,8 +22,27 @@
     </style>
 
 
+    <style name="TextStyleTitleDark" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+
     <style name="TextStyleDesc" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_desc_size</item>
+        <item name="android:textColor">@color/md_grey_600</item>
+    </style>
+
+
+    <style name="TextStyleDescDark" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_desc_size</item>
+        <item name="android:textColor">@color/md_grey_800</item>
+    </style>
+
+
+    <style name="TextStyleSubDesc" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_sub_desc_size</item>
         <item name="android:textColor">@color/md_grey_600</item>
     </style>
 
