@@ -39,6 +39,12 @@ android {
     }
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -66,6 +72,9 @@ dependencies {
     // Coroutines
     implementation deps.coroutines.core
     implementation deps.coroutines.android
+
+    // Coil
+    implementation deps.coil
 
     // Tests
     testImplementation deps.junit

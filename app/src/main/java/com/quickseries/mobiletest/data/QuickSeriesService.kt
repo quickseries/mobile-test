@@ -42,6 +42,24 @@ object QuickSeriesService {
     }
 
     /**
+     * Fetch the resources (restaurant) using QuickSeriesApi.
+     */
+    suspend fun restaurants() = withContext(Dispatchers.IO) {
+        runServiceBlock {
+            retrofit.create(QuickSeriesApi::class.java).restaurants()
+        }
+    }
+
+    /**
+     * Fetch the categories (vacation spots) using QuickSeriesApi.
+     */
+    suspend fun vacationSpots() = withContext(Dispatchers.IO) {
+        runServiceBlock {
+            retrofit.create(QuickSeriesApi::class.java).vacationSpots()
+        }
+    }
+
+    /**
      * A generic method to handle a service call, its response and error.
      *
      * @param serviceCallBlock the block to run (returning a response of the generic type)

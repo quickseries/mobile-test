@@ -1,7 +1,7 @@
 package com.quickseries.mobiletest.ui.categories
 
-import com.quickseries.mobiletest.domain.model.Category
-import com.quickseries.mobiletest.domain.model.Slug
+import com.quickseries.mobiletest.domain.categories.model.Category
+import com.quickseries.mobiletest.domain.categories.model.Slug
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

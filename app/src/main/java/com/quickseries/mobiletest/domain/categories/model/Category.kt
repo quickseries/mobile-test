@@ -1,4 +1,4 @@
-package com.quickseries.mobiletest.domain.model
+package com.quickseries.mobiletest.domain.categories.model
 
 import com.quickseries.mobiletest.data.categories.CategoryResponse
 import kotlinx.coroutines.Dispatchers

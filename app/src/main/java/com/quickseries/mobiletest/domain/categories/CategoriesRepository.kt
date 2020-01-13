@@ -1,11 +1,11 @@
-package com.quickseries.mobiletest.domain
+package com.quickseries.mobiletest.domain.categories
 
 import com.quickseries.mobiletest.data.HttpServiceException
 import com.quickseries.mobiletest.data.PayloadServiceException
 import com.quickseries.mobiletest.data.QuickSeriesService
 import com.quickseries.mobiletest.data.ServiceException
 import com.quickseries.mobiletest.data.UnauthorizeServiceException
-import com.quickseries.mobiletest.domain.model.toCategories
+import com.quickseries.mobiletest.domain.categories.model.toCategories
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -9,8 +9,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.quickseries.mobiletest.R
 import com.quickseries.mobiletest.databinding.ActivityCategoriesBinding
+import com.quickseries.mobiletest.domain.categories.model.Slug
+import com.quickseries.mobiletest.ui.resources.ResourcesActivity
 
-class CategoriesActivity : AppCompatActivity() {
+class CategoriesActivity : AppCompatActivity(), CategoriesAdapter.Listener {
 
     private val viewmodel by lazy {
         ViewModelProviders.of(this).get(CategoriesViewModel::class.java)
@@ -18,7 +20,7 @@ class CategoriesActivity : AppCompatActivity() {
 
     private val categories = mutableListOf<CategoryItem>()
     private val categoriesAdapter by lazy {
-        CategoriesAdapter(categories)
+        CategoriesAdapter(this, categories)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,7 @@ class CategoriesActivity : AppCompatActivity() {
             adapter = categoriesAdapter
         }
 
-        viewmodel.categoriesLiveData.observe(this, Observer<CategoriesState> { state ->
+        viewmodel.stateLiveData.observe(this, Observer<CategoriesState> { state ->
             binding.state = state
             handleState(state)
         })
@@ -40,6 +42,16 @@ class CategoriesActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         viewmodel.fetchCategories()
+    }
+
+    override fun onCategoryItemClick(category: CategoryItem) {
+        if (category.slug != Slug.UNKNOWN) {
+            startActivity(ResourcesActivity.newIntent(this, category.slug))
+        } else {
+            AlertDialog.Builder(this)
+                .setMessage("Category unknown !")
+                .show()
+        }
     }
 
     private fun handleState(state: CategoriesState) {
@@ -55,6 +67,5 @@ class CategoriesActivity : AppCompatActivity() {
                     .show()
             }
         }
-
     }
 }

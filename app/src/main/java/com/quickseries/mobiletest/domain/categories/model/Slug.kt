@@ -1,4 +1,4 @@
-package com.quickseries.mobiletest.domain.model
+package com.quickseries.mobiletest.domain.categories.model
 
 /**
  * Enum representing the differents types of Slug.
