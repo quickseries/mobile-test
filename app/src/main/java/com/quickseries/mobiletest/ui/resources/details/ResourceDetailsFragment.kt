@@ -76,12 +76,14 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
 
     override fun onContactInfoItemClick(contactInfoItem: ContactInfoItem) {
         when (contactInfoItem.type) {
+            // show a custom tab for the url
             ContactInfoItem.Type.WEBSITE -> {
                 CustomTabsIntent.Builder().build().launchUrl(
                     requireContext(),
                     Uri.parse(contactInfoItem.info)
                 )
             }
+            // send to an email application
             ContactInfoItem.Type.EMAIL -> {
                 val intent = Intent(Intent.ACTION_SEND).apply {
                     type = "plain/text"
@@ -89,6 +91,7 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
                 }
                 requireContext().startActivity(Intent.createChooser(intent, "Send email"))
             }
+            // launch phone number to call
             ContactInfoItem.Type.PHONE_NUMBER,
             ContactInfoItem.Type.TOLL_FREE_NUMBER -> {
                 val intent = Intent(Intent.ACTION_DIAL).apply {
@@ -103,6 +106,7 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
     private fun handleState(state: ResourcesState) {
         when (state) {
             is ResourcesState.Details -> {
+                // update the data
                 binding?.resource = state.resourceItem
 
                 addresses.clear()
@@ -114,6 +118,7 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
                 contactInfosAdapter.notifyDataSetChanged()
             }
             is ResourcesState.Error -> {
+                // show the error message
                 AlertDialog.Builder(requireContext())
                     .setMessage(state.message)
                     .show()

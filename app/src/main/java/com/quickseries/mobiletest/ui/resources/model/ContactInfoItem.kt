@@ -14,12 +14,18 @@ import kotlinx.coroutines.withContext
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-
+/**
+ * Data class representing the view for a contact info item.
+ */
 data class ContactInfoItem(
     val type: Type,
     val info: String
 ) {
 
+    /**
+     * The type of contact info (ex: website, phone number). Depending on the type, there's a different
+     * resource string title and drawable.
+     */
     enum class Type(@StringRes val titleResId: Int, @DrawableRes val drawableRes1: Int? = null) {
         WEBSITE(R.string.resource_details_contact_info_website_title, android.R.drawable.ic_menu_view),
         EMAIL(R.string.resource_details_contact_info_email_title, android.R.drawable.ic_dialog_email),
@@ -48,6 +54,7 @@ data class ContactInfoItem(
 suspend fun ContactInfo.toContactInfosItems() = withContext(Dispatchers.Default) {
     val list = mutableListOf<ContactInfoItem>()
 
+    // we add only the contact info items that are not empty
     if (!website.isNullOrBlank()) list.add(ContactInfoItem(ContactInfoItem.Type.WEBSITE, website))
     if (!email.isNullOrBlank()) list.add(ContactInfoItem(ContactInfoItem.Type.EMAIL, email))
     if (!phoneNmber.isNullOrBlank()) list.add(ContactInfoItem(ContactInfoItem.Type.PHONE_NUMBER, PhoneNumberUtils.formatNumber(phoneNmber)))

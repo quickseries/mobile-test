@@ -57,11 +57,13 @@ class CategoriesActivity : AppCompatActivity(), CategoriesAdapter.Listener {
     private fun handleState(state: CategoriesState) {
         when (state) {
             is CategoriesState.Success -> {
+                // update the data
                 categories.clear()
                 categories.addAll(state.list)
                 categoriesAdapter.notifyDataSetChanged()
             }
             is CategoriesState.Error -> {
+                // show the error message
                 AlertDialog.Builder(this)
                     .setMessage(state.message)
                     .show()

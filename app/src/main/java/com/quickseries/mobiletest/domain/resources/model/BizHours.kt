@@ -13,9 +13,19 @@ data class BizHours(
     val friday: String? = null,
     val saturday: String? = null
 ) {
+    /**
+     * Simple function to determine fi all the fields of the data class are empty.
+     *
+     * @return Boolean true if empty
+     */
     fun isEmpty() = sunday == null && monday == null && tuesday == null && thursday == null && friday == null && saturday == null
 }
 
+/**
+ * Extension that convert a [BizHoursResponse] to a list of [BizzHours].
+ *
+ * @return BizHours
+ */
 suspend fun BizHoursResponse.toBizHours() = withContext(Dispatchers.Default) {
     BizHours(
         sunday?.let { "${it.from} - ${it.to}" },

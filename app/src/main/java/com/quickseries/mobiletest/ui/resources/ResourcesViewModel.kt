@@ -30,6 +30,9 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
         super.onCleared()
     }
 
+    /**
+     * Fetch the resources and update the live data with the list if success.
+     */
     fun fetchResources() {
         uiScope.launch {
             try {
@@ -42,10 +45,16 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
         }
     }
 
+    /**
+     * Event called when an resource item has been clicked. It lets us change state to Details.
+     */
     fun resourceItemSelected(resourceItem: ResourceItem) {
         stateMutableLiveData.value = ResourcesState.Details(resourceItem)
     }
 
+    /**
+     * Sort ascending or descending depending on the last sorting. We update the state with the new list.
+     */
     fun sort() {
         uiScope.launch {
             val state = stateMutableLiveData.value

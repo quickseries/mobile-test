@@ -11,6 +11,13 @@ import kotlinx.coroutines.withContext
  */
 object ResourcesRepository {
 
+    /**
+     * Fetch the resources for a certain slug (restaurants or vacation-spots).
+     * For the moment, we only fetch from the service. In future, we could cache the data that we receive.
+     *
+     * @param slug
+     * @return List<Resource>
+     */
     suspend fun resources(slug: Slug) = withContext(Dispatchers.IO) {
         when (slug) {
             Slug.RESTAURANTS -> QuickSeriesService.restaurants().toResources()

@@ -11,8 +11,14 @@ data class ContactInfo(
     val faxNumber: String? = null,
     val tollFree: String? = null
 ) {
+    /**
+     * Simple function to determine fi all the fields of the data class are empty.
+     *
+     * @return Boolean true if empty
+     */
     fun isEmpty() = website == null && email == null && phoneNmber == null && faxNumber == null && tollFree == null
 }
+
 
 suspend fun ContactInfoResponse.toContactInfo() = withContext(Dispatchers.Default) {
     ContactInfo(

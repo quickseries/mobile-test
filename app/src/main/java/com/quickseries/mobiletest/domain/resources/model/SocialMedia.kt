@@ -9,6 +9,11 @@ data class SocialMedia(
     val twitter: String? = null,
     val facebook: String? = null
 ) {
+    /**
+     * Simple function to determine fi all the fields of the data class are empty.
+     *
+     * @return Boolean true if empty
+     */
     fun isEmpty() = youtube == null && twitter == null && facebook == null
 }
 

@@ -22,6 +22,9 @@ class CategoriesViewModel : ViewModel() {
         fetchCategories()
     }
 
+    /**
+     * Fetch the categories and update the live data.
+     */
     fun fetchCategories() {
         uiScope.launch {
             stateMutableLiveData.value = CategoriesState.Loading
