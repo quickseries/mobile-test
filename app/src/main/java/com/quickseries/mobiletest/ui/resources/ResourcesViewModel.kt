@@ -14,6 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ResourcesViewModel(val slug: Slug) : ViewModel() {
 
@@ -21,6 +22,8 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
 
     private val stateMutableLiveData = MutableLiveData<ResourcesState>()
     val stateLiveData: LiveData<ResourcesState> = stateMutableLiveData
+
+    private var sortAscending = true
 
     override fun onCleared() {
         uiScope.cancel()
@@ -41,6 +44,24 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
 
     fun resourceItemSelected(resourceItem: ResourceItem) {
         stateMutableLiveData.value = ResourcesState.Details(resourceItem)
+    }
+
+    fun sort() {
+        uiScope.launch {
+            val state = stateMutableLiveData.value
+            if (state is ResourcesState.Success) {
+                if (sortAscending) {
+                    stateMutableLiveData.value = withContext(Dispatchers.Default) {
+                        ResourcesState.Success(state.list.sortedBy { it.resourceInfo.title })
+                    }
+                } else {
+                    stateMutableLiveData.value = withContext(Dispatchers.Default) {
+                        ResourcesState.Success(state.list.sortedByDescending { it.resourceInfo.title })
+                    }
+                }
+                sortAscending = !sortAscending
+            }
+        }
     }
 
 

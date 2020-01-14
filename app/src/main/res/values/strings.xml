@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Mobile Test</string>
 
+    <string name="resources_list_sort">Sort</string>
+
     <string name="resource_details_contact_info_title">Contact Information</string>
     <string name="resource_details_addresses_title">Address</string>
     <string name="resource_details_biz_hours_title">Business Hours</string>

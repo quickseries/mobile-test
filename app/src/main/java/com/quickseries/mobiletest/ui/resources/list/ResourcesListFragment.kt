@@ -41,6 +41,7 @@ class ResourcesListFragment : Fragment(), ResourcesAdapter.Listener {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentResourcesListBinding.inflate(layoutInflater, container, false)
+        binding?.viewmodel = viewmodel
         return binding?.root
     }
 
