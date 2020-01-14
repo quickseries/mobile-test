@@ -19,7 +19,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:cardCornerRadius="5dp"
 
         android:onClick="@{(v) -> listener.onResourceItemClick(resource)}"
@@ -28,7 +28,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
             >
 
             <ImageView
@@ -36,7 +35,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@{resource.resourceInfo.photoDrawable}"
-                android:scaleType="fitXY"
+                android:scaleType="fitEnd"
+                android:adjustViewBounds="true"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
