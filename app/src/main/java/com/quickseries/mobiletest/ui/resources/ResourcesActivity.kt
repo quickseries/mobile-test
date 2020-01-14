@@ -3,6 +3,7 @@ package com.quickseries.mobiletest.ui.resources
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.quickseries.mobiletest.R
@@ -10,6 +11,7 @@ import com.quickseries.mobiletest.domain.categories.model.Slug
 import com.quickseries.mobiletest.ui.resources.details.ResourceDetailsFragment
 import com.quickseries.mobiletest.ui.resources.list.ResourcesListFragment
 import com.quickseries.mobiletest.ui.resources.model.ResourceItem
+
 
 class ResourcesActivity : AppCompatActivity(), ResourcesListFragment.Listener {
 
@@ -27,11 +29,25 @@ class ResourcesActivity : AppCompatActivity(), ResourcesListFragment.Listener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resources)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         viewmodel.fetchResources()
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.resources_container, ResourcesListFragment.newInstance())
-            .commit()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.resources_container, ResourcesListFragment.newInstance())
+                .commit()
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onResourceItemClick(resourceItem: ResourceItem) {

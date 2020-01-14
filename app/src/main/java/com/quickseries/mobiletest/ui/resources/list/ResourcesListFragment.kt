@@ -59,6 +59,11 @@ class ResourcesListFragment : Fragment(), ResourcesAdapter.Listener {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewmodel.fetchResources()
+    }
+
     override fun onDetach() {
         listener = null
         super.onDetach()
