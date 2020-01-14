@@ -10,7 +10,9 @@ data class ContactInfo(
     val phoneNmber: String? = null,
     val faxNumber: String? = null,
     val tollFree: String? = null
-)
+) {
+    fun isEmpty() = website == null && email == null && phoneNmber == null && faxNumber == null && tollFree == null
+}
 
 suspend fun ContactInfoResponse.toContactInfo() = withContext(Dispatchers.Default) {
     ContactInfo(

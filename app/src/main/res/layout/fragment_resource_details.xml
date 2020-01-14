@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.Html"/>
+        <import type="android.view.View"/>
+        <variable
+            name="resource"
+            type="com.quickseries.mobiletest.ui.resources.model.ResourceItem" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/resource_details_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@{resource.resourceInfo.photoDrawable}"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:layout_width="match_parent"
+                tools:layout_height="200dp"
+                />
+
+            <TextView
+                android:id="@+id/resource_details_title_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{resource.resourceInfo.title}"
+                style="@style/TextAppearance.AppCompat.Title"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_imageview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:text="Title"
+                />
+
+            <TextView
+                android:id="@+id/resource_details_last_modified_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{resource.resourceInfo.lastModified}"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_marginTop="4dp"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_title_textview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:text="Thu Aug 03 2017"
+                />
+
+            <TextView
+                android:id="@+id/resource_details_description_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{Html.fromHtml(resource.resourceInfo.description)}"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginTop="8dp"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_last_modified_textview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:text="Description"
+                />
+
+            <LinearLayout
+                android:id="@+id/resource_details_contact_info_section_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{resource.contactInfos.isEmpty() ? View.GONE : View.VISIBLE}"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_description_textview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/resource_details_contact_info_title_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/resource_details_contact_info_title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/resource_details_contact_info_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/resource_details_addresses_section_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="@{resource.addresses.isEmpty() ? View.GONE : View.VISIBLE}"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_contact_info_section_linear_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/resource_details_address_title_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/resource_details_addresses_title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/resource_details_addresses_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/resource_details_social_media_section_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="@{resource.socialMedia.isEmpty() ? View.GONE : View.VISIBLE}"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_addresses_section_linear_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/resource_details_social_media_title_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/resource_details_social_media_title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="8dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_twitter"
+                            android:visibility="@{resource.socialMedia.twitter == null ? View.GONE : View.VISIBLE}"
+                            />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_facebook"
+                            android:visibility="@{resource.socialMedia.facebook == null ? View.GONE : View.VISIBLE}"
+                            />
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_youtube"
+                            android:visibility="@{resource.socialMedia.youtube == null ? View.GONE : View.VISIBLE}"
+                            />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/resource_details_biz_hours_section_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="@{resource.bizHours.isEmpty() ? View.GONE : View.VISIBLE}"
+
+                app:layout_constraintTop_toBottomOf="@id/resource_details_social_media_section_linear_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/resource_details_biz_hours_title_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/resource_details_biz_hours_title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="8dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/resource_details_bizz_hour_sunday"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.sunday == null ? `CLOSED` : resource.bizHours.sunday}"
+                                />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_monday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.monday == null ? `CLOSED` : resource.bizHours.monday}"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_tuesday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.tuesday == null ? `CLOSED` : resource.bizHours.tuesday}"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_wednesday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.wednesday == null ? `CLOSED` : resource.bizHours.wednesday}"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_thursday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.thursday == null ? `CLOSED` : resource.bizHours.thursday}"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_friday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.friday == null ? `CLOSED` : resource.bizHours.friday}"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@string/resource_details_bizz_hour_saturday"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:text="@{resource.bizHours.saturday == null ? `CLOSED` : resource.bizHours.saturday}"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

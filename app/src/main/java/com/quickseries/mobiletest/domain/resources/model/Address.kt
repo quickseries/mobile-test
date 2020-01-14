@@ -13,7 +13,10 @@ data class Address(
     val country: String,
     val latitude: String,
     val longitude: String
-)
+) {
+    fun isEmpty() =
+        address1.isEmpty() && label.isEmpty() && zipCode.isEmpty() && city.isEmpty() && state.isEmpty() && country.isEmpty() && latitude.isEmpty() && longitude.isEmpty()
+}
 
 suspend fun List<AddressResponse>.toAddresses() = withContext(Dispatchers.Default) {
     map { addressResponse ->
@@ -24,8 +27,8 @@ suspend fun List<AddressResponse>.toAddresses() = withContext(Dispatchers.Defaul
             addressResponse.city.orEmpty(),
             addressResponse.state.orEmpty(),
             addressResponse.country.orEmpty(),
-            addressResponse.gps?.latitude.orEmpty(),
-            addressResponse.gps?.longitude.orEmpty()
+            addressResponse.gps.latitude.orEmpty(),
+            addressResponse.gps.longitude.orEmpty()
         )
     }
 }

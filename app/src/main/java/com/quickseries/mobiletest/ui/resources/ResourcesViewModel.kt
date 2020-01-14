@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.quickseries.mobiletest.data.ServiceException
 import com.quickseries.mobiletest.domain.categories.model.Slug
 import com.quickseries.mobiletest.domain.resources.ResourcesRepository
+import com.quickseries.mobiletest.ui.resources.model.ResourceItem
 import com.quickseries.mobiletest.ui.resources.model.toResourcesItems
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,6 +22,11 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
     private val stateMutableLiveData = MutableLiveData<ResourcesState>()
     val stateLiveData: LiveData<ResourcesState> = stateMutableLiveData
 
+    override fun onCleared() {
+        uiScope.cancel()
+        super.onCleared()
+    }
+
     fun fetchResources() {
         uiScope.launch {
             try {
@@ -33,9 +39,8 @@ class ResourcesViewModel(val slug: Slug) : ViewModel() {
         }
     }
 
-    override fun onCleared() {
-        uiScope.cancel()
-        super.onCleared()
+    fun resourceItemSelected(resourceItem: ResourceItem) {
+        stateMutableLiveData.value = ResourcesState.Details(resourceItem)
     }
 
 

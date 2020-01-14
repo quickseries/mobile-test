@@ -11,7 +11,7 @@ data class Resource(
     val photoUrl: String,
     val lastModified: Date? = null,
     val contactInfo: ContactInfo,
-    val address: List<Address>,
+    val addresses: List<Address>,
     val bizHours: BizHours,
     val socialMedia: SocialMedia
 )

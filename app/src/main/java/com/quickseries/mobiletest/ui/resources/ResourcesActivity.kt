@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.quickseries.mobiletest.R
 import com.quickseries.mobiletest.domain.categories.model.Slug
+import com.quickseries.mobiletest.ui.resources.details.ResourceDetailsFragment
 import com.quickseries.mobiletest.ui.resources.list.ResourcesListFragment
+import com.quickseries.mobiletest.ui.resources.model.ResourceItem
 
-class ResourcesActivity : AppCompatActivity() {
+class ResourcesActivity : AppCompatActivity(), ResourcesListFragment.Listener {
 
     private val slug by lazy {
         intent?.extras?.getSerializable(EXTRA_SLUG) as Slug
@@ -29,6 +31,13 @@ class ResourcesActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.resources_container, ResourcesListFragment.newInstance())
+            .commit()
+    }
+
+    override fun onResourceItemClick(resourceItem: ResourceItem) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.resources_container, ResourceDetailsFragment.newInstance())
+            .addToBackStack(null)
             .commit()
     }
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contactInfo"
+            type="com.quickseries.mobiletest.ui.resources.model.ContactInfoItem" />
+        <variable
+            name="listener"
+            type="com.quickseries.mobiletest.ui.resources.details.ResourceDetailsContactInfoAdapter.Listener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> listener.onContactInfoItemClick(contactInfo)}"
+        >
+
+        <ImageView
+            android:id="@+id/resource_contact_info_imageview"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@{contactInfo.type.drawableRes1}"
+            android:tint="@color/colorAccent"
+            android:padding="16dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            tools:src="@android:drawable/ic_menu_call"
+            />
+
+        <TextView
+            android:id="@+id/resource_contact_info_title_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{contactInfo.type.titleResId}"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorAccent"
+            android:textAllCaps="true"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resource_contact_info_imageview"
+            app:layout_constraintBottom_toTopOf="@id/resource_contact_info_textview"
+
+            tools:text="Phone number"
+            />
+
+
+        <TextView
+            android:id="@+id/resource_contact_info_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{contactInfo.info}"
+            style="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintTop_toBottomOf="@id/resource_contact_info_title_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resource_contact_info_imageview"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            tools:text="+1 (123) 456-7890"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

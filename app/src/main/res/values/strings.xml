@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Mobile Test</string>
+
+    <string name="resource_details_contact_info_title">Contact Information</string>
+    <string name="resource_details_addresses_title">Address</string>
+    <string name="resource_details_biz_hours_title">Business Hours</string>
+    <string name="resource_details_social_media_title">Social Media</string>
+
+    <string name="resource_details_contact_info_website_title">Website</string>
+    <string name="resource_details_contact_info_email_title">Email</string>
+    <string name="resource_details_contact_info_phone_number_title">Phone Number</string>
+    <string name="resource_details_contact_info_toll_free_number_title">Toll-Free Number</string>
+    <string name="resource_details_contact_info_fax_number_title">Fax Number</string>
+
+    <string name="resource_details_bizz_hour_sunday">Sunday</string>
+    <string name="resource_details_bizz_hour_monday">Monday</string>
+    <string name="resource_details_bizz_hour_tuesday">Tuesday</string>
+    <string name="resource_details_bizz_hour_wednesday">Wednesday</string>
+    <string name="resource_details_bizz_hour_thursday">Thursday</string>
+    <string name="resource_details_bizz_hour_friday">Friday</string>
+    <string name="resource_details_bizz_hour_saturday">Saturday</string>
+    <string name="resource_details_bizz_hour_closed">CLOSED</string>
 </resources>

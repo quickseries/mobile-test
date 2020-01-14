@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="address"
+            type="com.quickseries.mobiletest.domain.resources.model.Address" />
+        <variable
+            name="listener"
+            type="com.quickseries.mobiletest.ui.resources.details.ResourceDetailsAdressesAdapter.Listener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> listener.onAdressItemClick(address)}"
+        >
+
+        <ImageView
+            android:id="@+id/resource_address_imageview"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@android:drawable/ic_dialog_map"
+            android:tint="@color/colorAccent"
+            android:padding="16dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/resource_address_title_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{address.label}"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorAccent"
+            android:textAllCaps="true"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            tools:text="Address"
+            />
+
+
+        <TextView
+            android:id="@+id/resource_address_address1_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{address.address1}"
+            style="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintTop_toBottomOf="@id/resource_address_title_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resource_address_imageview"
+
+            tools:text="3237 Sources Blvd"
+            />
+
+        <TextView
+            android:id="@+id/resource_address_city_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{address.city + `, ` + address.state + `, ` + address.zipCode}"
+            style="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintTop_toBottomOf="@id/resource_address_address1_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resource_address_imageview"
+
+            tools:text="Montreal, QC, H9B 1Z6"
+            />
+
+        <TextView
+            android:id="@+id/resource_address_country_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{address.country}"
+            style="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintTop_toBottomOf="@id/resource_address_city_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resource_address_imageview"
+
+            tools:text="Canada"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

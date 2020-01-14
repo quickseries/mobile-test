@@ -76,6 +76,9 @@ dependencies {
     // Coil
     implementation deps.coil
 
+    // Koin
+    implementation deps.koin
+
     // Tests
     testImplementation deps.junit
     androidTestImplementation deps.androidx.junit

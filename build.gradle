@@ -55,7 +55,8 @@ buildscript {
             android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
         ],
 
-        coil: 'io.coil-kt:coil:0.9.1'
+        coil: 'io.coil-kt:coil:0.9.1',
+        koin: 'org.koin:koin-android:2.0.1'
     ]
 
     repositories {

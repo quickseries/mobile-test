@@ -1,5 +1,6 @@
 package com.quickseries.mobiletest.ui.resources.list
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,13 @@ class ResourcesListFragment : Fragment(), ResourcesAdapter.Listener {
         ResourcesAdapter(this, resources)
     }
 
+    private var listener: Listener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as Listener
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -50,8 +58,14 @@ class ResourcesListFragment : Fragment(), ResourcesAdapter.Listener {
         })
     }
 
-    override fun onResourceItemClick(resource: ResourceItem) {
+    override fun onDetach() {
+        listener = null
+        super.onDetach()
+    }
 
+    override fun onResourceItemClick(resource: ResourceItem) {
+        viewmodel.resourceItemSelected(resource)
+        listener?.onResourceItemClick(resource)
     }
 
     private fun handleState(state: ResourcesState) {
@@ -67,6 +81,10 @@ class ResourcesListFragment : Fragment(), ResourcesAdapter.Listener {
                     .show()
             }
         }
+    }
+
+    interface Listener {
+        fun onResourceItemClick(resourceItem: ResourceItem)
     }
 
     companion object {

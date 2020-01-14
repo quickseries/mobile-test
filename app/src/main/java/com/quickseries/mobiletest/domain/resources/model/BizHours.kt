@@ -12,7 +12,9 @@ data class BizHours(
     val thursday: String? = null,
     val friday: String? = null,
     val saturday: String? = null
-)
+) {
+    fun isEmpty() = sunday == null && monday == null && tuesday == null && thursday == null && friday == null && saturday == null
+}
 
 suspend fun BizHoursResponse.toBizHours() = withContext(Dispatchers.Default) {
     BizHours(

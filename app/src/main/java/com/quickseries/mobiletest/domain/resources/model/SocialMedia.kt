@@ -8,7 +8,9 @@ data class SocialMedia(
     val youtube: String? = null,
     val twitter: String? = null,
     val facebook: String? = null
-)
+) {
+    fun isEmpty() = youtube == null && twitter == null && facebook == null
+}
 
 suspend fun SocialMediaResponse.toSocialMedia() = withContext(Dispatchers.Default) {
     SocialMedia(

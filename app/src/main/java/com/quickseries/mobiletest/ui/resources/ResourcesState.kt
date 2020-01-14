@@ -15,6 +15,13 @@ sealed class ResourcesState {
     class Success(val list: List<ResourceItem>) : ResourcesState()
 
     /**
+     * Details state containing the resource item details.
+     *
+     * @param resourceItem
+     */
+    class Details(val resourceItem: ResourceItem) : ResourcesState()
+
+    /**
      * Loading State.
      */
     object Loading : ResourcesState()
