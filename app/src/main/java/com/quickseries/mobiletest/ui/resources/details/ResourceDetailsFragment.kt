@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -63,10 +64,6 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
             layoutManager = LinearLayoutManager(requireContext())
             adapter = resourceAddressesAdapter
         }
-//        bindi/ng?.resourceDetailsBizHoursRecyclerview?.apply {
-//            layoutManager = LinearLayoutManager(requireContext())
-//            adapter = resourcesAdapter
-//        }
         binding?.resourceDetailsContactInfoRecyclerview?.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = contactInfosAdapter
@@ -78,7 +75,29 @@ class ResourceDetailsFragment : Fragment(), ResourceDetailsAdressesAdapter.Liste
     }
 
     override fun onContactInfoItemClick(contactInfoItem: ContactInfoItem) {
-
+        when (contactInfoItem.type) {
+            ContactInfoItem.Type.WEBSITE -> {
+                CustomTabsIntent.Builder().build().launchUrl(
+                    requireContext(),
+                    Uri.parse(contactInfoItem.info)
+                )
+            }
+            ContactInfoItem.Type.EMAIL -> {
+                val intent = Intent(Intent.ACTION_SEND).apply {
+                    type = "plain/text"
+                    putExtra(Intent.EXTRA_EMAIL, contactInfoItem.info)
+                }
+                requireContext().startActivity(Intent.createChooser(intent, "Send email"))
+            }
+            ContactInfoItem.Type.PHONE_NUMBER,
+            ContactInfoItem.Type.TOLL_FREE_NUMBER -> {
+                val intent = Intent(Intent.ACTION_DIAL).apply {
+                    data = Uri.parse("tel:" + contactInfoItem.info)
+                }
+                startActivity(intent)
+            }
+            ContactInfoItem.Type.FAX_NUMBER -> { /* nothing to do */ }
+        }
     }
 
     private fun handleState(state: ResourcesState) {

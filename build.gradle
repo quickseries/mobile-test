@@ -56,7 +56,8 @@ buildscript {
         ],
 
         coil: 'io.coil-kt:coil:0.9.1',
-        koin: 'org.koin:koin-android:2.0.1'
+        koin: 'org.koin:koin-android:2.0.1',
+        customTabs: 'com.android.support:customtabs:23.3.0'
     ]
 
     repositories {

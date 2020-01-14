@@ -79,6 +79,9 @@ dependencies {
     // Koin
     implementation deps.koin
 
+    // Chrome Custom tabs
+    implementation deps.customTabs
+
     // Tests
     testImplementation deps.junit
     androidTestImplementation deps.androidx.junit
