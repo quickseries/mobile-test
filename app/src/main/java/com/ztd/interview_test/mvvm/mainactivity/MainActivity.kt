@@ -1,6 +1,7 @@
 package com.ztd.interview_test.mvvm.mainactivity
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.databinding.library.baseAdapters.BR
 import androidx.fragment.app.Fragment
@@ -44,6 +45,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         mBinding = viewDataBinding
         mViewModel.setNavigator(this)
 

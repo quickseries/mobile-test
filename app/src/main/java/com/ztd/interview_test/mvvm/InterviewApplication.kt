@@ -7,6 +7,9 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
+import androidx.appcompat.app.AppCompatDelegate
+
+
 
 /**
  * Created by Mahdi_ZareTahghighDoost(ZTD)
@@ -20,9 +23,10 @@ class InterviewApplication: Application(),HasActivityInjector{
     override fun activityInjector(): AndroidInjector<Activity> {
         return activityDispatchingAndroidInjector
     }
-
     override fun onCreate() {
         super.onCreate()
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+
         DaggerAppComponent.builder()
             .application(this)
             .build()
