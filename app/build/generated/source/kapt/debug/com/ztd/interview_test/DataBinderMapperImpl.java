@@ -10,9 +10,16 @@ import com.ztd.interview_test.databinding.ActivityMainBindingImpl;
 import com.ztd.interview_test.databinding.FragmentCategoryDetailBindingImpl;
 import com.ztd.interview_test.databinding.FragmentDetailBindingImpl;
 import com.ztd.interview_test.databinding.FragmentHomeBindingImpl;
+import com.ztd.interview_test.databinding.FragmentMailBindingImpl;
+import com.ztd.interview_test.databinding.FragmentWebviewBindingImpl;
+import com.ztd.interview_test.databinding.LayoutDrawerHeaderBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemAddressBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemBusinessHourBindingImpl;
 import com.ztd.interview_test.databinding.LayoutItemCategoryBindingImpl;
 import com.ztd.interview_test.databinding.LayoutItemContactBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemNoteBindingImpl;
 import com.ztd.interview_test.databinding.LayoutItemRestaurantBindingImpl;
+import com.ztd.interview_test.databinding.LayoutItemSocialMediaBindingImpl;
 import com.ztd.interview_test.databinding.LayoutItemVacationSpotBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -33,24 +40,45 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTHOME = 4;
 
-  private static final int LAYOUT_LAYOUTITEMCATEGORY = 5;
+  private static final int LAYOUT_FRAGMENTMAIL = 5;
 
-  private static final int LAYOUT_LAYOUTITEMCONTACT = 6;
+  private static final int LAYOUT_FRAGMENTWEBVIEW = 6;
 
-  private static final int LAYOUT_LAYOUTITEMRESTAURANT = 7;
+  private static final int LAYOUT_LAYOUTDRAWERHEADER = 7;
 
-  private static final int LAYOUT_LAYOUTITEMVACATIONSPOT = 8;
+  private static final int LAYOUT_LAYOUTITEMADDRESS = 8;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
+  private static final int LAYOUT_LAYOUTITEMBUSINESSHOUR = 9;
+
+  private static final int LAYOUT_LAYOUTITEMCATEGORY = 10;
+
+  private static final int LAYOUT_LAYOUTITEMCONTACT = 11;
+
+  private static final int LAYOUT_LAYOUTITEMNOTE = 12;
+
+  private static final int LAYOUT_LAYOUTITEMRESTAURANT = 13;
+
+  private static final int LAYOUT_LAYOUTITEMSOCIALMEDIA = 14;
+
+  private static final int LAYOUT_LAYOUTITEMVACATIONSPOT = 15;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(15);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_category_detail, LAYOUT_FRAGMENTCATEGORYDETAIL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_detail, LAYOUT_FRAGMENTDETAIL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_mail, LAYOUT_FRAGMENTMAIL);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.fragment_webview, LAYOUT_FRAGMENTWEBVIEW);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_drawer_header, LAYOUT_LAYOUTDRAWERHEADER);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_address, LAYOUT_LAYOUTITEMADDRESS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_business_hour, LAYOUT_LAYOUTITEMBUSINESSHOUR);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_category, LAYOUT_LAYOUTITEMCATEGORY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_contact, LAYOUT_LAYOUTITEMCONTACT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_note, LAYOUT_LAYOUTITEMNOTE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_restaurant, LAYOUT_LAYOUTITEMRESTAURANT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_social_media, LAYOUT_LAYOUTITEMSOCIALMEDIA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.ztd.interview_test.R.layout.layout_item_vacation_spot, LAYOUT_LAYOUTITEMVACATIONSPOT);
   }
 
@@ -87,6 +115,36 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for fragment_home is invalid. Received: " + tag);
         }
+        case  LAYOUT_FRAGMENTMAIL: {
+          if ("layout/fragment_mail_0".equals(tag)) {
+            return new FragmentMailBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_mail is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTWEBVIEW: {
+          if ("layout/fragment_webview_0".equals(tag)) {
+            return new FragmentWebviewBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_webview is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTDRAWERHEADER: {
+          if ("layout/layout_drawer_header_0".equals(tag)) {
+            return new LayoutDrawerHeaderBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_drawer_header is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMADDRESS: {
+          if ("layout/layout_item_address_0".equals(tag)) {
+            return new LayoutItemAddressBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_address is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMBUSINESSHOUR: {
+          if ("layout/layout_item_business_hour_0".equals(tag)) {
+            return new LayoutItemBusinessHourBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_business_hour is invalid. Received: " + tag);
+        }
         case  LAYOUT_LAYOUTITEMCATEGORY: {
           if ("layout/layout_item_category_0".equals(tag)) {
             return new LayoutItemCategoryBindingImpl(component, view);
@@ -99,11 +157,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for layout_item_contact is invalid. Received: " + tag);
         }
+        case  LAYOUT_LAYOUTITEMNOTE: {
+          if ("layout/layout_item_note_0".equals(tag)) {
+            return new LayoutItemNoteBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_note is invalid. Received: " + tag);
+        }
         case  LAYOUT_LAYOUTITEMRESTAURANT: {
           if ("layout/layout_item_restaurant_0".equals(tag)) {
             return new LayoutItemRestaurantBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for layout_item_restaurant is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LAYOUTITEMSOCIALMEDIA: {
+          if ("layout/layout_item_social_media_0".equals(tag)) {
+            return new LayoutItemSocialMediaBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for layout_item_social_media is invalid. Received: " + tag);
         }
         case  LAYOUT_LAYOUTITEMVACATIONSPOT: {
           if ("layout/layout_item_vacation_spot_0".equals(tag)) {
@@ -165,16 +235,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(15);
 
     static {
       sKeys.put("layout/activity_main_0", com.ztd.interview_test.R.layout.activity_main);
       sKeys.put("layout/fragment_category_detail_0", com.ztd.interview_test.R.layout.fragment_category_detail);
       sKeys.put("layout/fragment_detail_0", com.ztd.interview_test.R.layout.fragment_detail);
       sKeys.put("layout/fragment_home_0", com.ztd.interview_test.R.layout.fragment_home);
+      sKeys.put("layout/fragment_mail_0", com.ztd.interview_test.R.layout.fragment_mail);
+      sKeys.put("layout/fragment_webview_0", com.ztd.interview_test.R.layout.fragment_webview);
+      sKeys.put("layout/layout_drawer_header_0", com.ztd.interview_test.R.layout.layout_drawer_header);
+      sKeys.put("layout/layout_item_address_0", com.ztd.interview_test.R.layout.layout_item_address);
+      sKeys.put("layout/layout_item_business_hour_0", com.ztd.interview_test.R.layout.layout_item_business_hour);
       sKeys.put("layout/layout_item_category_0", com.ztd.interview_test.R.layout.layout_item_category);
       sKeys.put("layout/layout_item_contact_0", com.ztd.interview_test.R.layout.layout_item_contact);
+      sKeys.put("layout/layout_item_note_0", com.ztd.interview_test.R.layout.layout_item_note);
       sKeys.put("layout/layout_item_restaurant_0", com.ztd.interview_test.R.layout.layout_item_restaurant);
+      sKeys.put("layout/layout_item_social_media_0", com.ztd.interview_test.R.layout.layout_item_social_media);
       sKeys.put("layout/layout_item_vacation_spot_0", com.ztd.interview_test.R.layout.layout_item_vacation_spot);
     }
   }

@@ -23,8 +23,12 @@ import com.ztd.interview_test.mvvm.categorydetailfragment.CategoryDetailViewMode
 import com.ztd.interview_test.mvvm.detailfragment.DetailFragment;
 import com.ztd.interview_test.mvvm.detailfragment.DetailFragment_MembersInjector;
 import com.ztd.interview_test.mvvm.detailfragment.DetailModule;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideAddressAdapterFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideBusinessHourAdapterFactory;
 import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideContactAdapterFactory;
 import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideDataManagerFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideNoteAdapterFactory;
+import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideSocialMediaAdapterFactory;
 import com.ztd.interview_test.mvvm.detailfragment.DetailModule_ProvideViewModelFactory;
 import com.ztd.interview_test.mvvm.detailfragment.DetailViewModel;
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment;
@@ -34,6 +38,10 @@ import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideCategoryAdapte
 import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideDataManagerFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeModule_ProvideViewModelFactory;
 import com.ztd.interview_test.mvvm.homefragment.HomeViewModel;
+import com.ztd.interview_test.mvvm.mailfragment.MailFragment;
+import com.ztd.interview_test.mvvm.mailfragment.MailFragment_MembersInjector;
+import com.ztd.interview_test.mvvm.mailfragment.MailModule;
+import com.ztd.interview_test.mvvm.mailfragment.MailModule_ProvideMailViewModelFactory;
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity;
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity_MembersInjector;
 import com.ztd.interview_test.mvvm.mainactivity.MainModule;
@@ -63,6 +71,9 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Provider<ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder>
       detailFragmentSubcomponentBuilderProvider;
+
+  private Provider<ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent.Builder>
+      mailFragmentSubcomponentBuilderProvider;
 
   private Provider<Application> applicationProvider;
 
@@ -127,6 +138,13 @@ public final class DaggerAppComponent implements AppComponent {
           @Override
           public ActivityBuilder_ProvideDetailFactory.DetailFragmentSubcomponent.Builder get() {
             return new DetailFragmentSubcomponentBuilder();
+          }
+        };
+    this.mailFragmentSubcomponentBuilderProvider =
+        new Provider<ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent.Builder>() {
+          @Override
+          public ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent.Builder get() {
+            return new MailFragmentSubcomponentBuilder();
           }
         };
     this.applicationProvider = InstanceFactory.create(builder.application);
@@ -215,7 +233,7 @@ public final class DaggerAppComponent implements AppComponent {
         getMapOfClassOfAndProviderOfFactoryOf() {
       return MapBuilder
           .<Class<? extends Fragment>, Provider<AndroidInjector.Factory<? extends Fragment>>>
-              newMapBuilder(3)
+              newMapBuilder(4)
           .put(
               HomeFragment.class,
               (Provider) DaggerAppComponent.this.homeFragmentSubcomponentBuilderProvider)
@@ -225,6 +243,9 @@ public final class DaggerAppComponent implements AppComponent {
           .put(
               DetailFragment.class,
               (Provider) DaggerAppComponent.this.detailFragmentSubcomponentBuilderProvider)
+          .put(
+              MailFragment.class,
+              (Provider) DaggerAppComponent.this.mailFragmentSubcomponentBuilderProvider)
           .build();
     }
 
@@ -449,6 +470,67 @@ public final class DaggerAppComponent implements AppComponent {
       DetailFragment_MembersInjector.injectContactAdapter(
           instance,
           DetailModule_ProvideContactAdapterFactory.proxyProvideContactAdapter(detailModule));
+      DetailFragment_MembersInjector.injectAddressAdapter(
+          instance,
+          DetailModule_ProvideAddressAdapterFactory.proxyProvideAddressAdapter(detailModule));
+      DetailFragment_MembersInjector.injectNoteAdapter(
+          instance, DetailModule_ProvideNoteAdapterFactory.proxyProvideNoteAdapter(detailModule));
+      DetailFragment_MembersInjector.injectSocialMediaAdapter(
+          instance,
+          DetailModule_ProvideSocialMediaAdapterFactory.proxyProvideSocialMediaAdapter(
+              detailModule));
+      DetailFragment_MembersInjector.injectBusinessHourAdapter(
+          instance,
+          DetailModule_ProvideBusinessHourAdapterFactory.proxyProvideBusinessHourAdapter(
+              detailModule));
+      return instance;
+    }
+  }
+
+  private final class MailFragmentSubcomponentBuilder
+      extends ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent.Builder {
+    private MailModule mailModule;
+
+    private MailFragment seedInstance;
+
+    @Override
+    public ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent build() {
+      if (mailModule == null) {
+        this.mailModule = new MailModule();
+      }
+      if (seedInstance == null) {
+        throw new IllegalStateException(MailFragment.class.getCanonicalName() + " must be set");
+      }
+      return new MailFragmentSubcomponentImpl(this);
+    }
+
+    @Override
+    public void seedInstance(MailFragment arg0) {
+      this.seedInstance = Preconditions.checkNotNull(arg0);
+    }
+  }
+
+  private final class MailFragmentSubcomponentImpl
+      implements ActivityBuilder_ProvideMailFactory.MailFragmentSubcomponent {
+    private MailModule mailModule;
+
+    private MailFragmentSubcomponentImpl(MailFragmentSubcomponentBuilder builder) {
+      initialize(builder);
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final MailFragmentSubcomponentBuilder builder) {
+      this.mailModule = builder.mailModule;
+    }
+
+    @Override
+    public void inject(MailFragment arg0) {
+      injectMailFragment(arg0);
+    }
+
+    private MailFragment injectMailFragment(MailFragment instance) {
+      MailFragment_MembersInjector.injectMailViewModel(
+          instance, MailModule_ProvideMailViewModelFactory.proxyProvideMailViewModel(mailModule));
       return instance;
     }
   }

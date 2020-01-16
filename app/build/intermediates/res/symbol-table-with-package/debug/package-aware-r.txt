@@ -166,6 +166,10 @@ attr chipStartPadding
 attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -649,6 +653,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -679,8 +687,20 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey_100
+color grey_200
+color grey_300
+color grey_350
+color grey_400
+color grey_50
+color grey_500
+color grey_600
+color grey_700
+color grey_800
+color grey_900
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -694,9 +714,6 @@ color material_grey_800
 color material_grey_850
 color material_grey_900
 color md_black_1000
-color md_grey_300
-color md_grey_600
-color md_grey_800
 color mtrl_bottom_nav_colored_item_tint
 color mtrl_bottom_nav_item_tint
 color mtrl_btn_bg_color_disabled
@@ -825,6 +842,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1059,6 +1078,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_dark_oval
+drawable bg_light_oval
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1073,12 +1094,15 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawable_sort_off
+drawable drawable_sort_on
 drawable ic_home_red
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable img_mahdi
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1095,10 +1119,17 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable svg_ic_call
+drawable svg_ic_facebook
+drawable svg_ic_location
 drawable svg_ic_message
 drawable svg_ic_more_red
 drawable svg_ic_open
 drawable svg_ic_send
+drawable svg_ic_sort_off
+drawable svg_ic_sort_on
+drawable svg_ic_twitter
+drawable svg_ic_youtube
+drawable toggle_sort_button
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1150,6 +1181,8 @@ id action_bar_title
 id action_categoryDetailFragment_to_detailFragment
 id action_container
 id action_context_bar
+id action_detailFragment_to_mailFragment
+id action_detailFragment_to_webViewFragment
 id action_divider
 id action_home_fragment_to_categoryDetailFragment
 id action_image
@@ -1171,6 +1204,12 @@ id barrier
 id beginning
 id blocking
 id bottom
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
+id btn_send
 id buttonPanel
 id categoryDetailFragment
 id center
@@ -1180,6 +1219,7 @@ id chains
 id checkbox
 id checked
 id chronometer
+id circleView
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1241,6 +1281,7 @@ id line1
 id line3
 id listMode
 id list_item
+id mailFragment
 id masked
 id message
 id middle
@@ -1271,6 +1312,9 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id profile_address
+id profile_email
+id profile_name
 id progress_circular
 id progress_horizontal
 id radio
@@ -1342,9 +1386,16 @@ id textSpacerNoTitle
 id textStart
 id textWatcher
 id text_address
+id text_business_hour
 id text_contact_title
+id text_day_of_week
 id text_description
 id text_input_password_toggle
+id text_mail_content
+id text_mail_password
+id text_mail_to_username
+id text_mail_username
+id text_subject
 id text_title
 id textinput_counter
 id textinput_error
@@ -1371,6 +1422,8 @@ id v_guide_end
 id v_guide_start
 id view_offset_helper
 id visible
+id webViewFragment
+id webview
 id withText
 id wrap
 id wrap_content
@@ -1430,6 +1483,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1448,9 +1503,16 @@ layout design_text_input_password_icon
 layout fragment_category_detail
 layout fragment_detail
 layout fragment_home
+layout fragment_mail
+layout fragment_webview
+layout layout_drawer_header
+layout layout_item_address
+layout layout_item_business_hour
 layout layout_item_category
 layout layout_item_contact
+layout layout_item_note
 layout layout_item_restaurant
+layout layout_item_social_media
 layout layout_item_vacation_spot
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1466,6 +1528,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu activity_main_drawer
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 string abc_action_bar_home_description
@@ -1495,6 +1558,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string address
 string addresses
 string app_name
 string appbar_scrolling_view_behavior
@@ -1503,22 +1567,30 @@ string business_hours
 string character_counter_content_description
 string character_counter_pattern
 string contact_information
+string content
+string drawer_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string home_title
+string mahdi_mail_address
+string mahdi_name_and_last_name
+string mail_address
 string mtrl_chip_close_icon_content_description
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string notes
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
+string send
 string socials
 string status_bar_notification_info_overflow
+string subject
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1750,6 +1822,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SortButtonStyle
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -1976,6 +2049,7 @@ style Widget_AppCompat_TextView
 style Widget_AppCompat_TextView_SpinnerItem
 style Widget_AppCompat_Toolbar
 style Widget_AppCompat_Toolbar_Button_Navigation
+style Widget_Button_Toggle
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Design_AppBarLayout
@@ -2051,6 +2125,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha
