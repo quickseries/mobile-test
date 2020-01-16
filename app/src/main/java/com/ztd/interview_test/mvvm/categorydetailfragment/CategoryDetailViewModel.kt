@@ -5,6 +5,8 @@ import androidx.databinding.ObservableList
 import androidx.lifecycle.MutableLiveData
 import com.ztd.interview_test.infrustructure.DataManager
 import com.ztd.interview_test.infrustructure.data.models.category.CategoryModel
+import com.ztd.interview_test.infrustructure.data.models.restaurant.RestaurantModel
+import com.ztd.interview_test.infrustructure.data.models.vacationspot.VacationSpotModel
 import com.ztd.interview_test.mvvm.base.BaseViewModel
 import javax.inject.Inject
 
@@ -19,15 +21,24 @@ class CategoryDetailViewModel @Inject constructor(private val dataManager: DataM
 
     val catDetail: ObservableList<Any> = ObservableArrayList()
     val catDetailLiveData = MutableLiveData<MutableList<*>>()
+    private var catType:String? = null
 
     fun retrieveCategoryDetail(cat:String){
         when(cat){
             VACATION_SPOT -> {
-                catDetailLiveData.value = dataManager.getAllVacationSpots()
+                val vacationSpotModels = dataManager.getAllVacationSpots()
+                vacationSpotModels.sortBy { vacationSpotModel -> vacationSpotModel.title }
+                catDetailLiveData.value = vacationSpotModels
             }
             RESTAURANT -> {
-                catDetailLiveData.value = dataManager.getAllRestaurants()
+                val restaurantModels = dataManager.getAllRestaurants()
+                restaurantModels.sortBy { restaurantModel -> restaurantModel.title }
+                catDetailLiveData.value = restaurantModels
             }
         }
+    }
+
+    fun sortCatDetailList(){
+        catDetail.reverse()
     }
 }

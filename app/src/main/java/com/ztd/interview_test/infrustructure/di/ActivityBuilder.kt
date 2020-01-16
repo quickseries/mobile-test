@@ -6,6 +6,8 @@ import com.ztd.interview_test.mvvm.detailfragment.DetailFragment
 import com.ztd.interview_test.mvvm.detailfragment.DetailModule
 import com.ztd.interview_test.mvvm.homefragment.HomeFragment
 import com.ztd.interview_test.mvvm.homefragment.HomeModule
+import com.ztd.interview_test.mvvm.mailfragment.MailFragment
+import com.ztd.interview_test.mvvm.mailfragment.MailModule
 import com.ztd.interview_test.mvvm.mainactivity.MainActivity
 import com.ztd.interview_test.mvvm.mainactivity.MainModule
 import dagger.Module
@@ -29,4 +31,7 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = arrayOf(DetailModule::class))
     abstract fun provideDetailFactory(): DetailFragment
+
+    @ContributesAndroidInjector(modules = arrayOf(MailModule::class))
+    abstract fun provideMailFactory(): MailFragment
 }

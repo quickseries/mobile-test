@@ -12,7 +12,7 @@ class VacationSpotItemViewModel(private val vacationSpotModel: VacationSpotModel
 
     val title: ObservableField<String> = ObservableField(vacationSpotModel.title ?: "")
     val description: ObservableField<String> = ObservableField(vacationSpotModel.description ?: "")
-    val address: ObservableField<String> = if (vacationSpotModel.addresses != null) {
+    val address: ObservableField<String> = if (vacationSpotModel.addresses?.get(0)?.address1 != null) {
         ObservableField(
             "${vacationSpotModel.addresses[0]?.address1},${vacationSpotModel.addresses[0]?.city},${vacationSpotModel.addresses[0]?.state},${vacationSpotModel.addresses[0]?.country}"
         )

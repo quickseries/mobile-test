@@ -27,5 +27,14 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/layout_item_restaurant" />
 
+        <ToggleButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            style="@style/SortButtonStyle"
+            android:onClick="@{() -> vm.sortCatDetailList()}"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

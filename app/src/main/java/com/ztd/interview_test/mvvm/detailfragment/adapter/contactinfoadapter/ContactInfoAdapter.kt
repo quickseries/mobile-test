@@ -14,6 +14,8 @@ import com.ztd.interview_test.mvvm.detailfragment.model.ContactItem
 class ContactInfoAdapter(private var contacts: MutableList<ContactItem>) :
     RecyclerView.Adapter<ContactInfoAdapter.ContactViewHolder>() {
 
+    var clickListener:OnContactClickListener? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         return ContactViewHolder(
             LayoutItemContactBinding.inflate(
@@ -46,9 +48,16 @@ class ContactInfoAdapter(private var contacts: MutableList<ContactItem>) :
         BaseViewHolder(mBinding.root) {
 
         override fun onBind(position: Int) {
-            mBinding.vm = ContactItemViewModel(contacts[position])
+            mBinding.vm = ContactItemViewModel(contacts[position],clickListener)
             mBinding.executePendingBindings()
         }
 
+    }
+
+    interface OnContactClickListener{
+        fun onMailClickListener(mail:String)
+        fun onOpenWebUrlClicked(webUrl:String)
+        fun onCallClicked(phoneNumber:String)
+        fun onTextMessageClicked(phoneNumber: String)
     }
 }

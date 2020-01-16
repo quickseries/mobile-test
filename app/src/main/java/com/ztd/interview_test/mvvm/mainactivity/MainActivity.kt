@@ -1,27 +1,15 @@
 package com.ztd.interview_test.mvvm.mainactivity
 
-import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.databinding.library.baseAdapters.BR
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.navigateUp
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
 import com.ztd.interview_test.R
 import com.ztd.interview_test.databinding.ActivityMainBinding
 import com.ztd.interview_test.mvvm.base.BaseActivity
@@ -53,7 +41,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
 
     private lateinit var mBinding: ActivityMainBinding
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +69,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
         val navController = findNavController(R.id.nav_host_fragment)
 
         setupActionBarWithNavController(navController, mBinding.drawerLayout)
+
 
         mBinding.navView.setNavigationItemSelectedListener { menuItem ->
             menuItem.isChecked = true

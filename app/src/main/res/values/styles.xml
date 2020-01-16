@@ -25,25 +25,36 @@
     <style name="TextStyleTitleDark" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_title_size</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/md_grey_800</item>
+        <item name="android:textColor">@color/grey_800</item>
     </style>
 
 
     <style name="TextStyleDesc" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_desc_size</item>
-        <item name="android:textColor">@color/md_grey_600</item>
+        <item name="android:textColor">@color/grey_600</item>
     </style>
 
 
     <style name="TextStyleDescDark" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_desc_size</item>
-        <item name="android:textColor">@color/md_grey_800</item>
+        <item name="android:textColor">@color/grey_800</item>
     </style>
 
 
     <style name="TextStyleSubDesc" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_sub_desc_size</item>
-        <item name="android:textColor">@color/md_grey_600</item>
+        <item name="android:textColor">@color/grey_600</item>
     </style>
+
+    <style name="Widget.Button.Toggle" parent="android:Widget">
+        <item name="android:background">@drawable/toggle_sort_button</item>
+    </style>
+
+    <style name="SortButtonStyle" parent="Widget.Button.Toggle">
+        <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
+        <item name="android:textOn"> </item>
+        <item name="android:textOff"> </item>
+    </style>
+
 
 </resources>

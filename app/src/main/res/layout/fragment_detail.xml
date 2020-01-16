@@ -14,13 +14,18 @@
             type="com.ztd.interview_test.mvvm.detailfragment.DetailViewModel" />
     </data>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="80dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusableInTouchMode="true">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/v_guide_start"
@@ -51,7 +56,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/md_grey_300"
+                android:background="@color/grey_200"
                 android:orientation="vertical"
                 android:padding="@dimen/side_padding"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -64,6 +69,8 @@
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
                     android:text="@{vm.title}"
                     tools:text="title" />
 
@@ -80,76 +87,108 @@
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
                     android:text="@string/contact_information" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_contacts"
+                    contactAdapter="@{vm.contacts}"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:orientation="vertical"
-                    contactAdapter="@{vm.contacts}"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_item_contact" />
 
                 <TextView
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/addresses" />
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
+                    android:text="@string/addresses"
+                    android:visibility="@{vm.addresses.size()==0?View.GONE:View.VISIBLE}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_addresses"
+                    addressAdapter="@{vm.addresses}"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/layout_item_address"
+                    android:visibility="@{vm.addresses.size()==0?View.GONE:View.VISIBLE}"/>
 
                 <TextView
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/notes" />
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
+                    android:text="@string/notes"
+                    android:visibility="@{vm.notes.size()==0?View.GONE:View.VISIBLE}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_notes"
+                    noteAdapter="@{vm.notes}"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/layout_item_note"
+                    android:visibility="@{vm.notes.size()==0?View.GONE:View.VISIBLE}"  />
 
                 <TextView
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/socials" />
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
+                    android:text="@string/socials"
+                    android:visibility="@{vm.socialMedia.size()==0?View.GONE:View.VISIBLE}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_social"
+                    socialMediaAdapter="@{vm.socialMedia}"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    android:orientation="horizontal"
+                    android:visibility="@{vm.socialMedia.size()==0?View.GONE:View.VISIBLE}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_item_social_media" />
 
                 <TextView
                     style="@style/TextStyleTitleDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/business_hours" />
+                    android:layout_marginTop="@dimen/side_padding"
+                    android:layout_marginBottom="@dimen/side_padding"
+                    android:text="@string/business_hours"
+                    android:visibility="@{vm.bizHours.size()==0?View.GONE:View.VISIBLE}" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_business_hours"
+                    businessHourAdapter="@{vm.bizHours}"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_item_business_hour"
+                    android:visibility="@{vm.bizHours.size()==0?View.GONE:View.VISIBLE}"  />
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>

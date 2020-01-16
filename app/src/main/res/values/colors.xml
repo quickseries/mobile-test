@@ -4,9 +4,18 @@
     <color name="colorPrimaryDark">#E0E0E0</color>
     <color name="colorAccent">#B71C1C</color>
 
-    <color name="md_grey_600">#757575</color>
-    <color name="md_grey_800">#3C3C3C</color>
-    <color name="md_grey_300">#E9E9E9</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_350">#D0D0D0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+
 
     <color name="md_black_1000">#000000</color>
 

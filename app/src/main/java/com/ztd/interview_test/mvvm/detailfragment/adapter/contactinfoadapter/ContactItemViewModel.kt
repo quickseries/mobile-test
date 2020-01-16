@@ -7,7 +7,7 @@ import com.ztd.interview_test.mvvm.detailfragment.model.ContactItem
  * Created by Mahdi_ZareTahghighDoost(ZTD)
  *  on 1/13/2020.
  */
-class ContactItemViewModel(contactItem: ContactItem) {
+class ContactItemViewModel(private var contactItem: ContactItem,private var clickListener:ContactInfoAdapter.OnContactClickListener?) {
 
     val title: ObservableField<String> = when (contactItem.type) {
         "phone" -> {
@@ -33,18 +33,18 @@ class ContactItemViewModel(contactItem: ContactItem) {
     val value :ObservableField<String> = ObservableField(contactItem.value)
 
     fun onCallClicked(){
-
+        clickListener?.onCallClicked(contactItem.value)
     }
 
     fun onTextClicked(){
-
+        clickListener?.onTextMessageClicked(contactItem.value)
     }
 
     fun onMailClicked(){
-
+        clickListener?.onMailClickListener(contactItem.value)
     }
 
     fun onWebSiteClicked(){
-
+        clickListener?.onOpenWebUrlClicked(contactItem.value)
     }
 }

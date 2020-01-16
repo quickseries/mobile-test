@@ -51,5 +51,31 @@
         <argument
             android:name="id"
             app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_mailFragment"
+            app:destination="@id/mailFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mailFragment"
+        android:name="com.ztd.interview_test.mvvm.mailfragment.MailFragment"
+        android:label="MailFragment"
+        tools:layout="@layout/fragment_mail">
+        <argument
+            android:name="mailTo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.ztd.interview_test.mvvm.webviewfragment.WebViewFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_webview">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+
+
 </navigation>

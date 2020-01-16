@@ -4,7 +4,7 @@
     <dimen name="corner_radius">10dp</dimen>
     <dimen name="item_spacing">2dp</dimen>
 
-    <dimen name="text_title_size">18sp</dimen>
-    <dimen name="text_desc_size">14sp</dimen>
+    <dimen name="text_title_size">16sp</dimen>
+    <dimen name="text_desc_size">13sp</dimen>
     <dimen name="text_sub_desc_size">12sp</dimen>
 </resources>

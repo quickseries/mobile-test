@@ -46,7 +46,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="@dimen/side_padding"
             android:layout_marginEnd="20dp"
-            android:background="@color/md_grey_300"
+            android:background="@color/grey_400"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_description" />
@@ -64,6 +64,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:contentDescription="@null"
+                android:padding="6dp"
                 android:onClick="@{() -> vm.onTextClicked()}"
                 android:visibility="@{vm.title.equals(`PHONE NUMBER`)||vm.title.equals(`TOLL-FREE NUMBER`) ? View.VISIBLE:View.GONE}"
                 app:srcCompat="@drawable/svg_ic_message" />
@@ -72,6 +73,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:contentDescription="@null"
+                android:padding="6dp"
                 android:onClick="@{() -> vm.onCallClicked()}"
                 android:visibility="@{vm.title.equals(`PHONE NUMBER`)||vm.title.equals(`TOLL-FREE NUMBER`) ? View.VISIBLE:View.GONE}"
                 app:srcCompat="@drawable/svg_ic_call" />
@@ -80,6 +82,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:contentDescription="@null"
+                android:padding="6dp"
                 android:onClick="@{() -> vm.onMailClicked()}"
                 android:visibility="@{vm.title.equals(`EMAIL`) ? View.VISIBLE:View.GONE}"
                 app:srcCompat="@drawable/svg_ic_send" />
@@ -88,6 +91,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:contentDescription="@null"
+                android:padding="6dp"
                 android:onClick="@{() -> vm.onWebSiteClicked()}"
                 android:visibility="@{vm.title.equals(`WEB SITE`) ? View.VISIBLE:View.GONE}"
                 app:srcCompat="@drawable/svg_ic_open" />

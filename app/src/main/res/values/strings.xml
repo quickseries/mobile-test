@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">interview-test</string>
+    <string name="app_name">Quick Series</string>
 
     <string name="home_title">Home</string>
     <string name="contact_information">contact information</string>
@@ -7,4 +7,13 @@
     <string name="notes">NOTES</string>
     <string name="socials">SOCIAL MEDIA</string>
     <string name="business_hours">BUSINESS HOURS</string>
+    <string name="address">Address</string>
+    <string name="mail_address">Mail Address</string>
+    <string name="password">Password</string>
+    <string name="subject">Subject</string>
+    <string name="content">Content …</string>
+    <string name="send">Send</string>
+    <string name="drawer_description">Thank you for this chance</string>
+    <string name="mahdi_mail_address">mahdiZtd@gmail.com</string>
+    <string name="mahdi_name_and_last_name">Mahdi Zare Tahqiq Doost</string>
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.ztd.interview_test.mvvm.mailfragment.MailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_mail_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/mail_address"
+            android:layout_marginTop="30dp"
+            android:text="@={vm.username}"
+            android:layout_marginStart="@dimen/side_padding"
+            android:layout_marginEnd="@dimen/side_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/text_mail_password"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_mail_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:layout_marginEnd="@dimen/side_padding"
+            android:inputType="textPassword"
+            android:text="@={vm.password}"
+            android:layout_marginStart="@dimen/side_padding"
+            app:layout_constraintStart_toEndOf="@id/text_mail_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_mail_username"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_mail_to_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/side_padding"
+            android:text="@{vm.mailAddress}"
+            android:enabled="false"
+            app:layout_constraintTop_toBottomOf="@id/text_mail_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_subject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/side_padding"
+            android:hint="@string/subject"
+            android:text="@={vm.subject}"
+            app:layout_constraintTop_toBottomOf="@id/text_mail_to_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_mail_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/text_subject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="@string/content"
+            android:text="@={vm.content}"
+            android:gravity="start"
+            android:lines="5"
+            android:layout_margin="@dimen/side_padding"/>
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:layout_margin="@dimen/side_padding"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/colorAccent"
+            android:onClick="@{() -> vm.sendMail()}"
+            app:layout_constraintTop_toBottomOf="@id/text_mail_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
