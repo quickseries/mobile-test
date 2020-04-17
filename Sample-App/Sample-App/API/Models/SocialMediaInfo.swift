@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SocialMediaInfo.swift
 //  Sample-App
 //
 //  Created by Israel Romero on 2020-04-15.
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct SocialMediaInfo: Codable {
+    let youtubeChannel: [String]?
+    let twitter: [String]?
+    let facebook: [String]?
+}

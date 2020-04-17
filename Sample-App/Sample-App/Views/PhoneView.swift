@@ -9,13 +9,22 @@
 import UIKit
 
 class PhoneView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var actionsStackView: UIStackView!
+    var onMessage: (()->Void)?
+    var onCall: (()->Void)?
+    var isActionable: Bool = true {
+        didSet {
+            actionsStackView.isHidden = !isActionable
+        }
     }
-    */
-
+        
+    @IBAction private func doMessage(_ sender: UIButton) {
+        onMessage?()
+    }
+    
+    @IBAction private func doCall(_ sender: UIButton) {
+        onCall?()
+    }
 }

@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+struct GPSCoordinate: Codable {
+    let latitude: String
+    let longitude: String
+}
+
+struct Address: Codable {
+    let address: String?
+    let label: String?
+    let zipCode: String?
+    let city: String?
+    let state: String?
+    let country: String?
+    let coordinates: GPSCoordinate?
+    
+    private enum CodingKeys: String, CodingKey {
+        case address = "address1"
+        case label
+        case zipCode
+        case city
+        case state
+        case country
+        case coordinates = "gps"
+    }
+}

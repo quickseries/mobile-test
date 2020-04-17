@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+struct Category: Codable {
+    let id: String
+    let title: String
+    let description: String?
+    let slug: String
+    let isActive: Bool
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case title
+        case description
+        case slug
+        case isActive = "_active"
+    }
+}

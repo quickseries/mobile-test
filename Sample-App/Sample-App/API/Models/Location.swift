@@ -1,5 +1,5 @@
 //
-//  Restaurant.swift
+//  Location.swift
 //  Sample-App
 //
 //  Created by Israel Romero on 2020-04-15.
@@ -15,7 +15,8 @@ struct Location: Codable {
     let slug: String
     let isActive: Bool
     let photoURL: URL
-    let addresses: [Address]
+    let bizHours: [String: [String: String]]?
+    let addresses: [Address]?
     let socialMedia: SocialMediaInfo?
     let contactInfo: ContactInfo
     
@@ -26,6 +27,7 @@ struct Location: Codable {
         case slug
         case isActive = "_active"
         case photoURL = "photo"
+        case bizHours
         case addresses
         case socialMedia
         case contactInfo

@@ -9,13 +9,23 @@
 import UIKit
 
 class SingleActionView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet private weak var actionButton: UIButton!
+    var isActionable: Bool = true {
+        didSet {
+            actionButton.isHidden = !isActionable
+        }
     }
-    */
-
+    var actionImage: UIImage? {
+        didSet {
+            actionButton.setImage(actionImage, for: .normal)
+        }
+    }
+    var onAction: (()->Void)?
+    
+    
+    @IBAction private func doAction(_ sender: UIButton) {
+        onAction?()
+    }
 }

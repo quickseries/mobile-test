@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct ContactInfo: Codable {
+    let website: [URL]?
+    let email: [String]?
+    let phoneNumber: [String]?
+    let faxNumber: [String]?
+    let tollFree: [String]?
+}
