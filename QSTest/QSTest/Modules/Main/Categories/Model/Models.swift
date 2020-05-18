@@ -10,6 +10,6 @@ import Foundation
 
 struct CategoryForUI {
     let title: String
-    let description: String
+    let description: String?
     let id: String
 }

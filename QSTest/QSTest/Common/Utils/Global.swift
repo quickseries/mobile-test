@@ -35,7 +35,7 @@ public func decodeJSONOrThrow<T: Decodable>(_ response: Any?) throws -> T {
     let responseDict: [[String: Any]] = try convertOrThrow(response)
 
     let data = try JSONSerialization.data(withJSONObject: responseDict, options: [])
-    let decoder = URLSession.newJSONDecoder()
+    let decoder = JSONDecoder.customDecoder()
     let model = try decoder.decode(T.self, from: data)
     return model
 }
@@ -55,7 +55,7 @@ public func decodeArrayJSONOrThrow<T: Decodable>(_ response: Any?) throws -> T {
     let responseArray: [Any] = try convertOrThrow(response)
 
     _ = try JSONSerialization.data(withJSONObject: responseArray, options: [])
-    let decoder = URLSession.newJSONDecoder()
+    let decoder = JSONDecoder.customDecoder()
     let model = try decoder.decode(T.self, from: responseArray)
     return model
 }

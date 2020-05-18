@@ -14,7 +14,7 @@ struct Category: Codable {
     let customModuleEid: String
     let eid: String
     let title: String
-    let description: String
+    let description: String?
     let v: Int
     let active: Bool
     let created: Date
@@ -40,7 +40,7 @@ struct Category: Codable {
         self.customModuleEid = try container.decode(String.self, forKey: .customModuleEid)
         self.eid = try container.decode(String.self, forKey: .eid)
         self.title = try container.decode(String.self, forKey: .title)
-        self.description = try container.decode(String.self, forKey: .description)
+        self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.v = try container.decode(Int.self, forKey: .v)
         self.active = try container.decode(Bool.self, forKey: .active)
         self.created = try container.decode(Date.self, forKey: .created)
@@ -54,11 +54,24 @@ struct Category: Codable {
         try container.encode(self.customModuleEid, forKey: .customModuleEid)
         try container.encode(self.eid, forKey: .eid)
         try container.encode(self.title, forKey: .title)
-        try container.encode(self.description, forKey: .description)
+        try container.encodeIfPresent(self.description, forKey: .description)
         try container.encode(self.v, forKey: .v)
         try container.encode(self.active, forKey: .active)
         try container.encode(self.created, forKey: .created)
         try container.encode(self.updated, forKey: .updated)
+    }
+    
+    init(id: String, slug: String, customModuleEid: String, eid: String, title: String, description: String?, v: Int, active: Bool, created: Date, updated: Date) {
+        self.id = id
+        self.slug = slug
+        self.customModuleEid = customModuleEid
+        self.eid = eid
+        self.title = title
+        self.description = description
+        self.v = v
+        self.active = active
+        self.created = created
+        self.updated = updated
     }
 }
 

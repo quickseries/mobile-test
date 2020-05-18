@@ -20,7 +20,7 @@ class CategoriesPresenter {
     private weak var delegate: CategoriesPresenterDelegate?
     private weak var controller: CategoriesControllerProtocol?
     
-    private var api: CategoriesAPIClientProtocol!
+    private let api: CategoriesAPIClientProtocol!
     
     private var categories: Categories = []
     
@@ -39,7 +39,6 @@ class CategoriesPresenter {
         api.getCategories(success: { [weak self] (categories) in
             guard let self = self else { return }
             
-            self.controller?.hideLoadingController()
             self.update(with: categories)
         }, failure: { [weak self] (error) in
             guard let self = self else { return }
@@ -50,6 +49,7 @@ class CategoriesPresenter {
     }
     
     private func update(with categories: Categories) {
+        self.controller?.hideLoadingController()
         self.categories = categories
         let modelsForUI = CategoriesFormatter.convert(categories)
         controller?.show(rows: modelsForUI)

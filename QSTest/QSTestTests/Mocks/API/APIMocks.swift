@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import QSTest
 
 class URLSessionDataTaskMock: URLSessionDataTask {
     private let closure: () -> Void
@@ -27,30 +28,14 @@ class URLSessionMock: URLSessionProtocol {
     var error: Error?
 
     func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask {
-        let data = self.data
-        let error = self.error
-
         return URLSessionDataTaskMock {
-            completionHandler(data, nil, error)
+            completionHandler(self.data, nil, self.error)
         }
     }
     
     func dataTask(with request: URLRequest, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask {
-        let data = self.data
-        let error = self.error
-        
         return URLSessionDataTaskMock {
-            completionHandler(data, nil, error)
+            completionHandler(self.data, nil, self.error)
         }
-    }
-}
-
-extension URLSessionMock {
-    class func prepareMockedSession(with file: String?, error: Error?) -> URLSessionMock {
-        let sessionMock = URLSessionMock()
-        sessionMock.data = Data.load(from: "categories")
-        sessionMock.error = error
-        
-        return sessionMock
     }
 }

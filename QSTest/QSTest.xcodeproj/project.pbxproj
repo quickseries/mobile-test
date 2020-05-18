@@ -24,35 +24,30 @@
 		CF50E4B9247215DE00409971 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4B8247215DE00409971 /* Constants.swift */; };
 		CF50E4BB24721E9400409971 /* CategoriesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4BA24721E9400409971 /* CategoriesAPIClient.swift */; };
 		CF50E4BF247236B500409971 /* APIMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4BE247236B500409971 /* APIMocks.swift */; };
-		CF50E4C024723B8500409971 /* APIMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4BE247236B500409971 /* APIMocks.swift */; };
 		CF50E4C224723F9C00409971 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4C124723F9C00409971 /* URLSession.swift */; };
 		CF50E4C62472479A00409971 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4C52472479A00409971 /* Global.swift */; };
-		CF50E4CC247249B100409971 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4C9247249B100409971 /* categories.json */; };
 		CF50E4CD247249B100409971 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4C9247249B100409971 /* categories.json */; };
-		CF50E4CE247249B100409971 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4CA247249B100409971 /* restaurants.json */; };
 		CF50E4CF247249B100409971 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4CA247249B100409971 /* restaurants.json */; };
-		CF50E4D0247249B100409971 /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4CB247249B100409971 /* vacation-spot.json */; };
 		CF50E4D1247249B100409971 /* vacation-spot.json in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4CB247249B100409971 /* vacation-spot.json */; };
 		CF50E4D324724B3E00409971 /* RestaurantsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D224724B3E00409971 /* RestaurantsAPIClient.swift */; };
-		CF50E4D424724B3E00409971 /* RestaurantsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D224724B3E00409971 /* RestaurantsAPIClient.swift */; };
 		CF50E4D624724E9600409971 /* VacationSpotsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D524724E9600409971 /* VacationSpotsAPIClient.swift */; };
-		CF50E4D724724E9600409971 /* VacationSpotsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D524724E9600409971 /* VacationSpotsAPIClient.swift */; };
 		CF50E4DA24724F7300409971 /* MainFlowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D924724F7300409971 /* MainFlowRouter.swift */; };
-		CF50E4DB24724F7300409971 /* MainFlowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4D924724F7300409971 /* MainFlowRouter.swift */; };
 		CF50E4DD24724F8000409971 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4DC24724F8000409971 /* CategoriesPresenter.swift */; };
-		CF50E4DE24724F8000409971 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4DC24724F8000409971 /* CategoriesPresenter.swift */; };
-		CF50E4E024724F9000409971 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4DF24724F9000409971 /* CategoriesController.swift */; };
-		CF50E4E124724F9000409971 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4DF24724F9000409971 /* CategoriesController.swift */; };
 		CF50E4E32472509100409971 /* CategoriesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4E22472509100409971 /* CategoriesFormatter.swift */; };
-		CF50E4E42472509100409971 /* CategoriesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4E22472509100409971 /* CategoriesFormatter.swift */; };
 		CF50E4E7247254B300409971 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4E6247254B300409971 /* Models.swift */; };
-		CF50E4E8247254B300409971 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4E6247254B300409971 /* Models.swift */; };
 		CF5F31D124725EC500E9857C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31D024725EC500E9857C /* CategoryCell.swift */; };
 		CF5F31D524726F7300E9857C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31D424726F7300E9857C /* LoadingViewController.swift */; };
 		CF5F31D82472704000E9857C /* BlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31D72472704000E9857C /* BlurEffectView.swift */; };
 		CF5F31DA2472708700E9857C /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F31D92472708700E9857C /* LoadingViewController.xib */; };
 		CF5F31DC2472749C00E9857C /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F31DB2472749B00E9857C /* CategoryCell.xib */; };
 		CF5F31DF24727C6A00E9857C /* CategoriesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F31DE24727C6A00E9857C /* CategoriesController.xib */; };
+		CF5F31E32472A98100E9857C /* CategoriesPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31E22472A98100E9857C /* CategoriesPresenterTest.swift */; };
+		CF5F31E62472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31E52472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift */; };
+		CF5F31E82472ABEE00E9857C /* CategoriesControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31E72472ABEE00E9857C /* CategoriesControllerMock.swift */; };
+		CF5F31EC2472AC4900E9857C /* BaseViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31EB2472AC4900E9857C /* BaseViewControllerMock.swift */; };
+		CF5F31EE2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F31ED2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift */; };
+		CF938D8E2472B976005051BD /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4DF24724F9000409971 /* CategoriesController.swift */; };
+		CF938D912472C4A3005051BD /* CategoriesAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938D902472C4A3005051BD /* CategoriesAPIClientTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +100,12 @@
 		CF5F31D92472708700E9857C /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		CF5F31DB2472749B00E9857C /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		CF5F31DE24727C6A00E9857C /* CategoriesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesController.xib; sourceTree = "<group>"; };
+		CF5F31E22472A98100E9857C /* CategoriesPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPresenterTest.swift; sourceTree = "<group>"; };
+		CF5F31E52472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPresenterDelegateMock.swift; sourceTree = "<group>"; };
+		CF5F31E72472ABEE00E9857C /* CategoriesControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesControllerMock.swift; sourceTree = "<group>"; };
+		CF5F31EB2472AC4900E9857C /* BaseViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerMock.swift; sourceTree = "<group>"; };
+		CF5F31ED2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAPIProtocolMock.swift; sourceTree = "<group>"; };
+		CF938D902472C4A3005051BD /* CategoriesAPIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAPIClientTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,9 @@
 		CF50E48C2470EC2B00409971 /* QSTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF5F31E92472AC3500E9857C /* Common */,
+				CF5F31E12472A93300E9857C /* CategoriesGroup */,
+				CF5F31E02472A58D00E9857C /* Resources */,
 				CF50E4BC2472368900409971 /* Mocks */,
 				CF50E48D2470EC2B00409971 /* QSTestTests.swift */,
 				CF50E48F2470EC2B00409971 /* Info.plist */,
@@ -279,7 +283,6 @@
 		CF50E4C72472496900409971 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CF50E4C82472497600409971 /* JSONFiles */,
 				CF50E47F2470EC2B00409971 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -344,6 +347,58 @@
 				CF50E4E6247254B300409971 /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF5F31E02472A58D00E9857C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF50E4C82472497600409971 /* JSONFiles */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CF5F31E12472A93300E9857C /* CategoriesGroup */ = {
+			isa = PBXGroup;
+			children = (
+				CF938D8F2472C474005051BD /* API */,
+				CF5F31E42472AA2300E9857C /* Mocks */,
+				CF5F31E22472A98100E9857C /* CategoriesPresenterTest.swift */,
+			);
+			path = CategoriesGroup;
+			sourceTree = "<group>";
+		};
+		CF5F31E42472AA2300E9857C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F31E52472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift */,
+				CF5F31E72472ABEE00E9857C /* CategoriesControllerMock.swift */,
+				CF5F31ED2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CF5F31E92472AC3500E9857C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F31EA2472AC3C00E9857C /* Mocks */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CF5F31EA2472AC3C00E9857C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF5F31EB2472AC4900E9857C /* BaseViewControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CF938D8F2472C474005051BD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CF938D902472C4A3005051BD /* CategoriesAPIClientTest.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,11 +484,8 @@
 			files = (
 				CF5F31DA2472708700E9857C /* LoadingViewController.xib in Resources */,
 				CF5F31DC2472749C00E9857C /* CategoryCell.xib in Resources */,
-				CF50E4D0247249B100409971 /* vacation-spot.json in Resources */,
 				CF5F31DF24727C6A00E9857C /* CategoriesController.xib in Resources */,
 				CF50E4832470EC2B00409971 /* LaunchScreen.storyboard in Resources */,
-				CF50E4CE247249B100409971 /* restaurants.json in Resources */,
-				CF50E4CC247249B100409971 /* categories.json in Resources */,
 				CF50E4802470EC2B00409971 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,10 +510,8 @@
 				CF50E4B72471B0B200409971 /* APIHelper.swift in Sources */,
 				CF50E4A324719D2F00409971 /* UIExtensions.swift in Sources */,
 				CF50E4C224723F9C00409971 /* URLSession.swift in Sources */,
-				CF50E4C024723B8500409971 /* APIMocks.swift in Sources */,
 				CF50E4D324724B3E00409971 /* RestaurantsAPIClient.swift in Sources */,
 				CF50E4A024719D1000409971 /* BaseViewController.swift in Sources */,
-				CF50E4E024724F9000409971 /* CategoriesController.swift in Sources */,
 				CF5F31D524726F7300E9857C /* LoadingViewController.swift in Sources */,
 				CF50E4AC24719E5800409971 /* Restaurant.swift in Sources */,
 				CF50E4A524719D5800409971 /* Protocols.swift in Sources */,
@@ -470,6 +520,7 @@
 				CF50E4E7247254B300409971 /* Models.swift in Sources */,
 				CF50E4C62472479A00409971 /* Global.swift in Sources */,
 				CF5F31D124725EC500E9857C /* CategoryCell.swift in Sources */,
+				CF938D8E2472B976005051BD /* CategoriesController.swift in Sources */,
 				CF50E4772470EC2900409971 /* AppDelegate.swift in Sources */,
 				CF50E4B9247215DE00409971 /* Constants.swift in Sources */,
 				CF50E49C2471097C00409971 /* Approuter.swift in Sources */,
@@ -488,15 +539,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF50E4DE24724F8000409971 /* CategoriesPresenter.swift in Sources */,
+				CF5F31E32472A98100E9857C /* CategoriesPresenterTest.swift in Sources */,
+				CF5F31E82472ABEE00E9857C /* CategoriesControllerMock.swift in Sources */,
 				CF50E4BF247236B500409971 /* APIMocks.swift in Sources */,
-				CF50E4D424724B3E00409971 /* RestaurantsAPIClient.swift in Sources */,
-				CF50E4D724724E9600409971 /* VacationSpotsAPIClient.swift in Sources */,
+				CF5F31E62472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift in Sources */,
 				CF50E48E2470EC2B00409971 /* QSTestTests.swift in Sources */,
-				CF50E4DB24724F7300409971 /* MainFlowRouter.swift in Sources */,
-				CF50E4E8247254B300409971 /* Models.swift in Sources */,
-				CF50E4E42472509100409971 /* CategoriesFormatter.swift in Sources */,
-				CF50E4E124724F9000409971 /* CategoriesController.swift in Sources */,
+				CF5F31EE2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift in Sources */,
+				CF5F31EC2472AC4900E9857C /* BaseViewControllerMock.swift in Sources */,
+				CF938D912472C4A3005051BD /* CategoriesAPIClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

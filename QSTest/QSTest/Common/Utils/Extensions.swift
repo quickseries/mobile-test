@@ -34,22 +34,24 @@ extension NSObject {
     }
 }
 
-// MARK: - URLSession response handlers
-extension URLSession {
-    // MARK: - Helper functions for creating encoders and decoders
-    static func newJSONDecoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
-        if #available(iOS 10.0, *) {
-            decoder.dateDecodingStrategy = .iso8601
-        }
+extension JSONDecoder {
+    static func customDecoder() -> JSONDecoder {
+        let formatter = DateFormatter()
+        formatter.dateFormat = Constants.DateFormats.main
+        let decoder: JSONDecoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
         return decoder
     }
+}
 
-    static func newJSONEncoder() -> JSONEncoder {
-        let encoder = JSONEncoder()
-        if #available(iOS 10.0, *) {
-            encoder.dateEncodingStrategy = .iso8601
-        }
+extension JSONEncoder {
+    static func customEncoder() -> JSONEncoder {
+        let formatter = DateFormatter()
+        formatter.dateFormat = Constants.DateFormats.main
+        let encoder: JSONEncoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(formatter)
+        
         return encoder
     }
 }
@@ -72,8 +74,8 @@ extension Data {
         return (try? JSONSerialization.jsonObject(with: self, options: [])) as? [Any]
     }
     
-    static func load(from jsonFile: String)  -> Data {
-        guard let urlString = Bundle.main.path(forResource: jsonFile, ofType: "json"),
+    static func load(from jsonFile: String, bundle: Bundle = Bundle.main)  -> Data {
+        guard let urlString = bundle.path(forResource: jsonFile, ofType: "json"),
             let url = URL(string: urlString) else {
             fatalError("Failed to locate \(jsonFile) in bundle.")
         }

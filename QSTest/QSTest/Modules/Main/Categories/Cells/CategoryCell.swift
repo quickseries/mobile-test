@@ -64,10 +64,14 @@ extension CategoryCell: VoiceOverAccessible {
     }
     
     func updateAccessibilityLabels() {
-        guard let title = titleLabel.text,
-            let description = descriptionLabel.text else {
+        guard let title = titleLabel.text else {
                 contentView.accessibilityLabel = nil
                 return
+        }
+        
+        guard let description = descriptionLabel.text else {
+            contentView.accessibilityLabel = title
+            return
         }
         
         contentView.accessibilityLabel = "\(title) \n\n \(description)"
