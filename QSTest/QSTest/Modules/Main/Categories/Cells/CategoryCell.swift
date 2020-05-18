@@ -35,6 +35,8 @@ class CategoryCell: UITableViewCell {
         
         titleLabel.numberOfLines = 0
         descriptionLabel.numberOfLines = 0
+        
+        selectionStyle = .none
     }
 }
 

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,13 +28,23 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifB-PW-Klk">
+                        <rect key="frame" x="15" y="150" width="399" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="8Ic-NH-c7L"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yQY-hL-YMk" firstAttribute="leading" secondItem="xvf-Cp-8mr" secondAttribute="leading" constant="15" id="0ra-aB-Y6T"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yQY-hL-YMk" secondAttribute="trailing" constant="15" id="8nJ-4x-3Bn"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IZh-ay-gXa" secondAttribute="trailing" constant="15" id="Kbt-aw-iuE"/>
+                    <constraint firstItem="ifB-PW-Klk" firstAttribute="leading" secondItem="yQY-hL-YMk" secondAttribute="leading" id="N0Z-6t-UeG"/>
                     <constraint firstItem="IZh-ay-gXa" firstAttribute="leading" secondItem="xvf-Cp-8mr" secondAttribute="leading" constant="15" id="ZcM-qw-3tj"/>
+                    <constraint firstItem="ifB-PW-Klk" firstAttribute="bottom" secondItem="xvf-Cp-8mr" secondAttribute="bottomMargin" id="bZ2-w2-X5o"/>
                     <constraint firstItem="IZh-ay-gXa" firstAttribute="top" secondItem="yQY-hL-YMk" secondAttribute="bottom" constant="15" id="olr-dZ-XaD"/>
+                    <constraint firstAttribute="trailing" secondItem="ifB-PW-Klk" secondAttribute="trailing" id="ucj-Xx-fCR"/>
                     <constraint firstAttribute="bottom" secondItem="IZh-ay-gXa" secondAttribute="bottom" constant="15" id="xCK-IE-syJ"/>
                     <constraint firstItem="yQY-hL-YMk" firstAttribute="top" secondItem="xvf-Cp-8mr" secondAttribute="top" constant="15" id="zom-nB-etc"/>
                 </constraints>

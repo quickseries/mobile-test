@@ -33,6 +33,8 @@ class CategoriesPresenterTest: XCTestCase {
         XCTAssertTrue(controller.hideLoadingControllerEventReceived)
         XCTAssertTrue(controller.showCategoriesEventReceived)
         XCTAssertEqual(controller.rows?.count, 2)
+        XCTAssertTrue(controller.setTitleEventReceived)
+        XCTAssertEqual(controller.navBarTitle, "Categories")
     }
     
     func testDidSelect() {

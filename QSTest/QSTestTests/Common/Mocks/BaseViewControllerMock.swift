@@ -17,9 +17,17 @@ class BaseViewControllerMock: BaseViewControllerProtocol {
     private(set) var showLoadingControllerEventReceived = false
     private(set) var hideLoadingControllerEventReceived = false
     
+    private(set) var setTitleEventReceived = false
+    
     private(set) var errorMessage: String?
     private(set) var errorTitle: String?
     private(set) var error: NSError?
+    private(set) var navBarTitle: String?
+    
+    func set(title: String) {
+        navBarTitle = title
+        setTitleEventReceived = true
+    }
     
     func show(error: NSError) {
         showErrorEventReceived = true

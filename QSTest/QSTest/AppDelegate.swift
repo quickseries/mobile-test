@@ -15,14 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appRouter: AppRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let navController = UINavigationController()
+        let navController = BaseNavigationController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = navController
-        window!.makeKeyAndVisible()
+        
+        if let window = window {
+            window.rootViewController = navController
+            window.makeKeyAndVisible()
+        }
         
         appRouter = AppRouter(navController: navController)
         
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        return true
+    }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         return true
     }
 }

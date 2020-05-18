@@ -35,6 +35,7 @@ private extension CategoriesController {
         tableView.register(cells: [CategoryCell.self])
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
     }
 }
 

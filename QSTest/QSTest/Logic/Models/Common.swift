@@ -10,8 +10,8 @@ import Foundation
 
 // MARK: - Address
 struct Address: Codable {
-    let address1, label, zipCode, city: String
-    let state, country: String
+    let address1, label, zipCode, city: String?
+    let state, country: String?
     let gps: Gps?
 }
 
@@ -22,11 +22,11 @@ struct Gps: Codable {
 
 // MARK: - BizHours
 struct BizHours: Codable {
-    let sunday, monday: Nday
+    let sunday, monday, tuesday, wednesday, thursday, friday, saturday: WorkHoursRange?
 }
 
-// MARK: - Nday
-struct Nday: Codable {
+// MARK: - WorkHoursRange
+struct WorkHoursRange: Codable {
     let from, to: String
 }
 

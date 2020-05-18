@@ -16,6 +16,7 @@ protocol BaseViewControllerProtocol: AnyObject {
     
     func showLoadingController(aboveNavBar: Bool)
     func hideLoadingController()
+    func set(title: String)
 }
 
 class BaseViewController: UIViewController {
@@ -53,6 +54,10 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: BaseViewControllerProtocol {
+    func set(title: String) {
+        self.title = title
+    }
+    
     func show(error: NSError) {
         self.show(message: error.localizedDescription, title: "Error occured")
     }
@@ -72,8 +77,7 @@ extension BaseViewController: BaseViewControllerProtocol {
     }
     
     func showLoadingController(aboveNavBar: Bool) {
-        let resolvedController = aboveNavBar && self.navigationController != nil ? self.navigationController! : self
-        showLoadingController(on: resolvedController, view: resolvedController.view)
+        showLoadingController(on: self, view: self.view)
     }
     
     func showLoadingController(on controller: UIViewController, view: UIView) {

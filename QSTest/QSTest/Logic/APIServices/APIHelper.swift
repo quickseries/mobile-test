@@ -46,6 +46,14 @@ class APIHelper: NSObject, APIHelperProtocol {
     private let baseUrl: URL!
     private let sessionManager: URLSessionProtocol
     
+    convenience override init() {
+        guard let  baseURL = URL(string: Constants.API.baseURL) else {
+            fatalError("CategoriesRouter: URL initialization issue")
+        }
+        
+        self.init(baseUrl: baseURL, validateStatusCode: false, sessionManager: URLSession.default)
+    }
+    
     required init(baseUrl: URL, validateStatusCode: Bool,
                   sessionManager: URLSessionProtocol = URLSession.default) {
         self.baseUrl = baseUrl

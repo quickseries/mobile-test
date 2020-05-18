@@ -12,28 +12,20 @@ import UIKit
 class MainFlowRouter {
     private let navController: UINavigationController
     
-    init(navController: UINavigationController) {
+    init(navController: UINavigationController, categoriesFactory: CategoriesFactoryProtocol = CategoriesFactory()) {
         self.navController = navController
-        
-        guard let  baseURL = URL(string: Constants.API.baseURL) else {
-            fatalError("CategoriesRouter: URL initialization issue")
-        }
-        
-        let api  = CategoriesAPIClient(baseUrl: baseURL,
-                                       validateStatusCode: false,
-                                       sessionManager: URLSession.default)
-        
-        let controller = CategoriesController(loadType: .xib)
-        let _ = CategoriesPresenter(controller: controller,
-                                    delegate: self,
-                                    api: api)
+        let controller = categoriesFactory.createCategoriesModule(delegate: self)
         
         navController.viewControllers = [controller]
     }
 }
 
 extension MainFlowRouter: CategoriesPresenterDelegate {
-    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect category: Category) {
+    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect restaurants: Restaurants) {
+        
+    }
+    
+    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect vacationSpots: VacationSpots) {
         
     }
 }

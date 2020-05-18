@@ -9,8 +9,13 @@
 import Foundation
 
 struct Category: Codable {
+    enum Slug: String, Codable {
+        case restaurants
+        case vacationSpots = "vacation-spots"
+    }
+    
     let id: String
-    let slug: String
+    let slug: Slug
     let customModuleEid: String
     let eid: String
     let title: String
@@ -36,7 +41,7 @@ struct Category: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
-        self.slug = try container.decode(String.self, forKey: .slug)
+        self.slug = try container.decode(Slug.self, forKey: .slug)
         self.customModuleEid = try container.decode(String.self, forKey: .customModuleEid)
         self.eid = try container.decode(String.self, forKey: .eid)
         self.title = try container.decode(String.self, forKey: .title)
@@ -61,7 +66,7 @@ struct Category: Codable {
         try container.encode(self.updated, forKey: .updated)
     }
     
-    init(id: String, slug: String, customModuleEid: String, eid: String, title: String, description: String?, v: Int, active: Bool, created: Date, updated: Date) {
+    init(id: String, slug: Slug, customModuleEid: String, eid: String, title: String, description: String?, v: Int, active: Bool, created: Date, updated: Date) {
         self.id = id
         self.slug = slug
         self.customModuleEid = customModuleEid
