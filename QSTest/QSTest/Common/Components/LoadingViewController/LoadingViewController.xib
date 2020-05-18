@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingViewController" customModule="QSTest" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="U4D-aX-DGY" id="Wrc-78-Tvg"/>
+                <outlet property="view" destination="aAZ-4D-xjr" id="xCi-Xv-DK5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="aAZ-4D-xjr">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="U4D-aX-DGY">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="U4D-aX-DGY" firstAttribute="centerY" secondItem="aAZ-4D-xjr" secondAttribute="centerY" id="EBa-Ee-O9N"/>
+                <constraint firstItem="U4D-aX-DGY" firstAttribute="centerX" secondItem="aAZ-4D-xjr" secondAttribute="centerX" id="Rea-YC-eE2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Zb7-Kt-Kxq"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>
