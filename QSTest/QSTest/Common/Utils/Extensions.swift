@@ -84,11 +84,11 @@ extension Data {
             fatalError("Failed to locate \(jsonFile) in bundle.")
         }
 
-        guard let data = try? Data(contentsOf: url) else {
+        guard let contentData = FileManager.default.contents(atPath: urlString) else {
             fatalError("Failed to load \(jsonFile) from bundle.")
         }
         
-        return data
+        return contentData
     }
 }
 
