@@ -34,7 +34,21 @@ class CategoriesAPIClientTest: XCTestCase {
     func testGetCategoriesSuccess() {
         networkSession.error = nil
         makeGetCategoriesCall()
+        
         XCTAssertNil(error)
         XCTAssertEqual(models?.count, 2)
+    }
+    
+    func testGetCategoriesFailure() {
+        let error = NSError(domain: Constants.Error.apiDomain,
+                            code: Constants.Error.defaultErrorCode,
+                            userInfo: nil)
+        
+        networkSession.error = error
+        networkSession.data = nil
+        makeGetCategoriesCall()
+        
+        XCTAssertNil(models)
+        XCTAssertNotNil(error)
     }
 }

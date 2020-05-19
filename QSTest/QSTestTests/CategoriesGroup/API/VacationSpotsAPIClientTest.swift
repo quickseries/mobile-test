@@ -1,5 +1,5 @@
 //
-//  RestaurantsAPIClientTest.swift
+//  VacationSpotsAPIClientTest.swift
 //  QSTestTests
 //
 //  Created by Denys Volkov on 2020-05-18.
@@ -10,21 +10,24 @@ import Foundation
 import XCTest
 @testable import QSTest
 
-class RestaurantsAPIClientTest: XCTestCase {
+class VacationSpotsAPIClientTest: XCTestCase {
     var networkSession: URLSessionMock!
-    var sut: RestaurantsAPIClient?
-    var models: Restaurants?
+    var sut: VacationSpotsAPIClient?
+    var models: VacationSpots?
     var error: NSError?
     
     override func setUp() {
         super.setUp()
-        networkSession = URLSessionMock.mockedSession(with: "restaurants", error: nil)
+        networkSession = URLSessionMock.mockedSession(with: "vacation-spot", error: nil)
         guard let baseURL = URL(string: Constants.API.baseURL) else { return }
-        sut = RestaurantsAPIClient(baseUrl: baseURL, validateStatusCode: false, sessionManager: networkSession)
+        
+        sut = VacationSpotsAPIClient(baseUrl: baseURL,
+                                     validateStatusCode: false,
+                                     sessionManager: networkSession)
     }
     
-    private func makeGetRestaurantsCall() {
-        sut?.getRestaurants(success: { (models) in
+    private func makeGetVacationSpotsCall() {
+        sut?.getVacationSpots(success: { (models) in
             self.models = models
         }, failure: { (error) in
             self.error = error
@@ -33,10 +36,10 @@ class RestaurantsAPIClientTest: XCTestCase {
     
     func testGetRestaurantsSuccess() {
         networkSession.error = nil
-        makeGetRestaurantsCall()
+        makeGetVacationSpotsCall()
         
         XCTAssertNil(error)
-        XCTAssertEqual(models?.count, 4)
+        XCTAssertEqual(models?.count, 1)
     }
     
     func testGetRestaurantFailure() {
@@ -46,7 +49,7 @@ class RestaurantsAPIClientTest: XCTestCase {
         
         networkSession.error = error
         networkSession.data = nil
-        makeGetRestaurantsCall()
+        makeGetVacationSpotsCall()
         
         XCTAssertNil(models)
         XCTAssertNotNil(error)

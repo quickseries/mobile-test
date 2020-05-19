@@ -70,6 +70,7 @@
 		CF938DC324737006005051BD /* ResourcesListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC224737006005051BD /* ResourcesListPresenterTest.swift */; };
 		CF938DC6247370FF005051BD /* ResourcesListDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC5247370FF005051BD /* ResourcesListDelegateMock.swift */; };
 		CF938DC8247371B1005051BD /* ResourcesListControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC7247371B1005051BD /* ResourcesListControllerMock.swift */; };
+		CF938DCA24737F61005051BD /* VacationSpotsAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC924737F61005051BD /* VacationSpotsAPIClientTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		CF938DC224737006005051BD /* ResourcesListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListPresenterTest.swift; sourceTree = "<group>"; };
 		CF938DC5247370FF005051BD /* ResourcesListDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListDelegateMock.swift; sourceTree = "<group>"; };
 		CF938DC7247371B1005051BD /* ResourcesListControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListControllerMock.swift; sourceTree = "<group>"; };
+		CF938DC924737F61005051BD /* VacationSpotsAPIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationSpotsAPIClientTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 			children = (
 				CF938D902472C4A3005051BD /* CategoriesAPIClientTest.swift */,
 				CF938DB924735972005051BD /* RestaurantsAPIClientTest.swift */,
+				CF938DC924737F61005051BD /* VacationSpotsAPIClientTest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				CF938D912472C4A3005051BD /* CategoriesAPIClientTest.swift in Sources */,
 				CF938DC024736E5F005051BD /* ModelsMock.swift in Sources */,
 				CF938DC6247370FF005051BD /* ResourcesListDelegateMock.swift in Sources */,
+				CF938DCA24737F61005051BD /* VacationSpotsAPIClientTest.swift in Sources */,
 				CF938DC8247371B1005051BD /* ResourcesListControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
