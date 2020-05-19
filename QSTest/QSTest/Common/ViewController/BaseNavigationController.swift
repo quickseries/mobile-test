@@ -35,7 +35,7 @@ class BaseNavigationController: UINavigationController {
         self.navigationBar.prefersLargeTitles = true
         self.navigationBar.isTranslucent = false
         self.navigationBar.barTintColor = NavControllerConstants.backgroundColor
-        self.navigationBar.tintColor = NavControllerConstants.backgroundColor
+        self.navigationBar.tintColor = NavControllerConstants.fontColor
         self.navigationBar.titleTextAttributes = [.foregroundColor: NavControllerConstants.fontColor,
                                                   .font: font]
 

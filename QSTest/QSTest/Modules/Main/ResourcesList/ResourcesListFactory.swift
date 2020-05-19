@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+protocol ResourcesListFactoryProtocol {
+    func createResourcesListModule(delegate: ResourcesListPresenterDelegate,
+                                   state: ResourcesState) -> ResourcesListController
+}
+
+class ResourcesListFactory: ResourcesListFactoryProtocol {
+    func createResourcesListModule(delegate: ResourcesListPresenterDelegate,
+                                   state: ResourcesState) -> ResourcesListController {
+        let controller = ResourcesListController(loadType: .xib)
+        let _ = ResourcesListPresenter(controller: controller,
+                                       delegate: delegate,
+                                       state: state)
+
+        return controller
+    }
+}

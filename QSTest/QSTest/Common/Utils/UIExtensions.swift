@@ -109,3 +109,30 @@ extension UITableView {
         return dequeueReusableCell(cellClass: cls)
     }
 }
+
+extension UIImageView {
+    public func image(with urlString: String, placeHolderImage: String?) {
+        func setImage(image: UIImage?) {
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+        
+        if let imageName = placeHolderImage,
+            let image = UIImage(named: imageName) {
+            setImage(image: image)
+        }
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let theTask = URLSession.shared.dataTask(with: url) {
+            data, response, error in
+            if let response = data {
+                setImage(image: UIImage(data: response))
+            }
+        }
+        theTask.resume()
+    }
+}

@@ -17,7 +17,7 @@ class LoadingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.color = .white
+        activityIndicator.color = .blue
         activityIndicator.startAnimating()
         setupAccessibility()
         self.view.insertSubview(blurVeiw, at: 0)

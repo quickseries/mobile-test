@@ -23,7 +23,7 @@ enum ResourcesState {
 }
 
 
-class ResourcesPresenter {
+class ResourcesListPresenter {
     private weak var delegate: ResourcesListPresenterDelegate?
     private weak var controller: ResourcesListControllerProtocol?
     private var state: ResourcesState
@@ -34,6 +34,8 @@ class ResourcesPresenter {
         self.controller = controller
         self.delegate = delegate
         self.state = state
+        
+        controller.presenter = self
     }
     
     private func update(with state: ResourcesState) {
@@ -41,14 +43,16 @@ class ResourcesPresenter {
         case let .restaurants(restaurants):
             let models = ResourcesListFormatter.convert(restaurants)
             controller?.show(rows: models)
+            controller?.set(title: "Restaurants".localized)
         case let .vacationSpots(vacationSpots):
             let models = ResourcesListFormatter.convert(vacationSpots)
             controller?.show(rows: models)
+            controller?.set(title: "Vacation Spots".localized)
         }
     }
 }
 
-extension ResourcesPresenter: ResourcesListPresenterProtocol {
+extension ResourcesListPresenter: ResourcesListPresenterProtocol {
     func onViewDidLoad() {
         update(with: state)
     }

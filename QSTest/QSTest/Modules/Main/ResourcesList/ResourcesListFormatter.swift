@@ -11,8 +11,8 @@ import Foundation
 class ResourcesListFormatter {
     static private func convert(_ restaurant: Restaurant) -> ResourceForUI {
         return ResourceForUI(id: restaurant.id,
-                             title: restaurant.eid,
-                             description: restaurant.restaurantDescription,
+                             title: restaurant.title,
+                             description: restaurant.restaurantDescription.trimmHTMLTags(),
                              photo: restaurant.photo)
     }
     
@@ -22,8 +22,8 @@ class ResourcesListFormatter {
     
     static private func convert(_ vacationSpot: VacationSpot) -> ResourceForUI {
         return ResourceForUI(id: vacationSpot.id,
-                             title: vacationSpot.eid,
-                             description: vacationSpot.vacationSpotDescription,
+                             title: vacationSpot.title,
+                             description: vacationSpot.vacationSpotDescription.trimmHTMLTags(),
                              photo: vacationSpot.photo)
     }
     

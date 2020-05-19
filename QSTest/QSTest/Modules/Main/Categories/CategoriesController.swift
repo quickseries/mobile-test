@@ -26,6 +26,7 @@ class CategoriesController: BaseViewController {
         super.viewDidLoad()
         prepareTableView()
         presenter?.onViewDidLoad()
+        hideBackBtnTitle()
     }
 }
 
