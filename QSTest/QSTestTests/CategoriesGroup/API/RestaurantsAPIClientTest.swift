@@ -1,40 +1,40 @@
 //
-//  CategoriesAPIClientTest.swift
+//  RestaurantsAPIClientTest.swift
 //  QSTestTests
 //
 //  Created by Denys Volkov on 2020-05-18.
 //  Copyright © 2020 quickseries. All rights reserved.
 //
 
-import XCTest
 import Foundation
+import XCTest
 @testable import QSTest
 
-class CategoriesAPIClientTest: XCTestCase {
+class RestaurantsAPIClientTest: XCTestCase {
     var networkSession: URLSessionMock!
-    var sut: CategoriesAPIClient?
-    var models: Categories?
+    var sut: RestaurantsAPIClient?
+    var models: Restaurants?
     var error: NSError?
     
     override func setUp() {
         super.setUp()
-        networkSession = URLSessionMock.mockedSession(with: "categories", error: nil)
+        networkSession = URLSessionMock.mockedSession(with: "restaurants", error: nil)
         guard let baseURL = URL(string: Constants.API.baseURL) else { return }
-        sut = CategoriesAPIClient(baseUrl: baseURL, validateStatusCode: false, sessionManager: networkSession)
+        sut = RestaurantsAPIClient(baseUrl: baseURL, validateStatusCode: false, sessionManager: networkSession)
     }
     
-    private func makeGetCategoriesCall() {
-        sut?.getCategories(success: { (models) in
+    private func makeGetRestaurantsCall() {
+        sut?.getRestaurants(success: { (models) in
             self.models = models
         }, failure: { (error) in
             self.error = error
         })
     }
     
-    func testGetCategoriesSuccess() {
+    func testGetRestaurantsSuccess() {
         networkSession.error = nil
-        makeGetCategoriesCall()
+        makeGetRestaurantsCall()
         XCTAssertNil(error)
-        XCTAssertEqual(models?.count, 2)
+        XCTAssertEqual(models?.count, 4)
     }
 }

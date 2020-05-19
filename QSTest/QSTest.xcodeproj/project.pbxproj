@@ -63,6 +63,13 @@
 		CF938DB424734A34005051BD /* ResourcesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DB324734A34005051BD /* ResourcesListCell.swift */; };
 		CF938DB624734A3B005051BD /* ResourcesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF938DB524734A3B005051BD /* ResourcesListCell.xib */; };
 		CF938DB82473539C005051BD /* ResourcesListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF938DB72473539C005051BD /* ResourcesListController.xib */; };
+		CF938DBA24735972005051BD /* RestaurantsAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DB924735972005051BD /* RestaurantsAPIClientTest.swift */; };
+		CF938DBC24735C63005051BD /* RestaurantsAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DBB24735C63005051BD /* RestaurantsAPIProtocolMock.swift */; };
+		CF938DBE24735CCA005051BD /* VacationSpotAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DBD24735CCA005051BD /* VacationSpotAPIProtocolMock.swift */; };
+		CF938DC024736E5F005051BD /* ModelsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DBF24736E5F005051BD /* ModelsMock.swift */; };
+		CF938DC324737006005051BD /* ResourcesListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC224737006005051BD /* ResourcesListPresenterTest.swift */; };
+		CF938DC6247370FF005051BD /* ResourcesListDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC5247370FF005051BD /* ResourcesListDelegateMock.swift */; };
+		CF938DC8247371B1005051BD /* ResourcesListControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF938DC7247371B1005051BD /* ResourcesListControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +143,13 @@
 		CF938DB324734A34005051BD /* ResourcesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListCell.swift; sourceTree = "<group>"; };
 		CF938DB524734A3B005051BD /* ResourcesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourcesListCell.xib; sourceTree = "<group>"; };
 		CF938DB72473539C005051BD /* ResourcesListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourcesListController.xib; sourceTree = "<group>"; };
+		CF938DB924735972005051BD /* RestaurantsAPIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsAPIClientTest.swift; sourceTree = "<group>"; };
+		CF938DBB24735C63005051BD /* RestaurantsAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsAPIProtocolMock.swift; sourceTree = "<group>"; };
+		CF938DBD24735CCA005051BD /* VacationSpotAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationSpotAPIProtocolMock.swift; sourceTree = "<group>"; };
+		CF938DBF24736E5F005051BD /* ModelsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsMock.swift; sourceTree = "<group>"; };
+		CF938DC224737006005051BD /* ResourcesListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListPresenterTest.swift; sourceTree = "<group>"; };
+		CF938DC5247370FF005051BD /* ResourcesListDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListDelegateMock.swift; sourceTree = "<group>"; };
+		CF938DC7247371B1005051BD /* ResourcesListControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesListControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +204,7 @@
 		CF50E48C2470EC2B00409971 /* QSTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF938DC124736F87005051BD /* ResourcesListGroup */,
 				CF5F31E92472AC3500E9857C /* Common */,
 				CF5F31E12472A93300E9857C /* CategoriesGroup */,
 				CF5F31E02472A58D00E9857C /* Resources */,
@@ -406,6 +421,8 @@
 				CF5F31E52472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift */,
 				CF5F31E72472ABEE00E9857C /* CategoriesControllerMock.swift */,
 				CF5F31ED2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift */,
+				CF938DBB24735C63005051BD /* RestaurantsAPIProtocolMock.swift */,
+				CF938DBD24735CCA005051BD /* VacationSpotAPIProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -421,6 +438,7 @@
 		CF5F31EA2472AC3C00E9857C /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CF938DBF24736E5F005051BD /* ModelsMock.swift */,
 				CF5F31EB2472AC4900E9857C /* BaseViewControllerMock.swift */,
 			);
 			path = Mocks;
@@ -430,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				CF938D902472C4A3005051BD /* CategoriesAPIClientTest.swift */,
+				CF938DB924735972005051BD /* RestaurantsAPIClientTest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -492,6 +511,24 @@
 				CF938DB524734A3B005051BD /* ResourcesListCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CF938DC124736F87005051BD /* ResourcesListGroup */ = {
+			isa = PBXGroup;
+			children = (
+				CF938DC42473700C005051BD /* Mocks */,
+				CF938DC224737006005051BD /* ResourcesListPresenterTest.swift */,
+			);
+			path = ResourcesListGroup;
+			sourceTree = "<group>";
+		};
+		CF938DC42473700C005051BD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF938DC5247370FF005051BD /* ResourcesListDelegateMock.swift */,
+				CF938DC7247371B1005051BD /* ResourcesListControllerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -648,13 +685,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF938DC324737006005051BD /* ResourcesListPresenterTest.swift in Sources */,
 				CF5F31E32472A98100E9857C /* CategoriesPresenterTest.swift in Sources */,
+				CF938DBE24735CCA005051BD /* VacationSpotAPIProtocolMock.swift in Sources */,
+				CF938DBC24735C63005051BD /* RestaurantsAPIProtocolMock.swift in Sources */,
 				CF5F31E82472ABEE00E9857C /* CategoriesControllerMock.swift in Sources */,
 				CF50E4BF247236B500409971 /* APIMocks.swift in Sources */,
 				CF5F31E62472AA3D00E9857C /* CategoriesPresenterDelegateMock.swift in Sources */,
 				CF5F31EE2472AE9C00E9857C /* CategoriesAPIProtocolMock.swift in Sources */,
+				CF938DBA24735972005051BD /* RestaurantsAPIClientTest.swift in Sources */,
 				CF5F31EC2472AC4900E9857C /* BaseViewControllerMock.swift in Sources */,
 				CF938D912472C4A3005051BD /* CategoriesAPIClientTest.swift in Sources */,
+				CF938DC024736E5F005051BD /* ModelsMock.swift in Sources */,
+				CF938DC6247370FF005051BD /* ResourcesListDelegateMock.swift in Sources */,
+				CF938DC8247371B1005051BD /* ResourcesListControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@ struct VacationSpot: Codable {
         case active = "_active"
         case updated = "updated_at"
         case created = "created_at"
-        case socialMedia, addresses, freeText, contactInfo
+        case socialMedia, addresses, contactInfo
     }
     
     init(from decoder: Decoder) throws {
@@ -68,7 +68,7 @@ struct VacationSpot: Codable {
         try container.encode(self.contactInfo, forKey: .contactInfo)
     }
     
-    init(id: String, slug: String, eid: String, photo: String, title: String, vacationSpotDescription: String, categoryEid: String, active: Bool, v: Int, created: Date, updated: Date, socialMedia: SocialMedia, addresses: [Address], freeText: [String], contactInfo: ContactInfo) {
+    init(id: String, slug: String, eid: String, photo: String, title: String, vacationSpotDescription: String, categoryEid: String, active: Bool, v: Int, created: Date, updated: Date, socialMedia: SocialMedia, addresses: [Address], contactInfo: ContactInfo) {
         self.id = id
         self.slug = slug
         self.eid = eid

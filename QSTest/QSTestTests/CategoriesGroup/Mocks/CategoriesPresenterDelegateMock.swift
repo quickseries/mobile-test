@@ -10,11 +10,19 @@ import Foundation
 @testable import QSTest
 
 class CategoriesPresenterDelegateMock: CategoriesPresenterDelegate {
-    var didSelectCategory = false
-    var category: QSTest.Category?
+    private(set) var didSelectRestaurants = false
+    private(set) var didSelectVacationSpots = false
     
-    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect category: QSTest.Category) {
-        self.didSelectCategory = true
-        self.category = category
+    private(set) var restaurants: Restaurants?
+    private(set) var vacationSpots: VacationSpots?
+    
+    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect restaurants: Restaurants) {
+        didSelectRestaurants = true
+        self.restaurants = restaurants
+    }
+    
+    func presenter(_ presenter: CategoriesPresenterProtocol, didSelect vacationSpots: VacationSpots) {
+        didSelectVacationSpots = true
+        self.vacationSpots = vacationSpots
     }
 }

@@ -39,3 +39,17 @@ class URLSessionMock: URLSessionProtocol {
         }
     }
 }
+
+extension URLSessionMock {
+    class func mockedSession(with file: String?, error: Error?) -> URLSessionMock {
+        let sessionMock = URLSessionMock()
+        
+        if let fileName = file {
+            sessionMock.data = Data.load(from: fileName, bundle: Bundle(for: URLSessionMock.self))
+        }
+        
+        sessionMock.error = error
+        
+        return sessionMock
+    }
+}
