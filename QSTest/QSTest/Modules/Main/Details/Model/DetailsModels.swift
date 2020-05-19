@@ -22,10 +22,6 @@ struct ContactInfoItemForUI {
     let subTitle: String
 }
 
-enum ContactInfoForUI {
-    case website(String)
-//    case 
-}
 
 struct HeaderModelForUI {
     let title: String

@@ -22,7 +22,6 @@ enum ResourcesState {
     case vacationSpots(_ vacationSpots: VacationSpots)
 }
 
-
 class ResourcesListPresenter {
     private weak var delegate: ResourcesListPresenterDelegate?
     private weak var controller: ResourcesListControllerProtocol?
@@ -43,11 +42,11 @@ class ResourcesListPresenter {
         case let .restaurants(restaurants):
             let models = ResourcesListFormatter.convert(restaurants)
             controller?.show(rows: models)
-            controller?.set(title: "Restaurants".localized)
+            controller?.set(title: Constants.Titles.restaurantsKey.localized)
         case let .vacationSpots(vacationSpots):
             let models = ResourcesListFormatter.convert(vacationSpots)
             controller?.show(rows: models)
-            controller?.set(title: "Vacation Spots".localized)
+            controller?.set(title: Constants.Titles.vacationSpotsKey.localized)
         }
     }
 }

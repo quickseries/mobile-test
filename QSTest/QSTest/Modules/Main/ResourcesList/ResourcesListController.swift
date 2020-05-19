@@ -61,7 +61,6 @@ extension ResourcesListController: UITableViewDataSource {
     }
 }
 
-
 extension ResourcesListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = rows[indexPath.row]

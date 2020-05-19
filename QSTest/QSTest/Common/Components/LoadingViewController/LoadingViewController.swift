@@ -25,7 +25,7 @@ class LoadingViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIAccessibility.post(notification: .layoutChanged, argument: "splash_loading_accessibility".localized)
+        UIAccessibility.post(notification: .layoutChanged, argument: "loading".localized)
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,6 +45,6 @@ extension LoadingViewController: VoiceOverAccessible {
     }
     
     func updateAccessibilityLabels() {
-        view.accessibilityLabel =  "splash_loading_accessibility".localized
+        view.accessibilityLabel =  "loading".localized
     }
 }

@@ -59,7 +59,7 @@ extension BaseViewController: BaseViewControllerProtocol {
     }
     
     func show(error: NSError) {
-        self.show(message: error.localizedDescription, title: "Error occured")
+        self.show(message: error.localizedDescription, title: "Error occured".localized)
     }
     
     func show(message: String, title: String?) {

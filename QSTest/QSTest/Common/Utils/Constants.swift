@@ -36,4 +36,10 @@ enum Constants {
     enum DateFormats {
         static let main = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     }
+    
+    enum Titles {
+        static let categoriesKey = "Categories"
+        static let restaurantsKey = "Restaurants"
+        static let vacationSpotsKey = "Vacation Spots"
+    }
 }

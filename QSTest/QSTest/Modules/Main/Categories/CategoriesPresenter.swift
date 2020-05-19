@@ -118,7 +118,7 @@ extension CategoriesPresenter: CategoriesPresenterProtocol {
     }
     
     func onViewDidLoad() {
-        controller?.set(title: "Categories")
+        controller?.set(title: Constants.Titles.categoriesKey.localized)
         fetchCategories()
     }
 }

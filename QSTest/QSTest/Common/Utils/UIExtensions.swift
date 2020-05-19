@@ -95,13 +95,11 @@ extension UITableView {
     
     func dequeueReusableCell<T: UITableViewCell>(cellClass cls: T.Type, for indexPath: IndexPath) -> T {
         let nibName = String(describing: cls)
-        // swiftlint:disable force_cast
         return dequeueReusableCell(withIdentifier: nibName, for: indexPath) as! T
     }
     
     func dequeueReusableCell<T: UITableViewCell>(cellClass cls: T.Type) -> T {
         let nibName = String(describing: cls)
-        // swiftlint:disable force_cast
         return dequeueReusableCell(withIdentifier: nibName) as! T
     }
     

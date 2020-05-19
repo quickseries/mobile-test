@@ -32,26 +32,27 @@ class BaseNavigationController: UINavigationController {
     private func applyTheme() {
         let font = UIFont.systemFont(ofSize: NavControllerConstants.fontSize)
         
+        let textAttributes: [NSAttributedString.Key : Any] = [
+            .foregroundColor: NavControllerConstants.fontColor,
+            .font: font
+        ]
+        
         self.navigationBar.prefersLargeTitles = true
         self.navigationBar.isTranslucent = false
         self.navigationBar.barTintColor = NavControllerConstants.backgroundColor
         self.navigationBar.tintColor = NavControllerConstants.fontColor
-        self.navigationBar.titleTextAttributes = [.foregroundColor: NavControllerConstants.fontColor,
-                                                  .font: font]
+        self.navigationBar.titleTextAttributes = textAttributes
 
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = NavControllerConstants.backgroundColor
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: NavControllerConstants.fontColor,
-                                                         .font: font]
-            navBarAppearance.titleTextAttributes = [.foregroundColor: NavControllerConstants.fontColor,
-                                                    .font: font]
+            navBarAppearance.largeTitleTextAttributes = textAttributes
+            navBarAppearance.titleTextAttributes = textAttributes
 
             self.navigationBar.standardAppearance = navBarAppearance
             self.navigationBar.scrollEdgeAppearance = navBarAppearance
         } else if #available(iOS 11.0, *) {
-                self.navigationBar.largeTitleTextAttributes = [.foregroundColor: NavControllerConstants.fontColor,
-                                                               .font: font]
+                self.navigationBar.largeTitleTextAttributes = textAttributes
         }
     }
 }
