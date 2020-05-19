@@ -72,7 +72,22 @@ struct Restaurant: Codable {
         try container.encode(self.socialMedia, forKey: .socialMedia)
     }
     
-    init(id: String, slug: String, eid: String, title: String, restaurantDescription: String, categoryEid: String, v: Int, photo: String, active: Bool, updated: Date, created: Date, addresses: [Address]?, contactInfo: ContactInfo, bizHours: BizHours?, socialMedia: SocialMedia?) {
+    // MARK: - Init for mocking
+    init(id: String,
+         slug: String,
+         eid: String,
+         title: String,
+         restaurantDescription: String,
+         categoryEid: String,
+         v: Int,
+         photo: String,
+         active: Bool,
+         updated: Date,
+         created: Date,
+         addresses: [Address]?,
+         contactInfo: ContactInfo,
+         bizHours: BizHours?,
+         socialMedia: SocialMedia?) {
         self.id = id
         self.slug = slug
         self.eid = eid

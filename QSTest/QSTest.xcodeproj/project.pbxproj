@@ -10,7 +10,7 @@
 		CF50E4772470EC2900409971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4762470EC2900409971 /* AppDelegate.swift */; };
 		CF50E4802470EC2B00409971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF50E47F2470EC2B00409971 /* Assets.xcassets */; };
 		CF50E4832470EC2B00409971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF50E4812470EC2B00409971 /* LaunchScreen.storyboard */; };
-		CF50E49C2471097C00409971 /* Approuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E49B2471097C00409971 /* Approuter.swift */; };
+		CF50E49C2471097C00409971 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E49B2471097C00409971 /* AppRouter.swift */; };
 		CF50E4A024719D1000409971 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E49F24719D1000409971 /* BaseViewController.swift */; };
 		CF50E4A324719D2F00409971 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4A224719D2F00409971 /* UIExtensions.swift */; };
 		CF50E4A524719D5800409971 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF50E4A424719D5800409971 /* Protocols.swift */; };
@@ -91,7 +91,7 @@
 		CF50E4842470EC2B00409971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF50E4892470EC2B00409971 /* QSTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QSTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF50E48F2470EC2B00409971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF50E49B2471097C00409971 /* Approuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Approuter.swift; sourceTree = "<group>"; };
+		CF50E49B2471097C00409971 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		CF50E49F24719D1000409971 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CF50E4A224719D2F00409971 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		CF50E4A424719D5800409971 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CF50E4762470EC2900409971 /* AppDelegate.swift */,
-				CF50E49D24719CCC00409971 /* Approuter */,
+				CF50E49D24719CCC00409971 /* AppRouter */,
 				CF50E4C72472496900409971 /* Resources */,
 				CF50E4A624719E3300409971 /* Logic */,
 				CF50E49A2471095600409971 /* Common */,
@@ -249,12 +249,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		CF50E49D24719CCC00409971 /* Approuter */ = {
+		CF50E49D24719CCC00409971 /* AppRouter */ = {
 			isa = PBXGroup;
 			children = (
-				CF50E49B2471097C00409971 /* Approuter.swift */,
+				CF50E49B2471097C00409971 /* AppRouter.swift */,
 			);
-			path = Approuter;
+			path = AppRouter;
 			sourceTree = "<group>";
 		};
 		CF50E49E24719CF400409971 /* ViewController */ = {
@@ -666,7 +666,7 @@
 				CF50E4772470EC2900409971 /* AppDelegate.swift in Sources */,
 				CF938DB02473086B005051BD /* ResourcesListFactory.swift in Sources */,
 				CF50E4B9247215DE00409971 /* Constants.swift in Sources */,
-				CF50E49C2471097C00409971 /* Approuter.swift in Sources */,
+				CF50E49C2471097C00409971 /* AppRouter.swift in Sources */,
 				CF50E4DD24724F8000409971 /* CategoriesPresenter.swift in Sources */,
 				CF50E4B02471AC6300409971 /* VacationSpot.swift in Sources */,
 				CF50E4B22471AD1A00409971 /* Common.swift in Sources */,

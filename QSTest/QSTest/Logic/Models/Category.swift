@@ -66,7 +66,17 @@ struct Category: Codable {
         try container.encode(self.updated, forKey: .updated)
     }
     
-    init(id: String, slug: Slug, customModuleEid: String, eid: String, title: String, description: String?, v: Int, active: Bool, created: Date, updated: Date) {
+    // MARK: - Init for mocking
+    init(id: String,
+         slug: Slug,
+         customModuleEid: String,
+         eid: String,
+         title: String,
+         description: String?,
+         v: Int,
+         active: Bool,
+         created: Date,
+         updated: Date) {
         self.id = id
         self.slug = slug
         self.customModuleEid = customModuleEid
