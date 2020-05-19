@@ -12,7 +12,6 @@ import UIKit
 private enum CellConstants {
     static let titleFontSize = CGFloat(16)
     static let descriptionFontSize = CGFloat(12)
-    static let imageCornerRadius = CGFloat(4)
 }
 
 class ResourcesListCell: UITableViewCell {
@@ -39,9 +38,6 @@ class ResourcesListCell: UITableViewCell {
         descriptionLabel.numberOfLines = 0
         
         selectionStyle = .none
-        
-        photoImageView.layer.cornerRadius = CellConstants.imageCornerRadius
-        photoImageView.layer.masksToBounds = true
     }
 }
 
