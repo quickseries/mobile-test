@@ -4,8 +4,10 @@ def shared_pods
 platform :ios, '13.0'
 	use_frameworks!
 	
+  pod 'Alamofire'
   pod 'AlamofireImage'
-	pod 'PKHUD'
+	#pod 'PKHUD'
+	pod 'SVProgressHUD'
 	
 end
 
