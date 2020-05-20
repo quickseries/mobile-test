@@ -30,7 +30,6 @@ class CategoriesViewModel: NSObject {
     }
 }
 
-
 extension CategoriesViewModel: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,4 +48,3 @@ extension CategoriesViewModel: UITableViewDataSource {
 		return cell
     }
 }
-

@@ -12,19 +12,17 @@ struct Category: Codable {
     let id: String
     let title: String
     let description: String?
-    let slug: String
-    //let isActive: Bool
+    let type: CategoryType
     
     private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title
         case description
         case type = "slug"
-        //case isActive = "_active"
     }
 }
 
-enum CategoryType: String, Decodable {
+enum CategoryType: String, Codable {
     case restaurant = "restaurants"
     case vacationSpot = "vacation-spots"
 }

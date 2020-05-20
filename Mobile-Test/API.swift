@@ -21,8 +21,6 @@ struct APIError: Error {
 }
 
 class API {
-
-	//alamo
 	static func fetchCategories(completion: @escaping (Result<[Category]?, APIError>) -> Void)  {
 
 	  let session:URLSession?  = URLSession.shared
@@ -42,20 +40,12 @@ class API {
 		  }
 		  return
 		}
-		
-		/*guard let json = (try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
-		 
-		 print("Not containing JSON")
-		 return
-		 }*/
+	
 		
 		var categories:[Category]?
 		
 		do {
 		  let decoder = JSONDecoder()
-
-		  //custom date formater
-		  //decoder.dateDecodingStrategy = .formatted(dateFormatter())
 
 		  let decodedData = try decoder.decode([Category].self, from: data)
 		  categories = decodedData
@@ -76,6 +66,52 @@ class API {
 	  
 	  task?.resume()
 	}
+	
+	static func fetchResources(completion: @escaping (Result<[Location]?, APIError>) -> Void)  {
+
+	  let session:URLSession?  = URLSession.shared
+	  let url:URL? = URL(string: resourcesURL())
+	  let task = session?.dataTask(with: url!) {data, response, error in
+		
+		guard error == nil else {
+		  DispatchQueue.main.async {
+			completion(.failure(APIError(kind:.connectionError, message:error?.localizedDescription)))
+		  }
+		  return
+		}
+		
+		guard let data = data else {
+		  DispatchQueue.main.async {
+			completion(.failure(APIError(kind:.noDataError, message: nil)))
+		  }
+		  return
+		}
+	
+		
+		var locations:[Location]?
+		
+		do {
+		  let decoder = JSONDecoder()
+
+		  let decodedData = try decoder.decode([Location].self, from: data)
+		  locations = decodedData
+		  
+		  DispatchQueue.main.async {
+			completion(.success(locations))
+		  }
+		  
+		} catch let err {
+			print(Strings.error, err)
+			
+			DispatchQueue.main.async {
+				completion(.failure(APIError(kind: .jsonError, message: err.localizedDescription)))
+			}
+			return
+		}
+	  }
+	  
+	  task?.resume()
+	}
 }
 
 	
@@ -89,4 +125,9 @@ extension API {
 	static func categoriesURL() -> String {
 	  return "\(baseURL)categories.json"
 	}
+	
+	static func resourcesURL() -> String {
+	  return "\(baseURL)restaurants.json"
+	}
+
 }

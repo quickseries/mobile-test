@@ -1,36 +1,45 @@
 //
-//  ViewController.swift
+//  ResourcesViewController.swift
 //  Mobile-Test
 //
 //  Created by Chris Comeau on 2020-05-19.
 //  Copyright © 2020 Skyriser Media. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import SVProgressHUD
 
-class ListViewController: UITableViewController {
+class ResourcesViewController: UITableViewController {
 
-    private let viewModel: CategoriesViewModel
+    private let viewModel: ResourcesViewModel
     
+	var category: Category? {
+		didSet {
+			title = category?.title
+			viewModel.category = category
+			//create viewModel
+		}
+	}
+//    init(viewModel: Category) {
+//        self.viewModel = viewModel
+//        super.init(nibName: nil, bundle: nil)
+//    }
+
     required init?(coder: NSCoder) {
-		viewModel = CategoriesViewModel()
+		viewModel = ResourcesViewModel()
 		super.init(coder: coder)
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		title = Strings.categories
 		navigationController?.navigationBar.prefersLargeTitles = true
 
 		setupTableView()
 		reload()
 	}
-	
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//	}
+
 	
 	private func setupTableView() {
 		tableView.delegate = self
@@ -59,18 +68,25 @@ class ListViewController: UITableViewController {
 }
 
 
-extension ListViewController {
+/*extension ResourcesViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		//let category = viewModel.categories[indexPath.row]
+		let category = viewModel.categories[indexPath.row]
 		
+		switch category.type {
+		case .restaurant:
+			break
+			
+		case .vacationSpot:
+			break
+		}
 	}
 }
+*/
 
-
-class CategoriesTableViewCell: UITableViewCell {
+class ResourcesTableViewCell: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
@@ -80,3 +96,4 @@ class CategoriesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
