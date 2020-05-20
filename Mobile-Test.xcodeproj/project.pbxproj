@@ -31,6 +31,7 @@
 		83805A2F2474DE0D00BF420C /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A2E2474DE0D00BF420C /* ResourcesViewController.swift */; };
 		83805A312474E73100BF420C /* ResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A302474E73000BF420C /* ResourcesViewModel.swift */; };
 		83805A332474EE8F00BF420C /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A322474EE8F00BF420C /* String+Utils.swift */; };
+		83805A35247561EE00BF420C /* Colors+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A34247561EE00BF420C /* Colors+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		83805A2E2474DE0D00BF420C /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		83805A302474E73000BF420C /* ResourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewModel.swift; sourceTree = "<group>"; };
 		83805A322474EE8F00BF420C /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		83805A34247561EE00BF420C /* Colors+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Utils.swift"; sourceTree = "<group>"; };
 		C2DEFB2E0CFA92B5203EFB62 /* Pods-Mobile-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile-Test.debug.xcconfig"; path = "Target Support Files/Pods-Mobile-Test/Pods-Mobile-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 			children = (
 				83805A2C2474CA7F00BF420C /* UIViewController+Utils.swift */,
 				83805A322474EE8F00BF420C /* String+Utils.swift */,
+				83805A34247561EE00BF420C /* Colors+Utils.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				838059E22474040000BF420C /* AppDelegate.swift in Sources */,
 				83805A222474BABF00BF420C /* Resource.swift in Sources */,
 				83805A152474554B00BF420C /* SceneDelegate.swift in Sources */,
+				83805A35247561EE00BF420C /* Colors+Utils.swift in Sources */,
 				83805A18247460F900BF420C /* Constants.swift in Sources */,
 				83805A262474BAD300BF420C /* ContactInfo.swift in Sources */,
 				83805A1C2474B97E00BF420C /* Strings.swift in Sources */,

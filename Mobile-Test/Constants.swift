@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-//constants
 public enum Constants {
-    static let test1 = 0
+	static let textColor = UIColor(rgb: 0xEA172E) //QuickSeries red
+	static let backgroundColor = UIColor(rgb: 0xF4F3F3) //QuickSeries grey
+	
 }

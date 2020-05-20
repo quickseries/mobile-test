@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-518" y="-264"/>
         </scene>
-        <!--List View Controller-->
+        <!--Categories View Controller-->
         <scene sceneID="GK6-Cj-IQD">
             <objects>
-                <tableViewController id="tFL-49-6dv" customClass="ListViewController" customModule="Mobile_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tFL-49-6dv" customClass="CategoriesViewController" customModule="Mobile_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Glf-TI-Sy7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

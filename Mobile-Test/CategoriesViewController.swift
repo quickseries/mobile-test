@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CategoriesViewController.swift
 //  Mobile-Test
 //
 //  Created by Chris Comeau on 2020-05-19.
@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class ListViewController: UITableViewController {
+class CategoriesViewController: UITableViewController {
 
     private let viewModel: CategoriesViewModel
     
@@ -22,9 +22,10 @@ class ListViewController: UITableViewController {
 		super.viewDidLoad()
 		
 		title = Strings.categories
-		navigationController?.navigationBar.prefersLargeTitles = true
-
+		
+		setupNavigationBar()
 		setupTableView()
+		
 		reload()
 	}
 	
@@ -43,7 +44,22 @@ class ListViewController: UITableViewController {
 		resourceVC.category = category
 	}
 
-	
+	private func setupNavigationBar() {
+		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationController?.navigationBar.tintColor = Constants.textColor
+		navigationController?.navigationBar.barTintColor = Constants.backgroundColor
+		navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: Constants.textColor]
+		
+		//https://stackoverflow.com/questions/56556254/in-ios13-the-status-bar-background-colour-is-different-from-the-navigation-bar-i/57152709#57152709
+		let navBarAppearance = UINavigationBarAppearance()
+		navBarAppearance.configureWithOpaqueBackground()
+		navBarAppearance.titleTextAttributes = [.foregroundColor: Constants.textColor]
+		navBarAppearance.largeTitleTextAttributes = [.foregroundColor: Constants.textColor]
+		navBarAppearance.backgroundColor = Constants.backgroundColor
+		navigationController?.navigationBar.standardAppearance = navBarAppearance
+		navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+    }
+
 	private func setupTableView() {
 		tableView.delegate = self
 		tableView.dataSource = viewModel
@@ -71,7 +87,7 @@ class ListViewController: UITableViewController {
 }
 
 
-extension ListViewController {
+extension CategoriesViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
