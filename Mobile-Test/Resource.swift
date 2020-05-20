@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Location: Codable {
+struct Resource: Codable {
     let id: String
     let title: String
     let description: String?

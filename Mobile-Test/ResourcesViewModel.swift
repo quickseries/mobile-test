@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ResourcesViewModel: NSObject {
-    fileprivate(set) var resources: [Location] = []
+    fileprivate(set) var resources: [Resource] = []
 	
 	/*var category: Category {
 		didSet {
@@ -20,7 +20,7 @@ class ResourcesViewModel: NSObject {
 	}*/
 	var category: Category?
 	
-	public func fetch(completion: @escaping (Result<[Location]?, APIError>) -> Void) {
+	public func fetch(completion: @escaping (Result<[Resource]?, APIError>) -> Void) {
 		
 		API.fetchResources() { result in
 			

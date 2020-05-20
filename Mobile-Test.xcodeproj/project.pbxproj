@@ -22,7 +22,7 @@
 		83805A1A2474610100BF420C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A192474610100BF420C /* API.swift */; };
 		83805A1C2474B97E00BF420C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A1B2474B97E00BF420C /* Strings.swift */; };
 		83805A202474BAB200BF420C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A1F2474BAB200BF420C /* Category.swift */; };
-		83805A222474BABF00BF420C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A212474BABF00BF420C /* Location.swift */; };
+		83805A222474BABF00BF420C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A212474BABF00BF420C /* Resource.swift */; };
 		83805A242474BAC500BF420C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A232474BAC500BF420C /* Address.swift */; };
 		83805A262474BAD300BF420C /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A252474BAD300BF420C /* ContactInfo.swift */; };
 		83805A282474BAE200BF420C /* SocialMediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A272474BAE200BF420C /* SocialMediaInfo.swift */; };
@@ -66,7 +66,7 @@
 		83805A192474610100BF420C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		83805A1B2474B97E00BF420C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		83805A1F2474BAB200BF420C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		83805A212474BABF00BF420C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		83805A212474BABF00BF420C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		83805A232474BAC500BF420C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		83805A252474BAD300BF420C /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		83805A272474BAE200BF420C /* SocialMediaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaInfo.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				83805A1F2474BAB200BF420C /* Category.swift */,
-				83805A212474BABF00BF420C /* Location.swift */,
+				83805A212474BABF00BF420C /* Resource.swift */,
 				83805A232474BAC500BF420C /* Address.swift */,
 				83805A252474BAD300BF420C /* ContactInfo.swift */,
 				83805A272474BAE200BF420C /* SocialMediaInfo.swift */,
@@ -411,7 +411,7 @@
 				83805A242474BAC500BF420C /* Address.swift in Sources */,
 				838059E62474040000BF420C /* CategoriesViewController.swift in Sources */,
 				838059E22474040000BF420C /* AppDelegate.swift in Sources */,
-				83805A222474BABF00BF420C /* Location.swift in Sources */,
+				83805A222474BABF00BF420C /* Resource.swift in Sources */,
 				83805A152474554B00BF420C /* SceneDelegate.swift in Sources */,
 				83805A18247460F900BF420C /* Constants.swift in Sources */,
 				83805A262474BAD300BF420C /* ContactInfo.swift in Sources */,
