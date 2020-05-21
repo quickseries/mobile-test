@@ -37,18 +37,8 @@ class CategoriesViewController: UITableViewController {
 	private func setupNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationController?.navigationBar.tintColor = Constants.textColor
-		navigationController?.navigationBar.barTintColor = Constants.backgroundColor
 		navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: Constants.textColor]
-		
-		//https://stackoverflow.com/questions/56556254/in-ios13-the-status-bar-background-colour-is-different-from-the-navigation-bar-i/57152709#57152709
-		let navBarAppearance = UINavigationBarAppearance()
-		navBarAppearance.configureWithOpaqueBackground()
-		navBarAppearance.titleTextAttributes = [.foregroundColor: Constants.textColor]
-		navBarAppearance.largeTitleTextAttributes = [.foregroundColor: Constants.textColor]
-		navBarAppearance.backgroundColor = Constants.backgroundColor
-		navigationController?.navigationBar.standardAppearance = navBarAppearance
-		navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-    }
+	}
 
 	private func setupTableView() {
 		tableView.delegate = self
