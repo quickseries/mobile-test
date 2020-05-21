@@ -1,0 +1,9 @@
+# Uncomment the frameworks of choice and run `pod install`.
+
+platform :ios, '11.0'
+
+target 'QuickSeriesPublishing' do
+  use_frameworks!
+
+  pod "Kingfisher"
+end

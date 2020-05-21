@@ -38,50 +38,6 @@
     }
   },
   {
-    "_id": "5983ab39951cf747207bed47",
-    "slug": "elixor",
-    "eid": "99e372d1-a29d-49f9-b066-487a3bca865e",
-    "title": "Elixor",
-    "description": "<p>The Publishing Lunch Resto</p>",
-    "bizHours": {
-      "sunday": {
-        "from": "10:00 AM",
-        "to": "11:45 AM"
-      },
-      "monday": {
-        "from": "09:00 AM",
-        "to": "06:30 PM"
-      }
-    },
-    "category_eid": "ac5bd194-11de-48f6-94db-fd16cfccb570",
-    "__v": 1,
-    "photo": "https://s3.amazonaws.com/qsapi-files/files/49851e71-5114-4d94-9d9a-7f3cacb1764e/0f341b02-1e13-4e6f-8911-2ac5fbdbfcc9.jpeg",
-    "_active": true,
-    "updated_at": "2017-08-04T14:36:36.747Z",
-    "created_at": "2017-08-03T23:01:13.731Z",
-    "addresses": [
-      {
-        "address1": "3237 Sources Blvd",
-        "city": "Montreal",
-        "state": "QC",
-        "zipCode": "H9B 1Z6",
-        "country": "Canada",
-        "label": "Elixor"
-      }
-    ],
-    "contactInfo": {
-      "website": [
-        "https://www.google.com"
-      ],
-      "email": [
-        "email@domain.com"
-      ],
-      "phoneNumber": [
-        "15147028287"
-      ]
-    }
-  },
-  {
     "_id": "5983ab85951cf747207bed48",
     "slug": "quickseries",
     "eid": "dc0b0a4c-a9dc-4070-a56d-dca62ff4d849",
@@ -125,6 +81,7 @@
     "created_at": "2017-08-03T22:19:50.918Z",
     "socialMedia": {
       "youtubeChannel": [
+        "https://www.youtube.com/channel/UCT0hbLDa-unWsnZ6Rjzkfug",
         "https://www.youtube.com/channel/UCT0hbLDa-unWsnZ6Rjzkfug"
       ],
       "twitter": [
@@ -135,6 +92,14 @@
       ]
     },
     "addresses": [
+      {
+        "label": "Quesada",
+        "address1": "3343 Boul des Sources",
+        "city": "Montreal",
+        "zipCode": "H9B1Z8",
+        "state": "QC",
+        "country": "Canada"
+      },
       {
         "label": "Quesada",
         "address1": "3343 Boul des Sources",

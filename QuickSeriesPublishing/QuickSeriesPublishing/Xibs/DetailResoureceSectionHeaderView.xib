@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailResoureceSectionHeaderView" customModule="QuickSeriesPublishing" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBs-BC-gza">
+                    <rect key="frame" x="8" y="0.0" width="288" height="69"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlc-Vf-CZ3">
+                            <rect key="frame" x="14" y="22.5" width="260" height="24"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="NYG-qh-XXR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="xlc-Vf-CZ3" firstAttribute="centerY" secondItem="MBs-BC-gza" secondAttribute="centerY" id="0Hd-N3-k6l"/>
+                        <constraint firstItem="xlc-Vf-CZ3" firstAttribute="leading" secondItem="MBs-BC-gza" secondAttribute="leading" constant="14" id="N7L-iy-VgZ"/>
+                        <constraint firstAttribute="trailing" secondItem="xlc-Vf-CZ3" secondAttribute="trailing" constant="14" id="Oab-fF-4MU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MBs-BC-gza" secondAttribute="trailing" constant="8" id="6gq-sh-dg9"/>
+                <constraint firstItem="MBs-BC-gza" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OfO-v7-JDS"/>
+                <constraint firstAttribute="bottom" secondItem="MBs-BC-gza" secondAttribute="bottom" id="XdM-aA-qAh"/>
+                <constraint firstItem="MBs-BC-gza" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ybC-aS-itI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="title" destination="xlc-Vf-CZ3" id="LoW-mq-z25"/>
+            </connections>
+            <point key="canvasLocation" x="-69.565217391304358" y="-126.89732142857142"/>
+        </view>
+    </objects>
+</document>
