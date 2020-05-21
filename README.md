@@ -1,3 +1,38 @@
+
+# Notes (Chris Comeau):
+
+Did not get a chance to finish all requirements, time contrained these days with no daycare and a 2 year old at home. Hopefully there's enough to give you a good idea.
+
+### Features:
+- Using Alamofire/AlamofireImage for networking
+- Using SVProgressHUD for progress
+- Using Cocoapods for third-party libraries
+- Using SwiftLint for style
+
+### To do:
+- Unit tests and UI tests
+- Implement Details section
+
+
+### Screenshots:
+![Screenshot1](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot1.png "Screenshot1")
+
+![Screenshot2](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot2.png "Screenshot2")
+
+![Screenshot3](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot3.png "Screenshot3")
+
+
+### Contact
+
+Chris Comeau  
+iOS/macOS Developer  
+chris.comeau@skyriser.com  
+http://chriscomeau.com/  
+514-949-1852
+
+
+--
+
 # Instructions:
 
 - Fork this git repo to your computer
