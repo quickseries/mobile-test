@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 class ResourcesViewModel: NSObject {
     fileprivate(set) var resources: [Resource] = []
@@ -43,12 +44,16 @@ extension ResourcesViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.resources.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let resource = resources[indexPath.row]
-		let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoriesTableViewCell.self), for: indexPath)
-		cell.textLabel?.text = resource.title
-		cell.detailTextLabel?.text = resource.description?.stripHTML()
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: "resourceCell"), for: indexPath) as? ResourceCell else { return UITableViewCell() }
+		cell.labelTitle?.text = resource.title
+		cell.labelDescription?.text = resource.description?.stripHTML()
+		
+		cell.resourceImageView?.af.setImage(withURL: resource.photoURL, placeholderImage: UIImage(named: "placeholder"))
+		cell.resourceImageView?.contentMode = .scaleAspectFill
+		cell.resourceImageView?.clipsToBounds = true;
 		return cell
     }
 }

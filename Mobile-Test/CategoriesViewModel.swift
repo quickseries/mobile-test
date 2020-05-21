@@ -44,6 +44,7 @@ extension CategoriesViewModel: UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CategoriesTableViewCell.self), for: indexPath)
 		cell.textLabel?.text = category.title
 		cell.detailTextLabel?.text = category.description
+		cell.accessoryType = .disclosureIndicator
 		return cell
     }
 }

@@ -70,6 +70,8 @@ extension ResourcesViewController {
 		performSegue(withIdentifier: "showDetails", sender: indexPath)
 	}
 	
+	
+
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let indexPath = sender as?  IndexPath else { return }
 		let resource = viewModel.resources[indexPath.row]
@@ -77,6 +79,17 @@ extension ResourcesViewController {
 //		let resourceVC = segue.destination as! ResourcesViewController
 //		resourceVC.category = category
 	}
+	
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		
+		return 100
+	}
+
+
+//	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//		return 200.0;
+//	}
+	
 }
 
 class ResourcesTableViewCell: UITableViewCell {
