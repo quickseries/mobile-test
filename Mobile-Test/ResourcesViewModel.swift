@@ -22,7 +22,7 @@ class ResourcesViewModel: NSObject {
 	
 	public func fetch(completion: @escaping (Result<[Resource]?, APIError>) -> Void) {
 		
-		API.fetchResources() { result in
+		API.fetchRestaurants() { result in
 			
 			switch result {
 			case .success(let resources):

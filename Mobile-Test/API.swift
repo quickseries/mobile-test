@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Alamofire
+//import CodableAlamofire
 
 struct APIError: Error {
   enum ErrorKind: String {
     //case genericError
     case connectionError = "Connection error"
     case noDataError = "No data error"
-    case jsonError = "Json error"
+    case jsonError = "JSON error"
   }
   
   let kind: ErrorKind
@@ -23,46 +25,56 @@ struct APIError: Error {
 class API {
 	
 	static func fetchCategories(completion: @escaping (Result<[Category]?, APIError>) -> Void)  {
-		fetchQuery() { result in
+		fetchQuery(url: categoriesURL()) { result in
 			completion(result)
 		}
 	}
 
-	//	static func fetchResources(completion: @escaping (Result<[Location]?, APIError>) -> Void)  {
-	static func fetchResources(completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
-		fetchQuery() { result in
+	static func fetchRestaurants(completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
+		fetchQuery(url: restaurantsURL()) { result in
+			completion(result)
+		}
+	}
+	
+	static func fetchVacationSpots(completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
+		fetchQuery(url: vacationSpotsURL()) { result in
 			completion(result)
 		}
 	}
 }
 
 extension API {
-	static func fetchQuery<T: Codable>(completion: @escaping (Result<T?, APIError>) -> Void)  {
-		
-		let session:URLSession?  = URLSession.shared
-
-		//find url from generic type
-		let url:URL?
-		
-		switch T.self {
-		case is [Category].Type:
-			url = URL(string: categoriesURL())
-		case is [Resource].Type:
-			url = URL(string: resourcesURL())
-		default:
-			fatalError("fetchQuery: wrong type")
-		}
+	private static func fetchQuery<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
+		AF.request(url)
+			.validate()
+			.responseDecodable(of: T.self) { (response) in
+				guard let objects = response.value else {
+					DispatchQueue.main.async {
+						completion(.failure(APIError(kind:.connectionError, message:response.error?.localizedDescription)))
+					}
+					return
+				}
 				
-		let task = session?.dataTask(with: url!) {data, response, error in
-			
-			guard error == nil else {
 				DispatchQueue.main.async {
-					completion(.failure(APIError(kind:.connectionError, message:error?.localizedDescription)))
+					completion(.success(objects))
+				}
+				
+		}
+	}
+	
+	/*
+	private static func fetchQueryOld<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
+				
+		AF.request(url)
+		.responseJSON { response in
+			guard response.error == nil else {
+				DispatchQueue.main.async {
+					completion(.failure(APIError(kind:.connectionError, message:response.error?.localizedDescription)))
 				}
 				return
 			}
 			
-			guard let data = data else {
+			guard let data = response.data else {
 				DispatchQueue.main.async {
 					completion(.failure(APIError(kind:.noDataError, message: nil)))
 				}
@@ -90,23 +102,23 @@ extension API {
 				return
 			}
 		}
-		
-		task?.resume()
-	}
+	}*/
 }
 
 extension API {
 
-	//https://raw.githubusercontent.com/quickseries/mobile-test/master/data/categories.json
-
 	private static let baseURL = "https://raw.githubusercontent.com/quickseries/mobile-test/master/data/"
 
-	static func categoriesURL() -> String {
+	private static func categoriesURL() -> String {
 	  return "\(baseURL)categories.json"
 	}
 	
-	static func resourcesURL() -> String {
+	private static func restaurantsURL() -> String {
 	  return "\(baseURL)restaurants.json"
+	}
+
+	private static func vacationSpotsURL() -> String {
+	  return "\(baseURL)vacation-spot.json"
 	}
 
 }

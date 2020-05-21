@@ -6,6 +6,7 @@ platform :ios, '13.0'
 	
   pod 'Alamofire'
   pod 'AlamofireImage'
+	
 	#pod 'PKHUD'
 	pod 'SVProgressHUD'
 	
