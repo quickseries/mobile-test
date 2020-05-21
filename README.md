@@ -1,5 +1,5 @@
 
-# Notes (Chris Comeau):
+# Chris Comeau notes:
 
 Did not get a chance to finish all requirements, time contrained these days with no daycare and a 2 year old at home. Hopefully there's enough to give you a good idea.
 
@@ -15,11 +15,11 @@ Did not get a chance to finish all requirements, time contrained these days with
 
 
 ### Screenshots:
-![Screenshot1](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot1.png "Screenshot1")
+> ![Screenshot1](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot1.png "Screenshot1")
 
-![Screenshot2](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot2.png "Screenshot2")
+> ![Screenshot2](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot2.png "Screenshot2")
 
-![Screenshot3](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot3.png "Screenshot3")
+> ![Screenshot3](https://github.com/chriscomeau/mobile-test/blob/dev/screenshots/screenshot3.png "Screenshot3")
 
 
 ### Contact
