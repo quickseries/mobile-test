@@ -18,13 +18,8 @@ class ResourcesViewController: UITableViewController {
 		didSet {
 			title = category?.title
 			viewModel.category = category
-			//create viewModel
 		}
 	}
-//    init(viewModel: Category) {
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
 
     required init?(coder: NSCoder) {
 		viewModel = ResourcesViewModel()
@@ -67,24 +62,22 @@ class ResourcesViewController: UITableViewController {
 	}
 }
 
-
-/*extension ResourcesViewController {
+extension ResourcesViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		let category = viewModel.categories[indexPath.row]
-		
-		switch category.type {
-		case .restaurant:
-			break
-			
-		case .vacationSpot:
-			break
-		}
+		performSegue(withIdentifier: "showDetails", sender: indexPath)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard let indexPath = sender as?  IndexPath else { return }
+		let resource = viewModel.resources[indexPath.row]
+		// Create a new variable to store the instance of PlayerTableViewController
+//		let resourceVC = segue.destination as! ResourcesViewController
+//		resourceVC.category = category
 	}
 }
-*/
 
 class ResourcesTableViewCell: UITableViewCell {
 

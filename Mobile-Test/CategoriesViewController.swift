@@ -33,16 +33,6 @@ class CategoriesViewController: UITableViewController {
 //
 //	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		// Create a variable that you want to send
-		//var newProgramVar = Program(category: "Some", name: "Text")
-
-		guard let category = sender as?  Category else { return }
-		
-		// Create a new variable to store the instance of PlayerTableViewController
-		let resourceVC = segue.destination as! ResourcesViewController
-		resourceVC.category = category
-	}
 
 	private func setupNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -92,22 +82,20 @@ extension CategoriesViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		let category = viewModel.categories[indexPath.row]
-		
-		//let resourceViewController = ResourcesViewController()
-		
-		performSegue(withIdentifier: "showResources", sender: category)
-
-		switch category.type {
-		case .restaurant:
-			//navigationController?.pushViewController(resourceViewController, animated: yes)
-			break
-			
-		case .vacationSpot:
-			//navigationController?.pushViewController(resourceViewController, animated: yes)
-			break
-		}
+		performSegue(withIdentifier: "showResources", sender: indexPath)
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		//guard let category = sender as?  Category else { return }
+		
+		guard let indexPath = sender as?  IndexPath else { return }
+		let category = viewModel.categories[indexPath.row]
+
+		// Create a new variable to store the instance of PlayerTableViewController
+		let resourceVC = segue.destination as! ResourcesViewController
+		resourceVC.category = category
+	}
+
 }
 
 

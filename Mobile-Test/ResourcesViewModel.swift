@@ -11,18 +11,12 @@ import UIKit
 
 class ResourcesViewModel: NSObject {
     fileprivate(set) var resources: [Resource] = []
-	
-	/*var category: Category {
-		didSet {
-			//title = category.title
-			//create viewModel
-		}
-	}*/
 	var category: Category?
 	
 	public func fetch(completion: @escaping (Result<[Resource]?, APIError>) -> Void) {
+		guard let category = category else { return }
 		
-		API.fetchRestaurants() { result in
+		API.fetchResources(category: category) { result in
 			
 			switch result {
 			case .success(let resources):

@@ -29,15 +29,18 @@ class API {
 			completion(result)
 		}
 	}
-
-	static func fetchRestaurants(completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
-		fetchQuery(url: restaurantsURL()) { result in
-			completion(result)
-		}
-	}
 	
-	static func fetchVacationSpots(completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
-		fetchQuery(url: vacationSpotsURL()) { result in
+	static func fetchResources(category: Category, completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
+		var url: String {
+			switch category.type {
+			case .restaurant:
+				return restaurantsURL()
+			case .vacationSpot:
+				return vacationSpotsURL()
+			}
+		}
+		
+		fetchQuery(url: url) { result in
 			completion(result)
 		}
 	}

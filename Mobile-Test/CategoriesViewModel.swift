@@ -15,7 +15,6 @@ class CategoriesViewModel: NSObject {
 	public func fetch(completion: @escaping (Result<[Category]?, APIError>) -> Void) {
 		
 		API.fetchCategories() { result in
-			
 			switch result {
 			  case .success(let categories):
 				if let categories = categories {
