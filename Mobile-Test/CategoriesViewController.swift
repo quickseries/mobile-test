@@ -70,16 +70,12 @@ extension CategoriesViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		//guard let category = sender as?  Category else { return }
-		
 		guard let indexPath = sender as?  IndexPath else { return }
 		let category = viewModel.categories[indexPath.row]
 
-		// Create a new variable to store the instance of PlayerTableViewController
 		let resourceVC = segue.destination as! ResourcesViewController
 		resourceVC.category = category
 	}
-
 }
 
 class CategoriesTableViewCell: UITableViewCell {

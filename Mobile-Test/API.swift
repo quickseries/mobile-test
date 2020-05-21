@@ -65,7 +65,7 @@ extension API {
 	}
 	
 	/*
-	//manual JSON decoding
+	//old version, manual JSON decoding
 	private static func fetchQuery<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
 				
 		AF.request(url)
