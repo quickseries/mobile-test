@@ -26,4 +26,3 @@ enum CategoryType: String, Codable {
     case restaurant = "restaurants"
     case vacationSpot = "vacation-spots"
 }
-

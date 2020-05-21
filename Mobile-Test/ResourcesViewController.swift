@@ -31,6 +31,7 @@ class ResourcesViewController: UITableViewController {
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
 
+		
 		setupTableView()
 		reload()
 	}
@@ -40,7 +41,7 @@ class ResourcesViewController: UITableViewController {
 		tableView.delegate = self
 		tableView.dataSource = viewModel
 
-		self.tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: String(describing: CategoriesTableViewCell.self))
+		tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: String(describing: CategoriesTableViewCell.self))
     }
 	
 	private func reload() {

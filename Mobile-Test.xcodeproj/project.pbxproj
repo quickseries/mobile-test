@@ -33,6 +33,7 @@
 		83805A332474EE8F00BF420C /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A322474EE8F00BF420C /* String+Utils.swift */; };
 		83805A35247561EE00BF420C /* Colors+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83805A34247561EE00BF420C /* Colors+Utils.swift */; };
 		83FC0AE224762FF50024D351 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FC0AE124762FF50024D351 /* ResourceCell.swift */; };
+		83FC0AE4247637050024D351 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FC0AE3247637040024D351 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		83805A322474EE8F00BF420C /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		83805A34247561EE00BF420C /* Colors+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Utils.swift"; sourceTree = "<group>"; };
 		83FC0AE124762FF50024D351 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
+		83FC0AE3247637040024D351 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C2DEFB2E0CFA92B5203EFB62 /* Pods-Mobile-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile-Test.debug.xcconfig"; path = "Target Support Files/Pods-Mobile-Test/Pods-Mobile-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 			children = (
 				838059E52474040000BF420C /* CategoriesViewController.swift */,
 				83805A2E2474DE0D00BF420C /* ResourcesViewController.swift */,
+				83FC0AE3247637040024D351 /* DetailsViewController.swift */,
 				83FC0AE024762FE10024D351 /* Cells */,
 			);
 			name = Views;
@@ -434,6 +437,7 @@
 				83805A1C2474B97E00BF420C /* Strings.swift in Sources */,
 				83805A312474E73100BF420C /* ResourcesViewModel.swift in Sources */,
 				83805A1A2474610100BF420C /* API.swift in Sources */,
+				83FC0AE4247637050024D351 /* DetailsViewController.swift in Sources */,
 				83805A2D2474CA7F00BF420C /* UIViewController+Utils.swift in Sources */,
 				83805A2F2474DE0D00BF420C /* ResourcesViewController.swift in Sources */,
 				83805A282474BAE200BF420C /* SocialMediaInfo.swift in Sources */,

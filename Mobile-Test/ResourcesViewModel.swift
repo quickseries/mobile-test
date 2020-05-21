@@ -34,7 +34,6 @@ class ResourcesViewModel: NSObject {
     }
 }
 
-
 extension ResourcesViewModel: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,4 +56,3 @@ extension ResourcesViewModel: UITableViewDataSource {
 		return cell
     }
 }
-
