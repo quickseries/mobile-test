@@ -13,16 +13,15 @@ class CategoriesViewModel: NSObject {
     fileprivate(set) var categories: [Category] = []
 
 	public func fetch(completion: @escaping (Result<[Category]?, APIError>) -> Void) {
-		
-		API.fetchCategories() { result in
+		API.fetchCategories { result in
 			switch result {
-			  case .success(let categories):
+			case .success(let categories):
 				if let categories = categories {
 					self.categories = categories
 				}
 			case .failure:
 				break
-
+				
 			}
 			completion(result)
 		}

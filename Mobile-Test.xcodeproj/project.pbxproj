@@ -60,7 +60,6 @@
 		838059F82474040400BF420C /* Mobile_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile_TestTests.swift; sourceTree = "<group>"; };
 		838059FA2474040400BF420C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83805A0B2474093F00BF420C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		83805A0C24740BF000BF420C /* resources_android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resources_android.png; sourceTree = "<group>"; };
 		83805A0E247450F800BF420C /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		83805A0F247450F800BF420C /* vacation-spot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "vacation-spot.json"; sourceTree = "<group>"; };
 		83805A10247450F800BF420C /* restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				83805A0B2474093F00BF420C /* README.md */,
-				83805A0C24740BF000BF420C /* resources_android.png */,
 				838059E02474040000BF420C /* Mobile-Test */,
 				838059F72474040400BF420C /* Mobile-TestTests */,
 				838059DF2474040000BF420C /* Products */,
@@ -393,7 +391,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then \n#    swiftlint\n#else\n#    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+			shellScript = "if which swiftlint >/dev/null; then \n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C94CBDE0CD2CCBA13CD8B987 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

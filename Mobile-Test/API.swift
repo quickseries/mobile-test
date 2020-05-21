@@ -24,13 +24,13 @@ struct APIError: Error {
 
 class API {
 	
-	static func fetchCategories(completion: @escaping (Result<[Category]?, APIError>) -> Void)  {
+	static func fetchCategories(completion: @escaping (Result<[Category]?, APIError>) -> Void) {
 		fetchQuery(url: categoriesURL()) { result in
 			completion(result)
 		}
 	}
 	
-	static func fetchResources(category: Category, completion: @escaping (Result<[Resource]?, APIError>) -> Void)  {
+	static func fetchResources(category: Category, completion: @escaping (Result<[Resource]?, APIError>) -> Void) {
 		var url: String {
 			switch category.type {
 			case .restaurant:
@@ -47,13 +47,13 @@ class API {
 }
 
 extension API {
-	private static func fetchQuery<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
+	private static func fetchQuery<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void) {
 		AF.request(url)
 			.validate()
 			.responseDecodable(of: T.self) { (response) in
 				guard let objects = response.value else {
 					DispatchQueue.main.async {
-						completion(.failure(APIError(kind:.connectionError, message:response.error?.localizedDescription)))
+						completion(.failure(APIError(kind: .connectionError, message: response.error?.localizedDescription)))
 					}
 					return
 				}
@@ -61,12 +61,12 @@ extension API {
 				DispatchQueue.main.async {
 					completion(.success(objects))
 				}
-				
 		}
 	}
 	
 	/*
-	private static func fetchQueryOld<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
+	//manual JSON decoding
+	private static func fetchQuery<T: Codable>(url: String, completion: @escaping (Result<T?, APIError>) -> Void)  {
 				
 		AF.request(url)
 		.responseJSON { response in
@@ -109,7 +109,6 @@ extension API {
 }
 
 extension API {
-
 	private static let baseURL = "https://raw.githubusercontent.com/quickseries/mobile-test/master/data/"
 
 	private static func categoriesURL() -> String {

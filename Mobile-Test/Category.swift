@@ -13,8 +13,8 @@ struct Category: Codable {
     let title: String
     let description: String?
     let type: CategoryType
-    
-    private enum CodingKeys: String, CodingKey {
+
+	private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title
         case description

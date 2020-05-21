@@ -20,5 +20,4 @@ class ResourceCell: UITableViewCell {
         accessoryType = .disclosureIndicator
 		imageView?.contentMode = .scaleAspectFill
     }
-
 }

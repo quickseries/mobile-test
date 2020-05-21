@@ -1,9 +1,8 @@
 excluded:
   - Pods
-  - Carthage
-  - SkyriserUtilities
 
 disabled_rules:
+  - trailing_whitespace
   - force_cast
   - force_try
   - variable_name

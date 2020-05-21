@@ -24,10 +24,8 @@ class ResourcesViewModel: NSObject {
 				if let resources = resources {
 					self.resources = resources
 				}
-				break
 			case .failure:
 				break
-
 			}
 			completion(result)
 		}
@@ -52,7 +50,7 @@ extension ResourcesViewModel: UITableViewDataSource {
 		
 		cell.resourceImageView?.af.setImage(withURL: resource.photoURL, placeholderImage: UIImage(named: "placeholder"))
 		cell.resourceImageView?.contentMode = .scaleAspectFill
-		cell.resourceImageView?.clipsToBounds = true;
+		cell.resourceImageView?.clipsToBounds = true
 		return cell
     }
 }

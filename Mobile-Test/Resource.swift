@@ -19,8 +19,8 @@ struct Resource: Codable {
     let addresses: [Address]?
     let socialMedia: SocialMediaInfo?
     let contactInfo: ContactInfo
-    
-    private enum CodingKeys: String, CodingKey {
+
+	private enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title
         case description

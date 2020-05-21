@@ -30,13 +30,11 @@ class ResourcesViewController: UITableViewController {
 		super.viewDidLoad()
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
-
 		
 		setupTableView()
 		reload()
 	}
 
-	
 	private func setupTableView() {
 		tableView.delegate = self
 		tableView.dataSource = viewModel
@@ -47,15 +45,14 @@ class ResourcesViewController: UITableViewController {
 	private func reload() {
 		SVProgressHUD.show()
 		
-		viewModel.fetch() { result in
+		viewModel.fetch { result in
 			
 			DispatchQueue.main.async {
 				SVProgressHUD.dismiss()
 				switch result {
-				  case .success:
+				case .success:
 					self.tableView.reloadData()
-				  
-				  case .failure(let error):
+				case .failure(let error):
 					self.showAlert(title: Strings.error, message: error.message ?? error.kind.rawValue)
 				}
 			}
@@ -71,26 +68,15 @@ extension ResourcesViewController {
 		performSegue(withIdentifier: "showDetails", sender: indexPath)
 	}
 	
-	
-
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard let indexPath = sender as?  IndexPath else { return }
-		let resource = viewModel.resources[indexPath.row]
-		// Create a new variable to store the instance of PlayerTableViewController
-//		let resourceVC = segue.destination as! ResourcesViewController
-//		resourceVC.category = category
+		// TODO: ccomeau: implement details
+		//guard let indexPath = sender as?  IndexPath else { return }
+		//let resource = viewModel.resources[indexPath.row]
 	}
-	
+
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		
 		return 100
 	}
-
-
-//	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//		return 200.0;
-//	}
-	
 }
 
 class ResourcesTableViewCell: UITableViewCell {
@@ -103,4 +89,3 @@ class ResourcesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

@@ -12,27 +12,22 @@ import SVProgressHUD
 class CategoriesViewController: UITableViewController {
 
     private let viewModel: CategoriesViewModel
-    
-    required init?(coder: NSCoder) {
+
+	required init?(coder: NSCoder) {
 		viewModel = CategoriesViewModel()
 		super.init(coder: coder)
 	}
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		title = Strings.categories
-		
+
 		setupNavigationBar()
 		setupTableView()
-		
+
 		reload()
 	}
-	
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//	}
-	
 
 	private func setupNavigationBar() {
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -50,7 +45,7 @@ class CategoriesViewController: UITableViewController {
 	private func reload() {
 		SVProgressHUD.show()
 		
-		viewModel.fetch() { result in
+		viewModel.fetch { result in
 			
 			DispatchQueue.main.async {
 				SVProgressHUD.dismiss()
@@ -65,7 +60,6 @@ class CategoriesViewController: UITableViewController {
 		}
 	}
 }
-
 
 extension CategoriesViewController {
     
@@ -87,7 +81,6 @@ extension CategoriesViewController {
 	}
 
 }
-
 
 class CategoriesTableViewCell: UITableViewCell {
 

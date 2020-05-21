@@ -21,8 +21,8 @@ struct Address: Codable {
     let state: String?
     let country: String?
     let coordinates: GPSCoordinate?
-    
-    private enum CodingKeys: String, CodingKey {
+
+	private enum CodingKeys: String, CodingKey {
         case address = "address1"
         case label
         case zipCode

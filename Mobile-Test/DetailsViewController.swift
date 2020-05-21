@@ -11,7 +11,8 @@ import UIKit
 import SVProgressHUD
 
 class DetailsViewController: UITableViewController {
-	
+	// TODO: ccomeau: implement details
+
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 	}
@@ -19,7 +20,6 @@ class DetailsViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//todo: ccomeau
 		title = "Details"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		
@@ -27,15 +27,11 @@ class DetailsViewController: UITableViewController {
 		reload()
 	}
 	
-	
 	private func setupTableView() {
 		tableView.delegate = self
-		
-		//self.tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: String(describing: CategoriesTableViewCell.self))
 	}
 	
 	private func reload() {
 		
 	}
 }
-
