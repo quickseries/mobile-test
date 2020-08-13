@@ -34,8 +34,26 @@
 | 9  | As a user, I want to see a resource image                                            |                                                                                 |
 | 10 | As a user, I want to see a resource description                                      |                                                                                 |
 
-# Mockup:
+# Notes:
 
-Use the following mockup as a UI guide for your app (the image is at the root of the project). This mockup contains more details that you actually will need in this test. Please use with intepretation. We do not provide you with any specs, so please use your imagination while trying to respect the mockup as much as you can.
+- I wanted to play with SwiftUI + Combine + MVVM for this challenge, I discovered how important is a Coordinator or a Router with SwiftUI, I didn't implemented any of them but It would have been a lot easier and cleaner.
+- I also struggled a lot session dataTaskPublisher and github rawdata ended up using regular dataTask with semaphores.
 
-![Mockup](https://github.com/quickseries/mobile-test/blob/master/resources_android.png "Mockup")
+# Checklist:
+
+- [x] As a user, I want to see a list of categories
+- [x] As a user, I want to see the resources inside a category 
+- [ ] As a user, I want to see the details of a category. The description is HTML, but the what you see on the screen must be text.
+ *Utility Extension for parsing NSAttributedString defined but with cycling attributtes, functionallity commented, works properly in other apps*
+- [x] As a user, I want to sort the list of resources alphabetically
+- [x] When I tap on it a second time, it should sort the list from Z-A
+- [ ] As a user, I want to send an email by tapping on a resource email
+ *MFMailComposeViewController defined but needs a wrapper or a coordinator to be displayed on tapping*
+- [ ] As a user, I want to open the maps app on my phone when I tap on a resource address
+ *Location on maps hardcoded*
+- [ ] As a user, I want to open a web link without leaving the app 
+ *Basic WKWebView implementation defined but needs a wrapper or a coordinator to be displayed on tapping*
+- [X] As a user, I want to see a resource image 
+ *Custom async imageloading view*
+- [ ] As a user, I want to see a resource description 
+ *Resources properly parsed, still loaded from hardcode*
